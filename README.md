@@ -26,14 +26,9 @@ The second interface allows searching for courses and events in R25 within the U
 Project settings.py
 ------------------
 
-**Panopto API settings**
-
-    PANOPTO_API_USER = '<user context for API calls>'
-    PANOPTO_API_APP_ID = '<Application context ID>'
-    PANOPTO_API_TOKEN = '<Panopto GUID>'
-    PANOPTO_SERVER = '<Panopto Server Name>'
+Below are the settings specific to the scheduler.  Note, though, additional settings will be required for access to student information system as well as Panopto API settings required by the dependent [Django Panopto Client](https://github.com/uw-it-aca/django-panopto-client "Panopto Client").
 
 **R25 settings**
+
     RESTCLIENTS_R25_DAO_CLASS = 'restclients.dao_implementation.r25.Live'
     RESTCLIENTS_R25_HOST = '<R25 Server Name>'
-
