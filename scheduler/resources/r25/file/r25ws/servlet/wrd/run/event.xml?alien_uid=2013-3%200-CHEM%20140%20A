@@ -1,0 +1,1728 @@
+<?xml version="1.0"?>
+<r25:events xmlns:r25="http://www.collegenet.com/r25" xmlns:xl="http://www.w3.org/1999/xlink" pubdate="2014-10-08T09:51:09-07:00"/>
+"
+5,r25,/r25ws/servlet/wrd/run/event.xml?alien_uid=2014-4%200-PSYCH%20101%20A,200,KGRwMAou,"<?xml version="1.0"?>
+<r25:events xmlns:r25="http://www.collegenet.com/r25" xmlns:xl="http://www.w3.org/1999/xlink" pubdate="2014-10-29T15:39:31-07:00">
+<r25:event xl:href="event.xml?event_id=602914" id="CBJDNjAyOTE0" crc="00000027" status="est">
+<r25:event_id>602914</r25:event_id>
+<r25:event_name>PSYCH 101 A</r25:event_name>
+<r25:alien_uid>2014-4 0-PSYCH 101 A</r25:alien_uid>
+<r25:event_priority>0</r25:event_priority>
+<r25:event_title>INTRO TO PSYCH</r25:event_title>
+<r25:favorite>F</r25:favorite>
+<r25:node_type>E</r25:node_type>
+<r25:node_type_name>event</r25:node_type_name>
+<r25:start_date>2014-09-24</r25:start_date>
+<r25:end_date>2014-12-08</r25:end_date>
+<r25:event_type_id>341</r25:event_type_id>
+<r25:event_type_name>UG_SECTION</r25:event_type_name>
+<r25:state>1</r25:state>
+<r25:state_name>Tentative</r25:state_name>
+<r25:version_number>0</r25:version_number>
+<r25:event_locator>2014-ABIHXA</r25:event_locator>
+<r25:parent_id xl:href="event.xml?event_id=595750">595750</r25:parent_id>
+<r25:cabinet_id xl:href="event.xml?event_id=595637">595637</r25:cabinet_id>
+<r25:cabinet_name>SEATTLE AUTUMN 2014 CABINET</r25:cabinet_name>
+<r25:registration_url/>
+<r25:last_mod_user>rhoderj</r25:last_mod_user>
+<r25:last_mod_dt>2014-02-28T08:38:16-08:00</r25:last_mod_dt>
+<r25:creation_dt>2014-02-18T23:30:24-08:00</r25:creation_dt>
+<r25:organization id="CBJDNjAyOTE0BiJDNDQwOQ==" crc="00000021" status="est">
+<r25:organization_id xl:href="organization.xml?organization_id=4409">4409</r25:organization_id>
+<r25:organization_name>PSYCH</r25:organization_name>
+<r25:organization_title>Psychology</r25:organization_title>
+<r25:primary>T</r25:primary>
+<r25:organization_inherited>1</r25:organization_inherited>
+<r25:organization_details xl:href="organization.xml?organization_id=4409" id="BhJDNDQwOQ==" crc="00000027" status="est">
+<r25:account_number/>
+<r25:abbreviation>PSYCH</r25:abbreviation>
+<r25:organization_rating_id/>
+<r25:organization_rating/>
+<r25:organization_type xl:href="orgtypes.xml?type_id=1" id="AxJDMQ==" crc="00000027" status="est">
+<r25:organization_type_id>1</r25:organization_type_id>
+<r25:organization_type_name>Seattle Curriculum</r25:organization_type_name>
+</r25:organization_type>
+</r25:organization_details>
+</r25:organization>
+<r25:profile id="CSJDMTg3NjAyMggSQzYwMjkxNA==" crc="00000021" status="est">
+<r25:profile_id xl:href="ev_profile.xml?profile_id=1876022">1876022</r25:profile_id>
+<r25:profile_name>LECTURE</r25:profile_name>
+<r25:profile_code>W1 MO TU WE TH FR 20141205T235900-0800</r25:profile_code>
+<r25:profile_description>From 10:30 AM to 11:20 AM.
+Starting on WED SEP/24/2014.
+Repeat every week
+ on MON TUE WED THU FRI
+ until FRI DEC/05/2014.</r25:profile_description>
+<r25:prof_use>1</r25:prof_use>
+<r25:prof_use_name>Reservation</r25:prof_use_name>
+<r25:expected_count>440</r25:expected_count>
+<r25:registered_count/>
+<r25:rec_type_id>1</r25:rec_type_id>
+<r25:rec_type_name>Recurrence Grammar</r25:rec_type_name>
+<r25:pre_event/>
+<r25:post_event/>
+<r25:profile_comments/>
+<r25:init_start_dt>2014-09-24T10:30:00-07:00</r25:init_start_dt>
+<r25:init_end_dt>2014-09-24T11:20:00-07:00</r25:init_end_dt>
+<r25:space_pref status="est">
+<r25:sp_query_id>1734309</r25:sp_query_id>
+</r25:space_pref>
+<r25:binding_reservation id="VE1QOjQyRUE3M0EwLUU0QUItNDNBMC04OTcwLTE0M0YxMkVCMDJCMg==" status="est">
+<r25:primary_reservation>1876022</r25:primary_reservation>
+<r25:bound_name>PSYCH 101 D/LECTURE</r25:bound_name>
+<r25:bound_event_id>602915</r25:bound_event_id>
+<r25:bound_reservation_id>1876023</r25:bound_reservation_id>
+</r25:binding_reservation>
+<r25:binding_reservation id="VE1QOkU1RjM4NTVBLUIzNzAtNDY3Qi05NEU1LTk1NzAwMEU4QTgzQQ==" status="est">
+<r25:primary_reservation>1876022</r25:primary_reservation>
+<r25:bound_name>PSYCH 101 A/FINAL</r25:bound_name>
+<r25:bound_event_id>602914</r25:bound_event_id>
+<r25:bound_reservation_id>1876024</r25:bound_reservation_id>
+</r25:binding_reservation>
+<r25:binding_reservation id="VE1QOjgyNzI2ODVCLUNBQTAtNDYwNy1BMjVBLTJGODNBMUM4NzJBOQ==" status="est">
+<r25:primary_reservation>1876022</r25:primary_reservation>
+<r25:bound_name>PSYCH 101 D/FINAL</r25:bound_name>
+<r25:bound_event_id>602915</r25:bound_event_id>
+<r25:bound_reservation_id>1876025</r25:bound_reservation_id>
+</r25:binding_reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314774" id="ChJDMzgzMTQ3NzQ=" crc="00000021" status="est">
+<r25:reservation_id>38314774</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-09-24T10:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-09-24T11:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-09-24T10:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-09-24T11:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-09-24T10:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-09-24T11:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0Nzc0" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314775" id="ChJDMzgzMTQ3NzU=" crc="00000021" status="est">
+<r25:reservation_id>38314775</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-09-25T10:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-09-25T11:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-09-25T10:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-09-25T11:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-09-25T10:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-09-25T11:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0Nzc1" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314776" id="ChJDMzgzMTQ3NzY=" crc="00000021" status="est">
+<r25:reservation_id>38314776</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-09-26T10:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-09-26T11:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-09-26T10:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-09-26T11:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-09-26T10:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-09-26T11:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0Nzc2" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314777" id="ChJDMzgzMTQ3Nzc=" crc="00000021" status="est">
+<r25:reservation_id>38314777</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-09-29T10:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-09-29T11:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-09-29T10:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-09-29T11:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-09-29T10:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-09-29T11:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0Nzc3" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314778" id="ChJDMzgzMTQ3Nzg=" crc="00000021" status="est">
+<r25:reservation_id>38314778</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-09-30T10:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-09-30T11:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-09-30T10:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-09-30T11:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-09-30T10:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-09-30T11:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0Nzc4" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314779" id="ChJDMzgzMTQ3Nzk=" crc="00000021" status="est">
+<r25:reservation_id>38314779</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-01T10:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-01T11:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-01T10:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-01T11:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-01T10:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-01T11:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0Nzc5" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314780" id="ChJDMzgzMTQ3ODA=" crc="00000021" status="est">
+<r25:reservation_id>38314780</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-02T10:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-02T11:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-02T10:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-02T11:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-02T10:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-02T11:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0Nzgw" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314781" id="ChJDMzgzMTQ3ODE=" crc="00000021" status="est">
+<r25:reservation_id>38314781</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-03T10:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-03T11:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-03T10:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-03T11:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-03T10:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-03T11:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0Nzgx" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314782" id="ChJDMzgzMTQ3ODI=" crc="00000021" status="est">
+<r25:reservation_id>38314782</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-06T10:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-06T11:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-06T10:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-06T11:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-06T10:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-06T11:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0Nzgy" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314783" id="ChJDMzgzMTQ3ODM=" crc="00000021" status="est">
+<r25:reservation_id>38314783</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-07T10:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-07T11:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-07T10:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-07T11:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-07T10:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-07T11:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0Nzgz" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314784" id="ChJDMzgzMTQ3ODQ=" crc="00000021" status="est">
+<r25:reservation_id>38314784</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-08T10:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-08T11:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-08T10:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-08T11:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-08T10:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-08T11:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0Nzg0" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314785" id="ChJDMzgzMTQ3ODU=" crc="00000021" status="est">
+<r25:reservation_id>38314785</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-09T10:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-09T11:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-09T10:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-09T11:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-09T10:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-09T11:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0Nzg1" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314786" id="ChJDMzgzMTQ3ODY=" crc="00000021" status="est">
+<r25:reservation_id>38314786</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-10T10:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-10T11:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-10T10:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-10T11:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-10T10:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-10T11:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0Nzg2" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314787" id="ChJDMzgzMTQ3ODc=" crc="00000021" status="est">
+<r25:reservation_id>38314787</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-13T10:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-13T11:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-13T10:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-13T11:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-13T10:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-13T11:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0Nzg3" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314788" id="ChJDMzgzMTQ3ODg=" crc="00000021" status="est">
+<r25:reservation_id>38314788</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-14T10:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-14T11:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-14T10:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-14T11:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-14T10:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-14T11:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0Nzg4" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314789" id="ChJDMzgzMTQ3ODk=" crc="00000021" status="est">
+<r25:reservation_id>38314789</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-15T10:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-15T11:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-15T10:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-15T11:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-15T10:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-15T11:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0Nzg5" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314790" id="ChJDMzgzMTQ3OTA=" crc="00000021" status="est">
+<r25:reservation_id>38314790</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-16T10:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-16T11:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-16T10:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-16T11:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-16T10:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-16T11:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0Nzkw" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314791" id="ChJDMzgzMTQ3OTE=" crc="00000021" status="est">
+<r25:reservation_id>38314791</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-17T10:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-17T11:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-17T10:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-17T11:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-17T10:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-17T11:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0Nzkx" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314792" id="ChJDMzgzMTQ3OTI=" crc="00000021" status="est">
+<r25:reservation_id>38314792</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-20T10:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-20T11:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-20T10:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-20T11:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-20T10:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-20T11:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0Nzky" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314793" id="ChJDMzgzMTQ3OTM=" crc="00000021" status="est">
+<r25:reservation_id>38314793</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-21T10:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-21T11:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-21T10:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-21T11:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-21T10:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-21T11:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0Nzkz" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314794" id="ChJDMzgzMTQ3OTQ=" crc="00000021" status="est">
+<r25:reservation_id>38314794</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-22T10:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-22T11:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-22T10:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-22T11:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-22T10:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-22T11:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0Nzk0" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314795" id="ChJDMzgzMTQ3OTU=" crc="00000021" status="est">
+<r25:reservation_id>38314795</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-23T10:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-23T11:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-23T10:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-23T11:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-23T10:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-23T11:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0Nzk1" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314796" id="ChJDMzgzMTQ3OTY=" crc="00000021" status="est">
+<r25:reservation_id>38314796</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-24T10:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-24T11:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-24T10:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-24T11:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-24T10:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-24T11:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0Nzk2" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314797" id="ChJDMzgzMTQ3OTc=" crc="00000021" status="est">
+<r25:reservation_id>38314797</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-27T10:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-27T11:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-27T10:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-27T11:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-27T10:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-27T11:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0Nzk3" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314798" id="ChJDMzgzMTQ3OTg=" crc="00000021" status="est">
+<r25:reservation_id>38314798</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-28T10:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-28T11:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-28T10:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-28T11:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-28T10:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-28T11:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0Nzk4" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314799" id="ChJDMzgzMTQ3OTk=" crc="00000021" status="est">
+<r25:reservation_id>38314799</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-29T10:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-29T11:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-29T10:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-29T11:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-29T10:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-29T11:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0Nzk5" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314800" id="ChJDMzgzMTQ4MDA=" crc="00000021" status="est">
+<r25:reservation_id>38314800</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-30T10:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-30T11:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-30T10:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-30T11:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-30T10:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-30T11:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0ODAw" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314801" id="ChJDMzgzMTQ4MDE=" crc="00000021" status="est">
+<r25:reservation_id>38314801</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-31T10:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-31T11:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-31T10:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-31T11:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-31T10:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-31T11:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0ODAx" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314802" id="ChJDMzgzMTQ4MDI=" crc="00000021" status="est">
+<r25:reservation_id>38314802</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-03T10:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-03T11:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-03T10:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-03T11:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-03T10:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-03T11:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0ODAy" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314803" id="ChJDMzgzMTQ4MDM=" crc="00000021" status="est">
+<r25:reservation_id>38314803</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-04T10:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-04T11:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-04T10:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-04T11:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-04T10:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-04T11:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0ODAz" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314804" id="ChJDMzgzMTQ4MDQ=" crc="00000021" status="est">
+<r25:reservation_id>38314804</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-05T10:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-05T11:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-05T10:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-05T11:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-05T10:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-05T11:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0ODA0" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314805" id="ChJDMzgzMTQ4MDU=" crc="00000021" status="est">
+<r25:reservation_id>38314805</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-06T10:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-06T11:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-06T10:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-06T11:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-06T10:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-06T11:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0ODA1" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314806" id="ChJDMzgzMTQ4MDY=" crc="00000021" status="est">
+<r25:reservation_id>38314806</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-07T10:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-07T11:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-07T10:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-07T11:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-07T10:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-07T11:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0ODA2" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314807" id="ChJDMzgzMTQ4MDc=" crc="00000021" status="est">
+<r25:reservation_id>38314807</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-10T10:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-10T11:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-10T10:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-10T11:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-10T10:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-10T11:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0ODA3" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314808" id="ChJDMzgzMTQ4MDg=" crc="00000021" status="est">
+<r25:reservation_id>38314808</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-11T10:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-11T11:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-11T10:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-11T11:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-11T10:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-11T11:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0ODA4" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314809" id="ChJDMzgzMTQ4MDk=" crc="00000021" status="est">
+<r25:reservation_id>38314809</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-12T10:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-12T11:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-12T10:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-12T11:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-12T10:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-12T11:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0ODA5" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314810" id="ChJDMzgzMTQ4MTA=" crc="00000021" status="est">
+<r25:reservation_id>38314810</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-13T10:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-13T11:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-13T10:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-13T11:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-13T10:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-13T11:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0ODEw" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314811" id="ChJDMzgzMTQ4MTE=" crc="00000021" status="est">
+<r25:reservation_id>38314811</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-14T10:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-14T11:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-14T10:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-14T11:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-14T10:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-14T11:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0ODEx" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314812" id="ChJDMzgzMTQ4MTI=" crc="00000021" status="est">
+<r25:reservation_id>38314812</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-17T10:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-17T11:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-17T10:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-17T11:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-17T10:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-17T11:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0ODEy" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314813" id="ChJDMzgzMTQ4MTM=" crc="00000021" status="est">
+<r25:reservation_id>38314813</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-18T10:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-18T11:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-18T10:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-18T11:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-18T10:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-18T11:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0ODEz" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314814" id="ChJDMzgzMTQ4MTQ=" crc="00000021" status="est">
+<r25:reservation_id>38314814</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-19T10:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-19T11:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-19T10:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-19T11:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-19T10:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-19T11:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0ODE0" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314815" id="ChJDMzgzMTQ4MTU=" crc="00000021" status="est">
+<r25:reservation_id>38314815</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-20T10:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-20T11:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-20T10:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-20T11:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-20T10:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-20T11:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0ODE1" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314816" id="ChJDMzgzMTQ4MTY=" crc="00000021" status="est">
+<r25:reservation_id>38314816</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-21T10:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-21T11:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-21T10:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-21T11:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-21T10:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-21T11:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0ODE2" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314817" id="ChJDMzgzMTQ4MTc=" crc="00000021" status="est">
+<r25:reservation_id>38314817</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-24T10:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-24T11:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-24T10:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-24T11:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-24T10:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-24T11:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0ODE3" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314818" id="ChJDMzgzMTQ4MTg=" crc="00000021" status="est">
+<r25:reservation_id>38314818</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-25T10:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-25T11:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-25T10:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-25T11:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-25T10:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-25T11:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0ODE4" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314819" id="ChJDMzgzMTQ4MTk=" crc="00000021" status="est">
+<r25:reservation_id>38314819</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-26T10:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-26T11:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-26T10:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-26T11:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-26T10:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-26T11:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0ODE5" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314820" id="ChJDMzgzMTQ4MjA=" crc="00000021" status="est">
+<r25:reservation_id>38314820</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-27T10:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-27T11:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-27T10:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-27T11:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-27T10:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-27T11:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0ODIw" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314821" id="ChJDMzgzMTQ4MjE=" crc="00000021" status="est">
+<r25:reservation_id>38314821</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-28T10:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-28T11:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-28T10:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-28T11:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-28T10:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-28T11:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0ODIx" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314822" id="ChJDMzgzMTQ4MjI=" crc="00000021" status="est">
+<r25:reservation_id>38314822</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-01T10:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-12-01T11:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-12-01T10:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-01T11:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-12-01T10:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-12-01T11:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0ODIy" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314823" id="ChJDMzgzMTQ4MjM=" crc="00000021" status="est">
+<r25:reservation_id>38314823</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-02T10:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-12-02T11:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-12-02T10:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-02T11:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-12-02T10:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-12-02T11:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0ODIz" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314824" id="ChJDMzgzMTQ4MjQ=" crc="00000021" status="est">
+<r25:reservation_id>38314824</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-03T10:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-12-03T11:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-12-03T10:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-03T11:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-12-03T10:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-12-03T11:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0ODI0" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314825" id="ChJDMzgzMTQ4MjU=" crc="00000021" status="est">
+<r25:reservation_id>38314825</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-04T10:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-12-04T11:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-12-04T10:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-04T11:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-12-04T10:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-12-04T11:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0ODI1" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314826" id="ChJDMzgzMTQ4MjY=" crc="00000021" status="est">
+<r25:reservation_id>38314826</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-05T10:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-12-05T11:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-12-05T10:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-05T11:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-12-05T10:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-12-05T11:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0ODI2" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+</r25:profile>
+<r25:profile id="CSJDMTg3NjAyNAgSQzYwMjkxNA==" crc="00000021" status="est">
+<r25:profile_id xl:href="ev_profile.xml?profile_id=1876024">1876024</r25:profile_id>
+<r25:profile_name>FINAL</r25:profile_name>
+<r25:profile_code/>
+<r25:profile_description>From 08:30 AM to 10:20 AM
+ on MON DEC/08/2014.</r25:profile_description>
+<r25:prof_use>1</r25:prof_use>
+<r25:prof_use_name>Reservation</r25:prof_use_name>
+<r25:expected_count>440</r25:expected_count>
+<r25:registered_count/>
+<r25:rec_type_id>0</r25:rec_type_id>
+<r25:rec_type_name>Single Date/Time</r25:rec_type_name>
+<r25:pre_event/>
+<r25:post_event/>
+<r25:profile_comments/>
+<r25:init_start_dt>2014-12-08T08:30:00-08:00</r25:init_start_dt>
+<r25:init_end_dt>2014-12-08T10:20:00-08:00</r25:init_end_dt>
+<r25:binding_reservation id="VE1QOjU5NDk0MDRELTA2NDMtNDJEOC1CMkNGLTNBNTEyNTdBNjM4MA==" status="est">
+<r25:primary_reservation>1876022</r25:primary_reservation>
+<r25:bound_name>PSYCH 101 A/LECTURE</r25:bound_name>
+<r25:bound_event_id>602914</r25:bound_event_id>
+<r25:bound_reservation_id>1876022</r25:bound_reservation_id>
+</r25:binding_reservation>
+<r25:binding_reservation id="VE1QOkU1RTMxM0I3LTJCNjgtNEFGRC05QjgzLUY5RDA0RUJDQzY0MQ==" status="est">
+<r25:primary_reservation>1876022</r25:primary_reservation>
+<r25:bound_name>PSYCH 101 D/LECTURE</r25:bound_name>
+<r25:bound_event_id>602915</r25:bound_event_id>
+<r25:bound_reservation_id>1876023</r25:bound_reservation_id>
+</r25:binding_reservation>
+<r25:binding_reservation id="VE1QOkQ4QThDRUM1LThDRUQtNEQxMS04QzYyLTg5MzQ2MDlEMjNGMQ==" status="est">
+<r25:primary_reservation>1876022</r25:primary_reservation>
+<r25:bound_name>PSYCH 101 D/FINAL</r25:bound_name>
+<r25:bound_event_id>602915</r25:bound_event_id>
+<r25:bound_reservation_id>1876025</r25:bound_reservation_id>
+</r25:binding_reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38314916" id="ChJDMzgzMTQ5MTY=" crc="00000021" status="est">
+<r25:reservation_id>38314916</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-08T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-12-08T10:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-12-08T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-08T10:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-12-08T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-12-08T10:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MQoSQzM4MzE0OTE2" crc="00000021" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4991" id="BhJDNDk5MQ==" crc="0000002B" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+</r25:profile>
+<r25:category xl:href="evcat.xml?category_id=3" id="AyJDMwgSQzYwMjkxNA==" crc="00000021" status="est">
+<r25:category_id>3</r25:category_id>
+<r25:category_name>Credit Class</r25:category_name>
+<r25:category_defn_state>1</r25:category_defn_state>
+</r25:category>
+<r25:category xl:href="evcat.xml?category_id=5" id="AyJDNQgSQzYwMjkxNA==" crc="00000021" status="est">
+<r25:category_id>5</r25:category_id>
+<r25:category_name>University Event</r25:category_name>
+<r25:category_defn_state>1</r25:category_defn_state>
+</r25:category>
+<r25:event_history id="AyJDMQgSQzYwMjkxNAMyQzE=" crc="00000021" status="est">
+<r25:history_type_id>1</r25:history_type_id>
+<r25:history_type_name>State</r25:history_type_name>
+<r25:history_sequence>1</r25:history_sequence>
+<r25:history_dt>2014-02-18T23:30:24-08:00</r25:history_dt>
+<r25:event_state_id>1</r25:event_state_id>
+<r25:event_state_name>Tentative</r25:event_state_name>
+</r25:event_history>
+<r25:event_history id="AyJDNAgSQzYwMjkxNAMyQzE=" crc="00000021" status="est">
+<r25:history_type_id>4</r25:history_type_id>
+<r25:history_type_name>Bill Date (for pricing)</r25:history_type_name>
+<r25:history_sequence>1</r25:history_sequence>
+<r25:history_dt>2014-02-18T00:00:00-08:00</r25:history_dt>
+<r25:event_state_id/>
+<r25:event_state_name/>
+</r25:event_history>
+<r25:todo id="CRJDMjI3MTQ4MQ==" crc="00000021" status="est">
+<r25:todo_id>2271481</r25:todo_id>
+<r25:cur_todo_state>1</r25:cur_todo_state>
+<r25:todo_name>Needs space</r25:todo_name>
+<r25:todo_type>101</r25:todo_type>
+<r25:todo_type_name>vCal Space Needed</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2014-02-19T00:00:00-08:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>F</r25:read>
+<r25:completed_dt/>
+<r25:comment_id>1493216</r25:comment_id>
+<r25:todo_description>Need to perform space assignment.</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2014-02-19T01:53:11-08:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjI3MTQ4Mg==" crc="00000022" status="est">
+<r25:todo_id>2271482</r25:todo_id>
+<r25:cur_todo_state>1</r25:cur_todo_state>
+<r25:todo_name>Export COUNTER</r25:todo_name>
+<r25:todo_type>103</r25:todo_type>
+<r25:todo_type_name>vCal Event Modification</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2014-02-19T00:00:00-08:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>F</r25:read>
+<r25:completed_dt/>
+<r25:comment_id>1493217</r25:comment_id>
+<r25:todo_description>vCalendar properties have been modified since import.</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2014-02-19T01:53:11-08:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:role id="CBJDNjAyOTE0BCJDLTI=" crc="00000021" status="est">
+<r25:role_id>-2</r25:role_id>
+<r25:role_name>Scheduler</r25:role_name>
+<r25:contact xl:href="contact.xml?contact_id=3310" id="BhJDMzMxMA==" crc="00000023" status="est">
+<r25:contact_id>3310</r25:contact_id>
+<r25:contact_name>IMPORT PROCESS</r25:contact_name>
+<r25:formatted_address/>
+<r25:phone/>
+<r25:fax/>
+<r25:email>times@u.washington.edu</r25:email>
+</r25:contact>
+</r25:role>
+</r25:event>
+</r25:events>

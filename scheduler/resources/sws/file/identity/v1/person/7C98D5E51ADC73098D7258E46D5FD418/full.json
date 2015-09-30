@@ -1,0 +1,20 @@
+{
+    "DisplayName": "Test T. Testerman",
+    "EduPersonAffiliations": [
+        "member",
+        "alum",
+        "faculty",
+        "employee"
+    ],
+    "IsTestEntity": false,
+    "PersonAffiliations": {},
+    "PriorUWNetIDs": [],
+    "PriorUWRegIDs": [],
+    "RegisteredFirstMiddleName": "TEST",
+    "RegisteredName": "TEST TESTERMAN",
+    "RegisteredSurname": "TESTERMAN",
+    "UIDNumber": "999999",
+    "UWNetID": "tttttttt",
+    "UWRegID": "7C98D5E51ADC73098D7258E46D5FD418",
+    "WhitepagesPublish": true
+}

@@ -1,0 +1,207 @@
+{
+    "AddCodeRequired": false,
+    "Auditors": 0,
+    "ClassWebsiteUrl": "",
+    "Course": {
+        "CourseNumber": "101",
+        "CurriculumAbbreviation": "PSYCH",
+        "Href": "/student/v5/course/2015,autumn,PSYCH,101.json",
+        "Quarter": "autumn",
+        "Year": 2015
+    },
+    "CourseCampus": "Seattle",
+    "CourseDescription": "Surveys major areas of psychological science. Core topics include human social behavior, personality, psychological disorders and treatment, learning, memory, human development, biological influences, and research methods. Related topics may include sensation, perception, states of consciousness, thinking, intelligence, language, motivation, emotion, stress and health, cross-cultural psychology, and applied psychology. Offered: AWSpS.",
+    "CourseHasVariableContent": false,
+    "CourseTitle": "INTRO TO PSYCH",
+    "CourseTitleLong": "INTRODUCTION TO PSYCHOLOGY",
+    "CreditControl": "fixed credit",
+    "CurrentEnrollment": 255,
+    "Curriculum": {
+        "CollegeName": "ARTS & SCI",
+        "DepartmentAbbreviation": "PSYCH",
+        "TimeScheduleLinkAbbreviation": "psych"
+    },
+    "DeleteFlag": "active",
+    "DistanceLearning": false,
+    "DuplicateEnrollmentAllowed": false,
+    "EndDate": "",
+    "EnrollmentRestrictions": true,
+    "FeeAmount": "",
+    "FeeBudget": "",
+    "FeeType": "",
+    "FinalExam": {
+        "Building": "KNE",
+        "Date": "2015-12-14",
+        "EndTime": "16:20",
+        "MeetingStatus": "0",
+        "RoomNumber": "120",
+        "StartTime": "14:30"
+    },
+    "FinancialAidEligible": true,
+    "FinancialAidEligibleDisplay": "",
+    "GeneralEducationRequirements": {
+        "Diversity": false,
+        "EnglishComposition": false,
+        "IndividualsAndSocieties": true,
+        "NaturalWorld": false,
+        "QuantitativeAndSymbolicReasoning": false,
+        "VisualLiteraryAndPerformingArts": false,
+        "Writing": false
+    },
+    "GradeSubmissionDelegates": [],
+    "GradingSystem": "standard",
+    "HonorsCourse": false,
+    "IndependentStudy": false,
+    "InstituteName": "",
+    "JointSections": [
+        {
+            "CourseNumber": "101",
+            "CurriculumAbbreviation": "PSYCH",
+            "Href": "/student/v5/course/2015,autumn,PSYCH,101/D.json",
+            "Quarter": "autumn",
+            "SectionID": "D",
+            "Year": 2015
+        }
+    ],
+    "LimitEstimateEnrollment": 255,
+    "LimitEstimateEnrollmentIndicator": "limit",
+    "LinkedSectionTypes": [],
+    "MaximumCredit": "",
+    "MaximumTermCredit": "",
+    "Meetings": [
+        {
+            "Building": "KNE",
+            "BuildingToBeArranged": false,
+            "DaysOfWeek": {
+                "Days": [
+                    {
+                        "Name": "Monday"
+                    },
+                    {
+                        "Name": "Tuesday"
+                    },
+                    {
+                        "Name": "Wednesday"
+                    },
+                    {
+                        "Name": "Thursday"
+                    },
+                    {
+                        "Name": "Friday"
+                    }
+                ],
+                "Text": "MTWTF"
+            },
+            "DaysOfWeekToBeArranged": false,
+            "EndTime": "14:20",
+            "Instructors": [{"FacultySequenceNumber":"","GradeRoster":{"Href":"\/student\/v5\/graderoster\/2014,autumn,PSYCH,101,A,7C98D5E51ADC73098D7258E46D5FD418"},"Person":{"Href":"\/student\/v5\/person\/7C98D5E51ADC73098D7258E46D5FD418.json","Name":"TESTERMAN,TEST","RegID":"7C98D5E51ADC73098D7258E46D5FD418"},"TSPrint":true}],
+            "MeetingIndex": "1",
+            "MeetingType": "lecture",
+            "RoomNumber": "220",
+            "RoomToBeArranged": false,
+            "StartTime": "13:30"
+        }
+    ],
+    "MinimumTermCredit": "5.0",
+    "PrimarySection": {
+        "CourseNumber": "101",
+        "CurriculumAbbreviation": "PSYCH",
+        "Href": "/student/v5/course/2015,autumn,PSYCH,101/A.json",
+        "Quarter": "autumn",
+        "SectionID": "A",
+        "Year": 2015
+    },
+    "Registrations": {
+        "CourseNumber": "101",
+        "CurriculumAbbreviation": "PSYCH",
+        "Href": "/student/v5/registration.json?year=2015&quarter=autumn&curriculum_abbreviation=PSYCH&course_number=101&section_id=A&reg_id=&is_active=True&instructor_reg_id=&verbose=False",
+        "InstructorRegID": null,
+        "IsActive": true,
+        "PageSize": null,
+        "PageStart": null,
+        "Quarter": "autumn",
+        "RegID": null,
+        "SectionID": "A",
+        "Verbose": false,
+        "Year": 2015
+    },
+    "ResearchCredit": false,
+    "RoomCapacity": 345,
+    "SLN": "19751",
+    "SameVariableContentAs": [],
+    "SecondaryGradingOption": false,
+    "SectionID": "A",
+    "SectionType": "lecture",
+    "SelfRegistrationAllowed": true,
+    "ServiceLearning": false,
+    "StartDate": "",
+    "StudentCreditHours": "1275.0",
+    "SummerTerm": "",
+    "Term": {
+        "Href": "/student/v5/term/2015,autumn.json",
+        "Quarter": "autumn",
+        "Year": 2015
+    },
+    "TimeScheduleComments": {
+        "CollegeComments": {
+            "Lines": []
+        },
+        "CourseComments": {
+            "Lines": []
+        },
+        "CurriculumComments": {
+            "Lines": [
+                {
+                    "Text": "ONLINE DISTANCE LEARNING COURSES AVAILABLE FOR"
+                },
+                {
+                    "Text": "PSYCH 101, 203, 206, 209, AND 315."
+                },
+                {
+                    "Text": "FOR MORE INFORMATION, SEE:"
+                },
+                {
+                    "Text": "http://www.onlinelearning.washington.edu/ol/"
+                },
+                {
+                    "Text": "courses/psy/"
+                }
+            ]
+        },
+        "DepartmentComments": {
+            "Lines": []
+        },
+        "InstituteComments": {
+            "Lines": []
+        },
+        "SectionComments": {
+            "Lines": [
+                {
+                    "Text": "IF COURSE IS FULL, DO NOT CONTACT"
+                },
+                {
+                    "Text": "INSTRUCTOR FOR ADD CODE. SIGN UP ON"
+                },
+                {
+                    "Text": "WAIT LIST (IN-PERSON ONLY) AT END"
+                },
+                {
+                    "Text": "OF FIRST LECTURE"
+                }
+            ]
+        },
+        "TimeScheduleGeneratedComments": {
+            "Lines": [
+                {
+                    "Text": "Offered jointly with PSYCH 101 D"
+                },
+                {
+                    "Text": "Add Code required Period 3 (beginning 9/30/2015)"
+                },
+                {
+                    "Text": "No PSYCH majors"
+                }
+            ]
+        }
+    }
+}

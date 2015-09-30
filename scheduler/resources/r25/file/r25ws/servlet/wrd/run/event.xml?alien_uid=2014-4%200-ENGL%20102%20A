@@ -1,0 +1,1677 @@
+<?xml version="1.0"?>
+<r25:events xmlns:r25="http://www.collegenet.com/r25" xmlns:xl="http://www.w3.org/1999/xlink" pubdate="2014-10-29T15:57:20-07:00">
+<r25:event xl:href="event.xml?event_id=599031" id="CBJDNTk5MDMx" crc="00000027" status="est">
+<r25:event_id>599031</r25:event_id>
+<r25:event_name>ENGL 102 A</r25:event_name>
+<r25:alien_uid>2014-4 0-ENGL 102 A</r25:alien_uid>
+<r25:event_priority>0</r25:event_priority>
+<r25:event_title>WRIT FM SOURCES II</r25:event_title>
+<r25:favorite>F</r25:favorite>
+<r25:node_type>E</r25:node_type>
+<r25:node_type_name>event</r25:node_type_name>
+<r25:start_date>2014-09-24</r25:start_date>
+<r25:end_date>2014-12-05</r25:end_date>
+<r25:event_type_id>341</r25:event_type_id>
+<r25:event_type_name>UG_SECTION</r25:event_type_name>
+<r25:state>1</r25:state>
+<r25:state_name>Tentative</r25:state_name>
+<r25:version_number>2</r25:version_number>
+<r25:event_locator>2014-ABICDR</r25:event_locator>
+<r25:parent_id xl:href="event.xml?event_id=595687">595687</r25:parent_id>
+<r25:cabinet_id xl:href="event.xml?event_id=595637">595637</r25:cabinet_id>
+<r25:cabinet_name>SEATTLE AUTUMN 2014 CABINET</r25:cabinet_name>
+<r25:registration_url/>
+<r25:last_mod_user>import</r25:last_mod_user>
+<r25:last_mod_dt>2014-10-04T15:51:19-07:00</r25:last_mod_dt>
+<r25:creation_dt>2014-02-18T18:51:05-08:00</r25:creation_dt>
+<r25:organization id="CBJDNTk5MDMxBiJDNDI0Ng==" crc="00000021" status="est">
+<r25:organization_id xl:href="organization.xml?organization_id=4246">4246</r25:organization_id>
+<r25:organization_name>ENGL</r25:organization_name>
+<r25:organization_title>English</r25:organization_title>
+<r25:primary>T</r25:primary>
+<r25:organization_inherited>1</r25:organization_inherited>
+<r25:organization_details xl:href="organization.xml?organization_id=4246" id="BhJDNDI0Ng==" crc="00000027" status="est">
+<r25:account_number/>
+<r25:abbreviation>ENGL</r25:abbreviation>
+<r25:organization_rating_id/>
+<r25:organization_rating/>
+<r25:organization_type xl:href="orgtypes.xml?type_id=1" id="AxJDMQ==" crc="00000027" status="est">
+<r25:organization_type_id>1</r25:organization_type_id>
+<r25:organization_type_name>Seattle Curriculum</r25:organization_type_name>
+</r25:organization_type>
+</r25:organization_details>
+</r25:organization>
+<r25:profile id="CSJDMTk2NTg3NwgSQzU5OTAzMQ==" crc="00000021" status="est">
+<r25:profile_id xl:href="ev_profile.xml?profile_id=1965877">1965877</r25:profile_id>
+<r25:profile_name>LECTURE</r25:profile_name>
+<r25:profile_code>W1 MO TU WE TH FR 20141205T235900-0800</r25:profile_code>
+<r25:profile_description>From 08:30 AM to 09:20 AM.
+Starting on WED SEP/24/2014.
+Repeat every week
+ on MON TUE WED THU FRI
+ until FRI DEC/05/2014.</r25:profile_description>
+<r25:prof_use>1</r25:prof_use>
+<r25:prof_use_name>Reservation</r25:prof_use_name>
+<r25:expected_count>20</r25:expected_count>
+<r25:registered_count>12</r25:registered_count>
+<r25:rec_type_id>1</r25:rec_type_id>
+<r25:rec_type_name>Recurrence Grammar</r25:rec_type_name>
+<r25:pre_event/>
+<r25:post_event/>
+<r25:profile_comments/>
+<r25:init_start_dt>2014-09-24T08:30:00-07:00</r25:init_start_dt>
+<r25:init_end_dt>2014-09-24T09:20:00-07:00</r25:init_end_dt>
+<r25:space_pref status="est">
+<r25:sp_query_id>1802886</r25:sp_query_id>
+</r25:space_pref>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435438" id="ChJDNDA0MzU0Mzg=" crc="00000021" status="est">
+<r25:reservation_id>40435438</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-09-24T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-09-24T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-09-24T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-09-24T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-09-24T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-09-24T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDM4" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435439" id="ChJDNDA0MzU0Mzk=" crc="00000021" status="est">
+<r25:reservation_id>40435439</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-09-25T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-09-25T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-09-25T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-09-25T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-09-25T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-09-25T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDM5" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435440" id="ChJDNDA0MzU0NDA=" crc="00000021" status="est">
+<r25:reservation_id>40435440</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-09-26T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-09-26T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-09-26T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-09-26T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-09-26T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-09-26T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDQw" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435441" id="ChJDNDA0MzU0NDE=" crc="00000021" status="est">
+<r25:reservation_id>40435441</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-09-29T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-09-29T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-09-29T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-09-29T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-09-29T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-09-29T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDQx" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435442" id="ChJDNDA0MzU0NDI=" crc="00000021" status="est">
+<r25:reservation_id>40435442</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-09-30T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-09-30T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-09-30T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-09-30T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-09-30T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-09-30T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDQy" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435443" id="ChJDNDA0MzU0NDM=" crc="00000021" status="est">
+<r25:reservation_id>40435443</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-01T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-01T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-01T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-01T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-01T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-01T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDQz" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435444" id="ChJDNDA0MzU0NDQ=" crc="00000021" status="est">
+<r25:reservation_id>40435444</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-02T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-02T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-02T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-02T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-02T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-02T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDQ0" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435445" id="ChJDNDA0MzU0NDU=" crc="00000021" status="est">
+<r25:reservation_id>40435445</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-03T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-03T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-03T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-03T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-03T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-03T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDQ1" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435446" id="ChJDNDA0MzU0NDY=" crc="00000021" status="est">
+<r25:reservation_id>40435446</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-06T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-06T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-06T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-06T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-06T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-06T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDQ2" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435447" id="ChJDNDA0MzU0NDc=" crc="00000021" status="est">
+<r25:reservation_id>40435447</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-07T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-07T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-07T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-07T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-07T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-07T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDQ3" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435448" id="ChJDNDA0MzU0NDg=" crc="00000021" status="est">
+<r25:reservation_id>40435448</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-08T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-08T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-08T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-08T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-08T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-08T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDQ4" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435449" id="ChJDNDA0MzU0NDk=" crc="00000021" status="est">
+<r25:reservation_id>40435449</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-09T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-09T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-09T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-09T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-09T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-09T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDQ5" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435450" id="ChJDNDA0MzU0NTA=" crc="00000021" status="est">
+<r25:reservation_id>40435450</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-10T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-10T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-10T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-10T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-10T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-10T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDUw" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435451" id="ChJDNDA0MzU0NTE=" crc="00000021" status="est">
+<r25:reservation_id>40435451</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-13T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-13T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-13T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-13T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-13T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-13T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDUx" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435452" id="ChJDNDA0MzU0NTI=" crc="00000021" status="est">
+<r25:reservation_id>40435452</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-14T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-14T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-14T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-14T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-14T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-14T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDUy" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435453" id="ChJDNDA0MzU0NTM=" crc="00000021" status="est">
+<r25:reservation_id>40435453</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-15T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-15T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-15T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-15T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-15T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-15T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDUz" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435454" id="ChJDNDA0MzU0NTQ=" crc="00000021" status="est">
+<r25:reservation_id>40435454</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-16T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-16T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-16T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-16T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-16T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-16T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDU0" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435455" id="ChJDNDA0MzU0NTU=" crc="00000021" status="est">
+<r25:reservation_id>40435455</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-17T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-17T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-17T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-17T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-17T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-17T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDU1" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435456" id="ChJDNDA0MzU0NTY=" crc="00000021" status="est">
+<r25:reservation_id>40435456</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-20T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-20T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-20T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-20T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-20T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-20T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDU2" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435457" id="ChJDNDA0MzU0NTc=" crc="00000021" status="est">
+<r25:reservation_id>40435457</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-21T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-21T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-21T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-21T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-21T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-21T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDU3" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435458" id="ChJDNDA0MzU0NTg=" crc="00000021" status="est">
+<r25:reservation_id>40435458</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-22T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-22T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-22T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-22T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-22T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-22T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDU4" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435459" id="ChJDNDA0MzU0NTk=" crc="00000021" status="est">
+<r25:reservation_id>40435459</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-23T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-23T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-23T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-23T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-23T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-23T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDU5" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435460" id="ChJDNDA0MzU0NjA=" crc="00000021" status="est">
+<r25:reservation_id>40435460</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-24T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-24T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-24T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-24T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-24T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-24T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDYw" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435461" id="ChJDNDA0MzU0NjE=" crc="00000021" status="est">
+<r25:reservation_id>40435461</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-27T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-27T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-27T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-27T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-27T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-27T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDYx" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435462" id="ChJDNDA0MzU0NjI=" crc="00000021" status="est">
+<r25:reservation_id>40435462</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-28T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-28T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-28T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-28T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-28T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-28T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDYy" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435463" id="ChJDNDA0MzU0NjM=" crc="00000021" status="est">
+<r25:reservation_id>40435463</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-29T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-29T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-29T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-29T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-29T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-29T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDYz" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435464" id="ChJDNDA0MzU0NjQ=" crc="00000021" status="est">
+<r25:reservation_id>40435464</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-30T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-30T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-30T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-30T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-30T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-30T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDY0" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435465" id="ChJDNDA0MzU0NjU=" crc="00000021" status="est">
+<r25:reservation_id>40435465</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-31T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-31T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-31T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-31T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-31T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-31T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDY1" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435466" id="ChJDNDA0MzU0NjY=" crc="00000021" status="est">
+<r25:reservation_id>40435466</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-03T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-03T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-03T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-03T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-03T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-03T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDY2" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435467" id="ChJDNDA0MzU0Njc=" crc="00000021" status="est">
+<r25:reservation_id>40435467</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-04T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-04T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-04T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-04T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-04T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-04T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDY3" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435468" id="ChJDNDA0MzU0Njg=" crc="00000021" status="est">
+<r25:reservation_id>40435468</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-05T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-05T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-05T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-05T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-05T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-05T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDY4" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435469" id="ChJDNDA0MzU0Njk=" crc="00000021" status="est">
+<r25:reservation_id>40435469</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-06T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-06T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-06T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-06T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-06T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-06T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDY5" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435470" id="ChJDNDA0MzU0NzA=" crc="00000021" status="est">
+<r25:reservation_id>40435470</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-07T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-07T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-07T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-07T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-07T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-07T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDcw" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435471" id="ChJDNDA0MzU0NzE=" crc="00000021" status="est">
+<r25:reservation_id>40435471</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-10T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-10T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-10T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-10T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-10T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-10T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDcx" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435472" id="ChJDNDA0MzU0NzI=" crc="00000021" status="est">
+<r25:reservation_id>40435472</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-11T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-11T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-11T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-11T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-11T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-11T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDcy" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435473" id="ChJDNDA0MzU0NzM=" crc="00000021" status="est">
+<r25:reservation_id>40435473</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-12T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-12T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-12T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-12T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-12T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-12T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDcz" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435474" id="ChJDNDA0MzU0NzQ=" crc="00000021" status="est">
+<r25:reservation_id>40435474</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-13T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-13T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-13T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-13T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-13T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-13T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDc0" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435475" id="ChJDNDA0MzU0NzU=" crc="00000021" status="est">
+<r25:reservation_id>40435475</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-14T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-14T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-14T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-14T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-14T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-14T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDc1" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435476" id="ChJDNDA0MzU0NzY=" crc="00000021" status="est">
+<r25:reservation_id>40435476</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-17T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-17T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-17T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-17T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-17T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-17T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDc2" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435477" id="ChJDNDA0MzU0Nzc=" crc="00000021" status="est">
+<r25:reservation_id>40435477</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-18T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-18T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-18T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-18T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-18T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-18T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDc3" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435478" id="ChJDNDA0MzU0Nzg=" crc="00000021" status="est">
+<r25:reservation_id>40435478</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-19T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-19T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-19T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-19T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-19T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-19T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDc4" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435479" id="ChJDNDA0MzU0Nzk=" crc="00000021" status="est">
+<r25:reservation_id>40435479</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-20T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-20T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-20T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-20T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-20T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-20T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDc5" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435480" id="ChJDNDA0MzU0ODA=" crc="00000021" status="est">
+<r25:reservation_id>40435480</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-21T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-21T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-21T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-21T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-21T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-21T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDgw" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435481" id="ChJDNDA0MzU0ODE=" crc="00000021" status="est">
+<r25:reservation_id>40435481</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-24T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-24T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-24T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-24T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-24T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-24T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDgx" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435482" id="ChJDNDA0MzU0ODI=" crc="00000021" status="est">
+<r25:reservation_id>40435482</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-25T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-25T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-25T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-25T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-25T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-25T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDgy" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435483" id="ChJDNDA0MzU0ODM=" crc="00000021" status="est">
+<r25:reservation_id>40435483</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-26T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-26T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-26T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-26T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-26T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-26T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDgz" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435484" id="ChJDNDA0MzU0ODQ=" crc="00000021" status="est">
+<r25:reservation_id>40435484</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-27T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-27T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-27T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-27T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-27T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-27T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDg0" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435485" id="ChJDNDA0MzU0ODU=" crc="00000021" status="est">
+<r25:reservation_id>40435485</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-28T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-28T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-28T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-28T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-28T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-28T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDg1" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435486" id="ChJDNDA0MzU0ODY=" crc="00000021" status="est">
+<r25:reservation_id>40435486</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-01T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-12-01T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-12-01T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-01T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-12-01T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-12-01T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDg2" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435487" id="ChJDNDA0MzU0ODc=" crc="00000021" status="est">
+<r25:reservation_id>40435487</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-02T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-12-02T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-12-02T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-02T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-12-02T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-12-02T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDg3" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435488" id="ChJDNDA0MzU0ODg=" crc="00000021" status="est">
+<r25:reservation_id>40435488</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-03T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-12-03T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-12-03T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-03T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-12-03T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-12-03T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDg4" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435489" id="ChJDNDA0MzU0ODk=" crc="00000021" status="est">
+<r25:reservation_id>40435489</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-04T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-12-04T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-12-04T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-04T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-12-04T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-12-04T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDg5" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40435490" id="ChJDNDA0MzU0OTA=" crc="00000021" status="est">
+<r25:reservation_id>40435490</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-05T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-12-05T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-12-05T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-05T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-12-05T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-12-05T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNTE3NQoSQzQwNDM1NDkw" crc="00000021" status="est">
+<r25:space_id>5175</r25:space_id>
+<r25:space xl:href="space.xml?space_id=5175" id="BhJDNTE3NQ==" crc="00000025" status="est">
+<r25:space_name>RAI  116</r25:space_name>
+<r25:formal_name>Raitt Hall</r25:formal_name>
+<r25:max_capacity>35</r25:max_capacity>
+<r25:partition_name>Raitt</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>20</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+</r25:profile>
+<r25:event_history id="AyJDMQgSQzU5OTAzMQMyQzE=" crc="00000021" status="est">
+<r25:history_type_id>1</r25:history_type_id>
+<r25:history_type_name>State</r25:history_type_name>
+<r25:history_sequence>1</r25:history_sequence>
+<r25:history_dt>2014-02-18T18:51:05-08:00</r25:history_dt>
+<r25:event_state_id>1</r25:event_state_id>
+<r25:event_state_name>Tentative</r25:event_state_name>
+</r25:event_history>
+<r25:event_history id="AyJDNAgSQzU5OTAzMQMyQzE=" crc="00000021" status="est">
+<r25:history_type_id>4</r25:history_type_id>
+<r25:history_type_name>Bill Date (for pricing)</r25:history_type_name>
+<r25:history_sequence>1</r25:history_sequence>
+<r25:history_dt>2014-02-18T00:00:00-08:00</r25:history_dt>
+<r25:event_state_id/>
+<r25:event_state_name/>
+</r25:event_history>
+<r25:todo id="CRJDMjI2Mzc0MQ==" crc="00000022" status="est">
+<r25:todo_id>2263741</r25:todo_id>
+<r25:cur_todo_state>99</r25:cur_todo_state>
+<r25:todo_name>Needs space</r25:todo_name>
+<r25:todo_type>101</r25:todo_type>
+<r25:todo_type_name>vCal Space Needed</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2014-02-19T00:00:00-08:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>T</r25:read>
+<r25:completed_dt>2014-10-04T00:00:00-07:00</r25:completed_dt>
+<r25:comment_id>1485844</r25:comment_id>
+<r25:todo_description>Version 1</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2014-02-19T00:56:27-08:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+<r25:todo_history>
+<r25:history_todo_date>2014-10-04T15:51:20-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>99</r25:history_todo_state>
+<r25:history_todo_state_name>Cancelled</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjI2Mzc0Mg==" crc="00000023" status="est">
+<r25:todo_id>2263742</r25:todo_id>
+<r25:cur_todo_state>99</r25:cur_todo_state>
+<r25:todo_name>Export COUNTER</r25:todo_name>
+<r25:todo_type>103</r25:todo_type>
+<r25:todo_type_name>vCal Event Modification</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2014-02-19T00:00:00-08:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>T</r25:read>
+<r25:completed_dt>2014-10-04T00:00:00-07:00</r25:completed_dt>
+<r25:comment_id>1485845</r25:comment_id>
+<r25:todo_description>Version 1</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2014-02-19T00:56:27-08:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+<r25:todo_history>
+<r25:history_todo_date>2014-10-04T15:51:20-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>99</r25:history_todo_state>
+<r25:history_todo_state_name>Cancelled</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjM5NTk3Nw==" crc="00000022" status="est">
+<r25:todo_id>2395977</r25:todo_id>
+<r25:cur_todo_state>1</r25:cur_todo_state>
+<r25:todo_name>Export REPLY</r25:todo_name>
+<r25:todo_type>100</r25:todo_type>
+<r25:todo_type_name>vCal Import</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2014-10-04T00:00:00-07:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>F</r25:read>
+<r25:completed_dt/>
+<r25:comment_id>1600765</r25:comment_id>
+<r25:todo_description>No vCalendar properties have been modified since import.</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2014-10-04T07:17:24-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:role id="CBJDNTk5MDMxBCJDLTI=" crc="00000021" status="est">
+<r25:role_id>-2</r25:role_id>
+<r25:role_name>Scheduler</r25:role_name>
+<r25:contact xl:href="contact.xml?contact_id=3310" id="BhJDMzMxMA==" crc="00000023" status="est">
+<r25:contact_id>3310</r25:contact_id>
+<r25:contact_name>IMPORT PROCESS</r25:contact_name>
+<r25:formatted_address/>
+<r25:phone/>
+<r25:fax/>
+<r25:email>times@u.washington.edu</r25:email>
+</r25:contact>
+</r25:role>
+</r25:event>
+</r25:events>

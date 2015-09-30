@@ -1,0 +1,1894 @@
+<?xml version="1.0"?>
+<r25:events xmlns:r25="http://www.collegenet.com/r25" xmlns:xl="http://www.w3.org/1999/xlink" pubdate="2015-09-29T11:21:16-07:00">
+<r25:event xl:href="event.xml?event_id=656626" id="CBJDNjU2NjI2" crc="0000003A" status="est">
+<r25:event_id>656626</r25:event_id>
+<r25:event_name>PSYCH 101 A</r25:event_name>
+<r25:alien_uid>2015-4 0-PSYCH 101 A</r25:alien_uid>
+<r25:event_priority>0</r25:event_priority>
+<r25:event_title>INTRO TO PSYCH</r25:event_title>
+<r25:favorite>F</r25:favorite>
+<r25:node_type>E</r25:node_type>
+<r25:node_type_name>event</r25:node_type_name>
+<r25:start_date>2015-09-30</r25:start_date>
+<r25:end_date>2015-12-14</r25:end_date>
+<r25:event_type_id>341</r25:event_type_id>
+<r25:event_type_name>UG_SECTION</r25:event_type_name>
+<r25:state>1</r25:state>
+<r25:state_name>Tentative</r25:state_name>
+<r25:version_number>4</r25:version_number>
+<r25:event_locator>2015-ABLJIW</r25:event_locator>
+<r25:parent_id xl:href="event.xml?event_id=648645">648645</r25:parent_id>
+<r25:cabinet_id xl:href="event.xml?event_id=648525">648525</r25:cabinet_id>
+<r25:cabinet_name>SEATTLE AUTUMN 2015 CABINET</r25:cabinet_name>
+<r25:registration_url/>
+<r25:last_mod_user>javerage</r25:last_mod_user>
+<r25:last_mod_dt>2015-03-12T16:03:48-07:00</r25:last_mod_dt>
+<r25:creation_dt>2015-03-04T19:33:47-08:00</r25:creation_dt>
+<r25:organization id="CBJDNjU2NjI2BiJDNDQwOQ==" crc="00000021" status="est">
+<r25:organization_id xl:href="organization.xml?organization_id=4409">4409</r25:organization_id>
+<r25:organization_name>PSYCH</r25:organization_name>
+<r25:organization_title>Psychology</r25:organization_title>
+<r25:primary>T</r25:primary>
+<r25:organization_inherited>1</r25:organization_inherited>
+<r25:organization_details xl:href="organization.xml?organization_id=4409" id="BhJDNDQwOQ==" crc="00000027" status="est">
+<r25:account_number/>
+<r25:abbreviation>PSYCH</r25:abbreviation>
+<r25:organization_rating_id/>
+<r25:organization_rating/>
+<r25:organization_type xl:href="orgtypes.xml?type_id=1" id="AxJDMQ==" crc="00000027" status="est">
+<r25:organization_type_id>1</r25:organization_type_id>
+<r25:organization_type_name>Seattle Curriculum</r25:organization_type_name>
+</r25:organization_type>
+</r25:organization_details>
+</r25:organization>
+<r25:profile id="CSJDMjA1Mjk2NggSQzY1NjYyNg==" crc="00000021" status="est">
+<r25:profile_id xl:href="ev_profile.xml?profile_id=2052966">2052966</r25:profile_id>
+<r25:profile_name>LECTURE</r25:profile_name>
+<r25:profile_code>W1 MO TU WE TH FR 20151211T235900-0800</r25:profile_code>
+<r25:profile_description>From 01:30 PM to 02:20 PM.
+Starting on WED SEP/30/2015.
+Repeat every week
+ on MON TUE WED THU FRI
+ until FRI DEC/11/2015.</r25:profile_description>
+<r25:prof_use>1</r25:prof_use>
+<r25:prof_use_name>Reservation</r25:prof_use_name>
+<r25:expected_count>440</r25:expected_count>
+<r25:registered_count/>
+<r25:rec_type_id>1</r25:rec_type_id>
+<r25:rec_type_name>Recurrence Grammar</r25:rec_type_name>
+<r25:pre_event/>
+<r25:post_event/>
+<r25:profile_comments/>
+<r25:init_start_dt>2015-09-30T13:30:00-07:00</r25:init_start_dt>
+<r25:init_end_dt>2015-09-30T14:20:00-07:00</r25:init_end_dt>
+<r25:space_pref status="est">
+<r25:sp_query_id>1866447</r25:sp_query_id>
+</r25:space_pref>
+<r25:binding_reservation id="VE1QOjQ1MDQxMDkwLUMzNkYtNEIyRS1BMjgwLUJDMUZCMjExMUVBMg==" status="est">
+<r25:primary_reservation>2052966</r25:primary_reservation>
+<r25:bound_name>PSYCH 101 D/LECTURE</r25:bound_name>
+<r25:bound_event_id>656627</r25:bound_event_id>
+<r25:bound_reservation_id>2052967</r25:bound_reservation_id>
+</r25:binding_reservation>
+<r25:binding_reservation id="VE1QOjUwNDQwNzAyLUE2MUUtNDYwRi1CRkM3LTc0NkFDQTREMUI3Mg==" status="est">
+<r25:primary_reservation>2052966</r25:primary_reservation>
+<r25:bound_name>PSYCH 101 A/FINAL</r25:bound_name>
+<r25:bound_event_id>656626</r25:bound_event_id>
+<r25:bound_reservation_id>2052968</r25:bound_reservation_id>
+</r25:binding_reservation>
+<r25:binding_reservation id="VE1QOkZFOEY5NTVDLTRFRjctNDI5QS04MDVCLUM0MkE3Njc5MjhFNQ==" status="est">
+<r25:primary_reservation>2052966</r25:primary_reservation>
+<r25:bound_name>PSYCH 101 D/FINAL</r25:bound_name>
+<r25:bound_event_id>656627</r25:bound_event_id>
+<r25:bound_reservation_id>2052969</r25:bound_reservation_id>
+</r25:binding_reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459482" id="ChJDNDI0NTk0ODI=" crc="00000021" status="est">
+<r25:reservation_id>42459482</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-09-30T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-09-30T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-09-30T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2015-09-30T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-09-30T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-09-30T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NDgy" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459483" id="ChJDNDI0NTk0ODM=" crc="00000021" status="est">
+<r25:reservation_id>42459483</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-10-01T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-10-01T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-10-01T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2015-10-01T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-10-01T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-10-01T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NDgz" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459484" id="ChJDNDI0NTk0ODQ=" crc="00000021" status="est">
+<r25:reservation_id>42459484</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-10-02T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-10-02T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-10-02T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2015-10-02T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-10-02T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-10-02T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NDg0" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459485" id="ChJDNDI0NTk0ODU=" crc="00000021" status="est">
+<r25:reservation_id>42459485</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-10-05T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-10-05T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-10-05T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2015-10-05T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-10-05T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-10-05T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NDg1" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459486" id="ChJDNDI0NTk0ODY=" crc="00000021" status="est">
+<r25:reservation_id>42459486</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-10-06T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-10-06T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-10-06T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2015-10-06T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-10-06T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-10-06T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NDg2" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459487" id="ChJDNDI0NTk0ODc=" crc="00000021" status="est">
+<r25:reservation_id>42459487</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-10-07T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-10-07T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-10-07T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2015-10-07T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-10-07T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-10-07T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NDg3" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459488" id="ChJDNDI0NTk0ODg=" crc="00000021" status="est">
+<r25:reservation_id>42459488</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-10-08T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-10-08T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-10-08T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2015-10-08T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-10-08T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-10-08T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NDg4" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459489" id="ChJDNDI0NTk0ODk=" crc="00000021" status="est">
+<r25:reservation_id>42459489</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-10-09T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-10-09T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-10-09T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2015-10-09T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-10-09T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-10-09T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NDg5" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459490" id="ChJDNDI0NTk0OTA=" crc="00000021" status="est">
+<r25:reservation_id>42459490</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-10-12T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-10-12T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-10-12T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2015-10-12T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-10-12T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-10-12T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NDkw" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459491" id="ChJDNDI0NTk0OTE=" crc="00000021" status="est">
+<r25:reservation_id>42459491</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-10-13T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-10-13T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-10-13T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2015-10-13T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-10-13T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-10-13T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NDkx" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459492" id="ChJDNDI0NTk0OTI=" crc="00000021" status="est">
+<r25:reservation_id>42459492</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-10-14T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-10-14T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-10-14T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2015-10-14T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-10-14T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-10-14T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NDky" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459493" id="ChJDNDI0NTk0OTM=" crc="00000021" status="est">
+<r25:reservation_id>42459493</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-10-15T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-10-15T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-10-15T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2015-10-15T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-10-15T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-10-15T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NDkz" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459494" id="ChJDNDI0NTk0OTQ=" crc="00000021" status="est">
+<r25:reservation_id>42459494</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-10-16T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-10-16T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-10-16T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2015-10-16T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-10-16T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-10-16T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NDk0" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459495" id="ChJDNDI0NTk0OTU=" crc="00000021" status="est">
+<r25:reservation_id>42459495</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-10-19T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-10-19T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-10-19T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2015-10-19T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-10-19T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-10-19T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NDk1" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459496" id="ChJDNDI0NTk0OTY=" crc="00000021" status="est">
+<r25:reservation_id>42459496</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-10-20T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-10-20T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-10-20T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2015-10-20T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-10-20T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-10-20T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NDk2" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459497" id="ChJDNDI0NTk0OTc=" crc="00000021" status="est">
+<r25:reservation_id>42459497</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-10-21T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-10-21T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-10-21T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2015-10-21T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-10-21T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-10-21T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NDk3" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459498" id="ChJDNDI0NTk0OTg=" crc="00000021" status="est">
+<r25:reservation_id>42459498</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-10-22T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-10-22T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-10-22T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2015-10-22T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-10-22T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-10-22T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NDk4" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459499" id="ChJDNDI0NTk0OTk=" crc="00000021" status="est">
+<r25:reservation_id>42459499</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-10-23T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-10-23T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-10-23T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2015-10-23T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-10-23T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-10-23T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NDk5" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459500" id="ChJDNDI0NTk1MDA=" crc="00000021" status="est">
+<r25:reservation_id>42459500</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-10-26T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-10-26T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-10-26T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2015-10-26T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-10-26T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-10-26T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTAw" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459501" id="ChJDNDI0NTk1MDE=" crc="00000021" status="est">
+<r25:reservation_id>42459501</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-10-27T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-10-27T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-10-27T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2015-10-27T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-10-27T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-10-27T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTAx" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459502" id="ChJDNDI0NTk1MDI=" crc="00000021" status="est">
+<r25:reservation_id>42459502</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-10-28T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-10-28T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-10-28T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2015-10-28T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-10-28T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-10-28T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTAy" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459503" id="ChJDNDI0NTk1MDM=" crc="00000021" status="est">
+<r25:reservation_id>42459503</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-10-29T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-10-29T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-10-29T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2015-10-29T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-10-29T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-10-29T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTAz" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459504" id="ChJDNDI0NTk1MDQ=" crc="00000021" status="est">
+<r25:reservation_id>42459504</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-10-30T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-10-30T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-10-30T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2015-10-30T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-10-30T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-10-30T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTA0" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459505" id="ChJDNDI0NTk1MDU=" crc="00000021" status="est">
+<r25:reservation_id>42459505</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-11-02T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-11-02T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-11-02T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-11-02T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-11-02T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-11-02T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTA1" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459506" id="ChJDNDI0NTk1MDY=" crc="00000021" status="est">
+<r25:reservation_id>42459506</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-11-03T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-11-03T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-11-03T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-11-03T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-11-03T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-11-03T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTA2" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459507" id="ChJDNDI0NTk1MDc=" crc="00000021" status="est">
+<r25:reservation_id>42459507</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-11-04T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-11-04T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-11-04T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-11-04T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-11-04T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-11-04T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTA3" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459508" id="ChJDNDI0NTk1MDg=" crc="00000021" status="est">
+<r25:reservation_id>42459508</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-11-05T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-11-05T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-11-05T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-11-05T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-11-05T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-11-05T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTA4" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459509" id="ChJDNDI0NTk1MDk=" crc="00000021" status="est">
+<r25:reservation_id>42459509</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-11-06T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-11-06T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-11-06T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-11-06T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-11-06T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-11-06T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTA5" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459510" id="ChJDNDI0NTk1MTA=" crc="00000021" status="est">
+<r25:reservation_id>42459510</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-11-09T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-11-09T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-11-09T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-11-09T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-11-09T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-11-09T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTEw" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459511" id="ChJDNDI0NTk1MTE=" crc="00000021" status="est">
+<r25:reservation_id>42459511</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-11-10T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-11-10T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-11-10T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-11-10T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-11-10T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-11-10T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTEx" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459512" id="ChJDNDI0NTk1MTI=" crc="00000021" status="est">
+<r25:reservation_id>42459512</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-11-11T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-11-11T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-11-11T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-11-11T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-11-11T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-11-11T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTEy" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459513" id="ChJDNDI0NTk1MTM=" crc="00000021" status="est">
+<r25:reservation_id>42459513</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-11-12T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-11-12T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-11-12T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-11-12T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-11-12T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-11-12T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTEz" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459514" id="ChJDNDI0NTk1MTQ=" crc="00000021" status="est">
+<r25:reservation_id>42459514</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-11-13T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-11-13T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-11-13T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-11-13T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-11-13T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-11-13T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTE0" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459515" id="ChJDNDI0NTk1MTU=" crc="00000021" status="est">
+<r25:reservation_id>42459515</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-11-16T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-11-16T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-11-16T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-11-16T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-11-16T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-11-16T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTE1" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459516" id="ChJDNDI0NTk1MTY=" crc="00000021" status="est">
+<r25:reservation_id>42459516</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-11-17T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-11-17T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-11-17T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-11-17T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-11-17T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-11-17T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTE2" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459517" id="ChJDNDI0NTk1MTc=" crc="00000021" status="est">
+<r25:reservation_id>42459517</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-11-18T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-11-18T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-11-18T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-11-18T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-11-18T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-11-18T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTE3" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459518" id="ChJDNDI0NTk1MTg=" crc="00000021" status="est">
+<r25:reservation_id>42459518</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-11-19T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-11-19T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-11-19T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-11-19T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-11-19T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-11-19T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTE4" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459519" id="ChJDNDI0NTk1MTk=" crc="00000021" status="est">
+<r25:reservation_id>42459519</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-11-20T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-11-20T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-11-20T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-11-20T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-11-20T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-11-20T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTE5" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459520" id="ChJDNDI0NTk1MjA=" crc="00000021" status="est">
+<r25:reservation_id>42459520</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-11-23T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-11-23T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-11-23T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-11-23T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-11-23T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-11-23T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTIw" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459521" id="ChJDNDI0NTk1MjE=" crc="00000021" status="est">
+<r25:reservation_id>42459521</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-11-24T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-11-24T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-11-24T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-11-24T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-11-24T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-11-24T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTIx" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459522" id="ChJDNDI0NTk1MjI=" crc="00000021" status="est">
+<r25:reservation_id>42459522</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-11-25T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-11-25T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-11-25T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-11-25T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-11-25T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-11-25T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTIy" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459523" id="ChJDNDI0NTk1MjM=" crc="00000021" status="est">
+<r25:reservation_id>42459523</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-11-26T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-11-26T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-11-26T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-11-26T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-11-26T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-11-26T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTIz" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459524" id="ChJDNDI0NTk1MjQ=" crc="00000021" status="est">
+<r25:reservation_id>42459524</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-11-27T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-11-27T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-11-27T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-11-27T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-11-27T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-11-27T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTI0" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459525" id="ChJDNDI0NTk1MjU=" crc="00000021" status="est">
+<r25:reservation_id>42459525</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-11-30T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-11-30T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-11-30T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-11-30T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-11-30T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-11-30T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTI1" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459526" id="ChJDNDI0NTk1MjY=" crc="00000021" status="est">
+<r25:reservation_id>42459526</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-12-01T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-12-01T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-12-01T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-12-01T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-12-01T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-12-01T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTI2" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459527" id="ChJDNDI0NTk1Mjc=" crc="00000021" status="est">
+<r25:reservation_id>42459527</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-12-02T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-12-02T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-12-02T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-12-02T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-12-02T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-12-02T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTI3" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459528" id="ChJDNDI0NTk1Mjg=" crc="00000021" status="est">
+<r25:reservation_id>42459528</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-12-03T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-12-03T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-12-03T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-12-03T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-12-03T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-12-03T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTI4" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459529" id="ChJDNDI0NTk1Mjk=" crc="00000021" status="est">
+<r25:reservation_id>42459529</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-12-04T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-12-04T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-12-04T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-12-04T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-12-04T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-12-04T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTI5" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459530" id="ChJDNDI0NTk1MzA=" crc="00000021" status="est">
+<r25:reservation_id>42459530</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-12-07T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-12-07T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-12-07T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-12-07T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-12-07T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-12-07T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTMw" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459531" id="ChJDNDI0NTk1MzE=" crc="00000021" status="est">
+<r25:reservation_id>42459531</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-12-08T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-12-08T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-12-08T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-12-08T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-12-08T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-12-08T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTMx" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459532" id="ChJDNDI0NTk1MzI=" crc="00000021" status="est">
+<r25:reservation_id>42459532</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-12-09T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-12-09T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-12-09T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-12-09T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-12-09T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-12-09T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTMy" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459533" id="ChJDNDI0NTk1MzM=" crc="00000021" status="est">
+<r25:reservation_id>42459533</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-12-10T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-12-10T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-12-10T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-12-10T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-12-10T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-12-10T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTMz" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459534" id="ChJDNDI0NTk1MzQ=" crc="00000021" status="est">
+<r25:reservation_id>42459534</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-12-11T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-12-11T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-12-11T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-12-11T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-12-11T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-12-11T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NTM0" crc="00000024" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+</r25:profile>
+<r25:profile id="CSJDMjA1Mjk2OAgSQzY1NjYyNg==" crc="00000021" status="est">
+<r25:profile_id xl:href="ev_profile.xml?profile_id=2052968">2052968</r25:profile_id>
+<r25:profile_name>FINAL</r25:profile_name>
+<r25:profile_code/>
+<r25:profile_description>From 02:30 PM to 04:20 PM
+ on MON DEC/14/2015.</r25:profile_description>
+<r25:prof_use>1</r25:prof_use>
+<r25:prof_use_name>Reservation</r25:prof_use_name>
+<r25:expected_count>440</r25:expected_count>
+<r25:registered_count/>
+<r25:rec_type_id>0</r25:rec_type_id>
+<r25:rec_type_name>Single Date/Time</r25:rec_type_name>
+<r25:pre_event/>
+<r25:post_event/>
+<r25:profile_comments/>
+<r25:init_start_dt>2015-12-14T14:30:00-08:00</r25:init_start_dt>
+<r25:init_end_dt>2015-12-14T16:20:00-08:00</r25:init_end_dt>
+<r25:space_pref status="est">
+<r25:sp_query_id>1866450</r25:sp_query_id>
+</r25:space_pref>
+<r25:binding_reservation id="VE1QOjI4RkFGRTFBLTVGNTYtNDc5Ny1CQzk0LTVDRjg5NkU1QTRGQg==" status="est">
+<r25:primary_reservation>2052966</r25:primary_reservation>
+<r25:bound_name>PSYCH 101 A/LECTURE</r25:bound_name>
+<r25:bound_event_id>656626</r25:bound_event_id>
+<r25:bound_reservation_id>2052966</r25:bound_reservation_id>
+</r25:binding_reservation>
+<r25:binding_reservation id="VE1QOjgyOTdGNkU1LUNBNUItNDIyMC1BRUVBLTAzMUJGNkNGRDE1Nw==" status="est">
+<r25:primary_reservation>2052966</r25:primary_reservation>
+<r25:bound_name>PSYCH 101 D/LECTURE</r25:bound_name>
+<r25:bound_event_id>656627</r25:bound_event_id>
+<r25:bound_reservation_id>2052967</r25:bound_reservation_id>
+</r25:binding_reservation>
+<r25:binding_reservation id="VE1QOjI2QjBGREIyLURENTItNDkxNy05ODUyLTBGQzZFRURDOTNENw==" status="est">
+<r25:primary_reservation>2052966</r25:primary_reservation>
+<r25:bound_name>PSYCH 101 D/FINAL</r25:bound_name>
+<r25:bound_event_id>656627</r25:bound_event_id>
+<r25:bound_reservation_id>2052969</r25:bound_reservation_id>
+</r25:binding_reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459622" id="ChJDNDI0NTk2MjI=" crc="00000021" status="est">
+<r25:reservation_id>42459622</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-12-14T14:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2015-12-14T16:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2015-12-14T14:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-12-14T16:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2015-12-14T14:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2015-12-14T16:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNjA2MAoSQzQyNDU5NjIy" crc="00000022" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space xl:href="space.xml?space_id=6060" id="BhJDNjA2MA==" crc="00000022" status="est">
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>345</r25:max_capacity>
+<r25:partition_name>East Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>440</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+</r25:profile>
+<r25:event_history id="AyJDMQgSQzY1NjYyNgMyQzE=" crc="00000021" status="est">
+<r25:history_type_id>1</r25:history_type_id>
+<r25:history_type_name>State</r25:history_type_name>
+<r25:history_sequence>1</r25:history_sequence>
+<r25:history_dt>2015-03-04T19:33:47-08:00</r25:history_dt>
+<r25:event_state_id>1</r25:event_state_id>
+<r25:event_state_name>Tentative</r25:event_state_name>
+</r25:event_history>
+<r25:event_history id="AyJDNAgSQzY1NjYyNgMyQzE=" crc="00000021" status="est">
+<r25:history_type_id>4</r25:history_type_id>
+<r25:history_type_name>Bill Date (for pricing)</r25:history_type_name>
+<r25:history_sequence>1</r25:history_sequence>
+<r25:history_dt>2015-03-04T00:00:00-08:00</r25:history_dt>
+<r25:event_state_id/>
+<r25:event_state_name/>
+</r25:event_history>
+<r25:todo id="CRJDMjUxMTQxOQ==" crc="00000022" status="est">
+<r25:todo_id>2511419</r25:todo_id>
+<r25:cur_todo_state>99</r25:cur_todo_state>
+<r25:todo_name>Needs space</r25:todo_name>
+<r25:todo_type>101</r25:todo_type>
+<r25:todo_type_name>vCal Space Needed</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2015-03-04T00:00:00-08:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>T</r25:read>
+<r25:completed_dt>2015-03-12T00:00:00-07:00</r25:completed_dt>
+<r25:comment_id>1689256</r25:comment_id>
+<r25:todo_description>Version 1</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2015-03-04T20:56:43-08:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+<r25:todo_history>
+<r25:history_todo_date>2015-03-12T15:57:27-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>99</r25:history_todo_state>
+<r25:history_todo_state_name>Cancelled</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjUxMTQyMA==" crc="00000023" status="est">
+<r25:todo_id>2511420</r25:todo_id>
+<r25:cur_todo_state>99</r25:cur_todo_state>
+<r25:todo_name>Export COUNTER</r25:todo_name>
+<r25:todo_type>103</r25:todo_type>
+<r25:todo_type_name>vCal Event Modification</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2015-03-04T00:00:00-08:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>T</r25:read>
+<r25:completed_dt>2015-03-12T00:00:00-07:00</r25:completed_dt>
+<r25:comment_id>1689257</r25:comment_id>
+<r25:todo_description>Version 1</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2015-03-04T20:56:43-08:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+<r25:todo_history>
+<r25:history_todo_date>2015-03-12T15:57:27-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>99</r25:history_todo_state>
+<r25:history_todo_state_name>Cancelled</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjUxOTc2Nw==" crc="00000022" status="est">
+<r25:todo_id>2519767</r25:todo_id>
+<r25:cur_todo_state>99</r25:cur_todo_state>
+<r25:todo_name>Export COUNTER</r25:todo_name>
+<r25:todo_type>103</r25:todo_type>
+<r25:todo_type_name>vCal Event Modification</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2015-03-12T00:00:00-07:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>T</r25:read>
+<r25:completed_dt>2015-03-12T00:00:00-07:00</r25:completed_dt>
+<r25:comment_id>1700969</r25:comment_id>
+<r25:todo_description>Version 2</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2015-03-12T15:56:37-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+<r25:todo_history>
+<r25:history_todo_date>2015-03-12T15:57:27-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>99</r25:history_todo_state>
+<r25:history_todo_state_name>Cancelled</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjUxOTc2OA==" crc="00000023" status="est">
+<r25:todo_id>2519768</r25:todo_id>
+<r25:cur_todo_state>99</r25:cur_todo_state>
+<r25:todo_name>Export REPLY</r25:todo_name>
+<r25:todo_type>100</r25:todo_type>
+<r25:todo_type_name>vCal Import</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2015-03-12T00:00:00-07:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>T</r25:read>
+<r25:completed_dt>2015-03-12T00:00:00-07:00</r25:completed_dt>
+<r25:comment_id>1700970</r25:comment_id>
+<r25:todo_description>Version 3</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2015-03-12T15:56:55-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+<r25:todo_history>
+<r25:history_todo_date>2015-03-12T16:03:48-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>99</r25:history_todo_state>
+<r25:history_todo_state_name>Cancelled</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjUxOTc3Mw==" crc="00000022" status="est">
+<r25:todo_id>2519773</r25:todo_id>
+<r25:cur_todo_state>99</r25:cur_todo_state>
+<r25:todo_name>Headcount too large</r25:todo_name>
+<r25:todo_type>102</r25:todo_type>
+<r25:todo_type_name>vCal HeadCount Adjustment</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2015-03-12T00:00:00-07:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>T</r25:read>
+<r25:completed_dt>2015-03-12T00:00:00-07:00</r25:completed_dt>
+<r25:comment_id>1700973</r25:comment_id>
+<r25:todo_description>Version 3</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2015-03-12T15:57:28-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+<r25:todo_history>
+<r25:history_todo_date>2015-03-12T16:03:48-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>99</r25:history_todo_state>
+<r25:history_todo_state_name>Cancelled</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjUxOTgwNw==" crc="00000022" status="est">
+<r25:todo_id>2519807</r25:todo_id>
+<r25:cur_todo_state>1</r25:cur_todo_state>
+<r25:todo_name>Export REPLY</r25:todo_name>
+<r25:todo_type>100</r25:todo_type>
+<r25:todo_type_name>vCal Import</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2015-03-12T00:00:00-07:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>F</r25:read>
+<r25:completed_dt/>
+<r25:comment_id>1701030</r25:comment_id>
+<r25:todo_description>No vCalendar properties have been modified since import.</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2015-03-12T16:03:16-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjUxOTgwOQ==" crc="00000021" status="est">
+<r25:todo_id>2519809</r25:todo_id>
+<r25:cur_todo_state>1</r25:cur_todo_state>
+<r25:todo_name>Headcount too large</r25:todo_name>
+<r25:todo_type>102</r25:todo_type>
+<r25:todo_type_name>vCal HeadCount Adjustment</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2015-03-12T00:00:00-07:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>F</r25:read>
+<r25:completed_dt/>
+<r25:comment_id>1701032</r25:comment_id>
+<r25:todo_description>Current headcount exceeds the capacity of assigned spaces.</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2015-03-12T16:03:48-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:role id="CBJDNjU2NjI2BCJDLTI=" crc="00000021" status="est">
+<r25:role_id>-2</r25:role_id>
+<r25:role_name>Scheduler</r25:role_name>
+<r25:contact xl:href="contact.xml?contact_id=3310" id="BhJDMzMxMA==" crc="00000023" status="est">
+<r25:contact_id>3310</r25:contact_id>
+<r25:contact_name>IMPORT PROCESS</r25:contact_name>
+<r25:formatted_address/>
+<r25:phone/>
+<r25:fax/>
+<r25:email>times@u.washington.edu</r25:email>
+</r25:contact>
+</r25:role>
+</r25:event>
+</r25:events>
+

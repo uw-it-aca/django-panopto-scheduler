@@ -1,0 +1,118 @@
+{% load templatetag_handlebars %}
+
+
+{% tplhandlebars "schedule-button-partial" %}
+
+<div class="schedule-button-cluster {{#unless is_recorded}}{{#if recording_is_public}}is-public {{/if}}{{#if recording_is_broadcast}}is-webcast {{/if}}{{#unless full_duration}}partial-duration{{/unless}} {{#if disabled}}disabled{{/if}}{{/unless}}">
+     <!-- duration status --> 
+        <span class="schedule-duration" title="Recording time is less than class session duration"><span>{{ recording_time }}</span>
+        <i class="fa fa-clock-o"></i></span>
+    <!-- public status --> 
+        <span class="schedule-public" data-toggle="tooltip" title="Share recording with the world" ><i class="fa fa-globe"></i></span>
+    <!-- live streaming status --> 
+        <span class="schedule-webcast" data-toggle="tooltip" title="Stream live while recording"><i class="fa fa-rss fa-rotate-225"></i><i class="fa fa-rss fa-rotate-45"></i></span>
+    <!-- loading status -->     
+        <span class="loading"><i class="fa fa-spinner fa-spin"></i></span>
+    <!-- end status icons --> 
+    
+    
+    <!-- container for scheduler button, toggle, and resulting modal --> 
+    <div class="btn-group  {{#if is_recorded}}is_recorded{{else}}{{#if is_recording}}is_recording{{else}}{{#if can_record}}can-record{{else}}{{#if recording_id}}scheduled{{else}}unscheduled{{/if}}{{/if}}{{/if}}{{/if}}" {{#if recording_name}}data-recording-name="{{ recording_name }}"{{/if}}>
+        
+        <!-- scheduler button --> 
+        <button class="btn has-spinner" {{disabled}}>
+            <span class="text scheduled option-help" id="text" data-toggle="tooltip" title="Cancel this scheduled recording"><i class="glyphicon glyphicon-ok"></i> Scheduled</span>
+            <span class="text unscheduled option-help" id="text" data-toggle="tooltip" title="Schedule this session">Schedule</span>
+            <span class="text schedule-all option-help" id="text" data-toggle="tooltip" title="Schedule all sessions">Schedule All</span>
+            <span class="text recordable option-help" id="text" data-toggle="tooltip" title="Start recording the current session now"><i class="fa fa-microphone"></i>Record Now</span>
+            <span class="text recording option-help" id="text" data-toggle="tooltip" title="Stop recording the current session"><i class="fa fa-microphone"></i>Recording</span>
+            <span class="text recorded" id="text" data-toggle="tooltip" title="Session is recorded"><i class="fa fa-microphone"></i>Recorded</span>
+        </button>
+        <!-- end scheduler button --> 
+      
+        <!-- container for toggle and modal --> 
+        <div class="dropdown-container dropdown" style="display: inline-block;">
+            
+            <!-- button and modal toggle -->   
+            <button class="btn dropdown-toggle" {{disabled}} data-toggle="dropdown" data-placeholder="false">
+                <span data-toggle="tooltip" title="Open dropdown containing settings for this recording">
+                    <i class="fa fa-gear fa-2x"></i>
+                </span>
+                <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <!-- end toggle and modal --> 
+
+      
+            <!-- recording settings modal -->
+            <div class="dropdown-menu pull-right" role="menu">
+              <span class="title">Recording settings</span>
+            <ul>
+                <li class="divider"></li> 
+                <li>
+                  <div>
+                  <div class="webcast-indicator fa-stack"><i class="fa fa-rss fa-rotate-225"></i><i class="fa fa-rss fa-rotate-45"></i></div>
+                  Live streaming
+                  <span class="pull-right"><label><input type="radio" name="webcast_{{@index}}" value="1"> On</label><label><input type="radio" name="webcast_{{@index}}" value="0" checked> Off</label></span>
+                  </div>
+                  <div class="setting-description">
+                    Turn on to broadcast live (with a short processing delay).
+                  </div>
+                </li>
+                <!-- Enable when service manager requests feature
+                <li>
+                  <div>
+                  <div class="public-indicator"><i class="fa fa-globe fa-fw"></i></div>
+                  Public Availability
+                  <span class="pull-right"><label><input type="radio" name="public_{{@index}}" value="1"> On</label><label><input type="radio" name="public_{{@index}}" value="0" checked> Off</label></span>
+                  </div>
+                  <div class="setting-description">
+                    Turn on to allow anyone on the internet with the link to access the recording.
+                  </div>
+                </li> -->
+                <li>
+                  <div>
+                  <div class="partial-indicator"><i class="fa fa-clock-o fa-fw"></div></i>
+                  Recording duration
+                  </div>
+                  <div class="setting-description">
+                    Adjust the start and/or end time of the recording.  Default is entire class session.
+                  </div>
+                  <div class="slider-box">
+                    <input type="text" value=""/><span class="start-time"></span><span class="end-time pull-right"></span>
+                  </div>
+                </li>
+          </ul>
+          </div>
+          <!-- end recording settings modal --> 
+      
+        </div>
+        <!-- end container for toggle and modal --> 
+    
+    </div>
+    <!-- end container for scheduler button, toggle, and resulting modal --> 
+</div>
+
+{% endtplhandlebars %}
+
+{% tplhandlebars "ajax-fail-tmpl" %}
+<div class="modal fade" id="failure-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <!-- Failure modal -->
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h3 class="modal-title" id="myModalLabel">{{ failure_title }}</h3>
+      </div>
+      <div class="modal-body">
+		<p>{{{ failure_message }}}</p>
+		<div style="display: none;">
+          {{ full_failure_message }}
+		</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endtplhandlebars %}

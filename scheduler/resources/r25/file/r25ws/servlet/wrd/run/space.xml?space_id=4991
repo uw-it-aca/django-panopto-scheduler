@@ -1,0 +1,259 @@
+<?xml version="1.0"?>
+<r25:spaces xmlns:r25="http://www.collegenet.com/r25" xmlns:xl="http://www.w3.org/1999/xlink" pubdate="2015-09-29T10:50:31-07:00">
+<r25:space xl:href="space.xml?space_id=4991" id="BhSD35WWQ==" crc="00000033" status="est">
+<r25:space_id>4991</r25:space_id>
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:favorite>F</r25:favorite>
+<r25:partition_id xl:href="rmpart.xml?partition_id=107">107</r25:partition_id>
+<r25:partition_name>Kane</r25:partition_name>
+<r25:fill_ratio/>
+<r25:schedule_perm>F</r25:schedule_perm>
+<r25:edit_perm>F</r25:edit_perm>
+<r25:assign_perm>F</r25:assign_perm>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:comment_id/>
+<r25:comments/>
+<r25:instruction_id/>
+<r25:instructions/>
+<r25:last_mod_user>javerage</r25:last_mod_user>
+<r25:last_mod_dt>2006-06-21T15:05:51-07:00</r25:last_mod_dt>
+<r25:feature xl:href="rmfeat.xml?feature_id=126" crc="00000021" status="est">
+<r25:feature_id>126</r25:feature_id>
+<r25:feature_name>2'-6" X 5' Table</r25:feature_name>
+<r25:quantity>1</r25:quantity>
+<r25:feature_defn_state>1</r25:feature_defn_state>
+</r25:feature>
+<r25:feature xl:href="rmfeat.xml?feature_id=110" crc="00000021" status="est">
+<r25:feature_id>110</r25:feature_id>
+<r25:feature_name>Air Conditioning</r25:feature_name>
+<r25:quantity>1</r25:quantity>
+<r25:feature_defn_state>1</r25:feature_defn_state>
+</r25:feature>
+<r25:feature xl:href="rmfeat.xml?feature_id=143" crc="00000021" status="est">
+<r25:feature_id>143</r25:feature_id>
+<r25:feature_name>Carpeting</r25:feature_name>
+<r25:quantity>1</r25:quantity>
+<r25:feature_defn_state>1</r25:feature_defn_state>
+</r25:feature>
+<r25:feature xl:href="rmfeat.xml?feature_id=121" crc="00000021" status="est">
+<r25:feature_id>121</r25:feature_id>
+<r25:feature_name>Chairs - Plain Movable</r25:feature_name>
+<r25:quantity>1</r25:quantity>
+<r25:feature_defn_state>1</r25:feature_defn_state>
+</r25:feature>
+<r25:feature xl:href="rmfeat.xml?feature_id=134" crc="00000021" status="est">
+<r25:feature_id>134</r25:feature_id>
+<r25:feature_name>Ethernet Connection (S/Hsb)</r25:feature_name>
+<r25:quantity>1</r25:quantity>
+<r25:feature_defn_state>1</r25:feature_defn_state>
+</r25:feature>
+<r25:feature xl:href="rmfeat.xml?feature_id=112" crc="00000021" status="est">
+<r25:feature_id>112</r25:feature_id>
+<r25:feature_name>Fixed Furniture (S)</r25:feature_name>
+<r25:quantity>1</r25:quantity>
+<r25:feature_defn_state>1</r25:feature_defn_state>
+</r25:feature>
+<r25:feature xl:href="rmfeat.xml?feature_id=122" crc="00000021" status="est">
+<r25:feature_id>122</r25:feature_id>
+<r25:feature_name>Instructors Chair</r25:feature_name>
+<r25:quantity>1</r25:quantity>
+<r25:feature_defn_state>1</r25:feature_defn_state>
+</r25:feature>
+<r25:feature xl:href="rmfeat.xml?feature_id=158" crc="00000021" status="est">
+<r25:feature_id>158</r25:feature_id>
+<r25:feature_name>Lectern/Podium/Stand (S)</r25:feature_name>
+<r25:quantity>1</r25:quantity>
+<r25:feature_defn_state>1</r25:feature_defn_state>
+</r25:feature>
+<r25:feature xl:href="rmfeat.xml?feature_id=114" crc="00000021" status="est">
+<r25:feature_id>114</r25:feature_id>
+<r25:feature_name>No Windows (S)</r25:feature_name>
+<r25:quantity>1</r25:quantity>
+<r25:feature_defn_state>1</r25:feature_defn_state>
+</r25:feature>
+<r25:feature xl:href="rmfeat.xml?feature_id=232" crc="00000021" status="est">
+<r25:feature_id>232</r25:feature_id>
+<r25:feature_name>Podcasting Capable (S/Hsb)</r25:feature_name>
+<r25:quantity>1</r25:quantity>
+<r25:feature_defn_state>1</r25:feature_defn_state>
+</r25:feature>
+<r25:feature xl:href="rmfeat.xml?feature_id=148" crc="00000022" status="est">
+<r25:feature_id>148</r25:feature_id>
+<r25:feature_name>Screen  (S/B/Hsb)</r25:feature_name>
+<r25:quantity>2</r25:quantity>
+<r25:feature_defn_state>1</r25:feature_defn_state>
+</r25:feature>
+<r25:feature xl:href="rmfeat.xml?feature_id=233" crc="00000021" status="est">
+<r25:feature_id>233</r25:feature_id>
+<r25:feature_name>Screencasting Capable (S)</r25:feature_name>
+<r25:quantity>1</r25:quantity>
+<r25:feature_defn_state>1</r25:feature_defn_state>
+</r25:feature>
+<r25:feature xl:href="rmfeat.xml?feature_id=120" crc="00000021" status="est">
+<r25:feature_id>120</r25:feature_id>
+<r25:feature_name>Stepped Floor (S)</r25:feature_name>
+<r25:quantity>1</r25:quantity>
+<r25:feature_defn_state>1</r25:feature_defn_state>
+</r25:feature>
+<r25:feature xl:href="rmfeat.xml?feature_id=193" crc="00000021" status="est">
+<r25:feature_id>193</r25:feature_id>
+<r25:feature_name>Stereo Sound (S)</r25:feature_name>
+<r25:quantity>1</r25:quantity>
+<r25:feature_defn_state>1</r25:feature_defn_state>
+</r25:feature>
+<r25:feature xl:href="rmfeat.xml?feature_id=146" crc="00000021" status="est">
+<r25:feature_id>146</r25:feature_id>
+<r25:feature_name>Sub-lighting/Note Lights (S)</r25:feature_name>
+<r25:quantity>1</r25:quantity>
+<r25:feature_defn_state>1</r25:feature_defn_state>
+</r25:feature>
+<r25:feature xl:href="rmfeat.xml?feature_id=113" crc="00000023" status="est">
+<r25:feature_id>113</r25:feature_id>
+<r25:feature_name>Tablet Armchairs - Fixed To Floor (S)</r25:feature_name>
+<r25:quantity>440</r25:quantity>
+<r25:feature_defn_state>1</r25:feature_defn_state>
+</r25:feature>
+<r25:feature xl:href="rmfeat.xml?feature_id=199" crc="00000021" status="est">
+<r25:feature_id>199</r25:feature_id>
+<r25:feature_name>Wheelchair Table (S)</r25:feature_name>
+<r25:quantity>1</r25:quantity>
+<r25:feature_defn_state>1</r25:feature_defn_state>
+</r25:feature>
+<r25:category xl:href="rmcat.xml?category_id=186" crc="00000021" status="est">
+<r25:category_id>186</r25:category_id>
+<r25:category_name>110 - General Classroom (Central Assignment)</r25:category_name>
+<r25:category_defn_state>1</r25:category_defn_state>
+</r25:category>
+<r25:category xl:href="rmcat.xml?category_id=160" crc="00000021" status="est">
+<r25:category_id>160</r25:category_id>
+<r25:category_name>Humanities</r25:category_name>
+<r25:category_defn_state>1</r25:category_defn_state>
+</r25:category>
+<r25:category xl:href="rmcat.xml?category_id=162" crc="00000021" status="est">
+<r25:category_id>162</r25:category_id>
+<r25:category_name>Physical Sciences</r25:category_name>
+<r25:category_defn_state>1</r25:category_defn_state>
+</r25:category>
+<r25:category xl:href="rmcat.xml?category_id=167" crc="00000021" status="est">
+<r25:category_id>167</r25:category_id>
+<r25:category_name>Seattle Campus -- All</r25:category_name>
+<r25:category_defn_state>1</r25:category_defn_state>
+</r25:category>
+<r25:category xl:href="rmcat.xml?category_id=384" crc="00000021" status="est">
+<r25:category_id>384</r25:category_id>
+<r25:category_name>Seattle Campus -- Upper Campus</r25:category_name>
+<r25:category_defn_state>1</r25:category_defn_state>
+</r25:category>
+<r25:category xl:href="rmcat.xml?category_id=187" crc="00000021" status="est">
+<r25:category_id>187</r25:category_id>
+<r25:category_name>Shared Scheduling</r25:category_name>
+<r25:category_defn_state>1</r25:category_defn_state>
+</r25:category>
+<r25:category xl:href="rmcat.xml?category_id=161" crc="00000021" status="est">
+<r25:category_id>161</r25:category_id>
+<r25:category_name>Social Sciences</r25:category_name>
+<r25:category_defn_state>1</r25:category_defn_state>
+</r25:category>
+<r25:category xl:href="rmcat.xml?category_id=238" crc="00000021" status="est">
+<r25:category_id>238</r25:category_id>
+<r25:category_name>2820011010 - Genl Assign Classrooms</r25:category_name>
+<r25:category_defn_state>1</r25:category_defn_state>
+</r25:category>
+<r25:layout xl:href="rmconf.xml?conf_id=2" crc="0000002E" status="est">
+<r25:layout_id>2</r25:layout_id>
+<r25:default_layout>T</r25:default_layout>
+<r25:layout_name>Auditorium</r25:layout_name>
+<r25:layout_capacity>444</r25:layout_capacity>
+<r25:layout_ratio/>
+<r25:layout_photo_id/>
+<r25:layout_photo_type/>
+<r25:layout_photo_glyph/>
+<r25:layout_photo_name/>
+<r25:layout_diagram_id/>
+<r25:layout_diagram_type/>
+<r25:layout_diagram_glyph/>
+<r25:layout_diagram_name/>
+<r25:layout_description_id/>
+<r25:layout_description/>
+<r25:layout_instruction_id/>
+<r25:layout_instruction/>
+<r25:layout_defn_state>1</r25:layout_defn_state>
+</r25:layout>
+<r25:custom_attribute xl:href="rmat.xml?attribute_id=-12" id="BSJDLTEyBhJDNDk5MQ==" crc="00000021" status="est">
+<r25:attribute_id>-12</r25:attribute_id>
+<r25:attribute_name>X25 Assignable Area</r25:attribute_name>
+<r25:attribute_type>N</r25:attribute_type>
+<r25:attribute_type_name>Integer</r25:attribute_type_name>
+<r25:attribute_value>5923</r25:attribute_value>
+<r25:attribute_defn_state>1</r25:attribute_defn_state>
+</r25:custom_attribute>
+<r25:custom_attribute xl:href="rmat.xml?attribute_id=33" id="BCJDMzMGEkM0OTkx" crc="00000021" status="est">
+<r25:attribute_id>33</r25:attribute_id>
+<r25:attribute_name>Lectern/Podium/Stand</r25:attribute_name>
+<r25:attribute_type>S</r25:attribute_type>
+<r25:attribute_type_name>Text</r25:attribute_type_name>
+<r25:attribute_value>Electronic Fixed to Floor (AMX)</r25:attribute_value>
+<r25:attribute_defn_state>1</r25:attribute_defn_state>
+</r25:custom_attribute>
+<r25:custom_attribute xl:href="rmat.xml?attribute_id=12" id="BCJDMTIGEkM0OTkx" crc="00000021" status="est">
+<r25:attribute_id>12</r25:attribute_id>
+<r25:attribute_name>Lefthanded Chairs</r25:attribute_name>
+<r25:attribute_type>N</r25:attribute_type>
+<r25:attribute_type_name>Integer</r25:attribute_type_name>
+<r25:attribute_value>45</r25:attribute_value>
+<r25:attribute_defn_state>1</r25:attribute_defn_state>
+</r25:custom_attribute>
+<r25:custom_attribute xl:href="rmat.xml?attribute_id=10" id="BCJDMTAGEkM0OTkx" crc="00000021" status="est">
+<r25:attribute_id>10</r25:attribute_id>
+<r25:attribute_name>Wheelchair Seating</r25:attribute_name>
+<r25:attribute_type>S</r25:attribute_type>
+<r25:attribute_type_name>Text</r25:attribute_type_name>
+<r25:attribute_value>1</r25:attribute_value>
+<r25:attribute_defn_state>1</r25:attribute_defn_state>
+</r25:custom_attribute>
+<r25:hours id="AyJDMQYSQzQ5OTE=" crc="00000038" status="est">
+<r25:day_id>1</r25:day_id>
+<r25:day_name>Monday</r25:day_name>
+<r25:open>00:01:00</r25:open>
+<r25:close>23:59:00</r25:close>
+</r25:hours>
+<r25:hours id="AyJDMgYSQzQ5OTE=" crc="00000038" status="est">
+<r25:day_id>2</r25:day_id>
+<r25:day_name>Tuesday</r25:day_name>
+<r25:open>00:01:00</r25:open>
+<r25:close>23:59:00</r25:close>
+</r25:hours>
+<r25:hours id="AyJDMwYSQzQ5OTE=" crc="00000038" status="est">
+<r25:day_id>3</r25:day_id>
+<r25:day_name>Wednesday</r25:day_name>
+<r25:open>00:01:00</r25:open>
+<r25:close>23:59:00</r25:close>
+</r25:hours>
+<r25:hours id="AyJDNAYSQzQ5OTE=" crc="00000038" status="est">
+<r25:day_id>4</r25:day_id>
+<r25:day_name>Thursday</r25:day_name>
+<r25:open>00:01:00</r25:open>
+<r25:close>23:59:00</r25:close>
+</r25:hours>
+<r25:hours id="AyJDNQYSQzQ5OTE=" crc="00000038" status="est">
+<r25:day_id>5</r25:day_id>
+<r25:day_name>Friday</r25:day_name>
+<r25:open>00:01:00</r25:open>
+<r25:close>23:59:00</r25:close>
+</r25:hours>
+<r25:hours id="AyJDNgYSQzQ5OTE=" crc="00000038" status="est">
+<r25:day_id>6</r25:day_id>
+<r25:day_name>Saturday</r25:day_name>
+<r25:open>00:01:00</r25:open>
+<r25:close>23:59:00</r25:close>
+</r25:hours>
+<r25:hours id="AyJDNwYSQzQ5OTE=" crc="00000038" status="est">
+<r25:day_id>7</r25:day_id>
+<r25:day_name>Sunday</r25:day_name>
+<r25:open>00:01:00</r25:open>
+<r25:close>23:59:00</r25:close>
+</r25:hours>
+</r25:space>
+</r25:spaces>
+

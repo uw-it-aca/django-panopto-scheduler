@@ -1,0 +1,140 @@
+{% extends 'scheduler/base_blti.html' %}
+
+{% load staticfiles %}
+{% load compress %}
+{% load templatetag_handlebars %}
+{% load i18n %}
+
+{% block title %}
+Panopto Scheduler
+{% endblock title %}
+
+
+{% block content %}
+
+<span id="sis_course_id" style="display: none;">{{SIS_COURSE_ID}}</span>
+
+<div class="canvas-UW-group-manager-container">
+
+<!-- Header and help text -->
+
+<h2>Schedule Your Recordings</h2>
+
+<div class="result-display-container course-search-result">
+  <i class="fa fa-spinner fa-spin waiting"></i>
+</div>
+
+
+{% tplhandlebars "course-search-result-template" %}
+  <div class="result-list-container">
+
+    {{> reservation-list}}
+
+  </div>
+{% endtplhandlebars %}
+
+{% tplhandlebars "reservation-list-partial" %}
+
+  {{#if future_meetings}}
+  {{#if has_recorder}}
+  <p>You can schedule recording of one or more class sessions, or click <b>Schedule All</b> to set up recording of every class session.</p>
+  <div class="result-header">
+	<span class="pull-right clearfix batchswitch">
+      {{> schedule-button}}
+    </span>
+  </div>
+  <ol class="list-group result-list-chunk">
+    {{#each schedule}}
+      <li class="list-group-item clearfix {{#if in_the_past}}hidden{{/if}}">
+        <span class="result-row-date" title="date">{{ month_num }}/{{ day }}</span>
+        <span class="result-row-day" title="day">{{ weekday }}</span> 
+        <span class="result-row-time" title="time">{{ event_start_time }} - {{ event_end_time }} {{ ampm }}</span>
+        <span class="result-row-event meeting-room-{{ name_index }}" title="event name">{{ name }}</span>
+        <!--Button Code-->
+        <span class="pull-right result-row-switchbtn">
+        {{> schedule-button}}
+        </span>
+        <!--End button-->
+      </li>
+    {{/each}}
+  </ol>
+  {{else}}
+  <div class="no-recorder">
+      Your assigned classroom{{#if single_room}} is{{else}}s are{{/if}}
+        <ul class="room-list">
+          {{#each rooms}}<li class="meeting-room-{{@index}}">{{this}}</li>{{/each}}
+        </ul>.
+        {{#if single_room}}This room does{{else}}These rooms do{{/if}} not have {{#if single_room}}a{{/if}} lecture capture
+        recorder{{#if single_room}}{{else}}s{{/if}}.  Please contact <a href="mailto:help@uw.edu">help@uw.edu</a> to learn what alternatives are available.
+        <p>
+  </div>
+  {{/if}}
+  {{else}}
+  <div class="no-future-meeting-times">
+    Sorry, but it appears there are no upcoming meeting times available for scheduling.
+  </div>
+  {{/if}}
+{% endtplhandlebars %}
+
+
+{% tplhandlebars "folder_created_message" %}
+Click the folder icon
+<a href="{{folder_url}}" target="_blank" style="color: black;"><span class="fa-stack"><i class="fa fa-play-circle-o fa-stack-1x"></i><i class="fa fa-folder-o fa-stack-2x"></i></span></a>
+to open the scheduled session's Panopto folder.
+{% endtplhandlebars %}
+
+{% tplhandlebars "ajax-waiting" %}
+  <div class="waiting">
+    <i class="fa fa-spinner fa-4 fa-spin"></i>
+  </div>
+{% endtplhandlebars %}
+
+
+{% tplhandlebars "confirm-record-stop-tmpl" %}
+<div class="modal fade stop-recording-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h3 class="modal-title" id="myModalLabel">Stop This Recording?</h3>
+      </div>
+      <div class="modal-body">
+        Click &quot;Stop This Recording&quot; to permanently end recording for this session.<br>Stopped recordings cannot be resumed or restarted.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary stop-recording" data-dismiss="modal">Stop This Recording</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endtplhandlebars %}
+
+{% tplhandlebars "course-search-failure" %}
+<div class="search-failed">
+<p>
+   <i class="fa fa-frown-o"></i>  Unfortunately, an error occured gathering information for this course.
+</p>
+<p>
+  Please try again shortly.
+</p>
+</div>
+{% endtplhandlebars %}
+
+
+
+{% include "scheduler/handlebars/schedule_button_partial.html" %}
+
+
+<script type="text/javascript">
+window.scheduler = {
+  csrftoken: '{{ csrf_token }}',
+  session_id: '{{session_id}}',
+  canvas_host: '{{canvas_host}}',
+  panopto_server: '{{panopto_server}}',
+  blti: { course: '{{SIS_COURSE_ID}}' },
+  term: { quarter: '{{term_quarter|default:"autumn"}}', year: {{term_year|default:1999}} }
+};
+</script>
+
+{% endblock content %}

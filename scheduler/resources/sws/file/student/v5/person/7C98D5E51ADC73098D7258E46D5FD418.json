@@ -1,0 +1,57 @@
+{
+    "BirthDate": "1999-12-31",
+    "DirectoryRelease": false,
+    "Email": "tttttttt@u.washington.edu",
+    "EmployeeID": "99999999999999",
+    "FirstName": "TEST",
+    "Gender": "F",
+    "LastEnrolled": {
+        "Href": "/student/v5/term/2005,spring.json",
+        "Quarter": "spring",
+        "Year": 2004
+    },
+    "LastName": "TESTERMAN",
+    "LocalAddress": {
+        "City": "SEATTLE",
+        "Country": "",
+        "Line1": "1234 MARGINAL BLVD S",
+        "Line2": "",
+        "PostalCode": "",
+        "State": "WA",
+        "Zip": "98999"
+    },
+    "LocalPhone": "5555555555",
+    "Notices": {
+        "Href": "/student/v5/notice/7C98D5E51ADC73098D7258E46D5FD418.json",
+        "RegID": "7C98D5E51ADC73098D7258E46D5FD418"
+    },
+    "PermanentAddress": {
+        "City": "SEATTLE",
+        "Country": "",
+        "Line1": "123 NORTHERN BLVD SE",
+        "Line2": "",
+        "PostalCode": "",
+        "State": "WA",
+        "Zip": "98999"
+    },
+    "PermanentPhone": "555-555-5555",
+    "PersonFinancial": {
+        "Href": "/student/v5/person/7C98D5E51ADC73098D7258E46D5FD418/financial.json",
+        "RegID": "7C98D5E51ADC73098D7258E46D5FD418"
+    },
+    "RegID": "7C98D5E51ADC73098D7258E46D5FD418",
+    "Resident": null,
+    "StudentName": "Testerman, Test",
+    "StudentNumber": "33333333333",
+    "StudentSystemKey": "000333333333",
+    "TestScore": {
+        "Href": "/student/v5/testscore/7C98D5E51ADC73098D7258E46D5FD418.json",
+        "RegID": "7C98D5E51ADC73098D7258E46D5FD418"
+    },
+    "UWNetID": "tttttttt",
+    "Veteran": {
+        "Code": "0",
+        "Description": null
+    },
+    "VisaType": null
+}

@@ -1,0 +1,472 @@
+<?xml version="1.0"?>
+<r25:reservations xmlns:r25="http://www.collegenet.com/r25" xmlns:xl="http://www.w3.org/1999/xlink" pubdate="2014-11-03T16:14:25-08:00">
+<r25:reservation xl:href="reservation.xml?rsrv_id=40521208">
+<r25:reservation_id>40521208</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-01T09:30:00-08:00</r25:reservation_start_dt>
+<r25:pre_event_dt>2014-12-01T09:30:00-08:00</r25:pre_event_dt>
+<r25:event_start_dt>2014-12-01T09:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-01T10:20:00-08:00</r25:event_end_dt>
+<r25:post_event_dt>2014-12-01T10:20:00-08:00</r25:post_event_dt>
+<r25:reservation_end_dt>2014-12-01T10:20:00-08:00</r25:reservation_end_dt>
+<r25:profile_id>1968985</r25:profile_id>
+<r25:profile_name>LECTURE</r25:profile_name>
+<r25:profile_description>From 09:30 AM to 10:20 AM.
+Starting on WED SEP/24/2014.
+Repeat every week
+ on MON WED FRI
+ until FRI DEC/05/2014.</r25:profile_description>
+<r25:expected_count>160</r25:expected_count>
+<r25:registered_count>159</r25:registered_count>
+<r25:registration_url/>
+<r25:registration_label/>
+<r25:last_mod_user>import</r25:last_mod_user>
+<r25:last_mod_dt>2014-10-04T14:33:30-07:00</r25:last_mod_dt>
+<r25:comment_id/>
+<r25:comments/>
+<r25:attendee_count>0</r25:attendee_count>
+<r25:event xl:href="event.xml?event_id=601389">
+<r25:event_id>601389</r25:event_id>
+<r25:event_name>MATH 120 A</r25:event_name>
+<r25:event_title>PRECALCULUS</r25:event_title>
+<r25:favorite>F</r25:favorite>
+<r25:event_locator>2014-ABIFQJ</r25:event_locator>
+<r25:event_type_id>341</r25:event_type_id>
+<r25:event_type_name>UG_SECTION</r25:event_type_name>
+<r25:event_type_class/>
+<r25:state>1</r25:state>
+<r25:state_name>Tentative</r25:state_name>
+<r25:organization xl:href="organization.xml?organization_id=4333">
+<r25:organization_id>4333</r25:organization_id>
+<r25:primary>T</r25:primary>
+<r25:organization_name>MATH</r25:organization_name>
+</r25:organization>
+<r25:role>
+<r25:role_id>-2</r25:role_id>
+<r25:role_name>Scheduler</r25:role_name>
+<r25:contact xl:href="contact.xml?contact_id=3310">
+<r25:contact_id>3310</r25:contact_id>
+<r25:contact_name>IMPORT PROCESS</r25:contact_name>
+<r25:address>
+<r25:address_type>3</r25:address_type>
+<r25:formatted_address/>
+<r25:email>times@u.washington.edu</r25:email>
+<r25:phone/>
+<r25:fax/>
+</r25:address>
+</r25:contact>
+</r25:role>
+</r25:event>
+<r25:space_reservation xl:href="space.xml?space_id=4990">
+<r25:space_id>4990</r25:space_id>
+<r25:space>
+<r25:space_name>KNE  110</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>230</r25:max_capacity>
+<r25:partition_id>107</r25:partition_id>
+<r25:partition_name>Kane</r25:partition_name>
+<r25:default_layout_id>2</r25:default_layout_id>
+<r25:default_layout_name>Auditorium</r25:default_layout_name>
+</r25:space>
+<r25:actual_count>160</r25:actual_count>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:shared>F</r25:shared>
+<r25:space_comment_id/>
+<r25:space_comments/>
+<r25:space_instruction_id/>
+<r25:space_instructions/>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38330552">
+<r25:reservation_id>38330552</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-01T10:30:00-08:00</r25:reservation_start_dt>
+<r25:pre_event_dt>2014-12-01T10:30:00-08:00</r25:pre_event_dt>
+<r25:event_start_dt>2014-12-01T10:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-01T11:20:00-08:00</r25:event_end_dt>
+<r25:post_event_dt>2014-12-01T11:20:00-08:00</r25:post_event_dt>
+<r25:reservation_end_dt>2014-12-01T11:20:00-08:00</r25:reservation_end_dt>
+<r25:profile_id>1876550</r25:profile_id>
+<r25:profile_name>LECTURE</r25:profile_name>
+<r25:profile_description>From 10:30 AM to 11:20 AM.
+Starting on WED SEP/24/2014.
+Repeat every week
+ on MON WED FRI
+ until FRI DEC/05/2014.</r25:profile_description>
+<r25:expected_count>185</r25:expected_count>
+<r25:registered_count/>
+<r25:registration_url/>
+<r25:registration_label/>
+<r25:last_mod_user>import</r25:last_mod_user>
+<r25:last_mod_dt>2014-02-18T23:53:37-08:00</r25:last_mod_dt>
+<r25:comment_id/>
+<r25:comments/>
+<r25:attendee_count>0</r25:attendee_count>
+<r25:event xl:href="event.xml?event_id=603207">
+<r25:event_id>603207</r25:event_id>
+<r25:event_name>SOC 110 A</r25:event_name>
+<r25:event_title>SURVEY SOCIOLOGY</r25:event_title>
+<r25:favorite>F</r25:favorite>
+<r25:event_locator>2014-ABIIIH</r25:event_locator>
+<r25:event_type_id>341</r25:event_type_id>
+<r25:event_type_name>UG_SECTION</r25:event_type_name>
+<r25:event_type_class/>
+<r25:state>1</r25:state>
+<r25:state_name>Tentative</r25:state_name>
+<r25:organization xl:href="organization.xml?organization_id=4443">
+<r25:organization_id>4443</r25:organization_id>
+<r25:primary>T</r25:primary>
+<r25:organization_name>SOC</r25:organization_name>
+</r25:organization>
+<r25:role>
+<r25:role_id>-2</r25:role_id>
+<r25:role_name>Scheduler</r25:role_name>
+<r25:contact xl:href="contact.xml?contact_id=3310">
+<r25:contact_id>3310</r25:contact_id>
+<r25:contact_name>IMPORT PROCESS</r25:contact_name>
+<r25:address>
+<r25:address_type>3</r25:address_type>
+<r25:formatted_address/>
+<r25:email>times@u.washington.edu</r25:email>
+<r25:phone/>
+<r25:fax/>
+</r25:address>
+</r25:contact>
+</r25:role>
+</r25:event>
+<r25:space_reservation xl:href="space.xml?space_id=4990">
+<r25:space_id>4990</r25:space_id>
+<r25:space>
+<r25:space_name>KNE  110</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>230</r25:max_capacity>
+<r25:partition_id>107</r25:partition_id>
+<r25:partition_name>Kane</r25:partition_name>
+<r25:default_layout_id>2</r25:default_layout_id>
+<r25:default_layout_name>Auditorium</r25:default_layout_name>
+</r25:space>
+<r25:actual_count>185</r25:actual_count>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:shared>F</r25:shared>
+<r25:space_comment_id/>
+<r25:space_comments/>
+<r25:space_instruction_id/>
+<r25:space_instructions/>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40454933">
+<r25:reservation_id>40454933</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-01T11:30:00-08:00</r25:reservation_start_dt>
+<r25:pre_event_dt>2014-12-01T11:30:00-08:00</r25:pre_event_dt>
+<r25:event_start_dt>2014-12-01T11:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-01T12:20:00-08:00</r25:event_end_dt>
+<r25:post_event_dt>2014-12-01T12:20:00-08:00</r25:post_event_dt>
+<r25:reservation_end_dt>2014-12-01T12:20:00-08:00</r25:reservation_end_dt>
+<r25:profile_id>1966516</r25:profile_id>
+<r25:profile_name>LECTURE</r25:profile_name>
+<r25:profile_description>From 11:30 AM to 12:20 PM.
+Starting on WED SEP/24/2014.
+Repeat every week
+ on MON WED FRI
+ until FRI DEC/05/2014.</r25:profile_description>
+<r25:expected_count>230</r25:expected_count>
+<r25:registered_count>230</r25:registered_count>
+<r25:registration_url/>
+<r25:registration_label/>
+<r25:last_mod_user>import</r25:last_mod_user>
+<r25:last_mod_dt>2014-10-04T08:39:46-07:00</r25:last_mod_dt>
+<r25:comment_id/>
+<r25:comments/>
+<r25:attendee_count>0</r25:attendee_count>
+<r25:event xl:href="event.xml?event_id=599570">
+<r25:event_id>599570</r25:event_id>
+<r25:event_name>ESS 106 A</r25:event_name>
+<r25:event_title>LIVING WITH VOLCANO</r25:event_title>
+<r25:favorite>F</r25:favorite>
+<r25:event_locator>2014-ABICYK</r25:event_locator>
+<r25:event_type_id>341</r25:event_type_id>
+<r25:event_type_name>UG_SECTION</r25:event_type_name>
+<r25:event_type_class/>
+<r25:state>1</r25:state>
+<r25:state_name>Tentative</r25:state_name>
+<r25:organization xl:href="organization.xml?organization_id=4322">
+<r25:organization_id>4322</r25:organization_id>
+<r25:primary>T</r25:primary>
+<r25:organization_name>ESS</r25:organization_name>
+</r25:organization>
+<r25:role>
+<r25:role_id>-2</r25:role_id>
+<r25:role_name>Scheduler</r25:role_name>
+<r25:contact xl:href="contact.xml?contact_id=3310">
+<r25:contact_id>3310</r25:contact_id>
+<r25:contact_name>IMPORT PROCESS</r25:contact_name>
+<r25:address>
+<r25:address_type>3</r25:address_type>
+<r25:formatted_address/>
+<r25:email>times@u.washington.edu</r25:email>
+<r25:phone/>
+<r25:fax/>
+</r25:address>
+</r25:contact>
+</r25:role>
+</r25:event>
+<r25:space_reservation xl:href="space.xml?space_id=4990">
+<r25:space_id>4990</r25:space_id>
+<r25:space>
+<r25:space_name>KNE  110</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>230</r25:max_capacity>
+<r25:partition_id>107</r25:partition_id>
+<r25:partition_name>Kane</r25:partition_name>
+<r25:default_layout_id>2</r25:default_layout_id>
+<r25:default_layout_name>Auditorium</r25:default_layout_name>
+</r25:space>
+<r25:actual_count>230</r25:actual_count>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:shared>F</r25:shared>
+<r25:space_comment_id/>
+<r25:space_comments/>
+<r25:space_instruction_id/>
+<r25:space_instructions/>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40369260">
+<r25:reservation_id>40369260</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-01T12:30:00-08:00</r25:reservation_start_dt>
+<r25:pre_event_dt>2014-12-01T12:30:00-08:00</r25:pre_event_dt>
+<r25:event_start_dt>2014-12-01T12:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-01T13:20:00-08:00</r25:event_end_dt>
+<r25:post_event_dt>2014-12-01T13:20:00-08:00</r25:post_event_dt>
+<r25:reservation_end_dt>2014-12-01T13:20:00-08:00</r25:reservation_end_dt>
+<r25:profile_id>1963273</r25:profile_id>
+<r25:profile_name>LECTURE</r25:profile_name>
+<r25:profile_description>From 12:30 PM to 01:20 PM.
+Starting on WED SEP/24/2014.
+Repeat every week
+ on MON TUE WED THU
+ until FRI DEC/05/2014.</r25:profile_description>
+<r25:expected_count>120</r25:expected_count>
+<r25:registered_count>115</r25:registered_count>
+<r25:registration_url/>
+<r25:registration_label/>
+<r25:last_mod_user>import</r25:last_mod_user>
+<r25:last_mod_dt>2014-10-04T02:28:39-07:00</r25:last_mod_dt>
+<r25:comment_id/>
+<r25:comments/>
+<r25:attendee_count>0</r25:attendee_count>
+<r25:event xl:href="event.xml?event_id=597152">
+<r25:event_id>597152</r25:event_id>
+<r25:event_name>ATM S 211 A</r25:event_name>
+<r25:event_title>CLIMATE CHANGE</r25:event_title>
+<r25:favorite>F</r25:favorite>
+<r25:event_locator>2014-ABHZJK</r25:event_locator>
+<r25:event_type_id>341</r25:event_type_id>
+<r25:event_type_name>UG_SECTION</r25:event_type_name>
+<r25:event_type_class/>
+<r25:state>1</r25:state>
+<r25:state_name>Tentative</r25:state_name>
+<r25:organization xl:href="organization.xml?organization_id=5203">
+<r25:organization_id>5203</r25:organization_id>
+<r25:primary>T</r25:primary>
+<r25:organization_name>ATM S</r25:organization_name>
+</r25:organization>
+<r25:role>
+<r25:role_id>-2</r25:role_id>
+<r25:role_name>Scheduler</r25:role_name>
+<r25:contact xl:href="contact.xml?contact_id=3310">
+<r25:contact_id>3310</r25:contact_id>
+<r25:contact_name>IMPORT PROCESS</r25:contact_name>
+<r25:address>
+<r25:address_type>3</r25:address_type>
+<r25:formatted_address/>
+<r25:email>times@u.washington.edu</r25:email>
+<r25:phone/>
+<r25:fax/>
+</r25:address>
+</r25:contact>
+</r25:role>
+</r25:event>
+<r25:space_reservation xl:href="space.xml?space_id=4990">
+<r25:space_id>4990</r25:space_id>
+<r25:space>
+<r25:space_name>KNE  110</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>230</r25:max_capacity>
+<r25:partition_id>107</r25:partition_id>
+<r25:partition_name>Kane</r25:partition_name>
+<r25:default_layout_id>2</r25:default_layout_id>
+<r25:default_layout_name>Auditorium</r25:default_layout_name>
+</r25:space>
+<r25:actual_count>120</r25:actual_count>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:shared>F</r25:shared>
+<r25:space_comment_id/>
+<r25:space_comments/>
+<r25:space_instruction_id/>
+<r25:space_instructions/>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40444569">
+<r25:reservation_id>40444569</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-01T13:30:00-08:00</r25:reservation_start_dt>
+<r25:pre_event_dt>2014-12-01T13:30:00-08:00</r25:pre_event_dt>
+<r25:event_start_dt>2014-12-01T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-01T14:20:00-08:00</r25:event_end_dt>
+<r25:post_event_dt>2014-12-01T14:20:00-08:00</r25:post_event_dt>
+<r25:reservation_end_dt>2014-12-01T14:20:00-08:00</r25:reservation_end_dt>
+<r25:profile_id>1966111</r25:profile_id>
+<r25:profile_name>LECTURE</r25:profile_name>
+<r25:profile_description>From 01:30 PM to 02:20 PM.
+Starting on WED SEP/24/2014.
+Repeat every week
+ on MON WED FRI
+ until FRI DEC/05/2014.</r25:profile_description>
+<r25:expected_count>147</r25:expected_count>
+<r25:registered_count>114</r25:registered_count>
+<r25:registration_url/>
+<r25:registration_label/>
+<r25:last_mod_user>import</r25:last_mod_user>
+<r25:last_mod_dt>2014-10-04T07:46:11-07:00</r25:last_mod_dt>
+<r25:comment_id/>
+<r25:comments/>
+<r25:attendee_count>0</r25:attendee_count>
+<r25:event xl:href="event.xml?event_id=599280">
+<r25:event_id>599280</r25:event_id>
+<r25:event_name>ENGL 301 A</r25:event_name>
+<r25:event_title>INTRO ENGL LANG LIT</r25:event_title>
+<r25:favorite>F</r25:favorite>
+<r25:event_locator>2014-ABICNG</r25:event_locator>
+<r25:event_type_id>341</r25:event_type_id>
+<r25:event_type_name>UG_SECTION</r25:event_type_name>
+<r25:event_type_class/>
+<r25:state>1</r25:state>
+<r25:state_name>Tentative</r25:state_name>
+<r25:organization xl:href="organization.xml?organization_id=4246">
+<r25:organization_id>4246</r25:organization_id>
+<r25:primary>T</r25:primary>
+<r25:organization_name>ENGL</r25:organization_name>
+</r25:organization>
+<r25:role>
+<r25:role_id>-2</r25:role_id>
+<r25:role_name>Scheduler</r25:role_name>
+<r25:contact xl:href="contact.xml?contact_id=3310">
+<r25:contact_id>3310</r25:contact_id>
+<r25:contact_name>IMPORT PROCESS</r25:contact_name>
+<r25:address>
+<r25:address_type>3</r25:address_type>
+<r25:formatted_address/>
+<r25:email>times@u.washington.edu</r25:email>
+<r25:phone/>
+<r25:fax/>
+</r25:address>
+</r25:contact>
+</r25:role>
+</r25:event>
+<r25:space_reservation xl:href="space.xml?space_id=4990">
+<r25:space_id>4990</r25:space_id>
+<r25:space>
+<r25:space_name>KNE  110</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>230</r25:max_capacity>
+<r25:partition_id>107</r25:partition_id>
+<r25:partition_name>Kane</r25:partition_name>
+<r25:default_layout_id>2</r25:default_layout_id>
+<r25:default_layout_name>Auditorium</r25:default_layout_name>
+</r25:space>
+<r25:actual_count>147</r25:actual_count>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:shared>F</r25:shared>
+<r25:space_comment_id/>
+<r25:space_comments/>
+<r25:space_instruction_id/>
+<r25:space_instructions/>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38743575">
+<r25:reservation_id>38743575</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-01T14:30:00-08:00</r25:reservation_start_dt>
+<r25:pre_event_dt>2014-12-01T14:30:00-08:00</r25:pre_event_dt>
+<r25:event_start_dt>2014-12-01T14:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-01T16:50:00-08:00</r25:event_end_dt>
+<r25:post_event_dt>2014-12-01T16:50:00-08:00</r25:post_event_dt>
+<r25:reservation_end_dt>2014-12-01T16:50:00-08:00</r25:reservation_end_dt>
+<r25:profile_id>1893015</r25:profile_id>
+<r25:profile_name>LECTURE</r25:profile_name>
+<r25:profile_description>From 02:30 PM to 04:50 PM.
+Starting on WED SEP/24/2014.
+Repeat every week
+ on MON WED
+ until FRI DEC/05/2014.</r25:profile_description>
+<r25:expected_count>150</r25:expected_count>
+<r25:registered_count/>
+<r25:registration_url/>
+<r25:registration_label/>
+<r25:last_mod_user>import</r25:last_mod_user>
+<r25:last_mod_dt>2014-03-21T10:28:39-07:00</r25:last_mod_dt>
+<r25:comment_id/>
+<r25:comments/>
+<r25:attendee_count>0</r25:attendee_count>
+<r25:event xl:href="event.xml?event_id=602078">
+<r25:event_id>602078</r25:event_id>
+<r25:event_name>NURS 201 A</r25:event_name>
+<r25:event_title>LIFESPAN GROWTH</r25:event_title>
+<r25:favorite>F</r25:favorite>
+<r25:event_locator>2014-ABIGQW</r25:event_locator>
+<r25:event_type_id>341</r25:event_type_id>
+<r25:event_type_name>UG_SECTION</r25:event_type_name>
+<r25:event_type_class/>
+<r25:state>2</r25:state>
+<r25:state_name>Confirmed</r25:state_name>
+<r25:organization xl:href="organization.xml?organization_id=4362">
+<r25:organization_id>4362</r25:organization_id>
+<r25:primary>T</r25:primary>
+<r25:organization_name>NURS</r25:organization_name>
+</r25:organization>
+<r25:role>
+<r25:role_id>-2</r25:role_id>
+<r25:role_name>Scheduler</r25:role_name>
+<r25:contact xl:href="contact.xml?contact_id=3310">
+<r25:contact_id>3310</r25:contact_id>
+<r25:contact_name>IMPORT PROCESS</r25:contact_name>
+<r25:address>
+<r25:address_type>3</r25:address_type>
+<r25:formatted_address/>
+<r25:email>times@u.washington.edu</r25:email>
+<r25:phone/>
+<r25:fax/>
+</r25:address>
+</r25:contact>
+</r25:role>
+</r25:event>
+<r25:space_reservation xl:href="space.xml?space_id=4990">
+<r25:space_id>4990</r25:space_id>
+<r25:space>
+<r25:space_name>KNE  110</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>230</r25:max_capacity>
+<r25:partition_id>107</r25:partition_id>
+<r25:partition_name>Kane</r25:partition_name>
+<r25:default_layout_id>2</r25:default_layout_id>
+<r25:default_layout_name>Auditorium</r25:default_layout_name>
+</r25:space>
+<r25:actual_count>150</r25:actual_count>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:shared>F</r25:shared>
+<r25:space_comment_id/>
+<r25:space_comments/>
+<r25:space_instruction_id/>
+<r25:space_instructions/>
+</r25:space_reservation>
+</r25:reservation>
+</r25:reservations>
+

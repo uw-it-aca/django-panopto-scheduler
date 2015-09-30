@@ -1,0 +1,1182 @@
+<?xml version="1.0"?>
+<r25:events xmlns:r25="http://www.collegenet.com/r25" xmlns:xl="http://www.w3.org/1999/xlink" pubdate="2014-10-29T15:55:21-07:00">
+<r25:event xl:href="event.xml?event_id=597482" id="CBJDNTk3NDgy" crc="0000002D" status="est">
+<r25:event_id>597482</r25:event_id>
+<r25:event_name>BIOL 404 A</r25:event_name>
+<r25:alien_uid>2014-4 0-BIOL 404 A</r25:alien_uid>
+<r25:event_priority>0</r25:event_priority>
+<r25:event_title>ANIMAL CELL PHYSIOL</r25:event_title>
+<r25:favorite>F</r25:favorite>
+<r25:node_type>E</r25:node_type>
+<r25:node_type_name>event</r25:node_type_name>
+<r25:start_date>2014-09-24</r25:start_date>
+<r25:end_date>2014-12-08</r25:end_date>
+<r25:event_type_id>341</r25:event_type_id>
+<r25:event_type_name>UG_SECTION</r25:event_type_name>
+<r25:state>1</r25:state>
+<r25:state_name>Tentative</r25:state_name>
+<r25:version_number>3</r25:version_number>
+<r25:event_locator>2014-ABHZWC</r25:event_locator>
+<r25:parent_id xl:href="event.xml?event_id=595662">595662</r25:parent_id>
+<r25:cabinet_id xl:href="event.xml?event_id=595637">595637</r25:cabinet_id>
+<r25:cabinet_name>SEATTLE AUTUMN 2014 CABINET</r25:cabinet_name>
+<r25:registration_url/>
+<r25:last_mod_user>import</r25:last_mod_user>
+<r25:last_mod_dt>2014-10-04T15:22:22-07:00</r25:last_mod_dt>
+<r25:creation_dt>2014-02-18T17:06:00-08:00</r25:creation_dt>
+<r25:organization id="CBJDNTk3NDgyBiJDNDE4Mw==" crc="00000021" status="est">
+<r25:organization_id xl:href="organization.xml?organization_id=4183">4183</r25:organization_id>
+<r25:organization_name>BIOL</r25:organization_name>
+<r25:organization_title>Biology</r25:organization_title>
+<r25:primary>T</r25:primary>
+<r25:organization_inherited>1</r25:organization_inherited>
+<r25:organization_details xl:href="organization.xml?organization_id=4183" id="BhJDNDE4Mw==" crc="0000002A" status="est">
+<r25:account_number/>
+<r25:abbreviation>BIOL</r25:abbreviation>
+<r25:organization_rating_id/>
+<r25:organization_rating/>
+<r25:organization_type xl:href="orgtypes.xml?type_id=1" id="AxJDMQ==" crc="00000027" status="est">
+<r25:organization_type_id>1</r25:organization_type_id>
+<r25:organization_type_name>Seattle Curriculum</r25:organization_type_name>
+</r25:organization_type>
+</r25:organization_details>
+</r25:organization>
+<r25:profile id="CSJDMTk2MzY5OAgSQzU5NzQ4Mg==" crc="00000021" status="est">
+<r25:profile_id xl:href="ev_profile.xml?profile_id=1963698">1963698</r25:profile_id>
+<r25:profile_name>LECTURE</r25:profile_name>
+<r25:profile_code>W1 MO WE FR 20141205T235900-0800</r25:profile_code>
+<r25:profile_description>From 01:30 PM to 02:20 PM.
+Starting on WED SEP/24/2014.
+Repeat every week
+ on MON WED FRI
+ until FRI DEC/05/2014.</r25:profile_description>
+<r25:prof_use>1</r25:prof_use>
+<r25:prof_use_name>Reservation</r25:prof_use_name>
+<r25:expected_count>120</r25:expected_count>
+<r25:registered_count>111</r25:registered_count>
+<r25:rec_type_id>1</r25:rec_type_id>
+<r25:rec_type_name>Recurrence Grammar</r25:rec_type_name>
+<r25:pre_event/>
+<r25:post_event/>
+<r25:profile_comments/>
+<r25:init_start_dt>2014-09-24T13:30:00-07:00</r25:init_start_dt>
+<r25:init_end_dt>2014-09-24T14:20:00-07:00</r25:init_end_dt>
+<r25:space_pref status="est">
+<r25:sp_query_id>1800606</r25:sp_query_id>
+</r25:space_pref>
+<r25:binding_reservation id="VE1QOkQ5ODA4M0I4LUM0NkUtNDNCMy1CRjYzLTdGQTYxQjI1NTVFNw==" status="est">
+<r25:primary_reservation>1963698</r25:primary_reservation>
+<r25:bound_name>BIOL 404 A/FINAL</r25:bound_name>
+<r25:bound_event_id>597482</r25:bound_event_id>
+<r25:bound_reservation_id>1963699</r25:bound_reservation_id>
+</r25:binding_reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380038" id="ChJDNDAzODAwMzg=" crc="00000021" status="est">
+<r25:reservation_id>40380038</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-09-24T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-09-24T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-09-24T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-09-24T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-09-24T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-09-24T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDM4" crc="00000022" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380039" id="ChJDNDAzODAwMzk=" crc="00000021" status="est">
+<r25:reservation_id>40380039</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-09-26T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-09-26T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-09-26T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-09-26T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-09-26T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-09-26T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDM5" crc="00000022" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380040" id="ChJDNDAzODAwNDA=" crc="00000021" status="est">
+<r25:reservation_id>40380040</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-09-29T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-09-29T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-09-29T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-09-29T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-09-29T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-09-29T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDQw" crc="00000022" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380041" id="ChJDNDAzODAwNDE=" crc="00000021" status="est">
+<r25:reservation_id>40380041</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-01T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-01T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-01T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-01T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-01T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-01T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDQx" crc="00000022" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380042" id="ChJDNDAzODAwNDI=" crc="00000021" status="est">
+<r25:reservation_id>40380042</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-03T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-03T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-03T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-03T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-03T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-03T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDQy" crc="00000022" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380043" id="ChJDNDAzODAwNDM=" crc="00000021" status="est">
+<r25:reservation_id>40380043</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-06T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-06T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-06T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-06T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-06T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-06T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDQz" crc="00000022" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380044" id="ChJDNDAzODAwNDQ=" crc="00000021" status="est">
+<r25:reservation_id>40380044</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-08T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-08T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-08T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-08T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-08T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-08T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDQ0" crc="00000022" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380045" id="ChJDNDAzODAwNDU=" crc="00000021" status="est">
+<r25:reservation_id>40380045</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-10T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-10T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-10T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-10T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-10T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-10T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDQ1" crc="00000022" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380046" id="ChJDNDAzODAwNDY=" crc="00000021" status="est">
+<r25:reservation_id>40380046</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-13T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-13T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-13T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-13T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-13T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-13T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDQ2" crc="00000022" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380047" id="ChJDNDAzODAwNDc=" crc="00000021" status="est">
+<r25:reservation_id>40380047</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-15T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-15T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-15T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-15T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-15T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-15T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDQ3" crc="00000022" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380048" id="ChJDNDAzODAwNDg=" crc="00000021" status="est">
+<r25:reservation_id>40380048</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-17T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-17T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-17T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-17T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-17T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-17T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDQ4" crc="00000022" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380049" id="ChJDNDAzODAwNDk=" crc="00000021" status="est">
+<r25:reservation_id>40380049</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-20T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-20T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-20T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-20T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-20T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-20T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDQ5" crc="00000022" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380050" id="ChJDNDAzODAwNTA=" crc="00000021" status="est">
+<r25:reservation_id>40380050</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-22T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-22T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-22T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-22T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-22T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-22T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDUw" crc="00000022" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380051" id="ChJDNDAzODAwNTE=" crc="00000021" status="est">
+<r25:reservation_id>40380051</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-24T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-24T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-24T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-24T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-24T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-24T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDUx" crc="00000022" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380052" id="ChJDNDAzODAwNTI=" crc="00000021" status="est">
+<r25:reservation_id>40380052</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-27T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-27T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-27T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-27T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-27T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-27T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDUy" crc="00000022" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380053" id="ChJDNDAzODAwNTM=" crc="00000021" status="est">
+<r25:reservation_id>40380053</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-29T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-29T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-29T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-29T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-29T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-29T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDUz" crc="00000022" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380054" id="ChJDNDAzODAwNTQ=" crc="00000021" status="est">
+<r25:reservation_id>40380054</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-31T13:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-31T14:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-31T13:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-31T14:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-31T13:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-31T14:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDU0" crc="00000022" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380055" id="ChJDNDAzODAwNTU=" crc="00000021" status="est">
+<r25:reservation_id>40380055</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-03T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-03T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-03T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-03T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-03T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-03T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDU1" crc="00000022" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380056" id="ChJDNDAzODAwNTY=" crc="00000021" status="est">
+<r25:reservation_id>40380056</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-05T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-05T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-05T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-05T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-05T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-05T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDU2" crc="00000022" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380057" id="ChJDNDAzODAwNTc=" crc="00000021" status="est">
+<r25:reservation_id>40380057</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-07T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-07T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-07T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-07T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-07T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-07T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDU3" crc="00000022" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380058" id="ChJDNDAzODAwNTg=" crc="00000021" status="est">
+<r25:reservation_id>40380058</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-10T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-10T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-10T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-10T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-10T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-10T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDU4" crc="00000022" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380059" id="ChJDNDAzODAwNTk=" crc="00000021" status="est">
+<r25:reservation_id>40380059</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-12T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-12T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-12T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-12T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-12T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-12T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDU5" crc="00000022" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380060" id="ChJDNDAzODAwNjA=" crc="00000021" status="est">
+<r25:reservation_id>40380060</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-14T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-14T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-14T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-14T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-14T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-14T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDYw" crc="00000022" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380061" id="ChJDNDAzODAwNjE=" crc="00000021" status="est">
+<r25:reservation_id>40380061</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-17T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-17T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-17T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-17T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-17T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-17T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDYx" crc="00000022" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380062" id="ChJDNDAzODAwNjI=" crc="00000021" status="est">
+<r25:reservation_id>40380062</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-19T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-19T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-19T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-19T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-19T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-19T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDYy" crc="00000022" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380063" id="ChJDNDAzODAwNjM=" crc="00000021" status="est">
+<r25:reservation_id>40380063</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-21T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-21T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-21T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-21T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-21T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-21T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDYz" crc="00000022" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380064" id="ChJDNDAzODAwNjQ=" crc="00000021" status="est">
+<r25:reservation_id>40380064</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-24T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-24T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-24T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-24T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-24T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-24T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDY0" crc="00000022" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380065" id="ChJDNDAzODAwNjU=" crc="00000021" status="est">
+<r25:reservation_id>40380065</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-26T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-26T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-26T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-26T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-26T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-26T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDY1" crc="00000022" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380066" id="ChJDNDAzODAwNjY=" crc="00000021" status="est">
+<r25:reservation_id>40380066</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-28T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-28T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-28T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-28T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-28T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-28T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDY2" crc="00000022" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380067" id="ChJDNDAzODAwNjc=" crc="00000021" status="est">
+<r25:reservation_id>40380067</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-01T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-12-01T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-12-01T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-01T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-12-01T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-12-01T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDY3" crc="00000022" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380068" id="ChJDNDAzODAwNjg=" crc="00000021" status="est">
+<r25:reservation_id>40380068</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-03T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-12-03T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-12-03T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-03T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-12-03T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-12-03T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDY4" crc="00000022" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380069" id="ChJDNDAzODAwNjk=" crc="00000021" status="est">
+<r25:reservation_id>40380069</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-05T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-12-05T14:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-12-05T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-05T14:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-12-05T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-12-05T14:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDY5" crc="00000022" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+</r25:profile>
+<r25:profile id="CSJDMTk2MzY5OQgSQzU5NzQ4Mg==" crc="00000021" status="est">
+<r25:profile_id xl:href="ev_profile.xml?profile_id=1963699">1963699</r25:profile_id>
+<r25:profile_name>FINAL</r25:profile_name>
+<r25:profile_code/>
+<r25:profile_description>From 02:30 PM to 04:20 PM
+ on MON DEC/08/2014.</r25:profile_description>
+<r25:prof_use>1</r25:prof_use>
+<r25:prof_use_name>Reservation</r25:prof_use_name>
+<r25:expected_count>120</r25:expected_count>
+<r25:registered_count>111</r25:registered_count>
+<r25:rec_type_id>0</r25:rec_type_id>
+<r25:rec_type_name>Single Date/Time</r25:rec_type_name>
+<r25:pre_event/>
+<r25:post_event/>
+<r25:profile_comments/>
+<r25:init_start_dt>2014-12-08T14:30:00-08:00</r25:init_start_dt>
+<r25:init_end_dt>2014-12-08T16:20:00-08:00</r25:init_end_dt>
+<r25:binding_reservation id="VE1QOjMyREZGQjRBLTU5QTAtNEZFQy1BNjhCLTQ3ODdGNTBCRjM0NA==" status="est">
+<r25:primary_reservation>1963698</r25:primary_reservation>
+<r25:bound_name>BIOL 404 A/LECTURE</r25:bound_name>
+<r25:bound_event_id>597482</r25:bound_event_id>
+<r25:bound_reservation_id>1963698</r25:bound_reservation_id>
+</r25:binding_reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40380083" id="ChJDNDAzODAwODM=" crc="00000021" status="est">
+<r25:reservation_id>40380083</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-08T14:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-12-08T16:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-12-08T14:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-08T16:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-12-08T14:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-12-08T16:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwMzgwMDgz" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+</r25:profile>
+<r25:event_history id="AyJDMQgSQzU5NzQ4MgMyQzE=" crc="00000021" status="est">
+<r25:history_type_id>1</r25:history_type_id>
+<r25:history_type_name>State</r25:history_type_name>
+<r25:history_sequence>1</r25:history_sequence>
+<r25:history_dt>2014-02-18T17:06:00-08:00</r25:history_dt>
+<r25:event_state_id>1</r25:event_state_id>
+<r25:event_state_name>Tentative</r25:event_state_name>
+</r25:event_history>
+<r25:event_history id="AyJDNAgSQzU5NzQ4MgMyQzE=" crc="00000021" status="est">
+<r25:history_type_id>4</r25:history_type_id>
+<r25:history_type_name>Bill Date (for pricing)</r25:history_type_name>
+<r25:history_sequence>1</r25:history_sequence>
+<r25:history_dt>2014-02-18T00:00:00-08:00</r25:history_dt>
+<r25:event_state_id/>
+<r25:event_state_name/>
+</r25:event_history>
+<r25:todo id="CRJDMjI2MDQ3OA==" crc="00000022" status="est">
+<r25:todo_id>2260478</r25:todo_id>
+<r25:cur_todo_state>99</r25:cur_todo_state>
+<r25:todo_name>Needs space</r25:todo_name>
+<r25:todo_type>101</r25:todo_type>
+<r25:todo_type_name>vCal Space Needed</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2014-02-19T00:00:00-08:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>T</r25:read>
+<r25:completed_dt>2014-03-21T00:00:00-07:00</r25:completed_dt>
+<r25:comment_id>1482964</r25:comment_id>
+<r25:todo_description>Version 1</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2014-02-19T00:34:05-08:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+<r25:todo_history>
+<r25:history_todo_date>2014-03-21T15:19:34-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>99</r25:history_todo_state>
+<r25:history_todo_state_name>Cancelled</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjI2MDQ3OQ==" crc="00000023" status="est">
+<r25:todo_id>2260479</r25:todo_id>
+<r25:cur_todo_state>99</r25:cur_todo_state>
+<r25:todo_name>Export COUNTER</r25:todo_name>
+<r25:todo_type>103</r25:todo_type>
+<r25:todo_type_name>vCal Event Modification</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2014-02-19T00:00:00-08:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>T</r25:read>
+<r25:completed_dt>2014-03-21T00:00:00-07:00</r25:completed_dt>
+<r25:comment_id>1482965</r25:comment_id>
+<r25:todo_description>Version 1</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2014-02-19T00:34:05-08:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+<r25:todo_history>
+<r25:history_todo_date>2014-03-21T15:19:34-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>99</r25:history_todo_state>
+<r25:history_todo_state_name>Cancelled</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjMwMTAwMg==" crc="00000023" status="est">
+<r25:todo_id>2301002</r25:todo_id>
+<r25:cur_todo_state>99</r25:cur_todo_state>
+<r25:todo_name>Export REPLY</r25:todo_name>
+<r25:todo_type>100</r25:todo_type>
+<r25:todo_type_name>vCal Import</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2014-03-21T00:00:00-07:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>T</r25:read>
+<r25:completed_dt>2014-10-04T00:00:00-07:00</r25:completed_dt>
+<r25:comment_id>1525122</r25:comment_id>
+<r25:todo_description>Version 2</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2014-03-21T15:19:21-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+<r25:todo_history>
+<r25:history_todo_date>2014-10-04T15:22:22-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>99</r25:history_todo_state>
+<r25:history_todo_state_name>Cancelled</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjM5MzMxMQ==" crc="00000022" status="est">
+<r25:todo_id>2393311</r25:todo_id>
+<r25:cur_todo_state>1</r25:cur_todo_state>
+<r25:todo_name>Export REPLY</r25:todo_name>
+<r25:todo_type>100</r25:todo_type>
+<r25:todo_type_name>vCal Import</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2014-10-04T00:00:00-07:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>F</r25:read>
+<r25:completed_dt/>
+<r25:comment_id>1599199</r25:comment_id>
+<r25:todo_description>No vCalendar properties have been modified since import.</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2014-10-04T03:11:12-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:role id="CBJDNTk3NDgyBCJDLTI=" crc="00000021" status="est">
+<r25:role_id>-2</r25:role_id>
+<r25:role_name>Scheduler</r25:role_name>
+<r25:contact xl:href="contact.xml?contact_id=3310" id="BhJDMzMxMA==" crc="00000023" status="est">
+<r25:contact_id>3310</r25:contact_id>
+<r25:contact_name>IMPORT PROCESS</r25:contact_name>
+<r25:formatted_address/>
+<r25:phone/>
+<r25:fax/>
+<r25:email>times@u.washington.edu</r25:email>
+</r25:contact>
+</r25:role>
+</r25:event>
+</r25:events>

@@ -1,0 +1,1797 @@
+<?xml version="1.0"?>
+<r25:events xmlns:r25="http://www.collegenet.com/r25" xmlns:xl="http://www.w3.org/1999/xlink" pubdate="2014-10-29T15:57:58-07:00">
+<r25:event xl:href="event.xml?event_id=601409" id="CBJDNjAxNDA5" crc="00000064" status="est">
+<r25:event_id>601409</r25:event_id>
+<r25:event_name>MATH 124 A</r25:event_name>
+<r25:alien_uid>2014-4 0-MATH 124 A</r25:alien_uid>
+<r25:event_priority>0</r25:event_priority>
+<r25:event_title>CALC ANALYT GEOM I</r25:event_title>
+<r25:favorite>F</r25:favorite>
+<r25:node_type>E</r25:node_type>
+<r25:node_type_name>event</r25:node_type_name>
+<r25:start_date>2014-09-24</r25:start_date>
+<r25:end_date>2014-12-06</r25:end_date>
+<r25:event_type_id>341</r25:event_type_id>
+<r25:event_type_name>UG_SECTION</r25:event_type_name>
+<r25:state>1</r25:state>
+<r25:state_name>Tentative</r25:state_name>
+<r25:version_number>20</r25:version_number>
+<r25:event_locator>2014-ABIFRD</r25:event_locator>
+<r25:parent_id xl:href="event.xml?event_id=595731">595731</r25:parent_id>
+<r25:cabinet_id xl:href="event.xml?event_id=595637">595637</r25:cabinet_id>
+<r25:cabinet_name>SEATTLE AUTUMN 2014 CABINET</r25:cabinet_name>
+<r25:registration_url/>
+<r25:last_mod_user>import</r25:last_mod_user>
+<r25:last_mod_dt>2014-10-29T06:47:07-07:00</r25:last_mod_dt>
+<r25:creation_dt>2014-02-18T21:44:34-08:00</r25:creation_dt>
+<r25:organization id="CBJDNjAxNDA5BiJDNDMzMw==" crc="00000021" status="est">
+<r25:organization_id xl:href="organization.xml?organization_id=4333">4333</r25:organization_id>
+<r25:organization_name>MATH</r25:organization_name>
+<r25:organization_title>Mathematics</r25:organization_title>
+<r25:primary>T</r25:primary>
+<r25:organization_inherited>1</r25:organization_inherited>
+<r25:organization_details xl:href="organization.xml?organization_id=4333" id="BhJDNDMzMw==" crc="00000027" status="est">
+<r25:account_number/>
+<r25:abbreviation>MATH</r25:abbreviation>
+<r25:organization_rating_id/>
+<r25:organization_rating/>
+<r25:organization_type xl:href="orgtypes.xml?type_id=1" id="AxJDMQ==" crc="00000027" status="est">
+<r25:organization_type_id>1</r25:organization_type_id>
+<r25:organization_type_name>Seattle Curriculum</r25:organization_type_name>
+</r25:organization_type>
+</r25:organization_details>
+</r25:organization>
+<r25:profile id="CSJDMTk3NzQ0OAgSQzYwMTQwOQ==" crc="00000021" status="est">
+<r25:profile_id xl:href="ev_profile.xml?profile_id=1977448">1977448</r25:profile_id>
+<r25:profile_name>LECTURE</r25:profile_name>
+<r25:profile_code>W1 MO WE FR 20141205T235900-0800</r25:profile_code>
+<r25:profile_description>From 08:30 AM to 09:20 AM.
+Starting on WED SEP/24/2014.
+Repeat every week
+ on MON WED FRI
+ until FRI DEC/05/2014.</r25:profile_description>
+<r25:prof_use>1</r25:prof_use>
+<r25:prof_use_name>Reservation</r25:prof_use_name>
+<r25:expected_count>120</r25:expected_count>
+<r25:registered_count>109</r25:registered_count>
+<r25:rec_type_id>1</r25:rec_type_id>
+<r25:rec_type_name>Recurrence Grammar</r25:rec_type_name>
+<r25:pre_event/>
+<r25:post_event/>
+<r25:profile_comments/>
+<r25:init_start_dt>2014-09-24T08:30:00-07:00</r25:init_start_dt>
+<r25:init_end_dt>2014-09-24T09:20:00-07:00</r25:init_end_dt>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686563" id="ChJDNDA2ODY1NjM=" crc="00000021" status="est">
+<r25:reservation_id>40686563</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-09-24T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-09-24T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-09-24T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-09-24T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-09-24T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-09-24T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwNjg2NTYz" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686564" id="ChJDNDA2ODY1NjQ=" crc="00000021" status="est">
+<r25:reservation_id>40686564</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-09-26T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-09-26T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-09-26T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-09-26T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-09-26T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-09-26T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwNjg2NTY0" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686565" id="ChJDNDA2ODY1NjU=" crc="00000021" status="est">
+<r25:reservation_id>40686565</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-09-29T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-09-29T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-09-29T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-09-29T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-09-29T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-09-29T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwNjg2NTY1" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686566" id="ChJDNDA2ODY1NjY=" crc="00000021" status="est">
+<r25:reservation_id>40686566</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-01T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-01T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-01T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-01T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-01T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-01T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwNjg2NTY2" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686567" id="ChJDNDA2ODY1Njc=" crc="00000021" status="est">
+<r25:reservation_id>40686567</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-03T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-03T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-03T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-03T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-03T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-03T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwNjg2NTY3" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686568" id="ChJDNDA2ODY1Njg=" crc="00000021" status="est">
+<r25:reservation_id>40686568</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-06T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-06T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-06T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-06T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-06T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-06T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwNjg2NTY4" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686569" id="ChJDNDA2ODY1Njk=" crc="00000021" status="est">
+<r25:reservation_id>40686569</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-08T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-08T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-08T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-08T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-08T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-08T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwNjg2NTY5" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686570" id="ChJDNDA2ODY1NzA=" crc="00000021" status="est">
+<r25:reservation_id>40686570</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-10T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-10T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-10T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-10T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-10T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-10T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwNjg2NTcw" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686571" id="ChJDNDA2ODY1NzE=" crc="00000021" status="est">
+<r25:reservation_id>40686571</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-13T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-13T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-13T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-13T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-13T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-13T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwNjg2NTcx" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686572" id="ChJDNDA2ODY1NzI=" crc="00000021" status="est">
+<r25:reservation_id>40686572</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-15T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-15T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-15T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-15T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-15T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-15T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwNjg2NTcy" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686573" id="ChJDNDA2ODY1NzM=" crc="00000021" status="est">
+<r25:reservation_id>40686573</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-17T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-17T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-17T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-17T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-17T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-17T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwNjg2NTcz" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686574" id="ChJDNDA2ODY1NzQ=" crc="00000021" status="est">
+<r25:reservation_id>40686574</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-20T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-20T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-20T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-20T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-20T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-20T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwNjg2NTc0" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686575" id="ChJDNDA2ODY1NzU=" crc="00000021" status="est">
+<r25:reservation_id>40686575</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-22T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-22T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-22T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-22T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-22T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-22T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwNjg2NTc1" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686576" id="ChJDNDA2ODY1NzY=" crc="00000021" status="est">
+<r25:reservation_id>40686576</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-24T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-24T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-24T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-24T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-24T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-24T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwNjg2NTc2" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686577" id="ChJDNDA2ODY1Nzc=" crc="00000021" status="est">
+<r25:reservation_id>40686577</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-27T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-27T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-27T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-27T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-27T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-27T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwNjg2NTc3" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686578" id="ChJDNDA2ODY1Nzg=" crc="00000021" status="est">
+<r25:reservation_id>40686578</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-29T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-29T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-29T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-29T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-29T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-29T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwNjg2NTc4" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686579" id="ChJDNDA2ODY1Nzk=" crc="00000021" status="est">
+<r25:reservation_id>40686579</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-10-31T08:30:00-07:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-10-31T09:20:00-07:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-10-31T08:30:00-07:00</r25:event_start_dt>
+<r25:event_end_dt>2014-10-31T09:20:00-07:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-10-31T08:30:00-07:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-10-31T09:20:00-07:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwNjg2NTc5" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686580" id="ChJDNDA2ODY1ODA=" crc="00000021" status="est">
+<r25:reservation_id>40686580</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-03T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-03T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-03T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-03T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-03T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-03T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwNjg2NTgw" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686581" id="ChJDNDA2ODY1ODE=" crc="00000021" status="est">
+<r25:reservation_id>40686581</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-05T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-05T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-05T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-05T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-05T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-05T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwNjg2NTgx" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686582" id="ChJDNDA2ODY1ODI=" crc="00000021" status="est">
+<r25:reservation_id>40686582</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-07T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-07T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-07T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-07T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-07T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-07T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwNjg2NTgy" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686583" id="ChJDNDA2ODY1ODM=" crc="00000021" status="est">
+<r25:reservation_id>40686583</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-10T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-10T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-10T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-10T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-10T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-10T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwNjg2NTgz" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686584" id="ChJDNDA2ODY1ODQ=" crc="00000021" status="est">
+<r25:reservation_id>40686584</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-12T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-12T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-12T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-12T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-12T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-12T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwNjg2NTg0" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686585" id="ChJDNDA2ODY1ODU=" crc="00000021" status="est">
+<r25:reservation_id>40686585</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-14T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-14T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-14T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-14T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-14T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-14T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwNjg2NTg1" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686586" id="ChJDNDA2ODY1ODY=" crc="00000021" status="est">
+<r25:reservation_id>40686586</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-17T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-17T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-17T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-17T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-17T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-17T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwNjg2NTg2" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686587" id="ChJDNDA2ODY1ODc=" crc="00000021" status="est">
+<r25:reservation_id>40686587</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-19T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-19T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-19T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-19T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-19T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-19T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwNjg2NTg3" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686588" id="ChJDNDA2ODY1ODg=" crc="00000021" status="est">
+<r25:reservation_id>40686588</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-21T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-21T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-21T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-21T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-21T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-21T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwNjg2NTg4" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686589" id="ChJDNDA2ODY1ODk=" crc="00000021" status="est">
+<r25:reservation_id>40686589</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-24T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-24T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-24T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-24T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-24T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-24T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwNjg2NTg5" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686590" id="ChJDNDA2ODY1OTA=" crc="00000021" status="est">
+<r25:reservation_id>40686590</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-26T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-26T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-26T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-26T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-26T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-26T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwNjg2NTkw" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686591" id="ChJDNDA2ODY1OTE=" crc="00000021" status="est">
+<r25:reservation_id>40686591</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-11-28T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-11-28T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-11-28T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-11-28T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-11-28T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-11-28T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwNjg2NTkx" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686592" id="ChJDNDA2ODY1OTI=" crc="00000021" status="est">
+<r25:reservation_id>40686592</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-01T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-12-01T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-12-01T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-01T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-12-01T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-12-01T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwNjg2NTky" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686593" id="ChJDNDA2ODY1OTM=" crc="00000021" status="est">
+<r25:reservation_id>40686593</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-03T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-12-03T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-12-03T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-03T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-12-03T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-12-03T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwNjg2NTkz" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686594" id="ChJDNDA2ODY1OTQ=" crc="00000021" status="est">
+<r25:reservation_id>40686594</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-05T08:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-12-05T09:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-12-05T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-05T09:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-12-05T08:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-12-05T09:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDYzNQoSQzQwNjg2NTk0" crc="00000021" status="est">
+<r25:space_id>4635</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4635" id="BhJDNDYzNQ==" crc="0000002D" status="est">
+<r25:space_name>BAG  154</r25:space_name>
+<r25:formal_name>Bagley Hall</r25:formal_name>
+<r25:max_capacity>120</r25:max_capacity>
+<r25:partition_name>Southwest Campus Auditorium</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+</r25:profile>
+<r25:profile id="CSJDMTk3NzQ0OQgSQzYwMTQwOQ==" crc="00000021" status="est">
+<r25:profile_id xl:href="ev_profile.xml?profile_id=1977449">1977449</r25:profile_id>
+<r25:profile_name>FINAL</r25:profile_name>
+<r25:profile_code/>
+<r25:profile_description>From 01:30 PM to 04:20 PM
+ on SAT DEC/06/2014.</r25:profile_description>
+<r25:prof_use>1</r25:prof_use>
+<r25:prof_use_name>Reservation</r25:prof_use_name>
+<r25:expected_count>120</r25:expected_count>
+<r25:registered_count>109</r25:registered_count>
+<r25:rec_type_id>0</r25:rec_type_id>
+<r25:rec_type_name>Single Date/Time</r25:rec_type_name>
+<r25:pre_event/>
+<r25:post_event/>
+<r25:profile_comments/>
+<r25:init_start_dt>2014-12-06T13:30:00-08:00</r25:init_start_dt>
+<r25:init_end_dt>2014-12-06T16:20:00-08:00</r25:init_end_dt>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40686605" id="ChJDNDA2ODY2MDU=" crc="00000021" status="est">
+<r25:reservation_id>40686605</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-06T13:30:00-08:00</r25:reservation_start_dt>
+<r25:reservation_end_dt>2014-12-06T16:20:00-08:00</r25:reservation_end_dt>
+<r25:event_start_dt>2014-12-06T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-06T16:20:00-08:00</r25:event_end_dt>
+<r25:pre_event_dt>2014-12-06T13:30:00-08:00</r25:pre_event_dt>
+<r25:post_event_dt>2014-12-06T16:20:00-08:00</r25:post_event_dt>
+<r25:rsrv_comment_id/>
+<r25:rsrv_comments/>
+<r25:attendee_count/>
+<r25:space_reservation id="BiJDNDk5MgoSQzQwNjg2NjA1" crc="00000021" status="est">
+<r25:space_id>4992</r25:space_id>
+<r25:space xl:href="space.xml?space_id=4992" id="BhJDNDk5Mg==" crc="0000002C" status="est">
+<r25:space_name>KNE  130</r25:space_name>
+<r25:formal_name>Roethke Auditorium (Kane Hall)</r25:formal_name>
+<r25:max_capacity>720</r25:max_capacity>
+<r25:partition_name>Kane</r25:partition_name>
+</r25:space>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:share>F</r25:share>
+<r25:attendance>120</r25:attendance>
+<r25:space_instructions/>
+<r25:rating>100</r25:rating>
+</r25:space_reservation>
+</r25:reservation>
+</r25:profile>
+<r25:event_history id="AyJDMQgSQzYwMTQwOQMyQzE=" crc="00000021" status="est">
+<r25:history_type_id>1</r25:history_type_id>
+<r25:history_type_name>State</r25:history_type_name>
+<r25:history_sequence>1</r25:history_sequence>
+<r25:history_dt>2014-02-18T21:44:34-08:00</r25:history_dt>
+<r25:event_state_id>1</r25:event_state_id>
+<r25:event_state_name>Tentative</r25:event_state_name>
+</r25:event_history>
+<r25:event_history id="AyJDNAgSQzYwMTQwOQMyQzE=" crc="00000021" status="est">
+<r25:history_type_id>4</r25:history_type_id>
+<r25:history_type_name>Bill Date (for pricing)</r25:history_type_name>
+<r25:history_sequence>1</r25:history_sequence>
+<r25:history_dt>2014-02-18T00:00:00-08:00</r25:history_dt>
+<r25:event_state_id/>
+<r25:event_state_name/>
+</r25:event_history>
+<r25:todo id="CRJDMjI2ODUzMQ==" crc="00000022" status="est">
+<r25:todo_id>2268531</r25:todo_id>
+<r25:cur_todo_state>99</r25:cur_todo_state>
+<r25:todo_name>Needs space</r25:todo_name>
+<r25:todo_type>101</r25:todo_type>
+<r25:todo_type_name>vCal Space Needed</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2014-02-19T00:00:00-08:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>T</r25:read>
+<r25:completed_dt>2014-05-08T00:00:00-07:00</r25:completed_dt>
+<r25:comment_id>1490466</r25:comment_id>
+<r25:todo_description>Version 1</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2014-02-19T01:31:30-08:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+<r25:todo_history>
+<r25:history_todo_date>2014-05-08T08:40:53-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>99</r25:history_todo_state>
+<r25:history_todo_state_name>Cancelled</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjI2ODUzMg==" crc="00000023" status="est">
+<r25:todo_id>2268532</r25:todo_id>
+<r25:cur_todo_state>99</r25:cur_todo_state>
+<r25:todo_name>Export COUNTER</r25:todo_name>
+<r25:todo_type>103</r25:todo_type>
+<r25:todo_type_name>vCal Event Modification</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2014-02-19T00:00:00-08:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>T</r25:read>
+<r25:completed_dt>2014-05-08T00:00:00-07:00</r25:completed_dt>
+<r25:comment_id>1490467</r25:comment_id>
+<r25:todo_description>Version 1</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2014-02-19T01:31:30-08:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+<r25:todo_history>
+<r25:history_todo_date>2014-05-08T08:40:53-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>99</r25:history_todo_state>
+<r25:history_todo_state_name>Cancelled</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjMzMTk1MA==" crc="00000022" status="est">
+<r25:todo_id>2331950</r25:todo_id>
+<r25:cur_todo_state>99</r25:cur_todo_state>
+<r25:todo_name>Export COUNTER</r25:todo_name>
+<r25:todo_type>103</r25:todo_type>
+<r25:todo_type_name>vCal Event Modification</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2014-05-08T00:00:00-07:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>T</r25:read>
+<r25:completed_dt>2014-05-08T00:00:00-07:00</r25:completed_dt>
+<r25:comment_id>1547364</r25:comment_id>
+<r25:todo_description>Version 2</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2014-05-08T08:40:40-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+<r25:todo_history>
+<r25:history_todo_date>2014-05-08T08:40:53-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>99</r25:history_todo_state>
+<r25:history_todo_state_name>Cancelled</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjMzMTk1MQ==" crc="00000023" status="est">
+<r25:todo_id>2331951</r25:todo_id>
+<r25:cur_todo_state>99</r25:cur_todo_state>
+<r25:todo_name>Export REPLY</r25:todo_name>
+<r25:todo_type>100</r25:todo_type>
+<r25:todo_type_name>vCal Import</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2014-05-08T00:00:00-07:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>T</r25:read>
+<r25:completed_dt>2014-06-10T00:00:00-07:00</r25:completed_dt>
+<r25:comment_id>1547365</r25:comment_id>
+<r25:todo_description>Version 3</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2014-05-08T08:40:45-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+<r25:todo_history>
+<r25:history_todo_date>2014-06-10T07:06:38-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>99</r25:history_todo_state>
+<r25:history_todo_state_name>Cancelled</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjMzOTM1Ng==" crc="00000023" status="est">
+<r25:todo_id>2339356</r25:todo_id>
+<r25:cur_todo_state>99</r25:cur_todo_state>
+<r25:todo_name>Export REPLY</r25:todo_name>
+<r25:todo_type>100</r25:todo_type>
+<r25:todo_type_name>vCal Import</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2014-06-10T00:00:00-07:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>T</r25:read>
+<r25:completed_dt>2014-06-20T00:00:00-07:00</r25:completed_dt>
+<r25:comment_id>1553618</r25:comment_id>
+<r25:todo_description>Version 4</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2014-06-10T07:06:36-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+<r25:todo_history>
+<r25:history_todo_date>2014-06-20T07:40:42-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>99</r25:history_todo_state>
+<r25:history_todo_state_name>Cancelled</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjM0MjA1Nw==" crc="00000023" status="est">
+<r25:todo_id>2342057</r25:todo_id>
+<r25:cur_todo_state>99</r25:cur_todo_state>
+<r25:todo_name>Export REPLY</r25:todo_name>
+<r25:todo_type>100</r25:todo_type>
+<r25:todo_type_name>vCal Import</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2014-06-20T00:00:00-07:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>T</r25:read>
+<r25:completed_dt>2014-06-25T00:00:00-07:00</r25:completed_dt>
+<r25:comment_id>1555335</r25:comment_id>
+<r25:todo_description>Version 5</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2014-06-20T07:40:40-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+<r25:todo_history>
+<r25:history_todo_date>2014-06-25T07:08:09-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>99</r25:history_todo_state>
+<r25:history_todo_state_name>Cancelled</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjM0MjYyOQ==" crc="00000023" status="est">
+<r25:todo_id>2342629</r25:todo_id>
+<r25:cur_todo_state>99</r25:cur_todo_state>
+<r25:todo_name>Export REPLY</r25:todo_name>
+<r25:todo_type>100</r25:todo_type>
+<r25:todo_type_name>vCal Import</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2014-06-25T00:00:00-07:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>T</r25:read>
+<r25:completed_dt>2014-07-03T00:00:00-07:00</r25:completed_dt>
+<r25:comment_id>1555787</r25:comment_id>
+<r25:todo_description>Version 6</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2014-06-25T07:08:07-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+<r25:todo_history>
+<r25:history_todo_date>2014-07-03T07:58:05-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>99</r25:history_todo_state>
+<r25:history_todo_state_name>Cancelled</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjM0Mzk3Mg==" crc="00000023" status="est">
+<r25:todo_id>2343972</r25:todo_id>
+<r25:cur_todo_state>99</r25:cur_todo_state>
+<r25:todo_name>Export REPLY</r25:todo_name>
+<r25:todo_type>100</r25:todo_type>
+<r25:todo_type_name>vCal Import</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2014-07-03T00:00:00-07:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>T</r25:read>
+<r25:completed_dt>2014-07-03T00:00:00-07:00</r25:completed_dt>
+<r25:comment_id>1556888</r25:comment_id>
+<r25:todo_description>Version 7</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2014-07-03T07:58:03-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+<r25:todo_history>
+<r25:history_todo_date>2014-07-03T07:59:12-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>99</r25:history_todo_state>
+<r25:history_todo_state_name>Cancelled</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjM0Mzk3Mw==" crc="00000023" status="est">
+<r25:todo_id>2343973</r25:todo_id>
+<r25:cur_todo_state>99</r25:cur_todo_state>
+<r25:todo_name>Export REPLY</r25:todo_name>
+<r25:todo_type>100</r25:todo_type>
+<r25:todo_type_name>vCal Import</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2014-07-03T00:00:00-07:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>T</r25:read>
+<r25:completed_dt>2014-07-10T00:00:00-07:00</r25:completed_dt>
+<r25:comment_id>1556889</r25:comment_id>
+<r25:todo_description>Version 8</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2014-07-03T07:59:10-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+<r25:todo_history>
+<r25:history_todo_date>2014-07-10T13:44:35-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>99</r25:history_todo_state>
+<r25:history_todo_state_name>Cancelled</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjM0ODIzMA==" crc="00000023" status="est">
+<r25:todo_id>2348230</r25:todo_id>
+<r25:cur_todo_state>99</r25:cur_todo_state>
+<r25:todo_name>Export REPLY</r25:todo_name>
+<r25:todo_type>100</r25:todo_type>
+<r25:todo_type_name>vCal Import</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2014-07-10T00:00:00-07:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>T</r25:read>
+<r25:completed_dt>2014-08-13T00:00:00-07:00</r25:completed_dt>
+<r25:comment_id>1560121</r25:comment_id>
+<r25:todo_description>Version 9</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2014-07-10T13:44:33-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+<r25:todo_history>
+<r25:history_todo_date>2014-08-13T06:49:47-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>99</r25:history_todo_state>
+<r25:history_todo_state_name>Cancelled</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjM2OTQzOA==" crc="00000023" status="est">
+<r25:todo_id>2369438</r25:todo_id>
+<r25:cur_todo_state>99</r25:cur_todo_state>
+<r25:todo_name>Export REPLY</r25:todo_name>
+<r25:todo_type>100</r25:todo_type>
+<r25:todo_type_name>vCal Import</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2014-08-13T00:00:00-07:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>T</r25:read>
+<r25:completed_dt>2014-08-28T00:00:00-07:00</r25:completed_dt>
+<r25:comment_id>1579306</r25:comment_id>
+<r25:todo_description>Version 10</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2014-08-13T06:49:43-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+<r25:todo_history>
+<r25:history_todo_date>2014-08-28T07:45:31-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>99</r25:history_todo_state>
+<r25:history_todo_state_name>Cancelled</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjM3NDY5MA==" crc="00000023" status="est">
+<r25:todo_id>2374690</r25:todo_id>
+<r25:cur_todo_state>99</r25:cur_todo_state>
+<r25:todo_name>Export REPLY</r25:todo_name>
+<r25:todo_type>100</r25:todo_type>
+<r25:todo_type_name>vCal Import</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2014-08-28T00:00:00-07:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>T</r25:read>
+<r25:completed_dt>2014-09-03T00:00:00-07:00</r25:completed_dt>
+<r25:comment_id>1584234</r25:comment_id>
+<r25:todo_description>Version 11</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2014-08-28T07:45:21-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+<r25:todo_history>
+<r25:history_todo_date>2014-09-03T09:35:01-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>99</r25:history_todo_state>
+<r25:history_todo_state_name>Cancelled</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjM3NTM2OQ==" crc="00000023" status="est">
+<r25:todo_id>2375369</r25:todo_id>
+<r25:cur_todo_state>99</r25:cur_todo_state>
+<r25:todo_name>Export REPLY</r25:todo_name>
+<r25:todo_type>100</r25:todo_type>
+<r25:todo_type_name>vCal Import</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2014-09-03T00:00:00-07:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>T</r25:read>
+<r25:completed_dt>2014-09-03T00:00:00-07:00</r25:completed_dt>
+<r25:comment_id>1584775</r25:comment_id>
+<r25:todo_description>Version 12</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2014-09-03T09:34:53-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+<r25:todo_history>
+<r25:history_todo_date>2014-09-03T10:02:00-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>99</r25:history_todo_state>
+<r25:history_todo_state_name>Cancelled</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjM3NTM4OQ==" crc="00000023" status="est">
+<r25:todo_id>2375389</r25:todo_id>
+<r25:cur_todo_state>99</r25:cur_todo_state>
+<r25:todo_name>Export REPLY</r25:todo_name>
+<r25:todo_type>100</r25:todo_type>
+<r25:todo_type_name>vCal Import</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2014-09-03T00:00:00-07:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>T</r25:read>
+<r25:completed_dt>2014-09-19T00:00:00-07:00</r25:completed_dt>
+<r25:comment_id>1584790</r25:comment_id>
+<r25:todo_description>Version 13</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2014-09-03T10:00:41-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+<r25:todo_history>
+<r25:history_todo_date>2014-09-19T15:40:08-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>99</r25:history_todo_state>
+<r25:history_todo_state_name>Cancelled</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjM4NTA4Ng==" crc="00000023" status="est">
+<r25:todo_id>2385086</r25:todo_id>
+<r25:cur_todo_state>99</r25:cur_todo_state>
+<r25:todo_name>Export REPLY</r25:todo_name>
+<r25:todo_type>100</r25:todo_type>
+<r25:todo_type_name>vCal Import</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2014-09-19T00:00:00-07:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>T</r25:read>
+<r25:completed_dt>2014-09-19T00:00:00-07:00</r25:completed_dt>
+<r25:comment_id>1592498</r25:comment_id>
+<r25:todo_description>Version 14</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2014-09-19T15:39:57-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+<r25:todo_history>
+<r25:history_todo_date>2014-09-19T16:02:57-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>99</r25:history_todo_state>
+<r25:history_todo_state_name>Cancelled</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjM4NTA4Nw==" crc="00000022" status="est">
+<r25:todo_id>2385087</r25:todo_id>
+<r25:cur_todo_state>99</r25:cur_todo_state>
+<r25:todo_name>Needs space</r25:todo_name>
+<r25:todo_type>101</r25:todo_type>
+<r25:todo_type_name>vCal Space Needed</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2014-09-19T00:00:00-07:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>T</r25:read>
+<r25:completed_dt>2014-09-19T00:00:00-07:00</r25:completed_dt>
+<r25:comment_id>1592499</r25:comment_id>
+<r25:todo_description>Version 14</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2014-09-19T15:40:08-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+<r25:todo_history>
+<r25:history_todo_date>2014-09-19T16:02:57-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>99</r25:history_todo_state>
+<r25:history_todo_state_name>Cancelled</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjM4NTE0Mg==" crc="00000023" status="est">
+<r25:todo_id>2385142</r25:todo_id>
+<r25:cur_todo_state>99</r25:cur_todo_state>
+<r25:todo_name>Export REPLY</r25:todo_name>
+<r25:todo_type>100</r25:todo_type>
+<r25:todo_type_name>vCal Import</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2014-09-19T00:00:00-07:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>T</r25:read>
+<r25:completed_dt>2014-09-23T00:00:00-07:00</r25:completed_dt>
+<r25:comment_id>1592546</r25:comment_id>
+<r25:todo_description>Version 15</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2014-09-19T16:02:48-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+<r25:todo_history>
+<r25:history_todo_date>2014-09-23T06:33:33-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>99</r25:history_todo_state>
+<r25:history_todo_state_name>Cancelled</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjM4NjA5MA==" crc="00000023" status="est">
+<r25:todo_id>2386090</r25:todo_id>
+<r25:cur_todo_state>99</r25:cur_todo_state>
+<r25:todo_name>Export REPLY</r25:todo_name>
+<r25:todo_type>100</r25:todo_type>
+<r25:todo_type_name>vCal Import</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2014-09-23T00:00:00-07:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>T</r25:read>
+<r25:completed_dt>2014-09-30T00:00:00-07:00</r25:completed_dt>
+<r25:comment_id>1593632</r25:comment_id>
+<r25:todo_description>Version 16</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2014-09-23T06:33:04-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+<r25:todo_history>
+<r25:history_todo_date>2014-09-30T06:19:28-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>99</r25:history_todo_state>
+<r25:history_todo_state_name>Cancelled</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjM4ODk5Ng==" crc="00000023" status="est">
+<r25:todo_id>2388996</r25:todo_id>
+<r25:cur_todo_state>99</r25:cur_todo_state>
+<r25:todo_name>Export REPLY</r25:todo_name>
+<r25:todo_type>100</r25:todo_type>
+<r25:todo_type_name>vCal Import</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2014-09-30T00:00:00-07:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>T</r25:read>
+<r25:completed_dt>2014-10-02T00:00:00-07:00</r25:completed_dt>
+<r25:comment_id>1595788</r25:comment_id>
+<r25:todo_description>Version 17</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2014-09-30T06:19:14-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+<r25:todo_history>
+<r25:history_todo_date>2014-10-02T06:23:33-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>99</r25:history_todo_state>
+<r25:history_todo_state_name>Cancelled</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjM5MDEyMw==" crc="00000023" status="est">
+<r25:todo_id>2390123</r25:todo_id>
+<r25:cur_todo_state>99</r25:cur_todo_state>
+<r25:todo_name>Export REPLY</r25:todo_name>
+<r25:todo_type>100</r25:todo_type>
+<r25:todo_type_name>vCal Import</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2014-10-02T00:00:00-07:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>T</r25:read>
+<r25:completed_dt>2014-10-04T00:00:00-07:00</r25:completed_dt>
+<r25:comment_id>1596773</r25:comment_id>
+<r25:todo_description>Version 18</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2014-10-02T06:23:18-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+<r25:todo_history>
+<r25:history_todo_date>2014-10-04T16:35:30-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>99</r25:history_todo_state>
+<r25:history_todo_state_name>Cancelled</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjM5OTg5OA==" crc="00000023" status="est">
+<r25:todo_id>2399898</r25:todo_id>
+<r25:cur_todo_state>99</r25:cur_todo_state>
+<r25:todo_name>Export REPLY</r25:todo_name>
+<r25:todo_type>100</r25:todo_type>
+<r25:todo_type_name>vCal Import</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2014-10-04T00:00:00-07:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>T</r25:read>
+<r25:completed_dt>2014-10-29T00:00:00-07:00</r25:completed_dt>
+<r25:comment_id>1603430</r25:comment_id>
+<r25:todo_description>Version 19</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2014-10-04T14:35:34-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+<r25:todo_history>
+<r25:history_todo_date>2014-10-29T06:47:07-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>99</r25:history_todo_state>
+<r25:history_todo_state_name>Cancelled</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:todo id="CRJDMjQxMzQ5Mg==" crc="00000022" status="est">
+<r25:todo_id>2413492</r25:todo_id>
+<r25:cur_todo_state>1</r25:cur_todo_state>
+<r25:todo_name>Export REPLY</r25:todo_name>
+<r25:todo_type>100</r25:todo_type>
+<r25:todo_type_name>vCal Import</r25:todo_type_name>
+<r25:todo_priority_id>1</r25:todo_priority_id>
+<r25:due_dt>2014-10-29T00:00:00-07:00</r25:due_dt>
+<r25:cur_assigned_to_id>3310</r25:cur_assigned_to_id>
+<r25:cur_assigned_to>IMPORT PROCESS</r25:cur_assigned_to>
+<r25:cur_assigned_by_id>3310</r25:cur_assigned_by_id>
+<r25:cur_assigned_by>IMPORT PROCESS</r25:cur_assigned_by>
+<r25:read>F</r25:read>
+<r25:completed_dt/>
+<r25:comment_id>1611458</r25:comment_id>
+<r25:todo_description>No vCalendar properties have been modified since import.</r25:todo_description>
+<r25:todo_history>
+<r25:history_todo_date>2014-10-29T06:47:00-07:00</r25:history_todo_date>
+<r25:history_assigned_to_id>3310</r25:history_assigned_to_id>
+<r25:history_assigned_to_name>IMPORT PROCESS</r25:history_assigned_to_name>
+<r25:history_assigned_by_id>3310</r25:history_assigned_by_id>
+<r25:history_assigned_by_name>IMPORT PROCESS</r25:history_assigned_by_name>
+<r25:history_todo_state>1</r25:history_todo_state>
+<r25:history_todo_state_name>In Progess</r25:history_todo_state_name>
+</r25:todo_history>
+</r25:todo>
+<r25:role id="CBJDNjAxNDA5BCJDLTI=" crc="00000021" status="est">
+<r25:role_id>-2</r25:role_id>
+<r25:role_name>Scheduler</r25:role_name>
+<r25:contact xl:href="contact.xml?contact_id=3310" id="BhJDMzMxMA==" crc="00000023" status="est">
+<r25:contact_id>3310</r25:contact_id>
+<r25:contact_name>IMPORT PROCESS</r25:contact_name>
+<r25:formatted_address/>
+<r25:phone/>
+<r25:fax/>
+<r25:email>times@u.washington.edu</r25:email>
+</r25:contact>
+</r25:role>
+</r25:event>
+</r25:events>

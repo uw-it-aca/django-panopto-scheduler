@@ -1,0 +1,190 @@
+{
+    "AddCodeRequired": false,
+    "Auditors": 0,
+    "ClassWebsiteUrl": "",
+    "Course": {
+        "CourseNumber": "101",
+        "CurriculumAbbreviation": "PSYCH",
+        "Href": "/student/v5/course/2015,summer,PSYCH,101.json",
+        "Quarter": "summer",
+        "Year": 2015
+    },
+    "CourseCampus": "Seattle",
+    "CourseDescription": "Surveys major areas of psychological science. Core topics include human social behavior, personality, psychological disorders and treatment, learning, memory, human development, biological influences, and research methods. Related topics may include sensation, perception, states of consciousness, thinking, intelligence, language, motivation, emotion, stress and health, cross-cultural psychology, and applied psychology. Offered: AWSpS.",
+    "CourseHasVariableContent": false,
+    "CourseTitle": "INTRO TO PSYCH",
+    "CourseTitleLong": "INTRODUCTION TO PSYCHOLOGY",
+    "CreditControl": "fixed credit",
+    "CurrentEnrollment": 57,
+    "Curriculum": {
+        "CollegeName": "ARTS & SCI",
+        "DepartmentAbbreviation": "PSYCH",
+        "TimeScheduleLinkAbbreviation": "psych"
+    },
+    "DeleteFlag": "active",
+    "DistanceLearning": false,
+    "DuplicateEnrollmentAllowed": false,
+    "EndDate": "",
+    "EnrollmentRestrictions": true,
+    "FeeAmount": "",
+    "FeeBudget": "",
+    "FeeType": "",
+    "FinalExam": {
+        "Building": null,
+        "Date": "",
+        "EndTime": "",
+        "MeetingStatus": null,
+        "RoomNumber": null,
+        "StartTime": ""
+    },
+    "FinancialAidEligible": true,
+    "FinancialAidEligibleDisplay": "",
+    "GeneralEducationRequirements": {
+        "Diversity": false,
+        "EnglishComposition": false,
+        "IndividualsAndSocieties": true,
+        "NaturalWorld": false,
+        "QuantitativeAndSymbolicReasoning": false,
+        "VisualLiteraryAndPerformingArts": false,
+        "Writing": false
+    },
+    "GradeSubmissionDelegates": [],
+    "GradingSystem": "standard",
+    "HonorsCourse": false,
+    "IndependentStudy": false,
+    "InstituteName": "",
+    "JointSections": [],
+    "LimitEstimateEnrollment": 100,
+    "LimitEstimateEnrollmentIndicator": "limit",
+    "LinkedSectionTypes": [],
+    "MaximumCredit": "",
+    "MaximumTermCredit": "",
+    "Meetings": [
+        {
+            "Building": "GWN",
+            "BuildingToBeArranged": false,
+            "DaysOfWeek": {
+                "Days": [
+                    {
+                        "Name": "Tuesday"
+                    },
+                    {
+                        "Name": "Thursday"
+                    }
+                ],
+                "Text": " T T"
+            },
+            "DaysOfWeekToBeArranged": false,
+            "EndTime": "20:00",
+            "Instructors": [
+                {
+                    "FacultySequenceNumber": "",
+                    "GradeRoster": {
+                        "Href": "/student/v5/graderoster/2015,summer,PSYCH,101,B,7C98D5E51ADC73098D7258E46D5FD418"
+                    },
+                    "Person": {
+                        "Href": "/student/v5/person/7C98D5E51ADC73098D7258E46D5FD418.json",
+                        "Name": "TESTERMAN,TEST",
+                        "RegID": "7C98D5E51ADC73098D7258E46D5FD418"
+                    },
+                    "TSPrint": true
+                }
+            ],
+            "MeetingIndex": "1",
+            "MeetingType": "lecture",
+            "RoomNumber": "201",
+            "RoomToBeArranged": false,
+            "StartTime": "17:20"
+        }
+    ],
+    "MinimumTermCredit": "5.0",
+    "PrimarySection": {
+        "CourseNumber": "101",
+        "CurriculumAbbreviation": "PSYCH",
+        "Href": "/student/v5/course/2015,summer,PSYCH,101/B.json",
+        "Quarter": "summer",
+        "SectionID": "B",
+        "Year": 2015
+    },
+    "Registrations": {
+        "CourseNumber": "101",
+        "CurriculumAbbreviation": "PSYCH",
+        "Href": "/student/v5/registration.json?year=2015&quarter=summer&curriculum_abbreviation=PSYCH&course_number=101&section_id=B&reg_id=&is_active=True&instructor_reg_id=&verbose=False",
+        "InstructorRegID": null,
+        "IsActive": true,
+        "PageSize": null,
+        "PageStart": null,
+        "Quarter": "summer",
+        "RegID": null,
+        "SectionID": "B",
+        "Verbose": false,
+        "Year": 2015
+    },
+    "ResearchCredit": false,
+    "RoomCapacity": 105,
+    "SLN": "13226",
+    "SameVariableContentAs": [],
+    "SecondaryGradingOption": false,
+    "SectionID": "B",
+    "SectionType": "lecture",
+    "SelfRegistrationAllowed": true,
+    "ServiceLearning": false,
+    "StartDate": "",
+    "StudentCreditHours": " 285.0",
+    "SummerTerm": "Full-term",
+    "Term": {
+        "Href": "/student/v5/term/2015,summer.json",
+        "Quarter": "summer",
+        "Year": 2015
+    },
+    "TimeScheduleComments": {
+        "CollegeComments": {
+            "Lines": []
+        },
+        "CourseComments": {
+            "Lines": []
+        },
+        "CurriculumComments": {
+            "Lines": [
+                {
+                    "Text": "ONLINE DISTANCE LEARNING COURSES AVAILABLE FOR"
+                },
+                {
+                    "Text": "PSYCH 101, 202, 203, 206, 209, AND 315."
+                },
+                {
+                    "Text": "FOR MORE INFORMATION, SEE:"
+                },
+                {
+                    "Text": "http://www.onlinelearning.washington.edu/ol/"
+                },
+                {
+                    "Text": "courses/psy/"
+                }
+            ]
+        },
+        "DepartmentComments": {
+            "Lines": []
+        },
+        "InstituteComments": {
+            "Lines": []
+        },
+        "SectionComments": {
+            "Lines": [
+                {
+                    "Text": "SUMMER QUARTER STARTS JUNE 22 AND"
+                },
+                {
+                    "Text": "ENDS AUGUST 21"
+                }
+            ]
+        },
+        "TimeScheduleGeneratedComments": {
+            "Lines": [
+                {
+                    "Text": "No PSYCH majors"
+                }
+            ]
+        }
+    }
+}

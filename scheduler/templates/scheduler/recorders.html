@@ -1,0 +1,169 @@
+{% extends 'supporttools/base.html' %}
+
+{% load staticfiles %}
+{% load compress %}
+{% load templatetag_handlebars %}
+{% load i18n %}
+
+{% block content %}
+<!-- page header -->
+<div role="main" class="container-fluid">
+<h2>Panopto Recorders</h2>
+
+
+	<!--  Recorder Block -->
+	<div id="panopto-recorders" class="recorders" >
+		<form role="form" class="form-inline event-search">
+			<div class="form-group inputs-row">
+					<label for="room-select">Panopto Recorder </label>
+                    <div class="rooms-loading"><i class="fa fa-spinner fa-spin"></i></div>
+					<select id="room-select" type="text" class="form-control input-rm">
+                      <option value="" title="select a recorder">Select a Recorder</option>
+                    </select>
+			</div>
+		</form>
+		
+        <div class="result-display-container recorder-select-result"></div>
+	</div>
+
+</div> <!-- .container-fluid -->
+<hr>
+
+{% tplhandlebars "recorder-selection-tmpl" %}
+<div class="container">
+  <div class="recorder-selection" role="form">
+    <div class="form-group">
+      <label for="recorder-name">Name</label>
+      <input type="text" id="recorder-name" class="form-control" disabled value="{{name}}">
+    </div>
+    <div class="form-group">
+      <label for="recorder-state">State</label>
+      <input type="text" id="recorder-state" class="form-control" disabled value="{{state}}">
+    </div>
+    <div class="form-group">
+      <label for="recorder-id">Panopto Id</label>
+      <input type="text" id="recorder-id" class="form-control" disabled value="{{id}}">
+    </div>
+    <div class="form-group">
+      <label for="space-details">Location</label>
+      {{#if space}}
+      <input type="text" id="space-details" class="form-control" disabled value="{{space.name}} ({{space.formal_name}})">
+      <a href="javascript:void(0);" class="remove-room" title="Remove location from recorder"><i class="fa fa-times-circle"></i></a><span><i class="fa fa-spinner fa-spin"></i></span>
+      <button type="button" class="btn-primary change-room"><span aria-hidden="update">Change</span><span class="sr-only">assigned room</span></button>
+      {{else}}
+      <input type="text" id="space-details" class="form-control" disabled value="">
+      <button type="button" class="btn-primary change-room"><span aria-hidden="assign a space">Assign</span><span class="sr-only">a space</span></button>
+      {{/if}}
+      <input type="hidden" id="space-id" value="{{external_id}}">
+    </div>
+    <div class="form-group">
+<!--      <a href="{{settings_url}}" target="_blank">&quot;{{name}}&quot; in Panopto</a> -->
+      <a href="https://{{server}}/Panopto/Pages/Admin/RemoteRecorders/List.aspx#modalPage=%22RemoteRecorderPreview%22&modalHeader={{name}}&modalParams=%22id%3D{{id}}%22" target="_blank">Admin &quot;{{name}}&quot; in Panopto</a>
+    </div>
+  </div>
+  
+  {{#each scheduled_recordings}}
+  
+  {{/each}}
+</div>
+{% endtplhandlebars %}
+
+
+{% tplhandlebars "ajax-waiting" %}
+  <div class="waiting">
+    <i class="fa fa-spinner fa-4 fa-spin"></i>
+  </div>
+{% endtplhandlebars %}
+
+{% tplhandlebars "ajax-fail-tmpl" %}
+<div class="modal fade" id="failure-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <!-- Failure modal -->
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h3 class="modal-title" id="myModalLabel">{{ failure_title }}</h3>
+      </div>
+      <div class="modal-body">
+		<p>{{{ failure_message }}}</p>
+		<div style="display: none;">
+          {{ full_failure_message }}
+		</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endtplhandlebars %}
+
+
+{% tplhandlebars "assign-space-tmpl" %}
+<div class="modal fade assign-space-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h3 class="modal-title" id="myModalLabel">Assign a Space to this Recorder</h3>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="new-room-search">Building Code Contains</label>
+            <input id="new-room-search" class="form-control" placeholder="kne">
+            <span style="display: none;"><i class="fa fa-spinner fa-spin"></i></span>
+          </div>
+		  <div class="form-group inputs-row">
+            <label for="new-room-search-result">Selected Space</label>
+            <select id="new-room-search-result" class="form-control input-rm"></select>
+		  </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary assign-room" data-dismiss="modal" disabled>Assign New Location</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endtplhandlebars %}
+
+
+{% tplhandlebars "folder_created_message" %}
+Click the folder icon
+<a href="{{folder_url}}" target="_blank" style="color: black;"><span class="fa-stack"><i class="fa fa-play-circle-o fa-stack-1x"></i><i class="fa fa-folder-o fa-stack-2x"></i></span></a>
+to open the scheduled session's Panopto folder.
+{% endtplhandlebars %}
+
+
+<script type="text/javascript">
+window.scheduler = {
+  csrftoken: '{{ csrf_token }}',
+  canvas_host: '{{canvas_host}}',
+  panopto_server: '{{panopto_server}}'
+};
+</script>
+
+{% endblock content %}
+
+{% block extra_css %}
+{% compress css %}
+<!-- <link rel="stylesheet" href="{% static "vendor/css/dropdowns-enhancement.css" %}"/>-->
+<link rel="stylesheet" href="{% static "vendor/css/bootstrap-slider.min.css" %}"/>
+<link rel="stylesheet" href="{% static "vendor/css/bootstrap-toggle.min.css" %}"/>
+<link rel="stylesheet" type="text/less" href="{% static "scheduler/css/mobile.less" %}"/>
+{% endcompress %}
+{% if not request.is_mobile and not request.is_tablet %}
+{% compress css %}
+<link rel="stylesheet" type="text/less" href="{% static "scheduler/css/desktop.less" %}"/>
+{% endcompress %}
+{% endif %}
+{% endblock extra_css %}
+
+{% block extra_js %}
+{% compress js %}
+<script src="{% static "vendor/js/moment.min.js" %}"></script>
+<script src="{% static "scheduler/js/main.js" %}"></script>
+{% endcompress %}
+{% endblock extra_js %}

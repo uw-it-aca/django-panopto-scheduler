@@ -1,0 +1,627 @@
+<?xml version="1.0"?>
+<r25:reservations xmlns:r25="http://www.collegenet.com/r25" xmlns:xl="http://www.w3.org/1999/xlink" pubdate="2014-11-03T16:36:11-08:00">
+<r25:reservation xl:href="reservation.xml?rsrv_id=38255274">
+<r25:reservation_id>38255274</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-01T07:30:00-08:00</r25:reservation_start_dt>
+<r25:pre_event_dt>2014-12-01T07:30:00-08:00</r25:pre_event_dt>
+<r25:event_start_dt>2014-12-01T07:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-01T08:50:00-08:00</r25:event_end_dt>
+<r25:post_event_dt>2014-12-01T08:50:00-08:00</r25:post_event_dt>
+<r25:reservation_end_dt>2014-12-01T08:50:00-08:00</r25:reservation_end_dt>
+<r25:profile_id>1873972</r25:profile_id>
+<r25:profile_name>LECTURE</r25:profile_name>
+<r25:profile_description>From 07:30 AM to 08:50 AM.
+Starting on WED SEP/24/2014.
+Repeat every week
+ on MON WED FRI
+ until FRI DEC/05/2014.</r25:profile_description>
+<r25:expected_count>160</r25:expected_count>
+<r25:registered_count/>
+<r25:registration_url/>
+<r25:registration_label/>
+<r25:last_mod_user>import</r25:last_mod_user>
+<r25:last_mod_dt>2014-02-18T22:02:09-08:00</r25:last_mod_dt>
+<r25:comment_id/>
+<r25:comments/>
+<r25:attendee_count>0</r25:attendee_count>
+<r25:event xl:href="event.xml?event_id=601661">
+<r25:event_id>601661</r25:event_id>
+<r25:event_name>MGMT 200 B</r25:event_name>
+<r25:event_title>INTRODUCTION TO LAW</r25:event_title>
+<r25:favorite>F</r25:favorite>
+<r25:event_locator>2014-ABIGAV</r25:event_locator>
+<r25:event_type_id>341</r25:event_type_id>
+<r25:event_type_name>UG_SECTION</r25:event_type_name>
+<r25:event_type_class/>
+<r25:state>1</r25:state>
+<r25:state_name>Tentative</r25:state_name>
+<r25:organization xl:href="organization.xml?organization_id=4705">
+<r25:organization_id>4705</r25:organization_id>
+<r25:primary>T</r25:primary>
+<r25:organization_name>MGMT</r25:organization_name>
+</r25:organization>
+<r25:role>
+<r25:role_id>-2</r25:role_id>
+<r25:role_name>Scheduler</r25:role_name>
+<r25:contact xl:href="contact.xml?contact_id=3310">
+<r25:contact_id>3310</r25:contact_id>
+<r25:contact_name>IMPORT PROCESS</r25:contact_name>
+<r25:address>
+<r25:address_type>3</r25:address_type>
+<r25:formatted_address/>
+<r25:email>times@u.washington.edu</r25:email>
+<r25:phone/>
+<r25:fax/>
+</r25:address>
+</r25:contact>
+</r25:role>
+</r25:event>
+<r25:space_reservation xl:href="space.xml?space_id=6283">
+<r25:space_id>6283</r25:space_id>
+<r25:space>
+<r25:space_name>SAV  260</r25:space_name>
+<r25:formal_name>Savery Hall</r25:formal_name>
+<r25:max_capacity>185</r25:max_capacity>
+<r25:partition_id>132</r25:partition_id>
+<r25:partition_name>North Campus Auditorium</r25:partition_name>
+<r25:default_layout_id>4</r25:default_layout_id>
+<r25:default_layout_name>Classroom - Straight Rows</r25:default_layout_name>
+</r25:space>
+<r25:actual_count>160</r25:actual_count>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:shared>F</r25:shared>
+<r25:space_comment_id/>
+<r25:space_comments/>
+<r25:space_instruction_id/>
+<r25:space_instructions/>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40361944">
+<r25:reservation_id>40361944</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-01T09:30:00-08:00</r25:reservation_start_dt>
+<r25:pre_event_dt>2014-12-01T09:30:00-08:00</r25:pre_event_dt>
+<r25:event_start_dt>2014-12-01T09:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-01T10:20:00-08:00</r25:event_end_dt>
+<r25:post_event_dt>2014-12-01T10:20:00-08:00</r25:post_event_dt>
+<r25:reservation_end_dt>2014-12-01T10:20:00-08:00</r25:reservation_end_dt>
+<r25:profile_id>1963005</r25:profile_id>
+<r25:profile_name>LECTURE</r25:profile_name>
+<r25:profile_description>From 09:30 AM to 10:20 AM.
+Starting on WED SEP/24/2014.
+Repeat every week
+ on MON TUE WED FRI
+ until FRI DEC/05/2014.</r25:profile_description>
+<r25:expected_count>150</r25:expected_count>
+<r25:registered_count>95</r25:registered_count>
+<r25:registration_url/>
+<r25:registration_label/>
+<r25:last_mod_user>import</r25:last_mod_user>
+<r25:last_mod_dt>2014-10-04T01:52:46-07:00</r25:last_mod_dt>
+<r25:comment_id/>
+<r25:comments/>
+<r25:attendee_count>0</r25:attendee_count>
+<r25:event xl:href="event.xml?event_id=596972">
+<r25:event_id>596972</r25:event_id>
+<r25:event_name>ARCHY 205 A</r25:event_name>
+<r25:event_title>PRINCIPLES OF ARCHY</r25:event_title>
+<r25:favorite>F</r25:favorite>
+<r25:event_locator>2014-ABHZCM</r25:event_locator>
+<r25:event_type_id>341</r25:event_type_id>
+<r25:event_type_name>UG_SECTION</r25:event_type_name>
+<r25:event_type_class/>
+<r25:state>1</r25:state>
+<r25:state_name>Tentative</r25:state_name>
+<r25:organization xl:href="organization.xml?organization_id=5173">
+<r25:organization_id>5173</r25:organization_id>
+<r25:primary>T</r25:primary>
+<r25:organization_name>ARCHY</r25:organization_name>
+</r25:organization>
+<r25:role>
+<r25:role_id>-2</r25:role_id>
+<r25:role_name>Scheduler</r25:role_name>
+<r25:contact xl:href="contact.xml?contact_id=3310">
+<r25:contact_id>3310</r25:contact_id>
+<r25:contact_name>IMPORT PROCESS</r25:contact_name>
+<r25:address>
+<r25:address_type>3</r25:address_type>
+<r25:formatted_address/>
+<r25:email>times@u.washington.edu</r25:email>
+<r25:phone/>
+<r25:fax/>
+</r25:address>
+</r25:contact>
+</r25:role>
+</r25:event>
+<r25:space_reservation xl:href="space.xml?space_id=6283">
+<r25:space_id>6283</r25:space_id>
+<r25:space>
+<r25:space_name>SAV  260</r25:space_name>
+<r25:formal_name>Savery Hall</r25:formal_name>
+<r25:max_capacity>185</r25:max_capacity>
+<r25:partition_id>132</r25:partition_id>
+<r25:partition_name>North Campus Auditorium</r25:partition_name>
+<r25:default_layout_id>4</r25:default_layout_id>
+<r25:default_layout_name>Classroom - Straight Rows</r25:default_layout_name>
+</r25:space>
+<r25:actual_count>150</r25:actual_count>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:shared>F</r25:shared>
+<r25:space_comment_id/>
+<r25:space_comments/>
+<r25:space_instruction_id/>
+<r25:space_instructions/>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38293542">
+<r25:reservation_id>38293542</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-01T10:30:00-08:00</r25:reservation_start_dt>
+<r25:pre_event_dt>2014-12-01T10:30:00-08:00</r25:pre_event_dt>
+<r25:event_start_dt>2014-12-01T10:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-01T11:20:00-08:00</r25:event_end_dt>
+<r25:post_event_dt>2014-12-01T11:20:00-08:00</r25:post_event_dt>
+<r25:reservation_end_dt>2014-12-01T11:20:00-08:00</r25:reservation_end_dt>
+<r25:profile_id>1875346</r25:profile_id>
+<r25:profile_name>LECTURE</r25:profile_name>
+<r25:profile_description>From 10:30 AM to 11:20 AM.
+Starting on WED SEP/24/2014.
+Repeat every week
+ on MON WED FRI
+ until FRI DEC/05/2014.</r25:profile_description>
+<r25:expected_count>150</r25:expected_count>
+<r25:registered_count/>
+<r25:registration_url/>
+<r25:registration_label/>
+<r25:last_mod_user>import</r25:last_mod_user>
+<r25:last_mod_dt>2014-02-18T23:02:12-08:00</r25:last_mod_dt>
+<r25:comment_id/>
+<r25:comments/>
+<r25:attendee_count>0</r25:attendee_count>
+<r25:event xl:href="event.xml?event_id=602416">
+<r25:event_id>602416</r25:event_id>
+<r25:event_name>PHIL 240 A</r25:event_name>
+<r25:event_title>INTRO TO ETHICS</r25:event_title>
+<r25:favorite>F</r25:favorite>
+<r25:event_locator>2014-ABIHDW</r25:event_locator>
+<r25:event_type_id>341</r25:event_type_id>
+<r25:event_type_name>UG_SECTION</r25:event_type_name>
+<r25:event_type_class/>
+<r25:state>1</r25:state>
+<r25:state_name>Tentative</r25:state_name>
+<r25:organization xl:href="organization.xml?organization_id=4394">
+<r25:organization_id>4394</r25:organization_id>
+<r25:primary>T</r25:primary>
+<r25:organization_name>PHIL</r25:organization_name>
+</r25:organization>
+<r25:role>
+<r25:role_id>-2</r25:role_id>
+<r25:role_name>Scheduler</r25:role_name>
+<r25:contact xl:href="contact.xml?contact_id=3310">
+<r25:contact_id>3310</r25:contact_id>
+<r25:contact_name>IMPORT PROCESS</r25:contact_name>
+<r25:address>
+<r25:address_type>3</r25:address_type>
+<r25:formatted_address/>
+<r25:email>times@u.washington.edu</r25:email>
+<r25:phone/>
+<r25:fax/>
+</r25:address>
+</r25:contact>
+</r25:role>
+</r25:event>
+<r25:space_reservation xl:href="space.xml?space_id=6283">
+<r25:space_id>6283</r25:space_id>
+<r25:space>
+<r25:space_name>SAV  260</r25:space_name>
+<r25:formal_name>Savery Hall</r25:formal_name>
+<r25:max_capacity>185</r25:max_capacity>
+<r25:partition_id>132</r25:partition_id>
+<r25:partition_name>North Campus Auditorium</r25:partition_name>
+<r25:default_layout_id>4</r25:default_layout_id>
+<r25:default_layout_name>Classroom - Straight Rows</r25:default_layout_name>
+</r25:space>
+<r25:actual_count>150</r25:actual_count>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:shared>F</r25:shared>
+<r25:space_comment_id/>
+<r25:space_comments/>
+<r25:space_instruction_id/>
+<r25:space_instructions/>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=38705551">
+<r25:reservation_id>38705551</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-01T11:30:00-08:00</r25:reservation_start_dt>
+<r25:pre_event_dt>2014-12-01T11:30:00-08:00</r25:pre_event_dt>
+<r25:event_start_dt>2014-12-01T11:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-01T12:20:00-08:00</r25:event_end_dt>
+<r25:post_event_dt>2014-12-01T12:20:00-08:00</r25:post_event_dt>
+<r25:reservation_end_dt>2014-12-01T12:20:00-08:00</r25:reservation_end_dt>
+<r25:profile_id>1891312</r25:profile_id>
+<r25:profile_name>LECTURE</r25:profile_name>
+<r25:profile_description>From 11:30 AM to 12:20 PM.
+Starting on WED SEP/24/2014.
+Repeat every week
+ on MON WED FRI
+ until FRI DEC/05/2014.</r25:profile_description>
+<r25:expected_count>100</r25:expected_count>
+<r25:registered_count/>
+<r25:registration_url/>
+<r25:registration_label/>
+<r25:last_mod_user>import</r25:last_mod_user>
+<r25:last_mod_dt>2014-03-17T10:21:12-07:00</r25:last_mod_dt>
+<r25:comment_id/>
+<r25:comments/>
+<r25:attendee_count>0</r25:attendee_count>
+<r25:event xl:href="event.xml?event_id=602972">
+<r25:event_id>602972</r25:event_id>
+<r25:event_name>PSYCH 317 A</r25:event_name>
+<r25:event_title>PSYCH PROB &amp; STAT</r25:event_title>
+<r25:favorite>F</r25:favorite>
+<r25:event_locator>2014-ABIHZG</r25:event_locator>
+<r25:event_type_id>341</r25:event_type_id>
+<r25:event_type_name>UG_SECTION</r25:event_type_name>
+<r25:event_type_class/>
+<r25:state>1</r25:state>
+<r25:state_name>Tentative</r25:state_name>
+<r25:organization xl:href="organization.xml?organization_id=4409">
+<r25:organization_id>4409</r25:organization_id>
+<r25:primary>T</r25:primary>
+<r25:organization_name>PSYCH</r25:organization_name>
+</r25:organization>
+<r25:role>
+<r25:role_id>-2</r25:role_id>
+<r25:role_name>Scheduler</r25:role_name>
+<r25:contact xl:href="contact.xml?contact_id=3310">
+<r25:contact_id>3310</r25:contact_id>
+<r25:contact_name>IMPORT PROCESS</r25:contact_name>
+<r25:address>
+<r25:address_type>3</r25:address_type>
+<r25:formatted_address/>
+<r25:email>times@u.washington.edu</r25:email>
+<r25:phone/>
+<r25:fax/>
+</r25:address>
+</r25:contact>
+</r25:role>
+</r25:event>
+<r25:space_reservation xl:href="space.xml?space_id=6283">
+<r25:space_id>6283</r25:space_id>
+<r25:space>
+<r25:space_name>SAV  260</r25:space_name>
+<r25:formal_name>Savery Hall</r25:formal_name>
+<r25:max_capacity>185</r25:max_capacity>
+<r25:partition_id>132</r25:partition_id>
+<r25:partition_name>North Campus Auditorium</r25:partition_name>
+<r25:default_layout_id>4</r25:default_layout_id>
+<r25:default_layout_name>Classroom - Straight Rows</r25:default_layout_name>
+</r25:space>
+<r25:actual_count>100</r25:actual_count>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:shared>F</r25:shared>
+<r25:space_comment_id/>
+<r25:space_comments/>
+<r25:space_instruction_id/>
+<r25:space_instructions/>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40383874">
+<r25:reservation_id>40383874</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-01T12:30:00-08:00</r25:reservation_start_dt>
+<r25:pre_event_dt>2014-12-01T12:30:00-08:00</r25:pre_event_dt>
+<r25:event_start_dt>2014-12-01T12:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-01T13:20:00-08:00</r25:event_end_dt>
+<r25:post_event_dt>2014-12-01T13:20:00-08:00</r25:post_event_dt>
+<r25:reservation_end_dt>2014-12-01T13:20:00-08:00</r25:reservation_end_dt>
+<r25:profile_id>1963852</r25:profile_id>
+<r25:profile_name>LECTURE</r25:profile_name>
+<r25:profile_description>From 12:30 PM to 01:20 PM.
+Starting on WED SEP/24/2014.
+Repeat every week
+ on MON TUE WED THU FRI
+ until FRI DEC/05/2014.</r25:profile_description>
+<r25:expected_count>185</r25:expected_count>
+<r25:registered_count>152</r25:registered_count>
+<r25:registration_url/>
+<r25:registration_label/>
+<r25:last_mod_user>import</r25:last_mod_user>
+<r25:last_mod_dt>2014-10-04T03:26:33-07:00</r25:last_mod_dt>
+<r25:comment_id/>
+<r25:comments/>
+<r25:attendee_count>0</r25:attendee_count>
+<r25:event xl:href="event.xml?event_id=597592">
+<r25:event_id>597592</r25:event_id>
+<r25:event_name>C LIT 230 A</r25:event_name>
+<r25:event_title>INTRO TO FOLKLORE</r25:event_title>
+<r25:favorite>F</r25:favorite>
+<r25:event_locator>2014-ABIAAI</r25:event_locator>
+<r25:event_type_id>341</r25:event_type_id>
+<r25:event_type_name>UG_SECTION</r25:event_type_name>
+<r25:event_type_class/>
+<r25:state>1</r25:state>
+<r25:state_name>Tentative</r25:state_name>
+<r25:organization xl:href="organization.xml?organization_id=4216">
+<r25:organization_id>4216</r25:organization_id>
+<r25:primary>T</r25:primary>
+<r25:organization_name>C LIT</r25:organization_name>
+</r25:organization>
+<r25:role>
+<r25:role_id>-2</r25:role_id>
+<r25:role_name>Scheduler</r25:role_name>
+<r25:contact xl:href="contact.xml?contact_id=3310">
+<r25:contact_id>3310</r25:contact_id>
+<r25:contact_name>IMPORT PROCESS</r25:contact_name>
+<r25:address>
+<r25:address_type>3</r25:address_type>
+<r25:formatted_address/>
+<r25:email>times@u.washington.edu</r25:email>
+<r25:phone/>
+<r25:fax/>
+</r25:address>
+</r25:contact>
+</r25:role>
+</r25:event>
+<r25:space_reservation xl:href="space.xml?space_id=6283">
+<r25:space_id>6283</r25:space_id>
+<r25:space>
+<r25:space_name>SAV  260</r25:space_name>
+<r25:formal_name>Savery Hall</r25:formal_name>
+<r25:max_capacity>185</r25:max_capacity>
+<r25:partition_id>132</r25:partition_id>
+<r25:partition_name>North Campus Auditorium</r25:partition_name>
+<r25:default_layout_id>4</r25:default_layout_id>
+<r25:default_layout_name>Classroom - Straight Rows</r25:default_layout_name>
+</r25:space>
+<r25:actual_count>185</r25:actual_count>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:shared>F</r25:shared>
+<r25:space_comment_id/>
+<r25:space_comments/>
+<r25:space_instruction_id/>
+<r25:space_instructions/>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40383940">
+<r25:reservation_id>40383940</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-01T12:30:00-08:00</r25:reservation_start_dt>
+<r25:pre_event_dt>2014-12-01T12:30:00-08:00</r25:pre_event_dt>
+<r25:event_start_dt>2014-12-01T12:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-01T13:20:00-08:00</r25:event_end_dt>
+<r25:post_event_dt>2014-12-01T13:20:00-08:00</r25:post_event_dt>
+<r25:reservation_end_dt>2014-12-01T13:20:00-08:00</r25:reservation_end_dt>
+<r25:profile_id>1963853</r25:profile_id>
+<r25:profile_name>LECTURE</r25:profile_name>
+<r25:profile_description>From 12:30 PM to 01:20 PM.
+Starting on WED SEP/24/2014.
+Repeat every week
+ on MON TUE WED THU FRI
+ until FRI DEC/05/2014.</r25:profile_description>
+<r25:expected_count>185</r25:expected_count>
+<r25:registered_count>152</r25:registered_count>
+<r25:registration_url/>
+<r25:registration_label/>
+<r25:last_mod_user>import</r25:last_mod_user>
+<r25:last_mod_dt>2014-10-04T03:26:46-07:00</r25:last_mod_dt>
+<r25:comment_id/>
+<r25:comments/>
+<r25:attendee_count>0</r25:attendee_count>
+<r25:event xl:href="event.xml?event_id=597593">
+<r25:event_id>597593</r25:event_id>
+<r25:event_name>SCAND 230 A</r25:event_name>
+<r25:event_title>INTRO TO FOLKLORE</r25:event_title>
+<r25:favorite>F</r25:favorite>
+<r25:event_locator>2014-ABIAAJ</r25:event_locator>
+<r25:event_type_id>341</r25:event_type_id>
+<r25:event_type_name>UG_SECTION</r25:event_type_name>
+<r25:event_type_class/>
+<r25:state>1</r25:state>
+<r25:state_name>Tentative</r25:state_name>
+<r25:organization xl:href="organization.xml?organization_id=4433">
+<r25:organization_id>4433</r25:organization_id>
+<r25:primary>T</r25:primary>
+<r25:organization_name>SCAND</r25:organization_name>
+</r25:organization>
+<r25:role>
+<r25:role_id>-2</r25:role_id>
+<r25:role_name>Scheduler</r25:role_name>
+<r25:contact xl:href="contact.xml?contact_id=3310">
+<r25:contact_id>3310</r25:contact_id>
+<r25:contact_name>IMPORT PROCESS</r25:contact_name>
+<r25:address>
+<r25:address_type>3</r25:address_type>
+<r25:formatted_address/>
+<r25:email>times@u.washington.edu</r25:email>
+<r25:phone/>
+<r25:fax/>
+</r25:address>
+</r25:contact>
+</r25:role>
+</r25:event>
+<r25:space_reservation xl:href="space.xml?space_id=6283">
+<r25:space_id>6283</r25:space_id>
+<r25:space>
+<r25:space_name>SAV  260</r25:space_name>
+<r25:formal_name>Savery Hall</r25:formal_name>
+<r25:max_capacity>185</r25:max_capacity>
+<r25:partition_id>132</r25:partition_id>
+<r25:partition_name>North Campus Auditorium</r25:partition_name>
+<r25:default_layout_id>4</r25:default_layout_id>
+<r25:default_layout_name>Classroom - Straight Rows</r25:default_layout_name>
+</r25:space>
+<r25:actual_count>185</r25:actual_count>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:shared>F</r25:shared>
+<r25:space_comment_id/>
+<r25:space_comments/>
+<r25:space_instruction_id/>
+<r25:space_instructions/>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40356494">
+<r25:reservation_id>40356494</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-01T13:30:00-08:00</r25:reservation_start_dt>
+<r25:pre_event_dt>2014-12-01T13:30:00-08:00</r25:pre_event_dt>
+<r25:event_start_dt>2014-12-01T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-01T14:20:00-08:00</r25:event_end_dt>
+<r25:post_event_dt>2014-12-01T14:20:00-08:00</r25:post_event_dt>
+<r25:reservation_end_dt>2014-12-01T14:20:00-08:00</r25:reservation_end_dt>
+<r25:profile_id>1962793</r25:profile_id>
+<r25:profile_name>LECTURE</r25:profile_name>
+<r25:profile_description>From 01:30 PM to 02:20 PM.
+Starting on WED SEP/24/2014.
+Repeat every week
+ on MON TUE WED FRI
+ until FRI DEC/05/2014.</r25:profile_description>
+<r25:expected_count>150</r25:expected_count>
+<r25:registered_count>143</r25:registered_count>
+<r25:registration_url/>
+<r25:registration_label/>
+<r25:last_mod_user>import</r25:last_mod_user>
+<r25:last_mod_dt>2014-10-04T01:20:17-07:00</r25:last_mod_dt>
+<r25:comment_id/>
+<r25:comments/>
+<r25:attendee_count>0</r25:attendee_count>
+<r25:event xl:href="event.xml?event_id=596825">
+<r25:event_id>596825</r25:event_id>
+<r25:event_name>AMATH 301 C</r25:event_name>
+<r25:event_title>BEG SCI COMPUTING</r25:event_title>
+<r25:favorite>F</r25:favorite>
+<r25:event_locator>2014-ABHYWV</r25:event_locator>
+<r25:event_type_id>341</r25:event_type_id>
+<r25:event_type_name>UG_SECTION</r25:event_type_name>
+<r25:event_type_class/>
+<r25:state>1</r25:state>
+<r25:state_name>Tentative</r25:state_name>
+<r25:organization xl:href="organization.xml?organization_id=5168">
+<r25:organization_id>5168</r25:organization_id>
+<r25:primary>T</r25:primary>
+<r25:organization_name>AMATH</r25:organization_name>
+</r25:organization>
+<r25:role>
+<r25:role_id>-2</r25:role_id>
+<r25:role_name>Scheduler</r25:role_name>
+<r25:contact xl:href="contact.xml?contact_id=3310">
+<r25:contact_id>3310</r25:contact_id>
+<r25:contact_name>IMPORT PROCESS</r25:contact_name>
+<r25:address>
+<r25:address_type>3</r25:address_type>
+<r25:formatted_address/>
+<r25:email>times@u.washington.edu</r25:email>
+<r25:phone/>
+<r25:fax/>
+</r25:address>
+</r25:contact>
+</r25:role>
+</r25:event>
+<r25:space_reservation xl:href="space.xml?space_id=6283">
+<r25:space_id>6283</r25:space_id>
+<r25:space>
+<r25:space_name>SAV  260</r25:space_name>
+<r25:formal_name>Savery Hall</r25:formal_name>
+<r25:max_capacity>185</r25:max_capacity>
+<r25:partition_id>132</r25:partition_id>
+<r25:partition_name>North Campus Auditorium</r25:partition_name>
+<r25:default_layout_id>4</r25:default_layout_id>
+<r25:default_layout_name>Classroom - Straight Rows</r25:default_layout_name>
+</r25:space>
+<r25:actual_count>150</r25:actual_count>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:shared>F</r25:shared>
+<r25:space_comment_id/>
+<r25:space_comments/>
+<r25:space_instruction_id/>
+<r25:space_instructions/>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=40415676">
+<r25:reservation_id>40415676</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2014-12-01T14:30:00-08:00</r25:reservation_start_dt>
+<r25:pre_event_dt>2014-12-01T14:30:00-08:00</r25:pre_event_dt>
+<r25:event_start_dt>2014-12-01T14:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2014-12-01T15:20:00-08:00</r25:event_end_dt>
+<r25:post_event_dt>2014-12-01T15:20:00-08:00</r25:post_event_dt>
+<r25:reservation_end_dt>2014-12-01T15:20:00-08:00</r25:reservation_end_dt>
+<r25:profile_id>1965087</r25:profile_id>
+<r25:profile_name>LECTURE</r25:profile_name>
+<r25:profile_description>From 02:30 PM to 03:20 PM.
+Starting on WED SEP/24/2014.
+Repeat every week
+ on MON WED FRI
+ until FRI DEC/05/2014.</r25:profile_description>
+<r25:expected_count>140</r25:expected_count>
+<r25:registered_count>144</r25:registered_count>
+<r25:registration_url/>
+<r25:registration_label/>
+<r25:last_mod_user>import</r25:last_mod_user>
+<r25:last_mod_dt>2014-10-04T05:54:07-07:00</r25:last_mod_dt>
+<r25:comment_id/>
+<r25:comments/>
+<r25:attendee_count>0</r25:attendee_count>
+<r25:event xl:href="event.xml?event_id=598423">
+<r25:event_id>598423</r25:event_id>
+<r25:event_name>CSE 373 A</r25:event_name>
+<r25:event_title>DATA STRUC/ALGORITH</r25:event_title>
+<r25:favorite>F</r25:favorite>
+<r25:event_locator>2014-ABIBGH</r25:event_locator>
+<r25:event_type_id>341</r25:event_type_id>
+<r25:event_type_name>UG_SECTION</r25:event_type_name>
+<r25:event_type_class/>
+<r25:state>1</r25:state>
+<r25:state_name>Tentative</r25:state_name>
+<r25:organization xl:href="organization.xml?organization_id=4218">
+<r25:organization_id>4218</r25:organization_id>
+<r25:primary>T</r25:primary>
+<r25:organization_name>CSE</r25:organization_name>
+</r25:organization>
+<r25:role>
+<r25:role_id>-2</r25:role_id>
+<r25:role_name>Scheduler</r25:role_name>
+<r25:contact xl:href="contact.xml?contact_id=3310">
+<r25:contact_id>3310</r25:contact_id>
+<r25:contact_name>IMPORT PROCESS</r25:contact_name>
+<r25:address>
+<r25:address_type>3</r25:address_type>
+<r25:formatted_address/>
+<r25:email>times@u.washington.edu</r25:email>
+<r25:phone/>
+<r25:fax/>
+</r25:address>
+</r25:contact>
+</r25:role>
+</r25:event>
+<r25:space_reservation xl:href="space.xml?space_id=6283">
+<r25:space_id>6283</r25:space_id>
+<r25:space>
+<r25:space_name>SAV  260</r25:space_name>
+<r25:formal_name>Savery Hall</r25:formal_name>
+<r25:max_capacity>185</r25:max_capacity>
+<r25:partition_id>132</r25:partition_id>
+<r25:partition_name>North Campus Auditorium</r25:partition_name>
+<r25:default_layout_id>4</r25:default_layout_id>
+<r25:default_layout_name>Classroom - Straight Rows</r25:default_layout_name>
+</r25:space>
+<r25:actual_count>140</r25:actual_count>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:shared>F</r25:shared>
+<r25:space_comment_id/>
+<r25:space_comments/>
+<r25:space_instruction_id/>
+<r25:space_instructions/>
+</r25:space_reservation>
+</r25:reservation>
+</r25:reservations>

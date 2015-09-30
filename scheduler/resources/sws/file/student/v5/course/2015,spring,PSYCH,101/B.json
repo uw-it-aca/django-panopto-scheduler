@@ -1,0 +1,211 @@
+{
+    "AddCodeRequired": false,
+    "Auditors": 0,
+    "ClassWebsiteUrl": "http://faculty.washington.edu/losterho/psych101b.htm",
+    "Course": {
+        "CourseNumber": "101",
+        "CurriculumAbbreviation": "PSYCH",
+        "Href": "/student/v5/course/2015,spring,PSYCH,101.json",
+        "Quarter": "spring",
+        "Year": 2015
+    },
+    "CourseCampus": "Seattle",
+    "CourseDescription": "Surveys major areas of psychological science. Core topics include human social behavior, personality, psychological disorders and treatment, learning, memory, human development, biological influences, and research methods. Related topics may include sensation, perception, states of consciousness, thinking, intelligence, language, motivation, emotion, stress and health, cross-cultural psychology, and applied psychology. Offered: AWSpS.",
+    "CourseHasVariableContent": false,
+    "CourseTitle": "INTRO TO PSYCH",
+    "CourseTitleLong": "INTRODUCTION TO PSYCHOLOGY",
+    "CreditControl": "fixed credit",
+    "CurrentEnrollment": 376,
+    "Curriculum": {
+        "CollegeName": "ARTS & SCI",
+        "DepartmentAbbreviation": "PSYCH",
+        "TimeScheduleLinkAbbreviation": "psych"
+    },
+    "DeleteFlag": "active",
+    "DistanceLearning": false,
+    "DuplicateEnrollmentAllowed": false,
+    "EndDate": "",
+    "EnrollmentRestrictions": true,
+    "FeeAmount": "",
+    "FeeBudget": "",
+    "FeeType": "",
+    "FinalExam": {
+        "Building": "KNE",
+        "Date": "2015-06-10",
+        "EndTime": "16:20",
+        "MeetingStatus": "2",
+        "RoomNumber": "120",
+        "StartTime": "14:30"
+    },
+    "FinancialAidEligible": true,
+    "FinancialAidEligibleDisplay": "",
+    "GeneralEducationRequirements": {
+        "Diversity": false,
+        "EnglishComposition": false,
+        "IndividualsAndSocieties": true,
+        "NaturalWorld": false,
+        "QuantitativeAndSymbolicReasoning": false,
+        "VisualLiteraryAndPerformingArts": false,
+        "Writing": false
+    },
+    "GradeSubmissionDelegates": [],
+    "GradingSystem": "standard",
+    "HonorsCourse": false,
+    "IndependentStudy": false,
+    "InstituteName": "",
+    "JointSections": [],
+    "LimitEstimateEnrollment": 440,
+    "LimitEstimateEnrollmentIndicator": "limit",
+    "LinkedSectionTypes": [],
+    "MaximumCredit": "",
+    "MaximumTermCredit": "",
+    "Meetings": [
+        {
+            "Building": "KNE",
+            "BuildingToBeArranged": false,
+            "DaysOfWeek": {
+                "Days": [
+                    {
+                        "Name": "Monday"
+                    },
+                    {
+                        "Name": "Tuesday"
+                    },
+                    {
+                        "Name": "Wednesday"
+                    },
+                    {
+                        "Name": "Thursday"
+                    },
+                    {
+                        "Name": "Friday"
+                    }
+                ],
+                "Text": "MTWTF"
+            },
+            "DaysOfWeekToBeArranged": false,
+            "EndTime": "12:20",
+            "Instructors": [
+                {
+                    "FacultySequenceNumber": "",
+                    "GradeRoster": {
+                        "Href": "/student/v5/graderoster/2015,spring,PSYCH,101,B,7C98D5E51ADC73098D7258E46D5FD418"
+                    },
+                    "Person": {
+                        "Href": "/student/v5/person/7C98D5E51ADC73098D7258E46D5FD418.json",
+                        "Name": "TESTERMAN,TEST",
+                        "RegID": "7C98D5E51ADC73098D7258E46D5FD418"
+                    },
+                    "TSPrint": true
+                }
+            ],
+            "MeetingIndex": "1",
+            "MeetingType": "lecture",
+            "RoomNumber": "120",
+            "RoomToBeArranged": false,
+            "StartTime": "11:30"
+        }
+    ],
+    "MinimumTermCredit": "5.0",
+    "PrimarySection": {
+        "CourseNumber": "101",
+        "CurriculumAbbreviation": "PSYCH",
+        "Href": "/student/v5/course/2015,spring,PSYCH,101/B.json",
+        "Quarter": "spring",
+        "SectionID": "B",
+        "Year": 2015
+    },
+    "Registrations": {
+        "CourseNumber": "101",
+        "CurriculumAbbreviation": "PSYCH",
+        "Href": "/student/v5/registration.json?year=2015&quarter=spring&curriculum_abbreviation=PSYCH&course_number=101&section_id=B&reg_id=&is_active=True&instructor_reg_id=&verbose=False",
+        "InstructorRegID": null,
+        "IsActive": true,
+        "PageSize": null,
+        "PageStart": null,
+        "Quarter": "spring",
+        "RegID": null,
+        "SectionID": "B",
+        "Verbose": false,
+        "Year": 2015
+    },
+    "ResearchCredit": false,
+    "RoomCapacity": 440,
+    "SLN": "18590",
+    "SameVariableContentAs": [],
+    "SecondaryGradingOption": false,
+    "SectionID": "B",
+    "SectionType": "lecture",
+    "SelfRegistrationAllowed": true,
+    "ServiceLearning": false,
+    "StartDate": "",
+    "StudentCreditHours": "1880.0",
+    "SummerTerm": "",
+    "Term": {
+        "Href": "/student/v5/term/2015,spring.json",
+        "Quarter": "spring",
+        "Year": 2015
+    },
+    "TimeScheduleComments": {
+        "CollegeComments": {
+            "Lines": []
+        },
+        "CourseComments": {
+            "Lines": []
+        },
+        "CurriculumComments": {
+            "Lines": [
+                {
+                    "Text": "ONLINE DISTANCE LEARNING COURSES AVAILABLE FOR"
+                },
+                {
+                    "Text": "PSYCH 101, 202, 203, 206, 209, AND 315."
+                },
+                {
+                    "Text": "FOR MORE INFORMATION, SEE:"
+                },
+                {
+                    "Text": "http://www.onlinelearning.washington.edu/ol/"
+                },
+                {
+                    "Text": "courses/psy/"
+                }
+            ]
+        },
+        "DepartmentComments": {
+            "Lines": []
+        },
+        "InstituteComments": {
+            "Lines": []
+        },
+        "SectionComments": {
+            "Lines": [
+                {
+                    "Text": "OPTIONAL LINKED WRITING COURSE FOR"
+                },
+                {
+                    "Text": "C OR W CREDIT: PLEASE SEE ENGL 198E"
+                },
+                {
+                    "Text": "FOR MULTILINGUAL STUDENTS:"
+                },
+                {
+                    "Text": "ADDITIONAL OPTIONAL LINKED WRITING"
+                },
+                {
+                    "Text": "COURSE ALSO FOR C OR W CREDIT -"
+                },
+                {
+                    "Text": "SEE ENGL 198H"
+                }
+            ]
+        },
+        "TimeScheduleGeneratedComments": {
+            "Lines": [
+                {
+                    "Text": "No PSYCH majors"
+                }
+            ]
+        }
+    }
+}
