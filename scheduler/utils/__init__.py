@@ -29,7 +29,7 @@ class CourseEventException(Exception):
 logger = logging.getLogger(__name__)
 UW_CAMPUS = ['seattle', 'bothell', 'tacoma']
 UW_DOMAIN = ['uw.edu', 'washington.edu', 'u.washington.edu']
-UW_MEETING_TYPES = ['lecture', 'seminar', 'quiz', 'final']
+UW_MEETING_TYPES = ['lecture', 'seminar', 'quiz', 'lab', 'final']
 
 
 def person_from_username(username):
@@ -197,12 +197,9 @@ def space_events_and_recordings(params):
                         event_session['recording']['external_id'] = eid
                         event_external_ids.append(eid)
             else:
-                event_session['recording']['folder'] = panopto_generic_folder(
-                    event_session)
-                session = panopto_generic_session(event_session,
-                                                  search['start_dt'])
-                event_session['recording'] = session
-                event_external_ids.append(session['external_id'])
+                set_panopto_generic_folder(event_session)
+                set_panopto_generic_session(event_session)
+                event_external_ids.append(event_session['recording']['external_id'])
 
     mash_in_panopto_sessions(event_sessions, event_external_ids, recorders)
 
@@ -301,7 +298,7 @@ def mash_in_panopto_sessions(event_sessions, session_external_ids, recorders):
     # fill in unscheduled event ids
     for e in event_sessions:
         e_r = e['recording']
-        if not e_r['recorder_id']:
+        if not ('recorder_id' in e_r and e_r['recorder_id']):
             space_id = e['space']['id']
             if not (space_id in recorders and recorders[space_id]):
                 try:
@@ -320,22 +317,18 @@ def mash_in_panopto_sessions(event_sessions, session_external_ids, recorders):
                                     e_r['folder']['external_id'])
 
 
-def panopto_generic_folder(event):
+def set_panopto_generic_folder(event):
     id_string = "%s - %s" % (event['name'], event['space']['id'])
-    return {
-        'name': event['name'],
-        'external_id': panopto_generic_external_id(id_string)
-    }
+    event['recording']['folder']['name'] = event['name']
+    event['recording']['folder']['external_id'] = panopto_generic_external_id(id_string)
 
 
-def panopto_generic_session(event, start_datetime):
+def set_panopto_generic_session(event):
     name = "%s - %s" % (event['name'],
-                        parser.parse(start_datetime).strftime('%Y-%m-%d'))
+                        parser.parse(event['event']['start']).strftime('%Y-%m-%d'))
     id_string = "%s - %s" % (name, event['space']['id'])
-    return {
-        'name': name,
-        'external_id': panopto_generic_external_id(id_string)
-    }
+    event['recording']['name'] = name
+    event['recording']['external_id'] = panopto_generic_external_id(id_string)
 
 
 def panopto_generic_external_id(id_string):
@@ -434,18 +427,21 @@ def course_event_title_and_contact(course):
         email = instructor.email1 if hasattr(instructor, 'email1') else ''
         name = HumanName(' '.join([first_name, surname]))
         name.capitalize()
-
-        return {
-            'title_long': section.course_title_long,
-            'name': '%s %s' % (name.first, name.last) if name else '',
-            'uwnetid': uwnetid,
-            'email': email if len(email) else "%s@uw.edu" % uwnetid
-        }
     except DataFailureException as err:
         if err.status == 404:
-            return '?course_long_title?', '?full_name?', '?netid?', '?email?'
-        raise
+            section = None
+            name = None
+            email = None
+            uwnetid = None
+        else:
+            raise
 
+    return {
+        'title_long': section.course_title_long if section else '',
+        'name': '%s %s' % (name.first, name.last) if name else '',
+        'uwnetid': uwnetid if uwnetid else '',
+        'email': email if email and len(email) else "%s@uw.edu" % uwnetid if uwnetid else ''
+    }
 
 def course_event_key(netid, name, external_id,
                      recorder_id, folder_external_id):
