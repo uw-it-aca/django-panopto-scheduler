@@ -494,7 +494,7 @@ var PanoptoScheduler = (function ($) {
     }
 
     function recorder_select_failure(xhr) {
-        $(".event-search-result").empty();
+        $(".recorder-select-result").empty();
         failure_modal('Recorder Search Failure',
                       'Please try again later.',
                       xhr);
@@ -648,7 +648,7 @@ var PanoptoScheduler = (function ($) {
             url: panopto_api_path('recorder/', { timeout: 0 }),
             complete: room_search_complete
         })
-            .fail(event_search_failure)
+            .fail(recorder_select_failure)
             .done(init_room_select);
     }
 
@@ -1311,7 +1311,7 @@ var PanoptoScheduler = (function ($) {
             contentType: 'application/json',
             data: JSON.stringify(request_data)
         }).fail(function (xhr) {
-            failure_modal('Cannot Schedule Recording',
+            failure_modal('Cannot Update Recorder',
                           'Please try again later.',
                           xhr);
         }).done(function () {
