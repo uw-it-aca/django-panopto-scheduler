@@ -1031,13 +1031,16 @@ var PanoptoScheduler = (function ($) {
 
         $('.list-group .btn-group.unscheduled > button:first-child').not(':disabled').each(function () {
             pe = panopto_event($(this));
-            pe.recording.is_broadcast = webcast;
-            pe.recording.is_public = is_public;
 
-            if (vals) {
-                start = moment(pe.event.start).add(start_delta, 'seconds');
-                pe.recording.start = start.toISOString();
-                pe.recording.end = start.add(duration, 'seconds').toISOString();
+            if (!$('#panopto-recorders').length) {
+                pe.recording.is_broadcast = webcast;
+                pe.recording.is_public = is_public;
+
+                if (vals) {
+                    start = moment(pe.event.start).add(start_delta, 'seconds');
+                    pe.recording.start = start.toISOString();
+                    pe.recording.end = start.add(duration, 'seconds').toISOString();
+                }
             }
 
             schedule_panopto_recording(pe);
