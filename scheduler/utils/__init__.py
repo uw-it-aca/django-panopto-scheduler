@@ -298,7 +298,7 @@ def event_session_from_scheduled_recording(s):
             'folder': {
                 'name': s.FolderName,
                 'id': s.FolderId,
-                'external_id': '',
+                'external_id': s.FolderId,
             },
             'is_broadcast': s.IsBroadcast,
             'is_public': False,
