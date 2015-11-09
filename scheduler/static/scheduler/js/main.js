@@ -567,11 +567,12 @@ var PanoptoScheduler = (function ($) {
 
     }
 
-    function do_scheduled_recording_search(session_ids) {
+    function do_scheduled_recording_search(session_ids, recorder_id) {
         $.ajax({
             type: 'GET',
             url: panopto_api_path('schedule/', {
                 session_ids: session_ids,
+                recorder_id: recorder_id,
             }),
             waitIndicatator: event_search_in_progress,
             complete: event_search_complete
@@ -580,6 +581,35 @@ var PanoptoScheduler = (function ($) {
             .done(function (msg) {
                 paint_space_schedule(msg);
             });
+    }
+
+    function combine_scheduled_recordings() {
+        var source_recorder_id = $(this).val();
+        if (!source_recorder_id.length)
+            return;
+
+        var dest_recorder_id = $('#panopto-recorders #recorder-id').val();
+        if (!dest_recorder_id.length)
+            return;
+
+        var session_ids = new Array();
+        $.each([source_recorder_id, dest_recorder_id], function() {
+            $.ajax({
+                async: false,
+                type: 'GET',
+                url: panopto_api_path('recorder/' + this),
+                waitIndicatator: event_search_in_progress,
+                complete: event_search_complete
+            })
+                .fail(event_search_failure)
+                .done(function(data) {
+                    $.each(data[0].scheduled_recordings, function() {
+                        session_ids.push(this);
+                    });
+                });
+        });
+
+        do_scheduled_recording_search(session_ids, dest_recorder_id);
     }
 
     function update_term_selector() {
@@ -647,6 +677,19 @@ var PanoptoScheduler = (function ($) {
         });
     }
 
+    function init_import_select(recorders) {
+        var select = $('select#import-select');
+
+        $.each(recorders, function () {
+            if (this.id === $('#panopto-recorders #recorder-id').val())
+                return;
+            select.append($('<option></option>')
+                              .text(this.name)
+                              .attr('value', this.id)
+                              .attr('title', 'room ' + this.name));
+        });
+    }
+
     function init_event_search() {
         $.ajax({
             type: 'GET',
@@ -665,6 +708,20 @@ var PanoptoScheduler = (function ($) {
         })
             .fail(recorder_select_failure)
             .done(init_room_select);
+    }
+
+    function init_import_search() {
+        var space_id = $("#panopto-recorders #space-id").val();
+
+        $.ajax({
+            type: 'GET',
+            url: panopto_api_path('recorder/' + space_id ),
+            complete: room_search_complete
+        })
+            .fail(event_search_failure)
+            .done(function(recorders) {
+                init_import_select(recorders);
+            });
     }
 
     function schedule_panopto_recording(panopto_event) {
@@ -1261,7 +1318,10 @@ var PanoptoScheduler = (function ($) {
 
         $('.result-display-container').html(tpl(context));
 
-        do_scheduled_recording_search(data[0].scheduled_recordings);
+        do_scheduled_recording_search(data[0].scheduled_recordings, data[0].id);
+        init_import_search();
+        $('body').delegate('#panopto-recorders #import-select',
+            'change', combine_scheduled_recordings)
     }
 
     function panopto_recorder_search() {

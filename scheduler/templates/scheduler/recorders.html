@@ -66,6 +66,20 @@
   
   {{/each}}
 
+  {{#if space}}
+  <div class="room-header"><!-- Rslt Header -->
+      <form role="form" class="form-inline event-search">
+          <div class="form-group inputs-row">
+              <label for="import-select" class="">Copy schedule from:</label>
+              <div class="rooms-loading"><i class="fa fa-spinner fa-spin"></i></div>
+              <select id="import-select" type="text" class="form-control input-rm">
+                  <option value="" title="select a recorder">Select a Recorder</option>
+              </select>
+          </div>
+      </form>
+  </div>	<!-- .Rslt Header -->
+  {{/if}}
+
   <div class="event-search">
     <div class="result-display-container event-search-result"></div>
   </div>
@@ -82,6 +96,11 @@
 	    {{else}}
 		<span class="record-status-disable-outer"><i class="fa fa-warning"></i><span class="record-status-disable">No recorder found in this room</span></span>
 	    {{/if}}
+        {{#if has_recorder}}
+        <div class="pull-right clearfix batchswitch">
+          {{> schedule-button}}
+        </div>
+        {{/if}}
     </div>
 
     {{> reservation-list}}
