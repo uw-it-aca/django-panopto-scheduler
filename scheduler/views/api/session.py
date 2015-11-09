@@ -144,6 +144,12 @@ class Session(RESTDispatch):
 
     def _valid_folder(self, name, external_id):
         try:
+            folder_id = Validation().panopto_id(external_id)
+            return folder_id
+        except InvalidParamException:
+            pass
+
+        try:
             folders = self._session_api.getAllFoldersByExternalId(
                 [external_id])
             if folders and len(folders) and len(folders[0]):
