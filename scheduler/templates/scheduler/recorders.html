@@ -30,7 +30,7 @@
 <hr>
 
 {% tplhandlebars "recorder-selection-tmpl" %}
-<div class="container">
+<div class="result-list-container">
   <div class="recorder-selection" role="form">
     <div class="form-group">
       <label for="recorder-name">Name</label>
@@ -65,9 +65,84 @@
   {{#each scheduled_recordings}}
   
   {{/each}}
+
+  {{#if space}}
+  <div class="room-header"><!-- Rslt Header -->
+      <form role="form" class="form-inline event-search">
+          <div class="form-group inputs-row">
+              <label for="import-select" class="">Copy schedule from:</label>
+              <div class="rooms-loading"><i class="fa fa-spinner fa-spin"></i></div>
+              <select id="import-select" type="text" class="form-control input-rm">
+                  <option value="" title="select a recorder">Select a Recorder</option>
+              </select>
+          </div>
+      </form>
+  </div>	<!-- .Rslt Header -->
+  {{/if}}
+
+  <div class="event-search">
+    <div class="result-display-container event-search-result"></div>
+  </div>
 </div>
 {% endtplhandlebars %}
 
+{% tplhandlebars "event-search-result-template" %}
+  <div class="result-list-container">
+    <div class="result-header">
+        <span class="sr-only">Schedule in {{room}}</span>
+        <span class="sr-only">Lecture capture recording status: </span>
+        {{#if has_recorder}}
+	    <span class="record-status-enable"><i class="fa fa-video-camera"></i> Recorder is ready in this room</span>
+	    {{else}}
+		<span class="record-status-disable-outer"><i class="fa fa-warning"></i><span class="record-status-disable">No recorder found in this room</span></span>
+	    {{/if}}
+        {{#if has_recorder}}
+        <div class="pull-right clearfix batchswitch">
+          {{> schedule-button}}
+        </div>
+        {{/if}}
+    </div>
+
+    {{> reservation-list}}
+
+  </div>
+{% endtplhandlebars %}
+
+
+{% tplhandlebars "event-search-result-empty-template" %}
+  <div class="room-header"><!-- Rslt Header -->
+	<h3>No events scheduled on this recorder</h3>
+  </div>	<!-- .Rslt Header -->
+{% endtplhandlebars %}
+
+{% tplhandlebars "reservation-list-partial" %}
+  <ol class="list-group result-list-chunk">
+    {{#each schedule}}
+      <li class="list-group-item clearfix">
+        <span class="result-row-date" title="date">{{ month_num }}/{{ day }}</span>
+        <span class="result-row-day" title="day">{{ weekday }}</span>
+        <span class="result-row-time" title="time">{{ event_start_time }} - {{ event_end_time }} {{ ampm }}</span>
+        <span class="result-row-event meeting-room-{{ name_index }}" title="event name">{{ name }}</span>
+        <span class="result-row-contact" title="Contact person">
+          {{#if contact_email}}
+            <a href="mailto:{{ contact_email }}" target="_blank">{{ contact }}</a>
+          {{else}}
+            {{ contact }}
+          {{/if}}
+        </span>
+        {{#if has_recorder}}
+        <!--Button Code-->
+        <span class="pull-right result-row-switchbtn">
+        {{> schedule-button}}
+        </span>
+        <!--End button-->
+        {{/if}}
+      </li>
+    {{/each}}
+  </ol>
+{% endtplhandlebars %}
+
+{% include "scheduler/handlebars/schedule_button_partial.html" %}
 
 {% tplhandlebars "ajax-waiting" %}
   <div class="waiting">
@@ -164,6 +239,7 @@ window.scheduler = {
 {% block extra_js %}
 {% compress js %}
 <script src="{% static "vendor/js/moment.min.js" %}"></script>
+<script src="{% static "vendor/js/bootstrap-slider.min.js" %}"></script>
 <script src="{% static "scheduler/js/main.js" %}"></script>
 {% endcompress %}
 {% endblock extra_js %}
