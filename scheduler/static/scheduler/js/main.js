@@ -567,6 +567,21 @@ var PanoptoScheduler = (function ($) {
 
     }
 
+    function do_scheduled_recording_search(session_ids) {
+        $.ajax({
+            type: 'GET',
+            url: panopto_api_path('schedule/', {
+                session_ids: session_ids,
+            }),
+            waitIndicatator: event_search_in_progress,
+            complete: event_search_complete
+        })
+            .fail(event_search_failure)
+            .done(function (msg) {
+                paint_space_schedule(msg);
+            });
+    }
+
     function update_term_selector() {
         $('#selected-quarter').html($("option:selected", this).text());
     }
@@ -1245,6 +1260,8 @@ var PanoptoScheduler = (function ($) {
             };
 
         $('.result-display-container').html(tpl(context));
+
+        do_scheduled_recording_search(data[0].scheduled_recordings);
     }
 
     function panopto_recorder_search() {
