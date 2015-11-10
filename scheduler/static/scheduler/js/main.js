@@ -595,7 +595,7 @@ var PanoptoScheduler = (function ($) {
 
     function update_event_search_criteria(space_id, recorder_id, date) {
         $('#room-select').val(space_id + '|' + recorder_id);
-        $('input#calendar.input-date').val(date.split('-').join('/'));
+        $('#date-picker').datepicker('setDate', moment(date, 'MM-DD-YYYY').toDate());
     }
 
     function find_event_from_search(raw) {
