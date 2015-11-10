@@ -476,6 +476,11 @@ var PanoptoScheduler = (function ($) {
         }
     }
 
+    function update_history_state(search_param) {
+        $('ul.nav-tabs li.active a').attr('data-search-param', search_param);
+        history.pushState({}, '', search_param);
+    }
+
     function course_search_failure(xhr) {
         var html = $('#course-search-failure').html();
 
@@ -517,7 +522,6 @@ var PanoptoScheduler = (function ($) {
             .done(function (msg) {
                 paint_schedule(course, msg);
                 set_course_search_criteria();
-                history.pushState({}, '', '?course=' + course.canvas_id);
             });
     }
 
@@ -540,6 +544,7 @@ var PanoptoScheduler = (function ($) {
             ev.preventDefault();
         }
 
+        update_history_state('?course=' + course.canvas_id);
         find_course(course);
     }
 
@@ -549,10 +554,13 @@ var PanoptoScheduler = (function ($) {
             day_val = $('input#calendar.input-date').val();
 
         ev.preventDefault();
-        event_search_search(ids[0], ids[1], day_val);
+        update_history_state('?events=' + ids[0]
+                             + '|' + ids[1]
+                             + '|' + day_val.split('/').join('-'));
+        search_events_in_space(ids[0], ids[1], day_val);
     }
 
-    function event_search_search(space_id, recorder_id, date) {
+    function search_events_in_space(space_id, recorder_id, date) {
         $.ajax({
             type: 'GET',
             url: panopto_api_path('schedule/', {
@@ -566,11 +574,7 @@ var PanoptoScheduler = (function ($) {
             .fail(event_search_failure)
             .done(function (msg) {
                 paint_space_schedule(msg);
-                history.pushState({}, '', '?events=' + space_id
-                                  + '|' + recorder_id
-                                  + '|' + date.split('/').join('-'));
             });
-
     }
 
     function find_course_from_search(raw) {
@@ -604,7 +608,7 @@ var PanoptoScheduler = (function ($) {
         if (search) {
             $('.nav-tabs #tab2').tab('show');
             update_event_search_criteria(search[1], search[2], search[3]);
-            event_search_search(search[1], search[2], search[3]);
+            search_events_in_space(search[1], search[2], search[3]);
             return true;
         }
 
@@ -1431,11 +1435,15 @@ var PanoptoScheduler = (function ($) {
         });
 
         $('a[data-toggle="tab"]').on('shown.bs.tab', function () {
+            var search_param = $(this).attr('data-search-param');
+
             if ($(this).attr('id') === 'tab2') {
                 if ($('.rooms-loading').length) {
                     init_event_search();
                 }
             }
+
+            history.replaceState({}, '', search_param ? search_param : '/scheduler/');
         });
 
         if ($('#panopto-recorders').length) {
