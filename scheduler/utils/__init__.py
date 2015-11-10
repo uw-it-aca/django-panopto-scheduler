@@ -11,7 +11,6 @@ from restclients.r25.reservations import get_reservations
 from restclients.canvas.courses import Courses as CanvasCourses
 from scheduler.utils.recorder import get_recorder_details, RecorderException
 from scheduler.utils.session import get_sessions_by_external_ids
-from scheduler.utils.session import get_sessions_by_session_ids
 from panopto_client.access import AccessManagement
 from panopto_client import PanoptoAPIException
 from dateutil import parser, tz
@@ -125,10 +124,10 @@ def course_recording_sessions(course, event):
 def space_events_and_recordings(params):
     search = {
         'space_id': params.get('space_id'),
-        'start_dt': params.get('start_dt'),
-        'session_ids': params.get('session_ids'),
-        'recorder_id': params.get('recorder_id'),
+        'start_dt': params.get('start_dt')
     }
+
+    start_dt = parser.parse(search['start_dt']).date()
 
     current_term = get_current_term()
     next_term = get_next_term()
@@ -136,31 +135,10 @@ def space_events_and_recordings(params):
     event_sessions = []
     event_external_ids = []
     recorders = {
-        search['space_id']: search['recorder_id'],
+        search['space_id']: params.get('recorder_id')
     }
 
-    if search['recorder_id'] and search['session_ids']:
-        sessions = get_sessions_by_session_ids(
-            search['session_ids'].split(','))
-
-        for s in sessions:
-            event_session = event_session_from_scheduled_recording(
-                s, recorders)
-            r = s.RemoteRecorderIds.guid[0] \
-                if hasattr(s.RemoteRecorderIds, 'guid') else None
-            if s.ExternalId not in event_external_ids:
-                event_sessions.append(event_session)
-                event_external_ids.append(s.ExternalId)
-            elif r == search['recorder_id']:
-                for i, e in enumerate(event_sessions):
-                    if e['recording']['external_id'] == s.ExternalId:
-                        event_sessions[i] = event_session
-
-        return event_sessions
-
     if search['space_id'] and search['start_dt']:
-        start_dt = parser.parse(search['start_dt']).date()
-
         reservations = get_reservations(**search)
 
         # build event sessions, accounting for joint class reservations
@@ -281,57 +259,6 @@ def event_session_from_reservation(r):
 
     session['recording']['start'] = start_utc.isoformat()
     session['recording']['end'] = end_utc.isoformat()
-
-    return session
-
-
-def event_session_from_scheduled_recording(s, recorders):
-    space_id, recorder_id = recorders.items()[0]
-
-    start_utc = s.StartTime.astimezone(pytz.utc)
-    end_utc = start_utc + datetime.timedelta(seconds=int(s.Duration))
-
-    session = {
-        'profile': '',
-        'name': s.Name,
-        'schedulable': True,
-        'space': {
-            'id': space_id,
-            'name': None,
-            'formal_name': None
-        },
-        'recording': {
-            'name': s.Name,
-            'id': s.Id if s.RemoteRecorderIds.guid[0] == recorder_id else None,
-            'external_id': s.ExternalId,
-            'recorder_id': recorder_id,
-            'start': start_utc.isoformat(),
-            'end': end_utc.isoformat(),
-            'folder': {
-                'name': s.FolderName,
-                'id': s.FolderId,
-                'external_id': s.FolderId,
-            },
-            'is_broadcast': s.IsBroadcast,
-            'is_public': False,
-        },
-        'contact': {
-            'name': '',
-            'uwnetid': '',
-            'email': '',
-        },
-        'event': {
-            'start': start_utc.isoformat(),
-            'end': end_utc.isoformat(),
-        }
-    }
-
-    session['key'] = course_event_key(
-        session['contact']['uwnetid'],
-        session['recording']['name'],
-        session['recording']['external_id'],
-        session['recording']['recorder_id'],
-        session['recording']['folder']['external_id'])
 
     return session
 
