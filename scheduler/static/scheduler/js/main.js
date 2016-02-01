@@ -757,6 +757,8 @@ var PanoptoScheduler = (function ($) {
 
         button_loading(button);
 
+        button.trigger('scheduler.set_schedule_start');
+
         $.ajax({
             type: 'POST',
             url: panopto_api_path('session/'),
@@ -788,6 +790,7 @@ var PanoptoScheduler = (function ($) {
         }).always(function () {
             button_stop_loading(button);
             update_schedule_buttons(panopto_event);
+            button.trigger('scheduler.set_schedule_finish');
         });
     }
 
@@ -1007,11 +1010,25 @@ var PanoptoScheduler = (function ($) {
             btngrp = button.closest('.btn-group'),
             webcast = btngrp.find('[name^=webcast_][value="1"]').is(':checked'),
             is_public = btngrp.find('[name^=public_][value="1"]').is(':checked'),
+            panopto_events = [],
             vals = null,
             start,
             start_delta,
             duration,
-            pe;
+            i,
+            schedule_all_serially = function (events) {
+                if (events.length) {
+                    events[0][0].one('scheduler.set_schedule_finish', function () {
+                        button_stop_loading(events[0][0]);
+                        update_schedule_buttons(events[0][1]);
+                        if (events.length > 1) {
+                            schedule_all_serially(events.slice(1));
+                        }
+                    });
+
+                    schedule_panopto_recording(events[0][1]);
+                }
+            };
 
         if (window.scheduler.hasOwnProperty('global_slider') && window.scheduler.global_slider) {
             vals = window.scheduler.global_slider.slider('getValue');
@@ -1021,7 +1038,11 @@ var PanoptoScheduler = (function ($) {
         }
 
         $('.list-group .btn-group.unscheduled > button:first-child').not(':disabled').each(function () {
-            pe = panopto_event($(this));
+            var $button = $(this),
+                pe = panopto_event($button);
+
+            button_loading($button);
+
             pe.recording.is_broadcast = webcast;
             pe.recording.is_public = is_public;
 
@@ -1031,9 +1052,10 @@ var PanoptoScheduler = (function ($) {
                 pe.recording.end = start.add(duration, 'seconds').toISOString();
             }
 
-            schedule_panopto_recording(pe);
+            panopto_events.push([$button, pe]);
         });
 
+        schedule_all_serially(panopto_events);
         update_schedule_buttons();
     }
 
