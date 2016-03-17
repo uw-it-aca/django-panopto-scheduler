@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.conf.urls import patterns, include, url
 from django.views.generic import TemplateView
+from django.views.generic.base import RedirectView
 from scheduler.views.api.schedule import Schedule
 from scheduler.views.api.recorder import Recorder
 from scheduler.views.api.space import Space
@@ -11,7 +12,7 @@ from scheduler.views.api.folder import Folder
 
 urlpatterns = patterns(
     '',
-    url(r'^/?$', 'scheduler.views.home.home'),
+    url(r'^/?$', RedirectView.as_view(url='courses/', permanent=True)),
     url(r'^recorders/?$', 'scheduler.views.recorders.recorders'),
     url(r'^course/?$', 'scheduler.views.course.CourseSchedule'),
     url(r'^courses/?$', 'scheduler.views.courses.courses'),

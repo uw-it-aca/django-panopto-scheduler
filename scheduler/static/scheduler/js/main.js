@@ -2033,6 +2033,42 @@ var PanoptoScheduler = (function ($) {
         }
     }
 
+
+    function init_course_events() {
+        $('body')
+            .on('click',
+                '.batchswitch .btn-group > button:first-child',
+                panopto_schedule_all)
+            .on('click',
+                '.list-group .btn-group.unscheduled > button:first-child,'
+                + '.list-group .btn-group.can-record > button:first-child',
+                panopto_set_schedule)
+            .on('click',
+                '.list-group .btn-group.scheduled > button:first-child,'
+                + '.list-group .btn-group.is_recording > button:first-child',
+                panopto_clear_scheduled_recording)
+            .on('show.bs.dropdown',
+                '.schedule-button-cluster .btn-group',
+                init_schedule_dropdown)
+            .on('hide.bs.dropdown',
+                '.list-group .btn-group',
+                schedule_options_closing)
+            .on('mousedown',
+                '.list-group .btn-group button.dropdown-toggle',
+                position_schedule_dropdown)
+            .on('change',
+                '.list-group .btn-group input[name^=webcast_]',
+                panopto_toggle_webcast)
+            .on('change',
+                '.list-group .btn-group input[name^=public_]',
+                panopto_toggle_public)
+            .on('click',
+                '.dropdown-menu',
+                function (e) { e.stopPropagation(); });
+        Handlebars.registerPartial('reservation-list', $('#reservation-list-partial').html());
+        Handlebars.registerPartial('schedule-button', $('#schedule-button-partial').html());
+    }
+
     function initialize() {
         $.ajaxSetup({
             crossDomain: false, // obviates need for sameOrigin test
@@ -2052,38 +2088,8 @@ var PanoptoScheduler = (function ($) {
         if ($('form.course-search').length) {
             init_term_selector();
             $("form.course-search").submit(do_course_search);
-            $('body')
-                .on('click',
-                    '.batchswitch .btn-group > button:first-child',
-                    panopto_schedule_all)
-                .on('click',
-                    '.list-group .btn-group.unscheduled > button:first-child,'
-                    + '.list-group .btn-group.can-record > button:first-child',
-                    panopto_set_schedule)
-                .on('click',
-                    '.list-group .btn-group.scheduled > button:first-child,'
-                    + '.list-group .btn-group.is_recording > button:first-child',
-                    panopto_clear_scheduled_recording)
-                .on('show.bs.dropdown',
-                    '.schedule-button-cluster .btn-group',
-                    init_schedule_dropdown)
-                .on('hide.bs.dropdown',
-                    '.list-group .btn-group',
-                    schedule_options_closing)
-                .on('mousedown',
-                    '.list-group .btn-group button.dropdown-toggle',
-                    position_schedule_dropdown)
-                .on('change',
-                    '.list-group .btn-group input[name^=webcast_]',
-                    panopto_toggle_webcast)
-                .on('change',
-                    '.list-group .btn-group input[name^=public_]',
-                    panopto_toggle_public)
-                .on('click',
-                    '.dropdown-menu',
-                    function (e) { e.stopPropagation(); });
-            Handlebars.registerPartial('reservation-list', $('#reservation-list-partial').html());
-            Handlebars.registerPartial('schedule-button', $('#schedule-button-partial').html());
+            init_course_events();
+
             if (window.location.search.length) {
                 find_course_from_search(window.location.search);
                 $(window).bind('popstate', function (e) {
@@ -2162,6 +2168,8 @@ var PanoptoScheduler = (function ($) {
             if (window.scheduler.hasOwnProperty('blti')) {
                 find_course(parse_sis_id(window.scheduler.blti.course));
             }
+
+            init_course_events();
         }
     }
 
