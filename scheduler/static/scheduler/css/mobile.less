@@ -155,9 +155,9 @@ span.loading {
 }
 /*** Course Search form blocks ***/
 
-.tab-content{
-	margin-bottom: 40px;
-	min-width: 375px;
+.course-search, .event-search, .recorder-search {
+	margin-top: 20px;
+
 	::-webkit-input-placeholder {font-style: italic;}
 
 	:-moz-placeholder { font-style: italic;} /* Firefox 18- */
@@ -165,7 +165,9 @@ span.loading {
 	::-moz-placeholder { font-style: italic; } /* Firefox 19+ */
 
 	:-ms-input-placeholder { font-style: italic; }
-
+    input-group, .form-group {
+        padding-right: 8px;
+    }
 	.inputs-row {
 		display:inline-block;
 	}
@@ -179,15 +181,13 @@ span.loading {
 		width:52px;
 	}
 
+    input#calendar { background-color: white; width: 8em; }
+    select#room-select { width: 16em; }
+
 	/*** Room Search form blocks ***/
     .rooms-loading { position: absolute; margin-left: 80px; font-size: 20px; height: 40px; width: 40x;  }
 	.input-rm { width: 120px; }
 	.input-date { width: 160px; }
-	.event-search { margin-top: 20px;
-        .input-group, .form-group { padding-right: 8px; }
-        input#calendar { background-color: white; width: 8em; }
-        select#room-select { width: 16em; }
-    }
 
 }//.tab-content
 
@@ -218,6 +218,9 @@ span.loading {
 			font-weight: 400;
 			letter-spacing: 0;
 			text-transform: none;
+            .name  { padding-left: 10px; font-weight: 600; }
+            .contact { padding-left: 16px; font-size: smaller; font-weight: 100;}
+            .location { font-size: smaller; font-weight: 100;}
 			}
 
 		.record-status-enable {
@@ -277,6 +280,12 @@ span.loading {
             .list-group-item {
                 line-height: 35px;
             }
+            .list-group-item:first-child {
+                display: block !important;
+            }
+            .list-group-item.scheduled {
+                background-color: #90EE90;
+            }
         }
         .room-list { list-style: none; display: inline-block; margin: 0; padding: 0;
             li { display: inline; }
@@ -293,6 +302,10 @@ span.loading {
 				margin-left: 5px;
 				margin-right: -6px;
 		    }
+        }
+        .result-action {
+            display: inline-block;
+            div { display: inline-block; line-height: 1.5em;}
         }
 		.batchswitch {
 			display: inline-block;
@@ -381,10 +394,184 @@ span.loading {
         }
 	}//.result-list-container
 
-
-
+    .reservation-settings {
+        > div {
+            margin: 10px 0;
+            padding: 16px;
+            background-color: @gray-lightest;
+        }
+        > div:last-child {
+            button { margin-left: 16px; }
+            background-color: white;
+        }
+        a.inactivate {
+            pointer-events: none;
+            cursor: default;
+        }
+        div.container { margin-bottom: 16px; padding: 16px; width: 800px;
+           div.row { margin-bottom: 10px;
+               > div i { font-size: 20px; }
+               .setting-name { font-size: 17px; }
+               input[type="radio"] { margin-left: 12px; }
+               .slider-box {
+                   margin-left: 20px;
+                   margin-top: 18px;
+                   width: 90%;
+               }
+           }
+           .field-editor {
+               .field {
+                   .placeholder {
+                       font-style: italic;
+                       display: none;
+                   }
+               }
+               .form-group {
+                    input {
+                        width: 700px;
+                    }
+                    .clear-field, .field-search {
+                        position: absolute;
+                        margin-left: -20px;
+                        margin-top: 7px;
+                        cursor: pointer;
+                        i {
+                            font-size: 15px;
+                            color: @gray-light;
+                        }
+                    }
+                }
+           }
+           .creators {
+               > span {
+                   margin-right: 8px;
+                   font-weight: 700;
+               }
+               .field {
+                   display: inline-block;
+                   ul {
+                       padding-left: 0;
+                       display: inline;
+                       list-style: none;
+                       li {
+                           display: inline;
+                       }
+                       li:after {
+                         content: ", "
+                       }
+                       li:first-child {
+                           display: inline !important;
+                       }
+                       li:nth-last-child(2):after, li:last-child:after {
+                           content: ""
+                       }
+                   }
+               }
+               .form-group {
+                   display: inline-block;
+                   input {
+                       width: 625px;
+                   }
+               }
+            }
+            .folder-picker { margin-top: 8px; background-color: white; width: 700px;
+                .prompt,  {
+                    padding: 8px 10px;
+                }
+                .search {
+                    input {
+                        width: 680px;
+                    }
+                    padding: 0 10px;
+                }
+                hr {
+                    margin: 6px;
+                }
+                .result {
+                    cursor: pointer;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    height: 90px;
+                    overflow: auto;
+                    overflow-y: scroll;
+                    .picked {
+                        margin-left: -8px;
+                        margin-right: -8px;
+                        padding-left: 8px;
+                        padding-right: 8px;
+                        color: white;
+                        background-color: @link;
+                    }
+                    .waiting {
+                        font-size: 20px;
+                        margin-top: 10px;
+                        margin-left: 00px;
+                    }
+                }
+            }
+            .schedule-event + span, .modify-event + span {
+                display: none;
+                position: absolute;
+                margin-top: 5px;
+                margin-left: -105px;
+                font-size: 30px;
+            }
+            .schedule-event:disabled + span, .modify-event:disabled + span {
+                display: inline !important;
+            }
+            .visit-folder.inactive {
+                display: none;
+                + span {
+                    display: inline !important;
+                }
+            }
+            .btn.schedule-event, .btn.modify-event {
+                background-color: @button-light;
+                border:1px solid @gray-light;
+                text-align: center;
+                border-radius: 5px !important;
+                -webkit-border-radius: 5px !important;
+                -moz-border-radius: 5px !important;
+                box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4)/*, 0 1px 0 rgba(255, 255, 255, 0.4) inset */;
+                -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4)/*, 0 1px 0 rgba(255, 255, 255, 0.4) inset */;
+                -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4)/* , 0 1px 0 rgba(255, 255, 255, 0.4) inset */;
+                background: -webkit-gradient(linear, left top, left bottom, from(@button-light), to(@button-dark));
+                background: -moz-linear-gradient(top, @button-light, @button-dark);
+                background: linear-gradient(@button-light, @button-dark);
+                font-size: 15px;
+            }
+        }
+    }
 }
 
+// duration slider general styling
+.slider-box {
+    width: 75%;
+    margin: 0 auto;
+    .slider-horizontal {
+        width: 100%;
+        .slider-track {
+            height: 5px;
+        }
+
+    }
+    .slider-selection {
+        background: @green;
+    }
+    .slider-handle {
+        background: @gray-darker;
+        height: 15px;
+        width: 15px;
+        margin-left: -5px;
+        margin-top: -5px;
+    }
+    .start-time {
+        margin-left: -10px;
+    }
+    .end-time {
+        margin-right: -10px;
+    }
+}
 
 //Styling for Spinners
 
@@ -612,33 +799,6 @@ span.loading {
                     color: @gray;
                     font-size: smaller;
                     line-height: 1;
-                }
-                .slider-box {
-                    width: 75%;
-                    margin: 0 auto;
-                    .slider-horizontal {
-                        width: 100%;
-                        .slider-track { 
-                            height: 5px; 
-                        }
-
-                    }
-                    .slider-selection {
-                        background: @green;
-                    }
-                    .slider-handle {
-                        background: @gray-darker;
-                        height: 15px; 
-                        width: 15px;
-                        margin-left: -5px; 
-                        margin-top: -5px; 
-                    }
-                    .start-time {
-                        margin-left: -10px;
-                    }
-                    .end-time {
-                        margin-right: -10px;
-                    }
                 }
             }
         }

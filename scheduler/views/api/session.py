@@ -1,14 +1,19 @@
+from django.conf import settings
 from scheduler.views.rest_dispatch import RESTDispatch
 from scheduler.views.api.exceptions import MissingParamException, \
     InvalidParamException
+from scheduler.utils import PanoptoAPIException
 from scheduler.utils import course_event_key
+from scheduler.utils import get_panopto_folder_creators
 from scheduler.utils.validation import Validation
 from panopto_client.session import SessionManagement
 from panopto_client.access import AccessManagement
+from panopto_client.user import UserManagement
 from panopto_client.remote_recorder import RemoteRecorderManagement
 from dateutil import parser, tz
 import simplejson as json
 import logging
+import datetime
 import pytz
 import re
 
@@ -16,11 +21,15 @@ import re
 logger = logging.getLogger(__name__)
 
 
+class  PanoptoUserException(Exception): pass
+
+
 class Session(RESTDispatch):
     def __init__(self):
         self._session_api = SessionManagement()
         self._recorder_api = RemoteRecorderManagement()
         self._access_api = AccessManagement()
+        self._user_api = UserManagement()
         self._audit_log = logging.getLogger('audit')
 
     def GET(self, request, **kwargs):
@@ -39,6 +48,7 @@ class Session(RESTDispatch):
                 'external_id': raw_session['ExternalId'],
                 'folder_id': raw_session['FolderId'],
                 'folder_name': raw_session['FolderName'],
+                'folder_creators': [],
                 'id': raw_session['Id'],
                 'is_video_url': raw_session['IosVideoUrl'],
                 'is_broadcast': raw_session['IsBroadcast'],
@@ -61,34 +71,14 @@ class Session(RESTDispatch):
 
     def POST(self, request, **kwargs):
         try:
-            data = json.loads(request.body)
-            uwnetid = data.get("uwnetid", "")
-            name = self._valid_recording_name(data.get("name", "").strip())
-            external_id = self._valid_external_id(
-                data.get("external_id", "").strip())
-            recorder_id = self._valid_recorder_id(
-                data.get("recorder_id", "").strip())
-            folder_external_id = data.get("folder_external_id", "").strip()
+            new_session = self._validate_session(request.body)
 
-            # do not permit param tampering
-            key = course_event_key(uwnetid, name, external_id,
-                                   recorder_id, folder_external_id)
-            if key != data.get("key", ''):
-                raise InvalidParamException('Invalid Client Key')
-
-            is_broadcast = self._valid_boolean(data.get("is_broadcast", False))
-            is_public = self._valid_boolean(data.get("is_public", False))
-            start_time = self._valid_time(data.get("start_time", "").strip())
-            end_time = self._valid_time(data.get("end_time", "").strip())
-            folder_id = self._valid_folder(data.get("folder_name", "").strip(),
-                                           folder_external_id)
-
-            session = self._recorder_api.scheduleRecording(name,
-                                                           folder_id,
-                                                           is_broadcast,
-                                                           start_time,
-                                                           end_time,
-                                                           recorder_id)
+            session = self._recorder_api.scheduleRecording(new_session.get('name'),
+                                                           new_session.get('folder_id'),
+                                                           new_session.get('is_broadcast'),
+                                                           new_session.get('start_time'),
+                                                           new_session.get('end_time'),
+                                                           new_session.get('recorder_id'))
             if session.ConflictsExist:
                 conflict = session.ConflictingSessions[0][0]
                 start_time = conflict.StartTime
@@ -103,17 +93,78 @@ class Session(RESTDispatch):
 
             session_id = session.SessionIDs[0][0]
 
-            self._session_api.updateSessionExternalId(session_id,
-                                                      external_id)
+            self._session_api.updateSessionExternalId(
+                session_id, new_session.get('external_id'))
 
-            if is_public:
+            if new_session.get('is_public'):
                 self._access_api.updateSessionIsPublic(session_id, True)
 
+            messages = []
+            creators = new_session.get('folder_creators')
+            if creators and type(creators) is list:
+                messages = self._sync_creators(
+                    new_session.get('folder_id'), creators)
+
             self._audit_log.info('%s scheduled %s for %s from %s to %s' % (
-                request.user, external_id, uwnetid, start_time, end_time))
+                request.user, new_session.get('external_id'),
+                new_session.get('uwnetid'), new_session.get('start_time'),
+                new_session.get('end_time')))
 
             return self.json_response({
-                'recording_id': session_id
+                'recording_id': session_id,
+                'messages': messages
+            })
+        except InvalidParamException as ex:
+            return self.error_response(400, "%s" % ex)
+        except Exception as ex:
+            return self.error_response(500, "Unable to save session: %s" % ex)
+
+    def PUT(self, request, **kwargs):
+        try:
+            session_update = self._validate_session(request.body)
+            session = self._session_api.getSessionsById(
+                session_update.get('recording_id'))[0][0]
+
+            start_utc = session.StartTime.astimezone(pytz.utc)
+            end_utc = start_utc + datetime.timedelta(
+                seconds=int(session.Duration))
+
+            session_update_start = self._valid_time(session_update.get('start_time'))
+            session_update_end = self._valid_time(session_update.get('end_time'))
+
+            if not (start_utc.isoformat() == session_update_start
+                    and end_utc.isoformat() == session_update_end):
+                self._recorder_api.updateRecordingTime(
+                    session.Id, session_update_start, session_update_end)
+
+            access = self._access_api.getSessionAccessDetails(session.Id)
+            if access.IsPublic != session_update.get('is_public'):
+                self._access_api.updateSessionIsPublic(
+                    session.Id, session_update.get('is_public'))
+
+            if session.IsBroadcast != session_update.get('is_broadcast'):
+                self._session_api.updateSessionIsBroadcast(
+                    session.Id, session_update.get('is_broadcast'))
+
+            folder_name = session_update.get('folder_name')
+            if session.FolderName != folder_name:
+                self._session_api.moveSessions(
+                    [session.Id], session_update.get('folder_id'))
+
+            messages = []
+            creators = session_update.get('folder_creators')
+            if creators and type(creators) is list:
+                messages = self._sync_creators(
+                    session_update.get('folder_id'), creators)
+
+            self._audit_log.info('%s modified %s for %s from %s to %s in %s' % (
+                request.user, session_update.get('external_id'),
+                session_update.get('uwnetid'), session_update.get('start_time'),
+                session_update.get('end_time'), session_update.get('folder_name')))
+
+            return self.json_response({
+                'recording_id': session.Id,
+                'messages': messages
             })
         except InvalidParamException as ex:
             return self.error_response(400, "%s" % ex)
@@ -127,8 +178,7 @@ class Session(RESTDispatch):
             key = course_event_key(request.GET.get('uwnetid', ''),
                                    request.GET.get('name', ''),
                                    request.GET.get('eid', ''),
-                                   request.GET.get('rid', ''),
-                                   request.GET.get('feid', ''))
+                                   request.GET.get('rid', ''))
 
             if key != request.GET.get("key", None):
                 raise InvalidParamException('Invalid Client Key')
@@ -150,28 +200,70 @@ class Session(RESTDispatch):
             pass
 
         try:
-            folders = self._session_api.getAllFoldersByExternalId(
-                [external_id])
-            if folders and len(folders) and len(folders[0]):
-                return folders[0][0].Id
+            if external_id and len(external_id):
+                folders = self._session_api.getAllFoldersByExternalId(
+                    [external_id])
+                if folders and len(folders) == 1 and len(folders[0]):
+                    return folders[0][0].Id
 
             folders = self._session_api.getFoldersList(search_query=name)
             if folders and len(folders):
-                folder_id = folders[0].Id
-                self._session_api.updateFolderExternalId(
-                    folder_id, external_id)
-                return folder_id
+                for folder in folders:
+                    if folder.Name == name:
+                        folder_id = folder.Id
+                        if external_id and len(external_id):
+                            self._session_api.updateFolderExternalId(
+                                folder_id, external_id)
+
+                        return folder_id
 
             new_folder = self._session_api.addFolder(name)
             if not new_folder:
                 raise InvalidParamException('Cannot add folder: %s' % name)
 
             new_folder_id = new_folder.Id
-            self._session_api.updateFolderExternalId(new_folder_id,
-                                                     external_id)
+
+            if external_id and len(external_id):
+                self._session_api.updateFolderExternalId(
+                    new_folder_id, external_id)
+
             return new_folder_id
         except Exception as ex:
             raise InvalidParamException('Cannot add folder: %s' % ex)
+
+    def _validate_session(self, request_body):
+        session = {}
+        data = json.loads(request_body)
+
+        session['recording_id'] = data.get("recording_id", "")
+        session['uwnetid'] = data.get("uwnetid", "")
+        session['name'] = self._valid_recording_name(data.get("name", "").strip())
+        session['external_id'] = self._valid_external_id(
+            data.get("external_id", "").strip())
+        session['recorder_id'] = self._valid_recorder_id(
+            data.get("recorder_id", "").strip())
+        session['folder_external_id'] = data.get(
+            "folder_external_id", "").strip()
+
+        session['session_id'] = data.get("session_id", "").strip()
+        if len(session['session_id']):
+            self._valid_external_id(session['session_id'])
+
+        # do not permit param tamperings
+        key = course_event_key(session['uwnetid'], session['name'],
+                               session['external_id'], session['recorder_id'])
+        if key != data.get("key", ''):
+            raise InvalidParamException('Invalid Client Key')
+
+        session['is_broadcast'] = self._valid_boolean(data.get("is_broadcast", False))
+        session['is_public'] = self._valid_boolean(data.get("is_public", False))
+        session['start_time'] = self._valid_time(data.get("start_time", "").strip())
+        session['end_time'] = self._valid_time(data.get("end_time", "").strip())
+        session['folder_name'] = data.get("folder_name", "").strip()
+        session['folder_id'] = self._valid_folder(session['folder_name'],
+                                                  session['folder_external_id'])
+        session['folder_creators'] = data.get("creators", None)
+        return session
 
     def _valid_external_id(self, external_id):
         if external_id and len(external_id):
@@ -202,6 +294,51 @@ class Session(RESTDispatch):
             return time
 
         raise InvalidParamException('bad time value')
+
+    def _sync_creators(self, folder_id, folder_creators):
+        messages = []
+        new_creator_ids = []
+        deleted_creator_ids = []
+        current_creators = get_panopto_folder_creators(folder_id)
+        for creator in folder_creators:
+            if creator not in current_creators:
+                try:
+                    new_creator_ids.append(self._get_panopto_user_id(creator))
+                except PanoptoUserException as ex:
+                    messages.append('Invalid UWNetId %s' % creator)
+
+        for creator in current_creators:
+            if creator not in folder_creators:
+                try:
+                    deleted_creator_ids.append(self._get_panopto_user_id(creator))
+                except PanoptoUserException as ex:
+                    messages.append('Invalid UWNetId %s' % creator)
+
+        if len(new_creator_ids):
+            try:
+                self._access_api.grantUsersAccessToFolder(
+                    folder_id, new_creator_ids, 'Creator')
+            except PanoptoAPIException as ex:
+                match = re.match(r'.*Server raised fault: \'(.+)\'$', str(ex))
+                messages.append('%s: %s' % (creator, match.group(1) if match else str(ex)))
+
+        if len(deleted_creator_ids):
+            try:
+                self._access_api.revokeUsersAccessFromFolder(
+                    folder_id, deleted_creator_ids, 'Creator')
+            except PanoptoAPIException as ex:
+                match = re.match(r'.*Server raised fault: \'(.+)\'$', str(ex))
+                messages.append('%s: %s' % (creator, match.group(1) if match else str(ex)))
+
+        return messages
+
+    def _get_panopto_user_id(self, netid):
+        key = "%s\%s" % (settings.PANOPTO_API_APP_ID, netid)
+        user = self._user_api.getUserByKey(key)
+        if not user or user['UserId'] == '00000000-0000-0000-0000-000000000000':
+            raise PanoptoUserException('Unprovisioned UWNetId: %s' % (netid))
+
+        return user['UserId']
 
 
 class SessionPublic(RESTDispatch):
@@ -316,8 +453,10 @@ class SessionRecordingTime(RESTDispatch):
             data = json.loads(request.body)
             start_time = self._valid_time(data.get("start", "").strip())
             end_time = self._valid_time(data.get("end", "").strip())
-            self._recorder_api.updateRecordingTime(session_id,
-                                                   start_time, end_time)
+
+            self._recorder_api.updateRecordingTime(
+                session_id, start_time, end_time)
+
             self._audit_log.info('%s set %s start/stop to %s and %s' % (
                 request.user, session_id, start_time, end_time))
 
