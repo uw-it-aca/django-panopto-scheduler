@@ -13,6 +13,8 @@ from scheduler.utils.recorder import get_recorder_details, RecorderException
 from scheduler.utils.session import get_sessions_by_external_ids
 from scheduler.utils.session import get_sessions_by_session_ids
 from panopto_client.access import AccessManagement
+from panopto_client.user import UserManagement
+from panopto_client.session import SessionManagement
 from panopto_client import PanoptoAPIException
 from dateutil import parser, tz
 from nameparser import HumanName
@@ -96,19 +98,19 @@ def course_recording_sessions(course, event):
 
     contact = course_event_title_and_contact(course)
     folder = panopto_course_folder(course, contact['title_long'])
-    for r in event.reservations:
+    for rsv in event.reservations:
 
-        event_session = event_session_from_reservation(r)
+        event_session = event_session_from_reservation(rsv)
 
         event_session['joint'] = joint if len(joint) else None
 
         event_session['recording']['folder'] = folder
 
-        name, external_id = panopto_course_session(course, r.start_datetime)
+        name, external_id = panopto_course_session(course, rsv.start_datetime)
         event_session['recording']['name'] = name
         event_session['recording']['external_id'] = external_id
 
-        recorders[r.space_reservation.space_id] = None
+        recorders[rsv.space_reservation.space_id] = None
         session_external_ids.append(external_id)
 
         event_session['schedulable'] = True if folder['external_id'] else False
@@ -173,41 +175,10 @@ def space_events_and_recordings(params):
                 event_sessions.append(event_session)
 
         # overlay session data
-        for event_session in event_sessions:
-
-            # generate external_id
+        for event_session in list(event_sessions):
+            # remove academic courses and generate external_id
             if event_session['profile'].lower() in UW_MEETING_TYPES:
-                name = event_session['name'][0] if isinstance(
-                    event_session['name'], list) else event_session['name']
-                match = re.match(r'^([\w& ]+) (\d{3}) ([A-Z][A-Z0-9]?)$', name)
-                if match:
-                    term = None
-                    if start_dt > current_term.first_day_quarter \
-                       and start_dt < current_term.last_day_instruction:
-                        term = current_term
-                    elif start_dt > next_term.first_day_quarter \
-                            and start_dt < next_term.last_day_instruction:
-                        term = next_term
-
-                    if term:
-                        course = Course(year=str(term.year),
-                                        quarter=term.quarter,
-                                        curriculum=match.group(1).upper(),
-                                        number=match.group(2),
-                                        section=match.group(3).upper())
-
-                        contact = course_event_title_and_contact(course)
-                        folder = panopto_course_folder(course,
-                                                       contact['title_long'])
-
-                        event_session['recording']['folder'] = folder
-                        event_session['contact'] = contact
-
-                        name, eid = panopto_course_session(
-                            course, search['start_dt'])
-                        event_session['recording']['name'] = name
-                        event_session['recording']['external_id'] = eid
-                        event_external_ids.append(eid)
+                event_sessions.remove(event_session)
             else:
                 set_panopto_generic_folder(event_session)
                 set_panopto_generic_session(event_session)
@@ -300,8 +271,9 @@ def event_session_from_scheduled_recording(s):
                 'id': s.FolderId,
                 'external_id': s.FolderId,
             },
-            'is_broadcast': s.IsBroadcast,
-            'is_public': False,
+            'is_broadcast': s.IsBroadcast
+            # property below is added conditionally for events
+            #'is_public': False,
         },
         'contact': {
             'name': '',
@@ -318,36 +290,35 @@ def event_session_from_scheduled_recording(s):
         session['contact']['uwnetid'],
         session['recording']['name'],
         session['recording']['external_id'],
-        session['recording']['recorder_id'],
-        session['recording']['folder']['external_id'])
+        session['recording']['recorder_id'])
 
     return session
 
 
 def mash_in_panopto_sessions(event_sessions, session_external_ids, recorders):
     # mash in panopto recorder schedule
-    access = {}
-    # Enable when service manager requests feature
-    # api = AccessManagement()
+    session_access = {}
+    access_api = AccessManagement()
     if len(session_external_ids):
         sessions = get_sessions_by_external_ids(session_external_ids)
         for session in sessions if sessions else []:
             for e in event_sessions:
-                # Enable when service manager requests feature
-                # if session.Id not in access:
-                # access[session.Id] = api.getSessionAccessDetails(session.Id)
-
                 e_r = e['recording']
+
+                # only doe the work of getting details if they're requested
+                if 'is_public' in e_r and session.Id not in session_access:
+                    session_access[session.Id] = access_api.getSessionAccessDetails(session.Id)
+
                 if session.ExternalId == e_r['external_id']:
                     e_r['recorder_id'] = session.RemoteRecorderIds.guid[0] \
                         if hasattr(session.RemoteRecorderIds, 'guid') else None
                     recorders[e['space']['id']] = e_r['recorder_id']
                     e_r['id'] = session.Id
+                    e_r['folder']['name'] = session.FolderName
                     e_r['folder']['id'] = session.FolderId
                     e_r['is_broadcast'] = session.IsBroadcast
-                    # Enable when service manager requests feature
-                    # e_r['is_public'] = access[session.Id].IsPublic
-                    e_r['is_public'] = False
+                    if 'is_public' in e_r:
+                        e_r['is_public'] = session_access[session.Id].IsPublic
 
                     # actual recording start and duration
                     start_utc = session.StartTime.astimezone(pytz.utc)
@@ -355,6 +326,12 @@ def mash_in_panopto_sessions(event_sessions, session_external_ids, recorders):
                         datetime.timedelta(seconds=int(session.Duration))
                     e_r['start'] = start_utc.isoformat()
                     e_r['end'] = end_utc.isoformat()
+
+                    if 'auth' in e_r['folder']:
+                        e_r['folder']['auth'] = {
+                            'creators': get_panopto_folder_creators(
+                                session.FolderId)
+                        }
 
     # fill in unscheduled event ids
     for e in event_sessions:
@@ -374,14 +351,43 @@ def mash_in_panopto_sessions(event_sessions, session_external_ids, recorders):
         e['key'] = course_event_key(e['contact']['uwnetid'],
                                     e_r['name'],
                                     e_r['external_id'],
-                                    e_r['recorder_id'],
-                                    e_r['folder']['external_id'])
+                                    e_r['recorder_id'])
+
+
+def get_panopto_folder_creators(folder_id):
+    user_api = UserManagement()
+    access_api = AccessManagement()
+    creators = []
+    folder_access = access_api.getFolderAccessDetails(folder_id)
+
+    if len(folder_access['UsersWithCreatorAccess']):
+        guids = folder_access['UsersWithCreatorAccess'][0]
+        if len(guids):
+            users = user_api.getUsers(guids)
+            for user in users[0]:
+                match = re.match(r'^%s\\(.+)$' % (settings.PANOPTO_API_APP_ID), user['UserKey'])
+                if match:
+                    creators.append(match.group(1) if match else user['UserKey'])
+
+    return creators
 
 
 def set_panopto_generic_folder(event):
+    session_api = SessionManagement()
     id_string = "%s - %s" % (event['name'], event['space']['id'])
-    event['recording']['folder']['name'] = event['name']
-    event['recording']['folder']['external_id'] = panopto_generic_external_id(id_string)
+    folder_name = event['name']
+    folder_external_id = panopto_generic_external_id(id_string)
+    creators = []
+
+    folders = session_api.getFoldersList(search_query=event['name'])
+    if folders and len(folders) == 1:
+        folder_name = folders[0].Name
+        folder_external_id = folders[0].ExternalId
+        creators = get_panopto_folder_creators(folders[0].Id)
+
+    event['recording']['folder']['name'] = folder_name
+    event['recording']['folder']['external_id'] = folder_external_id
+    event['recording']['folder']['auth'] = { 'creators': creators }
 
 
 def set_panopto_generic_session(event):
@@ -390,6 +396,7 @@ def set_panopto_generic_session(event):
     id_string = "%s - %s" % (name, event['space']['id'])
     event['recording']['name'] = name
     event['recording']['external_id'] = panopto_generic_external_id(id_string)
+    event['recording']['is_public'] = False
 
 
 def panopto_generic_external_id(id_string):
@@ -504,13 +511,11 @@ def course_event_title_and_contact(course):
         'email': email if email and len(email) else "%s@uw.edu" % uwnetid if uwnetid else ''
     }
 
-def course_event_key(netid, name, external_id,
-                     recorder_id, folder_external_id):
-    to_sign = '%s,%s,%s,%s,%s(%s)' % (netid,
+def course_event_key(netid, name, external_id, recorder_id):
+    to_sign = '%s,%s,%s,%s,(%s)' % (netid if netid else '',
                                       name,
                                       external_id,
                                       recorder_id,
-                                      folder_external_id,
                                       getattr(settings,
                                               'PANOPTO_API_TOKEN',
                                               ''))

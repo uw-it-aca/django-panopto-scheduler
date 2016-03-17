@@ -17,7 +17,7 @@
     
     
     <!-- container for scheduler button, toggle, and resulting modal --> 
-    <div class="btn-group  {{#if is_recorded}}is_recorded{{else}}{{#if is_recording}}is_recording{{else}}{{#if can_record}}can-record{{else}}{{#if recording_id}}scheduled{{else}}unscheduled{{/if}}{{/if}}{{/if}}{{/if}}" {{#if recording_name}}data-recording-name="{{ recording_name }}"{{/if}}>
+    <div class="btn-group  {{#if is_recorded}}is_recorded{{else}}{{#if is_recording}}is_recording{{else}}{{#if can_record}}can-record{{else}}{{#if recording_id}}scheduled{{else}}unscheduled{{/if}}{{/if}}{{/if}}{{/if}}" data-schedule-key="{{ key }}">
         
         <!-- scheduler button --> 
         <button class="btn has-spinner" {{disabled}}>

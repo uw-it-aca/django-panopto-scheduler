@@ -1,0 +1,196 @@
+{% extends 'supporttools/base.html' %}
+
+{% load staticfiles %}
+{% load compress %}
+{% load templatetag_handlebars %}
+{% load i18n %}
+
+{% block content %}
+<!-- page header -->
+<div role="main" class="container-fluid">
+<h2>Lecture Capture Scheduler</h2>
+<!-- Tab Block-->
+<div>
+
+<h3>Find a Course</h3>
+
+        <form role="form" class="form-inline course-search">
+            <div>
+            <h4 id="selected-quarter" class="quarter">
+                <span class="sr-only"> Search for a course in</span> {{term_quarter}} {{term_year}}
+            </h4>
+
+            <span class="lcra-styled-select">
+                <label for="qtr-select" class="sr-only">Select a quarter</label>
+                <select id="qtr-select"></select>
+            </span>
+			</div>
+			
+			<div class="form-group inputs-row">
+				<label for="curriculum" class="sr-only">Enter a curriculum</label>
+				<input id="curriculum" type="text" class="form-control input-prefix" placeholder="e.g. MATH" onfocus="this.placeholder = ''" onblur="this.placeholder = 'e.g. MATH'" required>
+			</div>
+			<div class="form-group inputs-row">
+				<label for="course-code" class="sr-only">Enter a course number</label>
+				<input id="course-code" type="text" class="form-control input-crs" placeholder="101" onfocus="this.placeholder = ''" onblur="this.placeholder = '101'" required>
+			</div>
+			<div class="form-group inputs-row">
+				<label for="section" class="sr-only">Enter a section code</label>
+				<input id="section" type="text" class="form-control input-section" placeholder="A" onfocus="this.placeholder = ''" onblur="this.placeholder = 'A'"  required>
+			</div>
+
+			<button type="submit" class="btn btn-primary">Search </button>
+		</form>
+        <!-- Course Search Results Block-->
+        <div class="result-display-container course-search-result"></div>
+
+{% tplhandlebars "course-search-result-template" %}
+  <div class="room-header"><!-- Rslt Header -->
+  	<div><!-- Container -->
+		<div class="course-name"><h3><span class="sr-only">Search results for</span> {{ course }}</h3>
+		</div>
+		<div class="other-links pull-right">
+	   		<small>
+		        {{#if joint}}
+		        <div class="xlist-icon" title="Cross-listed"><i class="fa fa-exchange course-emphasis"></i> {{ joint }}
+		        </div>
+		        {{/if}}
+		        
+		        <div class="external-links">
+			      {{#if has_recorder}}
+			        <span class="header-link-span"><a class="header-link" href="{{ panopto_folder_url }}" title="Open {{ course }} folder in Panopto" target="_blank">Panopto</a></span>
+			        {{/if}}
+			        <span class="header-link-span"><a class="header-link" href="{{ canvas_course_url }}" title="View {{ course }} in Canvas" target="_blank">Canvas</a></span>
+			        <span class="header-link-span"><a class="header-link" href="{{ sws_section_url }}" title="View {{ course }} in SWS" target="_blank">SWS</a></span>
+				</div>
+			    
+			</small>
+	   	</div><!-- other-links -->
+
+   	</div>	<!-- container -->
+  </div>	<!-- .Rslt Header -->
+
+  <div class="result-list-container">
+  	<div class="result-header">
+		<h4>
+	      <span class="sr-only">Scheduled in</span>
+          <ul class="room-list">
+            {{#each rooms}}<li class="meeting-room-{{@index}}">{{this}}</li>{{/each}}
+          </ul>
+		</h4>
+	    <span class="sr-only">Lecture capture recording status: </span>
+	    {{#if has_recorder}}
+	    <span class="record-status-enable"><i class="fa fa-video-camera"></i> Recorder is ready in this room</span>
+	    {{else}}
+		<span class="record-status-disable-outer"><i class="fa fa-warning"></i><span class="record-status-disable">No recorder found in this room</span></span>
+	    {{/if}}
+        {{#if has_recorder}}
+		<div class="pull-right clearfix batchswitch">
+          {{> schedule-button}}
+        </div>
+	    {{/if}}
+  	</div>
+
+    {{> reservation-list}}
+
+  </div>
+{% endtplhandlebars %}
+
+{% tplhandlebars "event-search-result-template" %}
+  <div class="room-header"><!-- Rslt Header -->
+	<h3><span class="sr-only"> Schedule on</span> {{ search_date }}</h3>
+
+  </div>	<!-- .Rslt Header -->
+
+  <div class="result-list-container">
+	<span class="sr-only">Schedule in {{room}}</span>
+	<span class="sr-only">Lecture capture recording status: </span>
+    {{#if has_recorder}}
+	    <span class="record-status-enable"><i class="fa fa-video-camera"></i> Recorder is ready in this room</span>
+	    {{else}}
+		<span class="record-status-disable-outer"><i class="fa fa-warning"></i><span class="record-status-disable">No recorder found in this room</span></span>
+	    {{/if}}
+    {{> reservation-list}}
+
+  </div>
+{% endtplhandlebars %}
+
+
+{% tplhandlebars "reservation-list-partial" %}
+  <ol class="list-group result-list-chunk">
+    {{#each schedule}}
+      <li class="list-group-item clearfix">
+        <span class="result-row-date" title="date">{{ month_num }}/{{ day }}</span>
+        <span class="result-row-day" title="day">{{ weekday }}</span> 
+        <span class="result-row-time" title="time">{{ event_start_time }} - {{ event_end_time }} {{ ampm }}</span>
+        <span class="result-row-event meeting-room-{{ name_index }}" title="event name">{{ name }}</span>
+        <span class="result-row-contact" title="Contact person">
+          {{#if contact_email}}
+            <a href="mailto:{{ contact_email }}" target="_blank">{{ contact }}</a>
+          {{else}}
+            {{ contact }}
+          {{/if}}
+        </span>
+        {{#if has_recorder}}
+        <!--Button Code-->
+        <span class="pull-right result-row-switchbtn">
+        {{> schedule-button}}
+        </span>
+        <!--End button-->
+        {{/if}}
+      </li>
+    {{/each}}
+  </ol>
+{% endtplhandlebars %}
+
+{% include "scheduler/handlebars/schedule_button_partial.html" %}
+{% include "scheduler/handlebars/failure.html" %}
+
+</div> <!-- .container-fluid -->
+<hr>
+
+{% tplhandlebars "ajax-waiting" %}
+  <div class="waiting">
+    <i class="fa fa-spinner fa-4 fa-spin"></i>
+  </div>
+{% endtplhandlebars %}
+
+{% tplhandlebars "folder_created_message" %}
+Click the folder icon
+<a href="{{folder_url}}" target="_blank" style="color: black;"><span class="fa-stack"><i class="fa fa-play-circle-o fa-stack-1x"></i><i class="fa fa-folder-o fa-stack-2x"></i></span></a>
+to open the scheduled session's Panopto folder.
+{% endtplhandlebars %}
+
+
+<script type="text/javascript">
+window.scheduler = {
+  csrftoken: '{{ csrf_token }}',
+  canvas_host: '{{canvas_host}}',
+  panopto_server: '{{panopto_server}}',
+  term: { quarter: '{{term_quarter}}', year: {{term_year}} }
+};
+</script>
+
+{% endblock content %}
+
+{% block extra_css %}
+{% compress css %}
+<!-- <link rel="stylesheet" href="{% static "vendor/css/dropdowns-enhancement.css" %}"/>-->
+<link rel="stylesheet" href="{% static "vendor/css/bootstrap-slider.min.css" %}"/>
+<link rel="stylesheet" type="text/less" href="{% static "scheduler/css/mobile.less" %}"/>
+{% endcompress %}
+{% if not request.is_mobile and not request.is_tablet %}
+{% compress css %}
+<link rel="stylesheet" type="text/less" href="{% static "scheduler/css/desktop.less" %}"/>
+{% endcompress %}
+{% endif %}
+{% endblock extra_css %}
+
+{% block extra_js %}
+{% compress js %}
+<script src="{% static "vendor/js/moment.min.js" %}"></script>
+<!-- <script src="{% static "vendor/js/dropdowns-enhancement.js" %}"></script>-->
+<script src="{% static "vendor/js/bootstrap-slider.min.js" %}"></script>
+<script src="{% static "scheduler/js/main.js" %}"></script>
+{% endcompress %}
+{% endblock extra_js %}

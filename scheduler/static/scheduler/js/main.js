@@ -43,6 +43,10 @@ var PanoptoScheduler = (function ($) {
         $('.rooms-loading').remove();
     }
 
+    function panopto_folder_search_complete() {
+        $('.folder-picker .result .loading').addClass('hidden');
+    }
+
     function panopto_event(node) {
         var recording_node = (node.hasClass('btn-group')) ? node : null;
 
@@ -54,8 +58,7 @@ var PanoptoScheduler = (function ($) {
             recording_node = node.find('.btn-group');
         }
 
-        return window.scheduler.events[recording_node
-                                       .attr('data-recording-name')];
+        return window.scheduler.events[recording_node.attr('data-schedule-key')];
     }
 
     function button_loading(node) {
@@ -111,6 +114,12 @@ var PanoptoScheduler = (function ($) {
             + panopto_folder_id  + '%22&status=%5B4%2C0%2C5%2C3%2C2%2C1%5D';
     }
 
+    function panopto_recording_url(panopto_recording_id) {
+        return 'http://' + window.scheduler.panopto_server
+            + '/Panopto/Pages/Viewer.aspx?id='
+            + panopto_recording_id;
+    }
+
     function panopto_recording_length(start, stop) {
         return moment(start).format('h:mm a') + '-' + moment(stop).format('h:mm a');
     }
@@ -150,7 +159,7 @@ var PanoptoScheduler = (function ($) {
             failure_text = default_text,
             err;
 
-        if (xhr.hasOwnProperty('responseText')) {
+        if (xhr && xhr.hasOwnProperty('responseText')) {
             try {
                 err = JSON.parse(xhr.responseText);
 
@@ -164,7 +173,7 @@ var PanoptoScheduler = (function ($) {
         $('body').append(tpl({
             failure_title: title,
             failure_message: failure_text,
-            full_failure_message: xhr.responseText
+            full_failure_message: xhr ? xhr.responseText : ''
         }));
 
         modal_container = $('#failure-modal');
@@ -172,6 +181,8 @@ var PanoptoScheduler = (function ($) {
         modal_container.on('hidden.bs.modal', function (e) {
             $(e.target).remove();
         });
+
+        return modal_container;
     }
 
     function update_schedule_buttons(event) {
@@ -188,7 +199,7 @@ var PanoptoScheduler = (function ($) {
             now = moment();
             recordable = (now.isAfter(moment(event.event.start))
                           && now.isBefore(moment(event.event.end)));
-            button_group = $('.btn-group[data-recording-name="' + event.recording.name + '"]');
+            button_group = $('.btn-group[data-schedule-key="' + event.key + '"]');
             schedule_cluster = button_group.closest('.schedule-button-cluster');
             event_search = (schedule_cluster.parents('div.event-search').length > 0);
             if (event_search && event.recording.id) {
@@ -275,7 +286,7 @@ var PanoptoScheduler = (function ($) {
         }
     }
 
-    function paint_schedule(course, events) {
+    function paint_course_schedule(course, events) {
         var tpl = Handlebars.compile($('#course-search-result-template').html()),
             joint = null,
             panopto_folder_id = null,
@@ -315,7 +326,7 @@ var PanoptoScheduler = (function ($) {
                 future_meetings = true;
             }
 
-            window.scheduler.events[this.recording.name] = this;
+            window.scheduler.events[this.key] = this;
 
             if (!context.has_recorder) {
                 context.has_recorder = (this.recording.recorder_id !== null);
@@ -342,6 +353,7 @@ var PanoptoScheduler = (function ($) {
             }
 
             context.schedule.push({
+                key: this.key,
                 month_num: event_start_date.format('M'),
                 day: event_start_date.format('D'),
                 weekday: event_start_date.format('ddd'),
@@ -403,6 +415,60 @@ var PanoptoScheduler = (function ($) {
         //$('.xlist-icon').popover({ trigger: 'hover' });
     }
 
+    function event_context(event) {
+        var event_start_date = moment(event.event.start),
+            event_end_date = moment(event.event.end),
+            now = moment();
+
+        return {
+            key: event.key,
+            canvas_host: window.scheduler.canvas_host,
+            month_num: event_start_date.format('M'),
+            day: event_start_date.format('D'),
+            year: event_start_date.format('YY'),
+            weekday: event_start_date.format('ddd'),
+            event_start_time: event_start_date.format('h:mm'),
+            event_end_time: event_end_date.format('h:mm'),
+            ampm: event_end_date.format('a'),
+            name: ($.isArray(event.name)) ? event.name : [event.name],
+            contact: event.contact.name,
+            contact_email: event.contact.email,
+            contact_netids: (event.contact.uwnetid && event.contact.uwnetid.length)
+                ? [event.contact.uwnetid] : [],
+            recording_name: event.recording.name,
+            recording_is_broadcast: event.recording.is_broadcast,
+            recording_is_public: event.recording.is_public,
+            full_duration: panopto_full_duration(event),
+            recording_time: panopto_recording_length(event.recording.start,
+                                                     event.recording.end),
+            recording_id: event.recording.id,
+            recorder_id: event.recording.recorder_id,
+            recording_url: event.recording.id
+                ? panopto_recording_url(event.recording.id)
+                : null,
+            event_search: true,
+            folder_name: event.recording.folder.name,
+            folder_id: event.recording.folder.id,
+            folder_external_id: event.recording.folder.external_id,
+            folder_url: (event.recording.folder.id)
+                ? panopto_folder_url(event.recording.folder.id)
+                : null,
+            creator_netids: (event.recording.folder.auth.hasOwnProperty('creators')
+                             && event.recording.folder.auth.creators)
+                ? event.recording.folder.auth.creators
+                : [],
+            in_the_past: false,
+            can_record: panopto_can_record(event),
+            is_recording: panopto_is_recording(event),
+            is_recorded: panopto_is_recorded(event),
+            disabled: (event.schedulable
+                       && (event.recording.id
+                           || event.recording.recorder_id)
+                       && event_end_date.isAfter(now)) ? '' : 'disabled',
+            has_recorder: true
+        };
+    }
+
     function paint_space_schedule(events) {
         var tpl = Handlebars.compile($('#event-search-result-template').html()),
             context = {
@@ -416,68 +482,23 @@ var PanoptoScheduler = (function ($) {
         window.scheduler.events = {};
 
         $.each(events, function () {
+            if (this.profile.toLowerCase() !== 'final') {
+                window.scheduler.events[this.key] = this;
+                if (!context.unscheduled) {
+                    context.unscheduled = (this.recording.id === null);
+                }
 
-            if (this.profile.toLowerCase() === 'final') {
-                return true;
+                context.schedule.push(event_context(this));
             }
-
-            var event_start_date = moment(this.event.start),
-                event_end_date = moment(this.event.end),
-                now = moment();
-
-            window.scheduler.events[this.recording.name] = this;
-
-            if (!context.unscheduled) {
-                context.unscheduled = (this.recording.id === null);
-            }
-
-            context.schedule.push({
-                month_num: event_start_date.format('M'),
-                day: event_start_date.format('D'),
-                weekday: event_start_date.format('ddd'),
-                event_start_time: event_start_date.format('h:mm'),
-                event_end_time: event_end_date.format('h:mm'),
-                ampm: event_end_date.format('a'),
-                name: ($.isArray(this.name)) ? this.name : [this.name],
-                contact: this.contact.name,
-                contact_email: this.contact.email,
-                recording_name: this.recording.name,
-                recording_id: this.recording.id,
-                recording_is_broadcast: this.recording.is_broadcast,
-                recording_is_public: this.recording.is_public,
-                full_duration: panopto_full_duration(this),
-                recording_time: panopto_recording_length(this.recording.start,
-                                                         this.recording.end),
-                recorder_id: this.recording.recorder_id,
-                event_search: true,
-                folder_url: (this.recording.folder.id)
-                    ? panopto_folder_url(this.recording.folder.id)
-                    : null,
-                in_the_past: false,
-                can_record: panopto_can_record(this),
-                is_recording: panopto_is_recording(this),
-                is_recorded: panopto_is_recorded(this),
-                disabled: (this.schedulable
-                           && (this.recording.id
-                               || this.recording.recorder_id)
-                           && event_end_date.isAfter(now)) ? '' : 'disabled',
-                has_recorder: true
-            });
         });
 
+        $('.event-search-result').html(tpl(context));
         if (context.schedule.length) {
-            $('.event-search-result').html(tpl(context));
             update_schedule_buttons();
-        } else {
-            tpl = Handlebars.compile($('#event-search-result-empty-template').html());
-            $('.event-search-result').html(tpl({
-                search_date: moment($('input#calendar.input-date').val()).format('MMMM D, YYYY')
-            }));
         }
     }
 
     function update_history_state(search_param) {
-        $('ul.nav-tabs li.active a').attr('data-search-param', search_param);
         history.pushState({}, '', search_param);
     }
 
@@ -520,7 +541,7 @@ var PanoptoScheduler = (function ($) {
         })
             .fail(course_search_failure)
             .done(function (msg) {
-                paint_schedule(course, msg);
+                paint_course_schedule(course, msg);
                 set_course_search_criteria();
             });
     }
@@ -585,7 +606,6 @@ var PanoptoScheduler = (function ($) {
         if (search) {
             course = parse_sis_id(search[1]);
             if (course) {
-                $('.nav-tabs #tab1').tab('show');
                 term = $('select#qtr-select option[value="' + course.term + '"]');
                 term.prop('selected', true);
                 set_course_search_criteria(course);
@@ -598,15 +618,18 @@ var PanoptoScheduler = (function ($) {
     }
 
     function update_event_search_criteria(space_id, recorder_id, date) {
-        $('#room-select').val(space_id + '|' + recorder_id);
+        var select = $('select#room-select');
+
         $('#date-picker').datepicker('setDate', moment(date, 'MM-DD-YYYY').toDate());
+        select.one('scheduler.recorders_loaded', function () {
+            select.val(space_id + '|' + recorder_id);
+        });
     }
 
     function find_event_from_search(raw) {
         var search = raw.match('^\\?events=\(\\\d{4}\)\\\|\([a-f-\\\d]+\)\\\|\(\(\\\d{1,2}-\){2}\\\d{4}\)$');
 
         if (search) {
-            $('.nav-tabs #tab2').tab('show');
             update_event_search_criteria(search[1], search[2], search[3]);
             search_events_in_space(search[1], search[2], search[3]);
             return true;
@@ -693,6 +716,8 @@ var PanoptoScheduler = (function ($) {
                               .attr('value', this.external_id + '|' + this.id)
                               .attr('title', 'room ' + this.name));
         });
+
+        select.trigger('scheduler.recorders_loaded');
     }
 
     function init_event_search() {
@@ -715,7 +740,146 @@ var PanoptoScheduler = (function ($) {
             .done(init_room_select);
     }
 
+    function disable_event_scheduler(pe) {
+        var $settings = $('.reservation-settings');
+
+        $settings.find('input, select, button').attr('disabled', true);
+        $settings.find('a').addClass('inactivate');
+        if (pe && pe.slider) {
+            pe.slider.slider('disable');
+        }
+    }
+
+    function enable_event_scheduler(pe) {
+        var $settings = $('.reservation-settings');
+
+        $settings.find('input, select, button').removeAttr('disabled');
+        $settings.find('a').removeClass('inactivate');
+        if (pe && pe.slider) {
+            pe.slider.slider('enable');
+        }
+    }
+
+    function gather_event_recording($node, pe) {
+        var changes = panopto_schedule_change(pe, $node),
+            folder_name = $node.find('.foldername .field a').text(),
+            fields = ['foldername', 'creators'],
+            creators = [],
+            $field,
+            $input,
+            start,
+            now,
+            i;
+
+        if (changes && changes.schedule) {
+            now = moment();
+            start = moment.unix(changes.schedule.start);
+
+            if (start.isBefore(now)) {
+                start = now;
+            }
+
+            pe.recording.start = start.toISOString();
+            pe.recording.end = moment.unix(changes.schedule.end).toISOString();
+
+        }
+
+        pe.recording.is_public = ($node.find('[name^=public_]:checked').val() === '1');
+
+        if (changes && changes.webcast) {
+            pe.recording.is_broadcast = changes.webcast.value;
+        }
+
+        pe.recording.folder.external_id = '';
+        if ($('.foldername .field a').text() === $('.foldername input.original-folder').val()) {
+            pe.recording.folder.id = $('.foldername input.folder-id').val();
+        } else {
+            pe.recording.folder.id = '';
+        }
+
+        for (i = 0; i < fields.length; i += 1) {
+            $field = $node.find('.' + fields[i] + ' .form-group');
+            if (!$field.hasClass('hidden')) {
+                panopto_event_field_editor_input_finish($field.find('input'));
+            }
+        }
+
+        $node.find('ul li').each(function () {
+            var $li = $(this);
+
+            if ($li.is(':visible') && !$li.hasClass('placeholder')) {
+                creators.push($li.text());
+            }
+        });
+
+        pe.recording.folder.creators = creators;
+
+        if (!pe.recording.folder.name || (pe.recording.folder.name !== folder_name)) {
+            pe.recording.folder.name = folder_name;
+            pe.recording.folder_id = null;
+        }
+
+        return pe;
+    }
+
+    function schedule_panopto_event_recording(e) {
+        var $node = $('.reservation-settings[data-schedule-key]'),
+            key = $node.attr('data-schedule-key'),
+            pe = gather_event_recording($node, window.scheduler.events[key]);
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (!pe) {
+            return;
+        }
+
+        disable_event_scheduler();
+
+        schedule_panopto_recording(pe);
+    }
+
+    function modify_panopto_event_recording(e) {
+        var $node = $('.reservation-settings[data-schedule-key]'),
+            key = $node.attr('data-schedule-key'),
+            pe = gather_event_recording($node, window.scheduler.events[key]);
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (!pe) {
+            return;
+        }
+
+        disable_event_scheduler(pe);
+        modify_panopto_recording(pe);
+    }
+
+    function schedule_panopto_course_recording(panopto_event) {
+        var $btngrp = $('[data-schedule-key="' + panopto_event.key + '"]'),
+            $button = $btngrp.find('> button:first-child');
+
+        $btngrp.on('scheduler.set_schedule_start', function () {
+            button_loading($button);
+        });
+
+        $btngrp.one('scheduler.set_schedule_finish', function () {
+            button_stop_loading($button);
+            update_schedule_buttons(panopto_event);
+        });
+
+        schedule_panopto_recording(panopto_event);
+    }
+
     function schedule_panopto_recording(panopto_event) {
+        if (panopto_event.recording.id) {
+            return;
+        }
+
+        modify_panopto_recording(panopto_event, 'POST');
+    }
+
+    function modify_panopto_recording(panopto_event, method) {
         var start_time = moment(panopto_event.recording.start),
             end_time = moment(panopto_event.recording.end),
             now = moment(),
@@ -723,20 +887,21 @@ var PanoptoScheduler = (function ($) {
                 key: panopto_event.key,
                 name: panopto_event.recording.name,
                 external_id: panopto_event.recording.external_id,
+                recording_id: panopto_event.recording.id,
                 recorder_id: panopto_event.recording.recorder_id,
                 folder_name: panopto_event.recording.folder.name,
+                folder_id: panopto_event.recording.folder.id,
                 folder_external_id: panopto_event.recording.folder.external_id,
+                creators: panopto_event.recording.folder.creators,
                 start_time: panopto_event.recording.start,
                 end_time: panopto_event.recording.end,
                 is_broadcast: panopto_event.recording.is_broadcast,
                 is_public: panopto_event.recording.is_public
             },
-            button = $('.btn-group[data-recording-name="'
-                       + panopto_event.recording.name
-                       + '"] > button:first-child');
+            $initiator = $('[data-schedule-key="' + panopto_event.key + '"]');
 
-        if (panopto_event.recording.id) {
-            return;
+        if (!method) {
+            method = 'PUT';
         }
 
         if (panopto_event.contact.hasOwnProperty('uwnetid') && panopto_event.contact.uwnetid) {
@@ -755,16 +920,23 @@ var PanoptoScheduler = (function ($) {
             request_data.start_time = panopto_event.recording.start;
         }
 
-        button_loading(button);
-
-        button.trigger('scheduler.set_schedule_start');
+        $initiator.trigger('scheduler.set_schedule_start');
 
         $.ajax({
-            type: 'POST',
+            type: method,
             url: panopto_api_path('session/'),
             processData: false,
             contentType: 'application/json',
             data: JSON.stringify(request_data)
+        }).done(function (data) {
+            if (data.hasOwnProperty('recording_id')) {
+                panopto_event.recording.id = data.recording_id;
+            }
+            if (data.hasOwnProperty('messages')
+                && $.isArray(data.messages)
+                && data.messages.length) {
+                panopto_event.create_messages = data.messages;
+            }
         }).fail(function (xhr) {
             if (xhr.status === 409) {
                 var response = JSON.parse(xhr.responseText),
@@ -783,14 +955,8 @@ var PanoptoScheduler = (function ($) {
                               'Please try again later.',
                               xhr);
             }
-        }).done(function (msg) {
-            if (msg.hasOwnProperty('recording_id')) {
-                panopto_event.recording.id = msg.recording_id;
-            }
         }).always(function () {
-            button_stop_loading(button);
-            update_schedule_buttons(panopto_event);
-            button.trigger('scheduler.set_schedule_finish');
+            $initiator.trigger('scheduler.set_schedule_finish');
         });
     }
 
@@ -851,7 +1017,7 @@ var PanoptoScheduler = (function ($) {
                 + '"end": "' + end + '"'
                 +  '}'
         }).fail(function (xhr) {
-            failure_modal('Cannot Set Broadcast Permissions',
+            failure_modal('Cannot Modify Recording Time',
                           'Please try again later.',
                           xhr);
         }).done(function () {
@@ -884,12 +1050,17 @@ var PanoptoScheduler = (function ($) {
         }
     }
 
-    function panopto_schedule_change(event_node) {
+    function panopto_course_schedule_change(event_node) {
         var pe = panopto_event(event_node),
-            button_group = event_node.closest('.btn-group'),
-            schedule_input = button_group.find('.slider-box input'),
-            webcast_checked = button_group.find('[name^=webcast_]:checked').val() === '1',
-            // public_checked = button_group.find('[name^=public_]:checked').val() === '1',
+            button_group = event_node.closest('.btn-group');
+
+        return panopto_schedule_change(pe, button_group);
+    }
+
+    function panopto_schedule_change(pe, container) {
+        var schedule_input = container.find('.slider-box input'),
+            webcast_checked = container.find('[name^=webcast_]:checked').val() === '1',
+            public_checked = container.find('[name^=public_]:checked').val() === '1',
             schedule_change = null,
             webcast_change = null,
             public_change = null,
@@ -953,7 +1124,7 @@ var PanoptoScheduler = (function ($) {
             now;
 
         if (!changes) {
-            changes = panopto_schedule_change($(e.target));
+            changes = panopto_course_schedule_change($(e.target));
         }
 
         if (changes && changes.schedule) {
@@ -976,7 +1147,7 @@ var PanoptoScheduler = (function ($) {
             pe.recording.is_broadcast = changes.webcast.value;
         }
 
-        schedule_panopto_recording(pe);
+        schedule_panopto_course_recording(pe);
     }
 
     function confirm_recording_stop(pe, button) {
@@ -1017,16 +1188,21 @@ var PanoptoScheduler = (function ($) {
             duration,
             i,
             schedule_all_serially = function (events) {
+                var $btngrp,
+                    $button;
+
                 if (events.length) {
-                    events[0][0].one('scheduler.set_schedule_finish', function () {
-                        button_stop_loading(events[0][0]);
-                        update_schedule_buttons(events[0][1]);
+                    $btngrp = $('[data-schedule-key="' + events[0].key + '"]');
+                    $button = $btngrp.find('> button:first-child');
+                    $btngrp.one('scheduler.set_schedule_finish', function () {
+                        button_stop_loading($button);
+                        update_schedule_buttons(events[0]);
                         if (events.length > 1) {
                             schedule_all_serially(events.slice(1));
                         }
                     });
 
-                    schedule_panopto_recording(events[0][1]);
+                    schedule_panopto_recording(events[0]);
                 }
             };
 
@@ -1038,8 +1214,9 @@ var PanoptoScheduler = (function ($) {
         }
 
         $('.list-group .btn-group.unscheduled > button:first-child').not(':disabled').each(function () {
-            var $button = $(this),
-                pe = panopto_event($button);
+            var pe = panopto_event($(this)),
+                $btngrp = $('[data-schedule-key="' + pe.key + '"]'),
+                $button = $btngrp.find('> button:first-child');
 
             button_loading($button);
 
@@ -1052,7 +1229,7 @@ var PanoptoScheduler = (function ($) {
                 pe.recording.end = start.add(duration, 'seconds').toISOString();
             }
 
-            panopto_events.push([$button, pe]);
+            panopto_events.push(pe);
         });
 
         schedule_all_serially(panopto_events);
@@ -1061,7 +1238,7 @@ var PanoptoScheduler = (function ($) {
 
     function panopto_toggle_webcast(e) {
         var target_node = $(e.currentTarget),
-            changes = panopto_schedule_change(target_node);
+            changes = panopto_course_schedule_change(target_node);
 
         if (changes && changes.panopto_event.recording.id && changes.webcast) {
             button_loading(target_node);
@@ -1091,7 +1268,7 @@ var PanoptoScheduler = (function ($) {
 
     function panopto_toggle_public(e) {
         var target_node = $(e.currentTarget),
-            changes = panopto_schedule_change(target_node);
+            changes = panopto_course_schedule_change(target_node);
 
         if (changes && changes.panopto_event.recording.id && changes.is_public) {
             button_loading(target_node);
@@ -1120,7 +1297,7 @@ var PanoptoScheduler = (function ($) {
     }
 
     function panopto_modify_recording_time(e) {
-        var changes = panopto_schedule_change($(e.currentTarget));
+        var changes = panopto_course_schedule_change($(e.currentTarget));
 
         if (changes) {
             if (changes.panopto_event.recording.id && changes.schedule) {
@@ -1134,9 +1311,11 @@ var PanoptoScheduler = (function ($) {
     function init_schedule_dropdown() {
         var pe = panopto_event($(this)),
             button_group = $(this).closest('.btn-group'),
-            slider = $('.slider-box input', button_group),
-            start_span = $('.slider-box .start-time', button_group),
-            end_span = $('.slider-box .end-time', button_group),
+            $box = $('.slider-box', button_group),
+            slider = $box.find('input'),
+            start_span = $box.find('.start-time'),
+            end_span = $box.find('.slider-box'),
+            range,
             checked,
             event_start_date,
             event_end_date,
@@ -1147,13 +1326,11 @@ var PanoptoScheduler = (function ($) {
             now = moment();
 
         if (pe) {
-            event_start_date = moment(pe.event.start);
-            event_end_date = moment(pe.event.end);
-            recording_start = moment(pe.recording.start);
-            recording_end = moment(pe.recording.end);
-            if (recording_start.isBefore(now)) {
-                recording_start = now;
-            }
+            range = init_slider_range(pe.event.start, pe.event.end,
+                                      pe.recording.start, pe.recording.end);
+            event_start_date = range.event.start_date;
+            event_end_date = range.event.end_date;
+            slider_value = range.slider_value;
         } else if (window.scheduler.events) {
             $.each(window.scheduler.events, function () {
                 if (!event_start_date) {
@@ -1175,19 +1352,19 @@ var PanoptoScheduler = (function ($) {
                 recording_start = moment(event_start_date);
                 recording_end = moment(event_end_date);
             }
+
+            start_span.html(event_start_date.format('h:mm a'));
+            end_span.html(event_end_date.format('h:mm a'));
+
+            if (recording_start && recording_end) {
+                slider_value = [
+                    recording_start.unix(),
+                    recording_end.unix()
+                ];
+            }
         } else {
             return;
         }
-
-        if (recording_start && recording_end) {
-            slider_value = [
-                recording_start.unix(),
-                recording_end.unix()
-            ];
-        }
-
-        start_span.html(event_start_date.format('h:mm a'));
-        end_span.html(event_end_date.format('h:mm a'));
 
         checked = (pe && pe.recording.id && pe.recording.is_broadcast) ? '1' : '0';
         $('input[name^=webcast_][value="' + checked + '"]', button_group).prop('checked', true);
@@ -1200,69 +1377,14 @@ var PanoptoScheduler = (function ($) {
                 pe.slider.slider('setValue', slider_value);
             } else {
                 slider.addClass('duration-slider-enabled');
-                slider_instance = slider.slider({
-                    min: event_start_date.unix(),
-                    max: event_end_date.unix(),
-                    value: slider_value,
-                    step: 60,
-                    tooltip: 'hide',
-                    formatter: function (v) {
-                        var start = parseInt(v[0], 10),
-                            end = parseInt(v[1], 10);
-
-                        if ($.isArray(v) && v.length === 2) {
-                            start_span.html(moment.unix(start).format('h:mm a'));
-                            end_span.html(moment.unix(end).format('h:mm a'));
-                        }
-
-                        return ((end - start) / 60) + ' minutes';
-                    }
-                });
-
-                slider_instance.on('slideStart', function () {
-                    window.scheduler.slider_val = slider_instance.slider('getValue');
-                    window.scheduler.slider_left = null;
-                });
+                slider_instance = init_slider_box($box,
+                                                  pe ? pe.event.start : event_start_date.toISOString(),
+                                                  pe ? pe.event.end : event_end_date.toISOString(),
+                                                  pe ? pe.recording.start : recording_start.toISOString(),
+                                                  pe ? pe.recording.end : recording_end.toISOString());
 
                 slider_instance.on('slideStop', function (e) {
                     panopto_modify_recording_time(e);
-                });
-
-                slider_instance.on('slide', function () {
-                    var min_slide = 60,  // one minute
-                        val = slider_instance.slider('getValue'),
-                        slid;
-
-                    if (window.scheduler.slider_left === null) {
-                        window.scheduler.slider_left = (window.scheduler.slider_val[0] !== val[0]);
-                    }
-
-                    if (window.scheduler.slider_left && (window.scheduler.slider_val[1] !== val[1])) {
-                        val[1] = window.scheduler.slider_val[1];
-                        slider_instance.slider('setValue', val);
-                    } else if (!window.scheduler.slider_left && (window.scheduler.slider_val[0] !== val[0])) {
-                        val[0] = window.scheduler.slider_val[0];
-                        slider_instance.slider('setValue', val);
-                    }
-
-                    if ((val[1] - val[0]) < min_slide) {
-                        if (window.scheduler.slider_left) {
-                            val[0] = val[1] - min_slide;
-                        } else {
-                            val[1] = val[0] + min_slide;
-                        }
-
-                        slider_instance.slider('setValue', val);
-                    }
-
-                    if (now.isAfter(event_start_date) && now.isBefore(event_end_date)) {
-                        slid = moment();
-
-                        if (val[0] < slid.unix()) {
-                            val[0] = slid.unix();
-                            slider_instance.slider('setValue', val);
-                        }
-                    }
                 });
 
                 if (pe) {
@@ -1297,6 +1419,460 @@ var PanoptoScheduler = (function ($) {
         if ($('.modal-dialog').length) {
             e.preventDefault();
         }
+    }
+
+    function event_scheduler(e) {
+        var pe = panopto_event($(this)),
+            context = event_context(pe),
+            tpl = Handlebars.compile($('#reservation-panel-tmpl').html()),
+            slider_instance,
+            checked;
+
+        context.location = $('select#room-select option:selected').text();
+        context.search_date = moment($('input#calendar.input-date').val()).format('MMMM D, YYYY');
+
+        $('.result-display-container').html(tpl(context));
+
+        slider_instance = init_slider_box($('.slider-box'),
+                                          pe.event.start, pe.event.end,
+                                          pe.recording.start, pe.recording.end);
+
+        pe.slider = slider_instance;
+
+        $('.reservation-settings .foldername .folder-picker .search input').data(
+            'finish', search_panopto_folders);
+
+        $('.reservation-settings .foldername .form-group > input').data(
+            'finish', validate_panopto_folder);
+
+        $('.reservation-settings .creators .form-group > input').data(
+            'finish', panopto_folder_string_to_creators);
+
+        slider_instance.on('slideStop', function (e) {
+            var v = slider_instance.slider('getValue'),
+                start = parseInt(v[0], 10),
+                end = parseInt(v[1], 10);
+
+            window.scheduler.slider_val = v;
+            $('button .start-time').html(moment.unix(start).format('h:mma'));
+            $('button .end-time').html(moment.unix(end).format('h:mma'));
+        });
+
+        checked = (pe && pe.recording.id && pe.recording.is_public) ? '1' : '0';
+        $('input[name^=public_][value="' + checked + '"]').prop('checked', true);
+
+        checked = (pe && pe.recording.id && pe.recording.is_broadcast) ? '1' : '0';
+        $('input[name^=webcast_][value="' + checked + '"]').prop('checked', true);
+    }
+
+    function event_scheduler_cancel(e) {
+        find_event_from_search(window.location.search);
+    }
+
+    function event_scheduler_finish(e) {
+        var $node = $('.reservation-settings[data-schedule-key]'),
+            pe = window.scheduler.events[$node.attr('data-schedule-key')],
+            modal,
+            text = 'Issues with the created folder:<br><ul>';
+
+        if (pe.hasOwnProperty('create_messages')) {
+            $.each(pe.create_messages, function () {
+                text += '<li>' + this + '</li>';
+            });
+
+            text += '</ul>';
+
+            modal = failure_modal(
+                "Recording scheduled, but issues were reported", text);
+
+            modal.on('hidden.bs.modal', function (e) {
+                find_event_from_search(window.location.search);
+            });
+        } else {
+            find_event_from_search(window.location.search);
+        }
+    }
+
+    function search_panopto_folders(substring) {
+        var term = substring.trim();
+
+        if (term.length > 3) {
+            search_in_progress('.folder-picker .result');
+            do_panopto_folder_search(term, search_panopto_folders_complete);
+        }
+    }
+
+    function validate_panopto_folder(substring) {
+        var folder = substring.trim(),
+            creators;
+
+        if (folder.length < 1 || folder === $('.foldername .field a').text()) {
+            return;
+        }
+
+        $('.foldername .field a').text(folder);
+        panopto_folder_string_to_creators();
+        close_panopto_event_field_editors();
+
+        $('.foldername input.original-folder').val('');
+        $('.foldername input.folder-id').val('');
+        $('a.visit-folder').addClass('inactive');
+
+        disable_event_scheduler();
+
+        // fix up creators and links
+        do_panopto_folder_search(folder, function (data) {
+            enable_event_scheduler();
+            if ($.isArray(data)) {
+                $('button.modify-event').removeAttr('disabled');
+                $.each(data, function () {
+                    if (this.name === folder) {
+                        creators = [];
+                        $.each(this.auth.creators, function () {
+                            creators.push(this.key);
+                        });
+
+                        panopto_folder_string_to_creators(creators.join(','));
+                        $('.foldername input.original-folder').val(this.name);
+                        $('.foldername input.folder-id').val(this.id);
+                        $('a.visit-folder').
+                            attr('href', panopto_folder_url(this.id)).
+                            removeClass('inactive');
+                        return false;
+                    }
+                });
+            }
+        });
+    }
+
+    function do_panopto_folder_search(folder, finished) {
+        $.ajax({
+            type: 'GET',
+            url: panopto_api_path('folder/', { search: folder })
+        })
+            .fail(function () {
+                $('.folder-picker .result').empty();
+            })
+            .done(finished);
+    }
+
+    function search_panopto_folders_complete(data) {
+        var html = '',
+            $result = $('.folder-picker .result'),
+            $div,
+            creators;
+
+        if ($.isArray(data)) {
+            $result.empty();
+            $.each(data, function () {
+                $div = $('<div></div>');
+                $div.html(this.name);
+                $div.attr('data-folder-id', this.id);
+
+                creators = [];
+                $.each(this.auth.creators, function () {
+                    creators.push(this.key);
+                });
+
+                if (creators.length) {
+                    $div.attr('data-folder-creators', creators.join(','));
+                }
+
+                $result.append($div);
+            });
+        }
+    }
+
+    function select_panopto_folder() {
+        var $this = $(this),
+            text = $this.text(),
+            folder_id = $this.attr('data-folder-id'),
+            creators = $this.attr('data-folder-creators');
+
+        $('.foldername .field a').text(text);
+        $('.foldername input.original-folder').val(text);
+        $('.foldername input.folder-id').val(folder_id);
+        $('a.visit-folder').attr('href', panopto_folder_url(folder_id));
+        panopto_folder_string_to_creators(($.type(creators) === 'string') ? creators : '');
+        close_panopto_event_field_editors();
+    }
+
+    function open_panopto_folder_search() {
+        if ($('.folder-picker').hasClass('hidden')) {
+            $('.folder-picker .search span').addClass('hidden');
+            $('.folder-picker .search input').val('');
+            $('.folder-picker .result').empty();
+        }
+
+        $('.folder-picker').removeClass('hidden');
+        $('.folder-picker input').focus();
+    }
+
+    function close_panopto_folder_search() {
+        $('.folder-picker').addClass('hidden');
+    }
+
+    function clear_panopto_folder_search_input() {
+        var $input = $('.folder-picker .search input');
+        $input.val('');
+        $(this).addClass('hidden');
+        $input.focus();
+    }
+
+    function open_panopto_event_field_editor(e) {
+        var $field = $(this).closest('.field'),
+            $a = $field.find('a'),
+            $child = $a.find('> :first-child'),
+            $edit = $field.next(),
+            $input = $edit.find('input');
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        $field.parent().trigger('scheduler.field_edit_opening');
+
+        if ($child.length) {
+            if ($child.is('ul')) {
+                var values = [];
+
+                $child.find('li').each(function () {
+                    var $li = $(this);
+
+                    if ($li.is(':visible') && !$li.hasClass('placeholder')) {
+                        values.push($li.text());
+                    }
+                });
+
+                $input.val(values.join(', '));
+            }
+        } else {
+            $input.val($a.text());
+        }
+
+        $field.addClass('hidden');
+        $edit.removeClass('hidden');
+        $input.focus();
+    }
+
+    function valid_netid(s) {
+        var valid = s.toLowerCase().trim().match(/^([a-z][a-z0-9_]+)(@(uw|washington|u\.washington).edu)?$/);
+
+        return (valid) ? valid[1] : null;
+    }
+
+    function panopto_folder_string_to_creators(val) {
+        var values = (val && val.length) ? val.split(/[ ,]+/) : [],
+            $ul = $('.creators .field ul'),
+            $li = $ul.find('li'),
+            $group = $('.creators .form-group'),
+            netids = [];
+
+        // UWNetid\netid
+        $.each(values, function () {
+            var netid = valid_netid(this);
+            if (netid) {
+                if (netids.indexOf(netid) < 0) {
+                    netids.push(netid);
+                }
+            } else {
+                $group.addClass('has-error');
+                return false;
+            }
+
+            return true;
+        });
+
+        if ($group.hasClass('has-error')) {
+            return;
+        }
+
+        if ($li.length > 1) {
+            var x = $li.slice($li.length - 1),
+                $newul = $('<ul></ul>').append($li.slice($li.length - 1));
+
+            $ul.replaceWith($newul);
+            $ul = $('.creators .field ul');
+        }
+
+        $.each(netids, function () {
+            $li = $('<li></li>');
+            $li.text(this);
+            $ul.find('li:nth-last-child(1)').before($li);
+        });
+
+        close_panopto_event_field_editors();
+    }
+
+    function panopto_event_field_editor_input_finish($input) {
+        var $field = $input.parent().prev('.field'),
+            val = $input.val().trim(),
+            finish = $input.data('finish');
+
+        if (finish && $.isFunction(finish)) {
+            finish(val);
+        } else {
+            $field.find('a').text(val);
+            close_panopto_event_field_editors();
+        }
+    }
+
+    function panopto_event_field_editor_input(e) {
+        var $input = $(this);
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (e.keyCode === 13) {
+            panopto_event_field_editor_input_finish($input);
+        } else if (e.keyCode === 27) {
+            close_panopto_event_field_editors();
+        } else {
+            $input.parent('.form-group').removeClass('has-error');
+            $input.next('.clear-field').removeClass('hidden');
+        }
+    }
+
+    function panopto_event_field_editor_input_clear(e) {
+        var $this = $(this),
+            $input = $this.prev();
+
+        $this.closest('.field-editor').trigger('scheduler.field_edit_clearing');
+        $input.val('');
+        $this.addClass('hidden');
+        $input.focus();
+    }
+
+    function close_and_save_panopto_event_field_editors() {
+        var $shown = $('.field-editor .form-group:not(.hidden)');
+
+        if ($shown.length) {
+            panopto_event_field_editor_input_finish(
+                $shown.parent().find('.form-group > input'));
+        }
+
+        close_panopto_event_field_editors();
+    }
+
+    function close_panopto_event_field_editors() {
+        var $hidden = $('.field-editor .field.hidden'),
+            $fields;
+
+        if ($hidden.length) {
+            $fields = $hidden.parent();
+            $fields.trigger('scheduler.field_edit_closing');
+            $fields.find('.form-group').addClass('hidden').removeClass('has-error');
+            $fields.find('.field').removeClass('hidden');
+        }
+    }
+
+    function init_slider_range(event_start, event_end, rec_start, rec_end) {
+        var event_start_date,
+            event_end_date,
+            recording_start,
+            recording_end,
+            slider_value = null,
+            now = moment();
+
+        event_start_date = moment(event_start);
+        event_end_date = moment(event_end);
+        recording_start = moment(rec_start);
+        recording_end = moment(rec_end);
+        if (recording_start.isBefore(now)) {
+            recording_start = now;
+        }
+
+        if (recording_start && recording_end) {
+            slider_value = [
+                recording_start.unix(),
+                recording_end.unix()
+            ];
+        }
+
+        return {
+            event: {
+                start_date: moment(event_start),
+                end_date: moment(event_end)
+            },
+            slider_value: slider_value
+        };
+    }
+
+    function init_slider_box($box, event_start, event_end, rec_start, rec_end) {
+        var slider = $box.find('input'),
+            start_span = $box.find('.start-time'),
+            end_span = $box.find('.end-time'),
+            range = init_slider_range(event_start, event_end, rec_start, rec_end),
+            slider_instance,
+            now = moment();
+
+        start_span.html(range.event.start_date.format('h:mm a'));
+        end_span.html(range.event.end_date.format('h:mm a'));
+
+        if (range.slider_value) {
+            slider.addClass('duration-slider-enabled');
+            slider_instance = slider.slider({
+                min: range.event.start_date.unix(),
+                max: range.event.end_date.unix(),
+                value: range.slider_value,
+                step: 60,
+                tooltip: 'hide',
+                formatter: function (v) {
+                    var start = parseInt(v[0], 10),
+                        end = parseInt(v[1], 10);
+
+                    if ($.isArray(v) && v.length === 2) {
+                        start_span.html(moment.unix(start).format('h:mm a'));
+                        end_span.html(moment.unix(end).format('h:mm a'));
+                    }
+
+                    return ((end - start) / 60) + ' minutes';
+                }
+            });
+
+            slider_instance.on('slideStart', function () {
+                window.scheduler.slider_val = slider_instance.slider('getValue');
+                window.scheduler.slider_left = null;
+            });
+
+            slider_instance.on('slide', function () {
+                var min_slide = 60,  // one minute
+                    val = slider_instance.slider('getValue'),
+                    slid;
+
+                if (window.scheduler.slider_left === null) {
+                    window.scheduler.slider_left = (window.scheduler.slider_val[0] !== val[0]);
+                }
+
+                if (window.scheduler.slider_left && (window.scheduler.slider_val[1] !== val[1])) {
+                    val[1] = window.scheduler.slider_val[1];
+                    slider_instance.slider('setValue', val);
+                } else if (!window.scheduler.slider_left && (window.scheduler.slider_val[0] !== val[0])) {
+                    val[0] = window.scheduler.slider_val[0];
+                    slider_instance.slider('setValue', val);
+                }
+
+                if ((val[1] - val[0]) < min_slide) {
+                    if (window.scheduler.slider_left) {
+                        val[0] = val[1] - min_slide;
+                    } else {
+                        val[1] = val[0] + min_slide;
+                    }
+
+                    slider_instance.slider('setValue', val);
+                }
+
+                if (now.isAfter(range.event.start_date) && now.isBefore(range.event.end_date)) {
+                    slid = moment();
+
+                    if (val[0] < slid.unix()) {
+                        val[0] = slid.unix();
+                        slider_instance.slider('setValue', val);
+                    }
+                }
+            });
+        }
+
+        return slider_instance;
     }
 
     function parse_sis_id(sis_id) {
@@ -1473,78 +2049,122 @@ var PanoptoScheduler = (function ($) {
             }
         });
 
-        $('a[data-toggle="tab"]').on('shown.bs.tab', function () {
-            var search_param = $(this).attr('data-search-param');
-
-            if ($(this).attr('id') === 'tab2') {
-                if ($('.rooms-loading').length) {
-                    init_event_search();
+        if ($('form.course-search').length) {
+            init_term_selector();
+            $("form.course-search").submit(do_course_search);
+            $('body')
+                .on('click',
+                    '.batchswitch .btn-group > button:first-child',
+                    panopto_schedule_all)
+                .on('click',
+                    '.list-group .btn-group.unscheduled > button:first-child,'
+                    + '.list-group .btn-group.can-record > button:first-child',
+                    panopto_set_schedule)
+                .on('click',
+                    '.list-group .btn-group.scheduled > button:first-child,'
+                    + '.list-group .btn-group.is_recording > button:first-child',
+                    panopto_clear_scheduled_recording)
+                .on('show.bs.dropdown',
+                    '.schedule-button-cluster .btn-group',
+                    init_schedule_dropdown)
+                .on('hide.bs.dropdown',
+                    '.list-group .btn-group',
+                    schedule_options_closing)
+                .on('mousedown',
+                    '.list-group .btn-group button.dropdown-toggle',
+                    position_schedule_dropdown)
+                .on('change',
+                    '.list-group .btn-group input[name^=webcast_]',
+                    panopto_toggle_webcast)
+                .on('change',
+                    '.list-group .btn-group input[name^=public_]',
+                    panopto_toggle_public)
+                .on('click',
+                    '.dropdown-menu',
+                    function (e) { e.stopPropagation(); });
+            Handlebars.registerPartial('reservation-list', $('#reservation-list-partial').html());
+            Handlebars.registerPartial('schedule-button', $('#schedule-button-partial').html());
+            if (window.location.search.length) {
+                find_course_from_search(window.location.search);
+                $(window).bind('popstate', function (e) {
+                    var search = e.originalEvent.path[0].location.search;
+                    find_course_from_search(search);
+                    });
                 }
+        } else if ($('form.event-search').length) {
+            init_event_search();
+            init_date_picker();
+            $("form.event-search").submit(do_event_search);
+            $('body')
+                .on('click', 'a.schedule-recording, a.edit-recording',
+                    event_scheduler)
+                .on('click', '.reservation-settings .cancel',
+                    event_scheduler_cancel)
+                .on('click', '.reservation-settings .field a',
+                    open_panopto_event_field_editor)
+                .on('keyup', '.reservation-settings .foldername .form-group > input',
+                    panopto_event_field_editor_input)
+                .on('scheduler.field_edit_closing', '.reservation-settings .foldername',
+                    function () {
+                        $('.foldername .form-group .folder-picker').addClass('hidden');
+                    })
+                .on('click', '.reservation-settings .foldername .open-folder-picker',
+                    open_panopto_folder_search)
+                .on('click', '.reservation-settings .foldername .folder-picker .close',
+                    close_panopto_folder_search)
+                .on('click', '.reservation-settings .foldername .folder-picker .result div',
+                    select_panopto_folder)
+                .on('keyup', '.reservation-settings .foldername .folder-picker .search input',
+                    panopto_event_field_editor_input)
+                .on('keyup', '.reservation-settings .creators .form-group > input',
+                    panopto_event_field_editor_input)
+                .on('click', '.reservation-settings .field-editor .form-group .clear-field',
+                    panopto_event_field_editor_input_clear)
+                .on('scheduler.field_edit_opening', '.reservation-settings', function () {
+                    close_and_save_panopto_event_field_editors();
+                    //close_panopto_event_field_editors();
+                })
+                .on('scheduler.field_edit_clearing', '.foldername',
+                    function () {
+                        $('.reservation-settings .foldername .folder-picker .result').html('');
+                    })
+                .on('click', '.field-editor .form-group', function (e) {
+                    e.stopPropagation();
+                })
+                .on('click', '.schedule-event',
+                    schedule_panopto_event_recording)
+                .on('scheduler.set_schedule_finish', '[data-schedule-key]',
+                    event_scheduler_finish)
+                .on('click', '.modify-event',
+                    modify_panopto_event_recording)
+                .on('click', function () {
+                    close_and_save_panopto_event_field_editors();
+                    //close_panopto_event_field_editors();
+                });
+
+            if (window.location.search.length) {
+                find_event_from_search(window.location.search);
+                $(window).bind('popstate', function (e) {
+                    var search = e.originalEvent.path[0].location.search;
+                    find_event_from_search(search);
+                });
             }
 
-            history.replaceState({}, '', search_param ? search_param : '/scheduler/');
-        });
-
-        if ($('#panopto-recorders').length) {
+            //history.replaceState({}, '', search_param ? search_param : '/scheduler/');
+        } else if ($('#panopto-recorders').length) {
             init_recorder_search();
             $('body')
-                .delegate('#panopto-recorders #room-select',
-                          'change', panopto_recorder_search)
-                .delegate('.recorder-selection .change-room',
-                          'click', panopto_change_space)
-                .delegate('.recorder-selection .remove-room',
-                          'click', panopto_remove_space);
-        }
-
-        $("form.course-search").submit(do_course_search);
-        $("form.event-search").submit(do_event_search);
-        init_term_selector();
-        init_date_picker();
-        Handlebars.registerPartial('reservation-list', $('#reservation-list-partial').html());
-        Handlebars.registerPartial('schedule-button', $('#schedule-button-partial').html());
-        $('body')
-            .delegate('.batchswitch .btn-group > button:first-child',
-                      'click', panopto_schedule_all)
-            .delegate('.list-group .btn-group.unscheduled > button:first-child,'
-                      + '.list-group .btn-group.can-record > button:first-child',
-                      'click', panopto_set_schedule)
-            .delegate('.list-group .btn-group.scheduled > button:first-child,'
-                      + '.list-group .btn-group.is_recording > button:first-child',
-                      'click', panopto_clear_scheduled_recording)
-            .delegate('.schedule-button-cluster .btn-group',
-                      'show.bs.dropdown', init_schedule_dropdown)
-            .delegate('.list-group .btn-group',
-                      'hide.bs.dropdown', schedule_options_closing)
-            .delegate('.list-group .btn-group button.dropdown-toggle',
-                      'mousedown', position_schedule_dropdown)
-            .delegate('.list-group .btn-group input[name^=webcast_]',
-                      'change', panopto_toggle_webcast)
-            .delegate('.list-group .btn-group input[name^=public_]',
-                      'change', panopto_toggle_public)
-            .delegate('.dropdown-menu',
-                      'click', function (e) { e.stopPropagation(); });
-
-        // if blti loaded
-        if (window.scheduler.hasOwnProperty('blti')) {
-            find_course(parse_sis_id(window.scheduler.blti.course));
-        } else if (window.location.search.length) {
-            if (!find_course_from_search(window.location.search)) {
-                find_event_from_search(window.location.search);
+                .on('change', '#panopto-recorders #room-select', panopto_recorder_search)
+                .on('click', '.recorder-selection .change-room', panopto_change_space)
+                .on('click', '.recorder-selection .remove-room', panopto_remove_space);
+        } else {
+            // if blti loaded
+            if (window.scheduler.hasOwnProperty('blti')) {
+                find_course(parse_sis_id(window.scheduler.blti.course));
             }
-
-            $(window).bind('popstate', function (e) {
-                var search = e.originalEvent.path[0].location.search;
-
-                if (!find_course_from_search(search)) {
-                    find_event_from_search(search);
-                }
-            });
         }
     }
 
     $(document).ready(initialize);
 
-    //return {
-    //    initialize: initialize
-    //};
 }(jQuery));
