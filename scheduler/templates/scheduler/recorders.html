@@ -8,8 +8,9 @@
 {% block content %}
 <!-- page header -->
 <div role="main" class="container-fluid">
-<h2>Panopto Recorders</h2>
+<h2>Lecture Capture Scheduler</h2>
 
+<h3>Manage Panopto Recorders</h3>
 
 	<!--  Recorder Block -->
 	<div id="panopto-recorders" class="recorders" >
@@ -129,29 +130,6 @@
   <div class="waiting">
     <i class="fa fa-spinner fa-4 fa-spin"></i>
   </div>
-{% endtplhandlebars %}
-
-{% tplhandlebars "ajax-fail-tmpl" %}
-<div class="modal fade" id="failure-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <!-- Failure modal -->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h3 class="modal-title" id="myModalLabel">{{ failure_title }}</h3>
-      </div>
-      <div class="modal-body">
-		<p>{{{ failure_message }}}</p>
-		<div style="display: none;">
-          {{ full_failure_message }}
-		</div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
 {% endtplhandlebars %}
 
 

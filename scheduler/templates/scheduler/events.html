@@ -1,0 +1,293 @@
+{% extends 'supporttools/base.html' %}
+
+{% load staticfiles %}
+{% load compress %}
+{% load templatetag_handlebars %}
+{% load i18n %}
+
+{% block content %}
+<!-- page header -->
+<div role="main" class="container-fluid">
+<h2>Lecture Capture Scheduler</h2>
+
+<h3>Find an Event</h3>
+
+<form role="form" class="form-inline event-search">
+	
+	<div class="input-group input-append date" id="date-picker">
+      <input id="calendar" name="calendar" type="text" class="form-control input-date" disabled />
+      <span class="input-group-addon add-on"><i class="fa fa-calendar"></i></span>
+	</div>
+	<div class="form-group inputs-row">
+			<label for="room-select" class="sr-only">Select a building and room number</label>
+            <div class="rooms-loading"><i class="fa fa-spinner fa-spin"></i></div>
+			<select id="room-select" type="text" class="form-control input-rm"></select>
+	</div>
+	<button type="submit" class="btn btn-primary">Search </button>
+</form>
+
+<div class="result-display-container event-search-result"></div>
+
+{% tplhandlebars "event-search-result-template" %}
+  <div class="room-header"><!-- Rslt Header -->
+	<h3><span class="sr-only"> Schedule on</span> {{ search_date }}</h3>
+  </div>	<!-- .Rslt Header -->
+
+  <div class="result-list-container">
+	<span class="sr-only">Schedule in {{room}}</span>
+	<span class="sr-only">Lecture capture recording status: </span>
+    {{#if has_recorder}}
+	    <span class="record-status-enable"><i class="fa fa-video-camera"></i> Recorder is ready in this room</span>
+	{{else}}
+		<span class="record-status-disable-outer"><i class="fa fa-warning"></i><span class="record-status-disable">No recorder found in this room</span></span>
+	{{/if}}
+    <ol class="list-group result-list-chunk">
+    {{#each schedule}}
+      <li class="list-group-item clearfix {{#if recording_id}}scheduled{{/if}}">
+        <span class="result-row-date" title="date">{{ month_num }}/{{ day }}</span>
+        <span class="result-row-day" title="day">{{ weekday }}</span> 
+        <span class="result-row-time" title="time">{{ event_start_time }} - {{ event_end_time }} {{ ampm }}</span>
+        <span class="result-row-event meeting-room-{{ name_index }}" title="event name">{{ name }}</span>
+        <span class="result-row-contact" title="Contact person">
+          {{#if contact_email}}
+            <a href="mailto:{{ contact_email }}" target="_blank">{{ contact }}</a>
+          {{else}}
+            {{ contact }}
+          {{/if}}
+        </span>
+        {{#if has_recorder}}
+        <span class="result-action pull-right">
+          {{#if is_recorded}}
+            <b>Event Recorded</b>
+          {{else}}{{#if is_recording}}
+            <b>Event is being recorded</b>
+          {{else}}{{#if can_record}}
+            <b>Event is underway</b>
+          {{else}}{{#if recording_id}}
+            <div>
+              <b>Recording Scheduled</b><br />
+              <a href="javascript:void(0);" class="edit-recording btn-group" data-schedule-key="{{ key }}">Edit scheduled recording</a>
+            </div>
+          {{else}}
+            <a href="javascript:void(0);" class="schedule-recording btn-group" data-schedule-key="{{ key }}">Schedule a recording for this event</a>
+          {{/if}}{{/if}}{{/if}}{{/if}}
+        </span>
+        {{/if}}
+      </li>
+    {{/each}}
+      <li class="list-group-item clearfix" style="display: none;">
+	   No events scheduled
+      </li>
+    </ol>
+  </div>
+{% endtplhandlebars %}
+
+
+{% tplhandlebars "reservation-panel-tmpl" %}
+  <div class="room-header">
+    <h3><span class="sr-only"> Schedule on</span> {{ search_date }} <span class="name">{{name}}</span> <span class="contact">{{contact}}</span> <span class="location pull-right">{{location}}</span></h3>
+  </div>
+  <div class="reservation-settings" data-schedule-key="{{ key }}">
+    <h3>Record this event</h3>
+    <div class="container">
+      <h4><b>Recording Settings</b></h4>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-1 text-right">
+              <span class="time-indicator"><i class="fa fa-clock-o"></i></span>
+            </div>
+            <div class="col-md-9">
+              <span class="setting-name">Recording duration</span>
+              <div class="setting-description">
+                Adjust the start and/or end time of the recording.  Default is entire class session.
+              </div>
+              <div class="slider-box">
+                <div>
+                  <input type="text" value=""/>
+                </div>
+                <div>
+                  <span class="start-time"></span><span class="end-time pull-right"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-2 text-right">
+              <span class="webcast-indicator fa-stacked"><i class="fa fa-rss fa-rotate-225"></i><i class="fa fa-rss fa-rotate-45"></i></span>
+            </div>
+            <div class="col-md-10">
+              <span class="setting-name">Live Streaming</span>
+              <span class="pull-right"><label><input type="radio" name="webcast_event" value="1"> On</label><label><input type="radio" name="webcast_event" value="0" checked> Off</label></span>
+              <div>
+                Allow the recording to be viewed while it's happening
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-2 text-right">
+              <span class="public-indicator"><i class="fa fa-globe"></i></span>
+            </div>
+            <div class="col-md-10">
+              <span class="setting-name">Public Recording</span>
+              <span class="pull-right"><label><input type="radio" name="public_event" value="1"> On</label><label><input type="radio" name="public_event" value="0" checked> Off</label></span>
+              <div>
+                Make recording available to general public
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <h4><b>Save Recording To &hellip;</b></h4>
+      <div class="row">
+        <div class="col-md-1 text-right">
+          <i class="fa fa-folder"></i>
+        </div>
+        <div class="col-md-11">
+          <div class="field-editor foldername">
+            <div class="field">
+              <a href="javascript:void(0);">{{folder_name}}</a>
+            </div>
+            <div class="form-group hidden">
+              <input class="form-control" value=""><span class="open-folder-picker field-search"><i class="fa fa-search"></i></span>
+              <div class="folder-picker hidden">
+                <div class="prompt">
+                  Search by folder name<button type="button" class="close pull-right">x</button>
+                </div>
+                <div class="search">
+                  <input type="search" class="form-control"><span class="clear-field hidden"><i class="fa fa-times-circle"></i></span>
+                </div>
+                <hr>
+                <div class="result">
+                </div>
+              </div>
+            </div>
+            <input type="hidden" class="original-folder" value="{{folder_name}}">
+            <input type="hidden" class="folder-id" value="{{folder_id}}">
+            <input type="hidden" class="folder-external-id" value="{{folder_external_id}}">
+          </div>
+          <div class="field-editor creators">
+            <span>Creators: </span>
+            <div class="field">
+              <a href="javascript:void(0);">
+                <ul>
+                  {{#each creator_netids}}
+                  <li>{{this}}</li>
+                  {{/each}}
+                  <li class="placeholder">Assign Creator Netids</li>
+                </ul>
+              </a>
+            </div>
+            <div class="form-group hidden">
+              <input class="form-control" value=""><span class="clear-field hidden"><i class="fa fa-times-circle"></i></span>
+            </div>
+          </div>
+          {{#if folder_url}}
+          <div>
+            <a class="visit-folder" href="{{folder_url}}" target="_blank"{{#if folder_id}}{{else}} disabled{{/if}}>Edit Folder in Panopto</a><span style="display: none;">Folder will be created for this session</span>
+          </div>
+          {{/if}}
+          {{#if recording_id}}
+<!--
+          <div>
+            <a href="javascript:void(0);" class="open-folder-picker">Move recording to another folder</a>
+          </div>
+-->
+          {{/if}}
+        </div>
+      </div>
+      <div>
+        {{#if recording_url}}
+        <h4><b>Recording URL</b></h4>
+        <div class="row">
+          <div class="col-md-1 text-right">
+            <a href="javascript:void(0);" title="Copy URL to clipboard" class="clipboard-copy xpull-right" onclick="copyToClipboard('.recording-url')"><i class="fa fa-clipboard"></i></a>
+          </div>
+          <div class="col-md-11 xcol-md-offset-1">
+            <div>
+              <a href="{{recording_url}}" class="recording-url" target="_blank">{{recording_url}}</a><!-- <a href="javascript:void(0);" class="clipboard-copy pull-right" onclick="copyToClipboard('.recording-url')">Copy URL to clipboard</a> -->
+            </div>
+            <div>
+              Note: Recording will not be available for at least one hour after the end of the session
+            </div>
+          </div>
+        </div>
+        {{/if}}
+      </div>
+    </div>
+    <div class="container">
+      <div class="row text-right">
+        <a class="cancel" href="javascript:void(0);">Cancel</a>
+        <button class="btn {{#if recording_id}}modify-event{{else}}schedule-event{{/if}}">{{#if recording_id}}Update Scheduled{{else}}Schedule{{/if}} recording<br />{{month_num}}/{{day}}/{{year}}, <span class="start-time">{{event_start_time}}{{ampm}}</span> - <span class="end-time">{{event_end_time}}{{ampm}}</span></button>
+        <span><i class="fa fa-spinner fa-spin"></i></span>
+      </div>
+    </div>
+  </div>
+</div>
+{% endtplhandlebars %}
+
+</div> <!-- .container-fluid -->
+<hr>
+
+{% tplhandlebars "ajax-waiting" %}
+  <div class="waiting">
+    <i class="fa fa-spinner fa-4 fa-spin"></i>
+  </div>
+{% endtplhandlebars %}
+
+{% tplhandlebars "folder_created_message" %}
+Click the folder icon
+<a href="{{folder_url}}" target="_blank" style="color: black;"><span class="fa-stack"><i class="fa fa-play-circle-o fa-stack-1x"></i><i class="fa fa-folder-o fa-stack-2x"></i></span></a>
+to open the scheduled session's Panopto folder.
+{% endtplhandlebars %}
+
+
+<script type="text/javascript">
+window.scheduler = {
+  csrftoken: '{{ csrf_token }}',
+  canvas_host: '{{canvas_host}}',
+  panopto_server: '{{panopto_server}}',
+  term: { quarter: '{{term_quarter}}', year: {{term_year}} }
+};
+
+function copyToClipboard(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+</script>
+
+{% include "scheduler/handlebars/failure.html" %}
+
+{% endblock content %}
+
+{% block extra_css %}
+{% compress css %}
+<!-- <link rel="stylesheet" href="{% static "vendor/css/dropdowns-enhancement.css" %}"/>-->
+<link rel="stylesheet" href="{% static "vendor/css/bootstrap-slider.min.css" %}"/>
+<link rel="stylesheet" href="{% static "vendor/css/bootstrap-datepicker.css" %}"/>
+<link rel="stylesheet" href="{% static "vendor/css/bootstrap-datepicker3.min.css" %}"/>
+<link rel="stylesheet" type="text/less" href="{% static "scheduler/css/mobile.less" %}"/>
+{% endcompress %}
+{% if not request.is_mobile and not request.is_tablet %}
+{% compress css %}
+<link rel="stylesheet" type="text/less" href="{% static "scheduler/css/desktop.less" %}"/>
+{% endcompress %}
+{% endif %}
+{% endblock extra_css %}
+
+{% block extra_js %}
+{% compress js %}
+<script src="{% static "vendor/js/moment.min.js" %}"></script>
+<!-- <script src="{% static "vendor/js/dropdowns-enhancement.js" %}"></script>-->
+<script src="{% static "vendor/js/bootstrap-slider.min.js" %}"></script>
+<script src="{% static "vendor/js/bootstrap-datepicker.min.js" %}"></script>
+<script src="{% static "scheduler/js/main.js" %}"></script>
+{% endcompress %}
+{% endblock extra_js %}
