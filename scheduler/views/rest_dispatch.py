@@ -15,7 +15,7 @@ class RESTDispatch(BLTIRESTDispatch):
             if (request.user.is_authenticated() and
                 Group().is_member_of_group(
                     request.user.username,
-                    getattr(settings, 'PANOPTO_ADMIN_GROUP')):
+                    getattr(settings, 'PANOPTO_ADMIN_GROUP'))):
                 return
 
         raise RESTDispatchAuthorization('Access Denied')
