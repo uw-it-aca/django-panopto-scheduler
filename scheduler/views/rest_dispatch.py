@@ -18,4 +18,4 @@ class RESTDispatch(BLTIRESTDispatch):
                     getattr(settings, 'PANOPTO_ADMIN_GROUP'))):
                 return
 
-        raise RESTDispatchAuthorization('Access Denied')
+            raise RESTDispatchAuthorization('Access Denied')
