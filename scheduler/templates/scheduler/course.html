@@ -12,7 +12,7 @@ Panopto Scheduler
 
 {% block content %}
 
-<span id="sis_course_id" style="display: none;">{{SIS_COURSE_ID}}</span>
+<span id="sis_course_id" style="display: none;">{{sis_course_id}}</span>
 
 <div class="canvas-UW-group-manager-container">
 
@@ -128,11 +128,11 @@ to open the scheduled session's Panopto folder.
 
 <script type="text/javascript">
 window.scheduler = {
-  csrftoken: '{{ csrf_token }}',
+  csrftoken: '{{csrf_token}}',
   session_id: '{{session_id}}',
   canvas_host: '{{canvas_host}}',
   panopto_server: '{{panopto_server}}',
-  blti: { course: '{{SIS_COURSE_ID}}' },
+  blti: { course: '{{sis_course_id}}' },
   term: { quarter: '{{term_quarter|default:"autumn"}}', year: {{term_year|default:1999}} }
 };
 </script>
