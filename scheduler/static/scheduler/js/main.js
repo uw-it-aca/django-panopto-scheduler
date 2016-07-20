@@ -43,6 +43,10 @@ var PanoptoScheduler = (function ($) {
         $('.rooms-loading').remove();
     }
 
+    function recorder_search_complete() {
+        $('.recorders-loading').hide();
+    }
+
     function panopto_folder_search_complete() {
         $('.folder-picker .result .loading').addClass('hidden');
     }
@@ -734,10 +738,11 @@ var PanoptoScheduler = (function ($) {
         $.ajax({
             type: 'GET',
             url: panopto_api_path('recorder/', { timeout: 0 }),
-            complete: room_search_complete
+            complete: recorder_search_complete
         })
             .fail(event_search_failure)
             .done(init_room_select);
+        Handlebars.registerPartial('reservation-list', $('#reservation-list-partial').html());
     }
 
     function disable_event_scheduler(pe) {
@@ -2097,6 +2102,12 @@ var PanoptoScheduler = (function ($) {
                     find_course_from_search(search);
                     });
                 }
+        } else if ($('#panopto-recorders').length) {
+            init_recorder_search();
+            $('body')
+                .on('change', '#panopto-recorders #room-select', panopto_recorder_search)
+                .on('click', '.recorder-selection .change-room', panopto_change_space)
+                .on('click', '.recorder-selection .remove-room', panopto_remove_space);
         } else if ($('form.event-search').length) {
             init_event_search();
             init_date_picker();
@@ -2157,12 +2168,6 @@ var PanoptoScheduler = (function ($) {
             }
 
             //history.replaceState({}, '', search_param ? search_param : '/scheduler/');
-        } else if ($('#panopto-recorders').length) {
-            init_recorder_search();
-            $('body')
-                .on('change', '#panopto-recorders #room-select', panopto_recorder_search)
-                .on('click', '.recorder-selection .change-room', panopto_change_space)
-                .on('click', '.recorder-selection .remove-room', panopto_remove_space);
         } else {
             // if blti loaded
             if (window.scheduler.hasOwnProperty('blti')) {
