@@ -1,15 +1,14 @@
 from django.conf import settings
 from restclients.pws import PWS
 from restclients.sws.section import get_section_by_label, get_section_by_url
-from restclients.sws.term import get_current_term, get_next_term
 from restclients.exceptions import InvalidNetID, DataFailureException
-from scheduler.models import Course, Curriculum
+from scheduler.models import Curriculum
 from scheduler.exceptions import InvalidUser
 from scheduler.utils.validation import Validation
 from restclients.r25.events import get_event_by_alien_id
 from restclients.r25.reservations import get_reservations
 from restclients.canvas.courses import Courses as CanvasCourses
-from scheduler.utils.recorder import get_recorder_details, RecorderException
+from scheduler.utils.recorder import get_recorder_details
 from scheduler.utils.session import get_sessions_by_external_ids
 from scheduler.utils.session import get_sessions_by_session_ids
 from panopto_client.access import AccessManagement
@@ -131,9 +130,6 @@ def space_events_and_recordings(params):
         'session_ids': params.get('session_ids'),
     }
 
-    current_term = get_current_term()
-    next_term = get_next_term()
-
     event_sessions = []
     event_external_ids = []
     recorders = {
@@ -151,8 +147,6 @@ def space_events_and_recordings(params):
         return event_sessions
 
     if search['space_id'] and search['start_dt']:
-        start_dt = parser.parse(search['start_dt']).date()
-
         reservations = get_reservations(**search)
 
         # build event sessions, accounting for joint class reservations
@@ -182,7 +176,8 @@ def space_events_and_recordings(params):
             else:
                 set_panopto_generic_folder(event_session)
                 set_panopto_generic_session(event_session)
-                event_external_ids.append(event_session['recording']['external_id'])
+                event_external_ids.append(
+                    event_session['recording']['external_id'])
 
     mash_in_panopto_sessions(event_sessions, event_external_ids, recorders)
 
@@ -360,14 +355,19 @@ def get_panopto_folder_creators(folder_id):
     creators = []
     folder_access = access_api.getFolderAccessDetails(folder_id)
 
-    if len(folder_access['UsersWithCreatorAccess']):
+    if ('UsersWithCreatorAccess' in folder_access and
+            folder_access['UsersWithCreatorAccess'] and
+            len(folder_access['UsersWithCreatorAccess'])):
         guids = folder_access['UsersWithCreatorAccess'][0]
         if len(guids):
             users = user_api.getUsers(guids)
             for user in users[0]:
-                match = re.match(r'^%s\\(.+)$' % (settings.PANOPTO_API_APP_ID), user['UserKey'])
+                match = re.match(
+                    r'^%s\\(.+)$' % (
+                        settings.PANOPTO_API_APP_ID), user['UserKey'])
                 if match:
-                    creators.append(match.group(1) if match else user['UserKey'])
+                    creators.append(
+                        match.group(1) if match else user['UserKey'])
 
     return creators
 
@@ -387,12 +387,13 @@ def set_panopto_generic_folder(event):
 
     event['recording']['folder']['name'] = folder_name
     event['recording']['folder']['external_id'] = folder_external_id
-    event['recording']['folder']['auth'] = { 'creators': creators }
+    event['recording']['folder']['auth'] = {'creators': creators}
 
 
 def set_panopto_generic_session(event):
     name = "%s - %s" % (event['name'],
-                        parser.parse(event['event']['start']).strftime('%Y-%m-%d'))
+                        parser.parse(
+                            event['event']['start']).strftime('%Y-%m-%d'))
     id_string = "%s - %s" % (name, event['space']['id'])
     event['recording']['name'] = name
     event['recording']['external_id'] = panopto_generic_external_id(id_string)

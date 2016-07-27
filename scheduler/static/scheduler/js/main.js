@@ -1435,7 +1435,6 @@ var PanoptoScheduler = (function ($) {
 
         context.location = $('select#room-select option:selected').text();
         context.search_date = moment($('input#calendar.input-date').val()).format('MMMM D, YYYY');
-
         $('.result-display-container').html(tpl(context));
 
         slider_instance = init_slider_box($('.slider-box'),
@@ -1526,12 +1525,15 @@ var PanoptoScheduler = (function ($) {
         disable_event_scheduler();
 
         // fix up creators and links
+        $('.folder-exists').addClass('hidden')
+        $('a.visit-folder').attr('disabled', 'disabled');
         do_panopto_folder_search(folder, function (data) {
             enable_event_scheduler();
             if ($.isArray(data)) {
                 $('button.modify-event').removeAttr('disabled');
                 $.each(data, function () {
                     if (this.name === folder) {
+                        $('.folder-exists').removeClass('hidden')
                         creators = [];
                         $.each(this.auth.creators, function () {
                             creators.push(this.key);
@@ -1542,7 +1544,7 @@ var PanoptoScheduler = (function ($) {
                         $('.foldername input.folder-id').val(this.id);
                         $('a.visit-folder').
                             attr('href', panopto_folder_url(this.id)).
-                            removeClass('inactive');
+                            removeClass('hidden');
                         return false;
                     }
                 });

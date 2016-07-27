@@ -142,7 +142,7 @@
       </div>
     </div>
     <div class="container">
-      <h4><b>Save Recording To &hellip;</b></h4>
+      <h4><b>Save Recording To <span class="folder-exists {{#if folder_id}}{{else}}hidden{{/if}}">Existing</span><span style="display: none;">New</span> Folder &hellip;</b></h4>
       <div class="row">
         <div class="col-md-1 text-right">
           <i class="fa fa-folder"></i>
@@ -150,10 +150,10 @@
         <div class="col-md-11">
           <div class="field-editor foldername">
             <div class="field">
-              <a href="javascript:void(0);">{{folder_name}}</a>
+              <a href="javascript:void(0);" title="Click to edit folder name">{{folder_name}}</a>
             </div>
             <div class="form-group hidden">
-              <input class="form-control" value=""><span class="open-folder-picker field-search"><i class="fa fa-search"></i></span>
+              <input class="form-control" value=""><span class="open-folder-picker field-search" title="Click to search folders"><i class="fa fa-search"></i></span>
               <div class="folder-picker hidden">
                 <div class="prompt">
                   Search by folder name<button type="button" class="close pull-right">x</button>
@@ -173,7 +173,7 @@
           <div class="field-editor creators">
             <span>Creators: </span>
             <div class="field">
-              <a href="javascript:void(0);">
+              <a href="javascript:void(0);" title="Click to edit creators">
                 <ul>
                   {{#each creator_netids}}
                   <li>{{this}}</li>
@@ -186,18 +186,16 @@
               <input class="form-control" value=""><span class="clear-field hidden"><i class="fa fa-times-circle"></i></span>
             </div>
           </div>
-          {{#if folder_url}}
           <div>
-            <a class="visit-folder" href="{{folder_url}}" target="_blank"{{#if folder_id}}{{else}} disabled{{/if}}>Edit Folder in Panopto</a><span style="display: none;">Folder will be created for this session</span>
+            <a class="visit-folder {{#if folder_id}}{{else}}hidden{{/if}}" href="{{folder_url}}" target="_blank">Edit Folder in Panopto</a><span style="display: none;">Folder will be created for this session</span>
           </div>
-          {{/if}}
-          {{#if recording_id}}
 <!--
+          {{#if recording_id}}
           <div>
             <a href="javascript:void(0);" class="open-folder-picker">Move recording to another folder</a>
           </div>
--->
           {{/if}}
+-->
         </div>
       </div>
       <div>
