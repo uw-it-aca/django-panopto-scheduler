@@ -844,6 +844,22 @@ var PanoptoScheduler = (function ($) {
         schedule_panopto_recording(pe);
     }
 
+    function unschedule_panopto_event_recording(e) {
+        var $node = $('.reservation-settings[data-schedule-key]'),
+            key = $node.attr('data-schedule-key'),
+            pe = gather_event_recording($node, window.scheduler.events[key]);
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (!pe) {
+            return;
+        }
+
+        disable_event_scheduler();
+        confirm_unschedule_event(pe, $(this));
+    }
+
     function modify_panopto_event_recording(e) {
         var $node = $('.reservation-settings[data-schedule-key]'),
             key = $node.attr('data-schedule-key'),
@@ -973,7 +989,8 @@ var PanoptoScheduler = (function ($) {
             return;
         }
 
-        button_loading(button);
+        button.trigger('scheduler.remove_schedule_start', [panopto_event]);
+
         $.ajax({
             type: 'DELETE',
             url: panopto_api_path('session/' + panopto_event.recording.id, {
@@ -1000,8 +1017,7 @@ var PanoptoScheduler = (function ($) {
                 panopto_event.recording.end = panopto_event.event.end;
             }
         }).always(function () {
-            button_stop_loading(button);
-            update_schedule_buttons(panopto_event);
+            button.trigger('scheduler.remove_schedule_finish', [panopto_event]);
         });
     }
 
@@ -1167,6 +1183,21 @@ var PanoptoScheduler = (function ($) {
         });
         modal.on('hidden.bs.modal', function (e) {
             $(e.target).remove();
+        });
+    }
+
+    function confirm_unschedule_event(pe, button) {
+        var tpl = Handlebars.compile($('#confirm-unschedule-event-tmpl').html()),
+            modal;
+
+        $('body').append(tpl(event_context(pe)));
+        modal = $('.unschedule-event-modal');
+        modal.modal();
+        modal.find('.modal-footer .actually-unschedule-event').on('click', function () {
+            remove_scheduled_panopto_recording(pe, button);
+        });
+        modal.on('hidden.bs.modal', function (e) {
+            enable_event_scheduler();
         });
     }
 
@@ -1447,7 +1478,7 @@ var PanoptoScheduler = (function ($) {
             'finish', search_panopto_folders);
 
         $('.reservation-settings .foldername .form-group > input').data(
-            'finish', validate_panopto_folder);
+            'finish', validate_new_folder);
 
         $('.reservation-settings .creators .form-group > input').data(
             'finish', panopto_folder_string_to_creators);
@@ -1467,6 +1498,9 @@ var PanoptoScheduler = (function ($) {
 
         checked = (pe && pe.recording.id && pe.recording.is_broadcast) ? '1' : '0';
         $('input[name^=webcast_][value="' + checked + '"]').prop('checked', true);
+
+
+        validate_panopto_folder($('.original-folder').val());
     }
 
     function event_scheduler_cancel(e) {
@@ -1506,13 +1540,18 @@ var PanoptoScheduler = (function ($) {
         }
     }
 
-    function validate_panopto_folder(substring) {
-        var folder = substring.trim(),
-            creators;
+    function validate_new_folder(substring) {
+        var folder = substring.trim();
 
         if (folder.length < 1 || folder === $('.foldername .field a').text()) {
             return;
         }
+
+        validate_panopto_folder(folder);
+    }
+
+    function validate_panopto_folder(folder) {
+        var creators;
 
         $('.foldername .field a').text(folder);
         panopto_folder_string_to_creators();
@@ -1520,7 +1559,7 @@ var PanoptoScheduler = (function ($) {
 
         $('.foldername input.original-folder').val('');
         $('.foldername input.folder-id').val('');
-        $('a.visit-folder').addClass('inactive');
+        $('a.visit-folder').addClass('hidden');
 
         disable_event_scheduler();
 
@@ -2040,7 +2079,6 @@ var PanoptoScheduler = (function ($) {
         }
     }
 
-
     function init_course_events() {
         $('body')
             .on('click',
@@ -2054,6 +2092,15 @@ var PanoptoScheduler = (function ($) {
                 '.list-group .btn-group.scheduled > button:first-child,'
                 + '.list-group .btn-group.is_recording > button:first-child',
                 panopto_clear_scheduled_recording)
+            .on('scheduler.remove_schedule_start', '.btn-group button',
+                function (e, panopto_event) {
+                    button_loading($(this));
+                })
+            .on('scheduler.remove_schedule_finish', '.btn-group button',
+                function (e, panopto_event) {
+                    button_stop_loading($(this));
+                    update_schedule_buttons(panopto_event);
+                })
             .on('show.bs.dropdown',
                 '.schedule-button-cluster .btn-group',
                 init_schedule_dropdown)
@@ -2074,6 +2121,68 @@ var PanoptoScheduler = (function ($) {
                 function (e) { e.stopPropagation(); });
         Handlebars.registerPartial('reservation-list', $('#reservation-list-partial').html());
         Handlebars.registerPartial('schedule-button', $('#schedule-button-partial').html());
+    }
+
+    function init_event_events() {
+        $('body')
+            .on('click', 'a.schedule-recording, a.edit-recording',
+                event_scheduler)
+            .on('click', '.reservation-settings .cancel',
+                event_scheduler_cancel)
+            .on('click', '.reservation-settings .field a',
+                open_panopto_event_field_editor)
+            .on('keyup', '.reservation-settings .foldername .form-group > input',
+                panopto_event_field_editor_input)
+            .on('scheduler.field_edit_closing', '.reservation-settings .foldername',
+                function () {
+                    $('.foldername .form-group .folder-picker').addClass('hidden');
+                })
+            .on('click', '.reservation-settings .foldername .open-folder-picker',
+                open_panopto_folder_search)
+            .on('click', '.reservation-settings .foldername .folder-picker .close',
+                close_panopto_folder_search)
+            .on('click', '.reservation-settings .foldername .folder-picker .result div',
+                select_panopto_folder)
+            .on('keyup', '.reservation-settings .foldername .folder-picker .search input',
+                panopto_event_field_editor_input)
+            .on('keyup', '.reservation-settings .creators .form-group > input',
+                panopto_event_field_editor_input)
+            .on('click', '.reservation-settings .field-editor .form-group .clear-field',
+                panopto_event_field_editor_input_clear)
+            .on('scheduler.field_edit_opening', '.reservation-settings', function () {
+                close_and_save_panopto_event_field_editors();
+                //close_panopto_event_field_editors();
+            })
+            .on('scheduler.field_edit_clearing', '.foldername',
+                function () {
+                    $('.reservation-settings .foldername .folder-picker .result').html('');
+                })
+            .on('click', '.field-editor .form-group', function (e) {
+                e.stopPropagation();
+            })
+            .on('click', '.schedule-event',
+                schedule_panopto_event_recording)
+            .on('click', '.unschedule-event',
+                unschedule_panopto_event_recording)
+            .on('scheduler.set_schedule_finish', '[data-schedule-key]',
+                event_scheduler_finish)
+            .on('scheduler.remove_schedule_start', 'button',
+                function (e, panopto_event) {
+                    $('.unschedule-event-modal')
+                        .find('a, button, input')
+                        .attr('disabled', 'disabled');
+                })
+            .on('scheduler.remove_schedule_finish', 'button',
+                function (e, panopto_event) {
+                    $('.unschedule-event-modal').modal().hide();
+                    find_event_from_search(window.location.search);
+                })
+            .on('click', '.modify-event',
+                modify_panopto_event_recording)
+            .on('click', function () {
+                close_and_save_panopto_event_field_editors();
+                //close_panopto_event_field_editors();
+            });
     }
 
     function initialize() {
@@ -2114,52 +2223,7 @@ var PanoptoScheduler = (function ($) {
             init_event_search();
             init_date_picker();
             $("form.event-search").submit(do_event_search);
-            $('body')
-                .on('click', 'a.schedule-recording, a.edit-recording',
-                    event_scheduler)
-                .on('click', '.reservation-settings .cancel',
-                    event_scheduler_cancel)
-                .on('click', '.reservation-settings .field a',
-                    open_panopto_event_field_editor)
-                .on('keyup', '.reservation-settings .foldername .form-group > input',
-                    panopto_event_field_editor_input)
-                .on('scheduler.field_edit_closing', '.reservation-settings .foldername',
-                    function () {
-                        $('.foldername .form-group .folder-picker').addClass('hidden');
-                    })
-                .on('click', '.reservation-settings .foldername .open-folder-picker',
-                    open_panopto_folder_search)
-                .on('click', '.reservation-settings .foldername .folder-picker .close',
-                    close_panopto_folder_search)
-                .on('click', '.reservation-settings .foldername .folder-picker .result div',
-                    select_panopto_folder)
-                .on('keyup', '.reservation-settings .foldername .folder-picker .search input',
-                    panopto_event_field_editor_input)
-                .on('keyup', '.reservation-settings .creators .form-group > input',
-                    panopto_event_field_editor_input)
-                .on('click', '.reservation-settings .field-editor .form-group .clear-field',
-                    panopto_event_field_editor_input_clear)
-                .on('scheduler.field_edit_opening', '.reservation-settings', function () {
-                    close_and_save_panopto_event_field_editors();
-                    //close_panopto_event_field_editors();
-                })
-                .on('scheduler.field_edit_clearing', '.foldername',
-                    function () {
-                        $('.reservation-settings .foldername .folder-picker .result').html('');
-                    })
-                .on('click', '.field-editor .form-group', function (e) {
-                    e.stopPropagation();
-                })
-                .on('click', '.schedule-event',
-                    schedule_panopto_event_recording)
-                .on('scheduler.set_schedule_finish', '[data-schedule-key]',
-                    event_scheduler_finish)
-                .on('click', '.modify-event',
-                    modify_panopto_event_recording)
-                .on('click', function () {
-                    close_and_save_panopto_event_field_editors();
-                    //close_panopto_event_field_editors();
-                });
+            init_event_events();
 
             if (window.location.search.length) {
                 find_event_from_search(window.location.search);

@@ -220,6 +220,9 @@
     <div class="container">
       <div class="row text-right">
         <a class="cancel" href="javascript:void(0);">Cancel</a>
+        {{#if recording_id}}
+        <button class="btn unschedule-event">Unschedule<br />this recording</button>
+        {{/if}}
         <button class="btn {{#if recording_id}}modify-event{{else}}schedule-event{{/if}}">{{#if recording_id}}Update Scheduled{{else}}Schedule{{/if}} recording<br />{{month_num}}/{{day}}/{{year}}, <span class="start-time">{{event_start_time}}{{ampm}}</span> - <span class="end-time">{{event_end_time}}{{ampm}}</span></button>
         <span><i class="fa fa-spinner fa-spin"></i></span>
       </div>
@@ -243,6 +246,25 @@ Click the folder icon
 to open the scheduled session's Panopto folder.
 {% endtplhandlebars %}
 
+{% tplhandlebars "confirm-unschedule-event-tmpl" %}
+<div class="modal fade unschedule-event-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h3 class="modal-title" id="myModalLabel">Unschedule Recording</h3>
+      </div>
+      <div class="modal-body">
+        This will cancel the scheduled recording of {{name}}, {{contact}}, {{month_num}}/{{day}}/{{year}}, {{event_start_time}}{{ampm}} - {{event_end_time}}{{ampm}}.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary actually-unschedule-event" data-dismiss="modal">Yes, cancel scheduled recording</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endtplhandlebars %}
 
 <script type="text/javascript">
 window.scheduler = {
