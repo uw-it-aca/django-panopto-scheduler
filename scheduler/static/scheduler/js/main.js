@@ -457,7 +457,8 @@ var PanoptoScheduler = (function ($) {
             folder_url: (event.recording.folder.id)
                 ? panopto_folder_url(event.recording.folder.id)
                 : null,
-            creator_netids: (event.recording.folder.auth.hasOwnProperty('creators')
+            creator_netids: (event.recording.folder.auth
+                             && event.recording.folder.auth.hasOwnProperty('creators')
                              && event.recording.folder.auth.creators)
                 ? event.recording.folder.auth.creators
                 : [],
@@ -2219,6 +2220,7 @@ var PanoptoScheduler = (function ($) {
                 .on('change', '#panopto-recorders #room-select', panopto_recorder_search)
                 .on('click', '.recorder-selection .change-room', panopto_change_space)
                 .on('click', '.recorder-selection .remove-room', panopto_remove_space);
+            Handlebars.registerPartial('schedule-button', $('#schedule-button-partial').html());
         } else if ($('form.event-search').length) {
             init_event_search();
             init_date_picker();
