@@ -124,7 +124,33 @@
   </ol>
 {% endtplhandlebars %}
 
-{% include "scheduler/handlebars/schedule_button_partial.html" %}
+{% tplhandlebars "schedule-button-partial" %}
+<div class="schedule-button-cluster {{#unless is_recorded}}{{#if recording_is_public}}is-public {{/if}}{{#if recording_is_broadcast}}is-webcast {{/if}}{{#unless full_duration}}partial-duration{{/unless}} {{#if disabled}}disabled{{/if}}{{/unless}}">
+     <!-- duration status -->
+        <span class="schedule-duration" title="Recording time is less than class session duration"><span>{{ recording_time }}</span>
+        <i class="fa fa-clock-o"></i></span>
+    <!-- public status -->
+        <span class="schedule-public" data-toggle="tooltip" title="Share recording with the world" ><i class="fa fa-globe"></i></span>
+    <!-- live streaming status -->
+        <span class="schedule-webcast" data-toggle="tooltip" title="Stream live while recording"><i class="fa fa-rss fa-rotate-225"></i><i class="fa fa-rss fa-rotate-45"></i></span>
+
+    <!-- container for scheduler button, toggle, and resulting modal -->
+    <div class="btn-group  {{#if is_recorded}}is_recorded{{else}}{{#if is_recording}}is_recording{{else}}{{#if can_record}}can-record{{else}}{{#if recording_id}}scheduled{{else}}unscheduled{{/if}}{{/if}}{{/if}}{{/if}}" data-schedule-key="{{ key }}">
+
+      <!-- scheduler button -->
+        <div>
+            <span class="text scheduled option-help" id="text" data-toggle="tooltip" title="Cancel this scheduled recording"><i class="glyphicon glyphicon-ok"></i> Scheduled</span>
+            <span class="text unscheduled option-help" id="text" data-toggle="tooltip" title="Schedule this session">Schedule</span>
+            <span class="text schedule-all option-help" id="text" data-toggle="tooltip" title="Schedule all sessions">Schedule All</span>
+            <span class="text recordable option-help" id="text" data-toggle="tooltip" title="Start recording the current session now"><i class="fa fa-microphone"></i>Record Now</span>
+            <span class="text recording option-help" id="text" data-toggle="tooltip" title="Stop recording the current session"><i class="fa fa-microphone"></i>Recording</span>
+            <span class="text recorded" id="text" data-toggle="tooltip" title="Session is recorded"><i class="fa fa-microphone"></i>Recorded</span>
+        </div>
+        <!-- end scheduler button -->
+    </div>
+    <!-- end container for scheduler button, toggle, and resulting modal --> 
+</div>
+{% endtplhandlebars %}
 
 {% tplhandlebars "ajax-waiting" %}
   <div class="waiting">
