@@ -609,7 +609,7 @@ var PanoptoScheduler = (function ($) {
             term;
 
         if (search) {
-            course = parse_sis_id(search[1]);
+            course = parse_sis_id(decodeURIComponent(search[1]));
             if (course) {
                 term = $('select#qtr-select option[value="' + course.term + '"]');
                 term.prop('selected', true);
