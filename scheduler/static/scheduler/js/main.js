@@ -1,5 +1,5 @@
 /*jslint browser: true, plusplus: true */
-/*global jQuery, Handlebars, PanoptoScheduler, moment, confirm */
+/*global jQuery, Handlebars, moment, confirm */
 
 var PanoptoScheduler = (function ($) {
     "use strict";
@@ -113,15 +113,15 @@ var PanoptoScheduler = (function ($) {
     }
 
     function panopto_folder_url(panopto_folder_id) {
-        return 'http://' + window.scheduler.panopto_server
-            + '/Panopto/Pages/Sessions/List.aspx#folderID=%22'
-            + panopto_folder_id  + '%22&status=%5B4%2C0%2C5%2C3%2C2%2C1%5D';
+        return 'http://' + window.scheduler.panopto_server +
+            '/Panopto/Pages/Sessions/List.aspx#folderID=%22' +
+            panopto_folder_id  + '%22&status=%5B4%2C0%2C5%2C3%2C2%2C1%5D';
     }
 
     function panopto_recording_url(panopto_recording_id) {
-        return 'http://' + window.scheduler.panopto_server
-            + '/Panopto/Pages/Viewer.aspx?id='
-            + panopto_recording_id;
+        return 'http://' + window.scheduler.panopto_server +
+            '/Panopto/Pages/Viewer.aspx?id=' +
+            panopto_recording_id;
     }
 
     function panopto_recording_length(start, stop) {
@@ -129,32 +129,32 @@ var PanoptoScheduler = (function ($) {
     }
 
     function panopto_full_duration(panopto_event) {
-        return (moment(panopto_event.recording.start).isSame(panopto_event.event.start)
-                && moment(panopto_event.recording.end).isSame(panopto_event.event.end));
+        return (moment(panopto_event.recording.start).isSame(panopto_event.event.start) &&
+                moment(panopto_event.recording.end).isSame(panopto_event.event.end));
     }
 
     function panopto_can_record(panopto_event) {
         var now = moment();
 
-        return (panopto_event.recording.recorder_id
-                && now.isAfter(moment(panopto_event.event.start))
-                && now.isBefore(moment(panopto_event.event.end)));
+        return (panopto_event.recording.recorder_id &&
+                now.isAfter(moment(panopto_event.event.start)) &&
+                now.isBefore(moment(panopto_event.event.end)));
     }
 
     function panopto_is_recording(panopto_event) {
         var now = moment();
 
-        return (panopto_event.recording.recorder_id
-                && panopto_event.recording.id
-                && now.isAfter(moment(panopto_event.recording.start))
-                && now.isBefore(moment(panopto_event.recording.end)));
+        return (panopto_event.recording.recorder_id &&
+                panopto_event.recording.id &&
+                now.isAfter(moment(panopto_event.recording.start)) &&
+                now.isBefore(moment(panopto_event.recording.end)));
     }
 
     function panopto_is_recorded(panopto_event) {
         var now = moment();
 
-        return (panopto_event.recording.id
-                && now.isAfter(moment(panopto_event.recording.end)));
+        return (panopto_event.recording.id &&
+                now.isAfter(moment(panopto_event.recording.end)));
     }
 
     function failure_modal(title, default_text, xhr) {
@@ -201,8 +201,8 @@ var PanoptoScheduler = (function ($) {
 
         if (event) {
             now = moment();
-            recordable = (now.isAfter(moment(event.event.start))
-                          && now.isBefore(moment(event.event.end)));
+            recordable = (now.isAfter(moment(event.event.start)) &&
+                          now.isBefore(moment(event.event.end)));
             button_group = $('.btn-group[data-schedule-key="' + event.key + '"]');
             schedule_cluster = button_group.closest('.schedule-button-cluster');
             event_search = (schedule_cluster.parents('div.event-search').length > 0);
@@ -291,6 +291,7 @@ var PanoptoScheduler = (function ($) {
     }
 
     function paint_course_schedule(course, events) {
+        /*jshint validthis: true */
         var tpl = Handlebars.compile($('#course-search-result-template').html()),
             joint = null,
             panopto_folder_id = null,
@@ -379,17 +380,16 @@ var PanoptoScheduler = (function ($) {
                                                          this.recording.end),
                 recorder_id: this.recording.recorder_id,
                 event_search: false,
-                folder_url: (this.recording.folder.id)
-                    ? panopto_folder_url(this.recording.folder.id)
-                    : null,
+                folder_url: (this.recording.folder.id) ?
+                    panopto_folder_url(this.recording.folder.id) : null,
                 in_the_past: in_the_past,
                 can_record: panopto_can_record(this),
                 is_recording: panopto_is_recording(this),
                 is_recorded: panopto_is_recorded(this),
-                disabled: (this.schedulable
-                           && ((this.recording.id && now.isBefore(this.recording.end))
-                               || (!this.recording.id && this.recording.recorder_id))
-                           && event_end_date.isAfter(now)) ? '' : 'disabled',
+                disabled: (this.schedulable &&
+                    ((this.recording.id && now.isBefore(this.recording.end)) ||
+                        (!this.recording.id && this.recording.recorder_id)) &&
+                            event_end_date.isAfter(now)) ? '' : 'disabled',
                 has_recorder: context.has_recorder
             });
         });
@@ -402,16 +402,16 @@ var PanoptoScheduler = (function ($) {
 
         context.future_meetings = future_meetings;
 
-        context.sws_section_url = '/restclients/view/sws/student/v5/course/'
-            + course.sws_label + '.json';
+        context.sws_section_url = '/restclients/view/sws/student/v5/course/' +
+            course.sws_label + '.json';
 
         if (panopto_folder_id) {
             context.panopto_folder_url = panopto_folder_url(panopto_folder_id);
         }
 
         if (canvas_course_id) {
-            context.canvas_course_url = window.scheduler.canvas_host
-                + '/courses/' + canvas_course_id;
+            context.canvas_course_url = window.scheduler.canvas_host +
+                '/courses/' + canvas_course_id;
         }
 
         $('.course-search-result').html(tpl(context));
@@ -437,8 +437,8 @@ var PanoptoScheduler = (function ($) {
             name: ($.isArray(event.name)) ? event.name : [event.name],
             contact: event.contact.name,
             contact_email: event.contact.email,
-            contact_netids: (event.contact.uwnetid && event.contact.uwnetid.length)
-                ? [event.contact.uwnetid] : [],
+            contact_netids: (event.contact.uwnetid && event.contact.uwnetid.length) ?
+                [event.contact.uwnetid] : [],
             recording_name: event.recording.name,
             recording_is_broadcast: event.recording.is_broadcast,
             recording_is_public: event.recording.is_public,
@@ -447,34 +447,31 @@ var PanoptoScheduler = (function ($) {
                                                      event.recording.end),
             recording_id: event.recording.id,
             recorder_id: event.recording.recorder_id,
-            recording_url: event.recording.id
-                ? panopto_recording_url(event.recording.id)
-                : null,
+            recording_url: event.recording.id ?
+                panopto_recording_url(event.recording.id) : null,
             event_search: true,
             folder_name: event.recording.folder.name,
             folder_id: event.recording.folder.id,
             folder_external_id: event.recording.folder.external_id,
-            folder_url: (event.recording.folder.id)
-                ? panopto_folder_url(event.recording.folder.id)
-                : null,
-            creator_netids: (event.recording.folder.auth
-                             && event.recording.folder.auth.hasOwnProperty('creators')
-                             && event.recording.folder.auth.creators)
-                ? event.recording.folder.auth.creators
-                : [],
+            folder_url: (event.recording.folder.id) ?
+                panopto_folder_url(event.recording.folder.id) : null,
+            creator_netids: (event.recording.folder.auth &&
+                             event.recording.folder.auth.hasOwnProperty('creators') &&
+                             event.recording.folder.auth.creators) ?
+                event.recording.folder.auth.creators : [],
             in_the_past: false,
             can_record: panopto_can_record(event),
             is_recording: panopto_is_recording(event),
             is_recorded: panopto_is_recorded(event),
-            disabled: (event.schedulable
-                       && (event.recording.id
-                           || event.recording.recorder_id)
-                       && event_end_date.isAfter(now)) ? '' : 'disabled',
+            disabled: (event.schedulable &&
+                (event.recording.id || event.recording.recorder_id) &&
+                event_end_date.isAfter(now)) ? '' : 'disabled',
             has_recorder: true
         };
     }
 
     function paint_space_schedule(events) {
+        /*jshint validthis: true */
         var tpl = Handlebars.compile($('#event-search-result-template').html()),
             context = {
                 has_recorder: true,
@@ -563,8 +560,7 @@ var PanoptoScheduler = (function ($) {
 
         course.name = parts.slice(2, 5).join(' ');
         course.canvas_id = parts.join('-');
-        course.sws_label = parts.slice(0, 4).join(',')
-            + '/' + parts.slice(-1);
+        course.sws_label = parts.slice(0, 4).join(',') + '/' + parts.slice(-1);
 
         if (ev) {
             ev.preventDefault();
@@ -580,9 +576,8 @@ var PanoptoScheduler = (function ($) {
             day_val = $('input#calendar.input-date').val();
 
         ev.preventDefault();
-        update_history_state('?events=' + ids[0]
-                             + '|' + ids[1]
-                             + '|' + day_val.split('/').join('-'));
+        update_history_state('?events=' + ids[0] +
+            '|' + ids[1] + '|' + day_val.split('/').join('-'));
         search_events_in_space(ids[0], ids[1], day_val);
     }
 
@@ -659,6 +654,7 @@ var PanoptoScheduler = (function ($) {
     }
 
     function update_term_selector() {
+        /*jshint validthis: true */
         $('#selected-quarter').html($("option:selected", this).text());
     }
 
@@ -846,6 +842,7 @@ var PanoptoScheduler = (function ($) {
     }
 
     function unschedule_panopto_event_recording(e) {
+        /*jshint validthis: true */
         var $node = $('.reservation-settings[data-schedule-key]'),
             key = $node.attr('data-schedule-key'),
             pe = gather_event_recording($node, window.scheduler.events[key]);
@@ -954,9 +951,9 @@ var PanoptoScheduler = (function ($) {
             if (data.hasOwnProperty('recording_id')) {
                 panopto_event.recording.id = data.recording_id;
             }
-            if (data.hasOwnProperty('messages')
-                && $.isArray(data.messages)
-                && data.messages.length) {
+            if (data.hasOwnProperty('messages') &&
+                $.isArray(data.messages) &&
+                data.messages.length) {
                 panopto_event.create_messages = data.messages;
             }
         }).fail(function (xhr) {
@@ -965,12 +962,12 @@ var PanoptoScheduler = (function ($) {
                     format = 'h:mm a';
 
                 failure_modal('Cannot Schedule Recording',
-                              'This request conflicts with<p style="text-align: center;">'
-                              + response.conflict_name
-                              + '</p>scheduled from '
-                              + moment(response.conflict_start).format(format)
-                              + ' until '
-                              + moment(response.conflict_end).format(format),
+                              'This request conflicts with<p style="text-align: center;">' +
+                              response.conflict_name +
+                              '</p>scheduled from ' +
+                              moment(response.conflict_start).format(format) +
+                              ' until ' +
+                              moment(response.conflict_end).format(format),
                               {});
             } else {
                 failure_modal('Cannot Schedule Recording',
@@ -985,7 +982,7 @@ var PanoptoScheduler = (function ($) {
     function remove_scheduled_panopto_recording(panopto_event, button) {
         var now = moment();
 
-        // delete only scheduled (future) recordings 
+        // delete only scheduled (future) recordings
         if (!(panopto_event.recording.id && now.isBefore(panopto_event.recording.start))) {
             return;
         }
@@ -996,10 +993,9 @@ var PanoptoScheduler = (function ($) {
             type: 'DELETE',
             url: panopto_api_path('session/' + panopto_event.recording.id, {
                 key: panopto_event.key,
-                uwnetid: (panopto_event.contact.hasOwnProperty('uwnetid')
-                          && panopto_event.contact.uwnetid)
-                    ? panopto_event.contact.uwnetid
-                    : '',
+                uwnetid: (panopto_event.contact.hasOwnProperty('uwnetid') &&
+                          panopto_event.contact.uwnetid) ?
+                    panopto_event.contact.uwnetid : '',
                 name: panopto_event.recording.name,
                 eid: panopto_event.recording.external_id,
                 rid: panopto_event.recording.recorder_id,
@@ -1029,15 +1025,13 @@ var PanoptoScheduler = (function ($) {
         button_loading(changes.schedule.input);
         $.ajax({
             type: 'PUT',
-            url: panopto_api_path('session/'
-                                  + changes.panopto_event.recording.id
-                                  + '/recordingtime'),
+            url: panopto_api_path('session/' +
+                changes.panopto_event.recording.id + '/recordingtime'),
             processData: false,
             contentType: 'application/json',
-            data: '{'
-                + '"start": "' + start + '", '
-                + '"end": "' + end + '"'
-                +  '}'
+            data: '{' +
+                '"start": "' + start + '", ' +
+                '"end": "' + end + '"' + '}'
         }).fail(function (xhr) {
             failure_modal('Cannot Modify Recording Time',
                           'Please try again later.',
@@ -1095,8 +1089,8 @@ var PanoptoScheduler = (function ($) {
             return null;
         }
 
-        if ((pe.recording.id && webcast_checked !== pe.recording.is_broadcast)
-                ||  (!pe.recording.id && webcast_checked)) {
+        if ((pe.recording.id && webcast_checked !== pe.recording.is_broadcast) ||
+                (!pe.recording.id && webcast_checked)) {
             webcast_change = {
                 value: webcast_checked,
             };
@@ -1203,6 +1197,7 @@ var PanoptoScheduler = (function ($) {
     }
 
     function panopto_clear_scheduled_recording() {
+        /*jshint validthis: true */
         var button = $(this),
             pe = panopto_event(button);
 
@@ -1214,6 +1209,7 @@ var PanoptoScheduler = (function ($) {
     }
 
     function panopto_schedule_all() {
+        /*jshint validthis: true */
         var button = $(this),
             btngrp = button.closest('.btn-group'),
             webcast = btngrp.find('[name^=webcast_][value="1"]').is(':checked'),
@@ -1282,9 +1278,8 @@ var PanoptoScheduler = (function ($) {
 
             $.ajax({
                 type: 'PUT',
-                url: panopto_api_path('session/'
-                                      + changes.panopto_event.recording.id
-                                      + '/broadcast'),
+                url: panopto_api_path('session/' +
+                    changes.panopto_event.recording.id + '/broadcast'),
                 processData: false,
                 contentType: 'application/json',
                 data: '{ "is_broadcast": ' + (changes.webcast.value ? 'true' : 'false') +  '}'
@@ -1312,9 +1307,8 @@ var PanoptoScheduler = (function ($) {
 
             $.ajax({
                 type: 'PUT',
-                url: panopto_api_path('session/'
-                                      + changes.panopto_event.recording.id
-                                      + '/public'),
+                url: panopto_api_path('session/' +
+                    changes.panopto_event.recording.id + '/public'),
                 processData: false,
                 contentType: 'application/json',
                 data: '{ "is_public": ' + (changes.is_public.value ? 'true' : 'false') +  '}'
@@ -1346,6 +1340,7 @@ var PanoptoScheduler = (function ($) {
     }
 
     function init_schedule_dropdown() {
+        /*jshint validthis: true */
         var pe = panopto_event($(this)),
             button_group = $(this).closest('.btn-group'),
             $box = $('.slider-box', button_group),
@@ -1436,12 +1431,13 @@ var PanoptoScheduler = (function ($) {
     }
 
     function position_schedule_dropdown() {
+        /*jshint validthis: true */
         var button_group = $(this).closest('.btn-group'),
             menu = $('.dropdown-container', button_group),
-            bottom = menu.offset().top
-                + menu.height()
-                + $('.dropdown-menu', menu).height()
-                + 12; // slider fudge
+            bottom = menu.offset().top +
+                menu.height() +
+                $('.dropdown-menu', menu).height() +
+                12; // slider fudge
 
         if (bottom - $(document).scrollTop() > $(window).height()) {
             menu.removeClass('dropdown');
@@ -1459,6 +1455,7 @@ var PanoptoScheduler = (function ($) {
     }
 
     function event_scheduler(e) {
+        /*jshint validthis: true */
         var pe = panopto_event($(this)),
             context = event_context(pe),
             tpl = Handlebars.compile($('#reservation-panel-tmpl').html()),
@@ -1552,6 +1549,7 @@ var PanoptoScheduler = (function ($) {
     }
 
     function validate_panopto_folder(folder) {
+        /*jshint validthis: true */
         var creators;
 
         $('.foldername .field a').text(folder);
@@ -1565,7 +1563,7 @@ var PanoptoScheduler = (function ($) {
         disable_event_scheduler();
 
         // fix up creators and links
-        $('.folder-exists').addClass('hidden')
+        $('.folder-exists').addClass('hidden');
         $('a.visit-folder').attr('disabled', 'disabled');
         do_panopto_folder_search(folder, function (data) {
             enable_event_scheduler();
@@ -1573,7 +1571,7 @@ var PanoptoScheduler = (function ($) {
                 $('button.modify-event').removeAttr('disabled');
                 $.each(data, function () {
                     if (this.name === folder) {
-                        $('.folder-exists').removeClass('hidden')
+                        $('.folder-exists').removeClass('hidden');
                         creators = [];
                         $.each(this.auth.creators, function () {
                             creators.push(this.key);
@@ -1631,6 +1629,7 @@ var PanoptoScheduler = (function ($) {
     }
 
     function select_panopto_folder() {
+        /*jshint validthis: true */
         var $this = $(this),
             text = $this.text(),
             folder_id = $this.attr('data-folder-id'),
@@ -1660,6 +1659,7 @@ var PanoptoScheduler = (function ($) {
     }
 
     function clear_panopto_folder_search_input() {
+        /*jshint validthis: true */
         var $input = $('.folder-picker .search input');
         $input.val('');
         $(this).addClass('hidden');
@@ -1667,6 +1667,7 @@ var PanoptoScheduler = (function ($) {
     }
 
     function open_panopto_event_field_editor(e) {
+        /*jshint validthis: true */
         var $field = $(this).closest('.field'),
             $a = $field.find('a'),
             $child = $a.find('> :first-child'),
@@ -1764,6 +1765,7 @@ var PanoptoScheduler = (function ($) {
     }
 
     function panopto_event_field_editor_input(e) {
+        /*jshint validthis: true */
         var $input = $(this);
 
         e.preventDefault();
@@ -1780,6 +1782,7 @@ var PanoptoScheduler = (function ($) {
     }
 
     function panopto_event_field_editor_input_clear(e) {
+        /*jshint validthis: true */
         var $this = $(this),
             $input = $this.prev();
 
@@ -2015,8 +2018,8 @@ var PanoptoScheduler = (function ($) {
     function panopto_update_recorder(request_data) {
         $.ajax({
             type: 'PUT',
-            url: panopto_api_path('recorder/'
-                                  + $('.recorder-selection #recorder-id').val()),
+            url: panopto_api_path('recorder/' +
+                $('.recorder-selection #recorder-id').val()),
             processData: false,
             contentType: 'application/json',
             data: JSON.stringify(request_data)
@@ -2086,12 +2089,12 @@ var PanoptoScheduler = (function ($) {
                 '.batchswitch .btn-group > button:first-child',
                 panopto_schedule_all)
             .on('click',
-                '.list-group .btn-group.unscheduled > button:first-child,'
-                + '.list-group .btn-group.can-record > button:first-child',
+                '.list-group .btn-group.unscheduled > button:first-child,' +
+                '.list-group .btn-group.can-record > button:first-child',
                 panopto_set_schedule)
             .on('click',
-                '.list-group .btn-group.scheduled > button:first-child,'
-                + '.list-group .btn-group.is_recording > button:first-child',
+                '.list-group .btn-group.scheduled > button:first-child,' +
+                '.list-group .btn-group.is_recording > button:first-child',
                 panopto_clear_scheduled_recording)
             .on('scheduler.remove_schedule_start', '.btn-group button',
                 function (e, panopto_event) {
