@@ -10,7 +10,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-panopto-scheduler',
-    version='0.5',
+    version='0.6',
     packages=['scheduler'],
     include_package_data=True,
     install_requires = [
@@ -30,20 +30,20 @@ setup(
         'UW-RestClients-Django-Utils>=0.6.8,<1.0',
         'Django-SupportTools>=1.2',
     ],
-    license='Apache License, Version 2.0',  # example license
+    license='Apache License, Version 2.0',
     description='Django app to aid in the scheduling of Panopto recordings in the context of an CollegeNet R25',
     long_description=README,
     url='https://github.com/uw-it-aca/django-panopto-scheduler',
-    author = "UW-IT ACA",
-    author_email = "mikes@uw.edu",
+    author = "UW-IT AXDD",
+    author_email = "aca-it@uw.edu",
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: Apache Software License', # example license
+        'License :: OSI Approved :: Apache Software License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.6',
     ],
 )

@@ -21,7 +21,8 @@ import re
 logger = logging.getLogger(__name__)
 
 
-class  PanoptoUserException(Exception): pass
+class PanoptoUserException(Exception):
+    pass
 
 
 class Session(RESTDispatch):
@@ -76,12 +77,14 @@ class Session(RESTDispatch):
         try:
             self._init_apis()
             new_session = self._validate_session(request.body)
-            session = self._recorder_api.scheduleRecording(new_session.get('name'),
-                                                           new_session.get('folder_id'),
-                                                           new_session.get('is_broadcast'),
-                                                           new_session.get('start_time'),
-                                                           new_session.get('end_time'),
-                                                           new_session.get('recorder_id'))
+            session = self._recorder_api.scheduleRecording(
+                new_session.get('name'),
+                new_session.get('folder_id'),
+                new_session.get('is_broadcast'),
+                new_session.get('start_time'),
+                new_session.get('end_time'),
+                new_session.get('recorder_id'))
+
             if session.ConflictsExist:
                 conflict = session.ConflictingSessions[0][0]
                 start_time = conflict.StartTime
@@ -91,8 +94,8 @@ class Session(RESTDispatch):
                     'conflict_start': start_time.isoformat(),
                     'conflict_end': end_time.isoformat()
                 }
-                return self.error_response(409, "Schedule Conflict Exists",
-                                           content=content)
+                return self.error_response(
+                    409, "Schedule Conflict Exists", content=content)
 
             session_id = session.SessionIDs[0][0]
 
@@ -133,11 +136,13 @@ class Session(RESTDispatch):
             end_utc = start_utc + datetime.timedelta(
                 seconds=int(session.Duration))
 
-            session_update_start = self._valid_time(session_update.get('start_time'))
-            session_update_end = self._valid_time(session_update.get('end_time'))
+            session_update_start = self._valid_time(
+                session_update.get('start_time'))
+            session_update_end = self._valid_time(
+                session_update.get('end_time'))
 
-            if not (start_utc.isoformat() == session_update_start
-                    and end_utc.isoformat() == session_update_end):
+            if not (start_utc.isoformat() == session_update_start and
+                    end_utc.isoformat() == session_update_end):
                 self._recorder_api.updateRecordingTime(
                     session.Id, session_update_start, session_update_end)
 
@@ -161,10 +166,14 @@ class Session(RESTDispatch):
                 messages = self._sync_creators(
                     session_update.get('folder_id'), creators)
 
-            self._audit_log.info('%s modified %s for %s from %s to %s in %s' % (
-                request.user, session_update.get('external_id'),
-                session_update.get('uwnetid'), session_update.get('start_time'),
-                session_update.get('end_time'), session_update.get('folder_name')))
+            self._audit_log.info(
+                '%s modified %s for %s from %s to %s in %s' % (
+                    request.user,
+                    session_update.get('external_id'),
+                    session_update.get('uwnetid'),
+                    session_update.get('start_time'),
+                    session_update.get('end_time'),
+                    session_update.get('folder_name')))
 
             return self.json_response({
                 'recording_id': session.Id,
@@ -242,7 +251,8 @@ class Session(RESTDispatch):
 
         session['recording_id'] = data.get("recording_id", "")
         session['uwnetid'] = data.get("uwnetid", "")
-        session['name'] = self._valid_recording_name(data.get("name", "").strip())
+        session['name'] = self._valid_recording_name(
+            data.get("name", "").strip())
         session['external_id'] = self._valid_external_id(
             data.get("external_id", "").strip())
         session['recorder_id'] = self._valid_recorder_id(
@@ -260,13 +270,17 @@ class Session(RESTDispatch):
         if key != data.get("key", ''):
             raise InvalidParamException('Invalid Client Key')
 
-        session['is_broadcast'] = self._valid_boolean(data.get("is_broadcast", False))
-        session['is_public'] = self._valid_boolean(data.get("is_public", False))
-        session['start_time'] = self._valid_time(data.get("start_time", "").strip())
-        session['end_time'] = self._valid_time(data.get("end_time", "").strip())
+        session['is_broadcast'] = self._valid_boolean(
+            data.get("is_broadcast", False))
+        session['is_public'] = self._valid_boolean(
+            data.get("is_public", False))
+        session['start_time'] = self._valid_time(
+            data.get("start_time", "").strip())
+        session['end_time'] = self._valid_time(
+            data.get("end_time", "").strip())
         session['folder_name'] = data.get("folder_name", "").strip()
-        session['folder_id'] = self._valid_folder(session['folder_name'],
-                                                  session['folder_external_id'])
+        session['folder_id'] = self._valid_folder(
+            session['folder_name'], session['folder_external_id'])
         session['folder_creators'] = data.get("creators", None)
         return session
 
@@ -315,7 +329,8 @@ class Session(RESTDispatch):
         for creator in current_creators:
             if creator not in folder_creators:
                 try:
-                    deleted_creator_ids.append(self._get_panopto_user_id(creator))
+                    deleted_creator_ids.append(
+                        self._get_panopto_user_id(creator))
                 except PanoptoUserException as ex:
                     messages.append('Invalid UWNetId %s' % creator)
 
@@ -325,7 +340,8 @@ class Session(RESTDispatch):
                     folder_id, new_creator_ids, 'Creator')
             except PanoptoAPIException as ex:
                 match = re.match(r'.*Server raised fault: \'(.+)\'$', str(ex))
-                messages.append('%s: %s' % (creator, match.group(1) if match else str(ex)))
+                messages.append('%s: %s' % (creator, match.group(1) if (
+                    match) else str(ex)))
 
         if len(deleted_creator_ids):
             try:
@@ -333,14 +349,16 @@ class Session(RESTDispatch):
                     folder_id, deleted_creator_ids, 'Creator')
             except PanoptoAPIException as ex:
                 match = re.match(r'.*Server raised fault: \'(.+)\'$', str(ex))
-                messages.append('%s: %s' % (creator, match.group(1) if match else str(ex)))
+                messages.append('%s: %s' % (creator, match.group(1) if (
+                    match) else str(ex)))
 
         return messages
 
     def _get_panopto_user_id(self, netid):
         key = "%s\%s" % (getattr(settings, 'PANOPTO_API_APP_ID', ''), netid)
         user = self._user_api.getUserByKey(key)
-        if not user or user['UserId'] == '00000000-0000-0000-0000-000000000000':
+        if (not user or
+                user['UserId'] == '00000000-0000-0000-0000-000000000000'):
             raise PanoptoUserException('Unprovisioned UWNetId: %s' % (netid))
 
         return user['UserId']

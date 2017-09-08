@@ -267,8 +267,8 @@ def event_session_from_scheduled_recording(s):
                 'external_id': s.FolderId,
             },
             'is_broadcast': s.IsBroadcast
-            # property below is added conditionally for events
-            #'is_public': False,
+            #  property below is added conditionally for events
+            #  'is_public': False,
         },
         'contact': {
             'name': '',
@@ -300,13 +300,14 @@ def mash_in_panopto_sessions(event_sessions, session_external_ids, recorders):
             for e in event_sessions:
                 e_r = e['recording']
 
-                # only doe the work of getting details if they're requested
+                # only do the work of getting details if they're requested
                 if 'is_public' in e_r and session.Id not in session_access:
-                    session_access[session.Id] = access_api.getSessionAccessDetails(session.Id)
+                    details = access_api.getSessionAccessDetails(session.Id)
+                    session_access[session.Id] = details
 
                 if session.ExternalId == e_r['external_id']:
-                    e_r['recorder_id'] = session.RemoteRecorderIds.guid[0] \
-                        if hasattr(session.RemoteRecorderIds, 'guid') else None
+                    e_r['recorder_id'] = session.RemoteRecorderIds.guid[0] if (
+                        hasattr(session.RemoteRecorderIds, 'guid')) else None
                     recorders[e['space']['id']] = e_r['recorder_id']
                     e_r['id'] = session.Id
                     e_r['folder']['name'] = session.FolderName
@@ -509,17 +510,19 @@ def course_event_title_and_contact(course):
         'title_long': section.course_title_long if section else '',
         'name': '%s %s' % (name.first, name.last) if name else '',
         'uwnetid': uwnetid if uwnetid else '',
-        'email': email if email and len(email) else "%s@uw.edu" % uwnetid if uwnetid else ''
+        'email': email if (
+            email and len(email)) else "%s@uw.edu" % (
+                uwnetid if uwnetid else '')
     }
 
+
 def course_event_key(netid, name, external_id, recorder_id):
-    to_sign = '%s,%s,%s,%s,(%s)' % (netid if netid else '',
-                                      name,
-                                      external_id,
-                                      recorder_id,
-                                      getattr(settings,
-                                              'PANOPTO_API_TOKEN',
-                                              ''))
+    to_sign = '%s,%s,%s,%s,(%s)' % (
+        netid if netid else '',
+        name,
+        external_id,
+        recorder_id,
+        getattr(settings, 'PANOPTO_API_TOKEN', ''))
 
     return sha1(to_sign).hexdigest().upper()
 

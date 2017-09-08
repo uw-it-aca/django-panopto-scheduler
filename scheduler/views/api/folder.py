@@ -37,34 +37,41 @@ class Folder(RESTDispatch):
         if 'search' in args:
             search = args['search'].strip()
             if len(search) > 3:
-                for folder in self._session.getFoldersList(search_query=search):
+                for folder in self._session.getFoldersList(
+                        search_query=search):
                     creators = []
                     viewers = []
                     deets = self._access.getFolderAccessDetails(folder['Id'])
                     if deets.UsersWithCreatorAccess:
-                        response = self._user.getUsers(deets.UsersWithCreatorAccess.guid)
+                        response = self._user.getUsers(
+                            deets.UsersWithCreatorAccess.guid)
                         if response and response.User:
                             for user in response.User:
-                                match = re.match(r'^%s\\(.+)$' % (settings.PANOPTO_API_APP_ID), user.UserKey)
+                                match = re.match(r'^%s\\(.+)$' % (
+                                    settings.PANOPTO_API_APP_ID), user.UserKey)
                                 creators.append({
-                                    'key': match.group(1) if match else user.UserKey,
+                                    'key': match.group(1) if (
+                                        match) else user.UserKey,
                                     'id': user.UserId
                                 })
 
                     if deets.UsersWithViewerAccess:
-                        response = self._user.getUsers(deets.UsersWithCreatorAccess.guid)
+                        response = self._user.getUsers(
+                            deets.UsersWithCreatorAccess.guid)
                         if response and response.User:
                             for user in response.User:
-                                match = re.match(r'^%s\\(.+)$' % (settings.PANOPTO_API_APP_ID), user.UserKey)
+                                match = re.match(r'^%s\\(.+)$' % (
+                                    settings.PANOPTO_API_APP_ID), user.UserKey)
                                 viewers.append({
-                                    'key': match.group(1) if match else user.UserKey,
+                                    'key': match.group(1) if (
+                                        match) else user.UserKey,
                                     'id': user.UserId
                                 })
 
                     folders.append({
                         'name': folder.Name,
                         'id': folder.Id,
-                        'auth' : {
+                        'auth': {
                             'creators': creators,
                             'viewers': viewers
                         }
