@@ -27,8 +27,11 @@ INSTALLED_APPS = (
     'compressor',
     'templatetag_handlebars',
     'supporttools',
-    'grade_conversion_calculator',
+    'userservice',
+    'authz_group',
+    'blti',
     'scheduler.apps.SchedulerConfig',
+    'rc_django',
 )
 
 MIDDLEWARE_CLASSES = (
