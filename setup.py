@@ -17,12 +17,13 @@ setup(
         'setuptools',
         'django',
         'django-compressor',
-        'django-templatetag-handlebars'
-    ],
-    dependency_links = [
-        'http://github.com/uw-it-aca/django-panopto-client#egg=django_panopto_client',
-        'http://github.com/uw-it-aca/django-blti#egg=django_blti',
-        'http://github.com/uw-it-aca/uw-restclients#egg=RestClients'
+        'django-templatetag-handlebars',
+        'django-blti==0.2',
+        'UW-RestClients-SWS>=1.0,<2.0',
+        'UW-RestClients-Canvas>=0.6.4,<1.0',
+        'UW-RestClients-R25>=0.1,<1.0',
+        'UW-Panopto-Client>=0.1.2,<1.0',
+        'Django-SupportTools>=1.2',
     ],
     license='Apache License, Version 2.0',  # example license
     description='Django app to aid in the scheduling of Panopto recordings in the context of an CollegeNet R25',

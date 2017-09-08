@@ -1,0 +1,20 @@
+sudo: false
+language: python
+python:
+- '2.7'
+- '3.4'
+- '3.5'
+- '3.6'
+install: pip install -r requirements.txt
+before_script:
+  - pip install coverage
+  - pip install python-coveralls
+  - pip install pep8
+  - npm install jshint
+  - cp travis-ci/manage.py manage.py
+script:
+  - pep8 scheduler/ --exclude=migrations,test
+  - jshint scheduler/static/scheduler/js/ --verbose
+  - coverage run --source=scheduler/ --omit=scheduler/migrations/* manage.py test scheduler
+after_success:
+  - coveralls
