@@ -1,13 +1,13 @@
 from django.conf import settings
-from restclients.pws import PWS
-from restclients.sws.section import get_section_by_label, get_section_by_url
-from restclients.exceptions import InvalidNetID, DataFailureException
+from uw_pws import PWS
+from uw_sws.section import get_section_by_label, get_section_by_url
+from restclients_core.exceptions import InvalidNetID, DataFailureException
 from scheduler.models import Curriculum
 from scheduler.exceptions import InvalidUser
 from scheduler.utils.validation import Validation
-from restclients.r25.events import get_event_by_alien_id
-from restclients.r25.reservations import get_reservations
-from restclients.canvas.courses import Courses as CanvasCourses
+from uw_r25.events import get_event_by_alien_id
+from uw_r25.reservations import get_reservations
+from uw_canvas.courses import Courses as CanvasCourses
 from scheduler.utils.recorder import get_recorder_details
 from scheduler.utils.session import get_sessions_by_external_ids
 from scheduler.utils.session import get_sessions_by_session_ids

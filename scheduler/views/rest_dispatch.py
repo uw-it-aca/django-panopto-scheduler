@@ -1,10 +1,8 @@
 from django.conf import settings
-from django.http import HttpResponse
 from authz_group import Group
 from blti.validators import BLTIOauth, BLTIException
 from blti.views.rest_dispatch import RESTDispatch as BLTIRESTDispatch
 from blti.views.rest_dispatch import RESTDispatchAuthorization
-import simplejson as json
 
 
 class RESTDispatch(BLTIRESTDispatch):

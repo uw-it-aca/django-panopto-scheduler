@@ -1,5 +1,4 @@
 from django.conf import settings
-from django.core.context_processors import csrf
 from blti.views import BLTILaunchView
 
 
@@ -12,15 +11,13 @@ class CourseScheduleView(BLTILaunchView):
         blti_data = kwargs.get('blti_params')
         canvas_course_id = blti_data.get('custom_canvas_course_id')
 
-        context = {
+        return {
             'sis_course_id': blti_data.get('lis_course_offering_sourcedid',
                                            'course_%s' % canvas_course_id),
             'canvas_host': getattr(settings, 'RESTCLIENTS_CANVAS_HOST', ''),
             'panopto_server': getattr(settings, 'PANOPTO_SERVER', ''),
             'session_id': request.session.session_key
         }
-        context.update(csrf(request))
-        return context
 
     def add_headers(self, **kwargs):
         response = kwargs.get('response')

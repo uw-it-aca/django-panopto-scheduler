@@ -1,7 +1,7 @@
 from scheduler.views.api.exceptions import MissingParamException
 from scheduler.views.api.exceptions import InvalidParamException
 from scheduler.models import Course
-from restclients.models.sws import Term
+from uw_sws.models import Term
 import re
 
 

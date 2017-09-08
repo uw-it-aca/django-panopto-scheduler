@@ -5,7 +5,7 @@ from scheduler.utils import space_events_and_recordings
 from scheduler.utils import course_location_and_recordings, \
     CourseEventException
 from scheduler.utils.validation import Validation
-from restclients.exceptions import DataFailureException
+from restclients_core.exceptions import DataFailureException
 import logging
 import re
 

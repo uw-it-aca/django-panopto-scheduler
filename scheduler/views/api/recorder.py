@@ -7,11 +7,11 @@ from panopto_client.remote_recorder import RemoteRecorderManagement
 from scheduler.models import RecorderCache, RecorderCacheEntry
 from scheduler.utils.recorder import get_api_recorder_details, \
     RecorderException
-from restclients.r25.spaces import get_space_by_id
-from restclients.exceptions import DataFailureException
+from uw_r25.spaces import get_space_by_id
+from restclients_core.exceptions import DataFailureException
 import datetime
 import logging
-import simplejson as json
+import json
 import re
 import pytz
 
@@ -21,11 +21,10 @@ logger = logging.getLogger(__name__)
 
 class Recorder(RESTDispatch):
     def __init__(self):
-        self._api = RemoteRecorderManagement()
-        # timeout in hours
-        self._space_list_cache_timeout = 1
+        self._space_list_cache_timeout = 1  # timeout in hours
 
     def GET(self, request, **kwargs):
+        self._api = RemoteRecorderManagement()
         recorder_id = kwargs.get('recorder_id')
         if request.GET.get('timeout'):
             self._space_list_cache_timeout = float(request.GET.get('timeout'))
@@ -40,6 +39,7 @@ class Recorder(RESTDispatch):
             Validation().panopto_id(recorder_id)
             data = json.loads(request.body)
             external_id = data.get('external_id', None)
+            self._api = RemoteRecorderManagement()
             if external_id is not None:
                 rv = self._api.updateRemoteRecorderExternalId(recorder_id,
                                                               external_id)

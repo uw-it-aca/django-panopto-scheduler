@@ -11,7 +11,7 @@ from panopto_client.access import AccessManagement
 from panopto_client.user import UserManagement
 from panopto_client.remote_recorder import RemoteRecorderManagement
 from dateutil import parser, tz
-import simplejson as json
+import json
 import logging
 import datetime
 import pytz
@@ -26,15 +26,18 @@ class  PanoptoUserException(Exception): pass
 
 class Session(RESTDispatch):
     def __init__(self):
+        self._audit_log = logging.getLogger('audit')
+
+    def _init_apis(self):
         self._session_api = SessionManagement()
         self._recorder_api = RemoteRecorderManagement()
         self._access_api = AccessManagement()
         self._user_api = UserManagement()
-        self._audit_log = logging.getLogger('audit')
 
     def GET(self, request, **kwargs):
         session_id = kwargs.get('session_id')
         if session_id:
+            self._init_apis()
             raw_session = self._session_api.getSessionsById(
                 [session_id])[0][0]
             raw_access = self._access_api.getSessionAccessDetails(
@@ -71,8 +74,8 @@ class Session(RESTDispatch):
 
     def POST(self, request, **kwargs):
         try:
+            self._init_apis()
             new_session = self._validate_session(request.body)
-
             session = self._recorder_api.scheduleRecording(new_session.get('name'),
                                                            new_session.get('folder_id'),
                                                            new_session.get('is_broadcast'),
@@ -121,6 +124,7 @@ class Session(RESTDispatch):
 
     def PUT(self, request, **kwargs):
         try:
+            self._init_apis()
             session_update = self._validate_session(request.body)
             session = self._session_api.getSessionsById(
                 session_update.get('recording_id'))[0][0]
@@ -173,6 +177,7 @@ class Session(RESTDispatch):
 
     def DELETE(self, request, **kwargs):
         try:
+            self._init_apis()
             session_id = self._valid_recorder_id(kwargs.get('session_id'))
             # do not permit param tampering
             key = course_event_key(request.GET.get('uwnetid', ''),
@@ -343,10 +348,10 @@ class Session(RESTDispatch):
 
 class SessionPublic(RESTDispatch):
     def __init__(self):
-        self._access_api = AccessManagement()
         self._audit_log = logging.getLogger('audit')
 
     def GET(self, request, **kwargs):
+        self._access_api = AccessManagement()
         session_id = kwargs.get('session_id')
         if session_id:
             raw_access = self._access_api.getSessionAccessDetails(session_id)
@@ -364,6 +369,7 @@ class SessionPublic(RESTDispatch):
             data = json.loads(request.body)
             is_public = self._valid_boolean(data.get("is_public", False),
                                             'bad public flag')
+            self._access_api = AccessManagement()
             self._access_api.updateSessionIsPublic(session_id, is_public)
             self._audit_log.info('%s set %s public access to %s' % (
                 request.user, session_id, is_public))
@@ -385,12 +391,12 @@ class SessionPublic(RESTDispatch):
 
 class SessionBroadcast(RESTDispatch):
     def __init__(self):
-        self._session_api = SessionManagement()
         self._audit_log = logging.getLogger('audit')
 
     def GET(self, request, **kwargs):
         session_id = kwargs.get('session_id')
         if session_id:
+            self._session_api = SessionManagement()
             raw_session = self._session_api.getSessionsById([session_id])[0][0]
             broadcast = {
                 'is_broadcast': raw_session['IsBroadcast'],
@@ -404,6 +410,7 @@ class SessionBroadcast(RESTDispatch):
         try:
             session_id = kwargs.get('session_id')
             data = json.loads(request.body)
+            self._session_api = SessionManagement()
             is_broadcast = self._valid_boolean(
                 data.get("is_broadcast", False), 'bad broadcast flag')
             self._session_api.updateSessionIsBroadcast(session_id,
@@ -428,12 +435,12 @@ class SessionBroadcast(RESTDispatch):
 
 class SessionRecordingTime(RESTDispatch):
     def __init__(self):
-        self._recorder_api = RemoteRecorderManagement()
         self._audit_log = logging.getLogger('audit')
 
     def GET(self, request, **kwargs):
         session_id = kwargs.get('session_id')
         if session_id:
+            self._recorder_api = RemoteRecorderManagement()
             raw_session = self._session_api.getSessionsById([session_id])[0][0]
             start_utc = raw_session.StartTime.astimezone(pytz.utc)
             end_utc = start_utc + datetime.timedelta(
@@ -449,6 +456,7 @@ class SessionRecordingTime(RESTDispatch):
 
     def PUT(self, request, **kwargs):
         try:
+            self._recorder_api = RemoteRecorderManagement()
             session_id = kwargs.get('session_id')
             data = json.loads(request.body)
             start_time = self._valid_time(data.get("start", "").strip())

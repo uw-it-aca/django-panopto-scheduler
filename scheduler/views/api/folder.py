@@ -3,7 +3,7 @@ from scheduler.views.rest_dispatch import RESTDispatch
 from panopto_client.session import SessionManagement
 from panopto_client.access import AccessManagement
 from panopto_client.user import UserManagement
-import simplejson as json
+import json
 import re
 import logging
 
@@ -12,13 +12,14 @@ logger = logging.getLogger(__name__)
 
 
 class Folder(RESTDispatch):
-    def __init__(self):
+    def _init_apis(self):
         self._session = SessionManagement()
         self._access = AccessManagement()
         self._user = UserManagement()
 
     def GET(self, request, **kwargs):
         folder_id = kwargs.get('folder_id')
+        self._init_apis()
         if (folder_id):
             return self._get_folder_details(space_id)
         else:
