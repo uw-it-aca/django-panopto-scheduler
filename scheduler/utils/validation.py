@@ -35,7 +35,7 @@ class Validation(object):
         if not curriculum:
             raise MissingParamException('missing curriculum')
 
-        if not re.match(r'^[a-z ]{2,}$', curriculum, re.I):
+        if not re.match(r'^[a-z \&]{2,}$', curriculum, re.I):
             raise InvalidParamException('Invalid Curriculum: %s' % curriculum)
 
         return curriculum.upper()

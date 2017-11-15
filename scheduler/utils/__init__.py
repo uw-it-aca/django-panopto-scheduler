@@ -392,13 +392,21 @@ def set_panopto_generic_folder(event):
 
 
 def set_panopto_generic_session(event):
-    name = "%s - %s" % (event['name'],
-                        parser.parse(
-                            event['event']['start']).strftime('%Y-%m-%d'))
+    name = "%s - %s" % (
+        event['name'],
+        _local_ymd_from_utc_date_string(event['event']['start']))
     id_string = "%s - %s" % (name, event['space']['id'])
     event['recording']['name'] = name
     event['recording']['external_id'] = panopto_generic_external_id(id_string)
     event['recording']['is_public'] = False
+
+
+def _local_ymd_from_utc_date_string(utc_date_string):
+    from_zone = tz.tzutc()
+    to_zone = pytz.timezone("America/Los_Angeles")
+    dt_utc = parser.parse(utc_date_string).replace(tzinfo=from_zone)
+    dt_local = dt_utc.astimezone(to_zone)
+    return dt_local.strftime('%Y-%m-%d')
 
 
 def panopto_generic_external_id(id_string):
@@ -430,11 +438,9 @@ def campus_ordinal(course):
 
 
 def panopto_course_session(course, start_datetime):
-    start_dt = parser.parse(start_datetime)
-    start_date = start_dt.strftime('%Y-%m-%d')
-
     name = "%s %s %s - %s" % (course.curriculum, course.number,
-                              course.section, start_date)
+                              course.section,
+                              _local_ymd_from_utc_date_string(start_datetime))
     external_id = panopto_course_external_id(course, start_date)
     return (name, external_id)
 
