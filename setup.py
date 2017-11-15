@@ -29,6 +29,7 @@ setup(
         'UW-Panopto-Client>=0.1.2,<1.0',
         'UW-RestClients-Django-Utils>=0.6.8,<1.0',
         'Django-SupportTools>=1.2',
+        'django_mobileesp',
     ],
     license='Apache License, Version 2.0',
     description='Django app to aid in the scheduling of Panopto recordings in the context of an CollegeNet R25',
