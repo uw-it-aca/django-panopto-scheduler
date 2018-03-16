@@ -215,6 +215,9 @@ def event_session_from_reservation(r):
     }
 
     if hasattr(r, 'space_reservation'):
+        if not r.space_reservation:
+            raise Exception('No Room Information in Reservation System.')
+
         session['space']['id'] = r.space_reservation.space_id
         session['space']['name'] = r.space_reservation.name
         session['space']['formal_name'] = r.space_reservation.formal_name
