@@ -9,7 +9,7 @@ README = open(os.path.join(os.path.dirname(__file__), 'README.md')).read()
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
-    name='django-panopto-scheduler',
+    name='scheduler',
     version='0.6',
     packages=['scheduler'],
     include_package_data=True,
