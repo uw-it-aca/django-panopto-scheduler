@@ -24,6 +24,7 @@ setup(
         'AuthZ-Group>=1.6',
         'UW-RestClients-SWS>=1.0,<2.0',
         'UW-RestClients-PWS>=0.5,<1.0',
+        'UW-RestClients-GWS<1.0',
         'UW-RestClients-Canvas>=0.6.4,<1.0',
         'UW-RestClients-R25>=0.1,<1.0',
         'UW-Panopto-Client>=0.1.2,<1.0',
