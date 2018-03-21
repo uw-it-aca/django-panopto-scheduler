@@ -14,10 +14,10 @@ from scheduler.views.api.folder import Folder
 
 urlpatterns = [
     url(r'^$', RedirectView.as_view(url='courses/', permanent=True)),
-    url(r'^recorders/?$', recorders),
+    url(r'^recorders/?$', recorders, name='recorders-view'),
     url(r'^course/?$', CourseScheduleView.as_view()),
-    url(r'^courses/?$', courses),
-    url(r'^events/?$', events),
+    url(r'^courses/?$', courses, name='courses-view'),
+    url(r'^events/?$', events, name='events-view'),
     url(r'^(blti/)?api/v1/recorder/(?P<recorder_id>[0-9a-f\-]+)?$',
         Recorder().run),
     url(r'^(blti/)?api/v1/space/(?P<space_id>[0-9]+)?$', Space().run),
