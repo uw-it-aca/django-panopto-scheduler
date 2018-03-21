@@ -15,7 +15,7 @@ setup(
     include_package_data=True,
     install_requires = [
         'setuptools',
-        'django',
+        'Django<1.11',
         'django-compressor',
         'django-templatetag-handlebars',
         'nameparser>=0.2.9',
