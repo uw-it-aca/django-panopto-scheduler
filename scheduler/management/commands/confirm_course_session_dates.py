@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
 from optparse import make_option
-from restclients.sws.section import get_section_by_label
+from uw_sws.section import get_section_by_label
 from panopto_client.session import SessionManagement
 from panopto_client.remote_recorder import RemoteRecorderManagement
 from dateutil import parser, tz

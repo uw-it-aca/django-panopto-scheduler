@@ -19,21 +19,21 @@ urlpatterns = [
     url(r'^courses/?$', courses, name='courses-view'),
     url(r'^events/?$', events, name='events-view'),
     url(r'^(blti/)?api/v1/recorder/(?P<recorder_id>[0-9a-f\-]+)?$',
-        Recorder().run),
-    url(r'^(blti/)?api/v1/space/(?P<space_id>[0-9]+)?$', Space().run),
+        Recorder.as_view()),
+    url(r'^(blti/)?api/v1/space/(?P<space_id>[0-9]+)?$', Space.as_view()),
     url(r'^(blti/)?api/v1/session/(?P<session_id>[0-9a-f\-]+)/public/?$',
-        SessionPublic().run),
+        SessionPublic.as_view()),
     url(r'^(blti/)?api/v1/session/(?P<session_id>[0-9a-f\-]+)/broadcast/?$',
-        SessionBroadcast().run),
+        SessionBroadcast.as_view()),
     url(r'^(blti/)?api/v1/session/(?P<session_id>'
         r'[0-9a-f\-]+)/recordingtime/?$',
-        SessionRecordingTime().run),
+        SessionRecordingTime.as_view()),
     url(r'^(blti/)?api/v1/session/(?P<session_id>[0-9a-f\-]+)?$',
-        Session().run),
+        Session.as_view()),
     url(r'^(blti/)?api/v1/schedule/(?P<course_id>[\d\w& \a-zA-Z0-9]+)?$',
-        Schedule().run),
+        Schedule.as_view()),
     url(r'^(blti/)?api/v1/folder/(?P<folder_id>[0-9a-f\-]+)?$',
-        Folder().run)
+        Folder.as_view())
 ]
 
 # debug routes for developing error pages

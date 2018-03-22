@@ -11,7 +11,7 @@ class Space(RESTDispatch):
     def __init__(self):
         self._space_list_cache_timeout = 1  # timeout in hours
 
-    def GET(self, request, **kwargs):
+    def get(self, request, *args, **kwargs):
         self._api = RemoteRecorderManagement()
         space_id = kwargs.get('space_id')
         if (space_id):
