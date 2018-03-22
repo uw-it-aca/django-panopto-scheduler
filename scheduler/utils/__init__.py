@@ -444,7 +444,8 @@ def panopto_course_session(course, start_datetime):
     name = "%s %s %s - %s" % (course.curriculum, course.number,
                               course.section,
                               _local_ymd_from_utc_date_string(start_datetime))
-    external_id = panopto_course_external_id(course, start_date)
+    external_id = panopto_course_external_id(
+        course, _local_ymd_from_utc_date_string(start_datetime))
     return (name, external_id)
 
 
