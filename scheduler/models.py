@@ -10,6 +10,11 @@ class Course(models.Model):
     number = models.CharField(max_length=3)
     section = models.CharField(max_length=2)
 
+    def __str__(self):
+        return "%s-%s-%s-%s-%s" % (
+            self.year, self.quarter, self.curriculum,
+            self.number, self.section)
+
 
 class Curriculum(models.Model):
     """ Maps curricula to campus code

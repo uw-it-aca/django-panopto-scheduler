@@ -1,7 +1,7 @@
 from scheduler.views.api.exceptions import MissingParamException
 from scheduler.views.api.exceptions import InvalidParamException
 from scheduler.models import Course
-from restclients.models.sws import Term
+from uw_sws.models import Term
 import re
 
 
@@ -35,7 +35,7 @@ class Validation(object):
         if not curriculum:
             raise MissingParamException('missing curriculum')
 
-        if not re.match(r'^[a-z ]{2,}$', curriculum, re.I):
+        if not re.match(r'^[a-z \&]{2,}$', curriculum, re.I):
             raise InvalidParamException('Invalid Curriculum: %s' % curriculum)
 
         return curriculum.upper()

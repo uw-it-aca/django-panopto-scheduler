@@ -1,6 +1,6 @@
 from scheduler.views.rest_dispatch import RESTDispatch
 from panopto_client.remote_recorder import RemoteRecorderManagement
-from restclients.r25.spaces import get_spaces, get_space_by_id
+from uw_r25.spaces import get_spaces, get_space_by_id
 import logging
 
 
@@ -9,11 +9,10 @@ logger = logging.getLogger(__name__)
 
 class Space(RESTDispatch):
     def __init__(self):
-        self._api = RemoteRecorderManagement()
-        # timeout in hours
-        self._space_list_cache_timeout = 1
+        self._space_list_cache_timeout = 1  # timeout in hours
 
     def GET(self, request, **kwargs):
+        self._api = RemoteRecorderManagement()
         space_id = kwargs.get('space_id')
         if (space_id):
             return self._get_space_details(space_id)

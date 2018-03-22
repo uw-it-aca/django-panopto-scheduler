@@ -9,35 +9,43 @@ README = open(os.path.join(os.path.dirname(__file__), 'README.md')).read()
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
-    name='django-panopto-scheduler',
-    version='0.5',
+    name='scheduler',
+    version='0.6',
     packages=['scheduler'],
     include_package_data=True,
     install_requires = [
         'setuptools',
-        'django',
+        'Django<1.11',
         'django-compressor',
-        'django-templatetag-handlebars'
+        'django-templatetag-handlebars',
+        'nameparser>=0.2.9',
+        'django-blti==0.2',
+        'django-userservice==1.2.1',
+        'AuthZ-Group>=1.6',
+        'UW-RestClients-SWS>=1.0,<2.0',
+        'UW-RestClients-PWS>=0.5,<1.0',
+        'UW-RestClients-GWS<1.0',
+        'UW-RestClients-Canvas>=0.6.4,<1.0',
+        'UW-RestClients-R25>=0.1,<1.0',
+        'UW-Panopto-Client>=0.1.2,<1.0',
+        'UW-RestClients-Django-Utils>=0.6.8,<1.0',
+        'Django-SupportTools>=1.2',
+        'django_mobileesp',
     ],
-    dependency_links = [
-        'http://github.com/uw-it-aca/django-panopto-client#egg=django_panopto_client',
-        'http://github.com/uw-it-aca/django-blti#egg=django_blti',
-        'http://github.com/uw-it-aca/uw-restclients#egg=RestClients'
-    ],
-    license='Apache License, Version 2.0',  # example license
+    license='Apache License, Version 2.0',
     description='Django app to aid in the scheduling of Panopto recordings in the context of an CollegeNet R25',
     long_description=README,
     url='https://github.com/uw-it-aca/django-panopto-scheduler',
-    author = "UW-IT ACA",
-    author_email = "mikes@uw.edu",
+    author = "UW-IT AXDD",
+    author_email = "aca-it@uw.edu",
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: Apache Software License', # example license
+        'License :: OSI Approved :: Apache Software License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.6',
     ],
 )

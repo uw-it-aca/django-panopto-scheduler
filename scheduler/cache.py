@@ -1,5 +1,5 @@
-from restclients.cache_implementation import TimedCache
-from restclients.models import CacheEntryTimed
+from rc_django.cache_implementation import TimedCache
+from rc_django.models import CacheEntryTimed
 import re
 
 

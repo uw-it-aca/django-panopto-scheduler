@@ -1,13 +1,13 @@
 from django.conf import settings
-from restclients.pws import PWS
-from restclients.sws.section import get_section_by_label, get_section_by_url
-from restclients.exceptions import InvalidNetID, DataFailureException
+from uw_pws import PWS
+from uw_sws.section import get_section_by_label, get_section_by_url
+from restclients_core.exceptions import InvalidNetID, DataFailureException
 from scheduler.models import Curriculum
 from scheduler.exceptions import InvalidUser
 from scheduler.utils.validation import Validation
-from restclients.r25.events import get_event_by_alien_id
-from restclients.r25.reservations import get_reservations
-from restclients.canvas.courses import Courses as CanvasCourses
+from uw_r25.events import get_event_by_alien_id
+from uw_r25.reservations import get_reservations
+from uw_canvas.courses import Courses as CanvasCourses
 from scheduler.utils.recorder import get_recorder_details
 from scheduler.utils.session import get_sessions_by_external_ids
 from scheduler.utils.session import get_sessions_by_session_ids
@@ -215,6 +215,9 @@ def event_session_from_reservation(r):
     }
 
     if hasattr(r, 'space_reservation'):
+        if not r.space_reservation:
+            raise Exception('No Room Information in Reservation System.')
+
         session['space']['id'] = r.space_reservation.space_id
         session['space']['name'] = r.space_reservation.name
         session['space']['formal_name'] = r.space_reservation.formal_name
@@ -267,8 +270,8 @@ def event_session_from_scheduled_recording(s):
                 'external_id': s.FolderId,
             },
             'is_broadcast': s.IsBroadcast
-            # property below is added conditionally for events
-            #'is_public': False,
+            #  property below is added conditionally for events
+            #  'is_public': False,
         },
         'contact': {
             'name': '',
@@ -300,13 +303,14 @@ def mash_in_panopto_sessions(event_sessions, session_external_ids, recorders):
             for e in event_sessions:
                 e_r = e['recording']
 
-                # only doe the work of getting details if they're requested
+                # only do the work of getting details if they're requested
                 if 'is_public' in e_r and session.Id not in session_access:
-                    session_access[session.Id] = access_api.getSessionAccessDetails(session.Id)
+                    details = access_api.getSessionAccessDetails(session.Id)
+                    session_access[session.Id] = details
 
                 if session.ExternalId == e_r['external_id']:
-                    e_r['recorder_id'] = session.RemoteRecorderIds.guid[0] \
-                        if hasattr(session.RemoteRecorderIds, 'guid') else None
+                    e_r['recorder_id'] = session.RemoteRecorderIds.guid[0] if (
+                        hasattr(session.RemoteRecorderIds, 'guid')) else None
                     recorders[e['space']['id']] = e_r['recorder_id']
                     e_r['id'] = session.Id
                     e_r['folder']['name'] = session.FolderName
@@ -391,13 +395,21 @@ def set_panopto_generic_folder(event):
 
 
 def set_panopto_generic_session(event):
-    name = "%s - %s" % (event['name'],
-                        parser.parse(
-                            event['event']['start']).strftime('%Y-%m-%d'))
+    name = "%s - %s" % (
+        event['name'],
+        _local_ymd_from_utc_date_string(event['event']['start']))
     id_string = "%s - %s" % (name, event['space']['id'])
     event['recording']['name'] = name
     event['recording']['external_id'] = panopto_generic_external_id(id_string)
     event['recording']['is_public'] = False
+
+
+def _local_ymd_from_utc_date_string(utc_date_string):
+    from_zone = tz.tzutc()
+    to_zone = pytz.timezone("America/Los_Angeles")
+    dt_utc = parser.parse(utc_date_string).replace(tzinfo=from_zone)
+    dt_local = dt_utc.astimezone(to_zone)
+    return dt_local.strftime('%Y-%m-%d')
 
 
 def panopto_generic_external_id(id_string):
@@ -429,12 +441,11 @@ def campus_ordinal(course):
 
 
 def panopto_course_session(course, start_datetime):
-    start_dt = parser.parse(start_datetime)
-    start_date = start_dt.strftime('%Y-%m-%d')
-
     name = "%s %s %s - %s" % (course.curriculum, course.number,
-                              course.section, start_date)
-    external_id = panopto_course_external_id(course, start_date)
+                              course.section,
+                              _local_ymd_from_utc_date_string(start_datetime))
+    external_id = panopto_course_external_id(
+        course, _local_ymd_from_utc_date_string(start_datetime))
     return (name, external_id)
 
 
@@ -509,17 +520,19 @@ def course_event_title_and_contact(course):
         'title_long': section.course_title_long if section else '',
         'name': '%s %s' % (name.first, name.last) if name else '',
         'uwnetid': uwnetid if uwnetid else '',
-        'email': email if email and len(email) else "%s@uw.edu" % uwnetid if uwnetid else ''
+        'email': email if (
+            email and len(email)) else "%s@uw.edu" % (
+                uwnetid if uwnetid else '')
     }
 
+
 def course_event_key(netid, name, external_id, recorder_id):
-    to_sign = '%s,%s,%s,%s,(%s)' % (netid if netid else '',
-                                      name,
-                                      external_id,
-                                      recorder_id,
-                                      getattr(settings,
-                                              'PANOPTO_API_TOKEN',
-                                              ''))
+    to_sign = '%s,%s,%s,%s,(%s)' % (
+        netid if netid else '',
+        name,
+        external_id,
+        recorder_id,
+        getattr(settings, 'PANOPTO_API_TOKEN', ''))
 
     return sha1(to_sign).hexdigest().upper()
 
