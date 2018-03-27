@@ -460,22 +460,27 @@ def panopto_course_external_id(course, start_datetime):
 
 
 def panopto_course_folder(course, title):
-    folder = "%s%s %s - %s %s %s: %s" % (course.quarter[0:1].upper(),
-                                         course.quarter[1:], course.year,
-                                         course.curriculum, course.number,
-                                         course.section, title.title())
+    quarter_initial = course.quarter[0:1].upper()
+    quarter_lower = course.quarter[1:]
+    folder_prefix = "%s%s %s - " % (
+        quarter_initial, quarter_lower, course.year)
 
     # folder id needs to match canvas course id
     id = canvas_course_id(course)
 
     try:
-        external_id = str(CanvasCourses().get_course_by_sis_id(id).course_id)
+        canvas_course = CanvasCourses().get_course_by_sis_id(id)
+        external_id = str(canvas_course.course_id)
+        folder = canvas_course.name
     except Exception as ex:
         logger.exception(ex)
         external_id = None
+        folder = "%s %s %s %s%s %s: %s" % (
+            course.curriculum, course.number, course.section, quarter_initial,
+            quarter_lower[:1], str(course.year)[2:], title.title())
 
     return {
-        'name': folder,
+        'name': "%s%s" % (folder_prefix, folder),
         'external_id': external_id
     }
 
