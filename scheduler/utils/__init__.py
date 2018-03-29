@@ -309,6 +309,12 @@ def mash_in_panopto_sessions(event_sessions, session_external_ids, recorders):
                     session_access[session.Id] = details
 
                 if session.ExternalId == e_r['external_id']:
+                    start_time = parser.parse(e_r['start'])
+                    end_time = parser.parse(e_r['end'])
+                    if not (start_time <= session.StartTime and
+                            end_time >= session.StartTime):
+                        continue
+
                     e_r['recorder_id'] = session.RemoteRecorderIds.guid[0] if (
                         hasattr(session.RemoteRecorderIds, 'guid')) else None
                     recorders[e['space']['id']] = e_r['recorder_id']
