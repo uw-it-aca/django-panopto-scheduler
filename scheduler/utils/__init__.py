@@ -88,7 +88,7 @@ def course_recording_sessions(course, event):
                         c = valid.course_id(joint_course_id)
                         joint.append("%s %s %s" %
                                      (c.curriculum, c.number, c.section))
-                except:
+                except Exception:
                     continue
 
             if len(joint_course_ids):
@@ -346,7 +346,7 @@ def mash_in_panopto_sessions(event_sessions, session_external_ids, recorders):
             if not (space_id in recorders and recorders[space_id]):
                 try:
                     recorders[space_id] = get_recorder_details(space_id)[0].Id
-                except:
+                except Exception:
                     recorders[space_id] = None
                     pass
 

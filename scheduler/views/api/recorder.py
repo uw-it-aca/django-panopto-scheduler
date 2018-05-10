@@ -23,7 +23,7 @@ class Recorder(RESTDispatch):
     def __init__(self):
         self._space_list_cache_timeout = 1  # timeout in hours
 
-    def GET(self, request, **kwargs):
+    def get(self, request, *args, **kwargs):
         self._api = RemoteRecorderManagement()
         recorder_id = kwargs.get('recorder_id')
         if request.GET.get('timeout'):
@@ -33,7 +33,7 @@ class Recorder(RESTDispatch):
         else:
             return self._list_recorders()
 
-    def PUT(self, request, **kwargs):
+    def put(self, request, *args, **kwargs):
         recorder_id = kwargs.get('recorder_id')
         try:
             Validation().panopto_id(recorder_id)

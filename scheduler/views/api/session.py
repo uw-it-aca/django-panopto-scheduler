@@ -35,7 +35,7 @@ class Session(RESTDispatch):
         self._access_api = AccessManagement()
         self._user_api = UserManagement()
 
-    def GET(self, request, **kwargs):
+    def get(self, request, *args, **kwargs):
         session_id = kwargs.get('session_id')
         if session_id:
             self._init_apis()
@@ -73,7 +73,7 @@ class Session(RESTDispatch):
 
         return self.json_response(session)
 
-    def POST(self, request, **kwargs):
+    def post(self, request, *args, **kwargs):
         try:
             self._init_apis()
             new_session = self._validate_session(request.body)
@@ -125,7 +125,7 @@ class Session(RESTDispatch):
         except Exception as ex:
             return self.error_response(500, "Unable to save session: %s" % ex)
 
-    def PUT(self, request, **kwargs):
+    def put(self, request, *args, **kwargs):
         try:
             self._init_apis()
             session_update = self._validate_session(request.body)
@@ -184,7 +184,7 @@ class Session(RESTDispatch):
         except Exception as ex:
             return self.error_response(500, "Unable to save session: %s" % ex)
 
-    def DELETE(self, request, **kwargs):
+    def delete(self, request, *args, **kwargs):
         try:
             self._init_apis()
             session_id = self._valid_recorder_id(kwargs.get('session_id'))
@@ -355,7 +355,7 @@ class Session(RESTDispatch):
         return messages
 
     def _get_panopto_user_id(self, netid):
-        key = "%s\%s" % (getattr(settings, 'PANOPTO_API_APP_ID', ''), netid)
+        key = r'%s\%s' % (getattr(settings, 'PANOPTO_API_APP_ID', ''), netid)
         user = self._user_api.getUserByKey(key)
         if (not user or
                 user['UserId'] == '00000000-0000-0000-0000-000000000000'):
@@ -368,7 +368,7 @@ class SessionPublic(RESTDispatch):
     def __init__(self):
         self._audit_log = logging.getLogger('audit')
 
-    def GET(self, request, **kwargs):
+    def get(self, request, *args, **kwargs):
         self._access_api = AccessManagement()
         session_id = kwargs.get('session_id')
         if session_id:
@@ -381,7 +381,7 @@ class SessionPublic(RESTDispatch):
 
         return self.json_response(access)
 
-    def PUT(self, request, **kwargs):
+    def put(self, request, *args, **kwargs):
         try:
             session_id = kwargs.get('session_id')
             data = json.loads(request.body)
@@ -411,7 +411,7 @@ class SessionBroadcast(RESTDispatch):
     def __init__(self):
         self._audit_log = logging.getLogger('audit')
 
-    def GET(self, request, **kwargs):
+    def get(self, request, *args, **kwargs):
         session_id = kwargs.get('session_id')
         if session_id:
             self._session_api = SessionManagement()
@@ -424,7 +424,7 @@ class SessionBroadcast(RESTDispatch):
 
         return self.json_response(broadcast)
 
-    def PUT(self, request, **kwargs):
+    def put(self, request, *args, **kwargs):
         try:
             session_id = kwargs.get('session_id')
             data = json.loads(request.body)
@@ -455,7 +455,7 @@ class SessionRecordingTime(RESTDispatch):
     def __init__(self):
         self._audit_log = logging.getLogger('audit')
 
-    def GET(self, request, **kwargs):
+    def get(self, request, *args, **kwargs):
         session_id = kwargs.get('session_id')
         if session_id:
             self._recorder_api = RemoteRecorderManagement()
@@ -472,7 +472,7 @@ class SessionRecordingTime(RESTDispatch):
 
         return self.json_response(recording_time)
 
-    def PUT(self, request, **kwargs):
+    def put(self, request, *args, **kwargs):
         try:
             self._recorder_api = RemoteRecorderManagement()
             session_id = kwargs.get('session_id')

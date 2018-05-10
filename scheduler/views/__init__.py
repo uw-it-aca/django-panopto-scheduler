@@ -7,7 +7,6 @@ from restclients_core.exceptions import DataFailureException
 from scheduler.exceptions import StudentWebServiceUnavailable
 from userservice.user import UserService
 from authz_group import Group
-from nameparser import HumanName
 import logging
 import time
 
@@ -34,14 +33,6 @@ def build_view_context(request):
         'canvas_host': getattr(settings, "RESTCLIENTS_CANVAS_HOST", ""),
         'panopto_server': getattr(settings, "PANOPTO_SERVER", ""),
     }
-
-
-def display_name(first_name, surname, reverse=False):
-    name = HumanName("%s %s" % (first_name, surname))
-    name.capitalize()
-    name.string_format = "{last}, {first}" if (
-        reverse is True) else "{first} {last}"
-    return str(name)
 
 
 @login_required
