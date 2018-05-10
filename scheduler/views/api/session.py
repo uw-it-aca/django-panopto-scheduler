@@ -73,7 +73,7 @@ class Session(RESTDispatch):
 
         return self.json_response(session)
 
-    def POST(self, request, **kwargs):
+    def post(self, request, *args, **kwargs):
         try:
             self._init_apis()
             new_session = self._validate_session(request.body)
