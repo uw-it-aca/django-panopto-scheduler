@@ -1,5 +1,5 @@
 from django.conf import settings
-from authz_group import Group
+from uw_saml.utils import is_member_of_group
 from blti.views import RESTDispatch as BLTIRESTDispatch, BLTIException
 
 
@@ -10,7 +10,5 @@ class RESTDispatch(BLTIRESTDispatch):
         try:
             super(RESTDispatch, self).validate(request)
         except BLTIException:
-            if not (request.user.is_authenticated() and
-                    Group().is_member_of_group(request.user.username,
-                                               settings.PANOPTO_ADMIN_GROUP)):
+            if not is_member_of_group(request, settings.PANOPTO_ADMIN_GROUP):
                 raise
