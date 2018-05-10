@@ -355,7 +355,7 @@ class Session(RESTDispatch):
         return messages
 
     def _get_panopto_user_id(self, netid):
-        key = "%s\%s" % (getattr(settings, 'PANOPTO_API_APP_ID', ''), netid)
+        key = r'%s\%s' % (getattr(settings, 'PANOPTO_API_APP_ID', ''), netid)
         user = self._user_api.getUserByKey(key)
         if (not user or
                 user['UserId'] == '00000000-0000-0000-0000-000000000000'):

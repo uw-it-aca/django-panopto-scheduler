@@ -309,6 +309,12 @@ def mash_in_panopto_sessions(event_sessions, session_external_ids, recorders):
                     session_access[session.Id] = details
 
                 if session.ExternalId == e_r['external_id']:
+                    start_time = parser.parse(e_r['start'])
+                    end_time = parser.parse(e_r['end'])
+                    if not (start_time <= session.StartTime and
+                            end_time >= session.StartTime):
+                        continue
+
                     e_r['recorder_id'] = session.RemoteRecorderIds.guid[0] if (
                         hasattr(session.RemoteRecorderIds, 'guid')) else None
                     recorders[e['space']['id']] = e_r['recorder_id']
@@ -444,7 +450,8 @@ def panopto_course_session(course, start_datetime):
     name = "%s %s %s - %s" % (course.curriculum, course.number,
                               course.section,
                               _local_ymd_from_utc_date_string(start_datetime))
-    external_id = panopto_course_external_id(course, start_date)
+    external_id = panopto_course_external_id(
+        course, _local_ymd_from_utc_date_string(start_datetime))
     return (name, external_id)
 
 
@@ -459,22 +466,27 @@ def panopto_course_external_id(course, start_datetime):
 
 
 def panopto_course_folder(course, title):
-    folder = "%s%s %s - %s %s %s: %s" % (course.quarter[0:1].upper(),
-                                         course.quarter[1:], course.year,
-                                         course.curriculum, course.number,
-                                         course.section, title.title())
+    quarter_initial = course.quarter[0:1].upper()
+    quarter_lower = course.quarter[1:]
+    folder_prefix = "%s%s %s - " % (
+        quarter_initial, quarter_lower, course.year)
 
     # folder id needs to match canvas course id
     id = canvas_course_id(course)
 
     try:
-        external_id = str(CanvasCourses().get_course_by_sis_id(id).course_id)
+        canvas_course = CanvasCourses().get_course_by_sis_id(id)
+        external_id = str(canvas_course.course_id)
+        folder = canvas_course.name
     except Exception as ex:
         logger.exception(ex)
         external_id = None
+        folder = "%s %s %s %s%s %s: %s" % (
+            course.curriculum, course.number, course.section, quarter_initial,
+            quarter_lower[:1], str(course.year)[2:], title.title())
 
     return {
-        'name': folder,
+        'name': "%s%s" % (folder_prefix, folder),
         'external_id': external_id
     }
 
