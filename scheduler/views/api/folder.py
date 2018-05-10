@@ -17,7 +17,7 @@ class Folder(RESTDispatch):
         self._access = AccessManagement()
         self._user = UserManagement()
 
-    def GET(self, request, **kwargs):
+    def get(self, request, *args, **kwargs):
         folder_id = kwargs.get('folder_id')
         self._init_apis()
         if (folder_id):
@@ -30,7 +30,7 @@ class Folder(RESTDispatch):
             return self._list_folders(params)
 
     def _get_folder_details(self, space_id):
-        return self.json_response('{}')
+        return self.json_response()
 
     def _list_folders(self, args):
         folders = []

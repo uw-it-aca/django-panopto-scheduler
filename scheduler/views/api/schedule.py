@@ -14,20 +14,20 @@ logger = logging.getLogger(__name__)
 
 
 class Schedule(RESTDispatch):
-    def GET(self, request, **kwargs):
+    def get(self, request, *args, **kwargs):
         try:
             course = Validation().course_id(kwargs['course_id'])
             events = course_location_and_recordings(course)
         except MissingParamException as ex:
             events = space_events_and_recordings(request.GET)
         except CourseEventException as ex:
-            return self.error_response(404, message=str(ex))
+            return self.error_response(404, message=ex)
         except InvalidParamException as ex:
-            return self.error_response(400, message=str(ex))
+            return self.error_response(400, message=ex)
         except DataFailureException as ex:
-            return self.error_response(ex.status, str(ex))
+            return self.error_response(ex.status, message=ex)
         except Exception as ex:
             logger.exception(ex)
-            return self.error_response(500, str(ex))
+            return self.error_response(500, message=ex)
 
         return self.json_response(events)

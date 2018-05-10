@@ -7,16 +7,16 @@ class CourseScheduleView(BLTILaunchView):
     authorized_role = 'admin'
 
     def get_context_data(self, **kwargs):
-        request = kwargs.get('request')
-        blti_data = kwargs.get('blti_params')
-        canvas_course_id = blti_data.get('custom_canvas_course_id')
+        if self.blti.course_sis_id is not None:
+            course_sis_id = self.blti.course_sis_id
+        else:
+            course_sis_id = 'course_%s' % self.blti.canvas_course_id
 
         return {
-            'sis_course_id': blti_data.get('lis_course_offering_sourcedid',
-                                           'course_%s' % canvas_course_id),
+            'sis_course_id': course_sis_id,
             'canvas_host': getattr(settings, 'RESTCLIENTS_CANVAS_HOST', ''),
             'panopto_server': getattr(settings, 'PANOPTO_SERVER', ''),
-            'session_id': request.session.session_key
+            'session_id': self.request.session.session_key
         }
 
     def add_headers(self, **kwargs):
