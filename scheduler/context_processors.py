@@ -1,14 +1,13 @@
 from django.conf import settings
 from userservice.user import UserService
 from scheduler.utils import person_from_username
-from scheduler.views import display_name
 
 
 def user(request):
     user_service = UserService()
     try:
         user = person_from_username(user_service.get_user())
-        user_fullname = display_name(user.first_name, user.surname)
+        user_fullname = user.get_formatted_name(string_format="{first} {last}")
     except Exception as ex:
         user_fullname = None
 
