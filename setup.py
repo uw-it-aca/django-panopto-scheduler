@@ -19,7 +19,7 @@ setup(
         'django-templatetag-handlebars',
         'django_mobileesp',
         'django-blti>=1.2.5',
-        'django-userservice==1.2.1',
+        'django-userservice>=2.0.1',
         'UW-RestClients-SWS>=1.5.1,<2.0',
         'UW-RestClients-PWS>=1.0.1,<2.0',
         'UW-RestClients-GWS>=1.0,<2.0',

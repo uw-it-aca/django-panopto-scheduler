@@ -4,6 +4,7 @@ from uw_sws.term import get_current_term
 from restclients_core.exceptions import DataFailureException
 from scheduler.exceptions import StudentWebServiceUnavailable
 from uw_saml.decorators import group_required
+from uw_saml.utils import is_member_of_group
 import logging
 import time
 
@@ -49,3 +50,7 @@ def events(request):
 def recorders(request):
     context = build_view_context(request)
     return render(request, 'scheduler/recorders.html', context)
+
+
+def can_view_restclients_data(request, service=None, url=None):
+    return is_member_of_group(request, settings.PANOPTO_ADMIN_GROUP)
