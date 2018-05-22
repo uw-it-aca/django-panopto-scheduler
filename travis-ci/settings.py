@@ -28,7 +28,6 @@ INSTALLED_APPS = (
     'templatetag_handlebars',
     'supporttools',
     'userservice',
-    'authz_group',
     'blti',
     'scheduler.apps.SchedulerConfig',
     'rc_django',
@@ -80,3 +79,5 @@ LOGGING = {
     'handlers': {},
     'loggers': {}
 }
+
+PANOPTO_ADMIN_GROUP = ''
