@@ -225,10 +225,7 @@ class Session(RESTDispatch):
                 for folder in folders:
                     if folder.Name == name:
                         folder_id = folder.Id
-                        if external_id and len(external_id):
-                            self._session_api.updateFolderExternalId(
-                                folder_id, external_id)
-
+                        self._set_external_id(folder_id, external_id)
                         return folder_id
 
             new_folder = self._session_api.addFolder(name)
@@ -236,14 +233,16 @@ class Session(RESTDispatch):
                 raise InvalidParamException('Cannot add folder: %s' % name)
 
             new_folder_id = new_folder.Id
-
-            if external_id and len(external_id):
-                self._session_api.updateFolderExternalId(
-                    new_folder_id, external_id)
-
+            self._set_external_id(new_folder_id, external_id)
             return new_folder_id
         except Exception as ex:
             raise InvalidParamException('Cannot add folder: %s' % ex)
+
+    def _set_external_id(self, folder_id, external_id):
+        if external_id and len(external_id):
+            self._session_api.updateFolderExternalIdWithProvider(
+                folder_id, external_id, getattr(
+                    settings, 'PANOPTO_IDP_INSTANCE_NAME', ''))
 
     def _validate_session(self, request_body):
         session = {}

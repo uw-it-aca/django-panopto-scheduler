@@ -25,7 +25,7 @@ setup(
         'UW-RestClients-GWS>=1.0,<2.0',
         'UW-RestClients-Canvas>=0.7.2,<1.0',
         'UW-RestClients-R25>=0.1,<1.0',
-        'UW-Panopto-Client>=0.1.2,<1.0',
+        'UW-Panopto-Client>=0.1.3,<1.0',
         'UW-RestClients-Django-Utils>=1.1,<2.0',
         'Django-SupportTools>=2.0.3,<3.0',
         'UW-Django-SAML2>=0.4.2',
