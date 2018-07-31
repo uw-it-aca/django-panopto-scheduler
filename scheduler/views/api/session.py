@@ -242,7 +242,7 @@ class Session(RESTDispatch):
         if external_id and len(external_id):
             self._session_api.updateFolderExternalIdWithProvider(
                 folder_id, external_id, getattr(
-                    settings, 'PANOPTO_IDP_INSTANCE_NAME', ''))
+                    settings, 'PANOPTO_API_APP_ID', ''))
 
     def _validate_session(self, request_body):
         session = {}
