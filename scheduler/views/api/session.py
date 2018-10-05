@@ -192,7 +192,9 @@ class Session(RESTDispatch):
             key = course_event_key(request.GET.get('uwnetid', ''),
                                    request.GET.get('name', ''),
                                    request.GET.get('eid', ''),
-                                   request.GET.get('rid', ''))
+                                   request.GET.get('rid', ''),
+                                   request.GET.get('rstart', ''),
+                                   request.GET.get('rend', ''))
 
             if key != request.GET.get("key", None):
                 raise InvalidParamException('Invalid Client Key')
@@ -263,12 +265,6 @@ class Session(RESTDispatch):
         if len(session['session_id']):
             self._valid_external_id(session['session_id'])
 
-        # do not permit param tamperings
-        key = course_event_key(session['uwnetid'], session['name'],
-                               session['external_id'], session['recorder_id'])
-        if key != data.get("key", ''):
-            raise InvalidParamException('Invalid Client Key')
-
         session['is_broadcast'] = self._valid_boolean(
             data.get("is_broadcast", False))
         session['is_public'] = self._valid_boolean(
@@ -281,6 +277,15 @@ class Session(RESTDispatch):
         session['folder_id'] = self._valid_folder(
             session['folder_name'], session['folder_external_id'])
         session['folder_creators'] = data.get("creators", None)
+
+        # do not permit param tamperings
+        key = course_event_key(session['uwnetid'], session['name'],
+                               session['external_id'], session['recorder_id'],
+                               data.get("event_start", "").strip(),
+                               data.get("event_end", "").strip())
+        if key != data.get("key", ''):
+            raise InvalidParamException('Invalid Client Key')
+
         return session
 
     def _valid_external_id(self, external_id):

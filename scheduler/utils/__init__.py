@@ -288,7 +288,9 @@ def event_session_from_scheduled_recording(s):
         session['contact']['uwnetid'],
         session['recording']['name'],
         session['recording']['external_id'],
-        session['recording']['recorder_id'])
+        session['recording']['recorder_id'],
+        session['event']['start'],
+        session['event']['end'])
 
     return session
 
@@ -356,7 +358,9 @@ def mash_in_panopto_sessions(event_sessions, session_external_ids, recorders):
         e['key'] = course_event_key(e['contact']['uwnetid'],
                                     e_r['name'],
                                     e_r['external_id'],
-                                    e_r['recorder_id'])
+                                    e_r['recorder_id'],
+                                    e['event']['start'],
+                                    e['event']['end'])
 
 
 def get_panopto_folder_creators(folder_id):
@@ -532,17 +536,19 @@ def course_event_title_and_contact(course):
         'name': '%s %s' % (name.first, name.last) if name else '',
         'uwnetid': uwnetid if uwnetid else '',
         'email': email if (
-            email and len(email)) else "%s@uw.edu" % (
+            email and len(email)) else "{}@uw.edu".format(
                 uwnetid if uwnetid else '')
     }
 
 
-def course_event_key(netid, name, external_id, recorder_id):
-    to_sign = '%s,%s,%s,%s,(%s)' % (
+def course_event_key(netid, name, external_id, recorder_id, start, end):
+    to_sign = '{},{},{},{},{},{},({})'.format(
         netid if netid else '',
         name,
         external_id,
         recorder_id,
+        start,
+        end,
         getattr(settings, 'PANOPTO_API_TOKEN', ''))
 
     return sha1(to_sign).hexdigest().upper()
