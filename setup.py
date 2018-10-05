@@ -18,7 +18,7 @@ setup(
         'django-compressor',
         'django-templatetag-handlebars',
         'django_mobileesp',
-        'django-blti>=1.2.5',
+        'django-blti>=1.2.5<2.0',
         'django-userservice>=2.0.1',
         'UW-RestClients-SWS>=1.5.1,<2.0',
         'UW-RestClients-PWS>=1.0.1,<2.0',
