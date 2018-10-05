@@ -281,7 +281,8 @@ class Session(RESTDispatch):
         # do not permit param tamperings
         key = course_event_key(session['uwnetid'], session['name'],
                                session['external_id'], session['recorder_id'],
-                               session['start_time'], session['end_time'])
+                               data.get("event_start", "").strip(),
+                               data.get("event_end", "").strip())
         if key != data.get("key", ''):
             raise InvalidParamException('Invalid Client Key')
 
