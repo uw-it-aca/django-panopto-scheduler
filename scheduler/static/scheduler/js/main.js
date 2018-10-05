@@ -999,7 +999,9 @@ var PanoptoScheduler = (function ($) {
                 name: panopto_event.recording.name,
                 eid: panopto_event.recording.external_id,
                 rid: panopto_event.recording.recorder_id,
-                feid: panopto_event.recording.folder.external_id
+                feid: panopto_event.recording.folder.external_id,
+                rstart: panopto_event.recording.start,
+                rend: panopto_event.recording.end
             })
         }).fail(function (xhr) {
             failure_modal('Cannot Delete Recording',
