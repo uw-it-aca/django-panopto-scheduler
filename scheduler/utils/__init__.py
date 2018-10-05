@@ -289,8 +289,8 @@ def event_session_from_scheduled_recording(s):
         session['recording']['name'],
         session['recording']['external_id'],
         session['recording']['recorder_id'],
-        session['recording']['start'],
-        session['recording']['end'])
+        session['event']['start'],
+        session['event']['end'])
 
     return session
 
@@ -359,8 +359,8 @@ def mash_in_panopto_sessions(event_sessions, session_external_ids, recorders):
                                     e_r['name'],
                                     e_r['external_id'],
                                     e_r['recorder_id'],
-                                    e_r['start'],
-                                    e_r['end'])
+                                    e['event']['start'],
+                                    e['event']['end'])
 
 
 def get_panopto_folder_creators(folder_id):

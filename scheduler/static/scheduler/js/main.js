@@ -914,6 +914,8 @@ var PanoptoScheduler = (function ($) {
                 creators: panopto_event.recording.folder.creators,
                 start_time: panopto_event.recording.start,
                 end_time: panopto_event.recording.end,
+                event_start: panopto_event.event.start,
+                event_end: panopto_event.event.end,
                 is_broadcast: panopto_event.recording.is_broadcast,
                 is_public: panopto_event.recording.is_public
             },
@@ -1000,8 +1002,8 @@ var PanoptoScheduler = (function ($) {
                 eid: panopto_event.recording.external_id,
                 rid: panopto_event.recording.recorder_id,
                 feid: panopto_event.recording.folder.external_id,
-                rstart: panopto_event.recording.start,
-                rend: panopto_event.recording.end
+                rstart: panopto_event.event.start,
+                rend: panopto_event.event.end
             })
         }).fail(function (xhr) {
             failure_modal('Cannot Delete Recording',
