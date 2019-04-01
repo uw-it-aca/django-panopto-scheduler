@@ -1369,10 +1369,17 @@ var PanoptoScheduler = (function ($) {
             slider_value = range.slider_value;
         } else if (window.scheduler.events) {
             $.each(window.scheduler.events, function () {
+                var this_event_start = moment(this.event.start);
+
+                if (this_event_start.isBefore(now)) {
+                    return true;
+                }
+
                 if (!event_start_date) {
-                    event_start_date = moment(this.event.start);
+                    event_start_date = this_event_start;
                 } else if (event_start_date.format('hh:mm a') !== moment(this.event.start).format('hh:mm a')) {
                     event_start_date = null;
+                    slider_value = null;
                     return false;
                 }
 
@@ -1380,6 +1387,7 @@ var PanoptoScheduler = (function ($) {
                     event_end_date = moment(this.event.end);
                 } else if (event_end_date.format('hh:mm a') !== moment(this.event.end).format('hh:mm a')) {
                     event_end_date = null;
+                    slider_value = null;
                     return false;
                 }
             });
@@ -1387,12 +1395,7 @@ var PanoptoScheduler = (function ($) {
             if (event_start_date && event_end_date) {
                 recording_start = moment(event_start_date);
                 recording_end = moment(event_end_date);
-            }
 
-            start_span.html(event_start_date.format('h:mm a'));
-            end_span.html(event_end_date.format('h:mm a'));
-
-            if (recording_start && recording_end) {
                 slider_value = [
                     recording_start.unix(),
                     recording_end.unix()
@@ -1409,7 +1412,10 @@ var PanoptoScheduler = (function ($) {
         $('input[name^=public_][value="' + checked + '"]', button_group).prop('checked', true);
 
         if (slider_value) {
+            $('.recording-duration-slider', button_group).removeClass('hidden');
             if (slider.hasClass('duration-slider-enabled') && pe && pe.slider) {
+                start_span.html(moment(slider_value[0]).format('h:mm a'));
+                end_span.html(moment(slider_value[1]).format('h:mm a'));
                 pe.slider.slider('setValue', slider_value);
             } else {
                 slider.addClass('duration-slider-enabled');
@@ -1431,6 +1437,8 @@ var PanoptoScheduler = (function ($) {
                     window.scheduler.global_slider_now = recording_start;
                 }
             }
+        } else {
+            $('.recording-duration-slider', button_group).addClass('hidden');
         }
     }
 

@@ -101,6 +101,9 @@ def course_recording_sessions(course, event):
 
         event_session = event_session_from_reservation(rsv)
 
+        if event_session['profile'].split()[-1].lower() in ['lab', 'final']:
+            continue
+
         event_session['joint'] = joint if len(joint) else None
 
         event_session['recording']['folder'] = folder
