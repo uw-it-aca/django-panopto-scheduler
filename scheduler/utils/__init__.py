@@ -112,10 +112,13 @@ def course_recording_sessions(course, event):
         event_session['recording']['name'] = name
         event_session['recording']['external_id'] = external_id
 
-        recorders[rsv.space_reservation.space_id] = None
+        if rsv.space_reservation and rsv.space_reservation.space_id:
+            recorders[rsv.space_reservation.space_id] = None
+
         session_external_ids.append(external_id)
 
-        event_session['schedulable'] = True if folder['external_id'] else False
+        event_session['schedulable'] = True if (
+            folder['external_id'] and event_session['space']['id']) else False
 
         event_session['contact'] = contact
 
@@ -218,12 +221,14 @@ def event_session_from_reservation(r):
     }
 
     if hasattr(r, 'space_reservation'):
-        if not r.space_reservation:
-            raise Exception('No Room Information in Reservation System.')
-
-        session['space']['id'] = r.space_reservation.space_id
-        session['space']['name'] = r.space_reservation.name
-        session['space']['formal_name'] = r.space_reservation.formal_name
+        if r.space_reservation:
+            session['space']['id'] = r.space_reservation.space_id
+            session['space']['name'] = r.space_reservation.name
+            session['space']['formal_name'] = r.space_reservation.formal_name
+        else:
+            logger.error(
+                "Meeting for {} on {} has no space reservation ".format(
+                    r.event_name, r.start_datetime))
 
     match = re.match(r'^([a-z][0-9a-z]{0,7})@(%s)$' % ('|'.join(UW_DOMAIN)),
                      session['contact']['email'])
@@ -322,7 +327,10 @@ def mash_in_panopto_sessions(event_sessions, session_external_ids, recorders):
 
                     e_r['recorder_id'] = session.RemoteRecorderIds.guid[0] if (
                         hasattr(session.RemoteRecorderIds, 'guid')) else None
-                    recorders[e['space']['id']] = e_r['recorder_id']
+
+                    if e['space']['id']:
+                        recorders[e['space']['id']] = e_r['recorder_id']
+
                     e_r['id'] = session.Id
                     e_r['folder']['name'] = session.FolderName
                     e_r['folder']['id'] = session.FolderId
@@ -346,7 +354,8 @@ def mash_in_panopto_sessions(event_sessions, session_external_ids, recorders):
     # fill in unscheduled event ids
     for e in event_sessions:
         e_r = e['recording']
-        if not ('recorder_id' in e_r and e_r['recorder_id']):
+        if (e['space']['id'] and not (
+                'recorder_id' in e_r and e_r['recorder_id'])):
             space_id = e['space']['id']
             if not (space_id in recorders and recorders[space_id]):
                 try:

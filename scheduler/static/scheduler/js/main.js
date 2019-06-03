@@ -353,7 +353,7 @@ var PanoptoScheduler = (function ($) {
                 joint = (this.joint) ? this.joint.join(', ') :  '';
             }
 
-            if (context.rooms.indexOf(this.space.name) < 0) {
+            if (this.space.name && context.rooms.indexOf(this.space.name) < 0) {
                 context.rooms.push(this.space.name);
             }
 
@@ -367,7 +367,7 @@ var PanoptoScheduler = (function ($) {
                 ampm: event_end_date.format('a'),
                 course: course.name,
                 name: this.space.name,
-                name_index: context.rooms.indexOf(this.space.name),
+                name_index: (this.space.name) ? context.rooms.indexOf(this.space.name) : null,
                 space_id: this.space.id,
                 contact: this.contact.name,
                 contact_email: this.contact.email,
@@ -386,6 +386,7 @@ var PanoptoScheduler = (function ($) {
                 can_record: panopto_can_record(this),
                 is_recording: panopto_is_recording(this),
                 is_recorded: panopto_is_recorded(this),
+                schedulable: this.schedulable,
                 disabled: (this.schedulable &&
                     ((this.recording.id && now.isBefore(this.recording.end)) ||
                         (!this.recording.id && this.recording.recorder_id)) &&
