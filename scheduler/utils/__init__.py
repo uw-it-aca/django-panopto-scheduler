@@ -46,10 +46,6 @@ def person_from_username(username):
             raise
 
 
-def netid_from_email(email):
-                raise InvalidUser()
-
-
 def course_location_and_recordings(course):
     try:
         event = get_event_by_alien_id(r25_alien_uid(course))
