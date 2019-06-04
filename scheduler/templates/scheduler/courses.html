@@ -119,6 +119,7 @@
 {% tplhandlebars "reservation-list-partial" %}
   <ol class="list-group result-list-chunk">
     {{#each schedule}}
+    {{#if schedulable}}
       <li class="list-group-item clearfix">
         <span class="result-row-date" title="date">{{ month_num }}/{{ day }}</span>
         <span class="result-row-day" title="day">{{ weekday }}</span> 
@@ -139,6 +140,7 @@
         <!--End button-->
         {{/if}}
       </li>
+      {{/if}}
     {{/each}}
   </ol>
 {% endtplhandlebars %}
