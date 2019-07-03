@@ -173,7 +173,7 @@ def space_events_and_recordings(params):
         # overlay session data
         for event_session in list(event_sessions):
             # remove academic courses and generate external_id
-            if ('profile' in event_session and 
+            if ('profile' in event_session and
                     event_session['profile'] and
                     event_session['profile'].lower() in UW_MEETING_TYPES):
                 event_sessions.remove(event_session)
@@ -191,7 +191,7 @@ def space_events_and_recordings(params):
 def event_session_from_reservation(r):
     session = {
         'profile': r.profile_name if (hasattr(r, 'profile_name') and
-           r.profile_name)  else '',
+                                      r.profile_name) else '',
         'name': r.event_name,
         'schedulable': True,
         'space': {
