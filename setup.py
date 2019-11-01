@@ -14,7 +14,7 @@ setup(
     packages=['scheduler'],
     include_package_data=True,
     install_requires = [
-        'Django==1.11.10',
+        'Django==1.11.23',
         'django-compressor',
         'django-templatetag-handlebars',
         'django_mobileesp',
