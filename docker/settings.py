@@ -2,6 +2,17 @@ from .base_settings import *
 
 ALLOWED_HOSTS = ['*']
 
+if os.getenv('AUTH', 'NONE') == 'SAML_MOCK':
+    MOCK_SAML_ATTRIBUTES = {
+        'uwnetid': ['jfaculty'],
+        'affiliations': ['faculty', 'employee', 'member'],
+        'eppn': ['jfacult@washington.edu'],
+        'scopedAffiliations': [
+            'employee@washington.edu', 'member@washington.edu'],
+        'isMemberOf': ['u_test_group', 'u_test_another_group',
+                       'u_acadev_panopto_support'],
+    }
+
 INSTALLED_APPS += [
     'compressor',
     'django.contrib.humanize',
