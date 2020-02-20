@@ -10,7 +10,7 @@ class CourseScheduleView(BLTILaunchView):
         if self.blti.course_sis_id is not None:
             course_sis_id = self.blti.course_sis_id
         else:
-            course_sis_id = 'course_%s' % self.blti.canvas_course_id
+            course_sis_id = 'course_{}'.format(self.blti.canvas_course_id)
 
         return {
             'sis_course_id': course_sis_id,

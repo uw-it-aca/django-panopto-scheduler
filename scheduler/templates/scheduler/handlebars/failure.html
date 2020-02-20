@@ -1,6 +1,5 @@
-{% load templatetag_handlebars %}
-
-{% tplhandlebars "ajax-fail-tmpl" %}
+{% verbatim %}
+<script id="ajax-fail-tmpl" type="text/x-handlebars-template">
 <div class="modal fade" id="failure-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <!-- Failure modal -->
   <div class="modal-dialog">
@@ -21,5 +20,5 @@
     </div>
   </div>
 </div>
-{% endtplhandlebars %}
-
+</script>
+{% endverbatim %}

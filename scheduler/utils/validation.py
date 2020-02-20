@@ -17,11 +17,12 @@ class Validation(object):
         if not course_id:
             raise MissingParamException('missing course id')
         course_parts = re.match(
-            r'^(\d{4})-(%s)-([\w& ]+)-(\d{3})-([A-Z][A-Z0-9]?)$' %
-            ('|'.join([x[0] for x in Term.QUARTERNAME_CHOICES])),
+            r'^(\d{4})-({})-([\w& ]+)-(\d{3})-([A-Z][A-Z0-9]?)$'.format(
+                '|'.join([x[0] for x in Term.QUARTERNAME_CHOICES])),
             course_id, re.I)
         if not course_parts:
-            raise InvalidParamException('invalid course id: %s' % course_id)
+            raise InvalidParamException(
+                'invalid course id: {}'.format(course_id))
 
         course = Course()
         course.year = course_parts.group(1)
@@ -36,7 +37,8 @@ class Validation(object):
             raise MissingParamException('missing curriculum')
 
         if not re.match(r'^[a-z \&]{2,}$', curriculum, re.I):
-            raise InvalidParamException('Invalid Curriculum: %s' % curriculum)
+            raise InvalidParamException(
+                'Invalid Curriculum: {}'.format(curriculum))
 
         return curriculum.upper()
 
@@ -45,8 +47,8 @@ class Validation(object):
             raise MissingParamException('missing course number')
 
         if not re.match(r'^\d+$', course_number):
-            raise InvalidParamException('Invalid Course Number: %s' %
-                                        course_number)
+            raise InvalidParamException(
+                'Invalid Course Number: {}'.format(course_number))
 
         return course_number
 
@@ -58,6 +60,7 @@ class Validation(object):
 
     def panopto_id(self, id):
         if not re.match(r'^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$', id):
-            raise InvalidParamException('Invalid Panopto Id: %s' % id)
+            raise InvalidParamException(
+                'Invalid Panopto Id: {}'.format(id))
 
         return id

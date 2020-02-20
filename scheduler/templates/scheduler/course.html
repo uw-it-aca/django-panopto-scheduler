@@ -2,7 +2,6 @@
 
 {% load staticfiles %}
 {% load compress %}
-{% load templatetag_handlebars %}
 {% load i18n %}
 
 {% block title %}
@@ -25,16 +24,18 @@ Panopto Scheduler
 </div>
 
 
-{% tplhandlebars "course-search-result-template" %}
+{% verbatim %}
+<script id="course-search-result-template" type="text/x-handlebars-template">
   <div class="result-list-container">
 
     {{> reservation-list}}
 
   </div>
-{% endtplhandlebars %}
+</script>
+{% endverbatim %}
 
-{% tplhandlebars "reservation-list-partial" %}
-
+{% verbatim %}
+<script id="reservation-list-partial" type="text/x-handlebars-template">
   {{#if future_meetings}}
   {{#if has_recorder}}
   <p>You can schedule recording of one or more class sessions, or click <b>Schedule All</b> to set up recording of every class session.</p>
@@ -74,23 +75,29 @@ Panopto Scheduler
     Sorry, but it appears there are no upcoming meeting times available for scheduling.
   </div>
   {{/if}}
-{% endtplhandlebars %}
+</script>
+{% endverbatim %}
 
 
-{% tplhandlebars "folder_created_message" %}
+{% verbatim %}
+<script id="folder_created_message" type="text/x-handlebars-template">
 Click the folder icon
 <a href="{{folder_url}}" target="_blank" style="color: black;"><span class="fa-stack"><i class="fa fa-play-circle-o fa-stack-1x"></i><i class="fa fa-folder-o fa-stack-2x"></i></span></a>
 to open the scheduled session's Panopto folder.
-{% endtplhandlebars %}
+</script>
+{% endverbatim %}
 
-{% tplhandlebars "ajax-waiting" %}
+{% verbatim %}
+<script id="ajax-waiting" type="text/x-handlebars-template">
   <div class="waiting">
     <i class="fa fa-spinner fa-4 fa-spin"></i>
   </div>
-{% endtplhandlebars %}
+</script>
+{% endverbatim %}
 
 
-{% tplhandlebars "confirm-record-stop-tmpl" %}
+{% verbatim %}
+<script id="confirm-record-stop-tmpl" type="text/x-handlebars-template">
 <div class="modal fade stop-recording-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -108,9 +115,11 @@ to open the scheduled session's Panopto folder.
     </div>
   </div>
 </div>
-{% endtplhandlebars %}
+</script>
+{% endverbatim %}
 
-{% tplhandlebars "course-search-failure" %}
+{% verbatim %}
+<script id="course-search-failure" type="text/x-handlebars-template">
 <div class="search-failed">
 <p>
    <i class="fa fa-frown-o"></i>  Unfortunately, an error occured gathering information for this course.
@@ -119,7 +128,8 @@ to open the scheduled session's Panopto folder.
   Please try again shortly.
 </p>
 </div>
-{% endtplhandlebars %}
+</script>
+{% endverbatim %}
 
 
 

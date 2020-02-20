@@ -21,7 +21,7 @@ class Folder(RESTDispatch):
         folder_id = kwargs.get('folder_id')
         self._init_apis()
         if (folder_id):
-            return self._get_folder_details(space_id)
+            return self._get_folder_details()
         else:
             params = {}
             for q in request.GET:
@@ -29,7 +29,7 @@ class Folder(RESTDispatch):
 
             return self._list_folders(params)
 
-    def _get_folder_details(self, space_id):
+    def _get_folder_details(self):
         return self.json_response()
 
     def _list_folders(self, args):
@@ -47,7 +47,7 @@ class Folder(RESTDispatch):
                             deets.UsersWithCreatorAccess.guid)
                         if response and response.User:
                             for user in response.User:
-                                match = re.match(r'^%s\\(.+)$' % (
+                                match = re.match(r'^{}\\(.+)$'.format(
                                     settings.PANOPTO_API_APP_ID), user.UserKey)
                                 creators.append({
                                     'key': match.group(1) if (
@@ -60,7 +60,7 @@ class Folder(RESTDispatch):
                             deets.UsersWithCreatorAccess.guid)
                         if response and response.User:
                             for user in response.User:
-                                match = re.match(r'^%s\\(.+)$' % (
+                                match = re.match(r'^{}\\(.+)$'.format(
                                     settings.PANOPTO_API_APP_ID), user.UserKey)
                                 viewers.append({
                                     'key': match.group(1) if (

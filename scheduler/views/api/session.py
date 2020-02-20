@@ -10,7 +10,7 @@ from panopto_client.session import SessionManagement
 from panopto_client.access import AccessManagement
 from panopto_client.user import UserManagement
 from panopto_client.remote_recorder import RemoteRecorderManagement
-from dateutil import parser, tz
+from dateutil import tz
 import json
 import logging
 import datetime
@@ -111,19 +111,22 @@ class Session(RESTDispatch):
                 messages = self._sync_creators(
                     new_session.get('folder_id'), creators)
 
-            self._audit_log.info('%s scheduled %s for %s from %s to %s' % (
-                request.user, new_session.get('external_id'),
-                new_session.get('uwnetid'), new_session.get('start_time'),
-                new_session.get('end_time')))
+            self._audit_log.info(
+                '{} scheduled {} for {} from {} to {}'.format(
+                    request.user, new_session.get('external_id'),
+                    new_session.get('uwnetid'),
+                    new_session.get('start_time'),
+                    new_session.get('end_time')))
 
             return self.json_response({
                 'recording_id': session_id,
                 'messages': messages
             })
         except InvalidParamException as ex:
-            return self.error_response(400, "%s" % ex)
+            return self.error_response(400, "{}".format(ex))
         except Exception as ex:
-            return self.error_response(500, "Unable to save session: %s" % ex)
+            return self.error_response(
+                500, "Unable to save session: {}".format(ex))
 
     def put(self, request, *args, **kwargs):
         try:
@@ -167,7 +170,7 @@ class Session(RESTDispatch):
                     session_update.get('folder_id'), creators)
 
             self._audit_log.info(
-                '%s modified %s for %s from %s to %s in %s' % (
+                '{} modified {} for {} from {} to {} in {}'.format(
                     request.user,
                     session_update.get('external_id'),
                     session_update.get('uwnetid'),
@@ -180,9 +183,10 @@ class Session(RESTDispatch):
                 'messages': messages
             })
         except InvalidParamException as ex:
-            return self.error_response(400, "%s" % ex)
+            return self.error_response(400, "{}".format(ex))
         except Exception as ex:
-            return self.error_response(500, "Unable to save session: %s" % ex)
+            return self.error_response(
+                500, "Unable to save session: {}".format(ex))
 
     def delete(self, request, *args, **kwargs):
         try:
@@ -200,13 +204,14 @@ class Session(RESTDispatch):
                 raise InvalidParamException('Invalid Client Key')
 
             self._session_api.deleteSessions([session_id])
-            self._audit_log.info('%s deleted session %s' %
-                                 (request.user, session_id))
+            self._audit_log.info('{} deleted session {}'.format(
+                request.user, session_id))
             return self.json_response({
                 'deleted_recording_id': session_id
             })
         except InvalidParamException as err:
-            return self.error_response(400, "Invalid Parameter: %s" % err)
+            return self.error_response(
+                400, "Invalid Parameter: {}".format(err))
 
     def _valid_folder(self, name, external_id):
         try:
@@ -232,13 +237,14 @@ class Session(RESTDispatch):
 
             new_folder = self._session_api.addFolder(name)
             if not new_folder:
-                raise InvalidParamException('Cannot add folder: %s' % name)
+                raise InvalidParamException(
+                    'Cannot add folder: {}'.format(name))
 
             new_folder_id = new_folder.Id
             self._set_external_id(new_folder_id, external_id)
             return new_folder_id
         except Exception as ex:
-            raise InvalidParamException('Cannot add folder: %s' % ex)
+            raise InvalidParamException('Cannot add folder: {}'.format(ex))
 
     def _set_external_id(self, folder_id, external_id):
         if external_id and len(external_id):
@@ -328,7 +334,7 @@ class Session(RESTDispatch):
                 try:
                     new_creator_ids.append(self._get_panopto_user_id(creator))
                 except PanoptoUserException as ex:
-                    messages.append('Invalid UWNetId %s' % creator)
+                    messages.append('Invalid UWNetId {}'.format(creator))
 
         for creator in current_creators:
             if creator not in folder_creators:
@@ -336,7 +342,7 @@ class Session(RESTDispatch):
                     deleted_creator_ids.append(
                         self._get_panopto_user_id(creator))
                 except PanoptoUserException as ex:
-                    messages.append('Invalid UWNetId %s' % creator)
+                    messages.append('Invalid UWNetId {}'.format(creator))
 
         if len(new_creator_ids):
             try:
@@ -344,7 +350,7 @@ class Session(RESTDispatch):
                     folder_id, new_creator_ids, 'Creator')
             except PanoptoAPIException as ex:
                 match = re.match(r'.*Server raised fault: \'(.+)\'$', str(ex))
-                messages.append('%s: %s' % (creator, match.group(1) if (
+                messages.append('{}: {}'.format(creator, match.group(1) if (
                     match) else str(ex)))
 
         if len(deleted_creator_ids):
@@ -353,17 +359,19 @@ class Session(RESTDispatch):
                     folder_id, deleted_creator_ids, 'Creator')
             except PanoptoAPIException as ex:
                 match = re.match(r'.*Server raised fault: \'(.+)\'$', str(ex))
-                messages.append('%s: %s' % (creator, match.group(1) if (
+                messages.append('{}: {}'.format(creator, match.group(1) if (
                     match) else str(ex)))
 
         return messages
 
     def _get_panopto_user_id(self, netid):
-        key = r'%s\%s' % (getattr(settings, 'PANOPTO_API_APP_ID', ''), netid)
+        key = r'{}\{}'.format(
+            getattr(settings, 'PANOPTO_API_APP_ID', ''), netid)
         user = self._user_api.getUserByKey(key)
         if (not user or
                 user['UserId'] == '00000000-0000-0000-0000-000000000000'):
-            raise PanoptoUserException('Unprovisioned UWNetId: %s' % (netid))
+            raise PanoptoUserException(
+                'Unprovisioned UWNetId: {}'.format(netid))
 
         return user['UserId']
 
@@ -393,16 +401,17 @@ class SessionPublic(RESTDispatch):
                                             'bad public flag')
             self._access_api = AccessManagement()
             self._access_api.updateSessionIsPublic(session_id, is_public)
-            self._audit_log.info('%s set %s public access to %s' % (
+            self._audit_log.info('{} set {} public access to {}'.format(
                 request.user, session_id, is_public))
 
             return self.json_response({
                 'recording_id': session_id
             })
         except InvalidParamException as ex:
-            return self.error_response(400, "%s" % ex)
+            return self.error_response(400, "{}".format(ex))
         except Exception as ex:
-            return self.error_response(500, "Unable to save session: %s" % ex)
+            return self.error_response(
+                500, "Unable to save session: {}".format(ex))
 
     def _valid_boolean(self, v, errstr):
         if not (v is None or type(v) == bool):
@@ -437,16 +446,17 @@ class SessionBroadcast(RESTDispatch):
                 data.get("is_broadcast", False), 'bad broadcast flag')
             self._session_api.updateSessionIsBroadcast(session_id,
                                                        is_broadcast)
-            self._audit_log.info('%s set %s broadcast to %s' % (
+            self._audit_log.info('{} set {} broadcast to {}'.format(
                 request.user, session_id, is_broadcast))
 
             return self.json_response({
                 'recording_id': session_id
             })
         except InvalidParamException as ex:
-            return self.error_response(400, "%s" % ex)
+            return self.error_response(400, "{}".format(ex))
         except Exception as ex:
-            return self.error_response(500, "Unable to save session: %s" % ex)
+            return self.error_response(
+                500, "Unable to save session: {}".format(ex))
 
     def _valid_boolean(self, v, errstr):
         if not (v is None or type(v) == bool):
@@ -487,16 +497,17 @@ class SessionRecordingTime(RESTDispatch):
             self._recorder_api.updateRecordingTime(
                 session_id, start_time, end_time)
 
-            self._audit_log.info('%s set %s start/stop to %s and %s' % (
+            self._audit_log.info('{} set {} start/stop to {} and {}'.format(
                 request.user, session_id, start_time, end_time))
 
             return self.json_response({
                 'recording_id': session_id
             })
         except InvalidParamException as ex:
-            return self.error_response(400, "%s" % ex)
+            return self.error_response(400, "{}".format(ex))
         except Exception as ex:
-            return self.error_response(500, "Unable to save session: %s" % ex)
+            return self.error_response(
+                500, "Unable to save session: {}".format(ex))
 
     def _valid_time(self, time):
         if time and len(time):

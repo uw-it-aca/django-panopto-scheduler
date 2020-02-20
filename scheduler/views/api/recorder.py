@@ -54,14 +54,14 @@ class Recorder(RESTDispatch):
             return self._get_recorder_details(recorder_id)
         except (MissingParamException, InvalidParamException,
                 PanoptoAPIException) as err:
-            return self.error_response(400, message="%s" % err)
+            return self.error_response(400, message="{}".format(err))
 
     def _get_recorder_details(self, recorder_id):
         try:
             recorders = get_api_recorder_details(self._api, recorder_id)
         except (RecorderException, PanoptoAPIException,
                 MissingParamException, InvalidParamException) as err:
-            return self.error_response(400, message="%s" % err)
+            return self.error_response(400, message="{}".format(err))
 
         if recorders is None:
             return self.error_response(404, message="No Recorder Found")
@@ -95,8 +95,8 @@ class Recorder(RESTDispatch):
                         'formal_name': space.formal_name
                     }
                 except DataFailureException as err:
-                    logger.error('Cannot get space for id: %s: %s' %
-                                 (recorders[0].ExternalId, err))
+                    logger.error('Cannot get space for id: {}: {}'.format(
+                        recorders[0].ExternalId, err))
 
             reps.append(rep)
 
@@ -115,7 +115,7 @@ class Recorder(RESTDispatch):
                 recorders = self._api.listRecorders()
                 rec_cache = self._cache_recorders(recorders)
             except PanoptoAPIException as err:
-                return self.error_response(400, message="%s" % err)
+                return self.error_response(400, message="{}".format(err))
 
         rep = []
         for recorder in RecorderCacheEntry.objects.filter(cache=rec_cache):

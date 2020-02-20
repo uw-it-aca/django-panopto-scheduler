@@ -83,7 +83,8 @@
 	</div> <!-- .tab-pane. Form container-->
 </div><!-- .tab-content. Panel container -->
 
-{% tplhandlebars "course-search-result-template" %}
+{% verbatim %}
+<script id="course-search-result-template" type="text/x-handlebars-template">
   <div class="room-header"><!-- Rslt Header -->
   	<div><!-- Container -->
 		<div class="course-name"><h3><span class="sr-only">Search results for</span> {{ course }}</h3>
@@ -133,9 +134,11 @@
     {{> reservation-list}}
 
   </div>
-{% endtplhandlebars %}
+</script>
+{% endverbatim %}
 
-{% tplhandlebars "event-search-result-template" %}
+{% verbatim %}
+<script id="event-search-result-template" type="text/x-handlebars-template">
   <div class="room-header"><!-- Rslt Header -->
 	<h3><span class="sr-only"> Schedule on</span> {{ search_date }}</h3>
 
@@ -152,16 +155,20 @@
     {{> reservation-list}}
 
   </div>
-{% endtplhandlebars %}
+</script>
+{% endverbatim %}
 
 
-{% tplhandlebars "event-search-result-empty-template" %}
+{% verbatim %}
+<script id="event-search-result-empty-template" type="text/x-handlebars-template">
   <div class="room-header"><!-- Rslt Header -->
 	<h3>No events scheduled on {{ search_date }}</h3>
   </div>	<!-- .Rslt Header -->
-{% endtplhandlebars %}
+</script>
+{% endverbatim %}
 
-{% tplhandlebars "reservation-list-partial" %}
+{% verbatim %}
+<script id="reservation-list-partial" type="text/x-handlebars-template">
   <ol class="list-group result-list-chunk">
     {{#each schedule}}
       <li class="list-group-item clearfix">
@@ -186,24 +193,29 @@
       </li>
     {{/each}}
   </ol>
-{% endtplhandlebars %}
+</script>
+{% endverbatim %}
 
 {% include "scheduler/handlebars/schedule_button_partial.html" %}
 
 </div> <!-- .container-fluid -->
 <hr>
 
-{% tplhandlebars "ajax-waiting" %}
+{% verbatim %}
+<script id="ajax-waiting" type="text/x-handlebars-template">
   <div class="waiting">
     <i class="fa fa-spinner fa-4 fa-spin"></i>
   </div>
-{% endtplhandlebars %}
+</script>
+{% endverbatim %}
 
-{% tplhandlebars "folder_created_message" %}
+{% verbatim %}
+<script id="folder_created_message" type="text/x-handlebars-template">
 Click the folder icon
 <a href="{{folder_url}}" target="_blank" style="color: black;"><span class="fa-stack"><i class="fa fa-play-circle-o fa-stack-1x"></i><i class="fa fa-folder-o fa-stack-2x"></i></span></a>
 to open the scheduled session's Panopto folder.
-{% endtplhandlebars %}
+</script>
+{% endverbatim %}
 
 
 <script type="text/javascript">

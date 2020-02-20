@@ -41,7 +41,7 @@ class Command(BaseCommand):
                           session_id)
 
         if course:
-            label = "%s,%s,%s,%s/%s" % (
+            label = "{},{},{},{}/{}".format(
                 course.group(1), course.group(2), course.group(3),
                 course.group(4), course.group(5))
 
@@ -58,7 +58,8 @@ class Command(BaseCommand):
 
             offered = self._courses[label]
         else:
-            print >> sys.stderr, "unrecognized session id: %s" % session_id
+            print >> sys.stderr, "unrecognized session id: {}".format(
+                session_id)
             return
 
         pan_session = self._session.getSessionsByExternalId([session_id])
@@ -93,20 +94,22 @@ class Command(BaseCommand):
 
                 pan_end = pan_start + datetime.timedelta(0, duration)
 
-                adjustment = [session_id, '(%s)' % pan_session.Session[0].Id,
+                adjustment = [session_id,
+                              '({})'.format(
+                                  pan_session.Session[0].Id),
                               '' if self._commit else 'WOULD', 'RESCHEDULE',
                               fsuds.group(1), 'TO',
                               pan_start.isoformat(), ':']
 
                 if schedule_delta.days < 0:
-                    adjustment.append("(-%s shift)" % (datetime.timedelta() -
-                                                       schedule_delta))
+                    adjustment.append("(-{} shift)".format(
+                        (datetime.timedelta() - schedule_delta)))
                 else:
-                    adjustment.append("(%s shift)" % schedule_delta)
+                    adjustment.append("({} shift)".format(schedule_delta))
 
                 if duration_delta:
                     adjustment.append('AND DURATION')
-                    adjustment.append("%s" % duration_delta)
+                    adjustment.append("{}".format(duration_delta))
                     adjustment.append('seconds')
 
                 print >> sys.stderr, ' '.join(adjustment)
@@ -119,16 +122,17 @@ class Command(BaseCommand):
                     if not result:
                         print >> sys.stderr, "FAIL: null return value"
                     elif result.ConflictsExist:
-                        print >> sys.stderr, "CONFLICT: %s" % (
+                        print >> sys.stderr, "CONFLICT: {}".format(
                             result.ConflictingSessions[0][0].SessionName)
                     else:
-                        print >> sys.stderr, "UPDATED %s" % (
+                        print >> sys.stderr, "UPDATED {}".format(
                             result.SessionIDs[0][0])
             else:
-                print >> sys.stderr, "%s: UNCHANGED" % (session_id)
+                print >> sys.stderr, "{}: UNCHANGED".format(session_id)
 
         else:
-            print >> sys.stderr, "unrecognized session id: %s" % session_id
+            print >> sys.stderr, "unrecognized session id: {}".format(
+                session_id)
 
     def _lecture_times(self, section):
         for meeting in section.meetings:

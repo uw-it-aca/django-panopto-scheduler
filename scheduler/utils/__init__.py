@@ -56,10 +56,11 @@ def course_location_and_recordings(course):
         return course_recording_sessions(course, event)
     except PanoptoAPIException as err:
         raise CourseEventException(
-            "There was a problem connecting to the Panopto server. %s" % err)
+            "There was a problem connecting to the Panopto server. {}".format(
+                err))
     except Exception as ex:
         logger.exception(ex)
-        raise CourseEventException("Data Failure: %s" % ex)
+        raise CourseEventException("Data Failure: {}".format(ex))
 
 
 def course_recording_sessions(course, event):
@@ -82,8 +83,8 @@ def course_recording_sessions(course, event):
                         joint_course_id = joint_section.canvas_course_sis_id()
                         joint_course_ids.append(joint_course_id)
                         c = valid.course_id(joint_course_id)
-                        joint.append("%s %s %s" %
-                                     (c.curriculum, c.number, c.section))
+                        joint.append("{} {} {}".format(
+                            c.curriculum, c.number, c.section))
                 except Exception:
                     continue
 
@@ -229,8 +230,9 @@ def event_session_from_reservation(r):
                 "Meeting for {} on {} has no space reservation ".format(
                     r.event_name, r.start_datetime))
 
-    match = re.match(r'^([a-z][0-9a-z]{0,7})@(%s)$' % ('|'.join(UW_DOMAIN)),
-                     session['contact']['email'])
+    match = re.match(
+        r'^([a-z][0-9a-z]{0,7})@({})$'.format('|'.join(UW_DOMAIN)),
+        session['contact']['email'])
     if match:
         session['contact']['uwnetid'] = match.group(1)
 
@@ -388,7 +390,7 @@ def get_panopto_folder_creators(folder_id):
             users = user_api.getUsers(guids)
             for user in users[0]:
                 match = re.match(
-                    r'^%s\\(.+)$' % (
+                    r'^{}\\(.+)$'.format(
                         settings.PANOPTO_API_APP_ID), user['UserKey'])
                 if match:
                     creators.append(
@@ -399,7 +401,7 @@ def get_panopto_folder_creators(folder_id):
 
 def set_panopto_generic_folder(event):
     session_api = SessionManagement()
-    id_string = "%s - %s" % (event['name'], event['space']['id'])
+    id_string = "{} - {}".format(event['name'], event['space']['id'])
     folder_name = event['name']
     folder_external_id = panopto_generic_external_id(id_string)
     creators = []
@@ -416,10 +418,10 @@ def set_panopto_generic_folder(event):
 
 
 def set_panopto_generic_session(event):
-    name = "%s - %s" % (
+    name = "{} - {}".format(
         event['name'],
         _local_ymd_from_utc_date_string(event['event']['start']))
-    id_string = "%s - %s" % (name, event['space']['id'])
+    id_string = "{} - {}".format(name, event['space']['id'])
     event['recording']['name'] = name
     event['recording']['external_id'] = panopto_generic_external_id(id_string)
     event['recording']['is_public'] = False
@@ -439,12 +441,12 @@ def panopto_generic_external_id(id_string):
 
 def r25_alien_uid(course):
     # r25 alien_id: 2014-4 0-MATH 124 A
-    return "%s-%s %s-%s %s %s" % (course.year,
-                                  quarter_ordinal(course.quarter),
-                                  campus_ordinal(course),
-                                  course.curriculum,
-                                  course.number,
-                                  course.section)
+    return "{}-{} {}-{} {} {}".format(course.year,
+                                      quarter_ordinal(course.quarter),
+                                      campus_ordinal(course),
+                                      course.curriculum,
+                                      course.number,
+                                      course.section)
 
 
 def campus_ordinal(course):
@@ -462,9 +464,9 @@ def campus_ordinal(course):
 
 
 def panopto_course_session(course, start_datetime):
-    name = "%s %s %s - %s" % (course.curriculum, course.number,
-                              course.section,
-                              _local_ymd_from_utc_date_string(start_datetime))
+    name = "{} {} {} - {}".format(
+        course.curriculum, course.number, course.section,
+        _local_ymd_from_utc_date_string(start_datetime))
     external_id = panopto_course_external_id(
         course, _local_ymd_from_utc_date_string(start_datetime))
     return (name, external_id)
@@ -475,15 +477,15 @@ def panopto_course_external_id(course, start_datetime):
     start_dt = parser.parse(start_datetime)
     start_date = start_dt.strftime('%Y-%m-%d')
 
-    return "%s-%s-%s-%s-%s-%s" % (course.year, course.quarter,
-                                  course.curriculum, course.number,
-                                  course.section, start_date)
+    return "{}-{}-{}-{}-{}-{}".format(course.year, course.quarter,
+                                      course.curriculum, course.number,
+                                      course.section, start_date)
 
 
 def panopto_course_folder(course, title):
     quarter_initial = course.quarter[0:1].upper()
     quarter_lower = course.quarter[1:]
-    folder_prefix = "%s%s %s - " % (
+    folder_prefix = "{}{} {} - ".format(
         quarter_initial, quarter_lower, course.year)
 
     # folder id needs to match canvas course id
@@ -496,22 +498,22 @@ def panopto_course_folder(course, title):
     except Exception as ex:
         logger.exception(ex)
         external_id = None
-        folder = "%s %s %s %s%s %s: %s" % (
+        folder = "{} {} {} {}{} {}: {}".format(
             course.curriculum, course.number, course.section, quarter_initial,
             quarter_lower[:1], str(course.year)[2:], title.title())
 
     return {
-        'name': "%s%s" % (folder_prefix, folder),
+        'name': "{}{}".format(folder_prefix, folder),
         'external_id': external_id
     }
 
 
 def canvas_course_id(course):
-    return "%s" % '-'.join([course.year,
-                            course.quarter,
-                            course.curriculum,
-                            course.number,
-                            course.section])
+    return "{}".format('-'.join([course.year,
+                                 course.quarter,
+                                 course.curriculum,
+                                 course.number,
+                                 course.section]))
 
 
 def quarter_ordinal(quarter):
@@ -544,7 +546,7 @@ def course_event_title_and_contact(course):
 
     return {
         'title_long': section.course_title_long if section else '',
-        'name': '%s %s' % (name.first, name.last) if name else '',
+        'name': '{} {}'.format(name.first, name.last) if name else '',
         'uwnetid': uwnetid if uwnetid else '',
         'email': email if (
             email and len(email)) else "{}@uw.edu".format(
@@ -571,6 +573,6 @@ def get_sws_section(course):
 
 
 def sws_course_id(course):
-    return "%s,%s,%s,%s/%s" % (course.year, course.quarter,
-                               course.curriculum, course.number,
-                               course.section)
+    return "{},{},{},{}/{}".format(course.year, course.quarter,
+                                   course.curriculum, course.number,
+                                   course.section)
