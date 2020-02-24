@@ -18,7 +18,7 @@ INSTALLED_APPS += [
     'django.contrib.humanize',
     'supporttools',
     'userservice',
-    'scheduler',
+    'scheduler.apps.SchedulerConfig',
     'blti',
     'django_prometheus',
 ]
@@ -78,5 +78,6 @@ DETECT_USER_AGENTS = {
     'is_mobile': False,
     'is_desktop': True,
 }
+
 
 DEBUG = True if os.getenv('ENV', 'localdev') == "localdev" else False

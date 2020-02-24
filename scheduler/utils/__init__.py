@@ -231,7 +231,7 @@ def event_session_from_reservation(r):
                     r.event_name, r.start_datetime))
 
     match = re.match(
-        r'^([a-z][0-9a-z]{0,7})@({})$'.format('|'.join(UW_DOMAIN)),
+        r'^([a-z][0-9a-z]{{0,7}})@({})$'.format('|'.join(UW_DOMAIN)),
         session['contact']['email'])
     if match:
         session['contact']['uwnetid'] = match.group(1)
@@ -436,7 +436,7 @@ def _local_ymd_from_utc_date_string(utc_date_string):
 
 
 def panopto_generic_external_id(id_string):
-    return sha1(id_string).hexdigest().upper()
+    return sha1(bytearray(id_string)).hexdigest().upper()
 
 
 def r25_alien_uid(course):
@@ -564,7 +564,7 @@ def course_event_key(netid, name, external_id, recorder_id, start, end):
         end,
         getattr(settings, 'PANOPTO_API_TOKEN', ''))
 
-    return sha1(to_sign).hexdigest().upper()
+    return sha1(bytearray(to_sign)).hexdigest().upper()
 
 
 def get_sws_section(course):

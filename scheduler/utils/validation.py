@@ -17,7 +17,7 @@ class Validation(object):
         if not course_id:
             raise MissingParamException('missing course id')
         course_parts = re.match(
-            r'^(\d{4})-({})-([\w& ]+)-(\d{3})-([A-Z][A-Z0-9]?)$'.format(
+            r'^(\d{{4}})-({})-([\w& ]+)-(\d{{3}})-([A-Z][A-Z0-9]?)$'.format(
                 '|'.join([x[0] for x in Term.QUARTERNAME_CHOICES])),
             course_id, re.I)
         if not course_parts:
