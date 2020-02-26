@@ -564,7 +564,7 @@ def course_event_key(netid, name, external_id, recorder_id, start, end):
         end,
         getattr(settings, 'PANOPTO_API_TOKEN', ''))
 
-    return sha1(bytearray(to_sign)).hexdigest().upper()
+    return sha1(to_sign.encode('utf-8')).hexdigest().upper()
 
 
 def get_sws_section(course):
