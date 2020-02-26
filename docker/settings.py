@@ -79,5 +79,19 @@ DETECT_USER_AGENTS = {
     'is_desktop': True,
 }
 
+if not os.getenv("ENV", "localdev") == "localdev":
+    PANOPTO_API_USER = os.getenv('PANOPTO_API_USER')
+    PANOPTO_API_APP_ID = os.getenv('PANOPTO_API_APP_ID')
+    PANOPTO_API_TOKEN = os.getenv('PANOPTO_API_TOKEN')
+    PANOPTO_SERVER = os.getenv('PANOPTO_SERVER')
+
+# BLTI consumer key:secret pairs
+LTI_CONSUMERS = {
+}
+
+# BLTI session object encryption values
+BLTI_AES_KEY = os.getenv('BLTI_AES_KEY', '').encode()
+BLTI_AES_IV = os.getenv('BLTI_AES_IV', '').encode()
+
 
 DEBUG = True if os.getenv('ENV', 'localdev') == "localdev" else False
