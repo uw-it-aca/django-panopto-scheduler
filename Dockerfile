@@ -16,6 +16,7 @@ RUN . /app/bin/activate && pip install nodeenv && nodeenv -p &&\
     ./bin/npm install less -g
 
 ADD --chown=acait:acait . /app/
+ADD --chown=acait:acait .coveragerc /app/.coveragerc
 ADD --chown=acait:acait docker/ project/
 
 RUN . /app/bin/activate && python manage.py compress -f && python manage.py collectstatic --noinput
