@@ -32,8 +32,6 @@ fi
 run_test "coverage run --source=${DJANGO_APP} '--omit=*/migrations/*' manage.py test ${DJANGO_APP}"
 
 # put generaged coverage result where it will get processed
-pwd
-ls -l .coverage*
-cp .coverage.* /coverage
+cp .coverage* /coverage
 
 exit 0
