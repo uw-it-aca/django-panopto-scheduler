@@ -29,9 +29,11 @@ elif [ -d ${DJANGO_APP}/static/js ]; then
     run_test "jshint ${DJANGO_APP}/static/js --verbose"
 fi
 
-run_test "coverage run --rcfile=/app/.coveragerc --source=${DJANGO_APP} '--omit=*/migrations/*' manage.py test ${DJANGO_APP}"
+run_test "pwd && coverage run --rcfile=/app/.coveragerc --source=${DJANGO_APP} '--omit=*/migrations/*' manage.py test ${DJANGO_APP}"
 
 # put generaged coverage result where it will get processed
+pwd
+ls -l
 cp .coverage.* /coverage
 
 exit 0
