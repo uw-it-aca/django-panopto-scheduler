@@ -1,2 +1,1 @@
 -e .
--e git://github.com/uw-it-aca/uw-panopto-client.git@36a17b808ae8f19482eee948ac6176d57195673f#egg=panpto_client
