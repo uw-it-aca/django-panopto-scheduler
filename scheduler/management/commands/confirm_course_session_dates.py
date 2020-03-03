@@ -1,5 +1,4 @@
 from django.core.management.base import BaseCommand
-from optparse import make_option
 from uw_sws.section import get_section_by_label
 from panopto_client.session import SessionManagement
 from panopto_client.remote_recorder import RemoteRecorderManagement
@@ -7,19 +6,28 @@ from dateutil import parser, tz
 import datetime
 import re
 import sys
+import logging
+
+
+logging.getLogger('suds').setLevel(logging.ERROR)
 
 
 class Command(BaseCommand):
     help = "Matchrecording session dates to SWS meeting times"
 
-    option_list = BaseCommand.option_list + (
-        make_option('--commit', dest='commit', action="store_true",
-                    default=False,
-                    help='Update Panopto recording with SWS meeting time'),
-        make_option('--stdin', dest='stdin', action="store_true",
-                    default=False,
-                    help='get Panopto session external ids on standard input'),
-    )
+    def add_arguments(self, parser):
+        parser.add_argument(
+            '--commit',
+            action='store_true',
+            dest='commit',
+            default=False,
+            help='Update Panopto recording with SWS meeting time')
+        parser.add_argument(
+            '--stdin',
+            dest='stdin',
+            action="store_true",
+            default=False,
+            help='get Panopto session external ids on standard input')
 
     def handle(self, *args, **options):
         self._commit = options['commit']
@@ -58,12 +66,12 @@ class Command(BaseCommand):
 
             offered = self._courses[label]
         else:
-            print >> sys.stderr, "unrecognized session id: {}".format(
-                session_id)
+            print("unrecognized session id: {}".format(session_id),
+                  file = sys.stderr)
             return
 
         pan_session = self._session.getSessionsByExternalId([session_id])
-        if 'Session' in pan_session and len(pan_session.Session) == 1:
+        if pan_session and 'Session' in pan_session and len(pan_session['Session']) == 1:
             # broken-ass suds.
             fsuds = re.match(r'.*\<a\:StartTime\>([^<]+)\<\/a\:StartTime\>.*',
                              self._session._api.last_received().plain())
@@ -112,7 +120,7 @@ class Command(BaseCommand):
                     adjustment.append("{}".format(duration_delta))
                     adjustment.append('seconds')
 
-                print >> sys.stderr, ' '.join(adjustment)
+                print(' '.join(adjustment), file=sys.stderr)
 
                 if self._commit:
                     result = self._recorder.updateRecordingTime(
@@ -120,19 +128,21 @@ class Command(BaseCommand):
                         pan_start.isoformat(),
                         pan_end.isoformat())
                     if not result:
-                        print >> sys.stderr, "FAIL: null return value"
+                        print("FAIL: null return value", file=sys.stderr)
                     elif result.ConflictsExist:
-                        print >> sys.stderr, "CONFLICT: {}".format(
-                            result.ConflictingSessions[0][0].SessionName)
+                        print("CONFLICT: {}".format(
+                            result.ConflictingSessions[0][0].SessionName),
+                              file=sys.stderr)
                     else:
-                        print >> sys.stderr, "UPDATED {}".format(
-                            result.SessionIDs[0][0])
+                        print("UPDATED {}".format(
+                            result.SessionIDs[0][0]),
+                              file=sys.stderr)
             else:
-                print >> sys.stderr, "{}: UNCHANGED".format(session_id)
+                print("{}: UNCHANGED".format(session_id), file=sys.stderr)
 
         else:
-            print >> sys.stderr, "unrecognized session id: {}".format(
-                session_id)
+            print("unrecognized session id: {}".format(
+                session_id), file=sys.stderr)
 
     def _lecture_times(self, section):
         for meeting in section.meetings:

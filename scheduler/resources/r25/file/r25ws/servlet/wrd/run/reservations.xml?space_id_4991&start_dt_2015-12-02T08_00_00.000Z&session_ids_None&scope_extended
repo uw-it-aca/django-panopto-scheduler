@@ -1,0 +1,627 @@
+<?xml version="1.0"?>
+<r25:reservations xmlns:r25="http://www.collegenet.com/r25" xmlns:xl="http://www.w3.org/1999/xlink" pubdate="2015-11-02T16:03:47-08:00">
+<r25:reservation xl:href="reservation.xml?rsrv_id=44225326">
+<r25:reservation_id>44225326</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-12-02T08:30:00-08:00</r25:reservation_start_dt>
+<r25:pre_event_dt>2015-12-02T08:30:00-08:00</r25:pre_event_dt>
+<r25:event_start_dt>2015-12-02T08:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-12-02T09:20:00-08:00</r25:event_end_dt>
+<r25:post_event_dt>2015-12-02T09:20:00-08:00</r25:post_event_dt>
+<r25:reservation_end_dt>2015-12-02T09:20:00-08:00</r25:reservation_end_dt>
+<r25:profile_id>2129930</r25:profile_id>
+<r25:profile_name>LECTURE</r25:profile_name>
+<r25:profile_description>From 08:30 AM to 09:20 AM.
+Starting on WED SEP/30/2015.
+Repeat every week
+ on MON WED FRI
+ until FRI DEC/11/2015.</r25:profile_description>
+<r25:expected_count>336</r25:expected_count>
+<r25:registered_count>321</r25:registered_count>
+<r25:registration_url/>
+<r25:registration_label/>
+<r25:last_mod_user>import</r25:last_mod_user>
+<r25:last_mod_dt>2015-10-10T02:31:20-07:00</r25:last_mod_dt>
+<r25:comment_id/>
+<r25:comments/>
+<r25:attendee_count>0</r25:attendee_count>
+<r25:event xl:href="event.xml?event_id=651214">
+<r25:event_id>651214</r25:event_id>
+<r25:event_name>BIOC 440 A</r25:event_name>
+<r25:event_title>BIOCHEMISTRY</r25:event_title>
+<r25:favorite>F</r25:favorite>
+<r25:event_locator>2015-ABLBIS</r25:event_locator>
+<r25:event_type_id>341</r25:event_type_id>
+<r25:event_type_name>UG_SECTION</r25:event_type_name>
+<r25:event_type_class/>
+<r25:state>1</r25:state>
+<r25:state_name>Tentative</r25:state_name>
+<r25:organization xl:href="organization.xml?organization_id=4179">
+<r25:organization_id>4179</r25:organization_id>
+<r25:primary>T</r25:primary>
+<r25:organization_name>BIOC</r25:organization_name>
+</r25:organization>
+<r25:role>
+<r25:role_id>-2</r25:role_id>
+<r25:role_name>Scheduler</r25:role_name>
+<r25:contact xl:href="contact.xml?contact_id=3310">
+<r25:contact_id>3310</r25:contact_id>
+<r25:contact_name>IMPORT PROCESS</r25:contact_name>
+<r25:address>
+<r25:address_type>3</r25:address_type>
+<r25:formatted_address/>
+<r25:email>javerage@u.washington.edu</r25:email>
+<r25:phone/>
+<r25:fax/>
+</r25:address>
+</r25:contact>
+</r25:role>
+</r25:event>
+<r25:space_reservation xl:href="space.xml?space_id=4991">
+<r25:space_id>4991</r25:space_id>
+<r25:space>
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_id>107</r25:partition_id>
+<r25:partition_name>Kane</r25:partition_name>
+<r25:default_layout_id>2</r25:default_layout_id>
+<r25:default_layout_name>Auditorium</r25:default_layout_name>
+</r25:space>
+<r25:actual_count>336</r25:actual_count>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:shared>F</r25:shared>
+<r25:space_comment_id/>
+<r25:space_comments/>
+<r25:space_instruction_id/>
+<r25:space_instructions/>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=44227400">
+<r25:reservation_id>44227400</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-12-02T09:30:00-08:00</r25:reservation_start_dt>
+<r25:pre_event_dt>2015-12-02T09:30:00-08:00</r25:pre_event_dt>
+<r25:event_start_dt>2015-12-02T09:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-12-02T10:20:00-08:00</r25:event_end_dt>
+<r25:post_event_dt>2015-12-02T10:20:00-08:00</r25:post_event_dt>
+<r25:reservation_end_dt>2015-12-02T10:20:00-08:00</r25:reservation_end_dt>
+<r25:profile_id>2130020</r25:profile_id>
+<r25:profile_name>LECTURE</r25:profile_name>
+<r25:profile_description>From 09:30 AM to 10:20 AM.
+Starting on WED SEP/30/2015.
+Repeat every week
+ on MON TUE WED THU FRI
+ until FRI DEC/11/2015.</r25:profile_description>
+<r25:expected_count>424</r25:expected_count>
+<r25:registered_count>417</r25:registered_count>
+<r25:registration_url/>
+<r25:registration_label/>
+<r25:last_mod_user>import</r25:last_mod_user>
+<r25:last_mod_dt>2015-10-10T02:39:17-07:00</r25:last_mod_dt>
+<r25:comment_id/>
+<r25:comments/>
+<r25:attendee_count>0</r25:attendee_count>
+<r25:event xl:href="event.xml?event_id=651276">
+<r25:event_id>651276</r25:event_id>
+<r25:event_name>BIOL 118 B</r25:event_name>
+<r25:event_title>SURVEY OF PHYSIOL</r25:event_title>
+<r25:favorite>F</r25:favorite>
+<r25:event_locator>2015-ABLBLC</r25:event_locator>
+<r25:event_type_id>341</r25:event_type_id>
+<r25:event_type_name>UG_SECTION</r25:event_type_name>
+<r25:event_type_class/>
+<r25:state>1</r25:state>
+<r25:state_name>Tentative</r25:state_name>
+<r25:organization xl:href="organization.xml?organization_id=4183">
+<r25:organization_id>4183</r25:organization_id>
+<r25:primary>T</r25:primary>
+<r25:organization_name>BIOL</r25:organization_name>
+</r25:organization>
+<r25:role>
+<r25:role_id>-2</r25:role_id>
+<r25:role_name>Scheduler</r25:role_name>
+<r25:contact xl:href="contact.xml?contact_id=3310">
+<r25:contact_id>3310</r25:contact_id>
+<r25:contact_name>IMPORT PROCESS</r25:contact_name>
+<r25:address>
+<r25:address_type>3</r25:address_type>
+<r25:formatted_address/>
+<r25:email>javerage@u.washington.edu</r25:email>
+<r25:phone/>
+<r25:fax/>
+</r25:address>
+</r25:contact>
+</r25:role>
+</r25:event>
+<r25:space_reservation xl:href="space.xml?space_id=4991">
+<r25:space_id>4991</r25:space_id>
+<r25:space>
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_id>107</r25:partition_id>
+<r25:partition_name>Kane</r25:partition_name>
+<r25:default_layout_id>2</r25:default_layout_id>
+<r25:default_layout_name>Auditorium</r25:default_layout_name>
+</r25:space>
+<r25:actual_count>424</r25:actual_count>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:shared>F</r25:shared>
+<r25:space_comment_id/>
+<r25:space_comments/>
+<r25:space_instruction_id/>
+<r25:space_instructions/>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=44227335">
+<r25:reservation_id>44227335</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-12-02T09:30:00-08:00</r25:reservation_start_dt>
+<r25:pre_event_dt>2015-12-02T09:30:00-08:00</r25:pre_event_dt>
+<r25:event_start_dt>2015-12-02T09:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-12-02T10:20:00-08:00</r25:event_end_dt>
+<r25:post_event_dt>2015-12-02T10:20:00-08:00</r25:post_event_dt>
+<r25:reservation_end_dt>2015-12-02T10:20:00-08:00</r25:reservation_end_dt>
+<r25:profile_id>2130019</r25:profile_id>
+<r25:profile_name>LECTURE</r25:profile_name>
+<r25:profile_description>From 09:30 AM to 10:20 AM.
+Starting on WED SEP/30/2015.
+Repeat every week
+ on MON TUE WED THU FRI
+ until FRI DEC/11/2015.</r25:profile_description>
+<r25:expected_count>424</r25:expected_count>
+<r25:registered_count>417</r25:registered_count>
+<r25:registration_url/>
+<r25:registration_label/>
+<r25:last_mod_user>import</r25:last_mod_user>
+<r25:last_mod_dt>2015-10-10T02:39:03-07:00</r25:last_mod_dt>
+<r25:comment_id/>
+<r25:comments/>
+<r25:attendee_count>0</r25:attendee_count>
+<r25:event xl:href="event.xml?event_id=651275">
+<r25:event_id>651275</r25:event_id>
+<r25:event_name>BIOL 118 A</r25:event_name>
+<r25:event_title>SURVEY OF PHYSIOL</r25:event_title>
+<r25:favorite>F</r25:favorite>
+<r25:event_locator>2015-ABLBLB</r25:event_locator>
+<r25:event_type_id>341</r25:event_type_id>
+<r25:event_type_name>UG_SECTION</r25:event_type_name>
+<r25:event_type_class/>
+<r25:state>1</r25:state>
+<r25:state_name>Tentative</r25:state_name>
+<r25:organization xl:href="organization.xml?organization_id=4183">
+<r25:organization_id>4183</r25:organization_id>
+<r25:primary>T</r25:primary>
+<r25:organization_name>BIOL</r25:organization_name>
+</r25:organization>
+<r25:role>
+<r25:role_id>-2</r25:role_id>
+<r25:role_name>Scheduler</r25:role_name>
+<r25:contact xl:href="contact.xml?contact_id=3310">
+<r25:contact_id>3310</r25:contact_id>
+<r25:contact_name>IMPORT PROCESS</r25:contact_name>
+<r25:address>
+<r25:address_type>3</r25:address_type>
+<r25:formatted_address/>
+<r25:email>javerage@u.washington.edu</r25:email>
+<r25:phone/>
+<r25:fax/>
+</r25:address>
+</r25:contact>
+</r25:role>
+</r25:event>
+<r25:space_reservation xl:href="space.xml?space_id=4991">
+<r25:space_id>4991</r25:space_id>
+<r25:space>
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_id>107</r25:partition_id>
+<r25:partition_name>Kane</r25:partition_name>
+<r25:default_layout_id>2</r25:default_layout_id>
+<r25:default_layout_name>Auditorium</r25:default_layout_name>
+</r25:space>
+<r25:actual_count>424</r25:actual_count>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:shared>F</r25:shared>
+<r25:space_comment_id/>
+<r25:space_comments/>
+<r25:space_instruction_id/>
+<r25:space_instructions/>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42459160">
+<r25:reservation_id>42459160</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-12-02T10:30:00-08:00</r25:reservation_start_dt>
+<r25:pre_event_dt>2015-12-02T10:30:00-08:00</r25:pre_event_dt>
+<r25:event_start_dt>2015-12-02T10:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-12-02T12:20:00-08:00</r25:event_end_dt>
+<r25:post_event_dt>2015-12-02T12:20:00-08:00</r25:post_event_dt>
+<r25:reservation_end_dt>2015-12-02T12:20:00-08:00</r25:reservation_end_dt>
+<r25:profile_id>2052957</r25:profile_id>
+<r25:profile_name>LECTURE</r25:profile_name>
+<r25:profile_description>From 10:30 AM to 12:20 PM.
+Starting on WED SEP/30/2015.
+Repeat every week
+ on MON WED
+ until FRI DEC/11/2015.</r25:profile_description>
+<r25:expected_count>435</r25:expected_count>
+<r25:registered_count/>
+<r25:registration_url/>
+<r25:registration_label/>
+<r25:last_mod_user>import</r25:last_mod_user>
+<r25:last_mod_dt>2015-03-12T15:59:48-07:00</r25:last_mod_dt>
+<r25:comment_id/>
+<r25:comments/>
+<r25:attendee_count>0</r25:attendee_count>
+<r25:event xl:href="event.xml?event_id=652072">
+<r25:event_id>652072</r25:event_id>
+<r25:event_name>COM 201 A</r25:event_name>
+<r25:event_title>INTRO TO COMM I</r25:event_title>
+<r25:favorite>F</r25:favorite>
+<r25:event_locator>2015-ABLCPS</r25:event_locator>
+<r25:event_type_id>341</r25:event_type_id>
+<r25:event_type_name>UG_SECTION</r25:event_type_name>
+<r25:event_type_class/>
+<r25:state>1</r25:state>
+<r25:state_name>Tentative</r25:state_name>
+<r25:organization xl:href="organization.xml?organization_id=4213">
+<r25:organization_id>4213</r25:organization_id>
+<r25:primary>T</r25:primary>
+<r25:organization_name>COM</r25:organization_name>
+</r25:organization>
+<r25:role>
+<r25:role_id>-2</r25:role_id>
+<r25:role_name>Scheduler</r25:role_name>
+<r25:contact xl:href="contact.xml?contact_id=3310">
+<r25:contact_id>3310</r25:contact_id>
+<r25:contact_name>IMPORT PROCESS</r25:contact_name>
+<r25:address>
+<r25:address_type>3</r25:address_type>
+<r25:formatted_address/>
+<r25:email>javerage@u.washington.edu</r25:email>
+<r25:phone/>
+<r25:fax/>
+</r25:address>
+</r25:contact>
+</r25:role>
+</r25:event>
+<r25:space_reservation xl:href="space.xml?space_id=4991">
+<r25:space_id>4991</r25:space_id>
+<r25:space>
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_id>107</r25:partition_id>
+<r25:partition_name>Kane</r25:partition_name>
+<r25:default_layout_id>2</r25:default_layout_id>
+<r25:default_layout_name>Auditorium</r25:default_layout_name>
+</r25:space>
+<r25:actual_count>435</r25:actual_count>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:shared>F</r25:shared>
+<r25:space_comment_id/>
+<r25:space_comments/>
+<r25:space_instruction_id/>
+<r25:space_instructions/>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=44228940">
+<r25:reservation_id>44228940</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-12-02T12:30:00-08:00</r25:reservation_start_dt>
+<r25:pre_event_dt>2015-12-02T12:30:00-08:00</r25:pre_event_dt>
+<r25:event_start_dt>2015-12-02T12:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-12-02T13:20:00-08:00</r25:event_end_dt>
+<r25:post_event_dt>2015-12-02T13:20:00-08:00</r25:post_event_dt>
+<r25:reservation_end_dt>2015-12-02T13:20:00-08:00</r25:reservation_end_dt>
+<r25:profile_id>2130084</r25:profile_id>
+<r25:profile_name>LECTURE</r25:profile_name>
+<r25:profile_description>From 12:30 PM to 01:20 PM.
+Starting on WED SEP/30/2015.
+Repeat every week
+ on MON TUE WED THU FRI
+ until FRI DEC/11/2015.</r25:profile_description>
+<r25:expected_count>432</r25:expected_count>
+<r25:registered_count>316</r25:registered_count>
+<r25:registration_url/>
+<r25:registration_label/>
+<r25:last_mod_user>import</r25:last_mod_user>
+<r25:last_mod_dt>2015-10-10T02:43:01-07:00</r25:last_mod_dt>
+<r25:comment_id/>
+<r25:comments/>
+<r25:attendee_count>0</r25:attendee_count>
+<r25:event xl:href="event.xml?event_id=651337">
+<r25:event_id>651337</r25:event_id>
+<r25:event_name>BIOL 200 A</r25:event_name>
+<r25:event_title>INTRO BIOL</r25:event_title>
+<r25:favorite>F</r25:favorite>
+<r25:event_locator>2015-ABLBNL</r25:event_locator>
+<r25:event_type_id>341</r25:event_type_id>
+<r25:event_type_name>UG_SECTION</r25:event_type_name>
+<r25:event_type_class/>
+<r25:state>1</r25:state>
+<r25:state_name>Tentative</r25:state_name>
+<r25:organization xl:href="organization.xml?organization_id=4183">
+<r25:organization_id>4183</r25:organization_id>
+<r25:primary>T</r25:primary>
+<r25:organization_name>BIOL</r25:organization_name>
+</r25:organization>
+<r25:role>
+<r25:role_id>-2</r25:role_id>
+<r25:role_name>Scheduler</r25:role_name>
+<r25:contact xl:href="contact.xml?contact_id=3310">
+<r25:contact_id>3310</r25:contact_id>
+<r25:contact_name>IMPORT PROCESS</r25:contact_name>
+<r25:address>
+<r25:address_type>3</r25:address_type>
+<r25:formatted_address/>
+<r25:email>javerage@u.washington.edu</r25:email>
+<r25:phone/>
+<r25:fax/>
+</r25:address>
+</r25:contact>
+</r25:role>
+</r25:event>
+<r25:space_reservation xl:href="space.xml?space_id=4991">
+<r25:space_id>4991</r25:space_id>
+<r25:space>
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_id>107</r25:partition_id>
+<r25:partition_name>Kane</r25:partition_name>
+<r25:default_layout_id>2</r25:default_layout_id>
+<r25:default_layout_name>Auditorium</r25:default_layout_name>
+</r25:space>
+<r25:actual_count>432</r25:actual_count>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:shared>F</r25:shared>
+<r25:space_comment_id/>
+<r25:space_comments/>
+<r25:space_instruction_id/>
+<r25:space_instructions/>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=42110525">
+<r25:reservation_id>42110525</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-12-02T13:30:00-08:00</r25:reservation_start_dt>
+<r25:pre_event_dt>2015-12-02T13:30:00-08:00</r25:pre_event_dt>
+<r25:event_start_dt>2015-12-02T13:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-12-02T14:20:00-08:00</r25:event_end_dt>
+<r25:post_event_dt>2015-12-02T14:20:00-08:00</r25:post_event_dt>
+<r25:reservation_end_dt>2015-12-02T14:20:00-08:00</r25:reservation_end_dt>
+<r25:profile_id>2040380</r25:profile_id>
+<r25:profile_name>LECTURE</r25:profile_name>
+<r25:profile_description>From 01:30 PM to 02:20 PM.
+Starting on WED SEP/30/2015.
+Repeat every week
+ on MON WED FRI
+ until FRI DEC/11/2015.</r25:profile_description>
+<r25:expected_count>440</r25:expected_count>
+<r25:registered_count/>
+<r25:registration_url/>
+<r25:registration_label/>
+<r25:last_mod_user>import</r25:last_mod_user>
+<r25:last_mod_dt>2015-03-04T13:47:33-08:00</r25:last_mod_dt>
+<r25:comment_id/>
+<r25:comments/>
+<r25:attendee_count>0</r25:attendee_count>
+<r25:event xl:href="event.xml?event_id=652560">
+<r25:event_id>652560</r25:event_id>
+<r25:event_name>ESS 101 A</r25:event_name>
+<r25:event_title>INTRO TO GEOL SCI</r25:event_title>
+<r25:favorite>F</r25:favorite>
+<r25:event_locator>2015-ABLDIM</r25:event_locator>
+<r25:event_type_id>341</r25:event_type_id>
+<r25:event_type_name>UG_SECTION</r25:event_type_name>
+<r25:event_type_class/>
+<r25:state>1</r25:state>
+<r25:state_name>Tentative</r25:state_name>
+<r25:organization xl:href="organization.xml?organization_id=4322">
+<r25:organization_id>4322</r25:organization_id>
+<r25:primary>T</r25:primary>
+<r25:organization_name>ESS</r25:organization_name>
+</r25:organization>
+<r25:role>
+<r25:role_id>-2</r25:role_id>
+<r25:role_name>Scheduler</r25:role_name>
+<r25:contact xl:href="contact.xml?contact_id=3310">
+<r25:contact_id>3310</r25:contact_id>
+<r25:contact_name>IMPORT PROCESS</r25:contact_name>
+<r25:address>
+<r25:address_type>3</r25:address_type>
+<r25:formatted_address/>
+<r25:email>times@u.washington.edu</r25:email>
+<r25:phone/>
+<r25:fax/>
+</r25:address>
+</r25:contact>
+</r25:role>
+</r25:event>
+<r25:space_reservation xl:href="space.xml?space_id=4991">
+<r25:space_id>4991</r25:space_id>
+<r25:space>
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_id>107</r25:partition_id>
+<r25:partition_name>Kane</r25:partition_name>
+<r25:default_layout_id>2</r25:default_layout_id>
+<r25:default_layout_name>Auditorium</r25:default_layout_name>
+</r25:space>
+<r25:actual_count>440</r25:actual_count>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:shared>F</r25:shared>
+<r25:space_comment_id/>
+<r25:space_comments/>
+<r25:space_instruction_id/>
+<r25:space_instructions/>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=43062571">
+<r25:reservation_id>43062571</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-12-02T14:30:00-08:00</r25:reservation_start_dt>
+<r25:pre_event_dt>2015-12-02T14:30:00-08:00</r25:pre_event_dt>
+<r25:event_start_dt>2015-12-02T14:30:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-12-02T15:20:00-08:00</r25:event_end_dt>
+<r25:post_event_dt>2015-12-02T15:20:00-08:00</r25:post_event_dt>
+<r25:reservation_end_dt>2015-12-02T15:20:00-08:00</r25:reservation_end_dt>
+<r25:profile_id>2078591</r25:profile_id>
+<r25:profile_name>LECTURE</r25:profile_name>
+<r25:profile_description>From 02:30 PM to 03:20 PM.
+Starting on WED SEP/30/2015.
+Repeat every week
+ on MON WED FRI
+ until FRI DEC/11/2015.</r25:profile_description>
+<r25:expected_count>345</r25:expected_count>
+<r25:registered_count/>
+<r25:registration_url/>
+<r25:registration_label/>
+<r25:last_mod_user>import</r25:last_mod_user>
+<r25:last_mod_dt>2015-04-23T08:46:10-07:00</r25:last_mod_dt>
+<r25:comment_id/>
+<r25:comments/>
+<r25:attendee_count>0</r25:attendee_count>
+<r25:event xl:href="event.xml?event_id=652211">
+<r25:event_id>652211</r25:event_id>
+<r25:event_name>CSE 142 A</r25:event_name>
+<r25:event_title>COMPUTER PRGRMNG I</r25:event_title>
+<r25:favorite>F</r25:favorite>
+<r25:event_locator>2015-ABLCVB</r25:event_locator>
+<r25:event_type_id>341</r25:event_type_id>
+<r25:event_type_name>UG_SECTION</r25:event_type_name>
+<r25:event_type_class/>
+<r25:state>1</r25:state>
+<r25:state_name>Tentative</r25:state_name>
+<r25:organization xl:href="organization.xml?organization_id=4218">
+<r25:organization_id>4218</r25:organization_id>
+<r25:primary>T</r25:primary>
+<r25:organization_name>CSE</r25:organization_name>
+</r25:organization>
+<r25:role>
+<r25:role_id>-2</r25:role_id>
+<r25:role_name>Scheduler</r25:role_name>
+<r25:contact xl:href="contact.xml?contact_id=3310">
+<r25:contact_id>3310</r25:contact_id>
+<r25:contact_name>IMPORT PROCESS</r25:contact_name>
+<r25:address>
+<r25:address_type>3</r25:address_type>
+<r25:formatted_address/>
+<r25:email>times@u.washington.edu</r25:email>
+<r25:phone/>
+<r25:fax/>
+</r25:address>
+</r25:contact>
+</r25:role>
+</r25:event>
+<r25:space_reservation xl:href="space.xml?space_id=4991">
+<r25:space_id>4991</r25:space_id>
+<r25:space>
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_id>107</r25:partition_id>
+<r25:partition_name>Kane</r25:partition_name>
+<r25:default_layout_id>2</r25:default_layout_id>
+<r25:default_layout_name>Auditorium</r25:default_layout_name>
+</r25:space>
+<r25:actual_count>345</r25:actual_count>
+<r25:layout_id/>
+<r25:layout_name/>
+<r25:shared>F</r25:shared>
+<r25:space_comment_id/>
+<r25:space_comments/>
+<r25:space_instruction_id/>
+<r25:space_instructions/>
+</r25:space_reservation>
+</r25:reservation>
+<r25:reservation xl:href="reservation.xml?rsrv_id=43944147">
+<r25:reservation_id>43944147</r25:reservation_id>
+<r25:reservation_state>1</r25:reservation_state>
+<r25:reservation_start_dt>2015-12-02T17:00:00-08:00</r25:reservation_start_dt>
+<r25:pre_event_dt>2015-12-02T17:00:00-08:00</r25:pre_event_dt>
+<r25:event_start_dt>2015-12-02T17:00:00-08:00</r25:event_start_dt>
+<r25:event_end_dt>2015-12-02T21:30:00-08:00</r25:event_end_dt>
+<r25:post_event_dt>2015-12-02T21:30:00-08:00</r25:post_event_dt>
+<r25:reservation_end_dt>2015-12-02T21:30:00-08:00</r25:reservation_end_dt>
+<r25:profile_id>2023802</r25:profile_id>
+<r25:profile_name>KNE 120</r25:profile_name>
+<r25:profile_description>From 05:00 PM to 09:30 PM.
+Repeat on WED OCT/21/2015,
+ WED NOV/04/2015,
+ WED NOV/18/2015,
+ WED DEC/02/2015.</r25:profile_description>
+<r25:expected_count/>
+<r25:registered_count/>
+<r25:registration_url/>
+<r25:registration_label/>
+<r25:last_mod_user>kanehall</r25:last_mod_user>
+<r25:last_mod_dt>2015-09-01T16:25:03-07:00</r25:last_mod_dt>
+<r25:comment_id/>
+<r25:comments/>
+<r25:attendee_count>0</r25:attendee_count>
+<r25:event xl:href="event.xml?event_id=646049">
+<r25:event_id>646049</r25:event_id>
+<r25:event_name>ASTRONOMY LECTURE SERIES</r25:event_name>
+<r25:event_title/>
+<r25:favorite>F</r25:favorite>
+<r25:event_locator>2015-ABKTSB</r25:event_locator>
+<r25:event_type_id>327</r25:event_type_id>
+<r25:event_type_name>Lecture</r25:event_type_name>
+<r25:event_type_class/>
+<r25:state>1</r25:state>
+<r25:state_name>Tentative</r25:state_name>
+<r25:organization xl:href="organization.xml?organization_id=4157">
+<r25:organization_id>4157</r25:organization_id>
+<r25:primary>T</r25:primary>
+<r25:organization_name>Alumni Association</r25:organization_name>
+</r25:organization>
+<r25:role>
+<r25:role_id>-2</r25:role_id>
+<r25:role_name>Scheduler</r25:role_name>
+<r25:contact xl:href="contact.xml?contact_id=8562">
+<r25:contact_id>8562</r25:contact_id>
+<r25:contact_name>AVERAGE, JOSEPH</r25:contact_name>
+<r25:address>
+<r25:address_type>3</r25:address_type>
+<r25:formatted_address/>
+<r25:email>javerage@uw.edu</r25:email>
+<r25:phone>206.555.5555</r25:phone>
+<r25:fax/>
+</r25:address>
+</r25:contact>
+</r25:role>
+</r25:event>
+<r25:space_reservation xl:href="space.xml?space_id=4991">
+<r25:space_id>4991</r25:space_id>
+<r25:space>
+<r25:space_name>KNE  120</r25:space_name>
+<r25:formal_name>Kane Hall</r25:formal_name>
+<r25:max_capacity>440</r25:max_capacity>
+<r25:partition_id>107</r25:partition_id>
+<r25:partition_name>Kane</r25:partition_name>
+<r25:default_layout_id>2</r25:default_layout_id>
+<r25:default_layout_name>Auditorium</r25:default_layout_name>
+</r25:space>
+<r25:actual_count/>
+<r25:layout_id>2</r25:layout_id>
+<r25:layout_name>Auditorium</r25:layout_name>
+<r25:shared>F</r25:shared>
+<r25:space_comment_id/>
+<r25:space_comments/>
+<r25:space_instruction_id/>
+<r25:space_instructions/>
+</r25:space_reservation>
+</r25:reservation>
+</r25:reservations>

@@ -150,7 +150,13 @@ def space_events_and_recordings(params):
         return event_sessions
 
     if search['space_id'] and search['start_dt']:
-        reservations = get_reservations(**search)
+        try:
+            reservations = get_reservations(**search)
+        except DataFailureException as ex:
+            if ex.status == 404:
+                reservations = []
+            else:
+                raise
 
         # build event sessions, accounting for joint class reservations
         for r in reservations:
@@ -436,7 +442,7 @@ def _local_ymd_from_utc_date_string(utc_date_string):
 
 
 def panopto_generic_external_id(id_string):
-    return sha1(bytearray(id_string)).hexdigest().upper()
+    return sha1(id_string.encode('utf-8')).hexdigest().upper()
 
 
 def r25_alien_uid(course):
