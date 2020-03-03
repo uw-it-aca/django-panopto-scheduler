@@ -67,11 +67,12 @@ class Command(BaseCommand):
             offered = self._courses[label]
         else:
             print("unrecognized session id: {}".format(session_id),
-                  file = sys.stderr)
+                  file=sys.stderr)
             return
 
         pan_session = self._session.getSessionsByExternalId([session_id])
-        if pan_session and 'Session' in pan_session and len(pan_session['Session']) == 1:
+        if (pan_session and 'Session' in pan_session and
+                len(pan_session['Session']) == 1):
             # broken-ass suds.
             fsuds = re.match(r'.*\<a\:StartTime\>([^<]+)\<\/a\:StartTime\>.*',
                              self._session._api.last_received().plain())
