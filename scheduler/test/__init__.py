@@ -1,6 +1,4 @@
 from django.contrib.auth.models import User
-from uw_gws.utilities import fdao_gws_override
-from uw_pws.util import fdao_pws_override
 
 
 def get_user(username):
