@@ -10,7 +10,7 @@ from panopto_client.session import SessionManagement
 from panopto_client.access import AccessManagement
 from panopto_client.user import UserManagement
 from panopto_client.remote_recorder import RemoteRecorderManagement
-from dateutil import tz
+from dateutil import tz, parser
 import json
 import logging
 import datetime
@@ -41,10 +41,9 @@ class Session(RESTDispatch):
             self._init_apis()
             raw_session = self._session_api.getSessionsById(
                 [session_id])[0][0]
+            start_utc = raw_session['StartTime'].astimezone(pytz.utc)
             raw_access = self._access_api.getSessionAccessDetails(
                 session_id)
-            start_utc = pytz.utc.localize(
-                raw_session['StartTime']).astimezone(tz.tzutc())
             session = {
                 'creator_id': raw_session['CreatorId'],
                 'description': raw_session['Description'],
@@ -59,8 +58,7 @@ class Session(RESTDispatch):
                 'is_public': raw_access['IsPublic'],
                 'is_downloadable': raw_session['IsDownloadable'],
                 'name': raw_session['Name'],
-                'remote_recorder_ids': raw_session['RemoteRecorderIds'].get(
-                    'guid', None),
+                'remote_recorder_ids': raw_session['RemoteRecorderIds'][0],
                 'share_page_url': raw_session['SharePageUrl'],
                 'start_time': start_utc.isoformat(),
                 'state': raw_session['State'],
@@ -84,7 +82,6 @@ class Session(RESTDispatch):
                 new_session.get('start_time'),
                 new_session.get('end_time'),
                 new_session.get('recorder_id'))
-
             if session.ConflictsExist:
                 conflict = session.ConflictingSessions[0][0]
                 start_time = conflict.StartTime
