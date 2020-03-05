@@ -1,6 +1,7 @@
 from django.test import TestCase
 from django.test.client import RequestFactory
 from django.urls import reverse_lazy
+from scheduler.test import get_user
 from scheduler.views.api.session import Session
 import json
 import logging
@@ -21,9 +22,13 @@ class TestAPISession(TestCase):
         self.assertEqual(sessions['state'], 'Scheduled')
         self.assertEqual(sessions['is_public'], False)
 
+        sessions['uwnetid'] = 'jfaculty'
         sessions['end_time'] = sessions['start_time']
         sessions['recorder_id'] = '22e12346-1234-1234-4321-12347f1234c5'
         sessions['folder_external_id'] = '2015-autumn-PSYCH-101-A'
+        sessions['key'] = '9AC7325FB31465FF946FFFC5514E35CEB3F42C38'
         request = RequestFactory().post(
             url, sessions, content_type="application/json")
+        request.user = get_user('jfaculty')
         response = session.post(request)
+        self.assertEqual(response.status_code, 200)
