@@ -32,3 +32,6 @@ class TestAPISession(TestCase):
         request.user = get_user('jfaculty')
         response = session.post(request)
         self.assertEqual(response.status_code, 200)
+
+        response = session.put(request)
+        self.assertEqual(response.status_code, 200)
