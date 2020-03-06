@@ -20,7 +20,8 @@ urlpatterns = [
     re_path(r'events/?$', events, name='events-view'),
     re_path(r'(blti/)?api/v1/recorder/(?P<recorder_id>[0-9a-f\-]+)?$',
             Recorder.as_view(), name='api_recorder'),
-    re_path(r'(blti/)?api/v1/space/(?P<space_id>[0-9]+)?$', Space.as_view()),
+    re_path(r'(blti/)?api/v1/space/(?P<space_id>[0-9]+)?$',
+            Space.as_view(), name='api_space'),
     re_path(r'(blti/)?api/v1/session/(?P<session_id>[0-9a-f\-]+)/public/?$',
             SessionPublic.as_view()),
     re_path(r'(blti/)?api/v1/session/'
@@ -34,7 +35,7 @@ urlpatterns = [
     re_path(r'(blti/)?api/v1/schedule/(?P<course_id>[\d\w& \a-zA-Z0-9\-]+)?$',
             Schedule.as_view()),
     re_path(r'(blti/)?api/v1/folder/(?P<folder_id>[0-9a-f\-]+)?$',
-            Folder.as_view())
+            Folder.as_view(), name='api_folder')
 ]
 
 # debug routes for developing error pages

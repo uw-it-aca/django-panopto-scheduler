@@ -26,19 +26,17 @@ class PanoptoUserException(Exception):
 
 
 class Session(RESTDispatch):
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         self._audit_log = logging.getLogger('audit')
-
-    def _init_apis(self):
         self._session_api = SessionManagement()
         self._recorder_api = RemoteRecorderManagement()
         self._access_api = AccessManagement()
         self._user_api = UserManagement()
+        super(Session, self).__init__(*args, **kwargs)
 
     def get(self, request, *args, **kwargs):
         session_id = kwargs.get('session_id')
         if session_id:
-            self._init_apis()
             raw_session = self._session_api.getSessionsById(
                 [session_id])[0][0]
             start_utc = raw_session['StartTime'].astimezone(pytz.utc)
@@ -73,7 +71,6 @@ class Session(RESTDispatch):
 
     def post(self, request, *args, **kwargs):
         try:
-            self._init_apis()
             new_session = self._validate_session(request.body)
             session = self._recorder_api.scheduleRecording(
                 new_session.get('name'),
@@ -127,7 +124,6 @@ class Session(RESTDispatch):
 
     def put(self, request, *args, **kwargs):
         try:
-            self._init_apis()
             session_update = self._validate_session(request.body)
             session = self._session_api.getSessionsById(
                 session_update.get('recording_id'))[0][0]
@@ -187,7 +183,6 @@ class Session(RESTDispatch):
 
     def delete(self, request, *args, **kwargs):
         try:
-            self._init_apis()
             session_id = self._valid_recorder_id(kwargs.get('session_id'))
             # do not permit param tampering
             key = course_event_key(request.GET.get('uwnetid', ''),

@@ -12,25 +12,18 @@ logger = logging.getLogger(__name__)
 
 
 class Folder(RESTDispatch):
-    def _init_apis(self):
+    def __init__(self, *args, **kwargs):
         self._session = SessionManagement()
         self._access = AccessManagement()
         self._user = UserManagement()
+        super(Folder, self).__init__(*args, **kwargs)
 
     def get(self, request, *args, **kwargs):
-        folder_id = kwargs.get('folder_id')
-        self._init_apis()
-        if (folder_id):
-            return self._get_folder_details()
-        else:
-            params = {}
-            for q in request.GET:
-                params[q] = request.GET.get(q)
+        params = {}
+        for q in request.GET:
+            params[q] = request.GET.get(q)
 
-            return self._list_folders(params)
-
-    def _get_folder_details(self):
-        return self.json_response()
+        return self._list_folders(params)
 
     def _list_folders(self, args):
         folders = []
@@ -48,7 +41,9 @@ class Folder(RESTDispatch):
                         if response and response.User:
                             for user in response.User:
                                 match = re.match(r'^{}\\(.+)$'.format(
-                                    settings.PANOPTO_API_APP_ID), user.UserKey)
+                                    getattr(
+                                        settings, 'PANOPTO_API_APP_ID', "")),
+                                    user.UserKey)
                                 creators.append({
                                     'key': match.group(1) if (
                                         match) else user.UserKey,
@@ -61,7 +56,9 @@ class Folder(RESTDispatch):
                         if response and response.User:
                             for user in response.User:
                                 match = re.match(r'^{}\\(.+)$'.format(
-                                    settings.PANOPTO_API_APP_ID), user.UserKey)
+                                    getattr(
+                                        settings, 'PANOPTO_API_APP_ID', '')),
+                                    user.UserKey)
                                 viewers.append({
                                     'key': match.group(1) if (
                                         match) else user.UserKey,

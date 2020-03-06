@@ -24,7 +24,8 @@ class TestAPIRecorder(TestCase):
     def test_get_recorder(self):
         recorder = Recorder()
         request = RequestFactory().get(
-            "/api/v1/recorder/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee")
+            "/api/v1/recorder/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+            recorder_id="aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee")
 
         response = recorder.get(request)
         recorders = json.loads(response.content)

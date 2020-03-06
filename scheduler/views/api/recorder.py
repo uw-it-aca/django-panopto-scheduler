@@ -20,11 +20,12 @@ logger = logging.getLogger(__name__)
 
 
 class Recorder(RESTDispatch):
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         self._space_list_cache_timeout = 1  # timeout in hours
+        self._api = RemoteRecorderManagement()
+        super(Recorder, self).__init__(*args, **kwargs)
 
     def get(self, request, *args, **kwargs):
-        self._api = RemoteRecorderManagement()
         recorder_id = kwargs.get('recorder_id')
         if request.GET.get('timeout'):
             self._space_list_cache_timeout = float(request.GET.get('timeout'))
@@ -39,7 +40,6 @@ class Recorder(RESTDispatch):
             Validation().panopto_id(recorder_id)
             data = json.loads(request.body)
             external_id = data.get('external_id', None)
-            self._api = RemoteRecorderManagement()
             if external_id is not None:
                 rv = self._api.updateRemoteRecorderExternalId(recorder_id,
                                                               external_id)
