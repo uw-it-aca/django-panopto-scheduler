@@ -464,7 +464,7 @@ class SessionRecordingTime(RESTDispatch):
     def get(self, request, *args, **kwargs):
         session_id = kwargs.get('session_id')
         if session_id:
-            self._recorder_api = RemoteRecorderManagement()
+            self._session_api = SessionManagement()
             raw_session = self._session_api.getSessionsById([session_id])[0][0]
             start_utc = raw_session.StartTime.astimezone(pytz.utc)
             end_utc = start_utc + datetime.timedelta(

@@ -23,13 +23,13 @@ urlpatterns = [
     re_path(r'(blti/)?api/v1/space/(?P<space_id>[0-9]+)?$',
             Space.as_view(), name='api_space'),
     re_path(r'(blti/)?api/v1/session/(?P<session_id>[0-9a-f\-]+)/public/?$',
-            SessionPublic.as_view()),
+            SessionPublic.as_view(), name='api_session_public'),
     re_path(r'(blti/)?api/v1/session/'
             r'(?P<session_id>[0-9a-f\-]+)/broadcast/?$',
-            SessionBroadcast.as_view()),
+            SessionBroadcast.as_view(), name='api_session_broadcast'),
     re_path(r'(blti/)?api/v1/session/(?P<session_id>'
             r'[0-9a-f\-]+)/recordingtime/?$',
-            SessionRecordingTime.as_view()),
+            SessionRecordingTime.as_view(), name='api_session_recording_time'),
     re_path(r'(blti/)?api/v1/session/(?P<session_id>[0-9a-f\-]+)?$',
             Session.as_view(), name='api_session'),
     re_path(r'(blti/)?api/v1/schedule/(?P<course_id>[\d\w& \a-zA-Z0-9\-]+)?$',
