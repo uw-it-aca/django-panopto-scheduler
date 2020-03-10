@@ -10,11 +10,6 @@ Installation
 
 **Project directory**
 
-Install django-panopto-client in your project.
-
-    $ cd [project]
-    $ pip install -e git+https://github.com/uw-it-aca/django-panopto-scheduler/#egg=django_panopto_scheduler
-
 Scheduling Interfaces
 ---------------------
 
