@@ -34,7 +34,6 @@ setup(
         'UW-Django-SAML2>=1.3.8,<2.0',
         'Django-SupportTools>=3.4,<4.0',
         'UW-RestClients-Django-Utils>=2.1.5,<3.0',
-        'mysqlclient==1.3.14',
         'django-prometheus>=1.0,<2.0',
     ],
     license='Apache License, Version 2.0',
