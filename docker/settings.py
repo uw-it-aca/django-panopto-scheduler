@@ -86,8 +86,8 @@ if not os.getenv("ENV", "localdev") == "localdev":
     PANOPTO_SERVER = os.getenv('PANOPTO_SERVER')
 
 # BLTI consumer key:secret pairs
-LTI_CONSUMERS = {k: v for k,v in list(map(
-    lambda s: s.split('='), os.getenv("LTI_CONSUMERS").split(',')))}
+LTI_CONSUMERS = {k: v for k, v in [s.split('=') for s in base64.b64decode(
+    os.getenv("FOO", "")).decode().split(',') if len(s)]}
 
 # BLTI session object encryption values
 BLTI_AES_KEY = os.getenv('BLTI_AES_KEY', '').encode()
