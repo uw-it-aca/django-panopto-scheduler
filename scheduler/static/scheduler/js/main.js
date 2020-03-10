@@ -738,7 +738,7 @@ var PanoptoScheduler = (function ($) {
             url: panopto_api_path('recorder/', { timeout: 0 }),
             complete: recorder_search_complete
         })
-            .fail(event_search_failure)
+            .fail(recorder_select_failure)
             .done(init_room_select);
         Handlebars.registerPartial('reservation-list', $('#reservation-list-partial').html());
     }

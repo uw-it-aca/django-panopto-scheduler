@@ -1,0 +1,106 @@
+ingress:
+  enabled: true
+  type: nginx
+  tls:
+    test-panopto:
+      secretName: test.panopto-app.uw.edu-11d8a310cafaffbcb768fe3d2776fafd
+      hosts:
+        - test.panopto-app.uw.edu
+  hosts:
+    test-panopto:
+      host: test.panopto-app.uw.edu
+      paths:
+        - "/"
+database:
+  engine: postgres
+  name: panopto
+  hostname: scheduler-db-test-service
+  secretName: scheduler-db-test
+externalService:
+  enabled: true
+  name: scheduler-db-test-service
+  type: ClusterIP
+  serviceAddress: 172.18.1.30
+  servicePort: 5432
+repo: scheduler
+instance: test
+replicaCount: 2
+minReplicas: 2
+maxReplicas: 6
+targetAverageUtilization: 90
+resources:
+  limits:
+    cpu: 600m
+  requests:
+    cpu: 200m
+image:
+  repository: registry.hub.docker.com/acait/scheduler
+  tag: IMAGE_TAG
+metrics:
+  enabled: true
+  serviceMonitor:
+    enabled: true
+certs:
+  mounted: true
+  certPath: /certs/test.panopto-app.uw.edu-uwca.cert
+  keyPath: /certs/test.panopto-app.uw.edu-uwca.key
+  secretName: test.panopto-app.uw.edu-uwca-ff4b2294c993e807217b2eb866cfe344
+environmentVariables:
+  - name: ENV
+    value: dev
+  - name: CERT_PATH
+    value: /certs/test.panopto-app.uw.edu-uwca.cert
+  - name: KEY_PATH
+    value: /certs/test.panopto-app.uw.edu-uwca.key
+  - name: GWS_ENV
+    value: PROD
+  - name: PWS_ENV
+    value: PROD
+  - name: SWS_ENV
+    value: PROD
+  - name: R25_ENV
+    value: PROD
+  - name: CANVAS_ENV
+    value: EVAL
+  - name: AUTH
+    value: SAML
+  - name: SAML_ENTITY_ID
+    value: https://test.panopto-app.uw.edu/saml/
+  - name: CLUSTER_CNAME
+    value: test.panopto-app.uw.edu
+  - name: SP_CERT
+    value: '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'
+  - name: IDP_CERT
+    value: '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'
+  panoptoAPIServer:
+    name: PANOPTO_SERVER
+    value: uw-test.hosted.panopto.com
+environmentVariablesSecrets:
+  djangoSecret:
+    name: DJANGO_SECRET
+    secretName: panopto-scheduler-test-django-secret
+    secretKey: django-secret
+  panoptoAPIUser:
+    name: PANOPTO_API_USER
+    secretName: test.panopto-app.uw.edu-api-user
+    secretKey: panopto-api-user
+  panoptoAPIAppId:
+    name: PANOPTO_API_APP_ID
+    secretName: test.panopto-app.uw.edu-api-app-id
+    secretKey: panopto-api-app-id
+  panoptoAPIToken:
+    name: PANOPTO_API_TOKEN
+    secretName: test.panopto-app.uw.edu-api-token
+    secretKey: panopto-api-token
+  panoptoAPIBLTIAESKey:
+    name: BLTI_AES_KEY
+    secretName: test.panopto-app.uw.edu-blti-aes-key
+    secretKey: blti-aes-key
+  panoptoAPIBLTIAESIV:
+    name: BLTI_AES_IV
+    secretName: test.panopto-app.uw.edu-blti-aes-iv
+    secretKey: blti-aes-iv
+  panoptoLTI_CONSUMERS:
+    name: LTI_CONSUMERS
+    secretName: test.panopto-app.uw.edu-lti-consumers
+    secretKey: lti-consumers

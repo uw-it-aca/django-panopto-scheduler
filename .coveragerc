@@ -1,0 +1,8 @@
+[run]
+source = scheduler
+parallel = True
+
+[paths]
+source =
+  scheduler/
+  /app/scheduler/

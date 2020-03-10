@@ -11,7 +11,7 @@ class Course(models.Model):
     section = models.CharField(max_length=2)
 
     def __str__(self):
-        return "%s-%s-%s-%s-%s" % (
+        return "{}-{}-{}-{}-{}".format(
             self.year, self.quarter, self.curriculum,
             self.number, self.section)
 
@@ -29,6 +29,7 @@ class RecorderCache(models.Model):
 
 class RecorderCacheEntry(models.Model):
     cache = models.ForeignKey(RecorderCache,
+                              on_delete=models.PROTECT,
                               related_name="+")
     recorder_id = models.CharField(max_length=36)
     recorder_external_id = models.CharField(max_length=32)
