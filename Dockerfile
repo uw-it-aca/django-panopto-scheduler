@@ -1,7 +1,7 @@
 FROM acait/django-container:1.0.21 as django
 
 USER root
-RUN apt-get update
+RUN apt-get update && apt-get install libpq-dev -y
 USER acait
 
 ADD --chown=acait:acait scheduler/VERSION /app/scheduler/
