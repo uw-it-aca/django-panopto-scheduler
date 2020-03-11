@@ -65,7 +65,7 @@ environmentVariables:
   - name: AUTH
     value: SAML
   - name: SAML_ENTITY_ID
-    value: https://test.panopto-app.uw.edu/saml/
+    value: https://test.panopto-app.uw.edu/saml
   - name: CLUSTER_CNAME
     value: test.panopto-app.uw.edu
   - name: SP_CERT
