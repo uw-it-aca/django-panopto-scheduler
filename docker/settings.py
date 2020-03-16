@@ -96,5 +96,7 @@ LTI_CONSUMERS = {k: v for k, v in [s.split('=') for s in os.getenv(
 BLTI_AES_KEY = os.getenv('BLTI_AES_KEY', '').encode()
 BLTI_AES_IV = os.getenv('BLTI_AES_IV', '').encode()
 
+RESTCLIENTS_R25_BASIC_AUTH = os.getenv('RTWOFIVE_BASIC_AUTH', '')
+
 
 DEBUG = True if os.getenv('ENV', 'localdev') == "localdev" else False
