@@ -91,6 +91,11 @@ environmentVariablesSecrets:
     name: PANOPTO_API_TOKEN
     secretName: test.panopto-app.uw.edu-api-token
     secretKey: panopto-api-token
+  r25AuthToken:
+    name: R25_BASIC_AUTH
+    secretName: test.panopto-app.uw.edu-r25-auth
+    secretKey: panopto-r25-auth-token
+test.panopto-app.uw.edu-r25-auth
   panoptoAPIBLTIAESKey:
     name: BLTI_AES_KEY
     secretName: test.panopto-app.uw.edu-blti-aes-key
