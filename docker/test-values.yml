@@ -81,29 +81,29 @@ environmentVariablesSecrets:
     secretKey: django-secret
   panoptoAPIUser:
     name: PANOPTO_API_USER
-    secretName: test.panopto-app.uw.edu-api-user
-    secretKey: panopto-api-user
+    secretName: test.panopto-app.uw.edu-panopto-api
+    secretKey: user
   panoptoAPIAppId:
     name: PANOPTO_API_APP_ID
-    secretName: test.panopto-app.uw.edu-api-app-id
-    secretKey: panopto-api-app-id
+    secretName: test.panopto-app.uw.edu-panopto-api
+    secretKey: app-id
   panoptoAPIToken:
     name: PANOPTO_API_TOKEN
-    secretName: test.panopto-app.uw.edu-api-token
-    secretKey: panopto-api-token
-  panoptoRTwoFiveAPIToken:
-    name: R25_BASIC_AUTH
-    secretName: test.panopto-app.uw.edu-rtwofive-auth-token
-    secretKey: rtwofive-auth-token
+    secretName: test.panopto-app.uw.edu-panopto-api
+    secretKey: token
   panoptoAPIBLTIAESKey:
     name: BLTI_AES_KEY
-    secretName: test.panopto-app.uw.edu-blti-aes-key
-    secretKey: blti-aes-key
+    secretName: test.panopto-app.uw.edu-blti-aes
+    secretKey: key
   panoptoAPIBLTIAESIV:
     name: BLTI_AES_IV
-    secretName: test.panopto-app.uw.edu-blti-aes-iv
-    secretKey: blti-aes-iv
+    secretName: test.panopto-app.uw.edu-blti-aes
+    secretKey: iv
   panoptoLTI_CONSUMERS:
     name: LTI_CONSUMERS
     secretName: test.panopto-app.uw.edu-lti-consumers
     secretKey: lti-consumers
+  r25APIToken:
+    name: R25_BASIC_AUTH
+    secretName: test.panopto-app.uw.edu-r25
+    secretKey: token
