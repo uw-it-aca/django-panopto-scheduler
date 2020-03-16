@@ -103,3 +103,7 @@ environmentVariablesSecrets:
     name: LTI_CONSUMERS
     secretName: test.panopto-app.uw.edu-lti-consumers
     secretKey: lti-consumers
+  collegenetAPIToken:
+    name: R25_BASIC_AUTH
+    secretName: test.panopto-app.uw.edu-collegenet
+    secretKey: token
