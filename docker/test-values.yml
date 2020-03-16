@@ -55,9 +55,9 @@ environmentVariables:
   - name: GWS_ENV
     value: PROD
   - name: PWS_ENV
-    value: PROD
+    value: EVAL
   - name: SWS_ENV
-    value: PROD
+    value: EVAL
   - name: R25_ENV
     value: PROD
   - name: CANVAS_ENV
