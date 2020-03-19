@@ -42,11 +42,6 @@
     {% endcompress %}
     {% endif %}
 
-    {% if not has_less_compiled %}
-    <script src="{% static "vendor/js/less-1.7.3.min.js" %}"></script>
-    {% endif %}
-
-
 </head>
 <body>
 
@@ -77,6 +72,9 @@
     <script src="{% static "vendor/js/moment.min.js" %}"></script>
     <script src="{% static "vendor/js/bootstrap-slider.min.js" %}"></script>
     <script src="{% static "vendor/js/bootstrap-toggle.min.js" %}"></script>
+    {% if not has_less_compiled %}
+    <script src="{% static "vendor/js/less-1.7.3.min.js" %}"></script>
+    {% endif %}
 	<script src="{% static "scheduler/js/desktop.js" %}"></script>
     <script src="{% static "scheduler/js/main.js" %}"></script>
 	{% block javascript %}{% endblock %}

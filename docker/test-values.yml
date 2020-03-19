@@ -103,6 +103,14 @@ environmentVariablesSecrets:
     name: LTI_CONSUMERS
     secretName: test.panopto-app.uw.edu-lti-consumers
     secretKey: lti-consumers
+  panoptoCanvasAPIOAccountID:
+    name: CANVAS_ACCOUNT_ID
+    secretName: test.panopto-app.uw.edu-canvas-api
+    secretKey: account-id
+  panoptoCanvasAPIOAuthBearer:
+    name: CANVAS_OAUTH_BEARER
+    secretName: test.panopto-app.uw.edu-canvas-api
+    secretKey: oauth-bearer
   collegenetAPIToken:
     name: RTWOFIVE_BASIC_AUTH
     secretName: test.panopto-app.uw.edu-collegenet
