@@ -112,6 +112,6 @@ environmentVariablesSecrets:
     secretName: test.panopto-app.uw.edu-canvas-api
     secretKey: oauth-bearer
   collegenetAPIToken:
-    name: RTWOFIVE_BASIC_AUTH
+    name: R25_BASIC_AUTH
     secretName: test.panopto-app.uw.edu-collegenet
     secretKey: token
