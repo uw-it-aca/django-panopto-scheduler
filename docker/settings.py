@@ -88,7 +88,7 @@ if not os.getenv("ENV", "localdev") == "localdev":
     PANOPTO_API_TOKEN = os.getenv('PANOPTO_API_TOKEN')
     PANOPTO_SERVER = os.getenv('PANOPTO_SERVER')
 
-# BLTI consumer key:secret pairs
+# BLTI consumer key:secret pairs in env as "k1=val1,k2=val2"
 LTI_CONSUMERS = {k: v for k, v in [s.split('=') for s in os.getenv(
     "LTI_CONSUMERS", "").split(',') if len(s)]}
 
