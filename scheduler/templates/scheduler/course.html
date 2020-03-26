@@ -17,12 +17,18 @@ Panopto Scheduler
 
 <!-- Header and help text -->
 
+{% if sis_course_id|slice:":11" == '2020-spring' %}
+<div class="no-future-meeting-times" style="margin-top: 3em; font-size: larger; width: 29em; padding: 20px; background-color: #efefef;">
+  Recording Scheduler is unavailable for spring quarter 2020.
+  <br />To schedule a recording, please contact <a href="mailto:help@uw.edu">help@uw.edu</a>.
+</div>
+{% else %}
 <h2>Schedule Your Recordings</h2>
 
 <div class="result-display-container course-search-result">
   <i class="fa fa-spinner fa-spin waiting"></i>
 </div>
-
+{% endif %}
 
 {% verbatim %}
 <script id="course-search-result-template" type="text/x-handlebars-template">
