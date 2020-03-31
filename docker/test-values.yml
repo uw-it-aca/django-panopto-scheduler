@@ -48,10 +48,6 @@ certs:
 environmentVariables:
   - name: ENV
     value: dev
-  - name: CERT_PATH
-    value: /certs/test.panopto-app.uw.edu-uwca.cert
-  - name: KEY_PATH
-    value: /certs/test.panopto-app.uw.edu-uwca.key
   - name: GWS_ENV
     value: PROD
   - name: PWS_ENV
