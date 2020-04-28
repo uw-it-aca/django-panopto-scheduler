@@ -22,14 +22,15 @@ env:
     - secure: "DgefETN9KIq89tBESM7BvT5Eh89El24HJ74UnhETH0OTtt7c7djsjLORhTpRUy2W06ZTu3o3BMQCHL3IMAsFiIC4o7dM1VxOm5P0/gUAESohC7TgfqSWuuPSx/50V8DEfTptaLRdxlqA3mTPnVSi43VW1T3YoX6l8xJ6bflHN7c/8h/WltO1KiaaEfRZHoArh4cizYUrRwrWYOWuZ2SumqZ4L39FUCxLsMrrvwfd/iMt9gir0BnZOrKDSOxACSGJQikFB9nsxncpryOhH+Kfr8sxpNc0x0BD+DNtUM+FSOyU2K8LJMW54Xy7CmuzPxlQDR50R8Q9O1iO6p9KQ3z9u0SZugH8PJsPnR9LpOGDPFC7+3EQRfUa1fdgEb0y/2GHi2DrAfDpThtloy8yDEn5UV8vgmtkMq6UqJIouZ46MC2pY3wpUq3oQP4VgrNNrkS+rnfdk91t7k6RAbDmqC6ZNakX3OhR+HSnH05i14oHxVdaQDEw68XMg6acKaViDoRRJF+ql4hhPTsbFX/x9kGqy/Rl5rUFgqEp4rCRxr7WjF/O7mIufZh9qu3Eqc04UN/8gLrK+W7n50Qc1UZYg49wGivY3I/nJIEZCrkJUkJrXn2bNF4aPLk9IGwhfv4KdnKNSwepRhJTKD5TByh1zUHeF9P2AA7EZ56IhShu5XOcbvE="
 
 install:
-  - docker build -t "$IMAGE_TAG" .
+  - docker build --target scheduler -t "$IMAGE_TAG" .
+  - docker build -t "${IMAGE_TAG}-test" .
 
 before_script:
   - pip install coverage
   - pip install coveralls
 
 script:
-  - docker run -u root -it -v /tmp:/coverage -e DJANGO_APP="$DJANGO_APP" -e "ENV=localdev" -e "AUTH=SAML_MOCK" "$IMAGE_TAG" bash -c ". ./travis-ci/test.sh"
+  - docker run -u root -it -v /tmp:/coverage -e DJANGO_APP="$DJANGO_APP" -e "ENV=localdev" -e "AUTH=SAML_MOCK" "${IMAGE_TAG}-test" bash -c ". ./travis-ci/test.sh"
 
 after_success:
   - cp /tmp/.coverage.* .
