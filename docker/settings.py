@@ -14,7 +14,6 @@ if os.getenv('AUTH', 'NONE') == 'SAML_MOCK':
     }
 
 INSTALLED_APPS += [
-    'django_prometheus',
     'compressor',
     'django.contrib.humanize',
     'userservice',
@@ -23,13 +22,7 @@ INSTALLED_APPS += [
     'supporttools',
 ]
 
-MIDDLEWARE = ['django_prometheus.middleware.PrometheusBeforeMiddleware'] +\
-             MIDDLEWARE +\
-             ['userservice.user.UserServiceMiddleware',
-              'django_prometheus.middleware.PrometheusAfterMiddleware']
-
-if not os.getenv("ENV") == "localdev":
-    DATABASES['default']['ENGINE'] = 'django_prometheus.db.backends.postgresql'
+MIDDLEWARE += ['userservice.user.UserServiceMiddleware',]
 
 COMPRESS_ENABLED = True
 COMPRESS_OFFLINE = True
