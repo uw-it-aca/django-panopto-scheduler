@@ -22,4 +22,4 @@ RUN . /app/bin/activate && python manage.py compress -f && python manage.py coll
 
 FROM acait/django-test-container:1.0.26 as scheduler-test
 
-ADD . /app/
+COPY --from=0 /app/ .
