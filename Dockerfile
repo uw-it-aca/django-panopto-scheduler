@@ -1,4 +1,4 @@
-FROM acait/django-container:1.0.26 as scheduler
+FROM acait/django-container:1.0.34 as app-container
 
 USER root
 RUN apt-get update && apt-get install libpq-dev -y
@@ -17,9 +17,16 @@ RUN . /app/bin/activate && pip install nodeenv && nodeenv -p &&\
 ADD --chown=acait:acait . /app/
 ADD --chown=acait:acait docker/ project/
 
-RUN . /app/bin/activate && python manage.py compress -f && python manage.py collectstatic --noinput
+RUN . /app/bin/activate &&\
+    pip install nodeenv &&\
+    nodeenv -p &&\
+    npm install -g npm &&\
+    ./bin/npm install less -g
 
+RUN . /app/bin/activate && python manage.py collectstatic --noinput &&\
+    python manage.py compress -f
 
-FROM acait/django-test-container:1.0.26 as scheduler-test
+FROM acait/django-test-container:1.0.34 as app-test-container
 
 COPY --from=0 /app/ .
+COPY --from=0 /static/ /static/
