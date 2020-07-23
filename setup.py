@@ -23,7 +23,7 @@ setup(
     install_requires=[
         'Django>=2.1,<2.2',
         'django-compressor==2.2',
-        'django-blti>=1.2.5,<2.0',
+        'django-blti>=2.1.2,<3.0',
         'django-userservice>=2.0.1',
         'psycopg2',
         'UW-RestClients-Core>=1.3.1,<2.0',
