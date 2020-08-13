@@ -22,7 +22,10 @@ INSTALLED_APPS += [
     'supporttools',
 ]
 
-MIDDLEWARE += ['userservice.user.UserServiceMiddleware',]
+MIDDLEWARE = ['blti.middleware.SessionHeaderMiddleware',
+              'blti.middleware.CSRFHeaderMiddleware',] +\
+              MIDDLEWARE +\
+              ['userservice.user.UserServiceMiddleware',]
 
 COMPRESS_ENABLED = True
 COMPRESS_OFFLINE = True
@@ -84,9 +87,10 @@ if not os.getenv("ENV", "localdev") == "localdev":
 # BLTI consumer key:secret pairs in env as "k1=val1,k2=val2"
 LTI_CONSUMERS = {k: v for k, v in [s.split('=') for s in os.getenv(
     "LTI_CONSUMERS", "").split(',') if len(s)]}
+LTI_ENFORCE_SSL=False
 
 # BLTI session object encryption values
-BLTI_AES_KEY = os.getenv('BLTI_AES_KEY', '').encode()
-BLTI_AES_IV = os.getenv('BLTI_AES_IV', '').encode()
+BLTI_AES_KEY = bytes(os.getenv('BLTI_AES_KEY', ''), encoding='utf8')
+BLTI_AES_IV = bytes(os.getenv('BLTI_AES_IV', ''), encoding='utf8')
 
 DEBUG = True if os.getenv('ENV', 'localdev') == "localdev" else False
