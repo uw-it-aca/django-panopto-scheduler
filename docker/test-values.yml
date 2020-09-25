@@ -17,7 +17,7 @@ ingress:
   type: nginx
   tls:
     test-panopto:
-      secretName: test.panopto.uw.edu-ingress-cert
+      secretName: test.panopto-app.uw.edu-ingress-cert
       hosts:
         - test.panopto-app.uw.edu
   hosts:
@@ -42,12 +42,6 @@ readiness:
   enabled: true
 repo: scheduler
 instance: test
-targetAverageUtilization: 90
-resources:
-  limits:
-    cpu: 600m
-  requests:
-    cpu: 200m
 image:
   repository: registry.hub.docker.com/acait/scheduler
   tag: IMAGE_TAG
@@ -74,7 +68,7 @@ environmentVariables:
   - name: CANVAS_ENV
     value: EVAL
   - name: AUTH
-    value: SAML
+    value: SAML BLTI
   - name: CLUSTER_CNAME
     value: test.panopto-app.uw.edu
   - name: PANOPTO_SERVER

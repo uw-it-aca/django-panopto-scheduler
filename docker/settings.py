@@ -1,8 +1,9 @@
 from .base_settings import *
+import json
 
 ALLOWED_HOSTS = ['*']
 
-if os.getenv('AUTH', 'NONE') == 'SAML_MOCK':
+if 'SAML_MOCK' in os.getenv('AUTH', '').split(' '):
     MOCK_SAML_ATTRIBUTES = {
         'uwnetid': ['jfaculty'],
         'affiliations': ['faculty', 'employee', 'member'],
@@ -13,19 +14,20 @@ if os.getenv('AUTH', 'NONE') == 'SAML_MOCK':
                        'u_acadev_panopto_support'],
     }
 
+if 'BLTI_DEV' in os.getenv('AUTH', '').split(' '):
+    MIDDLEWARE.remove('blti.middleware.SameSiteMiddleware')
+    SESSION_COOKIE_SECURE = False
+    CSRF_COOKIE_SECURE = False
+
 INSTALLED_APPS += [
     'compressor',
     'django.contrib.humanize',
     'userservice',
     'scheduler.apps.SchedulerConfig',
-    'blti',
     'supporttools',
 ]
 
-MIDDLEWARE = ['blti.middleware.SessionHeaderMiddleware',
-              'blti.middleware.CSRFHeaderMiddleware',] +\
-              MIDDLEWARE +\
-              ['userservice.user.UserServiceMiddleware',]
+MIDDLEWARE += ['userservice.user.UserServiceMiddleware',]
 
 COMPRESS_ENABLED = True
 COMPRESS_OFFLINE = True
@@ -83,14 +85,5 @@ if not os.getenv("ENV", "localdev") == "localdev":
     PANOPTO_API_APP_ID = os.getenv('PANOPTO_API_APP_ID')
     PANOPTO_API_TOKEN = os.getenv('PANOPTO_API_TOKEN')
     PANOPTO_SERVER = os.getenv('PANOPTO_SERVER')
-
-# BLTI consumer key:secret pairs in env as "k1=val1,k2=val2"
-LTI_CONSUMERS = {k: v for k, v in [s.split('=') for s in os.getenv(
-    "LTI_CONSUMERS", "").split(',') if len(s)]}
-LTI_ENFORCE_SSL=False
-
-# BLTI session object encryption values
-BLTI_AES_KEY = bytes(os.getenv('BLTI_AES_KEY', ''), encoding='utf8')
-BLTI_AES_IV = bytes(os.getenv('BLTI_AES_IV', ''), encoding='utf8')
 
 DEBUG = True if os.getenv('ENV', 'localdev') == "localdev" else False
