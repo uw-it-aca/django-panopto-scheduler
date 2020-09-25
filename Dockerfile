@@ -1,4 +1,4 @@
-FROM acait/django-container:1.0.35 as app-container
+FROM acait/django-container:1.1.4 as app-container
 
 USER root
 RUN apt-get update && apt-get install libpq-dev -y
@@ -26,7 +26,7 @@ RUN . /app/bin/activate &&\
 RUN . /app/bin/activate && python manage.py collectstatic --noinput &&\
     python manage.py compress -f
 
-FROM acait/django-test-container:1.0.35 as app-test-container
+FROM acait/django-test-container:1.1.4 as app-test-container
 
 COPY --from=0 /app/ .
 COPY --from=0 /static/ /static/
