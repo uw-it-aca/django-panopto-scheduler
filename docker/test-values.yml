@@ -5,11 +5,11 @@ autoscaling:
 targetAverageUtilization: 100
 resources:
   limits:
-    cpu: 1.0
-    memory: 1280Mi
-  requests:
-    cpu: 256m
+    cpu: 500m
     memory: 1024Mi
+  requests:
+    cpu: 10m
+    memory: 512Mi
 affinity:
    podsSpanNodes: true
 ingress:
