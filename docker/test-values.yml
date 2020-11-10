@@ -1,0 +1,175 @@
+autoscaling:
+  enabled: true
+  minReplicas: 1
+  maxReplicas: 2
+targetAverageUtilization: 100
+resources:
+  limits:
+    cpu: 500m
+    memory: 1024Mi
+  requests:
+    cpu: 10m
+    memory: 512Mi
+affinity:
+   podsSpanNodes: true
+ingress:
+  enabled: true
+  type: nginx
+  tls:
+    test-panopto:
+      secretName: test.panopto-app.uw.edu-ingress-cert
+      hosts:
+        - test.panopto-app.uw.edu
+  hosts:
+    test-panopto:
+      host: test.panopto-app.uw.edu
+      paths:
+        - "/"
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+database:
+  engine: mysql
+  name: panopto_test
+  hostname: scheduler-db-test-service
+  secretName: test.panopto-app.uw.edu-sql-secrets
+externalService:
+  enabled: true
+  name: scheduler-db-test-service
+  type: ClusterIP
+  serviceAddress: 172.18.0.39
+  servicePort: 3306
+readiness:
+  enabled: true
+repo: scheduler
+instance: test
+image:
+  repository: registry.hub.docker.com/acait/scheduler
+  tag: IMAGE_TAG
+metrics:
+  enabled: true
+  serviceMonitor:
+    enabled: true
+certs:
+  mounted: true
+  certPath: /certs/test.panopto-app.uw.edu-uwca.cert
+  keyPath: /certs/test.panopto-app.uw.edu-uwca.key
+  secretName: test.panopto-app.uw.edu-uwca-certs
+environmentVariables:
+  - name: ENV
+    value: dev
+  - name: GWS_ENV
+    value: PROD
+  - name: PWS_ENV
+    value: EVAL
+  - name: SWS_ENV
+    value: EVAL
+  - name: R25_ENV
+    value: PROD
+  - name: CANVAS_ENV
+    value: EVAL
+  - name: AUTH
+    value: SAML BLTI
+  - name: CLUSTER_CNAME
+    value: test.panopto-app.uw.edu
+  - name: PANOPTO_SERVER
+    value: uw-test.hosted.panopto.com
+
+externalSecrets:
+  enabled: true
+  secrets:
+    - name: test.panopto-app.uw.edu-secrets
+      externalKey: axdd/kv/data/panopto-app/test/secrets
+      data:
+        - name: django-secret
+          property: django-secret
+        - name: panopto-api-user
+          property: panopto-api-user
+        - name: panopto-api-app-id
+          property: panopto-api-app-id
+        - name: panopto-api-token
+          property: panopto-api-token
+        - name: blti-aes-iv
+          property: blti-aes-iv
+        - name: blti-aes-key
+          property: blti-aes-key
+        - name: canvas-account-id
+          property: canvas-account-id
+        - name: canvas-oauth-bearer
+          property: canvas-oauth-bearer
+        - name: collegenet-auth-token
+          property: collegenet-auth-token
+        - name: lti-consumers
+          property: lti-consumers
+    - name: test.panopto-app.uw.edu-sql-secrets
+      externalKey: axdd/kv/data/panopto-app/test/sql-secrets
+      data:
+        - name: username
+          property: sql_user
+        - name: password
+          property: sql_pass
+    - name: test.panopto-app.uw.edu-uwca-certs
+      externalKey: axdd/kv/data/panopto-app/test/uwca-certs
+      data:
+        - name: test.panopto-app.uw.edu-uwca.key
+          property: key
+        - name: test.panopto-app.uw.edu-uwca.cert
+          property: cert
+    - name: test.panopto-app.uw.edu-ic-certs
+      externalKey: axdd/kv/data/panopto-app/test/ic-certs
+      data:
+        - name: test.panopto-app.uw.edu.cert
+          property: cert
+    - name: test.panopto-app.uw.edu-uw-idp-cert
+      externalKey: axdd/kv/data/idp-cert
+      data:
+        - name: uw-idp-cert
+          property: cert
+environmentVariablesSecrets:
+  djangoSecret:
+    name: DJANGO_SECRET
+    secretName: test.panopto-app.uw.edu-secrets
+    secretKey: django-secret
+  panoptoAPIUser:
+    name: PANOPTO_API_USER
+    secretName: test.panopto-app.uw.edu-secrets
+    secretKey: panopto-api-user
+  panoptoAPIAppId:
+    name: PANOPTO_API_APP_ID
+    secretName: test.panopto-app.uw.edu-secrets
+    secretKey: panopto-api-app-id
+  panoptoAPIToken:
+    name: PANOPTO_API_TOKEN
+    secretName: test.panopto-app.uw.edu-secrets
+    secretKey: panopto-api-token
+  panoptoAPIBLTIAESKey:
+    name: BLTI_AES_KEY
+    secretName: test.panopto-app.uw.edu-secrets
+    secretKey: blti-aes-key
+  panoptoAPIBLTIAESIV:
+    name: BLTI_AES_IV
+    secretName: test.panopto-app.uw.edu-secrets
+    secretKey: blti-aes-iv
+  panoptoCanvasAPIOAccountID:
+    name: CANVAS_ACCOUNT_ID
+    secretName: test.panopto-app.uw.edu-secrets
+    secretKey: canvas-account-id
+  panoptoCanvasAPIOAuthBearer:
+    name: CANVAS_OAUTH_BEARER
+    secretName: test.panopto-app.uw.edu-secrets
+    secretKey: canvas-oauth-bearer
+  collegenetAPIToken:
+    name: R25_BASIC_AUTH
+    secretName: test.panopto-app.uw.edu-secrets
+    secretKey: collegenet-auth-token
+  panoptoLTI_CONSUMERS:
+    name: LTI_CONSUMERS
+    secretName: test.panopto-app.uw.edu-secrets
+    secretKey: lti-consumers
+  SAMLServiceProviderCert:
+    name: SP_CERT
+    secretName: test.panopto-app.uw.edu-ic-certs
+    secretKey: test.panopto-app.uw.edu.cert
+  SAMLIDPCert:
+    name: IDP_CERT
+    secretName: test.panopto-app.uw.edu-uw-idp-cert
+    secretKey: uw-idp-cert

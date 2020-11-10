@@ -1,7 +1,5 @@
-{% load templatetag_handlebars %}
-
-
-{% tplhandlebars "schedule-button-partial" %}
+{% verbatim %}
+<script id="schedule-button-partial" type="text/x-handlebars-template">
 
 <div class="schedule-button-cluster {{#unless is_recorded}}{{#if recording_is_public}}is-public {{/if}}{{#if recording_is_broadcast}}is-webcast {{/if}}{{#unless full_duration}}partial-duration{{/unless}} {{#if disabled}}disabled{{/if}}{{/unless}}">
      <!-- duration status --> 
@@ -92,9 +90,11 @@
     <!-- end container for scheduler button, toggle, and resulting modal --> 
 </div>
 
-{% endtplhandlebars %}
+</script>
+{% endverbatim %}
 
-{% tplhandlebars "ajax-fail-tmpl" %}
+{% verbatim %}
+<script id="ajax-fail-tmpl" type="text/x-handlebars-template">
 <div class="modal fade" id="failure-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <!-- Failure modal -->
   <div class="modal-dialog">
@@ -115,4 +115,5 @@
     </div>
   </div>
 </div>
-{% endtplhandlebars %}
+</script>
+{% endverbatim %}

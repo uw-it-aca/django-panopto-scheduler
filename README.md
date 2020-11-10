@@ -1,17 +1,14 @@
-ACA Panopto Scheduler
-=====================
-
+# Panopto Scheduler
 A django application to aid in the scheduling of Panopto recordings in the context of an CollegeNet R25
+
+[![Build Status](https://travis-ci.com/uw-it-aca/django-panopto-scheduler.svg?branch=master)](https://travis-ci.com/uw-it-aca/django-panopto-scheduler)
+[![Coverage Status](https://coveralls.io/repos/github/uw-it-aca/django-panopto-scheduler/badge.svg?branch=master)](https://coveralls.io/github/uw-it-aca/django-panopto-scheduler?branch=master)
+
 
 Installation
 ------------
 
 **Project directory**
-
-Install django-panopto-client in your project.
-
-    $ cd [project]
-    $ pip install -e git+https://github.com/uw-it-aca/django-panopto-scheduler/#egg=django_panopto_scheduler
 
 Scheduling Interfaces
 ---------------------

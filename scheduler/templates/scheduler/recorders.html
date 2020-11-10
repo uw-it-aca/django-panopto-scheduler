@@ -2,7 +2,6 @@
 
 {% load staticfiles %}
 {% load compress %}
-{% load templatetag_handlebars %}
 {% load i18n %}
 
 {% block content %}
@@ -30,7 +29,8 @@
 </div> <!-- .container-fluid -->
 <hr>
 
-{% tplhandlebars "recorder-selection-tmpl" %}
+{% verbatim %}
+<script id="recorder-selection-tmpl" type="text/x-handlebars-template">
 <div class="container">
   <div class="recorder-selection" role="form">
     <div class="form-group">
@@ -71,9 +71,11 @@
     <div class="result-display-container event-search-result"></div>
   </div>
 </div>
-{% endtplhandlebars %}
+</script>
+{% endverbatim %}
 
-{% tplhandlebars "event-search-result-template" %}
+{% verbatim %}
+<script id="event-search-result-template" type="text/x-handlebars-template">
   <div class="result-list-container">
     <div class="result-header">
         <span class="sr-only">Schedule in {{room}}</span>
@@ -88,16 +90,20 @@
     {{> reservation-list}}
 
   </div>
-{% endtplhandlebars %}
+</script>
+{% endverbatim %}
 
 
-{% tplhandlebars "event-search-result-empty-template" %}
+{% verbatim %}
+<script id="event-search-result-empty-template" type="text/x-handlebars-template">
   <div class="room-header"><!-- Rslt Header -->
 	<h3>No events scheduled on this recorder</h3>
   </div>	<!-- .Rslt Header -->
-{% endtplhandlebars %}
+</script>
+{% endverbatim %}
 
-{% tplhandlebars "reservation-list-partial" %}
+{% verbatim %}
+<script id="reservation-list-partial" type="text/x-handlebars-template">
   <ol class="list-group result-list-chunk">
     {{#each schedule}}
       <li class="list-group-item clearfix">
@@ -122,9 +128,11 @@
       </li>
     {{/each}}
   </ol>
-{% endtplhandlebars %}
+</script>
+{% endverbatim %}
 
-{% tplhandlebars "schedule-button-partial" %}
+{% verbatim %}
+<script id="schedule-button-partial" type="text/x-handlebars-template">
 <div class="schedule-button-cluster {{#unless is_recorded}}{{#if recording_is_public}}is-public {{/if}}{{#if recording_is_broadcast}}is-webcast {{/if}}{{#unless full_duration}}partial-duration{{/unless}} {{#if disabled}}disabled{{/if}}{{/unless}}">
      <!-- duration status -->
         <span class="schedule-duration" title="Recording time is less than class session duration"><span>{{ recording_time }}</span>
@@ -150,16 +158,20 @@
     </div>
     <!-- end container for scheduler button, toggle, and resulting modal --> 
 </div>
-{% endtplhandlebars %}
+</script>
+{% endverbatim %}
 
-{% tplhandlebars "ajax-waiting" %}
+{% verbatim %}
+<script id="ajax-waiting" type="text/x-handlebars-template">
   <div class="waiting">
     <i class="fa fa-spinner fa-4 fa-spin"></i>
   </div>
-{% endtplhandlebars %}
+</script>
+{% endverbatim %}
 
 
-{% tplhandlebars "assign-space-tmpl" %}
+{% verbatim %}
+<script id="assign-space-tmpl" type="text/x-handlebars-template">
 <div class="modal fade assign-space-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -187,14 +199,17 @@
     </div>
   </div>
 </div>
-{% endtplhandlebars %}
+</script>
+{% endverbatim %}
 
 
-{% tplhandlebars "folder_created_message" %}
+{% verbatim %}
+<script id="folder_created_message" type="text/x-handlebars-template">
 Click the folder icon
 <a href="{{folder_url}}" target="_blank" style="color: black;"><span class="fa-stack"><i class="fa fa-play-circle-o fa-stack-1x"></i><i class="fa fa-folder-o fa-stack-2x"></i></span></a>
 to open the scheduled session's Panopto folder.
-{% endtplhandlebars %}
+</script>
+{% endverbatim %}
 
 
 <script type="text/javascript">
@@ -205,6 +220,7 @@ window.scheduler = {
 };
 </script>
 
+{% include "scheduler/handlebars/failure.html" %}
 {% endblock content %}
 
 {% block extra_css %}
