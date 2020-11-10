@@ -14,11 +14,6 @@ if 'SAML_MOCK' in os.getenv('AUTH', '').split(' '):
                        'u_acadev_panopto_support'],
     }
 
-if 'BLTI_DEV' in os.getenv('AUTH', '').split(' '):
-    MIDDLEWARE.remove('blti.middleware.SameSiteMiddleware')
-    SESSION_COOKIE_SECURE = False
-    CSRF_COOKIE_SECURE = False
-
 INSTALLED_APPS += [
     'compressor',
     'django.contrib.humanize',
