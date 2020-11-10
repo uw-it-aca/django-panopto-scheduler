@@ -60,13 +60,13 @@ environmentVariables:
   - name: GWS_ENV
     value: PROD
   - name: PWS_ENV
-    value: EVAL
+    value: PROD
   - name: SWS_ENV
-    value: EVAL
+    value: PROD
   - name: R25_ENV
     value: PROD
   - name: CANVAS_ENV
-    value: EVAL
+    value: PROD
   - name: AUTH
     value: SAML BLTI
   - name: CLUSTER_CNAME
