@@ -28,16 +28,16 @@ ingress:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt
 database:
-  engine: postgres
-  name: panopto
+  engine: mysql
+  name: panopto_test
   hostname: scheduler-db-test-service
   secretName: test.panopto-app.uw.edu-sql-secrets
 externalService:
   enabled: true
   name: scheduler-db-test-service
   type: ClusterIP
-  serviceAddress: 172.18.1.30
-  servicePort: 5432
+  serviceAddress: 172.18.0.39
+  servicePort: 3306
 readiness:
   enabled: true
 repo: scheduler
