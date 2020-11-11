@@ -50,21 +50,28 @@ COMPRESS_JS_FILTERS = [
     'compressor.filters.jsmin.JSMinFilter',
 ]
 
+TEMPLATES[0]['DIRS'] = ['/app/scheduler/templates']
+TEMPLATES[0]['OPTIONS']['context_processors'] += [
+    'django.template.context_processors.i18n',
+    'django.template.context_processors.media',
+    'django.template.context_processors.static',
+    'django.template.context_processors.tz',
+    'supporttools.context_processors.supportools_globals',
+]
+
 USERSERVICE_VALIDATION_MODULE = "scheduler.userservice_validation.validate"
 
 PANOPTO_ADMIN_GROUP = 'u_acadev_panopto_support'
 RESTCLIENTS_ADMIN_GROUP = PANOPTO_ADMIN_GROUP
 USERSERVICE_ADMIN_GROUP = PANOPTO_ADMIN_GROUP
 
-AUTHZ_GROUP_BACKEND = 'authz_group.authz_implementation.uw_group_service.UWGroupService'
 
 #if not os.getenv("ENV") == "localdev":
 #    INSTALLED_APPS += ['rc_django',]
 #    RESTCLIENTS_DAO_CACHE_CLASS = 'scheduler.cache.RestClientsCache'
 
-RESTCLIENTS_DEFAULT_TIMEOUT = 3
-
-SUPPORTTOOLS_PARENT_APP = 'Panopto'
+SUPPORTTOOLS_PARENT_APP = "Panopto"
+SUPPORTTOOLS_PARENT_APP_URL = "/courses"
 
 #USERSERVICE_OVERRIDE_AUTH_MODULE = "scheduler.authorization.can_override_user"
 #RESTCLIENTS_ADMIN_AUTH_MODULE = "scheduler.authorization.can_proxy_restclient"
