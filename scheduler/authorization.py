@@ -3,7 +3,7 @@ from uw_saml.utils import is_member_of_group
 import re
 
 
-def validate(username):
+def userservice_validate(username):
     if len(username) == 0:
         return "No override user supplied"
 
@@ -18,10 +18,5 @@ def validate(username):
     return None
 
 
-def can_override_user(request):
-    """
-    Return True if the original user has impersonate permission
-    """
-    return is_member_of_group(request,
-                              getattr(settings, "PANOPTO_ADMIN_GROUP",
-                                      'u_acadev_panopto_support'))
+def can_view_source_data(request, service=None, url=None):
+    return is_member_of_group(request, settings.RESTCLIENTS_ADMIN_GROUP)
