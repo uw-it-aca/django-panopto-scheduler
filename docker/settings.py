@@ -59,12 +59,12 @@ TEMPLATES[0]['OPTIONS']['context_processors'] += [
     'supporttools.context_processors.supportools_globals',
 ]
 
-USERSERVICE_VALIDATION_MODULE = "scheduler.userservice_validation.validate"
+USERSERVICE_VALIDATION_MODULE = "scheduler.authorization.userservice_validate"
 
 PANOPTO_ADMIN_GROUP = 'u_acadev_panopto_support'
 RESTCLIENTS_ADMIN_GROUP = PANOPTO_ADMIN_GROUP
 USERSERVICE_ADMIN_GROUP = PANOPTO_ADMIN_GROUP
-
+RESTCLIENTS_ADMIN_AUTH_MODULE = "scheduler.authorization.can_view_source_data"
 
 #if not os.getenv("ENV") == "localdev":
 #    INSTALLED_APPS += ['rc_django',]
