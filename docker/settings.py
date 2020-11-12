@@ -17,6 +17,7 @@ if 'SAML_MOCK' in os.getenv('AUTH', '').split(' '):
 INSTALLED_APPS += [
     'compressor',
     'django.contrib.humanize',
+    'rc_django',
     'userservice',
     'scheduler.apps.SchedulerConfig',
     'supporttools',
@@ -50,21 +51,15 @@ COMPRESS_JS_FILTERS = [
     'compressor.filters.jsmin.JSMinFilter',
 ]
 
-TEMPLATES[0]['DIRS'] = ['/app/scheduler/templates']
 TEMPLATES[0]['OPTIONS']['context_processors'] += [
-    'django.template.context_processors.i18n',
-    'django.template.context_processors.media',
-    'django.template.context_processors.static',
-    'django.template.context_processors.tz',
     'supporttools.context_processors.supportools_globals',
 ]
-
-USERSERVICE_VALIDATION_MODULE = "scheduler.userservice_validation.validate"
 
 PANOPTO_ADMIN_GROUP = 'u_acadev_panopto_support'
 RESTCLIENTS_ADMIN_GROUP = PANOPTO_ADMIN_GROUP
 USERSERVICE_ADMIN_GROUP = PANOPTO_ADMIN_GROUP
-
+USERSERVICE_VALIDATION_MODULE = "scheduler.authorization.userservice_validate"
+RESTCLIENTS_ADMIN_AUTH_MODULE = "scheduler.authorization.can_view_source_data"
 
 #if not os.getenv("ENV") == "localdev":
 #    INSTALLED_APPS += ['rc_django',]
