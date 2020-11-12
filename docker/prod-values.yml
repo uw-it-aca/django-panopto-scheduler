@@ -17,12 +17,12 @@ ingress:
   type: nginx
   tls:
     panopto-app:
-      secretName: prod.panopto-app.uw.edu-ingress-cert
+      secretName: panopto-app.uw.edu-ingress-cert
       hosts:
-        - prod.panopto-app.uw.edu
+        - panopto-app.uw.edu
   hosts:
     panopto-app:
-      host: prod.panopto-app.uw.edu
+      host: panopto-app.uw.edu
       paths:
         - "/"
   annotations:
@@ -69,8 +69,10 @@ environmentVariables:
     value: PROD
   - name: AUTH
     value: SAML BLTI
+  - name: SAML_ENTITY_ID
+    value: https://panopto-app.uw.edu/shibboleth
   - name: CLUSTER_CNAME
-    value: prod.panopto-app.uw.edu
+    value: panopto-app.uw.edu
   - name: PANOPTO_SERVER
     value: uw.hosted.panopto.com
 
