@@ -1,3 +1,7 @@
+autoscaling:
+  enabled: true
+  minReplicas: 1
+  maxReplicas: 2
 ingress:
   enabled: true
   type: nginx
@@ -13,6 +17,13 @@ ingress:
         - "/"
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 25m
+    memory: 128Mi
 securityPolicy:
   enabled: true
 database:
@@ -31,7 +42,7 @@ readiness:
 repo: scheduler
 instance: test
 image:
-  repository: registry.hub.docker.com/acait/scheduler
+  repository: gcr.io/uwit-mci-axdd/scheduler
   tag: IMAGE_TAG
 metrics:
   enabled: true
