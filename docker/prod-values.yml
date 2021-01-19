@@ -2,7 +2,7 @@ autoscaling:
   enabled: true
   minReplicas: 2
   maxReplicas: 4
-targetAverageUtilization: 100
+targetAverageUtilization: 95
 resources:
   limits:
     cpu: 1.0
@@ -43,7 +43,7 @@ readiness:
 repo: scheduler
 instance: prod
 image:
-  repository: registry.hub.docker.com/acait/scheduler
+  repository: gcr.io/uwit-mci-axdd/scheduler
   tag: IMAGE_TAG
 metrics:
   enabled: true
@@ -57,6 +57,8 @@ certs:
 environmentVariables:
   - name: ENV
     value: dev
+  - name: WEBSERVER
+    value: nginx
   - name: GWS_ENV
     value: PROD
   - name: PWS_ENV
