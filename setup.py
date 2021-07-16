@@ -22,7 +22,7 @@ setup(
     include_package_data=True,
     install_requires=[
         'Django>=2.2',
-        'django-compressor==2.2',
+        'django-compressor',
         'django-blti>~=2.2',
         'django-userservice~=3.1',
         'uw-memcached-clients~=1.0',
