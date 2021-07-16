@@ -1,3 +1,6 @@
+# Copyright 2021 UW-IT, University of Washington
+# SPDX-License-Identifier: Apache-2.0
+
 from scheduler.views.api.exceptions import MissingParamException
 from scheduler.views.api.exceptions import InvalidParamException
 from scheduler.models import Course

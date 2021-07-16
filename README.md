@@ -1,9 +1,8 @@
 # Panopto Scheduler
 A django application to aid in the scheduling of Panopto recordings in the context of an CollegeNet R25
 
-[![Build Status](https://travis-ci.com/uw-it-aca/django-panopto-scheduler.svg?branch=master)](https://travis-ci.com/uw-it-aca/django-panopto-scheduler)
-[![Coverage Status](https://coveralls.io/repos/github/uw-it-aca/django-panopto-scheduler/badge.svg?branch=master)](https://coveralls.io/github/uw-it-aca/django-panopto-scheduler?branch=master)
-
+[![Build Status](https://github.com/uw-it-aca/django-panopto-scheduler/workflows/Build%2C%20Test%20and%20Deploy/badge.svg?branch=main)](https://github.com/uw-it-aca/django-panopto-scheduler/actions)
+[![Coverage Status](https://coveralls.io/repos/github/uw-it-aca/django-panopto-scheduler/badge.svg?branch=main)](https://coveralls.io/github/uw-it-aca/django-panopto-scheduler?branch=main)
 
 Installation
 ------------

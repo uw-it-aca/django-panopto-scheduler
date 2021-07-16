@@ -1,3 +1,6 @@
+# Copyright 2021 UW-IT, University of Washington
+# SPDX-License-Identifier: Apache-2.0
+
 from django.conf import settings
 from scheduler.views.rest_dispatch import RESTDispatch
 from panopto_client.session import SessionManagement
