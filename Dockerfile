@@ -1,4 +1,4 @@
-FROM acait/django-container:1.2.5 as app-container
+FROM gcr.io/uwit-mci-axdd/django-container:1.3.3 as app-container
 
 USER root
 RUN apt-get update && apt-get install mysql-client libmysqlclient-dev -y
@@ -14,7 +14,7 @@ RUN . /app/bin/activate && pip install mysqlclient
 
 RUN . /app/bin/activate && pip install nodeenv && nodeenv --node=14.15.0 -p &&\
     npm install -g npm &&\
-    ./bin/npm install less -g
+    ./bin/npm install less@3.13.1 -g
 
 ADD --chown=acait:acait . /app/
 ADD --chown=acait:acait docker/ project/
@@ -22,7 +22,7 @@ ADD --chown=acait:acait docker/ project/
 RUN . /app/bin/activate && python manage.py collectstatic --noinput &&\
     python manage.py compress -f
 
-FROM acait/django-test-container:1.2.5 as app-test-container
+FROM gcr.io/uwit-mci-axdd/django-test-container:1.3.3 as app-test-container
 
-COPY --from=0 /app/ .
-COPY --from=0 /static/ /static/
+COPY --from=app-container  /app/ /app/
+COPY --from=app-container  /static/ /static/

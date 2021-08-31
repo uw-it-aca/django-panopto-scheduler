@@ -1,3 +1,6 @@
+# Copyright 2021 UW-IT, University of Washington
+# SPDX-License-Identifier: Apache-2.0
+
 from django.test import TestCase
 from scheduler.utils import course_location_and_recordings
 from scheduler.utils.validation import Validation

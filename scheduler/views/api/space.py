@@ -1,3 +1,6 @@
+# Copyright 2021 UW-IT, University of Washington
+# SPDX-License-Identifier: Apache-2.0
+
 from scheduler.views.rest_dispatch import RESTDispatch
 from uw_r25.spaces import get_spaces, get_space_by_id
 import logging
