@@ -112,8 +112,11 @@ def course_recording_sessions(course, event):
         event_session['recording']['name'] = name
         event_session['recording']['external_id'] = external_id
 
-        if rsv.space_reservation and rsv.space_reservation.space_id:
-            recorders[rsv.space_reservation.space_id] = None
+        space_id = rsv.space_reservation.space_id if (
+            rsv.space_reservation) else None
+
+        if space_id and space_id not in recorders:
+            recorders[space_id] = get_recorder_id_for_space_id(space_id)
 
         session_external_ids.append(external_id)
 
@@ -338,8 +341,18 @@ def mash_in_panopto_sessions(event_sessions, session_external_ids, recorders):
                     e_r['recorder_id'] = session.RemoteRecorderIds.guid[0] if (
                         hasattr(session.RemoteRecorderIds, 'guid')) else None
 
-                    if e['space']['id']:
-                        recorders[e['space']['id']] = e_r['recorder_id']
+                    # validate recorder id
+                    if (e['space']['id'] and e['space']['id'] in recorders and
+                            recorders[e['space']['id']] != e_r['recorder_id']):
+                        logger.info(
+                            ('Stale session recorder id: {}, '
+                             'session: "{}", '
+                             'space id: {}, '
+                             'new recorder id: {}').format(
+                                 e_r['recorder_id'],
+                                 session.ExternalId,
+                                 e['space']['id'],
+                                 recorders[e['space']['id']]))
 
                     e_r['id'] = session.Id
                     e_r['folder']['name'] = session.FolderName
@@ -368,11 +381,7 @@ def mash_in_panopto_sessions(event_sessions, session_external_ids, recorders):
                 'recorder_id' in e_r and e_r['recorder_id'])):
             space_id = e['space']['id']
             if not (space_id in recorders and recorders[space_id]):
-                try:
-                    recorders[space_id] = get_recorder_details(space_id)[0].Id
-                except Exception:
-                    recorders[space_id] = None
-                    pass
+                recorders[space_id] = get_recorder_id_for_space_id(space_id)
 
             if recorders[space_id]:
                 e_r['recorder_id'] = recorders[space_id]
@@ -561,6 +570,17 @@ def course_event_title_and_contact(course):
             email and len(email)) else "{}@uw.edu".format(
                 uwnetid if uwnetid else '')
     }
+
+
+def get_recorder_id_for_space_id(space_id):
+    try:
+        return get_recorder_details(space_id)[0].Id
+    except Exception as ex:
+        logger.error("Cannot fetch recorder details for space {}: {}".format(
+            space_id, ex))
+        pass
+
+    return None
 
 
 def course_event_key(netid, name, external_id, recorder_id, start, end):
