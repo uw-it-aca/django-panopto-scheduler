@@ -40,9 +40,9 @@ env:
 # defined in the "deploy" job
 on:
   push:
-    branches: [main, bug/adapt-to-recorder-change]
+    branches: [main, develop]
   pull_request:
-    branches: [main, bug/adapt-to-recorder-change]
+    branches: [main, develop]
     types: [opened, reopened, synchronize]
 
 jobs:
@@ -153,7 +153,7 @@ jobs:
 
       - name: Deployment Pipeline
         if: >-
-          contains(fromJSON('["main", "bug/adapt-to-recorder-change"]'),
+          contains(fromJSON('["main", "develop"]'),
             needs.context.outputs.git_repo_branch)
         uses: uw-it-aca/actions/cicd-deploy@main
         with:
