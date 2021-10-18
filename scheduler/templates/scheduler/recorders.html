@@ -147,7 +147,7 @@
 
       <!-- scheduler button -->
         <div>
-            <span class="text scheduled option-help" id="text" data-toggle="tooltip" title="Cancel this scheduled recording"><i class="glyphicon glyphicon-ok"></i> Scheduled</span>
+    <span class="text scheduled option-help" id="text" data-toggle="tooltip" title="Cancel this scheduled recording"><i class="glyphicon glyphicon-ok"></i> {{#if scheduler_link}}<a href="{{ scheduler_link }}">{{/if}}Scheduled{{#if scheduler_link}}</a>{{/if}}</span>
             <span class="text unscheduled option-help" id="text" data-toggle="tooltip" title="Schedule this session">Schedule</span>
             <span class="text schedule-all option-help" id="text" data-toggle="tooltip" title="Schedule all sessions">Schedule All</span>
             <span class="text recordable option-help" id="text" data-toggle="tooltip" title="Start recording the current session now"><i class="fa fa-microphone"></i>Record Now</span>
