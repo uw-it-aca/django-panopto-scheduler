@@ -460,6 +460,7 @@ var PanoptoScheduler = (function ($) {
                              event.recording.folder.auth.hasOwnProperty('creators') &&
                              event.recording.folder.auth.creators) ?
                 event.recording.folder.auth.creators : [],
+            scheduler_link: scheduler_link_from_external_id(event.recording.external_id),
             in_the_past: false,
             can_record: panopto_can_record(event),
             is_recording: panopto_is_recording(event),
@@ -469,6 +470,18 @@ var PanoptoScheduler = (function ($) {
                 event_end_date.isAfter(now)) ? '' : 'disabled',
             has_recorder: true
         };
+    }
+
+    function scheduler_link_from_external_id(external_id) {
+        var parts = (external_id) ? external_id.split('-') : null;
+
+        if (parts && parts.length === 8) {
+            return '/courses/?course=' + parts[0] + '-' + parts[1] +
+                '-' + encodeURIComponent(parts[2]) + '-' +
+                parts[3] + '-' + parts[4];
+        }
+
+        return null;
     }
 
     function paint_space_schedule(events) {
