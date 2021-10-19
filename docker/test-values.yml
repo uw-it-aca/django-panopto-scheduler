@@ -77,6 +77,8 @@ environmentVariables:
     value: test.panopto-app.uw.edu
   - name: PANOPTO_SERVER
     value: uw-test.hosted.panopto.com
+  - name: GUNICORN_CMD_ARGS
+    value: "--limit-request-line=8190"
 
 externalSecrets:
   enabled: true
