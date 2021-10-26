@@ -43,13 +43,13 @@ class Command(BaseCommand):
                 self.recorders(recorder.ExternalId, recorder)
 
                 if not recorder.ScheduledRecordings:
-                    logger.info(
+                    self.note(
                         ('RECORDER {} "{}" ({}): '
                          'no scheduled recordings').format(
                              recorder.Id, recorder.Name, recorder.ExternalId))
                     continue
 
-                logger.info('RECORDER {} "{}" ({}): gathering schedule'.format(
+                self.note('RECORDER {} "{}" ({}): gathering schedule'.format(
                     recorder.Id, recorder.Name, recorder.ExternalId))
 
                 for session in session_api.getSessionsById(
@@ -60,7 +60,7 @@ class Command(BaseCommand):
                             year, term, cur, course, section, yy, mm, dd = \
                                 tuple(session.ExternalId.split('-'))
                         except ValueError:
-                            logger.info(
+                            self.note(
                                 "Unexpected session ExternalId: {}".format(
                                     session.ExternalId))
                             continue
@@ -70,7 +70,7 @@ class Command(BaseCommand):
 
                         self.sessions(course_id, session)
             else:
-                logger.info('RECORDER {} "{}": not in scheduler'.format(
+                self.note('RECORDER {} "{}": not in scheduler'.format(
                     recorder.Id, recorder.Name))
 
         for course_id, sessions in self.sessions().items():
@@ -105,7 +105,7 @@ class Command(BaseCommand):
                         joint_course_ids.sort()
                         course = validation_api.course_id(joint_course_ids[0])
 
-            logger.info("COURSE {}: validating {} meetings".format(
+            self.note("COURSE {}: validating {} meetings".format(
                 course_id, len(event.reservations)))
 
             for rsv in event.reservations:
@@ -117,7 +117,7 @@ class Command(BaseCommand):
                         space_id = rsv.space_reservation.space_id
                         course_recorder = self.recorders(space_id)
                     except UnassignedRecorder:
-                        logger.info("Meeting {} in {} has no recorder".format(
+                        self._note("Meeting {} in {} has no recorder".format(
                             external_id, space_id))
                         continue
 
@@ -137,7 +137,7 @@ class Command(BaseCommand):
     def confirm_recorder(self, external_id, course_recorder, session):
         if course_recorder['id'] != session['recorder_id']:
             self._metrics.recorder_mismatch()
-            logger.info(
+            self.note(
                 ('MISMATCH RECORDER {}: '
                  'meeting in {} "{}", '
                  'recording in {} "{}"').format(
@@ -151,7 +151,7 @@ class Command(BaseCommand):
     def confirm_session_name(self, course_id, name, session):
         if name != session['name']:
             self._metrics.name_mismatch()
-            logger.info(
+            self.note(
                 ('MISMATCH NAME {}: "{}" does '
                  'not match session name "{}"').format(
                      course_id, name, session['name']))
@@ -203,6 +203,9 @@ class Command(BaseCommand):
             raise UnassignedRecorder()
 
         return self._recorders
+
+    def note(self, message):
+        logger.info("CONFREC: {}".format(message))
 
 
 class Metrics:
