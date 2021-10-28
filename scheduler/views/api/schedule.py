@@ -9,6 +9,7 @@ from scheduler.utils import course_location_and_recordings, \
     CourseEventException
 from scheduler.utils.validation import Validation
 from restclients_core.exceptions import DataFailureException
+import json
 import logging
 
 
@@ -35,7 +36,8 @@ class Schedule(RESTDispatch):
         return self.json_response(events)
 
     def post(self, request, *args, **kwargs):
-        session_ids = request.data.get('session_ids', [])
+        data = json.loads(request.body)
+        session_ids = data.get('session_ids', [])
         events = space_events_and_recordings({
             'session_ids': session_ids
         })
