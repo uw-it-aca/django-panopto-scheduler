@@ -1,7 +1,7 @@
 # Copyright 2021 UW-IT, University of Washington
 # SPDX-License-Identifier: Apache-2.0
 
-from django.util import settings
+from django.conf import settings
 from django.core.management.base import BaseCommand
 from django.core.mail import EmailMessage
 from prometheus_client import CollectorRegistry, Counter, push_to_gateway
