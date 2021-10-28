@@ -12,4 +12,3 @@ def email_addresses_from_group(group_name):
         email.append("{}.uw.edu".format(netid))
 
     return email
-    
