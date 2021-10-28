@@ -1,7 +1,9 @@
 # Copyright 2021 UW-IT, University of Washington
 # SPDX-License-Identifier: Apache-2.0
 
+from django.util import settings
 from django.core.management.base import BaseCommand
+from django.core.mail import EmailMessage
 from prometheus_client import CollectorRegistry, Counter, push_to_gateway
 from uw_sws.section import get_section_by_url
 from panopto_client.session import SessionManagement
@@ -9,6 +11,7 @@ from panopto_client.remote_recorder import RemoteRecorderManagement
 from uw_r25.events import get_event_by_alien_id
 from scheduler.utils import (
     r25_alien_uid, panopto_course_session, get_sws_section, canvas_course_id)
+from scheduler.utils.monitor import email_addresses_from_group
 from scheduler.utils.validation import Validation
 import os
 import logging
@@ -31,6 +34,7 @@ class Command(BaseCommand):
     _recorders = {}
     _sessions = {}
     _metrics = None
+    _mismatches = []
 
     def handle(self, *args, **options):
         session_api = SessionManagement()
@@ -100,7 +104,7 @@ class Command(BaseCommand):
                                     c.curriculum, c.number, c.section))
                         except Exception:
                             continue
-        
+
                     if len(joint_course_ids):
                         joint_course_ids.sort()
                         course = validation_api.course_id(joint_course_ids[0])
@@ -132,29 +136,31 @@ class Command(BaseCommand):
 
                     self.confirm_session_name(course_id, name, session)
 
-        self._metrics.push()
+        self.notify()
 
     def confirm_recorder(self, external_id, course_recorder, session):
         if course_recorder['id'] != session['recorder_id']:
             self._metrics.recorder_mismatch()
-            self.note(
-                ('MISMATCH RECORDER {}: '
-                 'meeting in {} "{}", '
-                 'recording in {} "{}"').format(
-                     external_id,
-                     course_recorder['id'],
-                     course_recorder['name'],
-                     session['recorder_id'],
-                     self.recorders(recorder_id=session[
-                         'recorder_id'])['name']))
+            message = ('MISMATCH RECORDER {}: '
+                       'meeting in {} "{}", '
+                       'recording in {} "{}"').format(
+                           external_id,
+                           course_recorder['id'],
+                           course_recorder['name'],
+                           session['recorder_id'],
+                           self.recorders(recorder_id=session[
+                               'recorder_id'])['name'])
+            self._mismatches.append(message)
+            self.note(message)
 
     def confirm_session_name(self, course_id, name, session):
         if name != session['name']:
             self._metrics.name_mismatch()
-            self.note(
-                ('MISMATCH NAME {}: "{}" does '
-                 'not match session name "{}"').format(
-                     course_id, name, session['name']))
+            message = ('MISMATCH NAME {}: "{}" does '
+                       'not match session name "{}"').format(
+                           course_id, name, session['name'])
+            self._mismatches.append(message)
+            self.note(message)
 
     def sessions(self, course_id=None, session=None):
         if course_id:
@@ -207,6 +213,22 @@ class Command(BaseCommand):
     def note(self, message):
         logger.info("CONFREC: {}".format(message))
 
+    def notify(self):
+        self._metrics.push()
+
+        monitor_group = getattr(settings, 'PANOPTO_MONITOR_GROUP')
+        if len(self._mismatches) and monitor_group:
+            recipients = email_addresses_from_group(monitor_group)
+            sender = getattr(settings, "EMAIL_REPLY_ADDRESS",
+                             "scheduler-noreply@uw.edu")
+            subject = "URGENT: Panopto Scheduler Recorder Mismatches"
+            body = "Panopto scheduler found the following:\n\n"
+            for mismatch in self._mismatches:
+                body += "{}\n".format(mismatch)
+
+            message = EmailMessage(subject, body, sender, recipients)
+            message.send()
+
 
 class Metrics:
     def __init__(self):
@@ -236,5 +258,3 @@ class Metrics:
             push_to_gateway('{}:9091'.format(self._pushgateway),
                             job='scheduled_recordings_reconcile',
                             registry=self._registry)
-
-

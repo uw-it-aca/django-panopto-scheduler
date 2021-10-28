@@ -80,9 +80,6 @@ environmentVariables:
     value: test.panopto-app.uw.edu
   - name: PANOPTO_SERVER
     value: uw-test.hosted.panopto.com
-  - name: GUNICORN_CMD_ARGS
-    value: "--limit-request-line=0"
-
 externalSecrets:
   enabled: true
   secrets:
@@ -109,6 +106,8 @@ externalSecrets:
           property: collegenet-auth-token
         - name: lti-consumers
           property: lti-consumers
+        - name: email-host
+          property: email-host
     - name: test.panopto-app.uw.edu-sql-secrets
       externalKey: axdd/kv/data/panopto-app/test/sql-secrets
       data:
@@ -174,6 +173,10 @@ environmentVariablesSecrets:
     name: LTI_CONSUMERS
     secretName: test.panopto-app.uw.edu-secrets
     secretKey: lti-consumers
+  emailHost:
+    name: EMAIL_HOST
+    secretName: test.panopto-app.uw.edu-secrets
+    secretKey: email-host
   SAMLServiceProviderCert:
     name: SP_CERT
     secretName: test.panopto-app.uw.edu-ic-certs
