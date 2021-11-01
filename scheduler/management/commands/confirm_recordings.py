@@ -4,7 +4,7 @@
 from django.conf import settings
 from django.core.management.base import BaseCommand
 from django.core.mail import EmailMessage
-from prometheus_client import CollectorRegistry, Counter, push_to_gateway
+from prometheus_client import Gauge
 from uw_sws.section import get_section_by_url
 from panopto_client.session import SessionManagement
 from panopto_client.remote_recorder import RemoteRecorderManagement
@@ -211,10 +211,10 @@ class Command(BaseCommand):
         return self._recorders
 
     def note(self, message):
-        logger.info("CONFREC: {}".format(message))
+        logger.info("{}".format(message))
 
     def notify(self):
-        self._metrics.push()
+        self._metrics.publish()
 
         monitor_group = getattr(settings, 'PANOPTO_MONITOR_GROUP')
         if len(self._mismatches) and monitor_group:
@@ -232,29 +232,26 @@ class Command(BaseCommand):
 
 class Metrics:
     def __init__(self):
-        self._pushgateway = os.getenv('PUSHGATEWAY')
-        if self._pushgateway:
-            self._registry = CollectorRegistry()
-            self._mismatched_recorder_counters = Counter(
-                'mismatched_recorder',
-                ('Recorder id in meeting space '
-                 'does not match session recorder id'),
-                registry=self._registry)
-            self._mismatched_name_counter = Counter(
-                'mismatched_name',
-                'Assigned meeting name does not match session name',
-                registry=self._registry)
+        self._mismatched_recorders_count = 0
+        self._mismatched_names_count = 0
+        self._mismatched_recorders = Gauge(
+            'mismatched_recorder',
+            ('Number of recorder ids in meeting space '
+             'does not match session recorder id'),
+            ['job'])
+        self._mismatched_names = Gauge(
+            'mismatched_name',
+            'Number of assigned meeting names that do not match session name',
+            ['job'])
 
-    def recorder_mismatch(self):
-        if self._pushgateway:
-            self._mismatched_recorder_counter.inc()
+    def recorder_mismatch(self, value):
+        self._mismatched_recorders_count += 1
 
-    def name_mismatch(self):
-        if self._pushgateway:
-            self._mismatched_name_counter.inc()
+    def name_mismatch(self, value):
+        self._mismatched_names_count += 1
 
-    def push(self):
-        if self._pushgateway:
-            push_to_gateway('{}:9091'.format(self._pushgateway),
-                            job='scheduled_recordings_reconcile',
-                            registry=self._registry)
+    def publish(self):
+        self._mismatched_recorders.labels(
+            'confirm_recordings').set(self._mismatched_recorders_count)
+        self._mismatched_names.labels(
+            'confirm_recordings').set(self._mismatched_names_count)
