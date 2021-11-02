@@ -178,7 +178,7 @@ environmentVariablesSecrets:
     secretKey: lti-consumers
   emailHost:
     name: EMAIL_HOST
-    secretName: test.panopto-app.uw.edu-secrets
+    secretName: panopto-app.uw.edu-secrets
     secretKey: email-host
   SAMLServiceProviderCert:
     name: SP_CERT
