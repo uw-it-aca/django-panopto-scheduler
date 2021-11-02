@@ -7,9 +7,10 @@ if 'SAML_MOCK' in os.getenv('AUTH', '').split(' '):
     MOCK_SAML_ATTRIBUTES = {
         'uwnetid': ['jfaculty'],
         'affiliations': ['faculty', 'employee', 'member'],
-        'eppn': ['jfacult@washington.edu'],
+        'eppn': ['jfaculty@washington.edu'],
         'scopedAffiliations': [
-            'employee@washington.edu', 'member@washington.edu'],
+            'employee@washington.edu', 'member@washington.edu',
+            'faculty@washington.edu'],
         'isMemberOf': ['u_test_group', 'u_test_another_group',
                        'u_acadev_panopto_support'],
     }
@@ -58,6 +59,7 @@ TEMPLATES[0]['OPTIONS']['context_processors'] += [
 PANOPTO_ADMIN_GROUP = 'u_acadev_panopto_support'
 RESTCLIENTS_ADMIN_GROUP = PANOPTO_ADMIN_GROUP
 USERSERVICE_ADMIN_GROUP = PANOPTO_ADMIN_GROUP
+PANOPTO_MONITOR_GROUP = 'u_acadev_panopto_monitor'
 USERSERVICE_VALIDATION_MODULE = "scheduler.authorization.userservice_validate"
 RESTCLIENTS_ADMIN_AUTH_MODULE = "scheduler.authorization.can_view_source_data"
 

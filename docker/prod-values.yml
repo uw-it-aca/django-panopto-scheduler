@@ -5,11 +5,11 @@ autoscaling:
 targetAverageUtilization: 95
 resources:
   limits:
-    cpu: 1.0
-    memory: 1024Mi
-  requests:
-    cpu: 256m
+    cpu: 500m
     memory: 512Mi
+  requests:
+    cpu: 75m
+    memory: 192Mi
 affinity:
    podsSpanNodes: true
 ingress:
@@ -49,6 +49,9 @@ metrics:
   enabled: true
   serviceMonitor:
     enabled: true
+  pushgateway:
+    enabled: true
+    replicaCount: 1
 memcached:
   enabled: true
   replicaCount: 1
@@ -80,9 +83,6 @@ environmentVariables:
     value: panopto-app.uw.edu
   - name: PANOPTO_SERVER
     value: uw.hosted.panopto.com
-  - name: GUNICORN_CMD_ARGS
-    value: "--limit-request-line=0"
-
 externalSecrets:
   enabled: true
   secrets:
@@ -109,6 +109,8 @@ externalSecrets:
           property: collegenet-auth-token
         - name: lti-consumers
           property: lti-consumers
+        - name: email-host
+          property: email-host
     - name: panopto-app.uw.edu-sql-secrets
       externalKey: axdd/kv/data/panopto-app/prod/sql-secrets
       data:
@@ -174,6 +176,10 @@ environmentVariablesSecrets:
     name: LTI_CONSUMERS
     secretName: panopto-app.uw.edu-secrets
     secretKey: lti-consumers
+  emailHost:
+    name: EMAIL_HOST
+    secretName: test.panopto-app.uw.edu-secrets
+    secretKey: email-host
   SAMLServiceProviderCert:
     name: SP_CERT
     secretName: panopto-app.uw.edu-ic-certs

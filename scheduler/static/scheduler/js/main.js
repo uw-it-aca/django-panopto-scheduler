@@ -654,9 +654,11 @@ var PanoptoScheduler = (function ($) {
 
     function do_scheduled_recording_search(session_ids) {
         $.ajax({
-            type: 'GET',
-            url: panopto_api_path('schedule/', {
-                session_ids: session_ids,
+            type: 'POST',
+            url: panopto_api_path('schedule/'),
+            contentType: 'application/json',
+            data: JSON.stringify({
+                session_ids: session_ids
             }),
             waitIndicatator: event_search_in_progress,
             complete: event_search_complete
