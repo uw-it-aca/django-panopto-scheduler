@@ -244,10 +244,10 @@ class Metrics:
             'Number of assigned meeting names that do not match session name',
             ['job'])
 
-    def recorder_mismatch(self, value):
+    def recorder_mismatch(self):
         self._mismatched_recorders_count += 1
 
-    def name_mismatch(self, value):
+    def name_mismatch(self):
         self._mismatched_names_count += 1
 
     def publish(self):
