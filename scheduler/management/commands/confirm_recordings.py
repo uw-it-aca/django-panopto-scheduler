@@ -35,6 +35,7 @@ class Command(BaseCommand):
     _sessions = {}
     _metrics = None
     _mismatches = []
+    _disconnected = []
 
     def handle(self, *args, **options):
         session_api = SessionManagement()
@@ -134,6 +135,8 @@ class Command(BaseCommand):
                     self.confirm_recorder(
                         external_id, course_recorder, session)
 
+                    self.confirm_recorder_state(course_recorder, session)
+
                     self.confirm_session_name(course_id, name, session)
 
         self.notify()
@@ -151,6 +154,14 @@ class Command(BaseCommand):
                            self.recorders(recorder_id=session[
                                'recorder_id'])['name'])
             self._mismatches.append(message)
+            self.note(message)
+
+    def confirm_recorder_state(self, course_recorder, session):
+        if course_recorder['state'].lower() == 'disconnected':
+            message = 'DISCONNECTED RECORDER for session {}: {} "{}"'.format(
+                session['name'], course_recorder['id'],
+                course_recorder['name'])
+            self._disconnected.append(message)
             self.note(message)
 
     def confirm_session_name(self, course_id, name, session):
@@ -181,19 +192,25 @@ class Command(BaseCommand):
         if space_id:
             if recorder:
                 if space_id in self._recorders:
-                    raise Exception(
-                        ('Space ID {} assigned to recorders '
-                         '{} "{}" and {} "{}"').format(
-                            recorder.ExternalId,
-                             self._recorders[space_id]['id'],
-                             self._recorders[space_id]['name'],
-                            recorder.Name, recorder.Id
-                        ))
+                    disconnected = (recorder.State.lower() == 'disconnected')
+                    message = ('MULTIPLE RECORDERS in space id {}: '
+                               '{} "{}" and {} "{}"').format(
+                                   recorder.ExternalId,
+                                   self._recorders[space_id]['id'],
+                                   self._recorders[space_id]['name'],
+                                   recorder.Id, recorder.Name,
+                                   " (DISCONNECTED)" if disconnected else "")
+                    if disconnected:
+                        self.note(message)
+                        return None
+                    else:
+                        raise Exception(message)
 
                 # authoritative space_id/recorder_id binding
                 self._recorders[space_id] = {
                     'id': recorder.Id,
-                    'name': recorder.Name
+                    'name': recorder.Name,
+                    'state': recorder.State
                 }
 
             try:
@@ -225,6 +242,9 @@ class Command(BaseCommand):
             body = "Panopto scheduler found the following:\n\n"
             for mismatch in self._mismatches:
                 body += "{}\n".format(mismatch)
+
+            for disconnected in self._disconnected:
+                body += "{}\n".format(disconnected)
 
             message = EmailMessage(subject, body, sender, recipients)
             message.send()
