@@ -86,3 +86,14 @@ if not os.getenv("ENV", "localdev") == "localdev":
     PANOPTO_SERVER = os.getenv('PANOPTO_SERVER')
 
 DEBUG = True if os.getenv('ENV', 'localdev') == "localdev" else False
+
+EMAIL_HOST = os.getenv("EMAIL_HOST")
+EMAIL_PORT = 587
+EMAIL_SSL_CERTFILE = os.getenv('CERT_PATH', '')
+EMAIL_SSL_KEYFILE = os.getenv('KEY_PATH', '')
+EMAIL_USE_TLS=True
+if os.getenv("SAFE_EMAIL_RECIPIENT", None):
+    SAFE_EMAIL_RECIPIENT = os.getenv("SAFE_EMAIL_RECIPIENT")
+    EMAIL_BACKEND = 'saferecipient.EmailBackend'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
