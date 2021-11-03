@@ -60,6 +60,13 @@ certs:
   certPath: /certs/panopto-app.uw.edu-uwca.cert
   keyPath: /certs/panopto-app.uw.edu-uwca.key
   secretName: panopto-app.uw.edu-uwca-certs
+cronjob:
+  enabled: true
+  jobs:
+    - name: confirm-recordings
+      schedule: "5 12 * * 1-5"
+      command: ["/scripts/management_command.sh"]
+      args: ["confirm_recordings"]
 environmentVariables:
   - name: ENV
     value: dev

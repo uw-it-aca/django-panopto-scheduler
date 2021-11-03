@@ -121,7 +121,7 @@ class Command(BaseCommand):
                         space_id = rsv.space_reservation.space_id
                         course_recorder = self.recorders(space_id)
                     except UnassignedRecorder:
-                        self._note("Meeting {} in {} has no recorder".format(
+                        self.note("Meeting {} in {} has no recorder".format(
                             external_id, space_id))
                         continue
 
@@ -244,10 +244,10 @@ class Metrics:
             'Number of assigned meeting names that do not match session name',
             ['job'])
 
-    def recorder_mismatch(self, value):
+    def recorder_mismatch(self):
         self._mismatched_recorders_count += 1
 
-    def name_mismatch(self, value):
+    def name_mismatch(self):
         self._mismatched_names_count += 1
 
     def publish(self):
