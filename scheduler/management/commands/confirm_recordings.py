@@ -121,7 +121,7 @@ class Command(BaseCommand):
                         space_id = rsv.space_reservation.space_id
                         course_recorder = self.recorders(space_id)
                     except UnassignedRecorder:
-                        self._note("Meeting {} in {} has no recorder".format(
+                        self.note("Meeting {} in {} has no recorder".format(
                             external_id, space_id))
                         continue
 
