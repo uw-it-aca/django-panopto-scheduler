@@ -16,7 +16,7 @@ The app supports two scheduling interfaces.
 
 One interface is accessed as an IMS BLTI tool provider. Acccessed via the BLTI, the interface offers scheduling for only the course presented in the BLTI context.
 
-The second interface allows searching for courses and events in R25 within the UW Canvas Support Tools <https://github.com/uw-it-aca/canvas-support-tools> structure.
+The second interface allows searching for courses and events in R25 within the UW Canvas Support Tools <https://github.com/uw-it-aca/django-supporttools> structure.
 
 
 Project settings.py

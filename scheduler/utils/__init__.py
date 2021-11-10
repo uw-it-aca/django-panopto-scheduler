@@ -146,9 +146,8 @@ def space_events_and_recordings(params):
     }
 
     if search['session_ids']:
-        ids = search['session_ids'] if (
-            type(search['session_ids']) == list) else search[
-                'session_ids'].split(',')
+        ids = search['session_ids'] if isinstance(
+            search['session_ids'], list) else search['session_ids'].split(',')
         sessions = get_sessions_by_session_ids(ids)
 
         for s in sessions:
