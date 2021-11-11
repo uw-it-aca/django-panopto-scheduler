@@ -13,7 +13,6 @@ from scheduler.utils import (
     r25_alien_uid, panopto_course_session, get_sws_section, canvas_course_id)
 from scheduler.utils.monitor import email_addresses_from_group
 from scheduler.utils.validation import Validation
-import os
 import logging
 
 
@@ -34,7 +33,8 @@ class Command(BaseCommand):
     _recorders = {}
     _sessions = {}
     _metrics = None
-    _mismatches = []
+    _name_mismatch = []
+    _recorder_mismatch = []
     _disconnected = []
 
     def handle(self, *args, **options):
@@ -153,16 +153,25 @@ class Command(BaseCommand):
                            session['recorder_id'],
                            self.recorders(recorder_id=session[
                                'recorder_id'])['name'])
-            self._mismatches.append(message)
             self.note(message)
+            self._recorder_mismatch.append({
+                "external_id": external_id,
+                "course_recorder_id": course_recorder['id'],
+                "course_recorder_name": course_recorder['name'],
+                "session_recorder_id": session['recorder_id'],
+                "session_recorder_name": self.recorders(recorder_id=session[
+                    'recorder_id'])['name']})
 
     def confirm_recorder_state(self, course_recorder, session):
         if course_recorder['state'].lower() == 'disconnected':
             message = 'DISCONNECTED RECORDER for session {}: {} "{}"'.format(
                 session['name'], course_recorder['id'],
                 course_recorder['name'])
-            self._disconnected.append(message)
             self.note(message)
+            self._disconnected.append({
+                'session_name': session['name'],
+                'recorder_id': course_recorder['id'],
+                'recorder_name': course_recorder['name']})
 
     def confirm_session_name(self, course_id, name, session):
         if name != session['name']:
@@ -170,8 +179,11 @@ class Command(BaseCommand):
             message = ('MISMATCH NAME {}: "{}" does '
                        'not match session name "{}"').format(
                            course_id, name, session['name'])
-            self._mismatches.append(message)
             self.note(message)
+            self._name_mismatch.append({
+                'course_id': course_id,
+                'given_name': name,
+                'session_name': session['name']})
 
     def sessions(self, course_id=None, session=None):
         if course_id:
@@ -234,17 +246,72 @@ class Command(BaseCommand):
         self._metrics.publish()
 
         monitor_group = getattr(settings, 'PANOPTO_MONITOR_GROUP')
-        if len(self._mismatches) and monitor_group:
+        if (monitor_group and (len(self._recorder_mismatch)
+                               or len(self._name_mismatch)
+                               or len(self._disconnected))):
             recipients = email_addresses_from_group(monitor_group)
             sender = getattr(settings, "EMAIL_REPLY_ADDRESS",
                              "scheduler-noreply@uw.edu")
-            subject = "URGENT: Panopto Scheduler Recorder Mismatches"
+            subject = "{} Panopto Scheduler Recorder Mismatches".format(
+                "URGENT:" if len(self._recorder_mismatch) else "")
             body = "Panopto scheduler found the following:\n\n"
-            for mismatch in self._mismatches:
-                body += "{}\n".format(mismatch)
 
-            for disconnected in self._disconnected:
-                body += "{}\n".format(disconnected)
+            if len(self._recorder_mismatch):
+                body += ("\n\nEach recording session below is "
+                         "associated with a recorder that\n"
+                         "is not in the assigned class meeting room.\n\n"
+                         "Session ID                            "
+                         "Session Recorder                                  "
+                         "Meeting Location\n")
+
+                for mismatch in self._recorder_mismatch:
+                    body += "{:<38}{:<50}{} ({})\n".format(
+                        mismatch["external_id"],
+                        "{} ({})".format(mismatch["session_recorder_id"],
+                                         mismatch["session_recorder_name"]),
+                        mismatch["course_recorder_id"],
+                        mismatch["course_recorder_name"])
+
+            if len(self._disconnected):
+                body += ("\n\nBelow are recording sessions that are "
+                         "associated with a disconnected camera.\n"
+                         "Not necessarily a problem, but if the date "
+                         "implied by the session id is\n"
+                         "soon, further inspection may be useful.\n\n")
+
+                disc_rec = {}
+                for disconnected in self._disconnected:
+                    if disconnected['recorder_id'] not in disc_rec:
+                        disc_rec[disconnected['recorder_id']] = {
+                            'name': disconnected['recorder_name'],
+                            'recordings': []}
+
+                        disc_rec[disconnected['recorder_id']][
+                            'recordings'].append(disconnected['session_name'])
+
+                        for k, v in disc_rec.items():
+                            body += ("Disconnected recorder: {} ()\n"
+                                     "Session Names:").format(
+                                v['recorder_name'], k)
+                            for r in v['recordings']:
+                                body += "       {}\n".format(r)
+
+            if len(self._name_mismatch):
+                body += ("\n\nBelow are sessions found with names "
+                         "that do not match the name\n"
+                         "the scheduler assigned.  Generally can be "
+                         "IGNORED, but if the name\n"
+                         "indicates an entirely different course, "
+                         "then investigation may be\n"
+                         "helpful\n\n"
+                         "Recording ID                    "
+                         "Assigned Name                 Changed Name\n")
+
+                for mismatch in self._name_mismatch:
+                    body += "{:<32}{:<30}{}\n".format(
+                        mismatch['course_id'],
+                        mismatch['given_name'],
+                        mismatch['session_name'])
 
             message = EmailMessage(subject, body, sender, recipients)
             message.send()
