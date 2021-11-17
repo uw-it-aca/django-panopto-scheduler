@@ -69,7 +69,7 @@ cronjob:
       args: ["confirm_recordings"]
 environmentVariables:
   - name: ENV
-    value: dev
+    value: prod
   - name: WEBSERVER
     value: nginx
   - name: GWS_ENV
