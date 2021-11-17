@@ -267,10 +267,10 @@ class Command(BaseCommand):
                 for mismatch in self._recorder_mismatch:
                     body += "{:<38}{:<50}{} ({})\n".format(
                         mismatch["external_id"],
-                        "{} ({})".format(mismatch["session_recorder_id"],
-                                         mismatch["session_recorder_name"]),
-                        mismatch["course_recorder_id"],
-                        mismatch["course_recorder_name"])
+                        "{} ({})".format(mismatch["session_recorder_name"],
+                                         mismatch["session_recorder_id"]),
+                        mismatch["course_recorder_name"],
+                        mismatch["course_recorder_id"])
 
             if len(self._disconnected):
                 body += ("\n\nBelow are recording sessions that are "
