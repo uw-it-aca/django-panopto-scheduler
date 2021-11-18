@@ -6,7 +6,7 @@ services:
       ENV: localdev
       PORT: 8000
       AUTH: SAML_MOCK BLTI_DEV
-      LTI_DEVELOP_APP: scheduler
+      LTI_DEVELOP_APP: course
     restart: always
     container_name: app-scheduler
     build:
