@@ -15,6 +15,11 @@ if 'SAML_MOCK' in os.getenv('AUTH', '').split(' '):
                        'u_acadev_panopto_support'],
     }
 
+if 'BLTI_DEV' in os.getenv('AUTH', '').split(' '):
+    SESSION_COOKIE_SECURE = False
+    CSRF_COOKIE_SECURE = False
+    MIDDLEWARE.remove('blti.middleware.SameSiteMiddleware')
+
 INSTALLED_APPS += [
     'compressor',
     'django.contrib.humanize',
@@ -79,13 +84,15 @@ DETECT_USER_AGENTS = {
     'is_desktop': True,
 }
 
-if not os.getenv("ENV", "localdev") == "localdev":
+if os.getenv("ENV", "localdev") == "localdev":
+    LTI_DEVELOP_APP = os.getenv("LTI_DEVELOP_APP", '')
+    DEBUG = True
+else:
     PANOPTO_API_USER = os.getenv('PANOPTO_API_USER')
     PANOPTO_API_APP_ID = os.getenv('PANOPTO_API_APP_ID')
     PANOPTO_API_TOKEN = os.getenv('PANOPTO_API_TOKEN')
     PANOPTO_SERVER = os.getenv('PANOPTO_SERVER')
-
-DEBUG = True if os.getenv('ENV', 'localdev') == "localdev" else False
+    DEBUG = False
 
 EMAIL_HOST = os.getenv("EMAIL_HOST")
 EMAIL_PORT = 587
