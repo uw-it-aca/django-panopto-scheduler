@@ -18,26 +18,32 @@ from scheduler.views.api.folder import Folder
 urlpatterns = [
     re_path(r'^$', RedirectView.as_view(url='courses/', permanent=True)),
     re_path(r'recorders/?$', recorders, name='recorders-view'),
-    re_path(r'course/?$', CourseScheduleView.as_view()),
     re_path(r'courses/?$', courses, name='courses-view'),
     re_path(r'events/?$', events, name='events-view'),
-    re_path(r'(blti/)?api/v1/recorder/(?P<recorder_id>[0-9a-f\-]+)?$',
+    re_path(r'scheduler/course/?$', CourseScheduleView.as_view()),
+    re_path(r'scheduler/(blti/)?api/v1/'
+            r'recorder/(?P<recorder_id>[0-9a-f\-]+)?$',
             Recorder.as_view(), name='api_recorder'),
-    re_path(r'(blti/)?api/v1/space/(?P<space_id>[0-9]+)?$',
+    re_path(r'scheduler/(blti/)?api/v1/'
+            r'space/(?P<space_id>[0-9]+)?$',
             Space.as_view(), name='api_space'),
-    re_path(r'(blti/)?api/v1/session/(?P<session_id>[0-9a-f\-]+)/public/?$',
+    re_path(r'scheduler/(blti/)?api/v1/'
+            r'session/(?P<session_id>[0-9a-f\-]+)/public/?$',
             SessionPublic.as_view(), name='api_session_public'),
-    re_path(r'(blti/)?api/v1/session/'
-            r'(?P<session_id>[0-9a-f\-]+)/broadcast/?$',
+    re_path(r'scheduler/(blti/)?api/v1/'
+            r'session/(?P<session_id>[0-9a-f\-]+)/broadcast/?$',
             SessionBroadcast.as_view(), name='api_session_broadcast'),
-    re_path(r'(blti/)?api/v1/session/(?P<session_id>'
-            r'[0-9a-f\-]+)/recordingtime/?$',
+    re_path(r'scheduler/(blti/)?api/v1/'
+            r'session/(?P<session_id>[0-9a-f\-]+)/recordingtime/?$',
             SessionRecordingTime.as_view(), name='api_session_recording_time'),
-    re_path(r'(blti/)?api/v1/session/(?P<session_id>[0-9a-f\-]+)?$',
+    re_path(r'scheduler/(blti/)?api/v1/'
+            r'session/(?P<session_id>[0-9a-f\-]+)?$',
             Session.as_view(), name='api_session'),
-    re_path(r'(blti/)?api/v1/schedule/(?P<course_id>[\d\w& \a-zA-Z0-9\-]+)?$',
+    re_path(r'scheduler/(blti/)?api/v1/'
+            r'schedule/(?P<course_id>[\d\w& \a-zA-Z0-9\-]+)?$',
             Schedule.as_view()),
-    re_path(r'(blti/)?api/v1/folder/(?P<folder_id>[0-9a-f\-]+)?$',
+    re_path(r'scheduler/(blti/)?api/v1/'
+            r'folder/(?P<folder_id>[0-9a-f\-]+)?$',
             Folder.as_view(), name='api_folder')
 ]
 

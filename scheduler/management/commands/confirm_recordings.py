@@ -292,7 +292,10 @@ class Command(BaseCommand):
                         for k, v in disc_rec.items():
                             body += ("Disconnected recorder: {} ()\n"
                                      "Session Names:").format(
-                                v['recorder_name'], k)
+                                         v['recorder_name'] if (
+                                             'recorder_name' in v) else (
+                                                 "UNNAMED RECORDER"),
+                                         k)
                             for r in v['recordings']:
                                 body += "       {}\n".format(r)
 
