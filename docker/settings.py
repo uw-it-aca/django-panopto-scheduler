@@ -92,7 +92,7 @@ else:
     PANOPTO_API_APP_ID = os.getenv('PANOPTO_API_APP_ID')
     PANOPTO_API_TOKEN = os.getenv('PANOPTO_API_TOKEN')
     PANOPTO_SERVER = os.getenv('PANOPTO_SERVER')
-    DEBUG = False
+    DEBUG = (os.getenv("ENV", "UNSET") == "dev")
 
 EMAIL_HOST = os.getenv("EMAIL_HOST")
 EMAIL_PORT = 587
