@@ -18,9 +18,9 @@ from scheduler.views.api.folder import Folder
 urlpatterns = [
     re_path(r'^$', RedirectView.as_view(url='courses/', permanent=True)),
     re_path(r'recorders/?$', recorders, name='recorders-view'),
-    re_path(r'course/?$', CourseScheduleView.as_view()),
     re_path(r'courses/?$', courses, name='courses-view'),
     re_path(r'events/?$', events, name='events-view'),
+    re_path(r'scheduler/course/?$', CourseScheduleView.as_view()),
     re_path(r'scheduler/(blti/)?api/v1/'
             r'recorder/(?P<recorder_id>[0-9a-f\-]+)?$',
             Recorder.as_view(), name='api_recorder'),
