@@ -178,6 +178,9 @@ window.scheduler = {
   csrftoken: '{{ csrf_token }}',
   canvas_host: '{{canvas_host}}',
   panopto_server: '{{panopto_server}}',
+{% if localdev_mode %}
+  current_date: '2015-11-10',
+{% endif %}
   term: { quarter: '{{term_quarter}}', year: {{term_year}} }
 };
 </script>

@@ -134,7 +134,7 @@ var PanoptoScheduler = (function ($) {
     }
 
     function panopto_can_record(panopto_event) {
-        var now = moment();
+        var now = _now();
 
         return (panopto_event.recording.recorder_id &&
                 now.isAfter(moment(panopto_event.event.start)) &&
@@ -142,7 +142,7 @@ var PanoptoScheduler = (function ($) {
     }
 
     function panopto_is_recording(panopto_event) {
-        var now = moment();
+        var now = _now();
 
         return (panopto_event.recording.recorder_id &&
                 panopto_event.recording.id &&
@@ -151,7 +151,7 @@ var PanoptoScheduler = (function ($) {
     }
 
     function panopto_is_recorded(panopto_event) {
-        var now = moment();
+        var now = _now();
 
         return (panopto_event.recording.id &&
                 now.isAfter(moment(panopto_event.recording.end)));
@@ -200,7 +200,7 @@ var PanoptoScheduler = (function ($) {
             tpl;
 
         if (event) {
-            now = moment();
+            now = _now();
             recordable = (now.isAfter(moment(event.event.start)) &&
                           now.isBefore(moment(event.event.end)));
             button_group = $('.btn-group[data-schedule-key="' + event.key + '"]');
@@ -324,7 +324,7 @@ var PanoptoScheduler = (function ($) {
 
             event_start_date = moment(this.event.start);
             event_end_date = moment(this.event.end);
-            now = moment();
+            now = _now();
             in_the_past = event_end_date.isBefore(now);
 
             if (!in_the_past && !future_meetings) {
@@ -423,7 +423,7 @@ var PanoptoScheduler = (function ($) {
     function event_context(event) {
         var event_start_date = moment(event.event.start),
             event_end_date = moment(event.event.end),
-            now = moment();
+            now = _now();
 
         return {
             key: event.key,
@@ -711,7 +711,7 @@ var PanoptoScheduler = (function ($) {
 
     function init_date_picker() {
         var picker = $('#date-picker'),
-            start_date = moment().format('M/D/YYYY');
+            start_date = _now().format('M/D/YYYY');
 
         if (picker.length) {
             $('input', picker).val(start_date);
@@ -790,7 +790,7 @@ var PanoptoScheduler = (function ($) {
             i;
 
         if (changes && changes.schedule) {
-            now = moment();
+            now = _now();
             start = moment.unix(changes.schedule.start);
 
             if (start.isBefore(now)) {
@@ -917,7 +917,7 @@ var PanoptoScheduler = (function ($) {
     function modify_panopto_recording(panopto_event, method) {
         var start_time = moment(panopto_event.recording.start),
             end_time = moment(panopto_event.recording.end),
-            now = moment(),
+            now = _now(),
             request_data = {
                 key: panopto_event.key,
                 name: panopto_event.recording.name,
@@ -998,7 +998,7 @@ var PanoptoScheduler = (function ($) {
     }
 
     function remove_scheduled_panopto_recording(panopto_event, button) {
-        var now = moment();
+        var now = _now();
 
         // delete only scheduled (future) recordings
         if (!(panopto_event.recording.id && now.isBefore(panopto_event.recording.start))) {
@@ -1071,7 +1071,7 @@ var PanoptoScheduler = (function ($) {
         var now;
 
         if (panopto_is_recording(panopto_event)) {
-            now = moment().unix();
+            now = _now().unix();
 
             panopto_set_recording_time({
                 panopto_event: panopto_event,
@@ -1136,7 +1136,7 @@ var PanoptoScheduler = (function ($) {
                 };
             }
         } else {
-            now = moment().unix();
+            now = _now().unix();
             if (now > start && now < end) {
                 schedule_change = {
                     start: now,
@@ -1164,7 +1164,7 @@ var PanoptoScheduler = (function ($) {
         }
 
         if (changes && changes.schedule) {
-            now = moment();
+            now = _now();
             start = moment.unix(changes.schedule.start);
 
             if (start.isBefore(now)) {
@@ -1375,7 +1375,7 @@ var PanoptoScheduler = (function ($) {
             slider_value,
             recording_start,
             recording_end,
-            now = moment();
+            now = _now();
 
         if (pe) {
             range = init_slider_range(pe.event.start, pe.event.end,
@@ -1849,7 +1849,7 @@ var PanoptoScheduler = (function ($) {
             recording_start,
             recording_end,
             slider_value = null,
-            now = moment();
+            now = _now();
 
         event_start_date = moment(event_start);
         event_end_date = moment(event_end);
@@ -1881,7 +1881,7 @@ var PanoptoScheduler = (function ($) {
             end_span = $box.find('.end-time'),
             range = init_slider_range(event_start, event_end, rec_start, rec_end),
             slider_instance,
-            now = moment();
+            now = _now();
 
         start_span.html(range.event.start_date.format('h:mm a'));
         end_span.html(range.event.end_date.format('h:mm a'));
@@ -1940,7 +1940,7 @@ var PanoptoScheduler = (function ($) {
                 }
 
                 if (now.isAfter(range.event.start_date) && now.isBefore(range.event.end_date)) {
-                    slid = moment();
+                    slid = _now();
 
                     if (val[0] < slid.unix()) {
                         val[0] = slid.unix();
@@ -2109,6 +2109,11 @@ var PanoptoScheduler = (function ($) {
         } else {
             $('.remove-room').blur();
         }
+    }
+
+    function _now() {
+        return (window.scheduler.hasOwnProperty('current_date'))
+            ? moment(window.scheduler.current_date) : moment();
     }
 
     function init_course_events() {

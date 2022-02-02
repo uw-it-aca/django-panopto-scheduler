@@ -4,6 +4,7 @@
 from django.conf import settings
 from uw_saml.utils import get_user
 from scheduler.utils import person_from_username
+import os
 
 
 def user(request):
@@ -30,3 +31,7 @@ def has_less_compiled(request):
 
 def debug_mode(request):
     return {"debug_mode": settings.DEBUG}
+
+
+def localdev_mode(request):
+    return {'localdev_mode': (os.environ.get('ENV', None) == 'localdev')}
