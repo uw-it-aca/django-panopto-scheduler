@@ -129,8 +129,8 @@ var PanoptoScheduler = (function ($) {
     }
 
     function panopto_full_duration(panopto_event) {
-        return (moment(panopto_event.recording.start).isSame(panopto_event.event.start) &&
-                moment(panopto_event.recording.end).isSame(panopto_event.event.end));
+        return (moment(panopto_event.recording.start).isSameOrBefore(panopto_event.event.start) &&
+                moment(panopto_event.recording.end).isSameOrAfter(panopto_event.event.end));
     }
 
     function panopto_can_record(panopto_event) {
@@ -1409,9 +1409,8 @@ var PanoptoScheduler = (function ($) {
             });
 
             if (event_start_date && event_end_date) {
-                recording_start = moment(event_start_date);
+                recording_start = moment(moment(event_start_date));
                 recording_end = moment(event_end_date);
-
                 slider_value = [
                     recording_start.unix(),
                     recording_end.unix()
@@ -1866,9 +1865,13 @@ var PanoptoScheduler = (function ($) {
             ];
         }
 
+        var orig_event_start = moment(event_start),
+            buffered_event_start = moment(orig_event_start).subtract(
+                window.scheduler.event_start_time_buffer, 'seconds');
+
         return {
             event: {
-                start_date: moment(event_start),
+                start_date: buffered_event_start,
                 end_date: moment(event_end)
             },
             slider_value: slider_value

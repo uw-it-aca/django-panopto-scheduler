@@ -33,5 +33,10 @@ def debug_mode(request):
     return {"debug_mode": settings.DEBUG}
 
 
+def event_schedule_buffers(request):
+    return {'event_start_time_buffer': getattr(
+        settings, 'EVENT_START_TIME_BUFFER', 0)}
+
+
 def localdev_mode(request):
     return {'localdev_mode': (os.environ.get('ENV', None) == 'localdev')}

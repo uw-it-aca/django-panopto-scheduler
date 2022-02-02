@@ -3,6 +3,8 @@ import json
 
 ALLOWED_HOSTS = ['*']
 
+EVENT_START_TIME_BUFFER = 120
+
 if 'SAML_MOCK' in os.getenv('AUTH', '').split(' '):
     MOCK_SAML_ATTRIBUTES = {
         'uwnetid': ['jfaculty'],
@@ -59,7 +61,8 @@ COMPRESS_JS_FILTERS = [
 
 TEMPLATES[0]['OPTIONS']['context_processors'] += [
     'supporttools.context_processors.supportools_globals',
-    'scheduler.context_processors.localdev_mode'
+    'scheduler.context_processors.event_schedule_buffers',
+    'scheduler.context_processors.localdev_mode',
 ]
 
 PANOPTO_ADMIN_GROUP = 'u_acadev_panopto_support'
