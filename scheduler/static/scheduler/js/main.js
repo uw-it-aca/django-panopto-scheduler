@@ -2115,8 +2115,8 @@ var PanoptoScheduler = (function ($) {
     }
 
     function _now() {
-        return (window.scheduler.hasOwnProperty('current_date'))
-            ? moment(window.scheduler.current_date) : moment();
+        return window.scheduler.hasOwnProperty('current_date') ?
+            moment(window.scheduler.current_date) : moment();
     }
 
     function init_course_events() {
