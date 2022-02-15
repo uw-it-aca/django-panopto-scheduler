@@ -32,7 +32,7 @@ setup(
         'UW-RestClients-GWS~=2.3',
         'UW-RestClients-Canvas~=1.2',
         'UW-RestClients-R25>=0.3,<1.0',
-        'UW-Panopto-Client>=0.2.1,<1.0',
+        'UW-Panopto-Client>=0.2.4,<1.0',
         'UW-Django-SAML2~=1.5',
         'Django-SupportTools~=3.5',
         'UW-RestClients-Django-Utils~=2.3',
