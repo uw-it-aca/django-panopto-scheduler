@@ -1,9 +1,10 @@
-# Copyright 2021 UW-IT, University of Washington
+# Copyright 2022 UW-IT, University of Washington
 # SPDX-License-Identifier: Apache-2.0
 
 from django.conf import settings
 from uw_saml.utils import get_user
 from scheduler.utils import person_from_username
+import os
 
 
 def user(request):
@@ -30,3 +31,12 @@ def has_less_compiled(request):
 
 def debug_mode(request):
     return {"debug_mode": settings.DEBUG}
+
+
+def event_schedule_buffers(request):
+    return {'event_start_time_buffer': getattr(
+        settings, 'EVENT_START_TIME_BUFFER', 0)}
+
+
+def localdev_mode(request):
+    return {'localdev_mode': (os.environ.get('ENV', None) == 'localdev')}
