@@ -3,8 +3,6 @@ import json
 
 ALLOWED_HOSTS = ['*']
 
-EVENT_START_TIME_BUFFER = 120
-
 if 'SAML_MOCK' in os.getenv('AUTH', '').split(' '):
     MOCK_SAML_ATTRIBUTES = {
         'uwnetid': ['jfaculty'],
