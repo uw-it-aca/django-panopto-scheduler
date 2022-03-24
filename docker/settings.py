@@ -59,6 +59,8 @@ COMPRESS_JS_FILTERS = [
 
 TEMPLATES[0]['OPTIONS']['context_processors'] += [
     'supporttools.context_processors.supportools_globals',
+    'scheduler.context_processors.event_schedule_buffers',
+    'scheduler.context_processors.localdev_mode',
 ]
 
 PANOPTO_ADMIN_GROUP = 'u_acadev_panopto_support'
