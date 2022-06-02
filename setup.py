@@ -21,7 +21,7 @@ setup(
     packages=['scheduler'],
     include_package_data=True,
     install_requires=[
-        'Django~=2.2',
+        'Django~=3.2',
         'django-compressor',
         'django-blti~=2.2',
         'django-userservice~=3.1',
@@ -50,6 +50,6 @@ setup(
         'License :: OSI Approved :: Apache Software License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.8',
     ],
 )
