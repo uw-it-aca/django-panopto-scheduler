@@ -56,9 +56,9 @@ memcached:
   replicaCount: 1
 certs:
   mounted: true
-  certPath: /certs/test.panopto-app.uw.edu-uwca.cert
-  keyPath: /certs/test.panopto-app.uw.edu-uwca.key
-  secretName: test.panopto-app.uw.edu-uwca-certs
+  certPath: /certs/test.panopto-app.uw.edu.cert
+  keyPath: /certs/test.panopto-app.uw.edu.key
+  secretName: test.panopto-app.uw.edu-ic-certs
 environmentVariables:
   - name: ENV
     value: dev
@@ -125,6 +125,8 @@ externalSecrets:
     - name: test.panopto-app.uw.edu-ic-certs
       externalKey: axdd/kv/data/panopto-app/test/ic-certs
       data:
+        - name: test.panopto-app.uw.edu.key
+          property: key
         - name: test.panopto-app.uw.edu.cert
           property: cert
     - name: test.panopto-app.uw.edu-uw-idp-cert
