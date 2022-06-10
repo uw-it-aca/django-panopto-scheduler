@@ -57,9 +57,9 @@ memcached:
   replicaCount: 1
 certs:
   mounted: true
-  certPath: /certs/panopto-app.uw.edu-uwca.cert
-  keyPath: /certs/panopto-app.uw.edu-uwca.key
-  secretName: panopto-app.uw.edu-uwca-certs
+  certPath: /certs/panopto-app.uw.edu.cert
+  keyPath: /certs/panopto-app.uw.edu.key
+  secretName: panopto-app.uw.edu-ic-certs
 cronjob:
   enabled: true
   jobs:
@@ -73,8 +73,6 @@ environmentVariables:
   - name: WEBSERVER
     value: nginx
   - name: GWS_ENV
-    value: PROD
-  - name: PWS_ENV
     value: PROD
   - name: SWS_ENV
     value: PROD
@@ -125,16 +123,11 @@ externalSecrets:
           property: sql_user
         - name: password
           property: sql_pass
-    - name: panopto-app.uw.edu-uwca-certs
-      externalKey: axdd/kv/data/panopto-app/prod/uwca-certs
-      data:
-        - name: panopto-app.uw.edu-uwca.key
-          property: key
-        - name: panopto-app.uw.edu-uwca.cert
-          property: cert
     - name: panopto-app.uw.edu-ic-certs
       externalKey: axdd/kv/data/panopto-app/prod/ic-certs
       data:
+        - name: panopto-app.uw.edu.key
+          property: key
         - name: panopto-app.uw.edu.cert
           property: cert
     - name: panopto-app.uw.edu-uw-idp-cert
