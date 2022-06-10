@@ -113,13 +113,6 @@ externalSecrets:
           property: sql_user
         - name: password
           property: sql_pass
-    - name: test.panopto-app.uw.edu-uwca-certs
-      externalKey: axdd/kv/data/panopto-app/test/uwca-certs
-      data:
-        - name: test.panopto-app.uw.edu-uwca.key
-          property: key
-        - name: test.panopto-app.uw.edu-uwca.cert
-          property: cert
     - name: test.panopto-app.uw.edu-ic-certs
       externalKey: axdd/kv/data/panopto-app/test/ic-certs
       data:
