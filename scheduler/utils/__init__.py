@@ -2,11 +2,9 @@
 # SPDX-License-Identifier: Apache-2.0
 
 from django.conf import settings
-from uw_pws import PWS
 from uw_sws.section import get_section_by_label, get_section_by_url
-from restclients_core.exceptions import InvalidNetID, DataFailureException
+from restclients_core.exceptions import DataFailureException
 from scheduler.models import Curriculum
-from scheduler.exceptions import InvalidUser
 from scheduler.utils.validation import Validation
 from uw_r25.events import get_event_by_alien_id
 from uw_r25.reservations import get_reservations
@@ -35,18 +33,6 @@ logger = logging.getLogger(__name__)
 UW_CAMPUS = ['seattle', 'bothell', 'tacoma']
 UW_DOMAIN = ['uw.edu', 'washington.edu', 'u.washington.edu']
 UW_MEETING_TYPES = ['lecture', 'seminar', 'quiz', 'lab', 'final']
-
-
-def person_from_username(username):
-    try:
-        return PWS().get_person_by_netid(username.lower())
-    except InvalidNetID as ex:
-        raise InvalidUser()
-    except DataFailureException as ex:
-        if ex.status == 404:
-            raise InvalidUser()
-        else:
-            raise
 
 
 def course_location_and_recordings(course):

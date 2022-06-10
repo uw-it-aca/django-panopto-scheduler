@@ -74,8 +74,6 @@ environmentVariables:
     value: nginx
   - name: GWS_ENV
     value: PROD
-  - name: PWS_ENV
-    value: PROD
   - name: SWS_ENV
     value: PROD
   - name: R25_ENV
