@@ -19,7 +19,7 @@ logger = logging.getLogger(__name__)
 class Schedule(RESTDispatch):
     def get(self, request, *args, **kwargs):
         try:
-            course = Validation().course_id(kwargs['course_id'])
+            course = Validation().course_id(kwargs.get('course_id'))
             events = course_location_and_recordings(course)
         except MissingParamException as ex:
             events = space_events_and_recordings(request.GET)
