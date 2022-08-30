@@ -36,6 +36,7 @@ class Command(BaseCommand):
     _name_mismatch = []
     _recorder_mismatch = []
     _disconnected = []
+    _multiple_recorders = []
 
     def handle(self, *args, **options):
         session_api = SessionManagement()
@@ -204,19 +205,23 @@ class Command(BaseCommand):
         if space_id:
             if recorder:
                 if space_id in self._recorders:
+                    current_recorder = self._recorders[space_id]
+                    current_disconnected = (
+                        current_recorder['state'].lower() == 'disconnected')
                     disconnected = (recorder.State.lower() == 'disconnected')
-                    message = ('MULTIPLE RECORDERS in space id {}: '
-                               '{} "{}" and {} "{}"').format(
-                                   recorder.ExternalId,
-                                   self._recorders[space_id]['id'],
-                                   self._recorders[space_id]['name'],
-                                   recorder.Id, recorder.Name,
-                                   " (DISCONNECTED)" if disconnected else "")
-                    if disconnected:
-                        self.note(message)
+                    message = (
+                        'MULTIPLE RECORDERS in space id {}: '
+                        '{} "{}"{} and {} "{}"{}').format(
+                            recorder.ExternalId,
+                            current_recorder['id'], current_recorder['name'],
+                            " (DISCONNECTED)" if current_disconnected else "",
+                            recorder.Id, recorder.Name,
+                            " (DISCONNECTED)" if disconnected else "")
+
+                    self._multiple_recorders.append(message)
+                    self.note(message)
+                    if not current_disconnected or disconnected:
                         return None
-                    else:
-                        raise Exception(message)
 
                 # authoritative space_id/recorder_id binding
                 self._recorders[space_id] = {
@@ -315,6 +320,16 @@ class Command(BaseCommand):
                         mismatch['course_id'],
                         mismatch['given_name'],
                         mismatch['session_name'])
+
+            if len(self._multiple_recorders):
+                body += ("\n\nBelow are spaces that have been found to "
+                         "contain multiple recorders.\nThe scheduler can "
+                         "only schedule recordings in spaces that have a "
+                         "single\nrecorder.  As long as only one recorder "
+                         "is enabled, it should be fine.\n\n")
+
+                for multi in self._multiple_recorders:
+                    body += "{}\n".format(multi)
 
             message = EmailMessage(subject, body, sender, recipients)
             message.send()
