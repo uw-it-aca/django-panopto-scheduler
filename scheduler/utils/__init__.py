@@ -329,8 +329,11 @@ def mash_in_panopto_sessions(event_sessions, session_external_ids, recorders):
                         hasattr(session.RemoteRecorderIds, 'guid')) else None
 
                     # validate recorder id
+                    e_r['relocated_recorder_id'] = None
                     if (e['space']['id'] and e['space']['id'] in recorders and
                             recorders[e['space']['id']] != e_r['recorder_id']):
+                        e_r['relocated_recorder_id'] = recorders[
+                            e['space']['id']]
                         logger.info(
                             ('Stale session recorder id: {}, '
                              'session: "{}", '
@@ -339,7 +342,7 @@ def mash_in_panopto_sessions(event_sessions, session_external_ids, recorders):
                                  e_r['recorder_id'],
                                  session.ExternalId,
                                  e['space']['id'],
-                                 recorders[e['space']['id']]))
+                                 e_r['relocated_recorder_id']))
 
                     e_r['id'] = session.Id
                     e_r['folder']['name'] = session.FolderName
