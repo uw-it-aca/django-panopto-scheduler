@@ -1032,6 +1032,10 @@ var PanoptoScheduler = (function ($) {
                 panopto_event.recording.id = null;
                 panopto_event.recording.start = panopto_event.event.start;
                 panopto_event.recording.end = panopto_event.event.end;
+                if (panopto_event.recording.hasOwnProperty('relocated_recorder_id') &&
+                        panopto_event.recording.relocated_recorder_id) {
+                    panopto_event.recording.recorder_id = panopto_event.recording.relocated_recorder_id;
+                }
             }
         }).always(function () {
             button.trigger('scheduler.remove_schedule_finish', [panopto_event]);
