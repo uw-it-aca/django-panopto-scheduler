@@ -74,12 +74,12 @@ class Command(BaseCommand):
                         course_id = "{}-{}-{}-{}-{}".format(
                             year, term, cur, course, section)
 
-                        self.sessions(course_id, session)
+                        self.sessions(course_id, recorder.Id, session)
             else:
                 self.note('RECORDER {} "{}": not in scheduler'.format(
                     recorder.Id, recorder.Name))
 
-        for course_id, sessions in self.sessions().items():
+        for course_id, recorders in self.sessions().items():
             validation_api = Validation()
             course = validation_api.course_id(course_id)
             event = get_event_by_alien_id(r25_alien_uid(course))
@@ -128,7 +128,7 @@ class Command(BaseCommand):
                         continue
 
                     try:
-                        session = sessions[external_id]
+                        session = recorders[course_recorder['id']][external_id]
                     except KeyError:
                         # no scheduled recording for meeting
                         continue
@@ -186,18 +186,21 @@ class Command(BaseCommand):
                 'given_name': name,
                 'session_name': session['name']})
 
-    def sessions(self, course_id=None, session=None):
-        if course_id:
+    def sessions(self, course_id=None, recorder_id=None, session=None):
+        if course_id and recorder_id:
             if session:
                 if course_id not in self._sessions:
                     self._sessions[course_id] = {}
 
-                self._sessions[course_id][session.ExternalId] = {
-                    'recorder_id': session.RemoteRecorderIds[0][0],
+                if recorder_id not in self._sessions[course_id]:
+                    self._sessions[course_id][recorder_id] = {}
+
+                self._sessions[course_id][recorder_id][session.ExternalId] = {
+                    'recorder_id': recorder_id,
                     'name': session.Name
                 }
 
-            return self._sessions[course_id]
+            return self._sessions[course_id][recorder_id]
 
         return self._sessions
 
