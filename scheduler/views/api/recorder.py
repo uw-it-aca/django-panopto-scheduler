@@ -3,19 +3,17 @@
 
 from scheduler.views.rest_dispatch import RESTDispatch
 from scheduler.utils.validation import Validation
-from scheduler.views.api.exceptions import MissingParamException, \
-    InvalidParamException
-from panopto_client import PanoptoAPIException
-from panopto_client.remote_recorder import RemoteRecorderManagement
+from scheduler.exceptions import (
+    MissingParamException, InvalidParamException, RecorderException)
+from scheduler.dao.panopto.recorder import (
+    get_recorder_details, update_recorder_external_id, list_recorders)
+from scheduler.dao.r25 import get_space_by_id
 from scheduler.models import RecorderCache, RecorderCacheEntry
-from scheduler.utils.recorder import get_api_recorder_details, \
-    RecorderException
-from uw_r25.spaces import get_space_by_id
+from panopto_client import PanoptoAPIException
 from restclients_core.exceptions import DataFailureException
 import datetime
 import logging
 import json
-import re
 import pytz
 
 
@@ -25,7 +23,6 @@ logger = logging.getLogger(__name__)
 class Recorder(RESTDispatch):
     def __init__(self, *args, **kwargs):
         self._space_list_cache_timeout = 1  # timeout in hours
-        self._api = RemoteRecorderManagement()
         super(Recorder, self).__init__(*args, **kwargs)
 
     def get(self, request, *args, **kwargs):
@@ -44,8 +41,7 @@ class Recorder(RESTDispatch):
             data = json.loads(request.body)
             external_id = data.get('external_id', None)
             if external_id is not None:
-                rv = self._api.updateRemoteRecorderExternalId(recorder_id,
-                                                              external_id)
+                update_recorder_external_id(recorder_id, external_id)
                 try:
                     cache_entry = RecorderCacheEntry.objects.get(
                         recorder_id=recorder_id)
@@ -61,7 +57,7 @@ class Recorder(RESTDispatch):
 
     def _get_recorder_details(self, recorder_id):
         try:
-            recorders = get_api_recorder_details(self._api, recorder_id)
+            recorders = get_recorder_details(recorder_id)
         except (RecorderException, PanoptoAPIException,
                 MissingParamException, InvalidParamException) as err:
             return self.error_response(400, message="{}".format(err))
@@ -115,7 +111,7 @@ class Recorder(RESTDispatch):
 
         except (IndexError, RecorderCache.DoesNotExist):
             try:
-                recorders = self._api.listRecorders()
+                recorders = list_recorders()
                 rec_cache = self._cache_recorders(recorders)
             except PanoptoAPIException as err:
                 return self.error_response(400, message="{}".format(err))

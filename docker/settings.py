@@ -63,6 +63,11 @@ TEMPLATES[0]['OPTIONS']['context_processors'] += [
     'scheduler.context_processors.localdev_mode',
 ]
 
+SCHEDULER_TIMEZONE = "America/Los_Angeles"
+
+CAMPUS_COURSES_MODULE = 'scheduler.course.uw'
+MEETING_SCHEDULES_MODULE = 'scheduler.meetings.r25.uw'
+
 PANOPTO_ADMIN_GROUP = 'u_acadev_panopto_support'
 RESTCLIENTS_ADMIN_GROUP = PANOPTO_ADMIN_GROUP
 USERSERVICE_ADMIN_GROUP = PANOPTO_ADMIN_GROUP

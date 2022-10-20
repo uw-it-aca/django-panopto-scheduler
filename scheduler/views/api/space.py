@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 from scheduler.views.rest_dispatch import RESTDispatch
-from uw_r25.spaces import get_spaces, get_space_by_id
+from scheduler.dao.r25 import get_spaces, get_space_by_id
 import logging
 
 
