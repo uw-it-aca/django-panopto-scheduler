@@ -2,10 +2,10 @@
 # SPDX-License-Identifier: Apache-2.0
 
 from django.conf import settings
-from restclients_core.exceptions import DataFailureException
+from scheduler.course import Course
+from scheduler.reservations import Reservations
+from scheduler.user import User
 from scheduler.utils import schedule_key
-from scheduler.dao.r25 import (
-    get_event_by_course, get_reservations_by_search_params)
 from scheduler.panopto.folder import (
     get_panopto_folder_creators, set_panopto_generic_folder,
     set_panopto_generic_session)
@@ -13,32 +13,35 @@ from scheduler.dao.panopto.recorder import get_recorder_details
 from scheduler.dao.panopto.sessions import (
     get_sessions_by_external_ids, get_sessions_by_session_ids)
 from scheduler.dao.panopto.access import get_session_access_details
-from scheduler.exceptions import CourseEventException
+from scheduler.exceptions import (
+    MissingParamException, CourseReservationsException)
+from restclients_core.exceptions import DataFailureException
 from panopto_client import PanoptoAPIException
 from dateutil import parser, tz
 from importlib import import_module
 import datetime
 import pytz
 import logging
-import re
 
 
 logger = logging.getLogger(__name__)
-UW_DOMAIN = ['uw.edu', 'washington.edu', 'u.washington.edu']
 UW_MEETING_TYPES = ['lecture', 'seminar', 'quiz', 'lab', 'final']
 
 
-def course_location_and_recordings(course):
+def course_location_and_recordings(course_id):
     try:
-        event = get_event_by_course(course)
+        course = Course(course_id)
+        event = Reservations().get_event_by_course(course)
         return course_recording_sessions(course, event)
     except PanoptoAPIException as err:
-        raise CourseEventException(
+        raise CourseReservationsException(
             "There was a problem connecting to the Panopto server. {}".format(
                 err))
+    except MissingParamException as ex:
+        raise
     except Exception as ex:
         logger.exception(ex)
-        raise CourseEventException("Data Failure: {}".format(ex))
+        raise CourseReservationsException("Data Failure: {}".format(ex))
 
 
 def course_recording_sessions(course, event):
@@ -114,7 +117,8 @@ def space_events_and_recordings(params):
 
     if search['space_id'] and search['start_dt']:
         try:
-            reservations = get_reservations_by_search_params(search)
+            reservations = Reservations().get_reservations_by_search_params(
+                search)
         except DataFailureException as ex:
             if ex.status == 404:
                 reservations = []
@@ -184,7 +188,7 @@ def event_session_from_reservation(r):
         },
         'contact': {
             'name': r.contact_name,
-            'uwnetid': None,
+            'loginid': User().validate_login_id(r.contact_email),
             'email': r.contact_email if r.contact_email else ''
         }
     }
@@ -198,12 +202,6 @@ def event_session_from_reservation(r):
             logger.error(
                 "Meeting for {} on {} has no space reservation ".format(
                     r.event_name, r.start_datetime))
-
-    match = re.match(
-        r'^([a-z][0-9a-z]{{0,7}})@({})$'.format('|'.join(UW_DOMAIN)),
-        session['contact']['email'])
-    if match:
-        session['contact']['uwnetid'] = match.group(1)
 
     start_dt = parser.parse(r.start_datetime)
     end_dt = parser.parse(r.end_datetime) + \
@@ -253,7 +251,7 @@ def event_session_from_scheduled_recording(s):
         },
         'contact': {
             'name': '',
-            'uwnetid': '',
+            'loginid': '',
             'email': '',
         },
         'event': {
@@ -263,7 +261,7 @@ def event_session_from_scheduled_recording(s):
     }
 
     session['key'] = schedule_key(
-        session['contact']['uwnetid'], session['recording']['name'],
+        session['contact']['loginid'], session['recording']['name'],
         session['recording']['external_id'],
         session['recording']['recorder_id'], session['event']['start'],
         session['event']['end'])
@@ -344,7 +342,7 @@ def mash_in_panopto_sessions(event_sessions, session_external_ids, recorders):
                 e_r['recorder_id'] = recorders[space_id]
 
         e['key'] = schedule_key(
-            e['contact']['uwnetid'], e_r['name'], e_r['external_id'],
+            e['contact']['loginid'], e_r['name'], e_r['external_id'],
             e_r['recorder_id'], e['event']['start'], e['event']['end'])
 
 

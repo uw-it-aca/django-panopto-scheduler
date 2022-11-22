@@ -17,7 +17,7 @@ class StudentWebServiceUnavailable(Exception):
         return _("sws_not_available")
 
 
-class CourseEventException(Exception):
+class CourseReservationsException(Exception):
     pass
 
 

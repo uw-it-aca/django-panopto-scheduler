@@ -5,7 +5,7 @@ from uw_r25.events import get_event_by_alien_id
 from uw_r25.reservations import get_reservations
 from uw_r25.spaces import get_space_by_id as panopto_space_by_id
 from uw_r25.spaces import get_spaces as panopto_get_spaces
-from scheduler.exceptions import CourseEventException
+from scheduler.exceptions import CourseReservationsException
 
 
 def get_event_by_course(course):
@@ -13,7 +13,8 @@ def get_event_by_course(course):
     event = get_event_by_alien_id(course.r25_alien_uid())
 
     if not event:
-        raise CourseEventException("No Course Events Found")
+        raise CourseReservationsException(
+            "Course Events Found: {}".format(course))
 
     return event
 

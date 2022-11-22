@@ -27,6 +27,9 @@ var PanoptoScheduler = (function ($) {
         search_in_progress(".event-search-result");
     }
 
+    function validate_login_ids_in_progress() {
+    }
+
     function recorder_select_in_progress() {
         search_in_progress(".recorder-select-result");
     }
@@ -37,6 +40,9 @@ var PanoptoScheduler = (function ($) {
 
     function event_search_complete() {
         $("form.event-search button").removeAttr('disabled');
+    }
+
+    function validate_login_ids_complete() {
     }
 
     function room_search_complete() {
@@ -438,8 +444,8 @@ var PanoptoScheduler = (function ($) {
             name: ($.isArray(event.name)) ? event.name : [event.name],
             contact: event.contact.name,
             contact_email: event.contact.email,
-            contact_netids: (event.contact.uwnetid && event.contact.uwnetid.length) ?
-                [event.contact.uwnetid] : [],
+            contact_netids: (event.contact.loginid && event.contact.loginid.length) ?
+                [event.contact.loginid] : [],
             recording_name: event.recording.name,
             recording_is_broadcast: event.recording.is_broadcast,
             recording_is_public: event.recording.is_public,
@@ -532,6 +538,12 @@ var PanoptoScheduler = (function ($) {
         $(".event-search-result").empty();
         failure_modal('Event Search Failure',
                       'Please try again later.',
+                      xhr);
+    }
+
+    function validate_login_ids_failure(xhr) {
+        failure_modal('Error validating login ids',
+                      'Please try again.',
                       xhr);
     }
 
@@ -941,8 +953,8 @@ var PanoptoScheduler = (function ($) {
             method = 'PUT';
         }
 
-        if (panopto_event.contact.hasOwnProperty('uwnetid') && panopto_event.contact.uwnetid) {
-            request_data.uwnetid = panopto_event.contact.uwnetid;
+        if (panopto_event.contact.hasOwnProperty('loginid') && panopto_event.contact.loginid) {
+            request_data.loginid = panopto_event.contact.loginid;
         }
 
         if (now.isAfter(end_time)) {
@@ -1011,9 +1023,9 @@ var PanoptoScheduler = (function ($) {
             type: 'DELETE',
             url: panopto_api_path('session/' + panopto_event.recording.id, {
                 key: panopto_event.key,
-                uwnetid: (panopto_event.contact.hasOwnProperty('uwnetid') &&
-                          panopto_event.contact.uwnetid) ?
-                    panopto_event.contact.uwnetid : '',
+                loginid: (panopto_event.contact.hasOwnProperty('loginid') &&
+                          panopto_event.contact.loginid) ?
+                    panopto_event.contact.loginid : '',
                 name: panopto_event.recording.name,
                 eid: panopto_event.recording.external_id,
                 rid: panopto_event.recording.recorder_id,
@@ -1733,32 +1745,43 @@ var PanoptoScheduler = (function ($) {
         $input.focus();
     }
 
-    function valid_netid(s) {
-        var valid = s.toLowerCase().trim().match(/^([a-z][a-z0-9_]+)(@(uw|washington|u\.washington).edu)?$/);
+    function panopto_folder_string_to_creators(val) {
+        var values = (val && val.length) ? val.split(/[ ,]+/) : [];
 
-        return (valid) ? valid[1] : null;
+        validate_login_ids(values);
     }
 
-    function panopto_folder_string_to_creators(val) {
-        var values = (val && val.length) ? val.split(/[ ,]+/) : [],
-            $ul = $('.creators .field ul'),
-            $li = $ul.find('li'),
-            $group = $('.creators .form-group'),
-            netids = [];
+    function validate_login_ids(raw_login_ids) {
+        $.ajax({
+            type: 'POST',
+            url: panopto_api_path('users/validate/'),
+            contentType: 'application/json',
+            data: JSON.stringify({
+                login_ids: raw_login_ids
+            }),
+            waitIndicatator: validate_login_ids_in_progress,
+            complete: validate_login_ids_complete
+        })
+            .fail(validate_login_ids_failure)
+            .done(function (ids) {
+                paint_validated_login_ids(ids);
+            });
+    }
 
-        // UWNetid\netid
-        $.each(values, function () {
-            var netid = valid_netid(this);
-            if (netid) {
-                if (netids.indexOf(netid) < 0) {
-                    netids.push(netid);
-                }
-            } else {
+    function paint_validated_login_ids(ids) {
+        var $li = $ul.find('li'),
+            $group = $('.creators .form-group'),
+            login_ids = [];
+
+        $.each(ids, function () {
+            if (this.hasOwnProperty('error')) {
                 $group.addClass('has-error');
                 return false;
             }
 
-            return true;
+            if (this.loginid.length && login_ids.indexOf(this.loginid) < 0) {
+                login_ids.push(this.loginid);
+            }
         });
 
         if ($group.hasClass('has-error')) {
@@ -1773,7 +1796,7 @@ var PanoptoScheduler = (function ($) {
             $ul = $('.creators .field ul');
         }
 
-        $.each(netids, function () {
+        $.each(login_ids, function () {
             $li = $('<li></li>');
             $li.text(this);
             $ul.find('li:nth-last-child(1)').before($li);

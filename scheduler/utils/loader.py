@@ -11,9 +11,5 @@ def load_class_from_module_setting(
     if module_name is None:
         raise Exception("Missing setting: {}".format(module_name_setting))
 
-    try:
-        module = import_module(module_name)
-        return getattr(module, class_name)(*args, **kwargs)
-    except Exception as ex:
-        raise Exception(
-            "Cannot load module {}: {}".format(module_name, ex))
+    module = import_module(module_name)
+    return getattr(module, class_name)(*args, **kwargs)

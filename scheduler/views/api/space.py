@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 from scheduler.views.rest_dispatch import RESTDispatch
-from scheduler.dao.r25 import get_spaces, get_space_by_id
+from scheduler.reservations import Reservations
 import logging
 
 
@@ -12,6 +12,7 @@ logger = logging.getLogger(__name__)
 class Space(RESTDispatch):
     def __init__(self):
         self._space_list_cache_timeout = 1  # timeout in hours
+        self.reservations = Reservations()
 
     def get(self, request, *args, **kwargs):
         space_id = kwargs.get('space_id')
@@ -25,7 +26,7 @@ class Space(RESTDispatch):
             return self._list_spaces(params)
 
     def _get_space_details(self, space_id):
-        space = get_space_by_id(space_id)
+        space = self.reservations.get_space_by_id(space_id)
         return self.json_response({
             'space_id': space.space_id,
             'name': space.name,
@@ -34,7 +35,7 @@ class Space(RESTDispatch):
 
     def _list_spaces(self, args):
         reps = []
-        for space in get_spaces(**args):
+        for space in self.reservationss.get_spaces(**args):
             reps.append({
                 'space_id': space.space_id,
                 'name': space.name,

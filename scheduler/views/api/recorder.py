@@ -7,7 +7,7 @@ from scheduler.exceptions import (
     MissingParamException, InvalidParamException, RecorderException)
 from scheduler.dao.panopto.recorder import (
     get_recorder_details, update_recorder_external_id, list_recorders)
-from scheduler.dao.r25 import get_space_by_id
+from scheduler.reservations import Reservations
 from scheduler.models import RecorderCache, RecorderCacheEntry
 from panopto_client import PanoptoAPIException
 from restclients_core.exceptions import DataFailureException
@@ -23,6 +23,7 @@ logger = logging.getLogger(__name__)
 class Recorder(RESTDispatch):
     def __init__(self, *args, **kwargs):
         self._space_list_cache_timeout = 1  # timeout in hours
+        self.reservations = Reservations()
         super(Recorder, self).__init__(*args, **kwargs)
 
     def get(self, request, *args, **kwargs):
@@ -87,7 +88,8 @@ class Recorder(RESTDispatch):
 
             if recorder.ExternalId:
                 try:
-                    space = get_space_by_id(recorders[0].ExternalId)
+                    space = self.reservationss.get_space_by_id(
+                        recorders[0].ExternalId)
                     rep['space'] = {
                         'space_id': space.space_id,
                         'name': space.name,

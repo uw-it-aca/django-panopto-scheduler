@@ -153,7 +153,7 @@ class Course(BaseCourse):
         return {
             'title_long': section.course_title_long if section else '',
             'name': '{} {}'.format(name.first, name.last) if name else '',
-            'uwnetid': uwnetid if uwnetid else '',
+            'loginid': uwnetid if uwnetid else '',
             'email': email if (
                 email and len(email)) else "{}@uw.edu".format(
                     uwnetid if uwnetid else '')

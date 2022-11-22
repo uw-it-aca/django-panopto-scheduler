@@ -65,8 +65,9 @@ TEMPLATES[0]['OPTIONS']['context_processors'] += [
 
 SCHEDULER_TIMEZONE = "America/Los_Angeles"
 
-CAMPUS_COURSES_MODULE = 'scheduler.course.uw'
-MEETING_SCHEDULES_MODULE = 'scheduler.meetings.r25.uw'
+USER_MODULE = 'scheduler.org.uw.user'
+COURSES_MODULE = 'scheduler.org.uw.course'
+RESERVATIONS_MODULE = 'scheduler.org.uw.reservations'
 
 PANOPTO_ADMIN_GROUP = 'u_acadev_panopto_support'
 RESTCLIENTS_ADMIN_GROUP = PANOPTO_ADMIN_GROUP

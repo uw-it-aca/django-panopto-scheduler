@@ -5,14 +5,14 @@ from abc import ABC, abstractmethod
 from scheduler.utils.loader import load_class_from_module_setting
 
 
-COURSE_MODULE_SETTING = 'CAMPUS_COURSES_MODULE'
+COURSES_MODULE_SETTING = 'COURSES_MODULE'
 
 
 class Course(object):
     """Indirection class used to load campus-specific Course class"""
     def __new__(self, courseId):
         return load_class_from_module_setting(
-            COURSE_MODULE_SETTING, 'Course', courseId)
+            COURSES_MODULE_SETTING, 'Course', courseId)
 
 
 class BaseCourse(ABC):

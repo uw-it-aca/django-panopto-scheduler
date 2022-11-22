@@ -106,7 +106,7 @@ class Session(RESTDispatch):
             self._audit_log.info(
                 '{} scheduled {} for {} from {} to {}'.format(
                     request.user, new_session.get('external_id'),
-                    new_session.get('uwnetid'),
+                    new_session.get('loginid'),
                     new_session.get('start_time'),
                     new_session.get('end_time')))
 
@@ -163,7 +163,7 @@ class Session(RESTDispatch):
                 '{} modified {} for {} from {} to {} in {}'.format(
                     request.user,
                     session_update.get('external_id'),
-                    session_update.get('uwnetid'),
+                    session_update.get('loginid'),
                     session_update.get('start_time'),
                     session_update.get('end_time'),
                     session_update.get('folder_name')))
@@ -182,7 +182,7 @@ class Session(RESTDispatch):
         try:
             session_id = self._valid_recorder_id(kwargs.get('session_id'))
             # do not permit param tampering
-            key = schedule_key(request.GET.get('uwnetid', ''),
+            key = schedule_key(request.GET.get('loginid', ''),
                                request.GET.get('name', ''),
                                request.GET.get('eid', ''),
                                request.GET.get('rid', ''),
@@ -245,7 +245,7 @@ class Session(RESTDispatch):
         data = json.loads(request_body)
 
         session['recording_id'] = data.get("recording_id", "")
-        session['uwnetid'] = data.get("uwnetid", "")
+        session['loginid'] = data.get("loginid", "")
         session['name'] = self._valid_recording_name(
             data.get("name", "").strip())
         session['external_id'] = self._valid_external_id(
@@ -273,7 +273,7 @@ class Session(RESTDispatch):
         session['folder_creators'] = data.get("creators", None)
 
         # do not permit param tamperings
-        key = schedule_key(session['uwnetid'], session['name'],
+        key = schedule_key(session['loginid'], session['name'],
                            session['external_id'], session['recorder_id'],
                            data.get("event_start", "").strip(),
                            data.get("event_end", "").strip())
@@ -322,7 +322,7 @@ class Session(RESTDispatch):
                 try:
                     new_creator_ids.append(self._get_panopto_user_id(creator))
                 except PanoptoUserException as ex:
-                    messages.append('Invalid UWNetId {}'.format(creator))
+                    messages.append('Invalid Login Id {}'.format(creator))
 
         for creator in current_creators:
             if creator not in folder_creators:
@@ -330,7 +330,7 @@ class Session(RESTDispatch):
                     deleted_creator_ids.append(
                         self._get_panopto_user_id(creator))
                 except PanoptoUserException as ex:
-                    messages.append('Invalid UWNetId {}'.format(creator))
+                    messages.append('Invalid Login Id {}'.format(creator))
 
         if len(new_creator_ids):
             try:
@@ -359,7 +359,7 @@ class Session(RESTDispatch):
         if (not user or
                 user['UserId'] == '00000000-0000-0000-0000-000000000000'):
             raise PanoptoUserException(
-                'Unprovisioned UWNetId: {}'.format(netid))
+                'Unprovisioned Login Id: {}'.format(netid))
 
         return user['UserId']
 
