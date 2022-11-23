@@ -88,7 +88,7 @@ class Recorder(RESTDispatch):
 
             if recorder.ExternalId:
                 try:
-                    space = self.reservationss.get_space_by_id(
+                    space = self.reservations.get_space_by_id(
                         recorders[0].ExternalId)
                     rep['space'] = {
                         'space_id': space.space_id,

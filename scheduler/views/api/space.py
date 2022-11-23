@@ -35,7 +35,7 @@ class Space(RESTDispatch):
 
     def _list_spaces(self, args):
         reps = []
-        for space in self.reservationss.get_spaces(**args):
+        for space in self.reservations.get_spaces(**args):
             reps.append({
                 'space_id': space.space_id,
                 'name': space.name,
