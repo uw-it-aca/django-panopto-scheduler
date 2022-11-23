@@ -7,7 +7,7 @@ import re
 
 class User(BaseUser):
 
-    uw_netid_re = r'^([a-z][a-z0-9_]+)(@(uw|(u\.)?washington).edu)?$'
+    uw_netid_re = r'^\s*([a-z][a-z0-9_]+)(@(uw|(u\.)?washington).edu)?\s*$'
 
     def validate_login_ids(self, login_ids):
         login_ids = []
@@ -23,5 +23,5 @@ class User(BaseUser):
         return login_ids
 
     def validate_login_id(self, login_id):
-        match = re.match(self.uw_netid_re, login_id.lower().strip())
-        return match.group(1) if match else None
+        match = re.match(self.uw_netid_re, login_id, re.I)
+        return match.group(1).lower() if match else None
