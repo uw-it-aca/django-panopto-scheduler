@@ -12,5 +12,3 @@ def get_sws_section_for_course(course):
 
 def get_sws_section_by_url(url):
     return get_section_by_url(url)
-
-

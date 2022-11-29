@@ -67,5 +67,3 @@ class R25Reservations(BaseReservations):
 
     def get_spaces(self, *args, **kwargs):
         return get_spaces(*args, **kwargs)
-
-

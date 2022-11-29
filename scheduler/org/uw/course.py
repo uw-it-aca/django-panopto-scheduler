@@ -36,7 +36,7 @@ class Course(BaseCourse):
         course_parts = re.match(
             r'^(\d{{4}})-({})-([\w& ]+)-(\d{{3}})-([A-Z][A-Z0-9]?)$'.format(
                 '|'.join(self.UW_TERMS)), courseId, re.I)
-            
+
         if not course_parts:
             raise InvalidParamException(
                 'invalid course id: {}'.format(courseId))
@@ -136,9 +136,12 @@ class Course(BaseCourse):
                 meeting, 'instructors') and len(meeting.instructors) else None
             first_name = instructor.first_name if hasattr(
                 instructor, 'first_name') else ''
-            surname = instructor.surname if hasattr(instructor, 'surname') else ''
-            uwnetid = instructor.uwnetid if hasattr(instructor, 'uwnetid') else ''
-            email = instructor.email1 if hasattr(instructor, 'email1') else ''
+            surname = instructor.surname if hasattr(
+                instructor, 'surname') else ''
+            uwnetid = instructor.uwnetid if hasattr(
+                instructor, 'uwnetid') else ''
+            email = instructor.email1 if hasattr(
+                instructor, 'email1') else ''
             name = HumanName(' '.join([first_name, surname]))
             name.capitalize()
         except DataFailureException as err:

@@ -38,7 +38,7 @@ class BaseCourse(ABC):
 
     @abstractmethod
     def canvas_sis_id(self):
-        """Canvas SIS_ID assigned to a Canvas course by Student 
+        """Canvas SIS_ID assigned to a Canvas course by Student
         system provisioning process
         """
         pass
