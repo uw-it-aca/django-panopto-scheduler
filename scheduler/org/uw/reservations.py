@@ -8,10 +8,11 @@ from scheduler.reservations.r25 import R25Reservations
 class Reservations(R25Reservations):
     @property
     def instruction_profiles(self):
-        """R25 profile names indicating instructor is likely present"""
         return ['lecture', 'seminar', 'quiz']
 
     @property
     def course_profiles(self):
-        """R25 profile names indicating course and/or instruction related"""
         return self.instruction_profiles + ['lab', 'final']
+
+    def profile_name(self, profile):
+        return profile.split()[-1].lower() if profile else ''

@@ -27,21 +27,20 @@ class BaseReservations(ABC):
 
     @abstractmethod
     def get_event_by_course(self, course):
+        """Return facilities schedule for provided course"""
         pass
 
     @abstractmethod
     def get_reservations_by_search_params(self, search):
+        """Return facilities schedule for provided search criteria"""
         pass
 
     @abstractmethod
     def get_space_by_id(self, space_id):
+        """Return specific reservable space by provided id"""
         pass
 
     @abstractmethod
     def get_spaces(self, *args, **kwargs):
-        """
-        space_id:  (or some token unique to the event's space/location)
-        name: short name for the event's space/location
-        formal_name: long name for event's space/location
-        """
+        """Return list of reservable spaces based on supplied filter"""
         pass
