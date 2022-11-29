@@ -60,7 +60,7 @@ class R25Reservations(BaseReservations):
         return []
 
     def _profile_name(self, profile):
-        return profile.lower() if profile else ''
+        return profile.split()[-1].lower() if profile else ''
 
     def get_space_by_id(self, space_id):
         return get_space_by_id(space_id)
