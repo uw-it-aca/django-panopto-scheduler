@@ -1,6 +1,13 @@
 # Copyright 2022 UW-IT, University of Washington
 # SPDX-License-Identifier: Apache-2.0
 
+#
+# "schedule" refers to the combined result of a course offering's
+# meeting times, the physical reservation system's locations for
+# those meetings, and the space's panopto recorder's recording
+# sessions.
+#
+
 from django.conf import settings
 from scheduler.course import Course
 from scheduler.reservations import Reservations
