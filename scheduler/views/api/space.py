@@ -23,7 +23,7 @@ class Space(RESTDispatch):
             for q in request.GET:
                 params[q] = request.GET.get(q)
 
-            return self._list_spaces(params)
+            return self._list_spaces(**params)
 
     def _get_space_details(self, space_id):
         space = self.reservations.get_space_by_id(space_id)
@@ -33,9 +33,9 @@ class Space(RESTDispatch):
             'formal_name': space.formal_name
         })
 
-    def _list_spaces(self, args):
+    def _list_spaces(self, *args, **kwargs):
         reps = []
-        for space in self.reservations.get_spaces(**args):
+        for space in self.reservations.get_spaces(*args, **kwargs):
             reps.append({
                 'space_id': space.space_id,
                 'name': space.name,

@@ -1,6 +1,13 @@
 # Copyright 2022 UW-IT, University of Washington
 # SPDX-License-Identifier: Apache-2.0
 
+#
+# Course reflects the attributes necessary to correlate a
+# specific course offering's meeting schedule with
+# Panopto recording sessions, the facilities scheduling system,
+# and Canvas LMS.
+#
+
 from abc import ABC, abstractmethod
 from scheduler.utils.loader import load_class_from_module_setting
 
@@ -16,19 +23,24 @@ class Course(object):
 
 
 class BaseCourse(ABC):
-    """Base class defines methods necessary for pantoto and meetings
-       interactions.
+    """Base class definining methods necessary to associate a course
+    offering with the course meeting location and panopto folder and
+    scheduled recording sessions
     """
 
     @abstractmethod
-    def r25_alien_uid(self):
-        """R25 Alien UID unique for each schedulable couse offering"""
+    def reservation_uid(self):
+        """ID used to reference the course offering in the reservation
+        system. For R25 this is would be the Alien UID unique for
+        the couse offering.
+        """
         pass
 
     @abstractmethod
     def canvas_sis_id(self):
-        """Canvas SIS_ID assigned to each Canvas course by Student 
-        System Provisioning Process"""
+        """Canvas SIS_ID assigned to a Canvas course by Student 
+        system provisioning process
+        """
         pass
 
     @abstractmethod
@@ -39,19 +51,27 @@ class BaseCourse(ABC):
     @abstractmethod
     def panopto_course_folder(self, title):
         """Folder name and folder external_id that must match the values
-        set by Panopto Recordings Canvas LTI"""
+        set by Panopto's Recordings LTI
+        """
         pass
 
     @abstractmethod
     def panopto_course_session(self, start_datetime):
-        """Recording session name and external_ id unique to a course
-        offering meeting time."""
+        """Recording session name and external_id unique to a course
+        offering meeting time.
+        """
         pass
 
     @abstractmethod
     def course_event_title_and_contact(self):
-        """Return R25 Aliend ID used for course reference"""
+        """Returns the expected Panopto folder name, owner name,
+        login id, and email for the given course.
+        """
         pass
 
+    @abstractmethod
     def get_crosslisted_course(self):
+        """If the Course is crosslisted (joined), return the Course
+        class corresponding to the course crosslisted are linked into
+        """
         return self

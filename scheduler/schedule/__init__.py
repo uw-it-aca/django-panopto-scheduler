@@ -4,7 +4,6 @@
 from django.conf import settings
 from scheduler.course import Course
 from scheduler.reservations import Reservations
-from scheduler.user import User
 from scheduler.utils import schedule_key
 from scheduler.panopto.folder import (
     get_panopto_folder_creators, set_panopto_generic_folder,
@@ -18,20 +17,19 @@ from scheduler.exceptions import (
 from restclients_core.exceptions import DataFailureException
 from panopto_client import PanoptoAPIException
 from dateutil import parser, tz
-from importlib import import_module
 import datetime
 import pytz
 import logging
 
 
+reservations = Reservations()
 logger = logging.getLogger(__name__)
-UW_MEETING_TYPES = ['lecture', 'seminar', 'quiz', 'lab', 'final']
 
 
 def course_location_and_recordings(course_id):
     try:
         course = Course(course_id)
-        event = Reservations().get_event_by_course(course)
+        event = reservations.get_event_by_course(course)
         return course_recording_sessions(course, event)
     except PanoptoAPIException as err:
         raise CourseReservationsException(
@@ -50,18 +48,17 @@ def course_recording_sessions(course, event):
     session_external_ids = []
     joint = []
 
-    # cross listed?
-    if len(event.binding_reservations):
+    if event.is_crosslisted:
         course = course.get_crosslisted_course()
 
     contact = course.course_event_title_and_contact()
     folder = course.panopto_course_folder(contact['title_long'])
+
     for rsv in event.reservations:
+        if not rsv.is_instruction:
+            continue
 
         event_session = event_session_from_reservation(rsv)
-
-        if event_session['profile'].split()[-1].lower() in ['lab', 'final']:
-            continue
 
         event_session['joint'] = joint if len(joint) else None
 
@@ -71,16 +68,15 @@ def course_recording_sessions(course, event):
         event_session['recording']['name'] = name
         event_session['recording']['external_id'] = external_id
 
-        space_id = rsv.space_reservation.space_id if (
-            rsv.space_reservation) else None
+        space_id = rsv.space_id
 
         if space_id and space_id not in recorders:
             recorders[space_id] = get_recorder_id_for_space_id(space_id)
 
         session_external_ids.append(external_id)
 
-        event_session['schedulable'] = True if (
-            folder['external_id'] and event_session['space']['id']) else False
+        event_session['schedulable'] = (
+            folder['external_id'] and event_session['space']['id'])
 
         event_session['contact'] = contact
 
@@ -117,16 +113,18 @@ def space_events_and_recordings(params):
 
     if search['space_id'] and search['start_dt']:
         try:
-            reservations = Reservations().get_reservations_by_search_params(
-                search)
+            rsvs = reservations.get_reservations_by_search_params(search)
         except DataFailureException as ex:
             if ex.status == 404:
-                reservations = []
+                rsvs = []
             else:
                 raise
 
         # build event sessions, accounting for joint class reservations
-        for r in reservations:
+        for r in rsvs:
+            if r.is_course:
+                continue
+
             event_session = event_session_from_reservation(r)
 
             for s in event_sessions:
@@ -146,16 +144,10 @@ def space_events_and_recordings(params):
 
         # overlay session data
         for event_session in list(event_sessions):
-            # remove academic courses and generate external_id
-            if ('profile' in event_session and
-                    event_session['profile'] and
-                    event_session['profile'].lower() in UW_MEETING_TYPES):
-                event_sessions.remove(event_session)
-            else:
-                set_panopto_generic_folder(event_session)
-                set_panopto_generic_session(event_session)
-                event_external_ids.append(
-                    event_session['recording']['external_id'])
+            set_panopto_generic_folder(event_session)
+            set_panopto_generic_session(event_session)
+            event_external_ids.append(
+                event_session['recording']['external_id'])
 
     mash_in_panopto_sessions(event_sessions, event_external_ids, recorders)
 
@@ -164,8 +156,7 @@ def space_events_and_recordings(params):
 
 def event_session_from_reservation(r):
     session = {
-        'profile': r.profile_name if (hasattr(r, 'profile_name') and
-                                      r.profile_name) else '',
+        'profile': r.profile_name,
         'name': r.event_name,
         'schedulable': True,
         'space': {
@@ -186,22 +177,17 @@ def event_session_from_reservation(r):
                 'external_id': None
             }
         },
-        'contact': {
-            'name': r.contact_name,
-            'loginid': User().validate_login_id(r.contact_email),
-            'email': r.contact_email if r.contact_email else ''
-        }
+        'contact': r.contact_info()
     }
 
-    if hasattr(r, 'space_reservation'):
-        if r.space_reservation:
-            session['space']['id'] = r.space_reservation.space_id
-            session['space']['name'] = r.space_reservation.name
-            session['space']['formal_name'] = r.space_reservation.formal_name
-        else:
-            logger.error(
-                "Meeting for {} on {} has no space reservation ".format(
-                    r.event_name, r.start_datetime))
+    if r.space_id:
+        session['space']['id'] = r.space_id
+        session['space']['name'] = r.space_name
+        session['space']['formal_name'] = r.space_formal_name
+    else:
+        logger.error(
+            "Meeting for {} on {} has no space reservation ".format(
+                r.event_name, r.start_datetime))
 
     start_dt = parser.parse(r.start_datetime)
     end_dt = parser.parse(r.end_datetime) + \
@@ -355,17 +341,3 @@ def get_recorder_id_for_space_id(space_id):
         pass
 
     return None
-
-
-def load_class_from_module_setting(
-        module_name_setting, class_name, *args, **kwargs):
-    module_name = getattr(settings, module_name_setting)
-    if module_name is None:
-        raise Exception("Missing setting: {}".format(module_name_setting))
-
-    try:
-        module = import_module(module_name)
-        return getattr(module, class_name)(args, kwargs)
-    except Exception as ex:
-        raise Exception(
-            "Cannot load module {}: {}".format(module_name, ex))

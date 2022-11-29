@@ -1,6 +1,11 @@
 # Copyright 2022 UW-IT, University of Washington
 # SPDX-License-Identifier: Apache-2.0
 
+#
+# User reflects methods necessary to present suitable
+# login id's for Panpto login and contact information.
+#
+
 from abc import ABC, abstractmethod
 from scheduler.utils.loader import load_class_from_module_setting
 
@@ -23,12 +28,12 @@ class BaseUser(ABC):
     @abstractmethod
     def validate_login_ids(self, login_ids):
         """From list of strings containing potential login ids,
-           return each validated login id, or string corresponding
-           to an error condition.
-        """
+           return each validated login id, plus any additional error
+           message associated with each invalid login id"""
         pass
 
     @abstractmethod
     def validate_login_id(self, login_id):
-        """Parse login id from email address as necessary"""
+        """Return valid login_id, parsing from email address if necessary,
+        else None"""
         pass

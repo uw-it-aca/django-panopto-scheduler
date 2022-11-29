@@ -1,6 +1,11 @@
 # Copyright 2022 UW-IT, University of Washington
 # SPDX-License-Identifier: Apache-2.0
 
+#
+# Reservations reflect the course meeting time and location as they
+# are represented in the Facilities Scheduling System
+#
+
 from abc import ABC, abstractmethod
 from scheduler.utils.loader import load_class_from_module_setting
 
@@ -19,6 +24,7 @@ class BaseReservations(ABC):
     """Base class defines methods necessary for an event and associated
        reservations scheduling.
     """
+
     @abstractmethod
     def get_event_by_course(self, course):
         pass
@@ -29,12 +35,10 @@ class BaseReservations(ABC):
 
     @abstractmethod
     def get_space_by_id(self, space_id):
-        """
-        """
         pass
 
     @abstractmethod
-    def get_spaces(self):
+    def get_spaces(self, *args, **kwargs):
         """
         space_id:  (or some token unique to the event's space/location)
         name: short name for the event's space/location

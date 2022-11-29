@@ -73,7 +73,7 @@ class Course(BaseCourse):
 
         return course_section.upper()
 
-    def r25_alien_uid(self):
+    def reservation_uid(self):
         # r25 alien_id: 2014-4 0-MATH 124 A
         return "{}-{} {}-{} {} {}".format(
             self.year, self._quarter_ordinal(), self._campus_ordinal(),
@@ -160,7 +160,8 @@ class Course(BaseCourse):
         }
 
     def get_crosslisted_course(self):
-        # default to Canvas course that student sections are provisioned
+        # default to Canvas course that SIS provisioning selects
+        # for student sections
         section = get_sws_section_for_course(self)
         if not section.is_withdrawn and len(section.joint_section_urls):
             joint_course_ids = [self.canvas_sis_id()]
