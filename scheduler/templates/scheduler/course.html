@@ -148,7 +148,7 @@ window.scheduler = {
   session_id: '{{session_id}}',
   canvas_host: '{{canvas_host}}',
   panopto_server: '{{panopto_server}}',
-  blti: { course: '{{sis_course_id}}' },
+  blti: { course: '{{sis_course_id | safe}}' },
   term: { quarter: '{{term_quarter|default:"autumn"}}', year: {{term_year|default:1999}} }
 };
 </script>
