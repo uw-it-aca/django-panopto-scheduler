@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <r25:events xmlns:r25="http://www.collegenet.com/r25" xmlns:xl="http://www.w3.org/1999/xlink" pubdate="2014-10-08T09:51:09-07:00"/>
 "
-5,r25,/r25ws/servlet/wrd/run/event.xml?alien_uid=2014-4%200-PSYCH%20101%20A,200,KGRwMAou,"<?xml version="1.0"?>
+5,r25,/r25ws/servlet/wrd/run/event.xml?alien_uid=LYNX-EV-104-20133-CHEM140A,200,KGRwMAou,"<?xml version="1.0"?>
 <r25:events xmlns:r25="http://www.collegenet.com/r25" xmlns:xl="http://www.w3.org/1999/xlink" pubdate="2014-10-29T15:39:31-07:00">
 <r25:event xl:href="event.xml?event_id=602914" id="CBJDNjAyOTE0" crc="00000027" status="est">
 <r25:event_id>602914</r25:event_id>
 <r25:event_name>PSYCH 101 A</r25:event_name>
-<r25:alien_uid>2014-4 0-PSYCH 101 A</r25:alien_uid>
+<r25:alien_uid>LYNX-EV-104-20133-CHEM140A</r25:alien_uid>
 <r25:event_priority>0</r25:event_priority>
 <r25:event_title>INTRO TO PSYCH</r25:event_title>
 <r25:favorite>F</r25:favorite>

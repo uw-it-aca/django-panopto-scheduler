@@ -109,3 +109,9 @@ if os.getenv("SAFE_EMAIL_RECIPIENT", None):
     EMAIL_BACKEND = 'saferecipient.EmailBackend'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+# dial back suds super-verbose telemetry
+LOGGING['loggers']['suds'] =  {
+    'handlers': ['stdout', 'stderr'],
+    'level': 'ERROR'
+}
