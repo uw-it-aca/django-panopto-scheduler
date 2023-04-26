@@ -448,13 +448,11 @@ def panopto_generic_external_id(id_string):
 
 
 def r25_alien_uid(course):
-    # r25 alien_id: 2014-4 0-MATH 124 A
-    return "{}-{} {}-{} {} {}".format(course.year,
-                                      quarter_ordinal(course.quarter),
-                                      campus_ordinal(course),
-                                      course.curriculum,
-                                      course.number,
-                                      course.section)
+    # OLD: r25 alien_id: 2014-4 0-MATH 124 A
+    # NEW: r25live alien_uid: LYNX-EV-104-20232-PHYS114A
+    return "LYNX-EV-104-{}{}-{}{}{}".format(
+        course.year, quarter_ordinal(course.quarter),
+        course.curriculum, course.number, course.section)
 
 
 def campus_ordinal(course):
