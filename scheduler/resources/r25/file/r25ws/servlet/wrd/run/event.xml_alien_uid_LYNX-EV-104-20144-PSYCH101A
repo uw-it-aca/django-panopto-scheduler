@@ -3,7 +3,7 @@
 <r25:event xl:href="event.xml?event_id=602914" id="CBJDNjAyOTE0" crc="00000027" status="est">
 <r25:event_id>602914</r25:event_id>
 <r25:event_name>PSYCH 101 A</r25:event_name>
-<r25:alien_uid>2014-4 0-PSYCH 101 A</r25:alien_uid>
+<r25:alien_uid>LYNX-EV-104-20144-PSYCH101A</r25:alien_uid>
 <r25:event_priority>0</r25:event_priority>
 <r25:event_title>INTRO TO PSYCH</r25:event_title>
 <r25:favorite>F</r25:favorite>

@@ -3,7 +3,7 @@
 <r25:event xl:href="event.xml?event_id=599031" id="CBJDNTk5MDMx" crc="00000027" status="est">
 <r25:event_id>599031</r25:event_id>
 <r25:event_name>ENGL 102 A</r25:event_name>
-<r25:alien_uid>2014-4 0-ENGL 102 A</r25:alien_uid>
+<r25:alien_uid>LYNX-EV-104-20144-ENGL102A</r25:alien_uid>
 <r25:event_priority>0</r25:event_priority>
 <r25:event_title>WRIT FM SOURCES II</r25:event_title>
 <r25:favorite>F</r25:favorite>
