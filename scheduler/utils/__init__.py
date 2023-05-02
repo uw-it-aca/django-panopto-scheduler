@@ -452,7 +452,8 @@ def r25_alien_uid(course):
     # NEW: r25live alien_uid: LYNX-EV-104-20232-PHYS114A
     return "LYNX-EV-104-{}{}-{}{}{}".format(
         course.year, quarter_ordinal(course.quarter),
-        course.curriculum, course.number, course.section)
+        course.curriculum.replace(' ', ''),
+        course.number, course.section)
 
 
 def campus_ordinal(course):
