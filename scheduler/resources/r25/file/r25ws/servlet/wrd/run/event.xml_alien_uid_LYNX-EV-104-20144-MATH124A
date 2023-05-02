@@ -3,7 +3,7 @@
 <r25:event xl:href="event.xml?event_id=601409" id="CBJDNjAxNDA5" crc="00000064" status="est">
 <r25:event_id>601409</r25:event_id>
 <r25:event_name>MATH 124 A</r25:event_name>
-<r25:alien_uid>2014-4 0-MATH 124 A</r25:alien_uid>
+<r25:alien_uid>LYNX-EV-104-20144-MATH124A</r25:alien_uid>
 <r25:event_priority>0</r25:event_priority>
 <r25:event_title>CALC ANALYT GEOM I</r25:event_title>
 <r25:favorite>F</r25:favorite>

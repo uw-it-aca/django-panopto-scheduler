@@ -1,3 +1,6 @@
+# Copyright 2023 UW-IT, University of Washington
+# SPDX-License-Identifier: Apache-2.0
+
 from .base_settings import *
 import json
 
@@ -112,3 +115,9 @@ if os.getenv("SAFE_EMAIL_RECIPIENT", None):
     EMAIL_BACKEND = 'saferecipient.EmailBackend'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+# dial back suds super-verbose telemetry
+LOGGING['loggers']['suds'] =  {
+    'handlers': ['stdout', 'stderr'],
+    'level': 'ERROR'
+}

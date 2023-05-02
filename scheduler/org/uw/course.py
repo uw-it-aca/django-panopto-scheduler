@@ -74,9 +74,10 @@ class Course(BaseCourse):
         return course_section.upper()
 
     def reservation_uid(self):
-        # r25 alien_id: 2014-4 0-MATH 124 A
-        return "{}-{} {}-{} {} {}".format(
-            self.year, self._quarter_ordinal(), self._campus_ordinal(),
+        # OLD: r25 alien_id: 2014-4 0-MATH 124 A
+        # NEW: r25live alien_uid: LYNX-EV-104-20232-PHYS114A
+        return "LYNX-EV-104-{}{}-{}{}{}".format(
+            self.year, self._quarter_ordinal(),
             self.curriculum, self.number, self.section)
 
     def sws_course_label(self):
