@@ -78,7 +78,8 @@ class Course(BaseCourse):
         # NEW: r25live alien_uid: LYNX-EV-104-20232-PHYS114A
         return "LYNX-EV-104-{}{}-{}{}{}".format(
             self.year, self._quarter_ordinal(),
-            self.curriculum, self.number, self.section)
+            self.curriculum.replace(' ', ''),
+            self.number, self.section)
 
     def sws_course_label(self):
         return "{},{},{},{}/{}".format(self.year, self.quarter,
