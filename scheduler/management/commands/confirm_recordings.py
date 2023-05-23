@@ -34,6 +34,7 @@ class Command(BaseCommand):
     _sessions = {}
     _metrics = None
     _name_mismatch = []
+    _recorder_missing = []
     _recorder_mismatch = []
     _disconnected = []
     _multiple_recorders = []
@@ -123,8 +124,18 @@ class Command(BaseCommand):
                         space_id = rsv.space_reservation.space_id
                         course_recorder = self.recorders(space_id)
                     except UnassignedRecorder:
-                        self.note("Meeting {} in {} has no recorder".format(
-                            external_id, space_id))
+                        recorder = self.get_recorder(course_id, external_id)
+                        if recorder:
+                            self._recorder_missing.append({
+                                'course_external_id': external_id,
+                                'scheduled': recorder,
+                                'meeting_space_id': space_id})
+                        self.note("Meeting {} in {} has no recorder{}".format(
+                            external_id, space_id,
+                            ' BUT scheduled as {} in {} ({})'.format(
+                                recorder['recording_name'],
+                                recorder['recorder_name'],
+                                recorder['recorder_id']) if recorder else ''))
                         continue
 
                     try:
@@ -204,6 +215,20 @@ class Command(BaseCommand):
 
         return self._sessions
 
+    def get_recorder(self, course_id, external_id):
+        for recorder_id, recordings in self._sessions[course_id].items():
+            if external_id in recordings:
+                recorder_id = recordings[external_id]['recorder_id']
+                for space_id, recorder in self._recorders.items():
+                    if recorder_id == recorder['id']:
+                        return {
+                            'recorder_id': recorder_id,
+                            'recorder_name': recorder['name'],
+                            'recording_name': recordings[external_id]['name']
+                        }
+
+        return None
+
     def recorders(self, space_id=None, recorder=None, recorder_id=None):
         if space_id:
             if recorder:
@@ -255,6 +280,7 @@ class Command(BaseCommand):
 
         monitor_group = getattr(settings, 'PANOPTO_MONITOR_GROUP')
         if (monitor_group and (len(self._recorder_mismatch)
+                               or len(self._recorder_missing)
                                or len(self._name_mismatch)
                                or len(self._disconnected))):
             recipients = email_addresses_from_group(monitor_group)
@@ -279,6 +305,23 @@ class Command(BaseCommand):
                                          mismatch["session_recorder_id"]),
                         mismatch["course_recorder_name"],
                         mismatch["course_recorder_id"])
+
+            if len(self._recorder_missing):
+                body += ("\n\nRecording sessions below are "
+                         "associated with a course meeting in a location\n"
+                         "that has no recorder.  The meeting has a recording"
+                         "scheduled in a\nprevious location.\n\n"
+                         "Course Meeting ID                     "
+                         "Recording Name         "
+                         "Recorder Name   "
+                         "Recorder ID\n")
+
+                for missing in self._recorder_missing:
+                    body += "{:<38}{:<24}{:<16} ({})\n".format(
+                        missing["course_external_id"],
+                        missing["scheduled"]["recording_name"],
+                        missing["scheduled"]["recorder_name"],
+                        missing["scheduled"]["recorder_id"])
 
             if len(self._disconnected):
                 body += ("\n\nBelow are recording sessions that are "
