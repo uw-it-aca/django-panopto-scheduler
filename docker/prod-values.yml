@@ -28,7 +28,7 @@ ingress:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt
 database:
-  engine: mysql
+  engine: postgres
   name: panopto
   hostname: scheduler-db-service
   secretName: panopto-app.uw.edu-sql-secrets
@@ -36,15 +36,12 @@ externalService:
   enabled: true
   name: scheduler-db-service
   type: ClusterIP
-  serviceAddress: 172.18.0.39
-  servicePort: 3306
+  serviceAddress: 172.18.1.208
+  servicePort: 5432
 readiness:
   enabled: true
 repo: scheduler
 instance: prod
-image:
-  repository: gcr.io/uwit-mci-axdd/scheduler
-  tag: IMAGE_TAG
 metrics:
   enabled: true
   serviceMonitor:
@@ -70,8 +67,6 @@ cronjob:
 environmentVariables:
   - name: ENV
     value: prod
-  - name: WEBSERVER
-    value: nginx
   - name: GWS_ENV
     value: PROD
   - name: SWS_ENV
@@ -92,7 +87,7 @@ externalSecrets:
   enabled: true
   secrets:
     - name: panopto-app.uw.edu-secrets
-      externalKey: axdd/kv/data/panopto-app/prod/secrets
+      externalKey: panopto-app/prod/secrets
       data:
         - name: django-secret
           property: django-secret
@@ -117,21 +112,21 @@ externalSecrets:
         - name: email-host
           property: email-host
     - name: panopto-app.uw.edu-sql-secrets
-      externalKey: axdd/kv/data/panopto-app/prod/sql-secrets
+      externalKey: panopto-app/prod/sql-secrets
       data:
         - name: username
           property: sql_user
         - name: password
           property: sql_pass
     - name: panopto-app.uw.edu-ic-certs
-      externalKey: axdd/kv/data/panopto-app/prod/ic-certs
+      externalKey: panopto-app/prod/ic-certs
       data:
         - name: panopto-app.uw.edu.key
           property: key
         - name: panopto-app.uw.edu.cert
           property: cert
     - name: panopto-app.uw.edu-uw-idp-cert
-      externalKey: axdd/kv/data/idp-cert
+      externalKey: idp-cert
       data:
         - name: uw-idp-cert
           property: cert
