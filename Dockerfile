@@ -12,9 +12,8 @@ ADD --chown=acait:acait docker/ /app/project/
 RUN /app/bin/pip install -r requirements.txt
 RUN /app/bin/pip install psycopg2
 
-RUN . /app/bin/activate && pip install nodeenv && nodeenv --node=14.15.0 -p &&\
-    npm install -g npm &&\
-    ./bin/npm install less@3.13.1 -g
+RUN . /app/bin/activate && pip install nodeenv && nodeenv -p && \
+  npm install -g npm && ./bin/npm install less -g
 
 RUN . /app/bin/activate && python manage.py collectstatic --noinput &&\
     python manage.py compress -f
