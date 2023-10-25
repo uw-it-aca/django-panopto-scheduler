@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 from django.conf import settings
-from django.conf.urls import re_path
+from django.urls import re_path
 from django.views.generic import TemplateView
 from django.views.generic.base import RedirectView
 from scheduler.views import home, courses, events, recorders
