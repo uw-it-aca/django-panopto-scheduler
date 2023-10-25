@@ -98,6 +98,7 @@ else:
     PANOPTO_API_TOKEN = os.getenv('PANOPTO_API_TOKEN')
     PANOPTO_SERVER = os.getenv('PANOPTO_SERVER')
     DEBUG = (os.getenv("ENV", "UNSET") == "dev")
+    CSRF_TRUSTED_ORIGINS = ['https://' + os.getenv('CLUSTER_CNAME')]
 
 EMAIL_HOST = os.getenv("EMAIL_HOST")
 EMAIL_PORT = 587
