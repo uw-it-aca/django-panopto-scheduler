@@ -83,7 +83,11 @@ class Command(BaseCommand):
         for course_id, recorders in self.sessions().items():
             validation_api = Validation()
             course = validation_api.course_id(course_id)
-            event = get_event_by_alien_id(r25_alien_uid(course))
+            try:
+                event = get_event_by_alien_id(r25_alien_uid(course))
+            except Exception as ex:
+                logger.error("Get r25 Event: {}".format(ex))
+                continue
 
             # cross listed?
             if len(event.binding_reservations):
