@@ -104,7 +104,7 @@ class Session(RESTDispatch):
 
             messages = []
             creators = new_session.get('folder_creators')
-            if creators and type(creators) is list:
+            if creators and isinstance(creators, list):
                 messages = self._sync_creators(
                     new_session.get('folder_id'), creators)
 
@@ -161,7 +161,7 @@ class Session(RESTDispatch):
 
             messages = []
             creators = session_update.get('folder_creators')
-            if creators and type(creators) is list:
+            if creators and isinstance(creators, list):
                 messages = self._sync_creators(
                     session_update.get('folder_id'), creators)
 
@@ -308,7 +308,7 @@ class Session(RESTDispatch):
         raise InvalidParamException('bad recording name')
 
     def _valid_boolean(self, is_broadcast):
-        if not (is_broadcast is None or type(is_broadcast) == bool):
+        if not (is_broadcast is None or isinstance(is_broadcast, bool)):
             raise InvalidParamException('bad broadcast flag')
 
         return is_broadcast
@@ -409,7 +409,7 @@ class SessionPublic(RESTDispatch):
                 500, "Unable to save session: {}".format(ex))
 
     def _valid_boolean(self, v, errstr):
-        if not (v is None or type(v) == bool):
+        if not (v is None or isinstance(v, bool)):
             raise InvalidParamException(errstr)
 
         return v
@@ -454,7 +454,7 @@ class SessionBroadcast(RESTDispatch):
                 500, "Unable to save session: {}".format(ex))
 
     def _valid_boolean(self, v, errstr):
-        if not (v is None or type(v) == bool):
+        if not (v is None or isinstance(v, bool)):
             raise InvalidParamException(errstr)
 
         return v
