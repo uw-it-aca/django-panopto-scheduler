@@ -104,17 +104,7 @@ else:
     PANOPTO_API_TOKEN = os.getenv('PANOPTO_API_TOKEN')
     PANOPTO_SERVER = os.getenv('PANOPTO_SERVER')
     DEBUG = (os.getenv("ENV", "UNSET") == "dev")
-
-EMAIL_HOST = os.getenv("EMAIL_HOST")
-EMAIL_PORT = 587
-EMAIL_SSL_CERTFILE = os.getenv('CERT_PATH', '')
-EMAIL_SSL_KEYFILE = os.getenv('KEY_PATH', '')
-EMAIL_USE_TLS=True
-if os.getenv("SAFE_EMAIL_RECIPIENT", None):
-    SAFE_EMAIL_RECIPIENT = os.getenv("SAFE_EMAIL_RECIPIENT")
-    EMAIL_BACKEND = 'saferecipient.EmailBackend'
-else:
-    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    CSRF_TRUSTED_ORIGINS = ['https://' + os.getenv('CLUSTER_CNAME')]
 
 # dial back suds super-verbose telemetry
 LOGGING['loggers']['suds'] =  {

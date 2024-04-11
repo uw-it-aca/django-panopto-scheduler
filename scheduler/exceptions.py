@@ -1,7 +1,7 @@
-# Copyright 2023 UW-IT, University of Washington
+# Copyright 2024 UW-IT, University of Washington
 # SPDX-License-Identifier: Apache-2.0
 
-from django.utils.translation import ugettext as _
+from django.utils.translation import gettext as _
 
 """
 Custom exceptions used by Scheduler.

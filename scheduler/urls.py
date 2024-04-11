@@ -1,8 +1,8 @@
-# Copyright 2023 UW-IT, University of Washington
+# Copyright 2024 UW-IT, University of Washington
 # SPDX-License-Identifier: Apache-2.0
 
 from django.conf import settings
-from django.conf.urls import re_path
+from django.urls import re_path
 from django.views.generic import TemplateView
 from django.views.generic.base import RedirectView
 from scheduler.views import courses, events, recorders

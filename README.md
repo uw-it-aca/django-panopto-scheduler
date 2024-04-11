@@ -22,7 +22,7 @@ The second interface allows searching for courses and events in R25 within the U
 Project settings.py
 ------------------
 
-Below are the settings specific to the scheduler.  Note, though, additional settings will be required for access to student information system as well as Panopto API settings required by the dependent [Django Panopto Client](https://github.com/uw-it-aca/django-panopto-client "Panopto Client").
+Below are the settings specific to the scheduler.  Note, though, additional settings will be required for access to student information system as well as Panopto API settings required by the dependent [Panopto Client](https://github.com/uw-it-aca/uw-panopto-client "Panopto Client").
 
 **R25 settings**
 

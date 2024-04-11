@@ -3,7 +3,8 @@
 
 from .base_urls import *
 from django.conf import settings
-from django.conf.urls import include, re_path
+from django.conf.urls import include
+from django.urls import re_path
 from django.views.i18n import JavaScriptCatalog
 
 
