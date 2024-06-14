@@ -28,6 +28,8 @@ setup(
         'django-compressor',
         'django-blti~=2.2',
         'django-userservice~=3.2',
+        'lxml<5',
+        'xmlsec==1.3.13',
         'uw-memcached-clients~=1.0',
         'UW-RestClients-Core~=1.4',
         'UW-RestClients-SWS~=2.4',

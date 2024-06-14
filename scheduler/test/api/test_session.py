@@ -37,7 +37,7 @@ class TestAPISession(TestCase):
         sessions['loginid'] = 'jfaculty'
         sessions['end_time'] = sessions['start_time']
         sessions['recorder_id'] = '22e12346-1234-1234-4321-12347f1234c5'
-        sessions['folder_external_id'] = '2015-autumn-PSYCH-101-A'
+        sessions['folder_id'] = 'c9123444-0000-0000-0000-ab71234c452d'
         sessions['key'] = '9AC7325FB31465FF946FFFC5514E35CEB3F42C38'
         request = RequestFactory().post(
             url, sessions, content_type="application/json")

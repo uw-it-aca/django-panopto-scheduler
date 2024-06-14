@@ -39,3 +39,7 @@ class ValidationException(Exception):
 
 class PanoptoUserException(Exception):
     pass
+
+
+class PanoptoFolderDoesNotExist(Exception):
+    pass

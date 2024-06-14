@@ -5,10 +5,13 @@ from scheduler.course import BaseCourse
 from scheduler.models import Curriculum
 from scheduler.utils import local_ymd_from_utc_date_string
 from scheduler.dao.canvas import get_course_by_sis_id
+from scheduler.dao.panopto.sessions import (
+    get_all_folders_with_external_context_list, provision_external_course)
 from scheduler.dao.sws import (
     get_sws_section_for_course, get_sws_section_by_url)
 from scheduler.exceptions import (
-    MissingParamException, InvalidParamException)
+    MissingParamException, InvalidParamException, PanoptoFolderDoesNotExist)
+
 from restclients_core.exceptions import DataFailureException
 from dateutil import parser
 from nameparser import HumanName
@@ -26,6 +29,7 @@ class Course(BaseCourse):
     number = ""
     section = ""
     external_id = ""
+    canvas_course_id = None
     UW_CAMPUS = ['seattle', 'bothell', 'tacoma']
     UW_TERMS = ['spring', 'summer', 'autumn', 'winter']
 
@@ -81,11 +85,6 @@ class Course(BaseCourse):
             self.curriculum.replace(' ', ''),
             self.number, self.section)
 
-    def sws_course_label(self):
-        return "{},{},{},{}/{}".format(self.year, self.quarter,
-                                       self.curriculum, self.number,
-                                       self.section)
-
     def canvas_sis_id(self):
         return "{}".format('-'.join([
             self.year, self.quarter, self.curriculum,
@@ -99,27 +98,66 @@ class Course(BaseCourse):
             self.year, self.quarter, self.curriculum,
             self.number, self.section, start_date)
 
-    def panopto_course_folder(self, title):
-        quarter_initial = self.quarter[0:1].upper()
-        quarter_lower = self.quarter[1:]
-        folder_prefix = "{}{} {} - ".format(
-            quarter_initial, quarter_lower, self.year)
+    def canvas_course(self):
+        if self.canvas_course_id is None:
+            try:
+                return get_course_by_sis_id(self.canvas_sis_id())
+            except DataFailureException as ex:
+                raise DataFailureException(
+                    ex.url, 404 if ex.status == 404 else 424,
+                    "course_id fetch: {}".format(ex))
+
+        return self.canvas_course_id
+
+    def panopto_course_folder(self):
+        canvas_course = self.canvas_course()
         try:
-            # folder id needs to match canvas course id
-            canvas_course = get_course_by_sis_id(self.canvas_sis_id())
-            external_id = str(canvas_course.course_id)
-            folder = canvas_course.name
-        except Exception as ex:
-            logger.exception(ex)
-            external_id = None
-            folder = "{} {} {} {}{} {}: {}".format(
-                self.curriculum, self.number, self.section, quarter_initial,
-                quarter_lower[:1], str(self.year)[2:], title.title())
+            panopto_folder = self._panopto_folder_from_course_id(
+                str(canvas_course.course_id))
+        except PanoptoFolderDoesNotExist:
+            panopto_folder = self._create_panopto_folder(canvas_course)
 
         return {
-            'name': "{}{}".format(folder_prefix, folder),
-            'external_id': external_id
+            'name': panopto_folder.Name,
+            'id': panopto_folder.Id
         }
+
+    def _panopto_folder_from_course_id(self, course_id):
+        if course_id:
+            folders = get_all_folders_with_external_context_list([course_id])
+            if folders:
+                if len(folders) == 1:
+                    if len(folders[0]) == 1:
+                        return folders[0][0]
+                    else:
+                        self._bad_folder_response(len(folders[0]), course_id)
+                else:
+                    self._bad_folder_response(len(folders), course_id)
+
+        raise PanoptoFolderDoesNotExist()
+
+    def _bad_folder_response(self, folder_count, course_id):
+        message = 'Unexpected folder count {} for {}'.format(
+            folder_count, course_id)
+        logger.error(message)
+        raise DataFailureException("", 424, message)
+
+    def _create_panopto_folder(self, canvas_course):
+        try:
+            folder =  provision_external_course(
+                self.panopto_folder_name(canvas_course.name),
+                str(canvas_course.course_id))
+            if folder:
+                return folder
+
+            raise DataFailureException('', 424, 'folder provision failed')
+        except DataFailureException as ex:
+            raise DataFailureException(
+                ex.url, 424, "folder provision: {}".format(ex))
+
+    def panopto_folder_name(self, course_name):
+        return "{} {} - ".format(
+            self.quarter.capitalize(), self.year, course_name)
 
     def panopto_course_session(self, start_datetime):
         name = "{} {} {} - {}".format(

@@ -37,13 +37,6 @@ class BaseCourse(ABC):
         pass
 
     @abstractmethod
-    def canvas_sis_id(self):
-        """Canvas SIS_ID assigned to a Canvas course by Student
-        system provisioning process
-        """
-        pass
-
-    @abstractmethod
     def panopto_course_external_id(self, start_datetime):
         """Opaque string unique to each course offering."""
         pass

@@ -3,15 +3,17 @@
 
 from django.conf import settings
 from scheduler.views.rest_dispatch import RESTDispatch
-from scheduler.exceptions import InvalidParamException, PanoptoUserException
-from scheduler.utils import schedule_key
+from scheduler.exceptions import (
+    InvalidParamException, PanoptoUserException)
+from scheduler.utils import schedule_key, panopto_app_id
 from scheduler.utils.validation import Validation
 from scheduler.panopto.folder import get_panopto_folder_creators
 from scheduler.dao.panopto.sessions import (
     get_sessions_by_session_ids, update_session_external_id,
     update_session_is_broadcast, move_sessions, delete_sessions,
-    get_all_folders_by_external_id, get_folders_list, add_folder,
-    update_folder_external_id_with_provider)
+    get_all_folders_with_external_context_list,
+    get_all_folders_by_external_id, provision_external_course,
+    get_folders_list, add_folder)
 from scheduler.dao.panopto.access import (
     get_session_access_details, update_session_is_public,
     grant_users_access_to_folder, revoke_users_access_from_folder)
@@ -174,9 +176,9 @@ class Session(RESTDispatch):
             })
         except InvalidParamException as ex:
             return self.error_response(400, "{}".format(ex))
-        except Exception as ex:
+        except DataFailureException as ex:
             return self.error_response(
-                500, "Unable to save session: {}".format(ex))
+                424, "Unable to save session: {}".format(ex))
 
     def delete(self, request, *args, **kwargs):
         try:
@@ -202,43 +204,8 @@ class Session(RESTDispatch):
             return self.error_response(
                 400, "Invalid Parameter: {}".format(err))
 
-    def _valid_folder(self, name, external_id):
-        try:
-            folder_id = Validation().panopto_id(external_id)
-            return folder_id
-        except InvalidParamException:
-            pass
-
-        try:
-            if external_id and len(external_id):
-                folders = get_all_folders_by_external_id([external_id])
-                if folders and len(folders) == 1 and len(folders[0]):
-                    return folders[0][0].Id
-
-            folders = get_folders_list(search_query=name)
-            if folders and len(folders):
-                for folder in folders:
-                    if folder.Name == name:
-                        folder_id = folder.Id
-                        self._set_external_id(folder_id, external_id)
-                        return folder_id
-
-            new_folder = add_folder(name)
-            if not new_folder:
-                raise InvalidParamException(
-                    'Cannot add folder: {}'.format(name))
-
-            new_folder_id = new_folder.Id
-            self._set_external_id(new_folder_id, external_id)
-            return new_folder_id
-        except Exception as ex:
-            raise InvalidParamException('Cannot add folder: {}'.format(ex))
-
-    def _set_external_id(self, folder_id, external_id):
-        if external_id and len(external_id):
-            update_folder_external_id_with_provider(
-                folder_id, external_id, getattr(
-                    settings, 'PANOPTO_API_APP_ID', ''))
+    def _valid_folder_id(self, folder_id):
+        return Validation().panopto_id(folder_id)
 
     def _validate_session(self, request_body):
         session = {}
@@ -252,8 +219,8 @@ class Session(RESTDispatch):
             data.get("external_id", "").strip())
         session['recorder_id'] = self._valid_recorder_id(
             data.get("recorder_id", "").strip())
-        session['folder_external_id'] = data.get(
-            "folder_external_id", "").strip()
+        session['folder_id'] = data.get(
+            "folder_id", "").strip()
 
         session['session_id'] = data.get("session_id", "").strip()
         if len(session['session_id']):
@@ -268,8 +235,8 @@ class Session(RESTDispatch):
         session['end_time'] = self._valid_time(
             data.get("end_time", "").strip())
         session['folder_name'] = data.get("folder_name", "").strip()
-        session['folder_id'] = self._valid_folder(
-            session['folder_name'], session['folder_external_id'])
+        session['folder_id'] = self._valid_folder_id(
+            session['folder_id'])
         session['folder_creators'] = data.get("creators", None)
 
         # do not permit param tamperings

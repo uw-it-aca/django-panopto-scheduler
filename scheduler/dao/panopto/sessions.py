@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 from panopto_client.session import SessionManagement
+from scheduler.utils import panopto_app_id
 
 
 session_api = SessionManagement()
@@ -39,12 +40,24 @@ def get_folders_list(*args, **kwargs):
     return session_api.getFoldersList(*args, **kwargs)
 
 
+def get_all_folders_with_external_context_list(external_ids, providers=None):
+    if not providers:
+        providers = [panopto_app_id()]
+
+    return session_api.getAllFoldersWithExternalContextByExternalId(
+        external_ids, providers)
+
+
 def get_all_folders_by_external_id(external_ids):
     return session_api.getAllFoldersByExternalId(external_ids)
 
 
 def add_folder(name):
     return session_api.addFolder(name)
+
+
+def provision_external_course(course_name, external_id):
+    return session_api.provisionExternalCourse(course_name, external_id)
 
 
 def update_folder_external_id_with_provider(folder_id, external_id, provider):

@@ -27,3 +27,7 @@ def schedule_key(netid, name, external_id, recorder_id, start, end):
         getattr(settings, 'PANOPTO_API_TOKEN', ''))
 
     return sha1(to_sign.encode('utf-8')).hexdigest().upper()
+
+
+def panopto_app_id():
+    return getattr(settings, 'PANOPTO_API_APP_ID', None)

@@ -59,7 +59,7 @@ def course_recording_sessions(course, event):
         course = course.get_crosslisted_course()
 
     contact = course.course_event_title_and_contact()
-    folder = course.panopto_course_folder(contact['title_long'])
+    folder = course.panopto_course_folder()
 
     for rsv in event.reservations:
         if not rsv.is_instruction:
@@ -82,8 +82,8 @@ def course_recording_sessions(course, event):
 
         session_external_ids.append(external_id)
 
-        event_session['schedulable'] = (
-            folder['external_id'] and event_session['space']['id'])
+        event_session['schedulable'] = True if (
+            folder['id'] and event_session['space']['id']) else False
 
         event_session['contact'] = contact
 
@@ -236,7 +236,7 @@ def event_session_from_scheduled_recording(s):
             'folder': {
                 'name': s.FolderName,
                 'id': s.FolderId,
-                'external_id': s.FolderId,
+                'external_id': None,
             },
             'is_broadcast': s.IsBroadcast
             #  property below is added conditionally for events

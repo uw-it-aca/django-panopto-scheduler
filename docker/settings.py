@@ -95,12 +95,13 @@ DETECT_USER_AGENTS = {
     'is_desktop': True,
 }
 
+PANOPTO_API_USER = os.getenv('PANOPTO_API_USER', '')
+PANOPTO_API_APP_ID = os.getenv('PANOPTO_API_APP_ID', '')
+
 if os.getenv("ENV", "localdev") == "localdev":
     LTI_DEVELOP_APP = os.getenv("LTI_DEVELOP_APP", '')
     DEBUG = True
 else:
-    PANOPTO_API_USER = os.getenv('PANOPTO_API_USER')
-    PANOPTO_API_APP_ID = os.getenv('PANOPTO_API_APP_ID')
     PANOPTO_API_TOKEN = os.getenv('PANOPTO_API_TOKEN')
     PANOPTO_SERVER = os.getenv('PANOPTO_SERVER')
     DEBUG = (os.getenv("ENV", "UNSET") == "dev")
