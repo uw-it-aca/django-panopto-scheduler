@@ -14,6 +14,7 @@ course_test_override = override_settings(
     USER_MODULE='scheduler.org.uw.user',
     COURSES_MODULE='scheduler.org.uw.course',
     RESERVATIONS_MODULE='scheduler.org.uw.reservations',
+    PANOPTO_API_APP_ID='UWNetid',
 )
 
 
