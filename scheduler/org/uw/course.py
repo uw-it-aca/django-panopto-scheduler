@@ -144,7 +144,7 @@ class Course(BaseCourse):
 
     def _create_panopto_folder(self, canvas_course):
         try:
-            folder =  provision_external_course(
+            folder = provision_external_course(
                 self.panopto_folder_name(canvas_course.name),
                 str(canvas_course.course_id))
             if folder:

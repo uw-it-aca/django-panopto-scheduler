@@ -6,6 +6,7 @@ from uw_canvas.courses import Courses as CanvasCourses
 
 canvas_api = CanvasCourses()
 
+
 def get_course_by_sis_id(sis_id):
     return canvas_api.get_course_by_sis_id(sis_id)
 
