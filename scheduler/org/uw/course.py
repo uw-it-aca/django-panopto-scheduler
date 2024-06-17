@@ -156,7 +156,7 @@ class Course(BaseCourse):
                 ex.url, 424, "folder provision: {}".format(ex))
 
     def panopto_folder_name(self, course_name):
-        return "{} {} - ".format(
+        return "{} {} - {}".format(
             self.quarter.capitalize(), self.year, course_name)
 
     def panopto_course_session(self, start_datetime):

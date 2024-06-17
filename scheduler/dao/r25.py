@@ -10,11 +10,12 @@ from scheduler.exceptions import CourseReservationsException
 
 def get_event_by_course(course):
     """"""
-    event = get_event_by_alien_id(course.reservation_uid())
+    reservation_uid = course.reservation_uid()
+    event = get_event_by_alien_id(reservation_uid())
 
     if not event:
         raise CourseReservationsException(
-            "Course Events Found: {}".format(course))
+            "No course events found for {}".format(reservation_uid))
 
     return event
 
