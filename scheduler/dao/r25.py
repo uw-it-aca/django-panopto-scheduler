@@ -11,7 +11,7 @@ from scheduler.exceptions import CourseReservationsException
 def get_event_by_course(course):
     """"""
     reservation_uid = course.reservation_uid()
-    event = get_event_by_alien_id(reservation_uid())
+    event = get_event_by_alien_id(reservation_uid)
 
     if not event:
         raise CourseReservationsException(
