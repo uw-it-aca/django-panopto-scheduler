@@ -36,7 +36,7 @@ class R25Reservations(BaseReservations):
         """Map r25 reservation resourse into a Reservation model"""
         return Reservation(
             event_name=r25.event_name,
-            profile_name=self.profile_name(r25.profile_name),
+            profile_name=r25.profile_name or '',
             contact_name=r25.contact_name,
             contact_email=r25.contact_email or '',
             space_id=str(r25.space_reservation.space_id) if (
@@ -45,9 +45,9 @@ class R25Reservations(BaseReservations):
                 r25.space_reservation) else None,
             space_formal_name=r25.space_reservation.formal_name if (
                 r25.space_reservation) else None,
-            is_course=(self.profile_name(r25.profile_name)
+            is_course=(self.course_type(r25.profile_name)
                        in self.course_profiles),
-            is_instruction=(self.profile_name(r25.profile_name)
+            is_instruction=(self.course_type(r25.profile_name)
                             in self.instruction_profiles),
             start_datetime=r25.start_datetime,
             end_datetime=r25.end_datetime)
@@ -62,7 +62,7 @@ class R25Reservations(BaseReservations):
         """R25 profile names indicating course and/or instruction related"""
         return []
 
-    def profile_name(self, profile):
+    def course_type(self, profile):
         return profile or ''
 
     def get_space_by_id(self, space_id):
