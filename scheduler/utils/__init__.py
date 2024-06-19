@@ -4,7 +4,12 @@
 from django.conf import settings
 from dateutil import parser, tz
 from hashlib import sha1
+from time import time
+import logging
 import pytz
+
+
+logger = logging.getLogger('profiling')
 
 
 def local_ymd_from_utc_date_string(utc_date_string):
@@ -31,3 +36,14 @@ def schedule_key(netid, name, external_id, recorder_id, start, end):
 
 def panopto_app_id():
     return getattr(settings, 'PANOPTO_API_APP_ID', None)
+
+
+def timer(timed_function):
+    def wrapper(*args, **kwargs):
+        start_time = time()
+        result = timed_function(*args, **kwargs)
+        delta_time = time()-start_time
+        logger.info(
+            "Profile: {} - {}".format(timed_function.__name__, delta_time))
+        return result
+    return wrapper

@@ -14,7 +14,7 @@ USER_MODULE_SETTING = 'USER_MODULE'
 
 
 class User(object):
-    """Indirection class used to load campus-specific Course class"""
+    """Indirection class used to load campus-specific User class"""
     def __new__(self, *args, **kwargs):
         return load_class_from_module_setting(
             USER_MODULE_SETTING, 'User', *args, **kwargs)

@@ -27,9 +27,10 @@ class Course(BaseCourse):
     quarter = ""
     curriculum = ""
     number = ""
-    section = ""
+    section_id = ""
     external_id = ""
     canvas_course_id = None
+    section_data = None
     UW_CAMPUS = ['seattle', 'bothell', 'tacoma']
     UW_TERMS = ['spring', 'summer', 'autumn', 'winter']
 
@@ -49,7 +50,7 @@ class Course(BaseCourse):
         self.quarter = course_parts.group(2).lower()
         self.curriculum = self._is_curriculum(course_parts.group(3))
         self.number = self._is_course_number(course_parts.group(4))
-        self.section = self._is_course_section(course_parts.group(5))
+        self.section_id = self._is_course_section(course_parts.group(5))
 
     def _is_curriculum(self, curriculum):
         if not curriculum:
@@ -83,12 +84,12 @@ class Course(BaseCourse):
         return "LYNX-EV-104-{}{}-{}{}{}".format(
             self.year, self._quarter_ordinal(),
             self.curriculum.replace(' ', ''),
-            self.number, self.section)
+            self.number, self.section_id)
 
     def canvas_sis_id(self):
         return "{}".format('-'.join([
             self.year, self.quarter, self.curriculum,
-            self.number, self.section]))
+            self.number, self.section_id]))
 
     def panopto_course_external_id(self, start_datetime):
         # session_external_id: 2014-autumn-BIOL-404-A-2014-10-27
@@ -96,7 +97,7 @@ class Course(BaseCourse):
         start_date = start_dt.strftime('%Y-%m-%d')
         return "{}-{}-{}-{}-{}-{}".format(
             self.year, self.quarter, self.curriculum,
-            self.number, self.section, start_date)
+            self.number, self.section_id, start_date)
 
     def canvas_course(self):
         if self.canvas_course_id is None:
@@ -161,7 +162,7 @@ class Course(BaseCourse):
 
     def panopto_course_session(self, start_datetime):
         name = "{} {} {} - {}".format(
-            self.curriculum, self.number, self.section,
+            self.curriculum, self.number, self.section_id,
             local_ymd_from_utc_date_string(start_datetime))
         external_id = self.panopto_course_external_id(
             local_ymd_from_utc_date_string(start_datetime))
@@ -169,9 +170,9 @@ class Course(BaseCourse):
 
     def course_event_title_and_contact(self):
         try:
-            section = get_sws_section_for_course(self)
-            meeting = section.meetings[0] if hasattr(
-                section, 'meetings') and len(section.meetings) else None
+            meeting = self.sws_section.meetings[0] if (hasattr(
+                self.sws_section, 'meetings') and
+                len(self.sws_section.meetings)) else None
             instructor = meeting.instructors[0] if hasattr(
                 meeting, 'instructors') and len(meeting.instructors) else None
             first_name = instructor.first_name if hasattr(
@@ -194,7 +195,8 @@ class Course(BaseCourse):
                 raise
 
         return {
-            'title_long': section.course_title_long if section else '',
+            'title_long': self.sws_section.course_title_long if (
+                self.sws_section) else '',
             'name': '{} {}'.format(name.first, name.last) if name else '',
             'loginid': uwnetid if uwnetid else '',
             'email': email if (
@@ -202,13 +204,20 @@ class Course(BaseCourse):
                     uwnetid if uwnetid else '')
         }
 
+    @property
+    def sws_section(self):
+        if not self.section_data:
+            self.section_data = get_sws_section_for_course(self)
+
+        return self.section_data
+
     def get_crosslisted_course(self):
         # default to Canvas course that SIS provisioning selects
         # for student sections
-        section = get_sws_section_for_course(self)
-        if not section.is_withdrawn and len(section.joint_section_urls):
+        if (not self.sws_section.is_withdrawn
+                and len(self.sws_section.joint_section_urls)):
             joint_course_ids = [self.canvas_sis_id()]
-            for url in section.joint_section_urls:
+            for url in self.sws_section.joint_section_urls:
                 try:
                     joint_section = get_sws_section_by_url(url)
                     if not joint_section.is_withdrawn:
@@ -234,8 +243,8 @@ class Course(BaseCourse):
             return Curriculum.objects.get(
                 curriculum_abbr=self.curriculum).campus_code
         except Curriculum.DoesNotExist:
-            section = get_sws_section_for_course(self)
-            campus_code = self.UW_CAMPUS.index(section.course_campus.lower())
+            campus_code = self.UW_CAMPUS.index(
+                self.sws_section.course_campus.lower())
             curriculum = Curriculum(curriculum_abbr=self.curriculum,
                                     campus_code=campus_code)
             curriculum.save()
