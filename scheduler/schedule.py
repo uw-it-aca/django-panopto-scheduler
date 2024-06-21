@@ -58,7 +58,6 @@ def course_recording_sessions(course, event):
     if event.is_crosslisted:
         course = course.get_crosslisted_course()
 
-    contact = course.course_event_title_and_contact()
     folder = course.panopto_course_folder()
 
     for rsv in event.reservations:
@@ -85,7 +84,7 @@ def course_recording_sessions(course, event):
         event_session['schedulable'] = True if (
             folder['id'] and event_session['space']['id']) else False
 
-        event_session['contact'] = contact
+        event_session['contact'] = {}
 
         event_sessions.append(event_session)
 
@@ -254,8 +253,7 @@ def event_session_from_scheduled_recording(s):
     }
 
     session['key'] = schedule_key(
-        session['contact']['loginid'], session['recording']['name'],
-        session['recording']['external_id'],
+        session['recording']['name'], session['recording']['external_id'],
         session['recording']['recorder_id'], session['event']['start'],
         session['event']['end'])
 
@@ -335,8 +333,8 @@ def mash_in_panopto_sessions(event_sessions, session_external_ids, recorders):
                 e_r['recorder_id'] = recorders[space_id]
 
         e['key'] = schedule_key(
-            e['contact']['loginid'], e_r['name'], e_r['external_id'],
-            e_r['recorder_id'], e['event']['start'], e['event']['end'])
+            e_r['name'], e_r['external_id'], e_r['recorder_id'],
+            e['event']['start'], e['event']['end'])
 
 
 def get_recorder_id_for_space_id(space_id):

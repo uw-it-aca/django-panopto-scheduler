@@ -56,13 +56,6 @@ class BaseCourse(ABC):
         pass
 
     @abstractmethod
-    def course_event_title_and_contact(self):
-        """Returns the expected Panopto folder name, owner name,
-        login id, and email for the given course.
-        """
-        pass
-
-    @abstractmethod
     def get_crosslisted_course(self):
         """If the Course is crosslisted (joined), return the Course
         class corresponding to the course crosslisted are linked into

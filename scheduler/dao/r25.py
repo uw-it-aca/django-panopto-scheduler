@@ -6,10 +6,8 @@ from uw_r25.reservations import get_reservations
 from uw_r25.spaces import get_space_by_id as r25_space_by_id
 from uw_r25.spaces import get_spaces as r25_get_spaces
 from scheduler.exceptions import CourseReservationsException
-from scheduler.utils import timer
 
 
-@timer
 def get_event_by_course(course):
     """"""
     reservation_uid = course.reservation_uid()
@@ -22,17 +20,14 @@ def get_event_by_course(course):
     return event
 
 
-@timer
 def get_reservations_by_search_params(search):
     """"""
     return get_reservations(**search)
 
 
-@timer
 def get_space_by_id(id):
     return r25_space_by_id(id)
 
 
-@timer
 def get_spaces(*args, **kwargs):
     return r25_get_spaces(*args, **kwargs)

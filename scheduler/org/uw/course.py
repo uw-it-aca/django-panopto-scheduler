@@ -168,42 +168,6 @@ class Course(BaseCourse):
             local_ymd_from_utc_date_string(start_datetime))
         return (name, external_id)
 
-    def course_event_title_and_contact(self):
-        try:
-            meeting = self.sws_section.meetings[0] if (hasattr(
-                self.sws_section, 'meetings') and
-                len(self.sws_section.meetings)) else None
-            instructor = meeting.instructors[0] if hasattr(
-                meeting, 'instructors') and len(meeting.instructors) else None
-            first_name = instructor.first_name if hasattr(
-                instructor, 'first_name') else ''
-            surname = instructor.surname if hasattr(
-                instructor, 'surname') else ''
-            uwnetid = instructor.uwnetid if hasattr(
-                instructor, 'uwnetid') else ''
-            email = instructor.email1 if hasattr(
-                instructor, 'email1') else ''
-            name = HumanName(' '.join([first_name, surname]))
-            name.capitalize()
-        except DataFailureException as err:
-            if err.status == 404:
-                section = None
-                name = None
-                email = None
-                uwnetid = None
-            else:
-                raise
-
-        return {
-            'title_long': self.sws_section.course_title_long if (
-                self.sws_section) else '',
-            'name': '{} {}'.format(name.first, name.last) if name else '',
-            'loginid': uwnetid if uwnetid else '',
-            'email': email if (
-                email and len(email)) else "{}@uw.edu".format(
-                    uwnetid if uwnetid else '')
-        }
-
     @property
     def sws_section(self):
         if not self.section_data:

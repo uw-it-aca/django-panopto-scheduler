@@ -375,8 +375,8 @@ var PanoptoScheduler = (function ($) {
                 name: this.space.name,
                 name_index: (this.space.name) ? context.rooms.indexOf(this.space.name) : null,
                 space_id: this.space.id,
-                contact: this.contact.name,
-                contact_email: this.contact.email,
+                contact: this.contact.hasOwnProperty('name') ? this.contact.name : null,
+                contact_email: this.contact.hasOwnProperty('email') ? this.contact.email : null,
                 recording_name: this.recording.name,
                 recording_id: this.recording.id,
                 recording_is_broadcast: this.recording.is_broadcast,
@@ -442,9 +442,9 @@ var PanoptoScheduler = (function ($) {
             event_end_time: event_end_date.format('h:mm'),
             ampm: event_end_date.format('a'),
             name: ($.isArray(event.name)) ? event.name : [event.name],
-            contact: event.contact.name,
-            contact_email: event.contact.email,
-            contact_netids: (event.contact.loginid && event.contact.loginid.length) ?
+            contact: event.contact.hasOwnProperty('name') ? event.contact.name : null,
+            contact_email: event.contact.hasOwnProperty('email') ? event.contact.email : null,
+            contact_netids: (event.contact.hasOwnProperty('loginid') && event.contact.loginid && event.contact.loginid.length) ?
                 [event.contact.loginid] : [],
             recording_name: event.recording.name,
             recording_is_broadcast: event.recording.is_broadcast,

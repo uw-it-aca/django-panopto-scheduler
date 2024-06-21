@@ -184,12 +184,10 @@ class Session(RESTDispatch):
         try:
             session_id = self._valid_recorder_id(kwargs.get('session_id'))
             # do not permit param tampering
-            key = schedule_key(request.GET.get('loginid', ''),
-                               request.GET.get('name', ''),
-                               request.GET.get('eid', ''),
-                               request.GET.get('rid', ''),
-                               request.GET.get('rstart', ''),
-                               request.GET.get('rend', ''))
+            key = schedule_key(
+                request.GET.get('name', ''), request.GET.get('eid', ''),
+                request.GET.get('rid', ''), request.GET.get('rstart', ''),
+                request.GET.get('rend', ''))
 
             if key != request.GET.get("key", None):
                 raise InvalidParamException('Invalid Client Key')
@@ -240,10 +238,11 @@ class Session(RESTDispatch):
         session['folder_creators'] = data.get("creators", None)
 
         # do not permit param tamperings
-        key = schedule_key(session['loginid'], session['name'],
-                           session['external_id'], session['recorder_id'],
-                           data.get("event_start", "").strip(),
-                           data.get("event_end", "").strip())
+        key = schedule_key(
+            session['name'], session['external_id'], session['recorder_id'],
+            data.get("event_start", "").strip(),
+            data.get("event_end", "").strip())
+
         if key != data.get("key", ''):
             raise InvalidParamException('Invalid Client Key')
 
