@@ -22,7 +22,9 @@ urlpatterns = [
     re_path(r'courses/?$', courses, name='courses-view'),
     re_path(r'events/?$', events, name='events-view'),
     re_path(r'scheduler/course/?$', CourseScheduleView.as_view()),
-    re_path(r'users/validate/?$', UserValidation.as_view()),
+    re_path(r'scheduler/(blti/)?api/v1/'
+            r'users/validate/?$', UserValidation.as_view(),
+            name='api_user_validate'),
     re_path(r'scheduler/(blti/)?api/v1/'
             r'recorder/(?P<recorder_id>[0-9a-f\-]+)?$',
             Recorder.as_view(), name='api_recorder'),
