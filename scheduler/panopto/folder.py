@@ -5,9 +5,14 @@ from django.conf import settings
 from scheduler.utils import local_ymd_from_utc_date_string
 from scheduler.dao.panopto.access import get_folder_access_details
 from scheduler.dao.panopto.user import get_users_from_guids
-from scheduler.dao.panopto.sessions import get_folders_list
+from scheduler.dao.panopto.sessions import (
+    get_folders_with_external_context_list)
 from hashlib import sha1
+import logging
 import re
+
+
+logger = logging.getLogger(__name__)
 
 
 def get_panopto_folder_creators(folder_id):
@@ -30,32 +35,32 @@ def get_panopto_folder_creators(folder_id):
     return creators
 
 
-def set_panopto_generic_folder(event):
-    id_string = "{} - {}".format(event['name'], event['space']['id'])
-    folder_name = event['name']
-    folder_external_id = panopto_generic_external_id(id_string)
+def panopto_folder_id(event_folder):
+    try:
+        if event_folder['id']:
+            return event_folder['id']
+
+        folder_name = event_folder['name']
+        if not folder_name:
+            return None
+
+    except KeyError:
+        return None
+    
     creators = []
 
-    folders = get_folders_list(search_query=event['name'])
-    if folders and len(folders) == 1:
-        folder_name = folders[0].Name
-        folder_external_id = folders[0].ExternalId
-        creators = get_panopto_folder_creators(folders[0].Id)
+    folders = get_folders_with_external_context_list(
+        search_query=folder_name)
 
-    event['recording']['folder']['name'] = folder_name
-    event['recording']['folder']['external_id'] = folder_external_id
-    event['recording']['folder']['auth'] = {'creators': creators}
+    if folders:
+        if len(folders) == 1:
+            return folders[0].Id
+        else:
+            logger.info(
+                "panopto_folder_id: many folders named {}".format(
+                    folder_name))
+            for f in folders:
+                logger.info("folder name '{}', Id: {}, ExternalId".format(
+                    f.Name, f.Id, f.ExternalId))
 
-
-def set_panopto_generic_session(event):
-    name = "{} - {}".format(
-        event['name'],
-        local_ymd_from_utc_date_string(event['event']['start']))
-    id_string = "{} - {}".format(name, event['space']['id'])
-    event['recording']['name'] = name
-    event['recording']['external_id'] = panopto_generic_external_id(id_string)
-    event['recording']['is_public'] = False
-
-
-def panopto_generic_external_id(id_string):
-    return sha1(id_string.encode('utf-8')).hexdigest().upper()
+    return None

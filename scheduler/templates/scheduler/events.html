@@ -13,7 +13,6 @@
 <h3>Find an Event</h3>
 
 <form role="form" class="form-inline event-search">
-	
 	<div class="input-group input-append date" id="date-picker">
       <input id="calendar" name="calendar" type="text" class="form-control input-date" disabled />
       <span class="input-group-addon add-on"><i class="fa fa-calendar"></i></span>
@@ -145,19 +144,24 @@
       </div>
     </div>
     <div class="container">
-      <h4><b>Save Recording To <span class="folder-exists {{#if folder_id}}{{else}}hidden{{/if}}">Existing</span><span style="display: none;">New</span> Folder &hellip;</b></h4>
+      <h4><b>Save Recording</b></h4>
       <div class="row">
         <div class="col-md-1 text-right">
-          <i class="fa fa-folder"></i>
+          <!-- <i class="fa fa-folder"></i> -->To Folder:>
         </div>
         <div class="col-md-11">
           <div class="field-editor foldername">
             <div class="field">
+              <input class="form-control" value="{{folder_name}}"><span class="open-folder-picker field-search" title="Click to search folders"><i class="fa fa-search"></i></span>
+<!--
               <a href="javascript:void(0);" title="Click to edit folder name">{{folder_name}}</a>
+ -->
             </div>
             <div class="form-group hidden">
-              <input class="form-control" value=""><span class="open-folder-picker field-search" title="Click to search folders"><i class="fa fa-search"></i></span>
+<!--              <input class="form-control" value=""><span class="open-folder-picker field-search" title="Click to search folders"><i class="fa fa-search"></i></span>
+-->
               <div class="folder-picker hidden">
+<!--
                 <div class="prompt">
                   Search by folder name<button type="button" class="close pull-right">x</button>
                 </div>
@@ -165,6 +169,7 @@
                   <input type="search" class="form-control"><span class="clear-field hidden"><i class="fa fa-times-circle"></i></span>
                 </div>
                 <hr>
+-->
                 <div class="result">
                 </div>
               </div>

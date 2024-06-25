@@ -6,7 +6,8 @@ from scheduler.models import Curriculum
 from scheduler.utils import local_ymd_from_utc_date_string
 from scheduler.dao.canvas import get_course_by_sis_id
 from scheduler.dao.panopto.sessions import (
-    get_all_folders_with_external_context_list, provision_external_course)
+    get_all_folders_with_external_context_by_external_id,
+    provision_external_course)
 from scheduler.dao.sws import (
     get_sws_section_for_course, get_sws_section_by_url)
 from scheduler.exceptions import (
@@ -125,7 +126,9 @@ class Course(BaseCourse):
 
     def _panopto_folder_from_course_id(self, course_id):
         if course_id:
-            folders = get_all_folders_with_external_context_list([course_id])
+            folders = \
+                get_all_folders_with_external_context_by_external_id(
+                    [course_id])
             if folders:
                 if len(folders) == 1:
                     if len(folders[0]) == 1:

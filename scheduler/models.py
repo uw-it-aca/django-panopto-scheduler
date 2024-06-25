@@ -21,6 +21,7 @@ class Reservation(models.Model):
     is_course = models.BooleanField(null=True)
     start_datetime = models.DateTimeField()
     end_datetime = models.DateTimeField()
+    reservation_id = models.IntegerField(default=0)
 
     def contact_info(self):
         return {
@@ -28,6 +29,12 @@ class Reservation(models.Model):
             'loginid': User().validate_login_id(self.contact_email),
             'email': self.contact_email
         }
+
+    def default_folder_name(self):
+        return "{}".format(self.event_name)
+
+    def default_session_external_id(self):
+        return "res_{}".format(self.reservation_id)
 
 
 class Curriculum(models.Model):

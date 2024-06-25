@@ -50,7 +50,8 @@ class R25Reservations(BaseReservations):
             is_instruction=(self.course_type(r25.profile_name)
                             in self.instruction_profiles),
             start_datetime=r25.start_datetime,
-            end_datetime=r25.end_datetime)
+            end_datetime=r25.end_datetime,
+            reservation_id=r25.reservation_id)
 
     @property
     def instruction_profiles(self):

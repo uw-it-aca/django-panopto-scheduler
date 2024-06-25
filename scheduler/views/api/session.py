@@ -11,9 +11,7 @@ from scheduler.panopto.folder import get_panopto_folder_creators
 from scheduler.dao.panopto.sessions import (
     get_sessions_by_session_ids, update_session_external_id,
     update_session_is_broadcast, move_sessions, delete_sessions,
-    get_all_folders_with_external_context_list,
-    get_all_folders_by_external_id, provision_external_course,
-    get_folders_list, add_folder)
+    provision_external_course)
 from scheduler.dao.panopto.access import (
     get_session_access_details, update_session_is_public,
     grant_users_access_to_folder, revoke_users_access_from_folder)

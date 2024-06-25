@@ -13,8 +13,7 @@ from scheduler.course import Course
 from scheduler.reservations import Reservations
 from scheduler.utils import schedule_key
 from scheduler.panopto.folder import (
-    get_panopto_folder_creators, set_panopto_generic_folder,
-    set_panopto_generic_session)
+    get_panopto_folder_creators, panopto_folder_id)
 from scheduler.dao.panopto.recorder import get_recorder_details
 from scheduler.dao.panopto.sessions import (
     get_sessions_by_external_ids, get_sessions_by_session_ids)
@@ -68,8 +67,10 @@ def course_recording_sessions(course, event):
 
         event_session['joint'] = joint if len(joint) else None
 
+        # override default folder
         event_session['recording']['folder'] = folder
 
+        # overwrite default external_id with course session external_id
         name, external_id = course.panopto_course_session(rsv.start_datetime)
         event_session['recording']['name'] = name
         event_session['recording']['external_id'] = external_id
@@ -84,6 +85,7 @@ def course_recording_sessions(course, event):
         event_session['schedulable'] = True if (
             folder['id'] and event_session['space']['id']) else False
 
+        # override default contact info
         event_session['contact'] = {}
 
         event_sessions.append(event_session)
@@ -147,13 +149,16 @@ def space_events_and_recordings(params):
 
             if event_session:
                 event_sessions.append(event_session)
+                event_external_ids.append(
+                    event_session['recording']['external_id'])
 
+
+        """
         # overlay session data
         for event_session in list(event_sessions):
-            set_panopto_generic_folder(event_session)
-            set_panopto_generic_session(event_session)
-            event_external_ids.append(
-                event_session['recording']['external_id'])
+            event_session['recording']['folder']['id'] = panopto_folder_id(
+                event_session['recording']['folder'])
+        """
 
     mash_in_panopto_sessions(event_sessions, event_external_ids, recorders)
 
@@ -161,40 +166,9 @@ def space_events_and_recordings(params):
 
 
 def event_session_from_reservation(r):
-    session = {
-        'profile': r.profile_name,
-        'name': r.event_name,
-        'schedulable': True,
-        'space': {
-            'id': None,
-            'name': None,
-            'formal_name': None
-        },
-        'recording': {
-            'name': None,
-            'id': None,
-            'external_id': None,
-            'recorder_id': None,
-            'start': None,
-            'end': None,
-            'folder': {
-                'name': None,
-                'id': None,
-                'external_id': None
-            }
-        },
-        'contact': r.contact_info()
-    }
-
-    if r.space_id:
-        session['space']['id'] = r.space_id
-        session['space']['name'] = r.space_name
-        session['space']['formal_name'] = r.space_formal_name
-    else:
-        logger.error(
-            "Meeting for {} on {} has no space reservation ".format(
-                r.event_name, r.start_datetime))
-
+    """
+    return session data from r25 Reservation model
+    """
     start_dt = parser.parse(r.start_datetime)
     end_dt = parser.parse(r.end_datetime) + \
         datetime.timedelta(seconds=int(
@@ -202,17 +176,45 @@ def event_session_from_reservation(r):
     start_utc = start_dt.astimezone(tz.tzutc())
     end_utc = end_dt.astimezone(tz.tzutc())
 
-    session['event'] = {}
-    session['event']['start'] = start_utc.isoformat()
-    session['event']['end'] = end_utc.isoformat()
+    if not r.space_id:
+        logger.error(
+            "Meeting for {} on {} has no space reservation ".format(
+                r.event_name, r.start_datetime))
 
-    session['recording']['start'] = start_utc.isoformat()
-    session['recording']['end'] = end_utc.isoformat()
-
-    return session
+    return {
+        'profile': r.profile_name,
+        'name': r.event_name,
+        'schedulable': True,
+        'event': {
+            'start': start_utc.isoformat(),
+            'end': end_utc.isoformat(),
+        },
+        'space': {
+            'id': getattr(r, 'space_id'),
+            'name': getattr(r, 'space_name'),
+            'formal_name': getattr(r, 'space_formal_name'),
+        },
+        'recording': {
+            'name': None,
+            'id': None,
+            'external_id': r.default_session_external_id(),
+            'recorder_id': None,
+            'start': start_utc.isoformat(),
+            'end': end_utc.isoformat(),
+            'folder': {
+                'name': r.default_folder_name(),
+                'id': None,
+                'external_id': None
+            }
+        },
+        'contact': r.contact_info()
+    }
 
 
 def event_session_from_scheduled_recording(s):
+    """
+    flesh out session data from scheduled event
+    """
     start_utc = s.StartTime.astimezone(pytz.utc)
     end_utc = start_utc + datetime.timedelta(seconds=int(s.Duration))
 
@@ -237,9 +239,8 @@ def event_session_from_scheduled_recording(s):
                 'id': s.FolderId,
                 'external_id': None,
             },
-            'is_broadcast': s.IsBroadcast
-            #  property below is added conditionally for events
-            #  'is_public': False,
+            'is_broadcast': s.IsBroadcast,
+            'is_public': False,
         },
         'contact': {
             'name': '',
@@ -261,7 +262,9 @@ def event_session_from_scheduled_recording(s):
 
 
 def mash_in_panopto_sessions(event_sessions, session_external_ids, recorders):
-    # mash in panopto recorder schedule
+    """
+    overlay event details with any matching scheduled recordings
+    """
     session_access = {}
     if len(session_external_ids):
         sessions = get_sessions_by_external_ids(session_external_ids)
