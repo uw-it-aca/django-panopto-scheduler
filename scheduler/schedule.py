@@ -152,7 +152,6 @@ def space_events_and_recordings(params):
                 event_external_ids.append(
                     event_session['recording']['external_id'])
 
-
         """
         # overlay session data
         for event_session in list(event_sessions):

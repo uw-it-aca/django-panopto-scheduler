@@ -46,7 +46,7 @@ def panopto_folder_id(event_folder):
 
     except KeyError:
         return None
-    
+
     creators = []
 
     folders = get_folders_with_external_context_list(
