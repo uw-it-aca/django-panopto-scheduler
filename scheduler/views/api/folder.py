@@ -46,46 +46,51 @@ class Folder(RESTDispatch):
         folders = []
         if 'search' in args:
             search = args['search'].strip()
-            if len(search) > MIN_SEARCH_LENGTH:
-                for folder in get_folders_list(search_query=search):
-                    if folder.ParentFolder:
-                        self._insert_parent(
-                            folders, folder.ParentFolder, self._folder(folder))
-                    else:
-                        folders.append(self._folder(folder))
+            if len(search) < MIN_SEARCH_LENGTH:
+                raise PanoptoFolderSearchTooShort(
+                    f"Must be at least {MIN_SEARCH_LENGTH} characters")
+
+            for folder in get_folders_list(search_query=search):
+                self._add_folder(folders, self._folder(folder))
 
         return folders
 
-    def _insert_parent(self, folders, parent_id, child):
-        parent = self._find_parent(folders, parent_id)
-        if parent:
-            self._add_child(parent, child)
+    def _add_folder(self, folders, folder):
+        parent_id = folder.get('parent_folder_id')
+        if parent_id:
+            parent = self._find_folder(folders, parent_id)
+            if parent:
+                self._add_child(parent, folder)
+            else:
+                parent = self._folder(_get_folder_by_id(parent_id))
+                self._add_child(parent, folder)
+                self._add_folder(folders, parent)
         else:
-            parent = self._folder(self._get_folder_by_id(folder_id))
-            self._add_child(parent, child)
-            if parent['parent_folder_id']:
-                self._insert_parent(
-                    folders, parent['parent_folder_id'], parent)
-            else:
-                folders.append(parent)
+            folders.append(folder)
 
-    def _find_parent(self, folders, parent_id):
-        for folder in folders:
-            if folder.get('id') == parent_id:
+    def _find_folder(self, folders, parent_id):
+        for i, folder in enumerate(folders if folders else []):
+            if parent_id == folder.get('id'):
                 return folder
-            else:
-                for i, child in enumerate(folder['child_folders']):
-                    if child.get('id') == parent_id:
-                        return child
-                    elif child.get('guid') == parent_id:
-                        folder['child_folders'][i] = self._folder(
-                            self._get_folder_by_id(parent_id))
-                        return folder['child_folders'][i]
+
+            folder_id = folder.get('guid')
+            if parent_id == folder_id:
+                folders[i] = self._folder(self._get_folder_by_id(parent_id))
+                return folders[i]
+
+            found = self._find_folder(folder.get('child_folders'), parent_id)
+            if found:
+                return found
+
+        return None
 
     def _add_child(self, parent, child):
         for i, folder in enumerate(parent['child_folders']):
             if folder.get('guid') == child.get('id'):
                 parent['child_folders'][i] = child
+                return
+
+            if folder.get('id') == child.get('id'):
                 return
 
         raise Exception("Inconsistent parent child relationship")
@@ -94,9 +99,9 @@ class Folder(RESTDispatch):
         return {
             'name': folder.Name,
             'id': folder.Id,
-            'parent_folder_id': None,
-            'child_folders': [{'guid': guid} for (guid) in getattr(
-                folder.ChildFolders, 'guid', [])]
+            'parent_folder_id': folder.ParentFolder,
+            'child_folders': [{'guid': guid} for (
+                guid) in getattr(folder.ChildFolders, 'guid', [])]
         }
 
     def _get_folder_details(self, folder_id):
@@ -144,6 +149,6 @@ class Folder(RESTDispatch):
     def _get_folder_by_id(self, folder_id):
         folders = get_folders_by_id([folder_id])
         if folders and len(folders) == 1:
-            return folders[0]
+            return folders[0][0]
 
         raise Exception("Unexpected get_folder_by_id response")

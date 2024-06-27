@@ -4,6 +4,7 @@
 from panopto_client.session import SessionManagement
 from panopto_client import PanoptoAPIException
 from scheduler.utils import panopto_app_id
+from scheduler.exceptions import PanoptoFolderDoesNotExist
 
 
 session_api = SessionManagement()

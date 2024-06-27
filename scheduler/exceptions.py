@@ -43,3 +43,7 @@ class PanoptoUserException(Exception):
 
 class PanoptoFolderDoesNotExist(Exception):
     pass
+
+
+class PanoptoFolderSearchTooShort(Exception):
+    pass
