@@ -39,7 +39,7 @@ setup(
         'UW-RestClients-R25~=0.5',
         'UW-Panopto-Client~=0.3',
         'UW-Django-SAML2~=1.8',
-        'Django-SupportTools~=3.5',
+        'Django-SupportTools~=3.6',
         'UW-RestClients-Django-Utils~=2.3',
     ],
     license='Apache License, Version 2.0',

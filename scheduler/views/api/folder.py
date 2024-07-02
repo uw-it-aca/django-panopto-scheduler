@@ -7,6 +7,7 @@ from scheduler.dao.panopto.sessions import get_folders_list, get_folders_by_id
 from scheduler.dao.panopto.access import get_folder_access_details
 from scheduler.dao.panopto.user import get_users_from_guids
 from scheduler.exceptions import PanoptoFolderDoesNotExist
+import json
 import re
 import logging
 
@@ -38,19 +39,29 @@ class Folder(RESTDispatch):
     def post(self, request, *args, **kwargs):
         try:
             data = json.loads(request.body)
+
+            # test for existance and then create
+            return self.error_response(400, message="Not fully implemented yet")
         except Exception as ex:
             logger.exception(ex)
             return self.error_response(500, message=ex)
 
     def _get_folder_list(self, args):
         folders = []
+        params = {}
+
         if 'search' in args:
             search = args['search'].strip()
             if len(search) < MIN_SEARCH_LENGTH:
                 raise PanoptoFolderSearchTooShort(
                     f"Must be at least {MIN_SEARCH_LENGTH} characters")
 
-            for folder in get_folders_list(search_query=search):
+            params['search_query'] = search
+
+            if 'parent_folder_id' in args and args['parent_folder_id']:
+                params['parent_folder_id'] = args['parent_folder_id']
+
+            for folder in get_folders_list(**params):
                 self._add_folder(folders, self._folder(folder))
 
         return folders

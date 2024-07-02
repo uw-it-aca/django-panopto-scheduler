@@ -414,6 +414,11 @@ span.loading {
         .visit-folder.hidden + span {
             display: inline-block !important;
         }
+        .placeholder {
+            font-style: italic;
+        }
+        .folder-name .path-element.collapsable > i:hover,
+        .path-element.collapsable > i:hover { cursor: pointer; }
         div.container { margin-bottom: 16px; padding: 16px; width: 800px;
            div.row { margin-bottom: 10px;
                > div i { font-size: 20px; }
@@ -425,28 +430,21 @@ span.loading {
                    width: 90%;
                }
            }
-           .field-editor {
-               .field {
-                   .placeholder {
-                       font-style: italic;
-                       display: none;
+           .form-group {
+               a.disabled { pointer-events: none; cursor: default; color: @gray-light; }
+               input {
+                   width: 625px;
+               }
+               .clear-field, .field-search {
+                   position: absolute;
+                   margin-left: -20px;
+                   margin-top: 7px;
+                   cursor: pointer;
+                   i {
+                       font-size: 15px;
+                       color: @gray-light;
                    }
                }
-               .form-group {
-                    input {
-                        width: 700px;
-                    }
-                    .clear-field, .field-search {
-                        position: absolute;
-                        margin-left: -20px;
-                        margin-top: 7px;
-                        cursor: pointer;
-                        i {
-                            font-size: 15px;
-                            color: @gray-light;
-                        }
-                    }
-                }
            }
            .creators {
                > span {
@@ -515,15 +513,55 @@ span.loading {
                     }
                 }
             }
+            .folder-editor input.folder ~ .folder-search {
+                position: absolute;
+                margin-left: -3.50em;
+                line-height: 2.5em;
+                i:hover {
+                    cursor: pointer;
+                }
+            }
+            .folder-editor input.folder ~ .folder-clear {
+                position: absolute;
+                margin-left: -1.75em;
+                line-height: 2.5em;
+                i:hover {
+                    cursor: pointer;
+                }
+            }
+            .folder-editor .folder-search-result {
+                height: 300px;
+                width: 625px;
+                background-color: white;
+                border: 1px solid @gray-light;
+                position: absolute;
+                z-index: 1000;
+                padding-left: 8px;
+                padding-top: 4px;
+                white-space: nowrap;
+                overflow-x: auto;
+                overflow-y: hidden;
+                .folder { padding-left: 1em; }
+            }
+            .folder-editor .folder-search-result + i {
+                display: none;
+            }
+            .folder-editor .folder-search-result.loading + i {
+                display: inline !important;
+                position: absolute;
+                z-index: 1001;
+                font-size: 5em;
+                margin-left: -350px;
+                margin-top: 150px;
+            }
+            .path-element:not(.hidden):has(+ .path-element.hidden):nth-child(1):after {
+                content: "..."
+            }
+            .schedule-event.loading + span, .modify-event.loading + span {
+                display: inline !important;
+            }
             .schedule-event + span, .modify-event + span {
                 display: none;
-                position: absolute;
-                margin-top: 5px;
-                margin-left: -105px;
-                font-size: 30px;
-            }
-            .schedule-event:disabled + span, .modify-event:disabled + span {
-                display: inline !important;
             }
             .visit-folder.inactive {
                 display: none;

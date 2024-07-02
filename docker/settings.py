@@ -34,7 +34,7 @@ INSTALLED_APPS += [
 
 MIDDLEWARE += ['userservice.user.UserServiceMiddleware',]
 
-COMPRESS_ENABLED = True
+COMPRESS_ENABLED = False if os.getenv("ENV") == "localdev" else True
 COMPRESS_OFFLINE = True
 COMPRESS_ROOT = '/static/'
 
