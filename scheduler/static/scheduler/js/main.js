@@ -1,4 +1,4 @@
-/*jslint browser: true, plusplus: true */
+/*jslint browser: true, plusplus: true, scripturl: true */
 /*global jQuery, Handlebars, moment, confirm */
 
 var PanoptoScheduler = (function ($) {
@@ -1690,10 +1690,10 @@ var PanoptoScheduler = (function ($) {
 
     function panopto_folders_from_search(data, folder) {
         if (!folder) {
-            var folder = {
+            folder = {
                 path: [],
                 folders: []
-            }
+            };
         }
 
         for (var i = 0; i < data.length; i += 1) {
@@ -1868,6 +1868,7 @@ var PanoptoScheduler = (function ($) {
     }
 */
     function select_panopto_event_folder_from_search(e) {
+        /*jshint validthis: true */
         var $a = $(this),
             folder = $a.text(),
             $element = $a.parent(),
@@ -1882,6 +1883,7 @@ var PanoptoScheduler = (function ($) {
     }
 
     function select_panopto_event_directory_from_search(e) {
+        /*jshint validthis: true */
         var $a = $(this),
             $element = $a.parent(),
             $path = $($element.prevAll('div.path-element').get().reverse()).clone(),
@@ -1932,6 +1934,7 @@ var PanoptoScheduler = (function ($) {
     }
 */
     function collapse_expand_event_folder_path_element(e) {
+        /*jshint validthis: true */
         var $i = $(this),
             $element = $i.parent(),
             in_search_result = $element.closest('.folder-search-result').length > 0,
@@ -1981,7 +1984,7 @@ var PanoptoScheduler = (function ($) {
         }
     }
 
-    function update_event_folder_editor_cues($element=null) {
+    function update_event_folder_editor_cues($element) {
         var $editor = $('.reservation-settings .folder-editor'),
             $input = $editor.find('input.folder'),
             $create_link = $editor.find('a.event-folder-create'),
@@ -2521,8 +2524,7 @@ var PanoptoScheduler = (function ($) {
             .on('mouseup', function(e) {
                 var $editor = $('.event-folder .form-group .folder-editor');
 
-                if ($editor.length && !$editor.hasClass('hidden')
-                        && !$(e.target).closest('.folder-search-result').length) {
+                if ($editor.length && !$editor.hasClass('hidden') && !$(e.target).closest('.folder-search-result').length) {
                     close_panopto_folder_search_result();
                 }
             })
@@ -2534,7 +2536,7 @@ var PanoptoScheduler = (function ($) {
 
                 do_panopto_folder_create(folder_name, parent_folder_id, function () {
                     alert('crated');
-                })
+                });
             })
             .on('click', '.reservation-settings .folder-editor .event-folder-create', function (e) {
                 var $form = $('.event-folder .form-group'),
@@ -2544,7 +2546,7 @@ var PanoptoScheduler = (function ($) {
 
                 do_panopto_folder_create(folder_name, parent_folder_id, function () {
                     alert('created');
-                })
+                });
             })
             .on('click', '.reservation-settings .event-folder-cancel',
                 cancel_panopto_event_folder_editor)
@@ -2609,7 +2611,7 @@ var PanoptoScheduler = (function ($) {
 //                //close_panopto_event_field_editors();
 //            })
             .on('click', '.folder-name .path-element.collapsable > i, .folder-editor .path-element.collapsable > i',
-                collapse_expand_event_folder_path_element)
+                collapse_expand_event_folder_path_element);
 
         Handlebars.registerHelper('indent', function (value) {
 	        return value * 8;
