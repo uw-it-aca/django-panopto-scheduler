@@ -214,7 +214,7 @@ to open the scheduled session's Panopto folder.
       Folder&nbsp;Name:
     </div>
     <div class="col-md-10">
-        <div class="form-group">
+        <div class="folder-details form-group">
           <div class="folder-name">
             {{#if folder.id}}
               <div class="folder-path all-folder-path">
@@ -238,7 +238,7 @@ to open the scheduled session's Panopto folder.
           <div class="folder-editor hidden">
             <div class="folder-path"></div>
             <input class="folder form-control" value="" data-parent-folder-id=""><span class="folder-search" title="Click to search for folder name"><i class="fa fa-search"></i></span><span class="folder-clear" title="Clear to start fresh search"><i class="fa fa-times-circle"></i></span>
-            <div class="folder-search-result hidden"></div><i class="fa fa-spinner fa-4 fa-spin"></i>
+            <div class="folder-search-result hidden"></div><i class="fa fa-spinner fa-4 fa-spin"></i><span>[ No matching folders or directories found. ] </span>
             <br />
             <a href="javascript:void(0);" class="event-folder-create{{#if folder.id}} disabled{{/if}}">Create</a> |
             <a href="javascript:void(0);" class="event-folder-cancel">Cancel</a>
@@ -302,16 +302,21 @@ to open the scheduled session's Panopto folder.
           <a class="directory" href="javascript:void(0);">{{this.name}}</a>
         </div>
     </div>
-    <div class="folders" style="margin-left: {{#indent @index}}{{/indent}}px;">
+    <div class="folders" data-parent-folder-id="{{this.id}}" style="margin-left: {{#indent @index}}{{/indent}}px;">
       {{else}}
         <div class="path-element {{#if @first}}collapsable{{/if}}" data-folder-id="{{this.id}}" data-folder-name="{{this.name}}">
           <i class="fa {{#if @first}}fa-folder{{else}}fa-caret-down{{/if}}" style="margin-left: {{#indent @index}}{{/indent}}px;"></i>
           <a class="directory" href="javascript:void(0);">{{this.name}}</a>
         </div>
       {{/if}}
+    {{else}}
+    <div class="folders" data-parent-folder-id="">
     {{/each}}
     {{#each folders}}
-      <a class="folder" href="javascript:void(0);">{{this.name}}</a>
+      {{#unless ../path.length}}
+      <i class="fa fa-folder"></i>
+      {{/unless}}
+      <a class="folder" href="javascript:void(0);"{{#if ../path.length}}style="margin-left: 8px;"{{/if}}>{{this.name}}</a>
       {{#if @last}}
     </div>
       {{/if}}

@@ -421,6 +421,61 @@ span.loading {
             div.loading { font-size: 5em; height: 175px; padding-top: 40px; padding-left: 350px; }
             .folder-name .path-element.collapsable > i:hover,
             .path-element.collapsable > i:hover { cursor: pointer; }
+            .folder-editor input.folder ~ .folder-search {
+                position: absolute;
+                margin-left: -3.50em;
+                line-height: 2.5em;
+                i:hover {
+                    cursor: pointer;
+                }
+            }
+            .folder-editor input.folder ~ .folder-clear {
+                position: absolute;
+                margin-left: -1.75em;
+                line-height: 2.5em;
+                i:hover {
+                    cursor: pointer;
+                }
+            }
+            .folder-editor .folder-search-result {
+                height: 300px;
+                width: 625px;
+                background-color: white;
+                border: 1px solid @gray-light;
+                position: absolute;
+                z-index: 1000;
+                padding-left: 8px;
+                padding-top: 4px;
+                white-space: nowrap;
+                overflow-x: auto;
+                overflow-y: hidden;
+            }
+            .folder-editor .folder-search-result ~ i {
+                display: none;
+            }
+            .folder-editor .folder-search-result.loading ~ i {
+                display: inline !important;
+                position: absolute;
+                z-index: 1001;
+                font-size: 5em;
+                margin-left: -350px;
+                margin-top: 150px;
+            }
+            .folder-editor .folder-search-result ~ span {
+                display: none;
+            }
+            .folder-editor .folder-search-result.no-result ~ span {
+                display: inline !important;
+                position: absolute;
+                z-index: 1001;
+                font-size: 1.3em;
+                line-height: 200px;
+                margin-left: -490px;
+            }
+            .path-element:not(.hidden):has(+ .path-element.hidden):nth-child(1):after {
+                content: "...";
+                font-weight: 900;
+            }
         }
         div.container { margin-bottom: 16px; padding: 16px; width: 800px;
            div.row { margin-bottom: 10px;
@@ -515,50 +570,6 @@ span.loading {
                         margin-left: 00px;
                     }
                 }
-            }
-            .folder-editor input.folder ~ .folder-search {
-                position: absolute;
-                margin-left: -3.50em;
-                line-height: 2.5em;
-                i:hover {
-                    cursor: pointer;
-                }
-            }
-            .folder-editor input.folder ~ .folder-clear {
-                position: absolute;
-                margin-left: -1.75em;
-                line-height: 2.5em;
-                i:hover {
-                    cursor: pointer;
-                }
-            }
-            .folder-editor .folder-search-result {
-                height: 300px;
-                width: 625px;
-                background-color: white;
-                border: 1px solid @gray-light;
-                position: absolute;
-                z-index: 1000;
-                padding-left: 8px;
-                padding-top: 4px;
-                white-space: nowrap;
-                overflow-x: auto;
-                overflow-y: hidden;
-                .folder { padding-left: 1em; }
-            }
-            .folder-editor .folder-search-result + i {
-                display: none;
-            }
-            .folder-editor .folder-search-result.loading + i {
-                display: inline !important;
-                position: absolute;
-                z-index: 1001;
-                font-size: 5em;
-                margin-left: -350px;
-                margin-top: 150px;
-            }
-            .path-element:not(.hidden):has(+ .path-element.hidden):nth-child(1):after {
-                content: "..."
             }
             .schedule-event.loading + span, .modify-event.loading + span {
                 display: inline !important;
