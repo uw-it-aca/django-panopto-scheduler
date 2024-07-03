@@ -3,10 +3,14 @@
 
 from django.conf import settings
 from scheduler.views.rest_dispatch import RESTDispatch
-from scheduler.dao.panopto.sessions import get_folders_list, get_folders_by_id
+from scheduler.dao.panopto.sessions import (
+    get_folders_list, get_folders_by_id, add_folder)
 from scheduler.dao.panopto.access import get_folder_access_details
 from scheduler.dao.panopto.user import get_users_from_guids
-from scheduler.exceptions import PanoptoFolderDoesNotExist
+from scheduler.utils.validation import Validation
+from scheduler.exceptions import (
+    PanoptoFolderDoesNotExist, PanoptoFolderSearchTooShort,
+    MissingParamException)
 import json
 import re
 import logging
@@ -39,9 +43,23 @@ class Folder(RESTDispatch):
     def post(self, request, *args, **kwargs):
         try:
             data = json.loads(request.body)
+            folder_name = self._valid_folder_name(
+                data.get('folder_name')),
+            parent_folder_id = self._valid_parent_folder_id(
+                data.get('parent_folder_id'))
 
-            # test for existance and then create
-            return self.error_response(400, message="Not fully implemented yet")
+            response = get_folders_list(
+                search_query=folder_name, parent_folder_id=parent_folder_id)
+
+            if response:
+                return self.json_response(response, status=200)
+
+            response = add_folder(folder_name, parent_folder_id)
+            if response:
+                return self.json_response(response, status=201)
+
+            return self.error_response(
+                404, message="Folder not created")
         except Exception as ex:
             logger.exception(ex)
             return self.error_response(500, message=ex)
@@ -62,11 +80,11 @@ class Folder(RESTDispatch):
                 params['parent_folder_id'] = args['parent_folder_id']
 
             for folder in get_folders_list(**params):
-                self._add_folder(folders, self._folder(folder))
+                self._insert_folder(folders, self._folder(folder))
 
         return folders
 
-    def _add_folder(self, folders, folder):
+    def _insert_folder(self, folders, folder):
         parent_id = folder.get('parent_folder_id')
         if parent_id:
             parent = self._find_folder(folders, parent_id)
@@ -75,7 +93,7 @@ class Folder(RESTDispatch):
             else:
                 parent = self._folder(_get_folder_by_id(parent_id))
                 self._add_child(parent, folder)
-                self._add_folder(folders, parent)
+                self._insert_folder(folders, parent)
         else:
             folders.append(folder)
 
@@ -163,3 +181,14 @@ class Folder(RESTDispatch):
             return folders[0][0]
 
         raise Exception("Unexpected get_folder_by_id response")
+
+    def _valid_folder_name(self, folder_name):
+        if not folder_name:
+            raise MissingParamException("folder_name is required")
+
+        return folder_name
+
+    def _valid_parent_folder_id(self, parent_folder_id):
+        return Validation().panopto_id(parent_folder) if (
+            parent_folder_id) else None
+
