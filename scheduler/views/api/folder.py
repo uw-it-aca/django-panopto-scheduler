@@ -191,4 +191,3 @@ class Folder(RESTDispatch):
     def _valid_parent_folder_id(self, parent_folder_id):
         return Validation().panopto_id(parent_folder) if (
             parent_folder_id) else None
-
