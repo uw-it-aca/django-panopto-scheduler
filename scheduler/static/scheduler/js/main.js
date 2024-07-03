@@ -1917,7 +1917,7 @@ var PanoptoScheduler = (function ($) {
         if ($next.length == 0 || expand) {
             $i.removeClass('fa-caret-right').addClass('fa-caret-down');
             $next.removeClass('hidden');
-            $input.attr('data-parent-folder-id', $next.attr('data-folder-id'))
+            $input.attr('data-parent-folder-id', $next.attr('data-folder-id'));
         } else {
             $i.removeClass('fa-caret-down').addClass('fa-caret-right');
             $element.nextAll('.path-element')
@@ -1925,7 +1925,7 @@ var PanoptoScheduler = (function ($) {
                 .find('i')
                 .removeClass('fa-caret-down')
                 .addClass('fa-caret-right');
-            $input.attr('data-parent-folder-id', $prev.attr('data-folder-id'))
+            $input.attr('data-parent-folder-id', $prev.attr('data-folder-id'));
         }
 
         update_event_folder_editor_cues();
