@@ -91,7 +91,7 @@ class Folder(RESTDispatch):
             if parent:
                 self._add_child(parent, folder)
             else:
-                parent = self._folder(_get_folder_by_id(parent_id))
+                parent = self._folder(self._get_folder_by_id(parent_id))
                 self._add_child(parent, folder)
                 self._insert_folder(folders, parent)
         else:
