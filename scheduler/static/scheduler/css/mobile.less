@@ -419,11 +419,20 @@ span.loading {
         }
         .event-folder {
             div.loading { font-size: 5em; height: 175px; padding-top: 40px; padding-left: 350px; }
-            .folder-name .path-element.collapsable > i:hover,
-            .path-element.collapsable > i:hover { cursor: pointer; }
+            .folder-list .folder.collapsable > i:hover { cursor: pointer; }
+            .folder-list .folder:not(.root):has(+ .folder:not(.hidden)),
+            .folder-list .folder.parent:not(.root):last-child
+            {
+                i.opened { display: inline !important; }
+            }
+            .folder-list .folder:not(.root):has(+ .folder.hidden) { i.closed { display: inline !important; }}
+            .folder-list .folder.root:has(+ .folder.hidden):nth-child(1):after {
+                content: "...";
+                font-weight: 900;
+            }
             .folder-editor input.folder ~ .folder-search {
                 position: absolute;
-                margin-left: -3.50em;
+                margin-left: -1.75em;
                 line-height: 2.5em;
                 i:hover {
                     cursor: pointer;
@@ -471,10 +480,6 @@ span.loading {
                 font-size: 1.3em;
                 line-height: 200px;
                 margin-left: -490px;
-            }
-            .path-element:not(.hidden):has(+ .path-element.hidden):nth-child(1):after {
-                content: "...";
-                font-weight: 900;
             }
         }
         div.container { margin-bottom: 16px; padding: 16px; width: 800px;

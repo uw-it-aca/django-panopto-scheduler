@@ -42,21 +42,28 @@ class Folder(RESTDispatch):
 
     def post(self, request, *args, **kwargs):
         try:
+            folders = []
+
             data = json.loads(request.body)
             folder_name = self._valid_folder_name(
                 data.get('folder_name')),
             parent_folder_id = self._valid_parent_folder_id(
                 data.get('parent_folder_id'))
 
-            response = get_folders_list(
+            folder_response = get_folders_list(
                 search_query=folder_name, parent_folder_id=parent_folder_id)
 
-            if response:
-                return self.json_response(response, status=200)
+            if folder_response:
+                if len(folder_response) > 1:
+                    self.error_response(409, message="Folders already exist")
 
-            response = add_folder(folder_name, parent_folder_id)
-            if response:
-                return self.json_response(response, status=201)
+                self._insert_folder(folders, self._folder(folder_response))
+                return self.json_response(folders, status=200)
+
+            folder_response = add_folder(folder_name, parent_folder_id)
+            if folder_response:
+                self._insert_folder(folders, self._folder(folder_response))
+                return self.json_response(folders, status=201)
 
             return self.error_response(
                 404, message="Folder not created")
@@ -189,5 +196,5 @@ class Folder(RESTDispatch):
         return folder_name
 
     def _valid_parent_folder_id(self, parent_folder_id):
-        return Validation().panopto_id(parent_folder) if (
+        return Validation().panopto_id(parent_folder_id) if (
             parent_folder_id) else None

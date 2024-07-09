@@ -153,7 +153,7 @@
         {{#if recording_id}}
         <button class="btn unschedule-event">Unschedule<br />this recording</button>
         {{/if}}
-        <button class="btn schedule-event {{#if recording_id}}modify-event{{else}}schedule-event{{/if}}">{{#if recording_id}}Update Scheduled{{else}}Schedule{{/if}} recording<br />{{month_num}}/{{day}}/{{year}}, <span class="start-time">{{event_start_time}}{{ampm}}</span> - <span class="end-time">{{event_end_time}}{{ampm}}</span></button>
+        <button class="btn {{#if recording_id}}modify-event{{else}}schedule-event{{/if}}">{{#if recording_id}}Update Scheduled{{else}}Schedule{{/if}} recording<br />{{month_num}}/{{day}}/{{year}}, <span class="start-time">{{event_start_time}}{{ampm}}</span> - <span class="end-time">{{event_end_time}}{{ampm}}</span></button>
         <span><i class="fa fa-spinner fa-spin"></i></span>
       </div>
     </div>
@@ -206,8 +206,8 @@ to open the scheduled session's Panopto folder.
 {% verbatim %}
 <script id="event-folder-tmpl" type="text/x-handlebars-template">
   <h4><b>Recording Folder</b></h4>
-  <p>Choose or create folder for scheduled recording.
-  <span><br />After creating, click folder name to configure Sharing and such in Panopto.</span>
+  <p>Folder must exist before recording can be scheduled.
+  <span><br />After creating the folder or selecting it from search result, follow the link to configure Sharing and such directly in Panopto.</span>
   </p>
   <div class="row">
     <div class="col-md-2 text-right setting-name">
@@ -215,38 +215,15 @@ to open the scheduled session's Panopto folder.
     </div>
     <div class="col-md-10">
         <div class="folder-details form-group">
-          <div class="folder-name">
-            {{#if folder.id}}
-              <div class="folder-path all-folder-path">
-              {{#each path}}
-              <div class="path-element {{#if @first}}collapsable{{else}}hidden{{/if}}" data-folder-id="{{this.id}}" data-folder-name="{{this.name}}">
-                <i class="fa {{#if @first}}fa-folder{{else}}fa-caret-down{{/if}}" style="margin-left: {{#indent @index}}{{/indent}}px;"></i>
-                <span>{{this.name}}</span>
-              </div>
-              {{/each}}
-              </div>
-              <a class="folder" href="{{panopto_server}}/Panopto/Pages/Sessions/List.aspx?folderID={{folder.id}}" target="_blank" title="Click to visit folder in Panopto">{{folder.name}}</a>
-            {{else}}
-              <span class="folder">{{folder.name}}</span>
-            {{/if}}
-            <br />
-            {{#unless folder.id}}
-            <a href="javascript:void(0);" class="event-folder-create">Create</a> |
-            {{/unless}}
-            <a href="javascript:void(0);" class="event-folder-edit">Edit</a>
-          </div>
-          <div class="folder-editor hidden">
-            <div class="folder-path"></div>
-            <input class="folder form-control" value="" data-parent-folder-id=""><span class="folder-search" title="Click to search for folder name"><i class="fa fa-search"></i></span><span class="folder-clear" title="Clear to start fresh search"><i class="fa fa-times-circle"></i></span>
+          <div class="folder-editor">
+            <div class="folder-list"></div>
+            <input class="folder form-control" value="{{folder.name}}" data-folder-name="{{folder.name}}" data-folder-id="{{folder.id}}" data-parent-folder-id="{{folder.parent_folder_id}}"><span class="folder-search" title="Click to search for folder name"><i class="fa fa-search"></i></span><!-- <span class="folder-clear" title="Clear to start fresh search"><i class="fa fa-times-circle"></i></span> -->
             <div class="folder-search-result hidden"></div><i class="fa fa-spinner fa-4 fa-spin"></i><span>[ No matching folders or directories found. ] </span>
             <br />
-            <a href="javascript:void(0);" class="event-folder-create{{#if folder.id}} disabled{{/if}}">Create</a> |
-            <a href="javascript:void(0);" class="event-folder-cancel">Cancel</a>
+            <a class="event-folder-create hidden" href="javascript:void(0);">Create</a>
+            <a class="event-folder-visit hidden" href="javascript:void(0);">Adjust Sharing in Panopto  <i class="fa fa-external-link" aria-hidden="true" style="font-size: smaller;"></i></a>
             <div class="search-result"></div>
           </div>
-          <input type="hidden" class="original-folder" value="{{folder.name}}">
-          <input type="hidden" class="original-folder-id" value="{{folder.id}}">
-          <input type="hidden" class="original-parent-folder-id" value="{{folder.parent_folder_id}}">
         </div>
     </div>
   </div>
@@ -291,35 +268,19 @@ to open the scheduled session's Panopto folder.
 {% endverbatim %}
 
 {% verbatim %}
-<script id="event-folder-search-result-tmpl" type="text/x-handlebars-template">
-  <div class="folder-name">
-    <div class="folder-path">
-    <!-- Pay attention to the path and folder div open/close within each loop to maintain indenting -->
-    {{#each path}}
-      {{#if @last}}
-        <div class="path-element" data-folder-id="{{this.id}}" data-folder-name="{{this.name}}">
-          <i class="fa fa-caret-down" style="margin-left: {{#indent @index}}{{/indent}}px;"></i>
-          <a class="directory" href="javascript:void(0);">{{this.name}}</a>
-        </div>
-    </div>
-    <div class="folders" data-parent-folder-id="{{this.id}}" style="margin-left: {{#indent @index}}{{/indent}}px;">
-      {{else}}
-        <div class="path-element {{#if @first}}collapsable{{/if}}" data-folder-id="{{this.id}}" data-folder-name="{{this.name}}">
-          <i class="fa {{#if @first}}fa-folder{{else}}fa-caret-down{{/if}}" style="margin-left: {{#indent @index}}{{/indent}}px;"></i>
-          <a class="directory" href="javascript:void(0);">{{this.name}}</a>
-        </div>
-      {{/if}}
-    {{else}}
-    <div class="folders" data-parent-folder-id="">
-    {{/each}}
-    {{#each folders}}
-      {{#unless ../path.length}}
+<script id="folder-list-tmpl" type="text/x-handlebars-template">
+  <div class="folder-list">
+    {{#each folder_list}}
+    <div class="folder collapsable{{#if (gt child_count 0)}} parent{{/if}}{{#if (eq parent_count 0)}} root{{/if}}" style="padding-left: {{#indent parent_count}}{{/indent}}px;">
+      {{#if (eq parent_count 0)}}
       <i class="fa fa-folder"></i>
-      {{/unless}}
-      <a class="folder" href="javascript:void(0);"{{#if ../path.length}}style="margin-left: 8px;"{{/if}}>{{this.name}}</a>
-      {{#if @last}}
-    </div>
       {{/if}}
+      {{#if (gt child_count 0)}}
+      <i class="fa fa-caret-down opened" style="display: none;"></i>
+      <i class="fa fa-caret-right closed" style="display: none;"></i>
+      {{/if}}
+      <a class="folder" href="javascript:void(0);" data-folder-id="{{id}}" data-folder-parent-id="{{parent_folder_id}}" title="{{#if (gt child_count 0)}}Click to create folder in this directory{{else}}Click to choose folder{{/if}}">{{name}}</a>
+    </div>
     {{/each}}
   </div>
 </script>

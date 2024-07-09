@@ -114,8 +114,7 @@ var PanoptoScheduler = (function ($) {
 
     function panopto_folder_url(panopto_folder_id) {
         return 'http://' + window.scheduler.panopto_server +
-            '/Panopto/Pages/Sessions/List.aspx#folderID=%22' +
-            panopto_folder_id  + '%22&status=%5B4%2C0%2C5%2C3%2C2%2C1%5D';
+            '/Panopto/Pages/Sessions/List.aspx#folderID=%22' + panopto_folder_id;
     }
 
     function panopto_recording_url(panopto_recording_id) {
@@ -794,11 +793,12 @@ var PanoptoScheduler = (function ($) {
 
     function gather_event_recording($node, pe) {
         var changes = panopto_schedule_change(pe, $node),
-            folder_name = $node.find('.foldername .field a').text(),
+            $editor = $('.reservation-settings .folder-editor'),
+            $input = $editor.find('input.folder'),
+            folder_id = $input.attr('data-folder-id'),
             fields = ['foldername', 'creators'],
             creators = [],
             $field,
-            $input,
             start,
             now,
             i;
@@ -823,30 +823,15 @@ var PanoptoScheduler = (function ($) {
         }
 
         pe.recording.folder.external_id = '';
-        if ($('.foldername .field a').text() === $('.foldername input.original-folder').val()) {
-            pe.recording.folder.id = $('.foldername input.original-folder-id').val();
-        } else {
-            pe.recording.folder.id = '';
-        }
-/*
-        for (i = 0; i < fields.length; i += 1) {
-            $field = $node.find('.' + fields[i] + ' .form-group');
-            if (!$field.hasClass('hidden')) {
-                panopto_event_field_editor_input_finish($field.find('input'));
-            }
-        }
-*/
-/*
-        $node.find('ul li').each(function () {
-            var $li = $(this);
 
-            if ($li.is(':visible') && !$li.hasClass('placeholder')) {
-                creators.push($li.text());
-            }
-        });
+        if ($input.hasClass('folder-exists')) {
+            pe.recording.folder.id = folder_id;
+        } else {
+            alert("Please confirm that the recording's folder exists");
+            return null;
+        }
 
         pe.recording.folder.creators = creators;
-*/
 
         if (!pe.recording.folder.name || (pe.recording.folder.name !== folder_name)) {
             pe.recording.folder.name = folder_name;
@@ -1518,16 +1503,6 @@ var PanoptoScheduler = (function ($) {
                                           pe.recording.start, pe.recording.end);
 
         pe.slider = slider_instance;
-/*
-        $('.reservation-settings .foldername .folder-picker .search input').data(
-            'finish', search_panopto_folders);
-
-        $('.reservation-settings .foldername .form-group > input').data(
-            'finish', validate_new_folder);
-
-        $('.reservation-settings .creators .form-group > input').data(
-            'finish', panopto_folder_string_to_creators);
-*/
 
         slider_instance.on('slideStop', function (e) {
             var v = slider_instance.slider('getValue'),
@@ -1545,7 +1520,9 @@ var PanoptoScheduler = (function ($) {
         checked = (pe && pe.recording.id && pe.recording.is_broadcast) ? '1' : '0';
         $('input[name^=webcast_][value="' + checked + '"]').prop('checked', true);
 
-        validate_event_folder(pe.recording.folder.name, null);
+        disable_event_scheduler();
+
+        display_event_folder(pe.recording.folder.name, pe.recording.folder.id, '');
     }
 
     function event_scheduler_cancel(e) {
@@ -1575,121 +1552,54 @@ var PanoptoScheduler = (function ($) {
             find_event_from_search(window.location.search);
         }
     }
-/*
-    function search_panopto_folders(substring) {
-        var term = substring.trim();
 
-        if (term.length > 3) {
-            search_in_progress('.folder-picker .result');
-            do_panopto_folder_search(term, null, search_panopto_folders_complete);
-        }
-    }
-*/
-/*
-    function validate_new_folder(substring) {
-        var folder = substring.trim();
-
-        if (folder.length < 1 || folder === $('.foldername .field a').text()) {
-            return;
-        }
-
-        validate_panopto_folder(folder);
-    }
-*/
-    function validate_event_folder(folder, parent_folder_id) {
-        /*jshint validthis: true */
-//        var creators;
-
-//        $('.foldername .field a').text(folder);
-//        panopto_folder_string_to_creators();
-//        close_panopto_event_field_editors();
-
-//        $('.foldername input.original-folder').val('');
-//        $('.foldername input.folder-id').val('');
-//        $('a.visit-folder').addClass('hidden');
-
-        disable_event_scheduler();
-        $('button.schedule-event').addClass('loading');
-
-        // fix up creators and links
-//        $('.folder-exists').addClass('hidden');
-//        $('a.visit-folder').attr('disabled', 'disabled');
-
-        do_panopto_folder_search(folder, parent_folder_id, function (data) {
-            display_event_folder(folder, parent_folder_id, data);
-        });
-    }
-
-    function display_event_folder(folder, parent_folder_id, data) {
+    function display_event_folder(folder, folder_id, parent_folder_id) {
         var $folder_div = $(".reservation-settings .event-folder"),
             tpl = Handlebars.compile($('#event-folder-tmpl').html()),
             context = {
                 path: [],
                 folders: [{
                     name: folder,
-                    id: null,
+                    id: folder_id,
                     parent_folder_id: parent_folder_id
                 }],
                 folder: {
                     name: folder,
-                    id: null,
+                    id: folder_id,
                     parent_folder_id: parent_folder_id
                 },
                 creator_netids: []
             },
-            found_folder;
+            found_folder = [];
 
         enable_event_scheduler();
         $('button.schedule-event').removeClass('loading');
-        if ($.isArray(data)) {
-            if (data.length == 0) {
-                $folder_div.html(tpl(context));
-                // not found
-                disable_event_schedule_button();
-            } else if (data.length > 1) {
-                // too many found, display search result?
-                $folder_div.html(tpl(context));
-                disable_event_schedule_button();
-            } else {
-                found_folder = panopto_folders_from_search(data);
-                if (!found_folder || found_folder.folders.length > 1) {
-                    // too many found, display search result?
-                    $folder_div.html(tpl(context));
-                    disable_event_schedule_button();
-                }
-
-                context.folders = found_folder.folders;
-                context.folder = found_folder.folders[0];
-                context.path = found_folder.path;
-
-                $folder_div.html(tpl(context));
-                enable_event_schedule_button();
-            }
-        }
+        $folder_div.html(tpl(context));
+        update_event_folder_editor_cues();
+        disable_event_schedule_button();
     }
 
-    function panopto_folders_from_search(data, folder) {
-        if (!folder) {
-            folder = {
-                path: [],
-                folders: []
-            };
+    /* flatten out the returned folder structure */
+    function panopto_folders_from_search(folder_data, folder_list, parent_count) {
+        if (typeof parent_count === 'undefined') {
+            parent_count = 0;
         }
 
-        for (var i = 0; i < data.length; i += 1) {
-            var f = data[i];
+        for (var i = 0; i < folder_data.length; i += 1) {
+            var folder = folder_data[i];
 
-            if (f.hasOwnProperty('name')) {
-                if (f.child_folders.length) {
-                    folder.path.push(f);
-                    return panopto_folders_from_search(f.child_folders, folder);
-                } else {
-                    folder.folders.push(f);
-                }
+            if (folder.hasOwnProperty('name')) {
+                folder_list.push({
+                    name: folder.name.trim(),
+                    id: folder.id,
+                    parent_folder_id: folder.parent_folder_id,
+                    parent_count: parent_count,
+                    child_count: folder.child_folders.length
+                });
+
+                panopto_folders_from_search(folder.child_folders, folder_list, parent_count + 1);
             }
         }
-
-        return folder;
     }
 
     function do_panopto_folder_search(folder, parent_folder_id, finished) {
@@ -1702,7 +1612,7 @@ var PanoptoScheduler = (function ($) {
         })
             .fail(function (jqXHR, textStatus) {
                 alert('Folder search failed: ' + (jqXHR.responseJSON ? jqXHR.responseJSON.error : jqXHR.responseText));
-                display_event_folder(folder, parent_folder_id, []);
+                display_event_folder(folder, '', parent_folder_id);
             })
             .done(finished);
     }
@@ -1731,7 +1641,10 @@ var PanoptoScheduler = (function ($) {
             $editor_folders;
 
         disable_event_schedule_button();
-        $('.folder-editor .original-folder', $form).val(folder);
+        $form.find('.folder-editor .original-folder').val(folder);
+        $form.find('.folder-editor .original-folder-id').val();
+
+
         $('.folder-editor', $form).removeClass('hidden');
         $('.folder-name', $form).addClass('hidden');
         $('.folder-editor .folder', $form).val(folder).focus();
@@ -1759,6 +1672,7 @@ var PanoptoScheduler = (function ($) {
         $('.folder-name .folder-path .path-element:not(:first-child)', $form).addClass('hidden');
         $('.folder-name', $form).removeClass('hidden');
         $('.folder-editor', $form).addClass('hidden');
+        $('.folder-editor > .folder-list', $form).empty();
     }
 
     function panopto_event_folder_search(e) {
@@ -1774,7 +1688,8 @@ var PanoptoScheduler = (function ($) {
 
         $result.empty().addClass('loading').removeClass('hidden no-result');
         do_panopto_folder_search(folder, parent_folder_id, function (data) {
-            var tpl = Handlebars.compile($('#event-folder-search-result-tmpl').html());
+            var tpl = Handlebars.compile($('#folder-list-tmpl').html()),
+                folder_list = [];
 
             $result.removeClass('loading');
 
@@ -1783,12 +1698,39 @@ var PanoptoScheduler = (function ($) {
                 return;
             }
 
-            for (var i = 0; i < data.length; i += 1) {
-                var found_folder = panopto_folders_from_search([data[i]]);
-                $result.append(tpl(found_folder));
-            }
+            panopto_folders_from_search(data, folder_list);
+            $result.append(tpl({folder_list: folder_list}));
         });
     }
+
+    function panopto_event_folder_create(e) {
+        var $form = $('.event-folder .form-group'),
+            $editor = $('.reservation-settings .folder-editor'),
+            $input = $editor.find('input.folder'),
+            folder_name = $input.val().trim(),
+            parent_folder_id = $input.attr('data-parent-folder-id');
+
+        if (folder_name.length > 0) {
+            do_panopto_folder_create(folder_name, parent_folder_id, function (data) {
+                var folder_list_tpl = Handlebars.compile($('#folder-list-tmpl').html()),
+                    folder_list = [],
+                    folder;
+
+                panopto_folders_from_search(data, folder_list);
+
+                folder = folder_list[folder_list.length - 1];
+
+                display_event_folder(folder.name, folder.id, folder.parent_folder_id);
+
+                $('.event-folder .folder-details .folder-editor > .folder-list')
+                    .append(folder_list_tpl({folder_list: folder_list.slice(0, -1)}));
+                update_event_folder_editor_cues();
+            });
+        } else {
+            alert('Folder name required');
+        }
+    }
+
     function panopto_event_folder_clear(e) {
         var $form = $('.event-folder .form-group'),
             $result = $('.folder-search-result', $form),
@@ -1806,62 +1748,77 @@ var PanoptoScheduler = (function ($) {
     function select_panopto_event_folder_from_search(e) {
         /*jshint validthis: true */
         var $a = $(this),
-            folder = $a.text(),
-            $element = $a.parent(),
-            $input = $a.closest('.folder-editor').find('input.folder'),
-            parent_folder_id = $a.closest('.folders').attr('data-parent-folder-id'),
-            $path = $([]);
-
-        $a.closest('.folder-name').find('.folder-path .path-element').each(function () {
-            var $path_element = $(this);
-
-            $path.push($path_element.clone());
-            if ($path_element.attr('data-folder-id') == parent_folder_id) {
-                return false;
-            }
-        });
+            folder_name = $a.text().trim(),
+            folder_id = $a.attr('data-folder-id'),
+            parent_folder_id = $a.attr('data-folder-parent-id'),
+            $folder = $a.parent(),
+            $editor_input = $a.closest('.folder-editor').find('input.folder'),
+            $editor_folder_list = $('.event-folder .folder-details .folder-editor > .folder-list'),
+            $root = $folder.prev('.folder.root');
 
         e.preventDefault();
         e.stopPropagation();
 
-        $input.val(folder)
-            .attr('data-parent-folder-id', parent_folder_id);
-        copy_panopto_event_search_folder_path_to_editor($path);
-        close_panopto_folder_search_result();
+        // put folder name in editor
+        if ($folder.hasClass('parent')) {
+            $editor_input
+                .val('')
+                .attr('data-folder-name', '')
+                .attr('data-folder-id', '')
+                .attr('data-parent-folder-id', folder_id);
+        } else {
+            $editor_input
+                .val(folder_name)
+                .attr('data-folder-name', folder_name)
+                .attr('data-folder-id', folder_id)
+                .attr('data-parent-folder-id', parent_folder_id);
+        }
+
+        // add path to editor
+        $editor_folder_list.empty();
+        if (!$folder.hasClass('root')) {
+            $folder.prevUntil($root, '.folder.parent').each(function () {
+                var $folder = $(this).clone();
+
+                if ($folder.hasClass('root')) {
+                    $folder
+                        .addClass('collapsable')
+                        .removeClass('hidden');
+                } else {
+                    $folder
+                        .removeClass('collapsable')
+                        .addClass('hidden');
+                }
+
+                $editor_folder_list.prepend($folder);
+            });
+        }
+
         update_event_folder_editor_cues();
+        close_panopto_folder_search_result();
     }
 
-    function select_panopto_event_directory_from_search(e) {
+    function select_panopto_event_folder_from_editor(e) {
         /*jshint validthis: true */
         var $a = $(this),
-            $element = $a.parent(),
-            $path = $($element.prevAll('div.path-element').get().reverse()).clone(),
-            $input = $element.closest('.folder-editor').find('input.folder');
+            folder_name = $a.text().trim(),
+            folder_id = $a.attr('data-folder-id'),
+            parent_folder_id = $a.attr('data-folder-parent-id'),
+            $folder = $a.parent(),
+            $editor_input = $a.closest('.folder-editor').find('input.folder'),
+            $root = $folder.prev('.folder.root');
 
         e.preventDefault();
         e.stopPropagation();
 
-        $input.val('').attr('data-parent-folder-id', $element.attr('data-folder-id'));
-        $path.push($element.clone());
-        copy_panopto_event_search_folder_path_to_editor($path);
-        close_panopto_folder_search_result();
+        $editor_input
+            .val('')
+            .attr('data-folder-name', '')
+            .attr('data-folder-id', '')
+            .attr('data-parent-folder-id', folder_id);
+
+        $folder.nextUntil($('.folder.root'), '.folder').remove();
         update_event_folder_editor_cues();
-    }
-
-    function copy_panopto_event_search_folder_path_to_editor($path) {
-        var $folder_path = $('.event-folder .folder-details .folder-editor .folder-path');
-
-        $folder_path.empty();
-        $path.each(function (i) {
-            var $this = $(this);
-
-            if (i > 0) {
-                $this.removeClass('hidden');
-                $this.addClass('collapsable');
-            }
-
-            $folder_path.append($this);
-        });
     }
 
     function close_panopto_folder_search_result() {
@@ -1874,106 +1831,61 @@ var PanoptoScheduler = (function ($) {
     function collapse_expand_event_folder_path_element(e) {
         /*jshint validthis: true */
         var $i = $(this),
-            $element = $i.parent(),
-            $input = $i.closest('.folder-editor').find('input.folder'),
-            parent_folder_id = $input.attr('data-parent-folder-id'),
-            in_search_result = $element.closest('.folder-search-result').length > 0,
-            in_editor = $element.closest('.folder-editor').length > 0,
-            is_first = $element.prev('.path-element').length > 0,
-            $prev = is_first ? $element: $element.prev('.path-element'),
-            $next = $element.next('.path-element'),
-            expand = $next.hasClass('hidden');
+            $folder = $i.parent(),
+            $children = $folder.nextUntil('div.root'),
+            expand = $folder.next().hasClass('hidden');
 
-        if ($i.hasClass('fa-folder')) {
-            $element.nextAll('.path-element').each(function () {
-                var $element = $(this);
-
-                if (expand) {
-                    $element.find('i').addClass('fa-caret-down').removeClass('fa-caret-right');
-                    $element.removeClass('hidden');
-
-                    if (in_search_result) {
-                        $element.closest('.folder-name').find('.folders').removeClass('hidden');
-                    }
-
-                    if (in_editor && parent_folder_id) {
-                        if ($element.attr('data-folder-id') == parent_folder_id) {
-                            return false;
-                        }
-                    }
-                } else {
-                    $element.addClass('hidden');
-                    $element.find('i').removeClass('fa-caret-down').addClass('fa-caret-right');
-
-                    if (in_search_result) {
-                        $element.closest('.folder-name').find('.folders').addClass('hidden');
-                    }
-                }
-            });
-
-            return;
-        }
-
-        if ($next.length == 0 || expand) {
-            $i.removeClass('fa-caret-right').addClass('fa-caret-down');
-            $next.removeClass('hidden');
-            $input.attr('data-parent-folder-id', $next.attr('data-folder-id'));
+        if (expand) {
+            $children.removeClass('hidden');
         } else {
-            $i.removeClass('fa-caret-down').addClass('fa-caret-right');
-            $element.nextAll('.path-element')
-                .addClass('hidden')
-                .find('i')
-                .removeClass('fa-caret-down')
-                .addClass('fa-caret-right');
-            $input.attr('data-parent-folder-id', $prev.attr('data-folder-id'));
+            $children.addClass('hidden');
         }
-
-        update_event_folder_editor_cues();
     }
 
     function update_event_folder_editor_cues() {
         var $editor = $('.reservation-settings .folder-editor'),
             $input = $editor.find('input.folder'),
+            input_val = $input.val().trim(),
+            folder_id = $input.attr('data-folder-id'),
             parent_folder_id = $input.attr('data-parent-folder-id'),
             $create_link = $editor.find('a.event-folder-create'),
+            $visit_link = $editor.find('a.event-folder-visit'),
             $search_link = $editor.find('span.folder-search'),
-            folder_name = parent_folder_id ? $('.path-element[data-folder-id="' + parent_folder_id + '"]').text() : "top level directory";
+            folder_name = parent_folder_id ? $('.folder > a[data-folder-id="' + parent_folder_id + '"]').first().text() : "top level directory";
 
         $input
             .attr('placeholder', 'Create or Search in "' + folder_name.trim() + '"')
             .attr('data-parent-folder-id', parent_folder_id);
         $search_link.attr('title', 'Search for folder in ' + folder_name);
         $create_link.text('Create folder in ' + folder_name);
+
+        disable_event_schedule_button();
+        $input.removeClass('folder-exists');
+        if (input_val.length) {
+            if (input_val == $input.attr('data-folder-name')) {
+                if (folder_id.length) {
+                    $input.addClass('folder-exists');
+                    $create_link.addClass('hidden');
+                    $visit_link.removeClass('hidden').attr('href', panopto_folder_url(folder_id));
+                    enable_event_schedule_button();
+                } else {
+                    $create_link.removeClass('hidden');
+                    $visit_link.addClass('hidden');
+                }
+            } else {
+                $create_link.removeClass('hidden disabled');
+                $visit_link.addClass('hidden');
+            }
+        } else {
+            $create_link.addClass('disabled').removeClass('hidden');
+            $visit_link.addClass('hidden');
+        }
     }
 
     function panopto_event_folder_editor_input(e) {
-        /*jshint validthis: true */
-        var $input = $(this),
-            $form = $('.event-folder .form-group'),
-            $save = $('.event-folder-create', $form),
-            name = $input.val().trim(),
-            original = $('.reservation-settings .original-folder', $form).val();
-
         e.preventDefault();
         e.stopPropagation();
-
-        if (name == original) {
-            $save.addClass('disabled');
-        } else {
-            $save.removeClass('disabled');
-        }
-    }
-
-    function close_panopto_event_field_editors() {
-        var $hidden = $('.field-editor .field.hidden'),
-            $fields;
-
-        if ($hidden.length) {
-            $fields = $hidden.parent();
-            $fields.trigger('scheduler.field_edit_closing');
-            $fields.find('.form-group').addClass('hidden').removeClass('has-error');
-            $fields.find('.field').removeClass('hidden');
-        }
+        update_event_folder_editor_cues();
     }
 
     function init_slider_range(event_start, event_end, rec_start, rec_end) {
@@ -2312,24 +2224,8 @@ var PanoptoScheduler = (function ($) {
             })
             .on('click', '.reservation-settings .event-folder-edit',
                 open_panopto_event_folder_editor)
-            .on('click', '.reservation-settings .folder-name .event-folder-create', function (e) {
-                var folder_name = $('.reservation-settings .original-folder').val(),
-                    parent_folder_id = $('.reservation-settings .original-folder-id').val();
-
-                do_panopto_folder_create(folder_name, parent_folder_id, function () {
-                    alert('crated');
-                });
-            })
-            .on('click', '.reservation-settings .folder-editor .event-folder-create', function (e) {
-                var $form = $('.event-folder .form-group'),
-                    $input = $('.folder-editor input.folder', $form),
-                    folder_name = $input.val().trim(),
-                    parent_folder_id = $input.attr('data-parent-folder-id');
-
-                do_panopto_folder_create(folder_name, parent_folder_id, function () {
-                    alert('created');
-                });
-            })
+            .on('click', '.reservation-settings .folder-editor .event-folder-create',
+                panopto_event_folder_create)
             .on('click', '.reservation-settings .event-folder-cancel',
                 cancel_panopto_event_folder_editor)
             .on('keyup', '.reservation-settings .folder-editor input.folder',
@@ -2338,16 +2234,10 @@ var PanoptoScheduler = (function ($) {
                 panopto_event_folder_search)
             .on('click', '.reservation-settings .folder-editor input.folder ~ .folder-clear',
                 panopto_event_folder_clear)
-            .on('click', '.reservation-settings .folder-editor .folder-search-result .folder',
+            .on('click', '.reservation-settings .folder-editor .folder-search-result .folder a',
                 select_panopto_event_folder_from_search)
-            .on('click', '.reservation-settings .folder-editor > .folder-search-result .directory',
-                select_panopto_event_directory_from_search)
-            .on('click', '.reservation-settings .folder-editor > .folder-path .directory', function (e) {
-                var $path_element = $(this).parent();
-
-                $path_element.nextAll().addClass('hidden');
-                update_event_folder_editor_cues($path_element);
-            })
+            .on('click', '.reservation-settings .folder-editor > .folder-list .folder a',
+                select_panopto_event_folder_from_editor)
             .on('scheduler.field_edit_clearing', '.foldername',
                 function () {
                     $('.reservation-settings .foldername .folder-picker .result').html('');
@@ -2374,11 +2264,17 @@ var PanoptoScheduler = (function ($) {
                 })
             .on('click', '.modify-event',
                 modify_panopto_event_recording)
-            .on('click', '.folder-name .path-element.collapsable > i, .folder-editor .path-element.collapsable > i',
+            .on('click', '.folder-list .folder.parent.collapsable > i',
                 collapse_expand_event_folder_path_element);
 
-        Handlebars.registerHelper('indent', function (value) {
-	        return value * 8;
+        Handlebars.registerHelper({
+            'indent': function (value) { return value * 8; },
+            'eq': function(a, b) { return (a === b); },
+            'gt': function(a, b) { return (a > b); },
+            'lte': function(a, b) { return (a <= b); },
+            'and': function(a, b) { return (a && b); },
+            'or': function(a, b) { return (a || b); },
+            'not': function(a) { return (!a); }
         });
     }
 
@@ -2430,8 +2326,6 @@ var PanoptoScheduler = (function ($) {
                     find_event_from_search(search);
                 });
             }
-
-            //history.replaceState({}, '', search_param ? search_param : '/scheduler/');
         } else {
             // if blti loaded
             if (window.scheduler.hasOwnProperty('blti')) {
