@@ -795,10 +795,9 @@ var PanoptoScheduler = (function ($) {
         var changes = panopto_schedule_change(pe, $node),
             $editor = $('.reservation-settings .folder-editor'),
             $input = $editor.find('input.folder'),
-            folder_id = $input.attr('data-folder-id'),
-            fields = ['foldername', 'creators'],
+            folder_name = $input.attr('data-folder-name').trim(),
+            folder_id = $input.attr('data-folder-id').trim(),
             creators = [],
-            $field,
             start,
             now,
             i;
@@ -824,7 +823,8 @@ var PanoptoScheduler = (function ($) {
 
         pe.recording.folder.external_id = '';
 
-        if ($input.hasClass('folder-exists')) {
+        if (folder_id.length && folder_id.length) {
+            pe.recording.folder.name = folder_name;
             pe.recording.folder.id = folder_id;
         } else {
             alert("Please confirm that the recording's folder exists");
@@ -832,11 +832,6 @@ var PanoptoScheduler = (function ($) {
         }
 
         pe.recording.folder.creators = creators;
-
-        if (!pe.recording.folder.name || (pe.recording.folder.name !== folder_name)) {
-            pe.recording.folder.name = folder_name;
-            pe.recording.folder_id = null;
-        }
 
         return pe;
     }
@@ -1825,7 +1820,10 @@ var PanoptoScheduler = (function ($) {
     function close_panopto_folder_search_result() {
         var $editor = $('.event-folder .form-group .folder-editor');
 
-        $('.folder-search-result', $editor).addClass('hidden').empty();
+        $('.folder-search-result', $editor)
+            .addClass('hidden')
+            .removeClass('loading no-result')
+            .empty();
         $('input.folder', $editor).focus();
     }
 
@@ -1869,11 +1867,9 @@ var PanoptoScheduler = (function ($) {
         $create_link.text('Create folder in ' + folder_name);
 
         disable_event_schedule_button();
-        $input.removeClass('folder-exists');
         if (input_val.length) {
             if (input_val == $input.attr('data-folder-name')) {
                 if (folder_id.length) {
-                    $input.addClass('folder-exists');
                     $create_link.addClass('hidden');
                     $visit_link.removeClass('hidden').attr('href', panopto_folder_url(folder_id));
                     enable_event_schedule_button();
