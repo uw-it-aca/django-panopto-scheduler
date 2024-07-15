@@ -1833,17 +1833,22 @@ var PanoptoScheduler = (function ($) {
         /*jshint validthis: true */
         var $i = $(this),
             $folder = $i.parent('.folder'),
-            level = $folder.attr('data-folder-level'),
-            $folders = $folder.nextUntil('div.root'),
-            $siblings = $folders.find('.folder[data-folder-level="' + level + '"]'),
-            $children = ($siblings.length) ? $siblings : $folders,
-            expand = $folder.next().hasClass('hidden');
+            expand = $folder.next().hasClass('hidden'),
+            level = $folder.attr('data-folder-level');
 
-        if (expand) {
-            $children.removeClass('hidden');
-        } else {
-            $children.addClass('hidden');
-        }
+        $folder.nextAll().each(function () {
+            var $this = $(this);
+
+            if ($this.attr('data-folder-level') > level) {
+                if (expand) {
+                    $this.removeClass('hidden');
+                } else {
+                    $this.addClass('hidden');
+                }
+            } else {
+                return false;
+            }
+        });
     }
 
     function update_event_folder_editor_cues() {
