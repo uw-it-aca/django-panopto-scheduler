@@ -114,7 +114,7 @@ var PanoptoScheduler = (function ($) {
 
     function panopto_folder_url(panopto_folder_id) {
         return 'http://' + window.scheduler.panopto_server +
-            '/Panopto/Pages/Sessions/List.aspx#folderID=%22' + panopto_folder_id;
+            '/Panopto/Pages/Sessions/List.aspx#folderID=%22' + panopto_folder_id + '%22';
     }
 
     function panopto_recording_url(panopto_recording_id) {
@@ -1682,7 +1682,8 @@ var PanoptoScheduler = (function ($) {
             folder = $input.val().trim(),
             parent_folder_id = $input.attr('data-parent-folder-id');
 
-        if (folder.length < 5) {
+        if (folder.length <= 4) {
+            alert('Search term must be at least 4 characters long');
             return;
         }
 
@@ -1824,15 +1825,18 @@ var PanoptoScheduler = (function ($) {
     function close_panopto_folder_search_result() {
         var $editor = $('.event-folder .form-group .folder-editor');
 
-        $('.folder-search-result', $editor).empty().addClass('hidden');
+        $('.folder-search-result', $editor).addClass('hidden').empty();
         $('input.folder', $editor).focus();
     }
 
     function collapse_expand_event_folder_path_element(e) {
         /*jshint validthis: true */
         var $i = $(this),
-            $folder = $i.parent(),
-            $children = $folder.nextUntil('div.root'),
+            $folder = $i.parent('.folder'),
+            level = $folder.attr('data-folder-level'),
+            $folders = $folder.nextUntil('div.root'),
+            $siblings = $folders.find('.folder[data-folder-level="' + level + '"]'),
+            $children = ($siblings.length) ? $siblings : $folders,
             expand = $folder.next().hasClass('hidden');
 
         if (expand) {

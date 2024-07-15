@@ -219,9 +219,10 @@ to open the scheduled session's Panopto folder.
             <div class="folder-list"></div>
             <input class="folder form-control" value="{{folder.name}}" data-folder-name="{{folder.name}}" data-folder-id="{{folder.id}}" data-parent-folder-id="{{folder.parent_folder_id}}"><span class="folder-search" title="Click to search for folder name"><i class="fa fa-search"></i></span><!-- <span class="folder-clear" title="Clear to start fresh search"><i class="fa fa-times-circle"></i></span> -->
             <div class="folder-search-result hidden"></div><i class="fa fa-spinner fa-4 fa-spin"></i><span>[ No matching folders or directories found. ] </span>
-            <br />
-            <a class="event-folder-create hidden" href="javascript:void(0);">Create</a>
-            <a class="event-folder-visit hidden" href="javascript:void(0);">Adjust Sharing in Panopto  <i class="fa fa-external-link" aria-hidden="true" style="font-size: smaller;"></i></a>
+            <div class="editor-options">
+              <a class="event-folder-create hidden" href="javascript:void(0);">Create</a>
+              <a class="event-folder-visit hidden" href="javascript:void(0);">Adjust Sharing in Panopto  <i class="fa fa-external-link" aria-hidden="true" target="_blank" style="font-size: smaller;"></i></a>
+            </div>
             <div class="search-result"></div>
           </div>
         </div>
@@ -271,7 +272,7 @@ to open the scheduled session's Panopto folder.
 <script id="folder-list-tmpl" type="text/x-handlebars-template">
   <div class="folder-list">
     {{#each folder_list}}
-    <div class="folder collapsable{{#if (gt child_count 0)}} parent{{/if}}{{#if (eq parent_count 0)}} root{{/if}}" style="padding-left: {{#indent parent_count}}{{/indent}}px;">
+    <div class="folder collapsable{{#if (gt child_count 0)}} parent{{/if}}{{#if (eq parent_count 0)}} root{{/if}}" data-folder-level="{{parent_count}}">
       {{#if (eq parent_count 0)}}
       <i class="fa fa-folder"></i>
       {{/if}}
@@ -279,7 +280,7 @@ to open the scheduled session's Panopto folder.
       <i class="fa fa-caret-down opened" style="display: none;"></i>
       <i class="fa fa-caret-right closed" style="display: none;"></i>
       {{/if}}
-      <a class="folder" href="javascript:void(0);" data-folder-id="{{id}}" data-folder-parent-id="{{parent_folder_id}}" title="{{#if (gt child_count 0)}}Click to create folder in this directory{{else}}Click to choose folder{{/if}}">{{name}}</a>
+      <a class="folder-name" href="javascript:void(0);" data-folder-id="{{id}}" data-folder-parent-id="{{parent_folder_id}}" title="{{#if (gt child_count 0)}}Click to create folder in this directory{{else}}Click to choose folder{{/if}}">{{name}}</a>
     </div>
     {{/each}}
   </div>
