@@ -90,23 +90,7 @@
     <h3><span class="sr-only"> Schedule on</span> {{ search_date }} <span class="name">{{name}}</span> <span class="contact">{{contact}}</span> <span class="location pull-right">{{location}}</span></h3>
   </div>
   <div class="reservation-settings" data-schedule-key="{{ key }}">
-    <h3>Schedule Recording</h3>
-    <div class="container">
-      <h4><b>Recording Name</b></h4>
-      <p>
-      Enter the recording name, adjust the recording duration and options, and select the folder where the recording will be stored.
-      </p>
-      <div class="row">
-        <div class="col-md-2 text-right setting-name">
-          Name:
-        </div>
-        <div class="col-md-10">
-          <div class="form-group">
-            <input class="recording-name form-control" value="{{name}}">
-          </div>
-        </div>
-      </div>
-    </div>
+    <h3>Schedule Recording for "{{name}}"</h3>
     <div class="container">
       <h4><b>Recording Settings</b></h4>
       <p>Adjust recording duration and options</p>
@@ -117,6 +101,7 @@
               <span class="time-indicator"><i class="fa fa-clock-o"></i></span>
             </div>
             <div class="col-md-9">
+              <input type="hidden" class="recording-name" value="{{name}}">
               <span class="setting-name">Recording duration</span>
               <div class="setting-description">
                 Adjust the start and/or end time of the recording.  Default is entire class session.
