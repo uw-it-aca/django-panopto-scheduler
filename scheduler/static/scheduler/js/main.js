@@ -2204,8 +2204,15 @@ var PanoptoScheduler = (function ($) {
             })
             .on('click', '.reservation-settings .folder-editor .event-folder-create',
                 panopto_event_folder_create)
-            .on('keyup', '.reservation-settings input.recording-name, .reservation-settings .folder-editor input.folder',
+            .on('keyup', '.reservation-settings input.recording-name',
                 panopto_event_editor_input)
+            .on('keyup', '.reservation-settings .folder-editor input.folder', function (e) {
+                if (e.which === 13) {
+                    panopto_event_folder_search(e);
+                } else {
+                    panopto_event_editor_input(e);
+                }
+            })
             .on('click', '.reservation-settings .folder-editor input.folder ~ .folder-search',
                 panopto_event_folder_search)
             .on('click', '.reservation-settings .folder-editor input.folder ~ .folder-clear',
