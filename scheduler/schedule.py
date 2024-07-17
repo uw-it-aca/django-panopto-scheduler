@@ -252,16 +252,10 @@ def event_session_from_scheduled_recording(s):
         }
     }
 
-    logger.info(f"schedule: keys from: "
-                f"{session['recording']['name']}, "
-                f"{session['recording']['external_id']}, "
-                f"{session['recording']['recorder_id']}, "
-                f"{session['event']['start']}, "
-                f"{session['event']['end']}")
-
     session['key'] = schedule_key(
-        session['recording']['name'], session['recording']['external_id'],
-        session['recording']['recorder_id'], session['event']['start'],
+        session['recording']['external_id'],
+        session['recording']['recorder_id'],
+        session['event']['start'],
         session['event']['end'])
 
     return session
@@ -341,13 +335,8 @@ def mash_in_panopto_sessions(event_sessions, session_external_ids, recorders):
             if recorders[space_id]:
                 e_r['recorder_id'] = recorders[space_id]
 
-        logger.info(f"mash_in_panopto_sessions: keys from: "
-                    f"{e_r['name']}, {e_r['external_id']}, "
-                    f"{e_r['recorder_id']}, "
-                    f"{e['event']['start']}, {e['event']['end']}")
-
         e['key'] = schedule_key(
-            e_r['name'], e_r['external_id'], e_r['recorder_id'],
+            e_r['external_id'], e_r['recorder_id'],
             e['event']['start'], e['event']['end'])
 
 

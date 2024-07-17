@@ -38,7 +38,7 @@ class TestAPISession(TestCase):
         sessions['end_time'] = sessions['start_time']
         sessions['recorder_id'] = '22e12346-1234-1234-4321-12347f1234c5'
         sessions['folder_id'] = 'c9123444-0000-0000-0000-ab71234c452d'
-        sessions['key'] = 'AD174E0517DA07EF3EDAD9C658F6EEED4B6D40F1'
+        sessions['key'] = '25978DBA8C508FA66BCC29507DA6094446DACC55'
 
         request = RequestFactory().post(
             url, sessions, content_type="application/json")
@@ -60,7 +60,7 @@ class TestAPISession(TestCase):
                           'rid=22e12346-1234-1234-4321-12347f1234c5',
                           'rstart={}'.format(sessions['start_time']),
                           'rend={}'.format(sessions['end_time']),
-                          'key=5121843E8DDD3D4EE076F9EDB924AC547A8446BC'])))
+                          'key=73D5C615E672D76777698EC8180EE4CD58A55C15'])))
         request.user = get_user('jfaculty')
         response = session.delete(request, session_id=session_id)
         self.assertEqual(response.status_code, 200)

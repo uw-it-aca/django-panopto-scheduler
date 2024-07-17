@@ -794,7 +794,7 @@ var PanoptoScheduler = (function ($) {
     function gather_event_recording($node, pe) {
         var changes = panopto_schedule_change(pe, $node),
             $recording_name_input = $('.reservation-settings input.recording-name'),
-            recroding_name = $recording_name_input.val().trim(),
+            recording_name = $recording_name_input.val().trim(),
             $editor = $('.reservation-settings .folder-editor'),
             $folder_input = $editor.find('input.folder'),
             folder_name = $folder_input.attr('data-folder-name').trim(),
@@ -1861,7 +1861,7 @@ var PanoptoScheduler = (function ($) {
         }
     }
 
-    function panopto_event_folder_input(e) {
+    function panopto_event_editor_input(e) {
         e.preventDefault();
         e.stopPropagation();
 
@@ -2205,7 +2205,7 @@ var PanoptoScheduler = (function ($) {
             .on('click', '.reservation-settings .folder-editor .event-folder-create',
                 panopto_event_folder_create)
             .on('keyup', '.reservation-settings input.recording-name, .reservation-settings .folder-editor input.folder',
-                panopto_event_folder_input)
+                panopto_event_editor_input)
             .on('click', '.reservation-settings .folder-editor input.folder ~ .folder-search',
                 panopto_event_folder_search)
             .on('click', '.reservation-settings .folder-editor input.folder ~ .folder-clear',

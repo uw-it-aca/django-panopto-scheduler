@@ -16,9 +16,8 @@ def local_ymd_from_utc_date_string(utc_date_string):
     return dt_local.strftime('%Y-%m-%d')
 
 
-def schedule_key(name, external_id, recorder_id, start, end):
-    to_sign = '{},{},{},{},{},({})'.format(
-        name,
+def schedule_key(external_id, recorder_id, start, end):
+    to_sign = '{},{},{},{},({})'.format(
         external_id,
         recorder_id,
         start,
