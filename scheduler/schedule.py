@@ -252,6 +252,14 @@ def event_session_from_scheduled_recording(s):
         }
     }
 
+    logger.info(f"schedule: keys from: "
+                f"{session['recording']['name']}, "
+                f"{session['recording']['external_id']}, "
+                f"{session['recording']['recorder_id']}, "
+                f"{session['event']['start']}, "
+                f"{session['event']['end']}")
+
+
     session['key'] = schedule_key(
         session['recording']['name'], session['recording']['external_id'],
         session['recording']['recorder_id'], session['event']['start'],

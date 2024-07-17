@@ -235,6 +235,11 @@ class Session(RESTDispatch):
             session['folder_id'])
         session['folder_creators'] = data.get("creators", None)
 
+        logger.info(f"session: keys from: {session['name']}, "
+                    f"{session['external_id']}, {session['recorder_id']}, "
+                    f"{data.get('event_start', '').strip()}, "
+                    f"{data.get('event_end', '').strip()}")
+
         # do not permit param tamperings
         key = schedule_key(
             session['name'], session['external_id'], session['recorder_id'],
