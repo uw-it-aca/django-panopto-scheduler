@@ -341,6 +341,11 @@ def mash_in_panopto_sessions(event_sessions, session_external_ids, recorders):
             if recorders[space_id]:
                 e_r['recorder_id'] = recorders[space_id]
 
+        logger.info(f"mash_in_panopto_sessions: keys from: "
+                    f"{e_r['name']}, {e_r['external_id']}, "
+                    f"{e_r['recorder_id']}, "
+                    f"{e['event']['start']}, {e['event']['end']}")
+
         e['key'] = schedule_key(
             e_r['name'], e_r['external_id'], e_r['recorder_id'],
             e['event']['start'], e['event']['end'])
