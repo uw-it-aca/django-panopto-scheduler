@@ -825,8 +825,8 @@ var PanoptoScheduler = (function ($) {
 
         pe.recording.folder.external_id = '';
 
-        if (recroding_name.length) {
-            pe.recording.name = recroding_name;
+        if (recording_name.length) {
+            pe.recording.name = recording_name;
         } else {
             alert("Please provide recording name");
             return null;
