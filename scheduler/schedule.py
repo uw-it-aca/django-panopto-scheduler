@@ -259,7 +259,6 @@ def event_session_from_scheduled_recording(s):
                 f"{session['event']['start']}, "
                 f"{session['event']['end']}")
 
-
     session['key'] = schedule_key(
         session['recording']['name'], session['recording']['external_id'],
         session['recording']['recorder_id'], session['event']['start'],
