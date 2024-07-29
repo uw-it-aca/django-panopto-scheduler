@@ -2,21 +2,39 @@
 # SPDX-License-Identifier: Apache-2.0
 
 from django.db import models
+from scheduler.user import User
 
-# Create your models here.
+
+class Event(models.Model):
+    is_crosslisted = models.BooleanField(null=True)
 
 
-class Course(models.Model):
-    year = models.CharField(max_length=4)
-    quarter = models.CharField(max_length=6)
-    curriculum = models.CharField(max_length=12)
-    number = models.CharField(max_length=3)
-    section = models.CharField(max_length=2)
+class Reservation(models.Model):
+    event_name = models.CharField(max_length=64)
+    profile_name = models.CharField(max_length=32)
+    contact_name = models.CharField(max_length=64)
+    contact_email = models.CharField(max_length=128)
+    space_id = models.CharField(max_length=64, null=True)
+    space_name = models.CharField(max_length=128, null=True)
+    space_formal_name = models.CharField(max_length=128, null=True)
+    is_instruction = models.BooleanField(null=True)
+    is_course = models.BooleanField(null=True)
+    start_datetime = models.DateTimeField()
+    end_datetime = models.DateTimeField()
+    reservation_id = models.IntegerField(default=0)
 
-    def __str__(self):
-        return "{}-{}-{}-{}-{}".format(
-            self.year, self.quarter, self.curriculum,
-            self.number, self.section)
+    def contact_info(self):
+        return {
+            'name': self.contact_name,
+            'loginid': User().validate_login_id(self.contact_email),
+            'email': self.contact_email
+        }
+
+    def default_folder_name(self):
+        return "{}".format(self.event_name)
+
+    def default_session_external_id(self):
+        return "res_{}".format(self.reservation_id)
 
 
 class Curriculum(models.Model):

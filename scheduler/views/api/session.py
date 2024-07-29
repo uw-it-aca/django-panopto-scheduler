@@ -3,17 +3,22 @@
 
 from django.conf import settings
 from scheduler.views.rest_dispatch import RESTDispatch
-from scheduler.views.api.exceptions import MissingParamException, \
-    InvalidParamException
-from scheduler.utils import PanoptoAPIException
-from scheduler.utils import course_event_key
-from scheduler.utils import get_panopto_folder_creators
+from scheduler.exceptions import (
+    InvalidParamException, PanoptoUserException)
+from scheduler.utils import schedule_key, panopto_app_id
 from scheduler.utils.validation import Validation
-from panopto_client.session import SessionManagement
-from panopto_client.access import AccessManagement
-from panopto_client.user import UserManagement
-from panopto_client.remote_recorder import RemoteRecorderManagement
-from dateutil import tz, parser
+from scheduler.panopto.folder import get_panopto_folder_creators
+from scheduler.dao.panopto.sessions import (
+    get_sessions_by_session_ids, update_session_external_id,
+    update_session_is_broadcast, move_sessions, delete_sessions,
+    provision_external_course)
+from scheduler.dao.panopto.access import (
+    get_session_access_details, update_session_is_public,
+    grant_users_access_to_folder, revoke_users_access_from_folder)
+from scheduler.dao.panopto.user import get_user_by_key
+from scheduler.dao.panopto.recorder import (
+    schedule_recording, update_recording_time)
+from panopto_client import PanoptoAPIException
 import json
 import logging
 import datetime
@@ -24,27 +29,17 @@ import re
 logger = logging.getLogger(__name__)
 
 
-class PanoptoUserException(Exception):
-    pass
-
-
 class Session(RESTDispatch):
     def __init__(self, *args, **kwargs):
         self._audit_log = logging.getLogger('audit')
-        self._session_api = SessionManagement()
-        self._recorder_api = RemoteRecorderManagement()
-        self._access_api = AccessManagement()
-        self._user_api = UserManagement()
         super(Session, self).__init__(*args, **kwargs)
 
     def get(self, request, *args, **kwargs):
         session_id = kwargs.get('session_id')
         if session_id:
-            raw_session = self._session_api.getSessionsById(
-                [session_id])[0][0]
+            raw_session = get_sessions_by_session_ids([session_id])[0]
             start_utc = raw_session['StartTime'].astimezone(pytz.utc)
-            raw_access = self._access_api.getSessionAccessDetails(
-                session_id)
+            raw_access = get_session_access_details(session_id)
             session = {
                 'creator_id': raw_session['CreatorId'],
                 'description': raw_session['Description'],
@@ -75,7 +70,7 @@ class Session(RESTDispatch):
     def post(self, request, *args, **kwargs):
         try:
             new_session = self._validate_session(request.body)
-            session = self._recorder_api.scheduleRecording(
+            session = schedule_recording(
                 new_session.get('name'),
                 new_session.get('folder_id'),
                 new_session.get('is_broadcast'),
@@ -96,11 +91,11 @@ class Session(RESTDispatch):
 
             session_id = session.SessionIDs[0][0]
 
-            self._session_api.updateSessionExternalId(
+            update_session_external_id(
                 session_id, new_session.get('external_id'))
 
             if new_session.get('is_public'):
-                self._access_api.updateSessionIsPublic(session_id, True)
+                update_session_is_public(session_id, True)
 
             messages = []
             creators = new_session.get('folder_creators')
@@ -111,7 +106,7 @@ class Session(RESTDispatch):
             self._audit_log.info(
                 '{} scheduled {} for {} from {} to {}'.format(
                     request.user, new_session.get('external_id'),
-                    new_session.get('uwnetid'),
+                    new_session.get('loginid'),
                     new_session.get('start_time'),
                     new_session.get('end_time')))
 
@@ -128,8 +123,8 @@ class Session(RESTDispatch):
     def put(self, request, *args, **kwargs):
         try:
             session_update = self._validate_session(request.body)
-            session = self._session_api.getSessionsById(
-                session_update.get('recording_id'))[0][0]
+            session = get_sessions_by_session_ids(
+                session_update.get('recording_id'))[0]
 
             start_utc = session.StartTime.astimezone(pytz.utc)
             end_utc = start_utc + datetime.timedelta(
@@ -142,22 +137,21 @@ class Session(RESTDispatch):
 
             if not (start_utc.isoformat() == session_update_start and
                     end_utc.isoformat() == session_update_end):
-                self._recorder_api.updateRecordingTime(
+                update_recording_time(
                     session.Id, session_update_start, session_update_end)
 
-            access = self._access_api.getSessionAccessDetails(session.Id)
+            access = get_session_access_details(session.Id)
             if access.IsPublic != session_update.get('is_public'):
-                self._access_api.updateSessionIsPublic(
+                update_session_is_public(
                     session.Id, session_update.get('is_public'))
 
             if session.IsBroadcast != session_update.get('is_broadcast'):
-                self._session_api.updateSessionIsBroadcast(
+                update_session_is_broadcast(
                     session.Id, session_update.get('is_broadcast'))
 
             folder_name = session_update.get('folder_name')
             if session.FolderName != folder_name:
-                self._session_api.moveSessions(
-                    [session.Id], session_update.get('folder_id'))
+                move_sessions([session.Id], session_update.get('folder_id'))
 
             messages = []
             creators = session_update.get('folder_creators')
@@ -169,7 +163,7 @@ class Session(RESTDispatch):
                 '{} modified {} for {} from {} to {} in {}'.format(
                     request.user,
                     session_update.get('external_id'),
-                    session_update.get('uwnetid'),
+                    session_update.get('loginid'),
                     session_update.get('start_time'),
                     session_update.get('end_time'),
                     session_update.get('folder_name')))
@@ -180,25 +174,22 @@ class Session(RESTDispatch):
             })
         except InvalidParamException as ex:
             return self.error_response(400, "{}".format(ex))
-        except Exception as ex:
+        except DataFailureException as ex:
             return self.error_response(
-                500, "Unable to save session: {}".format(ex))
+                424, "Unable to save session: {}".format(ex))
 
     def delete(self, request, *args, **kwargs):
         try:
             session_id = self._valid_recorder_id(kwargs.get('session_id'))
             # do not permit param tampering
-            key = course_event_key(request.GET.get('uwnetid', ''),
-                                   request.GET.get('name', ''),
-                                   request.GET.get('eid', ''),
-                                   request.GET.get('rid', ''),
-                                   request.GET.get('rstart', ''),
-                                   request.GET.get('rend', ''))
+            key = schedule_key(
+                request.GET.get('eid', ''), request.GET.get('rid', ''),
+                request.GET.get('rstart', ''), request.GET.get('rend', ''))
 
             if key != request.GET.get("key", None):
                 raise InvalidParamException('Invalid Client Key')
 
-            self._session_api.deleteSessions([session_id])
+            delete_sessions([session_id])
             self._audit_log.info('{} deleted session {}'.format(
                 request.user, session_id))
             return self.json_response({
@@ -208,59 +199,23 @@ class Session(RESTDispatch):
             return self.error_response(
                 400, "Invalid Parameter: {}".format(err))
 
-    def _valid_folder(self, name, external_id):
-        try:
-            folder_id = Validation().panopto_id(external_id)
-            return folder_id
-        except InvalidParamException:
-            pass
-
-        try:
-            if external_id and len(external_id):
-                folders = self._session_api.getAllFoldersByExternalId(
-                    [external_id])
-                if folders and len(folders) == 1 and len(folders[0]):
-                    return folders[0][0].Id
-
-            folders = self._session_api.getFoldersList(search_query=name)
-            if folders and len(folders):
-                for folder in folders:
-                    if folder.Name == name:
-                        folder_id = folder.Id
-                        self._set_external_id(folder_id, external_id)
-                        return folder_id
-
-            new_folder = self._session_api.addFolder(name)
-            if not new_folder:
-                raise InvalidParamException(
-                    'Cannot add folder: {}'.format(name))
-
-            new_folder_id = new_folder.Id
-            self._set_external_id(new_folder_id, external_id)
-            return new_folder_id
-        except Exception as ex:
-            raise InvalidParamException('Cannot add folder: {}'.format(ex))
-
-    def _set_external_id(self, folder_id, external_id):
-        if external_id and len(external_id):
-            self._session_api.updateFolderExternalIdWithProvider(
-                folder_id, external_id, getattr(
-                    settings, 'PANOPTO_API_APP_ID', ''))
+    def _valid_folder_id(self, folder_id):
+        return Validation().panopto_id(folder_id)
 
     def _validate_session(self, request_body):
         session = {}
         data = json.loads(request_body)
 
         session['recording_id'] = data.get("recording_id", "")
-        session['uwnetid'] = data.get("uwnetid", "")
+        session['loginid'] = data.get("loginid", "")
         session['name'] = self._valid_recording_name(
             data.get("name", "").strip())
         session['external_id'] = self._valid_external_id(
             data.get("external_id", "").strip())
         session['recorder_id'] = self._valid_recorder_id(
             data.get("recorder_id", "").strip())
-        session['folder_external_id'] = data.get(
-            "folder_external_id", "").strip()
+        session['folder_id'] = data.get(
+            "folder_id", "").strip()
 
         session['session_id'] = data.get("session_id", "").strip()
         if len(session['session_id']):
@@ -275,15 +230,16 @@ class Session(RESTDispatch):
         session['end_time'] = self._valid_time(
             data.get("end_time", "").strip())
         session['folder_name'] = data.get("folder_name", "").strip()
-        session['folder_id'] = self._valid_folder(
-            session['folder_name'], session['folder_external_id'])
+        session['folder_id'] = self._valid_folder_id(
+            session['folder_id'])
         session['folder_creators'] = data.get("creators", None)
 
         # do not permit param tamperings
-        key = course_event_key(session['uwnetid'], session['name'],
-                               session['external_id'], session['recorder_id'],
-                               data.get("event_start", "").strip(),
-                               data.get("event_end", "").strip())
+        key = schedule_key(
+            session['external_id'], session['recorder_id'],
+            data.get("event_start", "").strip(),
+            data.get("event_end", "").strip())
+
         if key != data.get("key", ''):
             raise InvalidParamException('Invalid Client Key')
 
@@ -329,7 +285,7 @@ class Session(RESTDispatch):
                 try:
                     new_creator_ids.append(self._get_panopto_user_id(creator))
                 except PanoptoUserException as ex:
-                    messages.append('Invalid UWNetId {}'.format(creator))
+                    messages.append('Invalid Login Id {}'.format(creator))
 
         for creator in current_creators:
             if creator not in folder_creators:
@@ -337,11 +293,11 @@ class Session(RESTDispatch):
                     deleted_creator_ids.append(
                         self._get_panopto_user_id(creator))
                 except PanoptoUserException as ex:
-                    messages.append('Invalid UWNetId {}'.format(creator))
+                    messages.append('Invalid Login Id {}'.format(creator))
 
         if len(new_creator_ids):
             try:
-                self._access_api.grantUsersAccessToFolder(
+                grant_users_access_to_folder(
                     folder_id, new_creator_ids, 'Creator')
             except PanoptoAPIException as ex:
                 match = re.match(r'.*Server raised fault: \'(.+)\'$', str(ex))
@@ -350,7 +306,7 @@ class Session(RESTDispatch):
 
         if len(deleted_creator_ids):
             try:
-                self._access_api.revokeUsersAccessFromFolder(
+                revoke_users_access_from_folder(
                     folder_id, deleted_creator_ids, 'Creator')
             except PanoptoAPIException as ex:
                 match = re.match(r'.*Server raised fault: \'(.+)\'$', str(ex))
@@ -362,11 +318,11 @@ class Session(RESTDispatch):
     def _get_panopto_user_id(self, netid):
         key = r'{}\{}'.format(
             getattr(settings, 'PANOPTO_API_APP_ID', ''), netid)
-        user = self._user_api.getUserByKey(key)
+        user = get_user_by_key(key)
         if (not user or
                 user['UserId'] == '00000000-0000-0000-0000-000000000000'):
             raise PanoptoUserException(
-                'Unprovisioned UWNetId: {}'.format(netid))
+                'Unprovisioned Login Id: {}'.format(netid))
 
         return user['UserId']
 
@@ -376,10 +332,9 @@ class SessionPublic(RESTDispatch):
         self._audit_log = logging.getLogger('audit')
 
     def get(self, request, *args, **kwargs):
-        self._access_api = AccessManagement()
         session_id = kwargs.get('session_id')
         if session_id:
-            raw_access = self._access_api.getSessionAccessDetails(session_id)
+            raw_access = get_session_access_details(session_id)
             access = {
                 'is_public': raw_access['IsPublic']
             }
@@ -394,8 +349,7 @@ class SessionPublic(RESTDispatch):
             data = json.loads(request.body)
             is_public = self._valid_boolean(data.get("is_public", False),
                                             'bad public flag')
-            self._access_api = AccessManagement()
-            self._access_api.updateSessionIsPublic(session_id, is_public)
+            update_session_is_public(session_id, is_public)
             self._audit_log.info('{} set {} public access to {}'.format(
                 request.user, session_id, is_public))
 
@@ -422,8 +376,7 @@ class SessionBroadcast(RESTDispatch):
     def get(self, request, *args, **kwargs):
         session_id = kwargs.get('session_id')
         if session_id:
-            self._session_api = SessionManagement()
-            raw_session = self._session_api.getSessionsById([session_id])[0][0]
+            raw_session = get_sessions_by_session_ids([session_id])[0]
             broadcast = {
                 'is_broadcast': raw_session['IsBroadcast'],
             }
@@ -436,11 +389,9 @@ class SessionBroadcast(RESTDispatch):
         try:
             session_id = kwargs.get('session_id')
             data = json.loads(request.body)
-            self._session_api = SessionManagement()
             is_broadcast = self._valid_boolean(
                 data.get("is_broadcast", False), 'bad broadcast flag')
-            self._session_api.updateSessionIsBroadcast(session_id,
-                                                       is_broadcast)
+            update_session_is_broadcast(session_id, is_broadcast)
             self._audit_log.info('{} set {} broadcast to {}'.format(
                 request.user, session_id, is_broadcast))
 
@@ -467,8 +418,7 @@ class SessionRecordingTime(RESTDispatch):
     def get(self, request, *args, **kwargs):
         session_id = kwargs.get('session_id')
         if session_id:
-            self._session_api = SessionManagement()
-            raw_session = self._session_api.getSessionsById([session_id])[0][0]
+            raw_session = get_sessions_by_session_ids([session_id])[0]
             start_utc = raw_session.StartTime.astimezone(pytz.utc)
             end_utc = start_utc + datetime.timedelta(
                 seconds=int(raw_session.Duration))
@@ -483,14 +433,12 @@ class SessionRecordingTime(RESTDispatch):
 
     def put(self, request, *args, **kwargs):
         try:
-            self._recorder_api = RemoteRecorderManagement()
             session_id = kwargs.get('session_id')
             data = json.loads(request.body)
             start_time = self._valid_time(data.get("start", "").strip())
             end_time = self._valid_time(data.get("end", "").strip())
 
-            self._recorder_api.updateRecordingTime(
-                session_id, start_time, end_time)
+            update_recording_time(session_id, start_time, end_time)
 
             self._audit_log.info('{} set {} start/stop to {} and {}'.format(
                 request.user, session_id, start_time, end_time))

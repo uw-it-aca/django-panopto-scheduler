@@ -13,7 +13,6 @@
 <h3>Find an Event</h3>
 
 <form role="form" class="form-inline event-search">
-	
 	<div class="input-group input-append date" id="date-picker">
       <input id="calendar" name="calendar" type="text" class="form-control input-date" disabled />
       <span class="input-group-addon add-on"><i class="fa fa-calendar"></i></span>
@@ -46,7 +45,7 @@
     {{#each schedule}}
       <li class="list-group-item clearfix {{#if recording_id}}scheduled{{/if}}">
         <span class="result-row-date" title="date">{{ month_num }}/{{ day }}</span>
-        <span class="result-row-day" title="day">{{ weekday }}</span> 
+        <span class="result-row-day" title="day">{{ weekday }}</span>
         <span class="result-row-time" title="time">{{ event_start_time }} - {{ event_end_time }} {{ ampm }}</span>
         <span class="result-row-event meeting-room-{{ name_index }}" title="event name">{{ name }}</span>
         <span class="result-row-contact" title="Contact person">
@@ -91,9 +90,22 @@
     <h3><span class="sr-only"> Schedule on</span> {{ search_date }} <span class="name">{{name}}</span> <span class="contact">{{contact}}</span> <span class="location pull-right">{{location}}</span></h3>
   </div>
   <div class="reservation-settings" data-schedule-key="{{ key }}">
-    <h3>Record this event</h3>
+    <h3>Schedule Recording</h3>
+    <div class="container">
+      <h4><b>Recording Name</b></h4>
+      <p>Name used for event recording</p>
+      <div class="row">
+        <div class="col-md-2 text-right setting-name">
+          Name:
+        </div>
+        <div class="col-md-10">
+          <input class="form-control recording-name" value="{{name}}">
+        </div>
+      </div>
+    </div>
     <div class="container">
       <h4><b>Recording Settings</b></h4>
+      <p>Adjust recording duration and options</p>
       <div class="row">
         <div class="col-md-6">
           <div class="row">
@@ -144,81 +156,8 @@
         </div>
       </div>
     </div>
-    <div class="container">
-      <h4><b>Save Recording To <span class="folder-exists {{#if folder_id}}{{else}}hidden{{/if}}">Existing</span><span style="display: none;">New</span> Folder &hellip;</b></h4>
-      <div class="row">
-        <div class="col-md-1 text-right">
-          <i class="fa fa-folder"></i>
-        </div>
-        <div class="col-md-11">
-          <div class="field-editor foldername">
-            <div class="field">
-              <a href="javascript:void(0);" title="Click to edit folder name">{{folder_name}}</a>
-            </div>
-            <div class="form-group hidden">
-              <input class="form-control" value=""><span class="open-folder-picker field-search" title="Click to search folders"><i class="fa fa-search"></i></span>
-              <div class="folder-picker hidden">
-                <div class="prompt">
-                  Search by folder name<button type="button" class="close pull-right">x</button>
-                </div>
-                <div class="search">
-                  <input type="search" class="form-control"><span class="clear-field hidden"><i class="fa fa-times-circle"></i></span>
-                </div>
-                <hr>
-                <div class="result">
-                </div>
-              </div>
-            </div>
-            <input type="hidden" class="original-folder" value="{{folder_name}}">
-            <input type="hidden" class="folder-id" value="{{folder_id}}">
-            <input type="hidden" class="folder-external-id" value="{{folder_external_id}}">
-          </div>
-          <div class="field-editor creators">
-            <span>Creators: </span>
-            <div class="field">
-              <a href="javascript:void(0);" title="Click to edit creators">
-                <ul>
-                  {{#each creator_netids}}
-                  <li>{{this}}</li>
-                  {{/each}}
-                  <li class="placeholder">Assign Creator Netids</li>
-                </ul>
-              </a>
-            </div>
-            <div class="form-group hidden">
-              <input class="form-control" value=""><span class="clear-field hidden"><i class="fa fa-times-circle"></i></span>
-            </div>
-          </div>
-          <div>
-            <a class="visit-folder {{#if folder_id}}{{else}}hidden{{/if}}" href="{{folder_url}}" target="_blank">Edit Folder in Panopto</a><span style="display: none;">Folder will be created for this session</span>
-          </div>
-<!--
-          {{#if recording_id}}
-          <div>
-            <a href="javascript:void(0);" class="open-folder-picker">Move recording to another folder</a>
-          </div>
-          {{/if}}
--->
-        </div>
-      </div>
-      <div>
-        {{#if recording_url}}
-        <h4><b>Recording URL</b></h4>
-        <div class="row">
-          <div class="col-md-1 text-right">
-            <a href="javascript:void(0);" title="Copy URL to clipboard" class="clipboard-copy xpull-right" onclick="copyToClipboard('.recording-url')"><i class="fa fa-clipboard"></i></a>
-          </div>
-          <div class="col-md-11 xcol-md-offset-1">
-            <div>
-              <a href="{{recording_url}}" class="recording-url" target="_blank">{{recording_url}}</a><!-- <a href="javascript:void(0);" class="clipboard-copy pull-right" onclick="copyToClipboard('.recording-url')">Copy URL to clipboard</a> -->
-            </div>
-            <div>
-              Note: Recording will not be available for at least one hour after the end of the session
-            </div>
-          </div>
-        </div>
-        {{/if}}
-      </div>
+    <div class="container event-folder">
+      <div class="loading"><i class="fa fa-spinner fa-spin"></i></div>
     </div>
     <div class="container">
       <div class="row text-right">
@@ -273,6 +212,90 @@ to open the scheduled session's Panopto folder.
     </div>
   </div>
 </div>
+</script>
+{% endverbatim %}
+
+{% verbatim %}
+<script id="event-folder-tmpl" type="text/x-handlebars-template">
+  <h4><b>Recording Folder</b></h4>
+  <p>Folder must exist before recording can be scheduled.
+  <span><br />After creating the folder or selecting it from search result, follow the link to configure Sharing and such directly in Panopto.</span>
+  </p>
+  <div class="row">
+    <div class="col-md-2 text-right setting-name">
+      Folder&nbsp;Name:
+    </div>
+    <div class="col-md-10">
+        <div class="folder-details form-group">
+          <div class="folder-editor">
+            <div class="folder-list"></div>
+            <input class="folder form-control" value="{{folder.name}}" data-folder-name="{{folder.name}}" data-folder-id="{{folder.id}}" data-parent-folder-id="{{folder.parent_folder_id}}"><span class="folder-search" title="Click to search for folder name"><i class="fa fa-search"></i></span><!-- <span class="folder-clear" title="Clear to start fresh search"><i class="fa fa-times-circle"></i></span> -->
+            <div class="folder-search-result hidden"></div><i class="fa fa-spinner fa-4 fa-spin"></i><span>[ No matching folders or directories found. ] </span>
+            <div class="editor-options">
+              <a class="event-folder-create hidden" href="javascript:void(0);">Create</a>
+              <a class="event-folder-visit hidden" href="javascript:void(0);" target="_blank">Adjust Sharing in Panopto  <i class="fa fa-external-link" aria-hidden="true" style="font-size: smaller;"></i></a>
+            </div>
+            <div class="search-result"></div>
+          </div>
+        </div>
+    </div>
+  </div>
+<!--
+  <div class="row">
+    <div class="col-md-2 text-right setting-name">
+      Creators:
+    </div>
+    <div class="col-md-10 field-editor creators">
+      <div class="form-group">
+        {{#if creator_netids}}
+          <ul>
+            {{#each creator_netids}}
+            <li>{{this}}</li>
+            {{/each}}
+          </ul>
+        {{else}}
+            <span class="placeholder">No Assigned Creator Netids</span>
+        {{/if}}
+        <br /><a href="javascript:void(0);" class="event-creators-edit">Edit</a>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    {{#if recording_url}}
+    <h4><b>Recording URL</b></h4>
+    <div class="col-md-1 text-right">
+      <a href="javascript:void(0);" title="Copy URL to clipboard" class="clipboard-copy xpull-right" onclick="copyToClipboard('.recording-url')"><i class="fa fa-clipboard"></i></a>
+    </div>
+    <div class="col-md-11 xcol-md-offset-1">
+      <div>
+        <a href="{{recording_url}}" class="recording-url" target="_blank">{{recording_url}}</a><!-- <a href="javascript:void(0);" class="clipboard-copy pull-right" onclick="copyToClipboard('.recording-url')">Copy URL to clipboard</a> -->
+      </div>
+      <div>
+        Note: Recording will not be available for at least one hour after the end of the session
+      </div>
+    </div>
+    {{/if}}
+  </div>
+-->
+</script>
+{% endverbatim %}
+
+{% verbatim %}
+<script id="folder-list-tmpl" type="text/x-handlebars-template">
+  <div class="folder-list">
+    {{#each folder_list}}
+    <div class="folder collapsable{{#if (gt child_count 0)}} parent{{/if}}{{#if (eq parent_count 0)}} root{{/if}}" data-folder-level="{{parent_count}}">
+      {{#if (eq parent_count 0)}}
+      <i class="fa fa-folder"></i>
+      {{/if}}
+      {{#if (gt child_count 0)}}
+      <i class="fa fa-caret-down opened" style="display: none;"></i>
+      <i class="fa fa-caret-right closed" style="display: none;"></i>
+      {{/if}}
+      <a class="folder-name" href="javascript:void(0);" data-folder-id="{{id}}" data-folder-parent-id="{{parent_folder_id}}" title="{{#if (gt child_count 0)}}Click to create folder in this directory{{else}}Click to choose folder{{/if}}">{{name}}</a>
+    </div>
+    {{/each}}
+  </div>
 </script>
 {% endverbatim %}
 

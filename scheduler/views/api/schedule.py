@@ -2,12 +2,10 @@
 # SPDX-License-Identifier: Apache-2.0
 
 from scheduler.views.rest_dispatch import RESTDispatch
-from scheduler.views.api.exceptions import MissingParamException, \
-    InvalidParamException
-from scheduler.utils import space_events_and_recordings
-from scheduler.utils import course_location_and_recordings, \
-    CourseEventException
-from scheduler.utils.validation import Validation
+from scheduler.exceptions import (
+    MissingParamException, InvalidParamException, CourseReservationsException)
+from scheduler.schedule import (
+    space_events_and_recordings, course_location_and_recordings)
 from restclients_core.exceptions import DataFailureException
 import json
 import logging
@@ -19,11 +17,10 @@ logger = logging.getLogger(__name__)
 class Schedule(RESTDispatch):
     def get(self, request, *args, **kwargs):
         try:
-            course = Validation().course_id(kwargs.get('course_id'))
-            events = course_location_and_recordings(course)
+            schedule = course_location_and_recordings(kwargs.get('course_id'))
         except MissingParamException as ex:
-            events = space_events_and_recordings(request.GET)
-        except CourseEventException as ex:
+            schedule = space_events_and_recordings(request.GET)
+        except CourseReservationsException as ex:
             return self.error_response(404, message=ex)
         except InvalidParamException as ex:
             return self.error_response(400, message=ex)
@@ -33,12 +30,12 @@ class Schedule(RESTDispatch):
             logger.exception(ex)
             return self.error_response(500, message=ex)
 
-        return self.json_response(events)
+        return self.json_response(schedule)
 
     def post(self, request, *args, **kwargs):
         data = json.loads(request.body)
         session_ids = data.get('session_ids', [])
-        events = space_events_and_recordings({
+        schedule = space_events_and_recordings({
             'session_ids': session_ids
         })
-        return self.json_response(events)
+        return self.json_response(schedule)

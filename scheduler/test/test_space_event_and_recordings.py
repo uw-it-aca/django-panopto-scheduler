@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 from django.test import TestCase
-from scheduler.utils import space_events_and_recordings
+from scheduler.schedule import space_events_and_recordings
 
 
 class TestSpaceEventAndRecordings(TestCase):

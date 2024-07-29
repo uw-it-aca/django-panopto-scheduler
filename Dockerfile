@@ -15,8 +15,7 @@ RUN /app/bin/pip install psycopg2
 RUN . /app/bin/activate && pip install nodeenv && nodeenv -p && \
   npm install -g npm && ./bin/npm install less -g
 
-RUN . /app/bin/activate && python manage.py collectstatic --noinput &&\
-    python manage.py compress -f
+RUN . /app/bin/activate && python manage.py compress -f && python manage.py collectstatic --noinput
 
 FROM us-docker.pkg.dev/uwit-mci-axdd/containers/django-test-container:${DJANGO_CONTAINER_VERSION} as app-test-container
 
