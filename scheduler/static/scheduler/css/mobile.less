@@ -414,6 +414,101 @@ span.loading {
         .visit-folder.hidden + span {
             display: inline-block !important;
         }
+        .placeholder {
+            font-style: italic;
+        }
+        .event-folder {
+            div.loading { font-size: 5em; height: 175px; padding-top: 40px; padding-left: 350px; }
+            .folder-list {
+                // collapsable cues
+                .folder[data-folder-level="1"] { padding-left: 8px; }
+                .folder[data-folder-level="2"] { padding-left: 16px; }
+                .folder[data-folder-level="3"] { padding-left: 24px; }
+                .folder[data-folder-level="4"] { padding-left: 32px; }
+                .folder[data-folder-level="5"] { padding-left: 40px; }
+                .folder[data-folder-level="6"] { padding-left: 48px; }
+                .folder[data-folder-level="7"] { padding-left: 56px; }
+                .folder[data-folder-level="8"] { padding-left: 64px; }
+                .folder[data-folder-level="9"] { padding-left: 72px; }
+                .folder[data-folder-level="10"] { padding-left: 80px; }
+                .folder[data-folder-level="11"] { padding-left: 88px; }
+                .folder[data-folder-level="12"] { padding-left: 96px; }
+                .folder.collapsable > i:hover { cursor: pointer; }
+                .folder:not(.root):has(+ .folder:not(.hidden)),
+                .folder.parent:not(.root):last-child {
+                    i.opened { display: inline !important; }
+                }
+                .folder:not(.root):has(+ .folder.hidden) { i.closed { display: inline !important; }}
+                .folder.root:has(+ .folder.hidden):nth-child(1):after {
+                    content: "...";
+                    font-weight: 900;
+                }
+
+                // folder indenting
+                div.folder:not(.parent):not(.root) {
+                    margin-left: 18px;
+                }
+            }
+            .folder-editor {
+                input.folder ~ .folder-search {
+                    position: absolute;
+                    margin-left: -1.75em;
+                    line-height: 2.5em;
+                    i:hover {
+                        cursor: pointer;
+                    }
+                }
+                input.folder ~ .folder-clear {
+                    position: absolute;
+                    margin-left: -1.75em;
+                    line-height: 2.5em;
+                    i:hover {
+                        cursor: pointer;
+                    }
+                }
+                > .folder-list {
+                    padding-bottom: 5px;
+                }
+                .editor-options {
+                    margin-top: 5px;
+                    > a i { font-size: smaller; }
+                }
+                .folder-search-result {
+                    height: 300px;
+                    width: 625px;
+                    background-color: white;
+                    border: 1px solid @gray-light;
+                    position: absolute;
+                    z-index: 1000;
+                    padding-left: 8px;
+                    padding-top: 4px;
+                    white-space: nowrap;
+                    overflow: auto;
+                }
+                .folder-search-result ~ i {
+                    display: none;
+                }
+                .folder-search-result.loading ~ i {
+                    display: inline !important;
+                    position: absolute;
+                    z-index: 1001;
+                    font-size: 5em;
+                    margin-left: -350px;
+                    margin-top: 150px;
+                }
+                .folder-search-result ~ span {
+                    display: none;
+                }
+                .folder-search-result.no-result ~ span {
+                    display: inline !important;
+                    position: absolute;
+                    z-index: 1001;
+                    font-size: 1.3em;
+                    line-height: 200px;
+                    margin-left: -490px;
+                }
+            }
+        }
         div.container { margin-bottom: 16px; padding: 16px; width: 800px;
            div.row { margin-bottom: 10px;
                > div i { font-size: 20px; }
@@ -425,28 +520,21 @@ span.loading {
                    width: 90%;
                }
            }
-           .field-editor {
-               .field {
-                   .placeholder {
-                       font-style: italic;
-                       display: none;
+           .form-group {
+               a.disabled { pointer-events: none; cursor: default; color: @gray-light; }
+               input {
+                   width: 625px;
+               }
+               .clear-field, .field-search {
+                   position: absolute;
+                   margin-left: -20px;
+                   margin-top: 7px;
+                   cursor: pointer;
+                   i {
+                       font-size: 15px;
+                       color: @gray-light;
                    }
                }
-               .form-group {
-                    input {
-                        width: 700px;
-                    }
-                    .clear-field, .field-search {
-                        position: absolute;
-                        margin-left: -20px;
-                        margin-top: 7px;
-                        cursor: pointer;
-                        i {
-                            font-size: 15px;
-                            color: @gray-light;
-                        }
-                    }
-                }
            }
            .creators {
                > span {
@@ -515,15 +603,11 @@ span.loading {
                     }
                 }
             }
+            .schedule-event.loading + span, .modify-event.loading + span {
+                display: inline !important;
+            }
             .schedule-event + span, .modify-event + span {
                 display: none;
-                position: absolute;
-                margin-top: 5px;
-                margin-left: -105px;
-                font-size: 30px;
-            }
-            .schedule-event:disabled + span, .modify-event:disabled + span {
-                display: inline !important;
             }
             .visit-folder.inactive {
                 display: none;

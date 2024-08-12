@@ -5,14 +5,11 @@ from django.conf import settings
 from django.core.management.base import BaseCommand
 from django.core.mail import EmailMessage
 from prometheus_client import Gauge
-from uw_sws.section import get_section_by_url
+from scheduler.course import Course
+from scheduler.reservations import Reservations
 from panopto_client.session import SessionManagement
 from panopto_client.remote_recorder import RemoteRecorderManagement
-from uw_r25.events import get_event_by_alien_id
-from scheduler.utils import (
-    r25_alien_uid, panopto_course_session, get_sws_section, canvas_course_id)
 from scheduler.utils.monitor import email_addresses_from_group
-from scheduler.utils.validation import Validation
 import logging
 
 
@@ -81,48 +78,22 @@ class Command(BaseCommand):
                     recorder.Id, recorder.Name))
 
         for course_id, recorders in self.sessions().items():
-            validation_api = Validation()
-            course = validation_api.course_id(course_id)
-            event = get_event_by_alien_id(r25_alien_uid(course))
+            course = Course(course_id)
+            event = Reservations().get_event_by_course(course)
 
-            # cross listed?
-            if len(event.binding_reservations):
-                joint = []
-
-                # default to Canvas course that student
-                # sections are provisioned
-                section = get_sws_section(course)
-                if not section.is_withdrawn and len(
-                        section.joint_section_urls):
-                    joint_course_ids = [canvas_course_id(course)]
-                    for url in section.joint_section_urls:
-                        try:
-                            joint_section = get_section_by_url(url)
-                            if not joint_section.is_withdrawn:
-                                joint_course_id = \
-                                    joint_section.canvas_course_sis_id()
-                                joint_course_ids.append(joint_course_id)
-                                c = validation_api.course_id(joint_course_id)
-                                joint.append("{} {} {}".format(
-                                    c.curriculum, c.number, c.section))
-                        except Exception:
-                            continue
-
-                    if len(joint_course_ids):
-                        joint_course_ids.sort()
-                        course = validation_api.course_id(joint_course_ids[0])
+            if event.is_crosslisted:
+                course = course.get_crosslisted_course()
 
             self.note("COURSE {}: validating {} meetings".format(
                 course_id, len(event.reservations)))
 
             for rsv in event.reservations:
                 if rsv.space_reservation:
-                    name, external_id = panopto_course_session(
-                        course, rsv.start_datetime)
+                    name, external_id = course.panopto_course_session(
+                        rsv.start_datetime)
 
                     try:
-                        space_id = rsv.space_reservation.space_id
-                        course_recorder = self.recorders(space_id)
+                        course_recorder = self.recorders(rsv.space_id)
                     except UnassignedRecorder:
                         recorder = self.get_recorder(course_id, external_id)
                         if recorder:

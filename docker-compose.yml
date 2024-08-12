@@ -6,6 +6,7 @@ services:
       ENV: localdev
       PORT: 8000
       AUTH: SAML_MOCK BLTI_DEV
+      PANOPTO_API_APP_ID: UWNetid
       LTI_DEVELOP_APP: scheduler/course
     restart: always
     container_name: app-scheduler

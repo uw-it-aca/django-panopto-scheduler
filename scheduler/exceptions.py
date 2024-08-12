@@ -15,3 +15,35 @@ class InvalidUser(Exception):
 class StudentWebServiceUnavailable(Exception):
     def __str__(self):
         return _("sws_not_available")
+
+
+class CourseReservationsException(Exception):
+    pass
+
+
+class RecorderException(Exception):
+    pass
+
+
+class MissingParamException(Exception):
+    pass
+
+
+class InvalidParamException(Exception):
+    pass
+
+
+class ValidationException(Exception):
+    pass
+
+
+class PanoptoUserException(Exception):
+    pass
+
+
+class PanoptoFolderDoesNotExist(Exception):
+    pass
+
+
+class PanoptoFolderSearchTooShort(Exception):
+    pass

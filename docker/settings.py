@@ -34,7 +34,7 @@ INSTALLED_APPS += [
 
 MIDDLEWARE += ['userservice.user.UserServiceMiddleware',]
 
-COMPRESS_ENABLED = True
+COMPRESS_ENABLED = False if os.getenv("ENV") == "localdev" else True
 COMPRESS_OFFLINE = True
 COMPRESS_ROOT = '/static/'
 
@@ -66,6 +66,12 @@ TEMPLATES[0]['OPTIONS']['context_processors'] += [
     'scheduler.context_processors.localdev_mode',
 ]
 
+SCHEDULER_TIMEZONE = "America/Los_Angeles"
+
+USER_MODULE = 'scheduler.org.uw.user'
+COURSES_MODULE = 'scheduler.org.uw.course'
+RESERVATIONS_MODULE = 'scheduler.org.uw.reservations'
+
 PANOPTO_ADMIN_GROUP = 'u_acadev_panopto_support'
 RESTCLIENTS_ADMIN_GROUP = PANOPTO_ADMIN_GROUP
 USERSERVICE_ADMIN_GROUP = PANOPTO_ADMIN_GROUP
@@ -89,12 +95,13 @@ DETECT_USER_AGENTS = {
     'is_desktop': True,
 }
 
+PANOPTO_API_USER = os.getenv('PANOPTO_API_USER', '')
+PANOPTO_API_APP_ID = os.getenv('PANOPTO_API_APP_ID', '')
+
 if os.getenv("ENV", "localdev") == "localdev":
     LTI_DEVELOP_APP = os.getenv("LTI_DEVELOP_APP", '')
     DEBUG = True
 else:
-    PANOPTO_API_USER = os.getenv('PANOPTO_API_USER')
-    PANOPTO_API_APP_ID = os.getenv('PANOPTO_API_APP_ID')
     PANOPTO_API_TOKEN = os.getenv('PANOPTO_API_TOKEN')
     PANOPTO_SERVER = os.getenv('PANOPTO_SERVER')
     DEBUG = (os.getenv("ENV", "UNSET") == "dev")

@@ -3,6 +3,7 @@
 
 from django.test import TestCase
 from django.test.client import RequestFactory
+from django.test.utils import override_settings
 from django.urls import reverse_lazy
 from scheduler.test import get_user
 from scheduler.views.api.session import (
@@ -14,7 +15,14 @@ import logging
 # silence suds debugging telemetry
 logging.getLogger('suds').setLevel(logging.ERROR)
 
+course_test_override = override_settings(
+    USER_MODULE='scheduler.org.uw.user',
+    COURSES_MODULE='scheduler.org.uw.course',
+    RESERVATIONS_MODULE='scheduler.org.uw.reservations'
+)
 
+
+@course_test_override
 class TestAPISession(TestCase):
     def test_api_session(self):
         session = Session()
@@ -26,11 +34,12 @@ class TestAPISession(TestCase):
         self.assertEqual(sessions['state'], 'Scheduled')
         self.assertEqual(sessions['is_public'], False)
 
-        sessions['uwnetid'] = 'jfaculty'
+        sessions['loginid'] = 'jfaculty'
         sessions['end_time'] = sessions['start_time']
         sessions['recorder_id'] = '22e12346-1234-1234-4321-12347f1234c5'
-        sessions['folder_external_id'] = '2015-autumn-PSYCH-101-A'
-        sessions['key'] = '9AC7325FB31465FF946FFFC5514E35CEB3F42C38'
+        sessions['folder_id'] = 'c9123444-0000-0000-0000-ab71234c452d'
+        sessions['key'] = '25978DBA8C508FA66BCC29507DA6094446DACC55'
+
         request = RequestFactory().post(
             url, sessions, content_type="application/json")
         request.user = get_user('jfaculty')
@@ -46,12 +55,12 @@ class TestAPISession(TestCase):
         request = RequestFactory().delete(
             "{}?{}".format(
                 url,
-                '&'.join(['uwnetid=jfaculty',
+                '&'.join(['loginid=jfaculty',
                           'eid=2015-autumn-PSYCH-101-A',
                           'rid=22e12346-1234-1234-4321-12347f1234c5',
                           'rstart={}'.format(sessions['start_time']),
                           'rend={}'.format(sessions['end_time']),
-                          'key=490FA068B03B4C73CF4AEAB32C13CE92AEF16D43'])))
+                          'key=73D5C615E672D76777698EC8180EE4CD58A55C15'])))
         request.user = get_user('jfaculty')
         response = session.delete(request, session_id=session_id)
         self.assertEqual(response.status_code, 200)
