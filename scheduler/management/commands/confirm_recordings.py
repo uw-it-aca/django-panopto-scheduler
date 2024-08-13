@@ -88,7 +88,7 @@ class Command(BaseCommand):
                 course_id, len(event.reservations)))
 
             for rsv in event.reservations:
-                if rsv.space_reservation:
+                if rsv.space_id:
                     name, external_id = course.panopto_course_session(
                         rsv.start_datetime)
 
