@@ -216,3 +216,8 @@ class Course(BaseCourse):
                                     campus_code=campus_code)
             curriculum.save()
             return campus_code
+
+    def __str__(self):
+        return "{}-{}-{}-{}-{}".format(
+            self.year, self.quarter, self.curriculum,
+            self.number, self.section_id)

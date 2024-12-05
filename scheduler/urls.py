@@ -21,7 +21,8 @@ urlpatterns = [
     re_path(r'recorders/?$', recorders, name='recorders-view'),
     re_path(r'courses/?$', courses, name='courses-view'),
     re_path(r'events/?$', events, name='events-view'),
-    re_path(r'scheduler/course/?$', CourseScheduleView.as_view()),
+    re_path(r'scheduler/course/?$', CourseScheduleView.as_view(),
+            name='lti-launch'),
     re_path(r'scheduler/(blti/)?api/v1/'
             r'users/validate/?$', UserValidation.as_view(),
             name='api_user_validate'),
