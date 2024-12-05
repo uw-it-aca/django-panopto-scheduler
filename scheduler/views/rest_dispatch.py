@@ -3,7 +3,8 @@
 
 from django.conf import settings
 from uw_saml.utils import is_member_of_group
-from blti.views import RESTDispatch as BLTIRESTDispatch, BLTIException
+from blti.views import RESTDispatch as BLTIRESTDispatch
+from blti.exceptions import BLTIException
 
 
 class RESTDispatch(BLTIRESTDispatch):
