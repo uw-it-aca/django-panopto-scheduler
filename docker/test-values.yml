@@ -73,6 +73,8 @@ environmentVariables:
     value: test.panopto-app.uw.edu
   - name: PANOPTO_SERVER
     value: uw-test.hosted.panopto.com
+  - name: LTI_CONFIG_DIRECTORY
+    value: /lti/config
 externalSecrets:
   enabled: true
   secrets:
