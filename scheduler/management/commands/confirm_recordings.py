@@ -100,9 +100,9 @@ class Command(BaseCommand):
                             self._recorder_missing.append({
                                 'course_external_id': external_id,
                                 'scheduled': recorder,
-                                'meeting_space_id': space_id})
+                                'meeting_space_id': rsv.space_id})
                         self.note("Meeting {} in {} has no recorder{}".format(
-                            external_id, space_id,
+                            external_id, rsv.space_id,
                             ' BUT scheduled as {} in {} ({})'.format(
                                 recorder['recording_name'],
                                 recorder['recorder_name'],
