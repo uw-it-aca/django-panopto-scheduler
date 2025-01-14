@@ -73,6 +73,8 @@ environmentVariables:
     value: test.panopto-app.uw.edu
   - name: PANOPTO_SERVER
     value: uw-test.hosted.panopto.com
+  - name: SESSION_BACKEND
+    value: MEMCACHED
   - name: LTI_CONFIG_DIRECTORY
     value: /lti/config
 externalSecrets:
