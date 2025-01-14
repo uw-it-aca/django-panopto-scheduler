@@ -1,6 +1,6 @@
-ARG DJANGO_CONTAINER_VERSION=2.0.2
+ARG DJANGO_CONTAINER_VERSION=2.0.6
 
-FROM us-docker.pkg.dev/uwit-mci-axdd/containers/django-container:${DJANGO_CONTAINER_VERSION} as app-container
+FROM us-docker.pkg.dev/uwit-mci-axdd/containers/django-container:${DJANGO_CONTAINER_VERSION} AS app-container
 
 USER root
 RUN apt-get update && apt-get install libpq-dev -y
@@ -17,7 +17,7 @@ RUN . /app/bin/activate && pip install nodeenv && nodeenv -p && \
 
 RUN . /app/bin/activate && python manage.py compress -f && python manage.py collectstatic --noinput
 
-FROM us-docker.pkg.dev/uwit-mci-axdd/containers/django-test-container:${DJANGO_CONTAINER_VERSION} as app-test-container
+FROM us-docker.pkg.dev/uwit-mci-axdd/containers/django-test-container:${DJANGO_CONTAINER_VERSION} AS app-test-container
 
 COPY --from=app-container  /app/ /app/
 COPY --from=app-container  /static/ /static/

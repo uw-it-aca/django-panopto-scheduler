@@ -26,7 +26,7 @@ setup(
     install_requires=[
         'Django~=4.2',
         'django-compressor',
-        'django-blti~=2.2',
+        'django-blti~=3.0',
         'django-userservice~=3.2',
         'lxml<5',
         'xmlsec==1.3.13',
