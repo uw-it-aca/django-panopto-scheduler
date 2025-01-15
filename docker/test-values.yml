@@ -73,6 +73,10 @@ environmentVariables:
     value: test.panopto-app.uw.edu
   - name: PANOPTO_SERVER
     value: uw-test.hosted.panopto.com
+  - name: SESSION_BACKEND
+    value: MEMCACHED
+  - name: LTI_CONFIG_DIRECTORY
+    value: /lti/config
 externalSecrets:
   enabled: true
   secrets:
@@ -101,6 +105,13 @@ externalSecrets:
           property: lti-consumers
         - name: email-host
           property: email-host
+    - name: test.panopto-app.uw.edu-lti-keys
+      externalKey: panopto-app/test/lti-keys
+      data:
+        - name: private-key-1.key
+          property: private-key-1.key
+        - name: public-key-1.key
+          property: public-key-1.key
     - name: test.panopto-app.uw.edu-sql-secrets
       externalKey: panopto-app/test/sql-secrets
       data:
@@ -173,3 +184,35 @@ environmentVariablesSecrets:
     name: IDP_CERT
     secretName: test.panopto-app.uw.edu-uw-idp-cert
     secretKey: uw-idp-cert
+
+mountedSecrets:
+  enabled: true
+  mountPath: /lti/keys
+  secretName: test.panopto-app.uw.edu-lti-keys
+
+podVolumes:
+  lti-tool-config:
+    volume:
+      configMap:
+        name: lti-tool-config
+    mount:
+      mountPath: /lti/config
+    containers: [base]
+
+configmaps:
+  lti-tool-config:
+    tool.json: |
+      {
+        "https://canvas.test.instructure.com": [{
+          "default": true,
+          "client_id": "100000000000818",
+          "auth_login_url": "https://sso.canvaslms.com/api/lti/authorize_redirect",
+          "auth_token_url": "https://sso.canvaslms.com/login/oauth2/token",
+          "key_set_url": "https://sso.test.canvaslms.com/api/lti/security/jwks",
+          "key_set": null,
+          "private_key_file": "/lti/keys/private-key-1.key",
+          "public_key_file": "/lti/keys/public-key-1.key",
+          "deployment_ids": ["204000:ec62f2907b6c712911c1fd2834c835c1d1801f43",
+                            "204001:82ea3323587ae330766ae046461fd35c747ed747"]
+        }]
+      }
