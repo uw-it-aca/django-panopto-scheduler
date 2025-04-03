@@ -205,14 +205,13 @@ configmaps:
       {
         "https://canvas.test.instructure.com": [{
           "default": true,
-          "client_id": "100000000000818",
-          "auth_login_url": "https://sso.canvaslms.com/api/lti/authorize_redirect",
-          "auth_token_url": "https://sso.canvaslms.com/login/oauth2/token",
-          "key_set_url": "https://sso.test.canvaslms.com/api/lti/security/jwks",
+          "client_id": "100000000000819",
+          "auth_login_url": "https://sso.test.canvaslms.com/api/lti/authorize_redirect",
+          "auth_token_url": "https://sso.test.canvaslms.com/login/oauth2/token",
           "key_set": null,
+          "key_set_url": "https://sso.test.canvaslms.com/api/lti/security/jwks",
           "private_key_file": "/lti/keys/private-key-1.key",
           "public_key_file": "/lti/keys/public-key-1.key",
-          "deployment_ids": ["204000:ec62f2907b6c712911c1fd2834c835c1d1801f43",
-                            "204001:82ea3323587ae330766ae046461fd35c747ed747"]
+          "deployment_ids": ["208225:ec62f2907b6c712911c1fd2834c835c1d1801f43"]
         }]
       }
