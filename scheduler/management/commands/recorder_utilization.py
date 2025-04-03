@@ -96,7 +96,6 @@ class Command(BaseCommand):
                     recorder['name'], recorder['id'], space_id,
                     not recorder['disconnected'], scheduled, unscheduled,
                     percentage])
-                    
 
     def quarter(self, term_index):
         return {
