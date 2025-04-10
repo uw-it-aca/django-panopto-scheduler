@@ -24,14 +24,6 @@ logger = logging.getLogger(__name__)
 
 
 class Course(BaseCourse):
-    year = ""
-    quarter = ""
-    curriculum = ""
-    number = ""
-    section_id = ""
-    external_id = ""
-    canvas_course_id = None
-    section_data = None
     UW_CAMPUS = ['seattle', 'bothell', 'tacoma']
     UW_TERMS = ['spring', 'summer', 'autumn', 'winter']
 
@@ -52,6 +44,9 @@ class Course(BaseCourse):
         self.curriculum = self._is_curriculum(course_parts.group(3))
         self.number = self._is_course_number(course_parts.group(4))
         self.section_id = self._is_course_section(course_parts.group(5))
+        self.external_id = ""
+        self.canvas_course_id = None
+        self.section_data = None
 
     def _is_curriculum(self, curriculum):
         if not curriculum:
