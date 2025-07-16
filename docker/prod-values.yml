@@ -42,6 +42,8 @@ readiness:
   enabled: true
 repo: scheduler
 instance: prod
+namespace:
+  enabled: true
 metrics:
   enabled: true
   serviceMonitor:
