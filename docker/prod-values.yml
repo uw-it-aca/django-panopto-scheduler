@@ -215,7 +215,7 @@ configmaps:
   lti-tool-config:
     tool.json: |
       {
-        "https://canvas.uw.edu": [{
+        "https://canvas.instructure.com": [{
           "default": true,
           "client_id": "100000000000819",
           "auth_login_url": "https://sso.canvaslms.com/api/lti/authorize_redirect",
