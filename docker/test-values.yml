@@ -41,6 +41,8 @@ readiness:
   enabled: true
 repo: scheduler
 instance: test
+namespace:
+  enabled: true
 metrics:
   enabled: true
   serviceMonitor:
@@ -212,6 +214,7 @@ configmaps:
           "key_set_url": "https://sso.test.canvaslms.com/api/lti/security/jwks",
           "private_key_file": "/lti/keys/private-key-1.key",
           "public_key_file": "/lti/keys/public-key-1.key",
-          "deployment_ids": ["208225:ec62f2907b6c712911c1fd2834c835c1d1801f43"]
+          "deployment_ids": ["214312:ec62f2907b6c712911c1fd2834c835c1d1801f43",
+                            "214645:ec62f2907b6c712911c1fd2834c835c1d1801f43"]
         }]
       }
