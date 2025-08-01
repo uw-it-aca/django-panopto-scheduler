@@ -215,7 +215,7 @@ configmaps:
   lti-tool-config:
     tool.json: |
       {
-        "https://canvas.uw.edu": [{
+        "https://canvas.instructure.com": [{
           "default": true,
           "client_id": "100000000000819",
           "auth_login_url": "https://sso.canvaslms.com/api/lti/authorize_redirect",
@@ -224,6 +224,27 @@ configmaps:
           "key_set_url": "https://sso.canvaslms.com/api/lti/security/jwks",
           "private_key_file": "/lti/keys/private-key-1.key",
           "public_key_file": "/lti/keys/public-key-1.key",
-          "deployment_ids": ["214645:ec62f2907b6c712911c1fd2834c835c1d1801f43"]
+          "deployment_ids": ["214645:ec62f2907b6c712911c1fd2834c835c1d1801f43",
+                            "214646:70b5aaad59752acb7395dc20fbb5bd7db2cff8a7",
+                            "214647:9ee81ecc3cf31cabb97c147bd1689b428f57f2c4",
+                            "214648:3db27ecc1fee4f4509b301fe49040da39bd8bef4",
+                            "214653:d5d70ecbfea2d269e0ef2243753a13360ef5654c",
+                            "214654:822dd831b8c5ef8344cffa2fb8994ab5c9ccdea0",
+                            "214655:46dd75e118d852281edb41c87284595e1d985ffd",
+                            "214656:fb1724bbf63bdce8a5ed2be4c60092e0b552d89f",
+                            "214657:f798da5d17ebd4b23310abe450f11c290184cc84",
+                            "214658:ecd3fe95fd8ea8a5d25df8a8021a816f858c6c96",
+                            "214659:3b84a298ea8f0c8082ed9ff15ba3ba8036a9bd40",
+                            "214660:836b93d0eec8261988a3197e17480eb03bf6a906",
+                            "214661:ad0416b4a90cd8511c4d8b53d2e7bf95d0c4cc59",
+                            "214664:dd90f51b548c6a7fd44e5946c431c71097b559e6",
+                            "214669:7aa8a0725d23b4928d9a1c3c3a65a34c58ac6a63",
+                            "214688:536e5a261433638964a5591f41008315f434b849",
+                            "214696:82ea3323587ae330766ae046461fd35c747ed747",
+                            "214699:0f039f1749e78d4873d3001594ba51c12b9efebd",
+                            "214702:e597806a58d81c3f955090b82707e4a6cc15862c",
+                            "214703:d14a9f802ca37505f48664d35bae2a07c182a2f4",
+                            "214704:7fa0ff5e705f6c9f356b00edd3b7d25f10c61d92",
+                            "214705:b77fc0ce0e56b7f1a8a5b67a00b911e338fff369"]
         }]
       }
