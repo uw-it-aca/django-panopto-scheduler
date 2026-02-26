@@ -1717,6 +1717,7 @@ var PanoptoScheduler = (function ($) {
             folder_name = $folder.attr('data-folder-name'),
             folder_id = $folder.attr('data-folder-id'),
             parent_folder_id = $folder.attr('data-folder-parent-id'),
+            parent_folder_name = $folder.attr('data-folder-parent-name') || "",
             $editor_input = $a.closest('.folder-editor').find('input.folder'),
             $editor_folder_list = $('.event-folder .folder-details .folder-editor > .folder-list'),
             $root = $folder.prev('.folder.root');
@@ -1730,13 +1731,15 @@ var PanoptoScheduler = (function ($) {
                 .val('')
                 .attr('data-folder-name', '')
                 .attr('data-folder-id', '')
-                .attr('data-parent-folder-id', folder_id);
+                .attr('data-parent-folder-id', folder_id)
+                .attr('data-parent-folder-name', folder_name);
         } else {
             $editor_input
                 .val(folder_name)
                 .attr('data-folder-name', folder_name)
                 .attr('data-folder-id', folder_id)
-                .attr('data-parent-folder-id', parent_folder_id);
+                .attr('data-parent-folder-id', parent_folder_id)
+                .attr('data-parent-folder-name', parent_folder_name);
         }
 
         // add path to editor
@@ -1835,11 +1838,12 @@ var PanoptoScheduler = (function ($) {
             $create_link = $editor.find('a.event-folder-create'),
             $visit_link = $editor.find('a.event-folder-visit'),
             $search_link = $editor.find('span.folder-search'),
-            parent_folder_name = parent_folder_id ? $('.folder > a[data-folder-id="' + parent_folder_id + '"]').first().text() : "top level directory";
+            parent_folder_name = $folder_input.attr('data-parent-folder-name') || "";
 
         $folder_input
             .attr('placeholder', 'Create or Search in "' + parent_folder_name.trim() + '"')
-            .attr('data-parent-folder-id', parent_folder_id);
+            .attr('data-parent-folder-id', parent_folder_id)
+            .attr('data-parent-folder-name', parent_folder_name);
         $search_link.attr('title', 'Search for folder in ' + parent_folder_name);
         $create_link.text('Create folder in ' + parent_folder_name);
 
