@@ -1713,10 +1713,10 @@ var PanoptoScheduler = (function ($) {
     function select_panopto_event_folder_from_search(e) {
         /*jshint validthis: true */
         var $a = $(this),
-            folder_name = $a.text().trim(),
-            folder_id = $a.attr('data-folder-id'),
-            parent_folder_id = $a.attr('data-folder-parent-id'),
             $folder = $a.parent(),
+            folder_name = $folder.attr('data-folder-name'),
+            folder_id = $folder.attr('data-folder-id'),
+            parent_folder_id = $folder.attr('data-folder-parent-id'),
             $editor_input = $a.closest('.folder-editor').find('input.folder'),
             $editor_folder_list = $('.event-folder .folder-details .folder-editor > .folder-list'),
             $root = $folder.prev('.folder.root');
@@ -1725,7 +1725,7 @@ var PanoptoScheduler = (function ($) {
         e.stopPropagation();
 
         // put folder name in editor
-        if ($folder.hasClass('parent')) {
+        if ($a.hasClass('save-to-new-child-folder')) {
             $editor_input
                 .val('')
                 .attr('data-folder-name', '')
@@ -1797,7 +1797,6 @@ var PanoptoScheduler = (function ($) {
     }
 
     function collapse_expand_event_folder_path_element(e) {
-        /*jshint validthis: true */
         var $i = $(this),
             $folder = $i.parent('.folder'),
             expand = $folder.next().hasClass('hidden'),
@@ -1816,6 +1815,12 @@ var PanoptoScheduler = (function ($) {
                 return false;
             }
         });
+    }
+
+    function expose_folder_search_result_controls(e) {
+        /*jshint validthis: true */
+        $('body .folder-search-result .folder-list .folder .folder-control').addClass('hidden');
+        $(this).find('.folder-control').removeClass('hidden');
     }
 
     function update_event_editor_cues() {
@@ -2248,7 +2253,9 @@ var PanoptoScheduler = (function ($) {
             .on('click', '.modify-event',
                 modify_panopto_event_recording)
             .on('click', '.folder-list .folder.parent.collapsable > i',
-                collapse_expand_event_folder_path_element);
+                collapse_expand_event_folder_path_element)
+            .on('mouseover', '.folder-search-result .folder-list .folder',
+                expose_folder_search_result_controls);
 
         Handlebars.registerHelper({
             'indent': function (value) { return value * 8; },

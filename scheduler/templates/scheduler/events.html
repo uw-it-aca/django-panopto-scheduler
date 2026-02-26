@@ -284,7 +284,7 @@ to open the scheduled session's Panopto folder.
 <script id="folder-list-tmpl" type="text/x-handlebars-template">
   <div class="folder-list">
     {{#each folder_list}}
-    <div class="folder collapsable{{#if (gt child_count 0)}} parent{{/if}}{{#if (eq parent_count 0)}} root{{/if}}" data-folder-level="{{parent_count}}">
+    <div class="folder collapsable{{#if (gt child_count 0)}} parent{{/if}}{{#if (eq parent_count 0)}} root{{/if}}" data-folder-level="{{parent_count}}" data-folder-name="{{name}}" data-folder-id="{{id}}" data-folder-parent-id="{{parent_folder_id}}">
       {{#if (eq parent_count 0)}}
       <i class="fa fa-folder"></i>
       {{/if}}
@@ -292,7 +292,9 @@ to open the scheduled session's Panopto folder.
       <i class="fa fa-caret-down opened" style="display: none;"></i>
       <i class="fa fa-caret-right closed" style="display: none;"></i>
       {{/if}}
-      <a class="folder-name" href="javascript:void(0);" data-folder-id="{{id}}" data-folder-parent-id="{{parent_folder_id}}" title="{{#if (gt child_count 0)}}Click to create folder in this directory{{else}}Click to choose folder{{/if}}">{{name}}</a>
+      {{name}}
+      <a class="folder-control save-to-folder {{#if (gt @index 0)}} hidden{{/if}}" href="javascript:void(0);" title="Save recording to this folder"><i class="fa fa-save"></i></a>
+      <a class="folder-control save-to-new-child-folder{{#if (gt @index 0)}} hidden{{/if}}" href="javascript:void(0);" title="Create new sub folder for this recording"><i class="fa fa-folder-open-o"></i></a>
     </div>
     {{/each}}
   </div>
