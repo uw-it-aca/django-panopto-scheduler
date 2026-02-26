@@ -1797,6 +1797,7 @@ var PanoptoScheduler = (function ($) {
     }
 
     function collapse_expand_event_folder_path_element(e) {
+        /*jshint validthis: true */
         var $i = $(this),
             $folder = $i.parent('.folder'),
             expand = $folder.next().hasClass('hidden'),
