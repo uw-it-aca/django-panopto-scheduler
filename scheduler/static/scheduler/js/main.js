@@ -1713,10 +1713,11 @@ var PanoptoScheduler = (function ($) {
     function select_panopto_event_folder_from_search(e) {
         /*jshint validthis: true */
         var $a = $(this),
-            folder_name = $a.text().trim(),
-            folder_id = $a.attr('data-folder-id'),
-            parent_folder_id = $a.attr('data-folder-parent-id'),
             $folder = $a.parent(),
+            folder_name = $folder.attr('data-folder-name'),
+            folder_id = $folder.attr('data-folder-id'),
+            parent_folder_id = $folder.attr('data-folder-parent-id'),
+            parent_folder_name = $folder.attr('data-folder-parent-name') || "",
             $editor_input = $a.closest('.folder-editor').find('input.folder'),
             $editor_folder_list = $('.event-folder .folder-details .folder-editor > .folder-list'),
             $root = $folder.prev('.folder.root');
@@ -1725,18 +1726,20 @@ var PanoptoScheduler = (function ($) {
         e.stopPropagation();
 
         // put folder name in editor
-        if ($folder.hasClass('parent')) {
+        if ($a.hasClass('save-to-new-child-folder')) {
             $editor_input
                 .val('')
                 .attr('data-folder-name', '')
                 .attr('data-folder-id', '')
-                .attr('data-parent-folder-id', folder_id);
+                .attr('data-parent-folder-id', folder_id)
+                .attr('data-parent-folder-name', folder_name);
         } else {
             $editor_input
                 .val(folder_name)
                 .attr('data-folder-name', folder_name)
                 .attr('data-folder-id', folder_id)
-                .attr('data-parent-folder-id', parent_folder_id);
+                .attr('data-parent-folder-id', parent_folder_id)
+                .attr('data-parent-folder-name', parent_folder_name);
         }
 
         // add path to editor
@@ -1818,6 +1821,12 @@ var PanoptoScheduler = (function ($) {
         });
     }
 
+    function expose_folder_search_result_controls(e) {
+        /*jshint validthis: true */
+        $('body .folder-search-result .folder-list .folder .folder-control').addClass('hidden');
+        $(this).find('.folder-control').removeClass('hidden');
+    }
+
     function update_event_editor_cues() {
         var $recording_name_input = $('.reservation-settings input.recording-name'),
             recording_name = $recording_name_input.val().trim(),
@@ -1829,11 +1838,12 @@ var PanoptoScheduler = (function ($) {
             $create_link = $editor.find('a.event-folder-create'),
             $visit_link = $editor.find('a.event-folder-visit'),
             $search_link = $editor.find('span.folder-search'),
-            parent_folder_name = parent_folder_id ? $('.folder > a[data-folder-id="' + parent_folder_id + '"]').first().text() : "top level directory";
+            parent_folder_name = $folder_input.attr('data-parent-folder-name') || "";
 
         $folder_input
             .attr('placeholder', 'Create or Search in "' + parent_folder_name.trim() + '"')
-            .attr('data-parent-folder-id', parent_folder_id);
+            .attr('data-parent-folder-id', parent_folder_id)
+            .attr('data-parent-folder-name', parent_folder_name);
         $search_link.attr('title', 'Search for folder in ' + parent_folder_name);
         $create_link.text('Create folder in ' + parent_folder_name);
 
@@ -2248,7 +2258,9 @@ var PanoptoScheduler = (function ($) {
             .on('click', '.modify-event',
                 modify_panopto_event_recording)
             .on('click', '.folder-list .folder.parent.collapsable > i',
-                collapse_expand_event_folder_path_element);
+                collapse_expand_event_folder_path_element)
+            .on('mouseover', '.folder-search-result .folder-list .folder',
+                expose_folder_search_result_controls);
 
         Handlebars.registerHelper({
             'indent': function (value) { return value * 8; },
