@@ -311,7 +311,8 @@ def mash_in_panopto_sessions(event_sessions, session_external_ids, recorders):
 
                     # actual recording start and duration
                     start_utc = session.StartTime.astimezone(timezone.utc)
-                    end_utc = start_utc + timedelta(seconds=int(session.Duration))
+                    end_utc = start_utc + timedelta(
+                        seconds=int(session.Duration))
                     e_r['start'] = start_utc.isoformat()
                     e_r['end'] = end_utc.isoformat()
 
