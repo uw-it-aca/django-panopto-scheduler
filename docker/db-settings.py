@@ -1,3 +1,6 @@
+# Copyright 2023 UW-IT, University of Washington
+# SPDX-License-Identifier: Apache-2.0
+
 from .base_settings import *
 import json
 
@@ -15,6 +18,11 @@ if 'SAML_MOCK' in os.getenv('AUTH', '').split(' '):
                        'u_acadev_panopto_support'],
     }
 
+if 'BLTI_DEV' in os.getenv('AUTH', '').split(' '):
+    SESSION_COOKIE_SECURE = False
+    CSRF_COOKIE_SECURE = False
+    MIDDLEWARE.remove('blti.middleware.SameSiteMiddleware')
+
 INSTALLED_APPS += [
     'compressor',
     'django.contrib.humanize',
@@ -22,11 +30,31 @@ INSTALLED_APPS += [
     'userservice',
     'scheduler.apps.SchedulerConfig',
     'supporttools',
+    'django_extensions'
 ]
 
 MIDDLEWARE += ['userservice.user.UserServiceMiddleware',]
 
-COMPRESS_ENABLED = False if os.getenv("ENV") == "localdev" else True
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': '172.18.0.39',
+        'PORT': '3306',
+        'NAME': 'panopto',
+        'USER': 'panopto', # os.getenv('DATABASE_USERNAME', None),
+        'PASSWORD': os.getenv('DATABASE_PASSWORD', None),
+    },
+    'postgres': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': '172.18.1.208',
+        'PORT': '5432',
+        'NAME': 'panopto',
+        'USER': 'panopto', # os.getenv('DATABASE_USERNAME', None),
+        'PASSWORD': os.getenv('DATABASE_PASSWORD', None),
+    },
+}
+
+COMPRESS_ENABLED = True
 COMPRESS_OFFLINE = True
 COMPRESS_ROOT = '/static/'
 
@@ -58,12 +86,6 @@ TEMPLATES[0]['OPTIONS']['context_processors'] += [
     'scheduler.context_processors.localdev_mode',
 ]
 
-SCHEDULER_TIMEZONE = "America/Los_Angeles"
-
-USER_MODULE = 'scheduler.org.uw.user'
-COURSES_MODULE = 'scheduler.org.uw.course'
-RESERVATIONS_MODULE = 'scheduler.org.uw.reservations'
-
 PANOPTO_ADMIN_GROUP = 'u_acadev_panopto_support'
 RESTCLIENTS_ADMIN_GROUP = PANOPTO_ADMIN_GROUP
 USERSERVICE_ADMIN_GROUP = PANOPTO_ADMIN_GROUP
@@ -87,17 +109,26 @@ DETECT_USER_AGENTS = {
     'is_desktop': True,
 }
 
-PANOPTO_API_USER = os.getenv('PANOPTO_API_USER', '')
-PANOPTO_API_APP_ID = os.getenv('PANOPTO_API_APP_ID', '')
-
 if os.getenv("ENV", "localdev") == "localdev":
     LTI_DEVELOP_APP = os.getenv("LTI_DEVELOP_APP", '')
     DEBUG = True
 else:
+    PANOPTO_API_USER = os.getenv('PANOPTO_API_USER')
+    PANOPTO_API_APP_ID = os.getenv('PANOPTO_API_APP_ID')
     PANOPTO_API_TOKEN = os.getenv('PANOPTO_API_TOKEN')
     PANOPTO_SERVER = os.getenv('PANOPTO_SERVER')
     DEBUG = (os.getenv("ENV", "UNSET") == "dev")
-    CSRF_TRUSTED_ORIGINS = ['https://' + os.getenv('CLUSTER_CNAME')]
+
+EMAIL_HOST = os.getenv("EMAIL_HOST")
+EMAIL_PORT = 587
+EMAIL_SSL_CERTFILE = os.getenv('CERT_PATH', '')
+EMAIL_SSL_KEYFILE = os.getenv('KEY_PATH', '')
+EMAIL_USE_TLS=True
+if os.getenv("SAFE_EMAIL_RECIPIENT", None):
+    SAFE_EMAIL_RECIPIENT = os.getenv("SAFE_EMAIL_RECIPIENT")
+    EMAIL_BACKEND = 'saferecipient.EmailBackend'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # dial back suds super-verbose telemetry
 LOGGING['loggers']['suds'] =  {
