@@ -1,4 +1,4 @@
-# Copyright 2023 uw-IT, University of Washington
+# Copyright 2026 UWIT, University of Washington
 # SPDX-License-Identifier: Apache-2.0
 
 import os
@@ -40,9 +40,13 @@ setup(
         'uw-django-saml2~=1.8',
         'django-supporttools~=3.6',
         'uw-restclients-django-utils~=2.3',
+        'psycopg[c]',
     ],
     license='Apache License, Version 2.0',
-    description='Django app to aid in the scheduling of Panopto recordings in the context of an CollegeNet R25',
+    description=(
+        'Django app to aid in the scheduling of Panopto recordings in the '
+        'context of an CollegeNet R25'
+    ),
     long_description=README,
     url='https://github.com/uw-it-aca/django-panopto-scheduler',
     author="UWIT Student & Educational Technology Services",

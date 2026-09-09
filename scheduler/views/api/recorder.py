@@ -11,10 +11,9 @@ from scheduler.reservations import Reservations
 from scheduler.models import RecorderCache, RecorderCacheEntry
 from panopto_client import PanoptoAPIException
 from restclients_core.exceptions import DataFailureException
-import datetime
+from datetime import datetime, timezone, timedelta
 import logging
 import json
-import pytz
 
 
 logger = logging.getLogger(__name__)
@@ -106,8 +105,8 @@ class Recorder(RESTDispatch):
     def _list_recorders(self):
         try:
             rec_cache = RecorderCache.objects.all()[0]
-            now = pytz.UTC.localize(datetime.datetime.now())
-            timeout = datetime.timedelta(hours=self._space_list_cache_timeout)
+            now = datetime.now(timezone.utc)
+            timeout = timedelta(hours=self._space_list_cache_timeout)
             if (now - timeout) > rec_cache.created_date:
                 self._scrub_recorder_cache(rec_cache)
 

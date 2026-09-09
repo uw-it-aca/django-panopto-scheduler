@@ -2,6 +2,10 @@ autoscaling:
   enabled: true
   minReplicas: 1
   maxReplicas: 2
+gateway:
+  enabled: true
+  hostnames:
+    - test.panopto-app.uw.edu
 ingress:
   enabled: true
   type: nginx
@@ -57,7 +61,7 @@ certs:
   mounted: true
   certPath: /certs/test.panopto-app.uw.edu.cert
   keyPath: /certs/test.panopto-app.uw.edu.key
-  secretName: test.panopto-app.uw.edu-ic-certs
+  secretName: test.panopto-app.uw.edu-uwca-certs
 environmentVariables:
   - name: ENV
     value: dev
@@ -79,6 +83,8 @@ environmentVariables:
     value: MEMCACHED
   - name: LTI_CONFIG_DIRECTORY
     value: /lti/config
+  - name: OPENSSL_CONF
+    value: /ssl/openssl.cnf
 externalSecrets:
   enabled: true
   secrets:
@@ -121,8 +127,8 @@ externalSecrets:
           property: sql_user
         - name: password
           property: sql_pass
-    - name: test.panopto-app.uw.edu-ic-certs
-      externalKey: panopto-app/test/ic-certs
+    - name: test.panopto-app.uw.edu-uwca-certs
+      externalKey: panopto-app/test/uwca-certs
       data:
         - name: test.panopto-app.uw.edu.key
           property: key
@@ -178,10 +184,6 @@ environmentVariablesSecrets:
     name: EMAIL_HOST
     secretName: test.panopto-app.uw.edu-secrets
     secretKey: email-host
-  SAMLServiceProviderCert:
-    name: SP_CERT
-    secretName: test.panopto-app.uw.edu-ic-certs
-    secretKey: test.panopto-app.uw.edu.cert
   SAMLIDPCert:
     name: IDP_CERT
     secretName: test.panopto-app.uw.edu-uw-idp-cert
@@ -199,6 +201,13 @@ podVolumes:
         name: lti-tool-config
     mount:
       mountPath: /lti/config
+    containers: [base]
+  openssl-config:
+    volume:
+      configMap:
+        name: openssl-conf
+    mount:
+      mountPath: /ssl
     containers: [base]
 
 configmaps:
@@ -239,3 +248,14 @@ configmaps:
                             "214705:b77fc0ce0e56b7f1a8a5b67a00b911e338fff369"]
         }]
       }
+  openssl-conf:
+    openssl.cnf: |
+      # Downgrade openssl security level to support UWCA certificates with Ubuntu 24.04
+      openssl_conf = default_conf
+      [ default_conf ]
+      ssl_conf = ssl_sect
+      [ssl_sect]
+      system_default = system_default_sect
+      [system_default_sect]
+      MinProtocol = TLSv1.2
+      CipherString = DEFAULT:@SECLEVEL=1
