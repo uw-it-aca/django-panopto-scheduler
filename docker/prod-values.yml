@@ -12,6 +12,10 @@ resources:
     memory: 192Mi
 affinity:
    podsSpanNodes: true
+gateway:
+  enabled: true
+  hostnames:
+    - panopto-app.uw.edu
 ingress:
   enabled: true
   type: nginx
@@ -58,7 +62,7 @@ certs:
   mounted: true
   certPath: /certs/panopto-app.uw.edu.cert
   keyPath: /certs/panopto-app.uw.edu.key
-  secretName: panopto-app.uw.edu-ic-certs
+  secretName: panopto-app.uw.edu-uwca-certs
 cronjob:
   enabled: true
   jobs:
@@ -89,6 +93,8 @@ environmentVariables:
     value: MEMCACHED
   - name: LTI_CONFIG_DIRECTORY
     value: /lti/config
+  - name: OPENSSL_CONF
+    value: /ssl/openssl.cnf
 externalSecrets:
   enabled: true
   secrets:
@@ -131,8 +137,8 @@ externalSecrets:
           property: private-key-1.key
         - name: public-key-1.key
           property: public-key-1.key
-    - name: panopto-app.uw.edu-ic-certs
-      externalKey: panopto-app/prod/ic-certs
+    - name: panopto-app.uw.edu-uwca-certs
+      externalKey: panopto-app/prod/uwca-certs
       data:
         - name: panopto-app.uw.edu.key
           property: key
@@ -188,10 +194,6 @@ environmentVariablesSecrets:
     name: EMAIL_HOST
     secretName: panopto-app.uw.edu-secrets
     secretKey: email-host
-  SAMLServiceProviderCert:
-    name: SP_CERT
-    secretName: panopto-app.uw.edu-ic-certs
-    secretKey: panopto-app.uw.edu.cert
   SAMLIDPCert:
     name: IDP_CERT
     secretName: panopto-app.uw.edu-uw-idp-cert
@@ -209,6 +211,13 @@ podVolumes:
         name: lti-tool-config
     mount:
       mountPath: /lti/config
+    containers: [base]
+  openssl-config:
+    volume:
+      configMap:
+        name: openssl-conf
+    mount:
+      mountPath: /ssl
     containers: [base]
 
 configmaps:
@@ -248,3 +257,14 @@ configmaps:
                             "214705:b77fc0ce0e56b7f1a8a5b67a00b911e338fff369"]
         }]
       }
+  openssl-conf:
+    openssl.cnf: |
+      # Downgrade openssl security level to support UWCA certificates with Ubuntu 24.04
+      openssl_conf = default_conf
+      [ default_conf ]
+      ssl_conf = ssl_sect
+      [ssl_sect]
+      system_default = system_default_sect
+      [system_default_sect]
+      MinProtocol = TLSv1.2
+      CipherString = DEFAULT:@SECLEVEL=1

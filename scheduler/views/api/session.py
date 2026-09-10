@@ -21,8 +21,7 @@ from scheduler.dao.panopto.recorder import (
 from panopto_client import PanoptoAPIException
 import json
 import logging
-import datetime
-import pytz
+from datetime import datetime, timezone, timedelta
 import re
 
 
@@ -38,7 +37,7 @@ class Session(RESTDispatch):
         session_id = kwargs.get('session_id')
         if session_id:
             raw_session = get_sessions_by_session_ids([session_id])[0]
-            start_utc = raw_session['StartTime'].astimezone(pytz.utc)
+            start_utc = raw_session['StartTime'].astimezone(timezone.utc)
             raw_access = get_session_access_details(session_id)
             session = {
                 'creator_id': raw_session['CreatorId'],
@@ -126,9 +125,8 @@ class Session(RESTDispatch):
             session = get_sessions_by_session_ids(
                 session_update.get('recording_id'))[0]
 
-            start_utc = session.StartTime.astimezone(pytz.utc)
-            end_utc = start_utc + datetime.timedelta(
-                seconds=int(session.Duration))
+            start_utc = session.StartTime.astimezone(timezone.utc)
+            end_utc = start_utc + timedelta(seconds=int(session.Duration))
 
             session_update_start = self._valid_time(
                 session_update.get('start_time'))
@@ -419,9 +417,8 @@ class SessionRecordingTime(RESTDispatch):
         session_id = kwargs.get('session_id')
         if session_id:
             raw_session = get_sessions_by_session_ids([session_id])[0]
-            start_utc = raw_session.StartTime.astimezone(pytz.utc)
-            end_utc = start_utc + datetime.timedelta(
-                seconds=int(raw_session.Duration))
+            start_utc = raw_session.StartTime.astimezone(timezone.utc)
+            end_utc = start_utc + timedelta(seconds=int(raw_session.Duration))
             recording_time = {
                 'start': start_utc.isoformat(),
                 'end': end_utc.isoformat()

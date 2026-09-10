@@ -4,12 +4,12 @@
 from django.conf import settings
 from dateutil import parser, tz
 from hashlib import sha1
-import pytz
+from zoneinfo import ZoneInfo
 
 
 def local_ymd_from_utc_date_string(utc_date_string):
     from_zone = tz.tzutc()
-    to_zone = pytz.timezone(getattr(
+    to_zone = ZoneInfo(getattr(
         settings, 'SCHEDULER_TIMEZONE', "America/Los_Angeles"))
     dt_utc = parser.parse(utc_date_string).replace(tzinfo=from_zone)
     dt_local = dt_utc.astimezone(to_zone)

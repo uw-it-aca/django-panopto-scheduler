@@ -23,8 +23,7 @@ from scheduler.exceptions import (
 from restclients_core.exceptions import DataFailureException
 from panopto_client import PanoptoAPIException
 from dateutil import parser, tz
-import datetime
-import pytz
+from datetime import datetime, timezone, timedelta
 import logging
 
 
@@ -170,7 +169,7 @@ def event_session_from_reservation(r):
     """
     start_dt = parser.parse(r.start_datetime)
     end_dt = parser.parse(r.end_datetime) + \
-        datetime.timedelta(seconds=int(
+        timedelta(seconds=int(
             getattr(settings, 'DEFAULT_RECORDING_TIME_FUDGE', 120)))
     start_utc = start_dt.astimezone(tz.tzutc())
     end_utc = end_dt.astimezone(tz.tzutc())
@@ -214,8 +213,8 @@ def event_session_from_scheduled_recording(s):
     """
     flesh out session data from scheduled event
     """
-    start_utc = s.StartTime.astimezone(pytz.utc)
-    end_utc = start_utc + datetime.timedelta(seconds=int(s.Duration))
+    start_utc = s.StartTime.astimezone(timezone.utc)
+    end_utc = start_utc + timedelta(seconds=int(s.Duration))
 
     session = {
         'profile': '',
@@ -311,9 +310,9 @@ def mash_in_panopto_sessions(event_sessions, session_external_ids, recorders):
                         e_r['is_public'] = session_access[session.Id].IsPublic
 
                     # actual recording start and duration
-                    start_utc = session.StartTime.astimezone(pytz.utc)
-                    end_utc = start_utc + \
-                        datetime.timedelta(seconds=int(session.Duration))
+                    start_utc = session.StartTime.astimezone(timezone.utc)
+                    end_utc = start_utc + timedelta(
+                        seconds=int(session.Duration))
                     e_r['start'] = start_utc.isoformat()
                     e_r['end'] = end_utc.isoformat()
 
