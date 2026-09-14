@@ -6,6 +6,8 @@ gateway:
   enabled: true
   hostnames:
     - test.panopto-app.uw.edu
+  requestTimeouts:
+    backEnd: 90s
 ingress:
   enabled: true
   type: nginx
@@ -208,7 +210,6 @@ podVolumes:
         name: openssl-conf
     mount:
       mountPath: /ssl
-    containers: [base]
 
 configmaps:
   lti-tool-config:
