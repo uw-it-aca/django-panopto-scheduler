@@ -18,21 +18,6 @@ gateway:
     - panopto-app.uw.edu
   requestTimeouts:
     backEnd: 90s
-ingress:
-  enabled: true
-  type: nginx
-  tls:
-    panopto-app:
-      secretName: panopto-app.uw.edu-ingress-cert
-      hosts:
-        - panopto-app.uw.edu
-  hosts:
-    panopto-app:
-      host: panopto-app.uw.edu
-      paths:
-        - "/"
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt
 database:
   engine: postgres
   name: panopto
