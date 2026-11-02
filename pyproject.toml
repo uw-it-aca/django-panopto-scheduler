@@ -1,0 +1,79 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scheduler"
+dynamic = ["version"]
+description = "Scheduling for Panopto recordings in the context of an CollegeNet R25"
+readme = "README.md"
+license = "Apache-2.0"
+authors = [
+    {name = "UWIT Student & Educational Technology Services", email = "aca-it@uw.edu"}
+]
+classifiers = [
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+]
+dependencies = [
+    "django~=5.2",
+    "django-compressor",
+    "django-blti~=3.0",
+    "django-userservice~=3.2",
+    "uw-memcached-clients~=1.0",
+    "uw-restclients-sws~=2.5",
+    "uw-restclients-pws~=2.1",
+    "uw-restclients-gws~=2.3",
+    "uw-restclients-canvas~=1.2",
+    "uw-restclients-r25~=0.5",
+    "uw-panopto-client~=0.3",
+    "uw-django-saml2~=1.8",
+    "django-supporttools~=3.6",
+    "uw-restclients-django-utils~=2.3",
+    "lxml<5",
+    "xmlsec==1.3.13",
+    "psycopg[c]",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff",
+]
+
+[tool.setuptools]
+packages = ["scheduler"]
+include-package-data = true
+
+[tool.setuptools.dynamic]
+version = {file = "scheduler/VERSION"}
+
+[tool.ruff]
+line-length = 88
+exclude = [
+    "scheduler/migrations/*",
+]
+
+[tool.ruff.lint]
+ignore = [
+    "BLE001",  # allow broad Exception catches
+    "RUF012",  # allow mutable class attributes
+    "TRY002",  # allow Exception
+    "UP017",   # use datetime.UTC alias
+]
+
+[tool.coverage.run]
+source = ["scheduler"]
+parallel = true
+omit = [
+     "scheduler/migrations/*",
+     "scheduler/test/*"
+]
+
+[tool.coverage.paths]
+source = [
+    "scheduler/",
+    "/app/scheduler/",
+]
