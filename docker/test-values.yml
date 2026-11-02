@@ -8,21 +8,6 @@ gateway:
     - test.panopto-app.uw.edu
   requestTimeouts:
     backEnd: 90s
-ingress:
-  enabled: true
-  type: nginx
-  tls:
-    test-panopto:
-      secretName: test.panopto-app.uw.edu-ingress-cert
-      hosts:
-        - test.panopto-app.uw.edu
-  hosts:
-    test-panopto:
-      host: test.panopto-app.uw.edu
-      paths:
-        - "/"
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt
 resources:
   limits:
     cpu: 500m
